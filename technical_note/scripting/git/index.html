@@ -28,10 +28,12 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Working with git Remove submodule To remove a submodule from a git repository you need to:
+Delete the relevant section from the .gitmodules file
+Stage the .gitmodules changes: git add .">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othmanerifki.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othmanerifki.github.io/technical_note/scripting/git/">
 
   
 
@@ -216,7 +218,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othmanerifki.github.io/404.html">
+  <link rel="canonical" href="http://othmanerifki.github.io/technical_note/scripting/git/">
 
   
   
@@ -230,29 +232,36 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othmanerifki.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othmanerifki.github.io/technical_note/scripting/git/">
+  <meta property="og:title" content="Working with git | Othmane Rifki">
+  <meta property="og:description" content="Working with git Remove submodule To remove a submodule from a git repository you need to:
+Delete the relevant section from the .gitmodules file
+Stage the .gitmodules changes: git add ."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Working with git | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +469,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +559,59 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Working with git</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
-
-  <p>Perhaps you were looking for one of these?</p>
-
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/os_manip/">File, dir handling with os module</a></li>
-    
-      <li><a href="/technical_note/linux/search/find_files/">Find Files</a></li>
-    
-      <li><a href="/technical_note/scripting/jupyter/">Jupyter shortcuts</a></li>
-    
-      <li><a href="/technical_note/scripting/markdown/">Markdown Cheatsheet</a></li>
-    
-      <li><a href="/technical_note/python/basics/print/">Print statements</a></li>
-    
-      <li><a href="/technical_note/template/">Print statements</a></li>
-    
-      <li><a href="/technical_note/scripting/git/">Working with git</a></li>
-    
-      <li><a href="/technical_note/linux/basics/zip_and_unzip_files/">Zip And Unzip Files Hello</a></li>
-    
-      <li><a href="/publication/aaboud-2019-ibw/">Determination of jet calibration and energy resolution in proton-proton collisions at $sqrts$ = 8 TeV using the ATLAS detector</a></li>
-    
-      <li><a href="/publication/aad-2020-gfz/">Longitudinal flow decorrelations in Xe&#43;Xe collisions at $sqrts_mathrmNN=5.44$ TeV with the ATLAS detector</a></li>
-    
-  </ul>
-  
+  <h1 id="working-with-git">Working with git</h1>
+<h3 id="remove-submodule">Remove submodule</h3>
+<p>To remove a submodule from a git repository you need to:</p>
+<p>Delete the relevant section from the <code>.gitmodules</code> file<br>
+Stage the <code>.gitmodules</code> changes: <code>git add .gitmodules</code><br>
+Delete the relevant section from <code>.git/config</code><br>
+Run <code>git rm --cached path_to_submodule</code> (no trailing slash) <br>
+Run <code>rm -rf .git/modules/path_to_submodule</code> (no trailing slash)<br>
+Commit <code>git commit -m &quot;Removed submodule&quot;</code> <br>
+Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></p>
+<p>Foldable text:</p>
+<details>
+  <summary>Title 1</summary>
+  <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
+</details>
+<details>
+  <summary>Title 2</summary>
+  <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
+</details>
+<pre><code>Markup : &lt;details&gt;
+           &lt;summary&gt;Title 1&lt;/summary&gt;
+           &lt;p&gt;Content 1 Content 1 Content 1 Content 1 Content 1&lt;/p&gt;
+         &lt;/details&gt;
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes-othrif/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

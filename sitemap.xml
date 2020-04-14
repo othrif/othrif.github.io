@@ -28,12 +28,27 @@
   </url>
   
   <url>
+    <loc>http://othmanerifki.github.io/technical_note/scripting/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othmanerifki.github.io/technical_note/python/basics/os_manip/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://othmanerifki.github.io/technical_note/linux/search/find_files/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othmanerifki.github.io/technical_note/scripting/jupyter/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othmanerifki.github.io/technical_note/scripting/markdown/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -49,6 +64,11 @@
   
   <url>
     <loc>http://othmanerifki.github.io/technical_note/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othmanerifki.github.io/technical_note/scripting/git/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -2508,10 +2528,6 @@
   
   <url>
     <loc>http://othmanerifki.github.io/post/my-post/firstjupyter/</loc>
-  </url>
-  
-  <url>
-    <loc>http://othmanerifki.github.io/technical_note/scripting/</loc>
   </url>
   
   <url>
