@@ -1,0 +1,3386 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Othmane Rifki</title>
+    <link>http://othmanerifki.github.io/authors/othmane-rifki/</link>
+      <atom:link href="http://othmanerifki.github.io/authors/othmane-rifki/index.xml" rel="self" type="application/rss+xml" />
+    <description>Othmane Rifki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 11 Apr 2020 12:00:03 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Othmane Rifki</title>
+      <link>http://othmanerifki.github.io/authors/othmane-rifki/</link>
+    </image>
+    
+    <item>
+      <title>Determination of jet calibration and energy resolution in proton-proton collisions at $sqrts$ = 8 TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-ibw/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-ibw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Longitudinal flow decorrelations in Xe&#43;Xe collisions at $sqrts_mathrmNN=5.44$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-gfz/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-gfz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of azimuthal anisotropy of muons from charm and bottom hadrons in Pb&#43;Pb collisions at $sqrts_NN =$ 5.02 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-grf/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-grf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $CP$-violating phase $ϕ_s$ in $B^0_s to J/ψϕ$ decays in ATLAS at 13 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-jfw/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-jfw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $tbart$ production cross-section and lepton differential distributions in $eμ$ dilepton events from $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-hzw/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-hzw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the nuclear modification factor for inclusive jets in Pb&#43;Pb collisions at $sqrts_mathrmNN=5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-twu/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-twu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the relative $B^±_c/B^±$ production cross section with the ATLAS detector at $sqrts=8$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-wtr/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-wtr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the transverse momentum distribution of Drell-Yan lepton pairs in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-wmn/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-wmn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of $tbart$ differential cross-sections of highly boosted top quarks decaying to all-hadronic final states in $pp$ collisions at $sqrts=13,$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-eqg/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-eqg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of Higgs boson properties in the diphoton decay channel with 36 fb$^-1$ of $pp$ collision data at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-xdt/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-xdt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top-quark pair spin correlations in the $eμ$ channel at $sqrts = 13$ TeV using $pp$ collisions in the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-hwz/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-hwz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of the associated production of a top quark and a $Z$ boson in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-wog/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-wog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prompt and non-prompt $J/ψ$ and $ψ(2mathrmS)$ suppression at high transverse momentum in 5.02 TeV Pb&#43;Pb collisions with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-quy/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-quy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dijet resonances in events with an isolated charged lepton using $sqrts = 13$ TeV proton-proton collision data collected by the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-kep/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-kep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for direct production of electroweakinos in final states with one lepton, missing transverse momentum and a Higgs boson decaying into two $b$-jets in (pp) collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-vvf/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-vvf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for flavour-changing neutral current top-quark decays $tto qZ$ in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-nyl/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-nyl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy Higgs bosons decaying into two tau leptons with the ATLAS detector using $pp$ collisions at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-zxo/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-zxo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson decays to beyond-the-Standard-Model light bosons in four-lepton events with the ATLAS detector at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-fvk/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-fvk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for light long-lived neutral particles produced in $pp$ collisions at $sqrts =$ 13 TeV and decaying into collimated leptons or light hadrons with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-tua/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-tua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of Higgs bosons in the $bbarbbbarb$ final state using proton-proton collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-knk/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-knk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in final states with same-sign leptons and jets using 139 fb$^-1$ of data collected with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-ftg/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-ftg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the $HH i̊ghtarrow b barb b barb$ process via vector-boson fusion production using proton-proton collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-kub/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-kub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test of CP invariance in vector-boson fusion production of the Higgs boson in the $Hi̊ghtarrowττ$ channel in proton$-$proton collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-mnm/</link>
+      <pubDate>Sat, 11 Apr 2020 12:00:03 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-mnm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First publication</title>
+      <link>http://othmanerifki.github.io/publication/publication1/</link>
+      <pubDate>Wed, 08 Apr 2020 22:44:12 +0200</pubDate>
+      <guid>http://othmanerifki.github.io/publication/publication1/</guid>
+      <description>&lt;p&gt;My first publication here, now?
+&lt;a href=&#34;http://othmanerifki.github.io/files/OthmaneRifki_CV.pdf&#34;&gt;Download my CV&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Higgs boson production cross-section measurements and their EFT interpretation in the $4ell$ decay channel at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-mkp/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-mkp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the Lund jet plane using charged particles in 13 TeV proton-proton collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-zcn/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-zcn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson decays into a $Z$ boson and a light hadronically decaying resonance using 13 TeV $pp$ collision data from the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-hzm/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-hzm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of the production cross-section for a $Z$ boson in association with $b$-jets in proton-proton collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-gfi/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-gfi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived, massive particles in events with a displaced vertex and a muon with large impact parameter in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2020-srt/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2020-srt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>$Z$ boson production in Pb&#43;Pb collisions at $sqrts_textrmNN$= 5.02 TeV measured by the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-lan/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-lan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ATLAS data quality operations and performance for 2015-2018 data-taking</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-hmz/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-hmz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of searches for Higgs boson pairs in $pp$ collisions at $sqrts = $13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-uzh/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-uzh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combined measurements of Higgs boson production and decay using up to $80$ fb$^-1$ of proton-proton collision data at $sqrts=$ 13 TeV collected with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-mbh/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-mbh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for electroweak production of two jets in association with a $Zγ$ pair in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-wpb/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-wpb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fluctuations of anisotropic flow in Pb&#43;Pb collisions at $ sqrtmathrms_mathrmNN $ = 5.02 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-sma/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-sma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $J/ψ$ production in association with a $W^±$ boson with $pp$ data at 8 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-wfr/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-wfr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of azimuthal anisotropy of muons from charm and bottom hadrons in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-aol/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-aol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of differential cross sections for single diffractive dissociation in $sqrts = 8$ TeV $pp$ collisions using the ATLAS ALFA spectrometer</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-tek/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-tek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of isolated-photon plus two-jet production in $pp$ collisions at $sqrt s=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-cpw/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-cpw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of long-range two-particle azimuthal correlations in $Z$-boson tagged $pp$ collisions at $sqrts=8$ and 13 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-mcw/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-mcw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of soft-drop jet observables in $pp$ collisions with the ATLAS detector at $sqrt s$ =13  TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-vyi/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-vyi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $Z(i̊ghtarrowell^&#43;ell^-)γ$ production cross-section in $pp$ collisions at $sqrts =13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-gpq/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-gpq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the azimuthal anisotropy of charged-particle production in Xe&#43;Xe collisions at $sqrts_mathrmNN=5.44$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-xmh/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-xmh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance of electron and photon triggers in ATLAS during LHC Run 2</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-wsl/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-wsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for chargino-neutralino production with mass splittings near the electroweak scale in three-lepton final states in $sqrts$ = 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-vvi/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-vvi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for direct stau production in events with two hadronic $τ$-leptons in $sqrts = 13$ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-byo/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-byo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for displaced vertices of oppositely charged leptons from decays of long-lived particles in $pp$ collisions at $sqrt s$ =13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-tcc/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-tcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for electroweak production of charginos and sleptons decaying into final states with two leptons and missing transverse momentum in $sqrts=13$ TeV $pp$ collisions using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-vnb/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-vnb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for flavour-changing neutral currents in processes with one top quark and a photon using 81 fb$^-1$ of $pp$ collisions at $sqrts = 13$ TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-pxo/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-pxo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived neutral particles produced in $pp$ collisions at $sqrts = 13$ TeV decaying into displaced hadronic jets in the ATLAS inner detector and muon spectrometer</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-xav/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-xav/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Magnetic Monopoles and Stable High-Electric-Charge Objects in 13 Tev Proton-Proton Collisions with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-pfm/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-pfm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new resonances in mass distributions of jet pairs using 139 fb$^-1$ of $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-hjw/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-hjw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for non-resonant Higgs boson pair production in the $bbellνellν$ final state with the ATLAS detector in $pp$ collisions at $sqrts = 13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-yxi/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-yxi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Higgs boson decays $H to ee$ and $H to eμ$ in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-ojw/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-ojw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for electroweak production of supersymmetric particles with compressed mass spectra in $sqrts=$ 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-qnd/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-qnd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for lepton-flavour-violating decays of the Higgs boson in $sqrts=13$ TeV pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-ugc/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-ugc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transverse momentum and process dependent azimuthal anisotropies in $sqrts_mathrmNN=8.16$ TeV $p$&#43;Pb collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-ajj/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-ajj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for pairs of highly collimated photon-jets in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-djx/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-djx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A strategy for a general search for new phenomena using data-derived signal regions and its application within the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ufy/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ufy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ATLAS b-jet identification performance and efficiency measurement with $tbart$ events in pp collisions at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-aic/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-aic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of searches for invisible Higgs boson decays with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-rtt/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-rtt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combinations of single-top-quark production cross-section measurements and |f$_LV$V$_tb$| determinations at $ sqrts $ = 7 and 8 TeV with the ATLAS and CMS experiments</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-pkc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-pkc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constraints on mediator-based dark matter and scalar dark energy models using $sqrt s = 13$ TeV $pp$ collision data collected by the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-yqu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-yqu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correlated long-range mixed-harmonic fluctuations measured in $pp$, $p$&#43;Pb and low-multiplicity Pb&#43;Pb collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-syf/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-syf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cross-section measurements of the Higgs boson decaying into a pair of $τ$-leptons in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-pen/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-pen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dijet azimuthal correlations and conditional yields in pp and p&#43;Pb collisions at sNN=5.02TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-oop/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electron and photon energy calibration with the ATLAS detector using 2015–2016 LHC proton-proton collision data</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ugz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ugz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electron and photon performance measurements with the ATLAS detector using the 2015–2017 LHC proton-proton collision data</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-tso/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-tso/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for the production of three massive vector bosons with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-dxu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-dxu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for the production of three massive vectorbosons in $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-udh/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-udh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identification of boosted Higgs bosons decaying into $b$-quark pairs with the ATLAS detector at 13  $text TeV$</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-uoz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-uoz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>In situ calibration of large-radius jet energy and mass in 13 TeV proton–proton collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-kfi/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-kfi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $K_S^0$ and $Łambda ^0$ production in $t bart$ dileptonic events in pp collisions at $sqrts =$ 7 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-xek/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-xek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^± $ boson production in Pb&#43;Pb collisions at $sqrts_mathrmNN = 5.02~ text Tetext V$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-sfe/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-sfe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^± $-boson and Z-boson production cross-sections in pp collisions at $sqrts=2.76$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-bdc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-bdc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^±Z$ production cross sections and gauge boson polarisation in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-gxl/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-gxl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $ZZ$ production in the $ellellνν$ final state with the ATLAS detector in $pp$ collisions at $sqrts = 13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-lgy/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-lgy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of angular and momentum distributions of charged particles within and around jets in Pb&#43;Pb and $pp$ collisions at $sqrts_mathrmNN = 5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-igg/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-igg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of distributions sensitive to the underlying event in inclusive $Z$-boson production in pp collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-vyd/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-vyd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of fiducial and differential $W^&#43;W^-$ production cross-sections at $sqrts=13$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-nkz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-nkz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of flow harmonics correlations with mean transverse momentum in lead-lead and proton-lead collisions at $sqrts_NN=5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-fgl/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-fgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet-substructure observables in top quark, $W$ boson and light jet production in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-aii/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-aii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of photon–jet transverse momentum correlations in 5.02 TeV Pb &#43; Pb and $pp$ collisions with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-anc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-anc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $tbartZ$ and $tbartW$ cross sections in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-njj/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-njj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the cross-section and charge asymmetry of $W$ bosons produced in proton–proton collisions at $sqrts=8~ text TeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-rou/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-rou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the four-lepton invariant mass spectrum in 13 TeV proton-proton collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-lxo/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-lxo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive cross-section for the production of jets in association with a Z boson in proton-proton collisions at 8 TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-hga/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-hga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive isolated-photon cross section in $pp$ collisions at $sqrts=13$ TeV using 36 fb$^-1$ of ATLAS data</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-eqv/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-eqv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the photon identification efficiencies with the ATLAS detector using LHC Run 2 data collected in 2015 and 2016</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-yqu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-yqu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the production cross section for a Higgs boson in association with a vector boson in the $H to WW^* to ellνellν$ channel in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-lpq/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-lpq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the ratio of cross sections for inclusive isolated-photon production in $pp$ collisions at $sqrt s = 13$ and $8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-vpz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-vpz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the top quark mass in the $tbarti̊ghtarrow $ lepton&#43;jets channel from $sqrts=8$  TeV ATLAS data and combination with previous results</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zbu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zbu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the top-quark mass in $tbart&#43;1$-jet events collected with the ATLAS detector in $pp$ collisions at $sqrts=8$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-mkw/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-mkw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of $W$ and $Z$ boson production in $pp$ collisions at $sqrts=5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-nic/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-nic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of gluon-gluon fusion and vector-boson fusion Higgs boson production cross-sections in the $H to WW^* to eνμν$ decay channel in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jqu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jqu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of inclusive and differential fiducial cross-sections of $ tøverlinet $ production with additional heavy-flavour jets in proton-proton collisions at $ sqrts $ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-eki/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-eki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of inclusive and differential fiducial cross-sections of $tbartγ $ production in leptonic final states at $sqrts=13~ text TeV$ in ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-hip/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-hip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top-quark pair differential and double-differential cross-sections in the $ell$&#43;jets channel with $pp$ collisions at $sqrts=13$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-ntk/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-ntk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modelling radiation damage to pixel sensors in the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-wgd/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-wgd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of electroweak production of a same-sign $W$ boson pair in association with two jets in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-nmv/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-nmv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance of top-quark and $W$-boson tagging with ATLAS in Run 2 of the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-psm/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-psm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Properties of $gi̊ghtarrow bbarb$ at small opening angles in $pp$ collisions with the ATLAS detector at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-uiu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-uiu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Properties of jet fragmentation using charged particles measured with the ATLAS detector in $pp$ collisions at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-onw/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-onw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resolution of the ATLAS muon spectrometer monitored drift tubes in LHC Run 2</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-yrr/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-yrr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a heavy charged boson in events with a charged lepton and missing transverse momentum from $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-wvl/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-wvl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a right-handed gauge boson decaying into a high-momentum heavy neutrino and a charged lepton in $pp$ collisions with the ATLAS detector at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-wfg/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-wfg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for bottom-squark pair production with the ATLAS detector in final states containing Higgs bosons, $b$-jets and missing transverse momentum</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-pfy/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-pfy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for chargino and neutralino production in final states with a Higgs boson and missing transverse momentum at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ngk/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ngk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for diboson resonances in hadronic final states in 139 fb$^-1$ of $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-fbh/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-fbh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for doubly charged scalar bosons decaying into same-sign $W$ boson pairs with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-qcu/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-qcu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for excited electrons singly produced in proton–proton collisions at $sqrts=13$ TeV with the ATLAS experiment at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-zpc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-zpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for four-top-quark production in the single-lepton and opposite-sign dilepton final states in pp collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jsj/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jsj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy charged long-lived particles in proton-proton collisions at $sqrts = 13$ TeV using an ionisation measurement with the mboxATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-hdl/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-hdl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy charged long-lived particles in the ATLAS detector in 36.1 fb$^-1$ of proton-proton collision data at $sqrts = 13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-trc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-trc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy long-lived multicharged particles in proton-proton collisions at $sqrts$ = 13  TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-kbe/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-kbe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy Majorana or Dirac neutrinos and right-handed $W$ gauge bosons in final states with two charged leptons and two jets at $ sqrts=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-spl/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-spl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy neutral leptons in decays of $W$ bosons produced in 13 TeV $pp$ collisions using prompt and displaced signatures with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-kiz/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-kiz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson decays into a pair of light bosons in the $bbμμ$ final state in $pp$ collision at $sqrts = $13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-esj/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-esj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson pair production in the $bbarbWW^*$ decay mode at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zhh/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zhh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson pair production in the $WW^(*)WW^(*)$ decay channel using ATLAS data recorded at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ksn/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ksn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for high-mass dilepton resonances using 139 fb$^-1$ of $pp$ collision data collected at $sqrts=$13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-fac/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-fac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for large missing transverse momentum in association with one top-quark in proton-proton collisions at $ sqrts $ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zpr/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zpr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for light resonances decaying to boosted quark pairs and produced in association with a photon or a jet in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zba/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived neutral particles in $pp$ collisions at $sqrts$ = 13 TeV that decay into displaced hadronic jets in the ATLAS calorimeter</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-opc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-opc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived particles in final states with displaced dimuon vertices in $pp$ collisions at $sqrts=$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jbr/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jbr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived particles produced in $pp$ collisions at $sqrts=13$  TeV that decay into displaced hadronic jets in the ATLAS muon spectrometer</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-aqj/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-aqj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for low-mass resonances decaying into two jets and produced in association with a photon using $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-zxd/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-zxd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for single production of vector-like quarks decaying into $Wb$ in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ifs/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ifs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in final states with hadronically decaying $τ$-leptons, jets, and missing transverse momentum using $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-mna/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-mna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the electroweak diboson production in association with a high-mass dijet system in semileptonic final states in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2019-xxo/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2019-xxo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for top-quark decays $t to Hq$ with 36 fb$^-1$ of $pp$ collision data at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-oqm/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-oqm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for vector-boson resonances decaying to a top quark and bottom quark in the lepton plus jets final state in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jux/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for scalar leptoquarks and differential cross-section measurements in dilepton-dijet events in proton-proton collisions at a centre-of-mass energy of $sqrts$ = 13 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2019-jcc/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2019-jcc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study of the hard double-parton scattering contribution to inclusive four-lepton production in $pp$ collisions at $sqrt s=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-tiq/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-tiq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study of the rare decays of $B^0_s$ and $B^0$ mesons into muon pairs using data collected during 2015 and 2016 with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-mst/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-mst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>$ZZ to ell^&#43;ell^-ell^prime &#43;ell^prime -$ cross-section measurements and search for anomalous triple gauge couplings in 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-rwm/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-rwm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for lepton-flavor-violating decays of the $Z$ boson into a $τ$-lepton and a light lepton with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-cxn/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-cxn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for pair-produced resonances in four-jet final states at $sqrts =$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-nmi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-nmi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for resonances decaying into a Higgs boson and a new particle $X$ in the $XH to qqbb$ final state with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-ecz/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-ecz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular analysis of $B^0_d i̊ghtarrow K^*μ^&#43;μ^-$ decays in $pp$ collisions at $sqrts= 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-krd/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-krd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of inclusive and differential $mathrmtøverlinemathrmt$ charge asymmetry measurements using ATLAS and CMS data at $sqrts =$ 7 and 8 TeV</title>
+      <link>http://othmanerifki.github.io/publication/sirunyan-2017-lvd/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/sirunyan-2017-lvd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of searches for heavy resonances decaying into bosonic and leptonic final states using 36  fb$^-1$ of proton-proton collision data at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-bun/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-bun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of the searches for pair-produced vector-like partners of the third-generation quarks at $sqrts =$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-pii/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-pii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparison between simulated and observed LHC beam backgrounds in the ATLAS experiment at $E_textrm beam$ = 4 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zze/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zze/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constraints on off-shell Higgs boson production and the Higgs boson total width in $ZZto4ell$ and $ZZto2ell2ν$ final states with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-puo/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-puo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Direct top-quark decay width measurement in the $tbart$ lepton&#43;jets channel at $sqrts$=8 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-uqq/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-uqq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for the associated production of the Higgs boson and a top quark pair with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-jvq/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-jvq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $τ $ polarisation in $Z/γ ^*i̊ghtarrow τ τ $ decays in proton–proton collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-lhv/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-lhv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of colour flow using jet-pull observables in $tbart$ events with the ATLAS experiment at $sqrts = 13,hbox TeV$</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ibj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ibj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of differential cross sections and $W^&#43;/W^-$ cross-section ratios for $W$ boson production in association with jets at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-soa/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-soa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of differential cross sections of isolated-photon plus heavy-flavour jet production in pp collisions at $sqrts=8$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-skj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-skj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of differential cross-sections of a single top quark produced in association with a $W$ boson at $sqrts=13$ TeV with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-qyi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-qyi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of inclusive jet and dijet cross-sections in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-wsi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-wsi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet fragmentation in 5.02 TeV proton-lead and proton-proton collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-tke/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-tke/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet fragmentation in Pb&#43;Pb and $pp$ collisions at $sqrts_NN = 5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-hpb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-hpb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of long-range multiparticle azimuthal correlations with the subevent cumulant method in $pp$ and $p &#43; Pb$ collisions with the ATLAS detector at the CERN Large Hadron Collider</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-blb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-blb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of longitudinal flow decorrelations in Pb&#43;Pb collisions at $sqrts_text NN=2.76$ and 5.02 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-tql/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-tql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of quarkonium production in proton–lead and proton–proton collisions at $5.02~ mathrm TeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-cif/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-cif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $ Zγ to ν øverlineνγ $ production cross section in pp collisions at $ sqrts=13 $ TeV with the ATLAS detector and limits on anomalous triple gauge-boson couplings</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jst/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jst/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $W$-boson mass in pp collisions at $sqrts=7$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-svj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-svj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the azimuthal anisotropy of charged particles produced in $sqrts__text NN$ = 5.02 TeV Pb&#43;Pb collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ves/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ves/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the cross section for isolated-photon plus jet production in $pp$ collisions at $sqrt s=13$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-kff/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-kff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the cross-section for producing a W boson in association with a single top quark in pp collisions at $ sqrts=13 $ TeV with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-lpj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-lpj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the exclusive $γ γ i̊ghtarrow μ^&#43; μ^-$ process in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-oiq/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-oiq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the Higgs boson coupling properties in the $Hi̊ghtarrow ZZ^* g̊htarrow 4ell$ decay channel at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-vzb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-vzb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the Higgs boson mass in the $Hi̊ghtarrow ZZ^* g̊htarrow 4ell$ and $H rh̊tarrow γγ$ channels with $sqrts=13$ TeV $pp$ collisions using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-wps/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-wps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive and fiducial $tbart$ production cross-sections in the lepton&#43;jets channel in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-cgs/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-cgs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the production cross section of three isolated photons in $pp$ collisions at $sqrts$ = 8 TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-lxm/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-lxm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the Soft-Drop Jet Mass in pp Collisions at $sqrts = 13$  TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-qwh/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-qwh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the suppression and azimuthal anisotropy of muons from heavy-flavor decays in Pb&#43;Pb collisions at $sqrts_mathrmNN = 2.76$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-bdg/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-bdg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of b-jet tagging efficiency with the ATLAS detector using $ tøverlinet $ events at $ sqrts=13 $ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-xwy/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-xwy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of differential cross sections of top quark pair production in association with jets in $pp$ collisions at $sqrts=13$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-uzf/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-uzf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of $H i̊ghtarrow bbarb$ decays and $VH$ production with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zhk/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zhk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of centrality-dependent acoplanarity for muon pairs produced via two-photon scattering in Pb&#43;Pb collisions at $sqrts_mathrmNN=5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-eph/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-eph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance of missing transverse momentum reconstruction with the ATLAS detector using proton-proton collisions at $sqrts$ = 13 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-tkc/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-tkc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probing the quantum interference between singly and doubly resonant top-quark production in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-bir/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-bir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prompt and non-prompt $J/ψ $ elliptic flow in Pb&#43;Pb collisions at $sqrts__text NN = 5.02$ Tev with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ttm/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ttm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for $W&#39; i̊ghtarrow tb$ decays in the hadronic final state using pp collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-juj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-juj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for $WW/WZ$ resonance production in $ell ν qq$ final states in $pp$ collisions at $sqrts =$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-fgj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-fgj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a heavy Higgs boson decaying into a $Z$ boson and another heavy Higgs boson in the $ellell bb$ final state in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-eoy/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-eoy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a new heavy gauge boson resonance decaying into a lepton and missing transverse momentum in 36 fb$^-1$ of $pp$ collisions at $sqrts =$ 13 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-efa/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-efa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a Structure in the $B^0_s π^±$ Invariant Mass Spectrum with the ATLAS Experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-hgx/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-hgx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for additional heavy neutral Higgs and gauge bosons in the ditau final state produced in 36 fb$^−1$ of pp collisions at $ sqrts=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-sjh/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-sjh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for B-L R -parity-violating top squarks in $sqrt s$ =13  TeV pp collisions with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-opj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-opj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for charged Higgs bosons decaying into top and bottom quarks at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-cwk/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-cwk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for charged Higgs bosons decaying via $H^± to τ^±ν_τ$ in the $τ$&#43;jets and $τ$&#43;lepton final states with 36 fb$^-1$ of $pp$ collision data recorded at $sqrts = 13$ TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-gjj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-gjj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for chargino-neutralino production using recursive jigsaw reconstruction in final states with two or three charged leptons in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-sua/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-sua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter and other new phenomena in events with an energetic jet and large missing transverse momentum using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-phn/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-phn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter produced in association with bottom or top quarks in $sqrts=13$ TeV pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-rzf/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-rzf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for diboson resonances with boson-tagged jets in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-eta/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-eta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for doubly charged Higgs boson production in multi-lepton final states with the ATLAS detector using proton–proton collisions at $sqrts=13,text TeV$</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-qph/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-qph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for electroweak production of supersymmetric states in scenarios with compressed mass spectra at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-leg/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-leg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for flavor-changing neutral currents in top quark decays $tto Hc$ and $t to Hu$ in multilepton final states in proton-proton collisions at $sqrts= 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-pob/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-pob/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy particles decaying into top-quark pairs using lepton-plus-jets events in proton–proton collisions at $sqrts = 13$   $text TeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-mjh/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-mjh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy resonances decaying into $WW$ in the $eνμν$ final state in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-gsl/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-gsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy resonances decaying into a $W$ or $Z$ boson and a Higgs boson in final states with leptons and $b$-jets in 36 fb$^-1$ of $sqrt s = 13$ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-cxo/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-cxo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy resonances decaying to a photon and a hadronically decaying $Z/W/H$ boson in $pp$ collisions at $sqrts=13$ $mathrmTeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-fgi/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-fgi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson decays into pairs of light (pseudo)scalar particles in the $γγ jj$ final state in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-gmx/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-gmx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs boson pair production in the $γγ WW^*$ channel using $pp$ collision data recorded at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ewm/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ewm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs bosons produced via vector-boson fusion and decaying into bottom quark pairs in $sqrts = 13$ $mathrmTeV$ $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-gay/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-gay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for High-Mass Resonances Decaying to $τν$ in $pp$ Collisions at $sqrts$ = 13 TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-vgh/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-vgh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for lepton-flavor violation in different-flavor, high-mass final states in $pp$ collisions at $sqrt s=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-jff/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-jff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived charginos based on a disappearing-track signature in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-mpt/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-mpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for long-lived, massive particles in events with displaced vertices and missing transverse momentum in $sqrts$ = 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-iio/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-iio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in events with same-charge leptons and $b$-jets in $pp$ collisions at $sqrts= 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-xpj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-xpj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in high-mass final states with a photon and a jet from $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-nak/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-nak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena using the invariant mass distribution of same-flavour opposite-sign dilepton pairs in events with missing transverse momentum in $sqrts=13$   $text Tetext V$ pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-ujj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-ujj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of heavy vector-like quarks decaying into high-$p_T$ $W$ bosons and top quarks in the lepton-plus-jets final state in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-uek/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-uek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of up-type vector-like quarks and for four-top-quark events in final states with multiple $b$-jets with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-xuw/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-xuw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair- and single-production of vector-like quarks in final states with at least one $Z$ boson decaying into a pair of electrons or muons in $pp$ collision data collected with the ATLAS detector at $sqrts = 13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-saj/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-saj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for photonic signatures of gauge-mediated supersymmetry in 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-doq/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-doq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for R-parity-violating supersymmetric particles in multi-jet final states produced in $p$-$p$ collisions at $sqrts =13$ TeV using the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-lpl/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-lpl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for resonances in the mass distribution of jet pairs with one or two jets identified as $b$-jets in proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-tqo/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-tqo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for resonant and non-resonant Higgs boson pair production in the $bbarbτ^&#43;τ^-$ decay channel in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-sfw/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-sfw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in final states with jets and missing transverse momentum using 36 fb$^-1$ of $sqrts$=13 TeV $pp$ collision data with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-vwy/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-vwy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in events with four or more leptons in $sqrts=13$ TeV $pp$ collisions with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zeb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zeb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in final states with charm jets and missing transverse momentum in 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-zjf/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-zjf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in final states with missing transverse momentum and multiple $b$-jets in proton-proton collisions at $ sqrts=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-hrg/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-hrg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Decay of the Higgs Boson to Charm Quarks with the ATLAS Experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-fhh/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-fhh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the direct production of charginos and neutralinos  in final states with tau leptons in $sqrts = $ 13 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-nhr/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-nhr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the standard model Higgs boson produced in association with top quarks and decaying into a $bbarb$ pair in $pp$ collisions at $sqrts$ = 13  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-rss/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-rss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for top squarks decaying to tau sleptons in $pp$ collisions at  $sqrts= 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-kya/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-kya/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for top-squark pair production in final states with one lepton, jets, and missing transverse momentum using 36 fb$^−1$ of $ sqrts=13 $ TeV pp collision data with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-aeu/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-aeu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for exclusive Higgs and $Z$ boson decays into $J/ψγ$, $ψ(2S)γ$, and $Υ(nS)γ$ at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2018-txb/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2018-txb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for heavy $ZZ$ and $ZW$ resonances in the $ellell qq$ and $νν qq$ final states in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-itg/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-itg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A measurement of the calorimeter response to single hadrons and determination of the jet energy scale uncertainty using LHC Run-1 $pp$-collision data with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-hwh/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-hwh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analysis of the $Wtb$ vertex from the measurement of triple-differential angular decay rates of single top quarks produced in the $t$-channel at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-yqf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-yqf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Determination of the strong coupling constant $α _mathrm s$ from transverse energy–energy correlations in multijet events at $sqrts = 8~ hbox TeV$ using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-fml/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-fml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electron efficiency measurements with the ATLAS detector using 2012 LHC proton–proton collision data</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-vfy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-vfy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for light-by-light scattering in heavy-ion collisions with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-bwk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-bwk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Femtoscopy with identified charged pions in proton-lead collisions at $sqrts_mathrmNN=5.02$ TeV with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-xpw/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-xpw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fiducial, total and differential cross-section measurements of $t$-channel single top-quark production in $pp$ collisions at 8 TeV using data collected by the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-pdi/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-pdi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>High-$E_m̊ T$ isolated-photon plus jets production in $pp$ collisions at $sqrt s=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-sdm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-sdm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identification and rejection of pile-up jets at high pseudorapidity with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-pou/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-pou/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jet reconstruction and performance using particle flow with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-aca/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-aca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W$ boson angular distributions in events with high transverse momentum jets at $sqrts=$ 8 TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ylh/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ylh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^±W^±$ vector-boson scattering and limits on anomalous quartic gauge couplings with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ffv/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ffv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $WW/WZ to ell ν q q^prime$ production with the hadronically decaying boson reconstructed as one or two jets in $pp$ collisions at $sqrts=8$ TeV with ATLAS, and constraints on anomalous gauge couplings</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-cgf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-cgf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of charged-particle distributions sensitive to the underlying event in $ sqrts=13 $ TeV proton-proton collisions with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-fwp/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-fwp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of detector-corrected observables sensitive to the anomalous production of events with jets and large missing transverse momentum in $pp$ collisions at $mathbf sqrts=13$  TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-buf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-buf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of forward-backward multiplicity correlations in lead-lead, proton-lead, and proton-proton collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-jnr/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-jnr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of inclusive and differential cross sections in the $H i̊ghtarrow ZZ^* g̊htarrow 4ell$ decay channel in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-oem/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-oem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet $p_mathrmT$ correlations in Pb&#43;Pb and $pp$ collisions at $sqrts_mathrmNN=$ 2.76 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-eww/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-eww/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet activity produced in top-quark events with an electron, a muon and two $b$-tagged jets in the final state in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-xii/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-xii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet fragmentation in Pb&#43;Pb and $pp$ collisions at $sqrts_mathrmNN = 2.76$ TeV with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-bzv/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-bzv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of multi-particle azimuthal correlations in $pp$, $p&#43;$Pb and low-multiplicity Pb$&#43;$Pb collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-acw/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-acw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $ tøverlinetγ $ production cross section in proton-proton collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-era/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-era/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $k_mathrmt$ splitting scales in $Z to ellell$ events in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-hox/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-hox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $tbart$ production cross section in the $τ$ &#43; jets final state in $pp$ collisions at $sqrts=8$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-rgh/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-rgh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $tbartZ$ and $tbartW$ production cross sections in multilepton final states using 3.2 fb$^-1$ of $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-xve/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-xve/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $W^&#43;W^-$ production cross section in $pp$ collisions at a centre-of-mass energy of $sqrts$ = 13 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-qkn/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-qkn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $ZZ$ production cross section in proton-proton collisions at $sqrt s =$ 8 TeV using the $ZZtoell^-ell^&#43;ell^prime -ell^prime &#43;$ and $ZZtoell^-ell^&#43;νbarν$ channels with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-urj/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-urj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the cross section for inclusive isolated-photon production in $pp$ collisions at $sqrt s=13$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-cbm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-cbm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive cross-sections of single top-quark and top-antiquark $t$-channel production in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ymp/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ymp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive jet cross-sections in proton-proton collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-dvo/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-dvo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the prompt J/ $ψ $ pair production cross-section in pp collisions at $sqrts = 8$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-fzt/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-fzt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the W boson polarisation in $tbart$ events from pp collisions at $sqrts$ = 8 TeV in the lepton &#43; jets channel with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-hsq/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-hsq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of $ψ(2S)$ and $X(3872) to J/ψπ^&#43;π^-$ production in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-vzw/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-vzw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of charge and CP asymmetries in $b$-hadron decays using top-quark events collected by the ATLAS detector in $pp$ collisions at $sqrts=8$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-bmk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-bmk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of electroweak $Wjj$ production and constraints on anomalous gauge couplings with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-fye/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-fye/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of integrated and differential cross sections for isolated photon pair production in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-vol/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-vol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of long-range azimuthal anisotropies and associated Fourier coefficients for $pp$ collisions at $sqrts=5.02$ and $13$ TeV and $p$&#43;Pb collisions at $sqrts_mathrmNN=5.02$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-yar/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-yar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of the production cross section of a $Z$ boson in association with jets in pp collisions at $sqrts = 13$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-hbk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-hbk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top quark spin observables in $ tøverlinet $ events using dilepton final states in $ sqrts=8 $ TeV pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-bit/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-bit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top-quark pair differential cross-sections in the $eμ$ channel in $pp$ collisions at $sqrts = 13$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-syx/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-syx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top-quark pair to $Z$-boson cross-section ratios at $sqrt s = 13, 8, 7$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-zpd/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-zpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance of the ATLAS Transition Radiation Tracker in Run 1 of the LHC: tracker properties</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-odu/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-odu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance of the ATLAS Trigger System in 2015</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-leb/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-leb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Precision measurement and interpretation of inclusive $W^&#43;$ , $W^-$ and $Z/γ ^*$ production cross sections with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-btc/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-btc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probing the W tb vertex structure in t-channel single-top-quark production and decay in pp collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-aqp/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-aqp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of primary vertices at the ATLAS experiment in Run 1 proton–proton collisions at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-rmg/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-rmg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a scalar partner of the top quark in the jets plus missing transverse momentum final state at $sqrts$=13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-ayj/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-ayj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for anomalous electroweak production of $WW/WZ$ in association with a high-mass dijet system in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-uuk/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-uuk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter at $sqrts=13$ TeV in final states containing an energetic photon and large missing transverse momentum with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-dor/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-dor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter in association with a Higgs boson decaying to $b$-quarks in $pp$ collisions at $sqrt s=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-obm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-obm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter in association with a Higgs boson decaying to two photons at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-uak/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-uak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Dark Matter Produced in Association with a Higgs Boson Decaying to $bbar b$ using 36 fb$^-1$ of $pp$ collisions at $sqrt s=13$ TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-yqz/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-yqz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for direct top squark pair production in events with a Higgs or $Z$ boson, and missing transverse momentum in $sqrts=13$ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-ejf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-ejf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Heavy Higgs Bosons $A/H$ Decaying to a Top Quark Pair in $pp$ Collisions at $sqrts=8text text mathrmTeV$ with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-hnm/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-hnm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy resonances decaying to a $W$ or $Z$ boson and a Higgs boson in the $qbarq^(prime)bbarb$ final state in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-ahz/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-ahz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy resonances decaying to a $Z$ boson and a photon in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-trl/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-trl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for lepton-flavour-violating decays of the Higgs and $Z$ bosons with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-blu/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-blu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new high-mass phenomena in the dilepton final state using 36 fb$^−1$ of proton-proton collision data at $ sqrts=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-buh/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-buh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in a lepton plus high jet multiplicity final state with the ATLAS experiment using $ sqrts=13 $ TeV proton-proton collision data</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-faq/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-faq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in dijet events using 37 fb$^-1$ of $pp$ collision data collected at $sqrts=$13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-yvp/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-yvp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in events containing a same-flavour opposite-sign dilepton pair, jets, and large missing transverse momentum in $sqrts=$ 13 $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ejt/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ejt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in high-mass diphoton final states using 37 fb$^-1$ of proton--proton collisions collected at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-yyg/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-yyg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena with large jet multiplicities and missing transverse momentum using large-radius jets and flavour-tagging at ATLAS in 13 TeV $pp$ collisions</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-hdf/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-hdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new resonances decaying to a $W$ or $Z$ boson and a Higgs boson in the $ell^&#43; ell^- bbar b$, $ell ν bbar b$, and $νbarν bbar b$ channels with $pp$ collisions at $sqrt s = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-lwx/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-lwx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of vector-like top quarks in events with one lepton, jets, and missing transverse momentum in $ sqrts=13 $ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-qpr/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-qpr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in events with an isolated lepton, jets, and missing transverse momentum at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-bac/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-bac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry at 13 TeV in final states with two same-sign leptons or at least three leptons and jets using pp collisions recorded with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/rifki-2016-rup/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/rifki-2016-rup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in events with $b$-tagged jets and missing transverse momentum in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-wqg/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-wqg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in final states with two same sign leptons or three leptons and jets with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/rifki-2017-qgx/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/rifki-2017-qgx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in final states with two same-sign or three leptons and jets using 36 fb$^-1$ of $sqrts=13$ TeV $pp$ collision data with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-dmy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-dmy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the dimuon decay of the Higgs boson in $pp$ collisions at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-ojs/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-ojs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for top quark decays $ti̊ghtarrow qH$, with $Htoγγ$, in $sqrts=13$ TeV $pp$ collisions using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-mfd/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-mfd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for triboson $W^± W^± W^∓ $ production in $pp$ collisions at $sqrts=8$   $text TeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ftt/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ftt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Studies of $Zγ$ production in association with a high-mass dijet system in $pp$ collisions at $sqrts=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-pds/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-pds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study of the material of the ATLAS inner detector for Run 2 of the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-pjd/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-pjd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Top-quark mass measurement in the all-hadronic $ tøverlinet $ decay channel at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2017-mae/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2017-mae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Topological cell clustering in the ATLAS calorimeters and its performance in LHC Run 1</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-upy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-upy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A measurement of material in the ATLAS tracker using secondary hadronic interactions in 7 TeV pp collisions</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-poq/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-poq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A new method to distinguish hadronically decaying boosted $Z$ bosons from $W$ bosons using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-eax/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-eax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for an excited muon decaying to a muon and two jets in $pp$ collisions at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-giq/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-giq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for prompt lepton-jets in $pp$ collisions at $sqrts=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-sms/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-sms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A search for top squarks with R-parity-violating decays to all-hadronic final states with the ATLAS detector in $sqrts$ = 8 TeV proton-proton collisions</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-kww/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-kww/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ATLAS searches for squarks and gluinos using leptons or multiple b-jets with 3.2 $fb^-1$ of pp collisions at 13 TeV</title>
+      <link>http://othmanerifki.github.io/publication/rifki-2016-tos/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/rifki-2016-tos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Beam-induced and cosmic-ray backgrounds observed in the ATLAS detector during the LHC 2012 proton-proton running period</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-tzx/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-tzx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charged-particle distributions at low transverse momentum in $sqrts = 13$  TeV $pp$ interactions measured with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-itf/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-itf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charged-particle distributions in $pp$ interactions at $sqrts=$ 8 TeV measured with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-xww/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-xww/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charged-particle distributions in $sqrts$ = 13 TeV pp interactions measured with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-mok/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-mok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combination of searches for $WW$, $WZ$, and $ZZ$ resonances in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-ipg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-ipg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constraints on non-Standard Model Higgs boson interactions in an effective Lagrangian using differential cross sections measured in the $H i̊ghtarrow γγ$ decay channel at $sqrts = 8$TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-tna/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-tna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dark matter interpretations of ATLAS searches for the electroweak production of supersymmetric particles in $ sqrts=8 $ TeV proton-proton collisions</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-wna/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-wna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dijet production in $sqrts=$ 7 TeV $pp$ collisions with large rapidity gaps at the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-xis/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-xis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evidence for single top-quark production in the $s$-channel in proton-proton collisions at $sqrts=$8 TeV with the ATLAS detector using the Matrix Element Method</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-upn/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-upn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identification of boosted, hadronically decaying W bosons and comparisons with ATLAS data taken at $sqrts = 8$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-rpa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-rpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Identification of high transverse momentum top quarks in $pp$ collisions at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-pux/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-pux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Luminosity determination in pp collisions at $sqrts$ = 8 TeV using the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-hhf/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-hhf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^&#43;W^-$ production in association with one jet in proton--proton collisions at $sqrts =8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-mrt/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-mrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of $W^±$ and $Z$-boson production cross sections in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-naf/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-naf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of event-shape observables in $Z i̊ghtarrow ell ^&#43; ell ^-$ events in $pp$ collisions at $sqrts=$ 7 TeV with the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-ria/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-ria/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of exclusive $γγi̊ghtarrow W^&#43;W^-$ production and search for exclusive Higgs boson production in $pp$ collisions at $sqrts = 8$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-dkv/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-dkv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of fiducial differential cross sections of gluon-fusion production of Higgs bosons decaying to WW$^∗$→eνμν with the ATLAS detector at $ sqrts=8 $ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-lvc/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-lvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet activity in top quark events using the $eμ$ final state with two $b$-tagged jets in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-omn/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-omn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of jet charge in dijet events from $sqrts$=8  TeV pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-cua/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-cua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $bøverlineb$ dijet cross section in pp collisions at $sqrts = 7$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-jed/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-jed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $tbart$ production cross-section using $eμ$ events with b-tagged jets in pp collisions at $sqrts$=13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-pbd/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-pbd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $W^±Z$ boson pair-production cross section in $pp$ collisions at $sqrts=13$ TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-yus/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-yus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $ZZ$ Production Cross Section in $pp$ Collisions at $sqrts$ = 13 TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-zqe/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-zqe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the angular coefficients in $Z$-boson events using electron and muon pairs from data taken at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-izn/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-izn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the charge asymmetry in highly boosted top-quark pair production in $sqrts =$ 8 TeV $pp$ collision data collected by the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-lgx/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-lgx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the charge asymmetry in top-quark pair production in the lepton-plus-jets final state in pp collision data at $sqrts=8,mathrm TeV$ with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-noh/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-noh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the charged-particle multiplicity inside jets from $sqrts=8$ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-oit/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-oit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the correlations between the polar angles of leptons from top quark decays in the helicity basis at $sqrts=7$TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-bfa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-bfa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the dependence of transverse energy production at large pseudorapidity on the hard-scattering kinematics of proton-proton collisions at $sqrts = 2.76$ TeV with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-ziq/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-ziq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the differential cross-section of highly boosted top quarks as a function of their transverse momentum in $sqrts$ = 8 TeV proton-proton collisions using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-hna/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-hna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the differential cross-sections of prompt and non-prompt production of $J/ψ $ and $ψ (2mathrm S)$ in $pp$ collisions at $sqrts = 7$ and 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-duc/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-duc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the double-differential high-mass Drell-Yan cross section in pp collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-zzw/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-zzw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the inclusive isolated prompt photon cross section in pp collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-xcr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-xcr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the photon identification efficiencies with the ATLAS detector using LHC Run-1 data</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-yuq/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-yuq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the production cross-section of a single top quark in association with a $W$ boson at 8 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-eto/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-eto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the relative width difference of the $B^0$-$bar B^0$ system with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-bro/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-bro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the top quark mass in the $tbartto$ dilepton channel from $sqrts=8$ TeV ATLAS data</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-igd/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-igd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the total cross section from elastic scattering in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ijx/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ijx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the transverse momentum and $ϕ ^*_η $ distributions of Drell–Yan lepton pairs in proton–proton collisions at $sqrts=8$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-auj/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-auj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of top quark pair differential cross-sections in the dilepton channel in $pp$ collisions at $sqrts$ = 7 and 8 TeV with ATLAS</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-iot/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of total and differential $W^&#43;W^-$ production cross sections in proton-proton collisions at $sqrts=$ 8 TeV with the ATLAS detector and limits on anomalous triple-gauge-boson couplings</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-wpd/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-wpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of $W^± Z$ production cross sections in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector and limits on anomalous gauge boson self-couplings</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-ett/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-ett/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of $Zγ$ and $Zγγ$ production in $pp$ collisions at $sqrts=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-sau/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-sau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of fiducial cross-sections for $tbart$ production with one or two additional b-jets in pp collisions at $sqrts$ =8 TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-yja/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-yja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of four-lepton production in $pp$ collisions at $sqrts=$ 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-rka/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-rka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of the charge asymmetry in top-quark pair production in the dilepton final state at $sqrts=8$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-ove/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-ove/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of the Higgs boson production and decay rates and constraints on its couplings from a combined ATLAS and CMS analysis of the LHC pp collision data at $ sqrts=7 $ and 8 TeV</title>
+      <link>http://othmanerifki.github.io/publication/khachatryan-2016-vau/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/khachatryan-2016-vau/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurements of top-quark pair differential cross-sections in the lepton&#43;jets channel in $pp$ collisions at $sqrts=8$ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-mbv/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-mbv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Muon reconstruction performance of the ATLAS detector in proton–proton collision data at $sqrts$ =13 TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-jkr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-jkr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Observation of Long-Range Elliptic Azimuthal Anisotropies in $sqrts=$13 and 2.76 TeV $pp$ Collisions with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-gqa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-gqa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probing lepton flavour violation via neutrinoless $τłongrightarrow 3μ$  decays with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-wce/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-wce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reconstruction of hadronic decay products of tau leptons with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-unr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-unr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for a high-mass Higgs boson decaying to a $W$ boson pair in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-agg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-agg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for anomalous couplings in the $Wtb$ vertex from the measurement of double differential angular decay rates of single top quarks produced in the $t$-channel with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-yem/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-yem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for bottom squark pair production in proton–proton collisions at $sqrts=13$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-nwl/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-nwl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for charged Higgs bosons in the $H^± i̊ghtarrow tb$ decay channel in $pp$ collisions at $sqrts=8 $ TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-typ/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-typ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for charged Higgs bosons produced in association with a top quark and decaying via $H^± i̊ghtarrow τν$ using $pp$ collision data recorded at $sqrts = 13$ TeV by the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-dig/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-dig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter produced in association with a hadronically decaying vector boson in $pp$ collisions at $sqrts =$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-qgg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-qgg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for dark matter produced in association with a Higgs boson decaying to two bottom quarks in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-dva/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-dva/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for gluinos in events with an isolated lepton, jets and missing transverse momentum at $sqrts$ = 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-qqk/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-qqk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for heavy long-lived charged $R$-hadrons with the ATLAS detector in 3.2 fb$^-1$ of proton--proton collision data at $sqrts = 13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-uth/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-uth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Higgs and $Z$ Boson Decays to $ϕ,γ$ with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-rug/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-rug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for high-mass new phenomena in the dilepton final state using proton-proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-cth/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-cth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for invisible decays of a Higgs boson using vector-boson fusion in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-txa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-txa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for magnetic monopoles and stable particles with high electric charges in 8 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-kta/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-kta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for metastable heavy charged particles with large ionization energy loss in pp collisions at $sqrts = 13$ TeV using the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-dgf/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-dgf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for Minimal Supersymmetric Standard Model Higgs bosons $H/A$ and for a $Z^prime$ boson in the $τ τ$ final state produced in $pp$ collisions at $sqrts=13$ TeV with the ATLAS Detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-cre/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-cre/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in different-flavour high-mass dilepton final states in pp collisions at $sqrts=13$  Tev with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-hmk/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-hmk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in dijet mass and angular distributions from $pp$ collisions at $sqrts=$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/atlas-2015-nsi/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/atlas-2015-nsi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in events with a photon and missing transverse momentum in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-uro/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-uro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in events with at least three photons collected in $pp$ collisions at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-bua/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-bua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in final states with an energetic jet and large missing transverse momentum in $pp$ collisions at $sqrts=13$  TeV using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-tnv/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-tnv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena in final states with large jet multiplicities and missing transverse momentum with ATLAS using $sqrts =$ 13 TeV proton-proton collisions</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-jxj/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-jxj/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new phenomena with photon&#43;jet events in proton-proton collisions at $ sqrts=13 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-ywd/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-ywd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for new resonances in events with one lepton and missing transverse momentum in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-zkn/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-zkn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of gluinos decaying via stop and sbottom in events with $b$-jets and large missing transverse momentum in $pp$ collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-eki/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-eki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of Higgs bosons in the $bbarbbbarb$ final state using proton--proton collisions at $sqrts = 13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-xco/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-xco/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for resonances in diphoton events at $sqrts$=13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-tru/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-tru/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for resonances in the mass distribution of jet pairs with one or two jets identified as $b$-jets in proton--proton collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-nbq/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-nbq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for scalar leptoquarks in pp collisions at $sqrts$ = 13 TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-qeg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-qeg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for single production of a vector-like quark via a heavy gluon in the $4b$ final state with the ATLAS detector in $pp$ collisions at $sqrts = 8$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-shx/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-shx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for single production of vector-like quarks decaying into Wb in pp collisions at $sqrts = 8$  TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-qpo/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-qpo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for single top-quark production via flavour-changing neutral currents at 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-gea/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-gea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in events with hadronically decaying tau leptons, jets and missing transverse momentum in proton–proton collisions at $sqrts=13$  TeV recorded with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-zpr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-zpr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for squarks and gluinos in final states with jets and missing transverse momentum at $sqrts =$ 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-zdn/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-zdn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for strong gravity in multijet final states produced in pp collisions at $sqrts =$ 13 TeV using the ATLAS detector at the LHC</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-mzg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-mzg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry at $sqrts=13$  TeV in final states with jets and two same-sign leptons or three leptons with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-tuk/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-tuk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for supersymmetry in a final state containing two photons and missing transverse momentum in $sqrts$ = 13 TeV $pp$ collisions at the LHC using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/atlas-collaboration-2016-wlb/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/atlas-collaboration-2016-wlb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for TeV-scale gravity signatures in high-mass final states with leptons and jets with the ATLAS detector at $sqrts=13$ TeV</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ewt/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ewt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the electroweak production of supersymmetric particles in $sqrts$=8 TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-eda/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Higgs boson produced in association with a $W$ boson and decaying to four $b$-quarks via two spin-zero particles in $pp$ collisions at 13 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-oyb/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-oyb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the production of single vector-like and excited quarks in the $Wt$ final state in $pp$ collisions at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-voa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-voa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Standard Model Higgs boson decaying into $ bøverlineb $ produced in association with top quarks decaying hadronically in pp collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-zqi/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-zqi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Standard Model Higgs boson produced by vector-boson fusion and decaying to bottom quarks in $ sqrts=8 $ TeV pp collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-cns/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-cns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for the Standard Model Higgs boson produced in association with a vector boson and decaying into a tau pair in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-zrx/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-zrx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for top squarks in final states with one isolated lepton, jets, and missing transverse momentum in $sqrts=13$ TeV $pp$ collisions with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-lwz/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-lwz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for heavy diboson resonances in $pp$ collisions at $sqrts=13$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-okv/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-okv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for scalar leptoquarks in pp collisions at $sqrts$ = 8 TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-caa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-caa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study of hard double-parton scattering in four-jet events in pp collisions at $ sqrts=7 $ TeV with the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-dea/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-dea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study of the rare decays of $B^0_s$ and $B^0$ into muon pairs from data collected during the LHC Run 1 with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aaboud-2016-ire/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aaboud-2016-ire/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test of CP Invariance in vector-boson fusion production of the Higgs boson using the Optimal Observable method in the ditau decay channel with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-nal/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-nal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The ATLAS Dataflow system in Run-2: Design and Performance</title>
+      <link>http://othmanerifki.github.io/publication/rifki-2016-ufa/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/rifki-2016-ufa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The performance of the jet trigger for the ATLAS detector during 2011 data taking</title>
+      <link>http://othmanerifki.github.io/publication/atlas-2016-qun/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/atlas-2016-qun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Transverse momentum, rapidity, and centrality dependence of inclusive charged-particle production in $sqrts_NN=5.02$ TeV $p$ &#43; Pb collisions measured by the ATLAS experiment</title>
+      <link>http://othmanerifki.github.io/publication/aad-2016-zif/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2016-zif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constraints on new phenomena via Higgs boson couplings and invisible decays with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-pla/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-pla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of four-jet differential cross sections in $sqrts=8$ TeV proton-proton collisions using the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-nda/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-nda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of the $ tøverlinetW $ and $ tøverlinetZ $ production cross sections in pp collisions at $ sqrts=8 $ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-eua/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-eua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Measurement of transverse energy-energy correlations in multi-jet events in $pp$ collisions at $sqrts = 7$ TeV using the ATLAS detector and determination of the strong coupling constant $α_mathrms(m_Z)$</title>
+      <link>http://othmanerifki.github.io/publication/atlas-2015-yaa/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/atlas-2015-yaa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for flavour-changing neutral current top quark decays $tto Hq$ in $pp$ collisions at $sqrts=8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-pja/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-pja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for lepton-flavour-violating H → μτ decays of the Higgs boson with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-gha/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-gha/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search for pair production of a new heavy quark that decays into a $W$ boson and a light quark in $pp$ collisions at $sqrts = 8$ TeV with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-tba/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-tba/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Searches for Higgs boson pair production in the $hhto bbττ, γγ WW^*, γγ bb, bbbb$ channels with the ATLAS detector</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-xja/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-xja/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Summary of the ATLAS experiment’s sensitivity to supersymmetry after LHC Run 1 — interpreted in the phenomenological MSSM</title>
+      <link>http://othmanerifki.github.io/publication/aad-2015-baa/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>http://othmanerifki.github.io/publication/aad-2015-baa/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

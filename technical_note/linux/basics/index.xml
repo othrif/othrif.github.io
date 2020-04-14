@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Othmane Rifki</title>
+    <link>http://othmanerifki.github.io/technical_note/linux/basics/</link>
+      <atom:link href="http://othmanerifki.github.io/technical_note/linux/basics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Othmane Rifki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Othmane Rifki</title>
+      <link>http://othmanerifki.github.io/technical_note/linux/basics/</link>
+    </image>
+    
+    <item>
+      <title>Zip And Unzip Files Hello</title>
+      <link>http://othmanerifki.github.io/technical_note/linux/basics/zip_and_unzip_files/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othmanerifki.github.io/technical_note/linux/basics/zip_and_unzip_files/</guid>
+      <description>&lt;h2 id=&#34;make-files&#34;&gt;Make Files&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;echo &amp;#34;The number of soldiers in the regiment is 24.&amp;#34; &amp;gt; regiment.txt
+echo &amp;#34;The regiment has seen five battles.&amp;#34; &amp;gt; battles.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;zip-files&#34;&gt;Zip Files&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;-v&lt;/code&gt; argument is optional, prints an output with the details of the operation.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;gzip regiment.txt battles.txt -v&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;regiment.txt:	 -2.2% -- replaced with regiment.txt.gz
+battles.txt:	 -5.6% -- replaced with battles.txt.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;view-contents-of-directory&#34;&gt;View Contents Of Directory&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;ls -l&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;total 8
+-rw-rw-r-- 1 othrif othrif 68 Jul 31 13:15 battles.txt.gz
+-rw-rw-r-- 1 othrif othrif 78 Jul 31 13:15 regiment.txt.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;unzip-files&#34;&gt;Unzip Files&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;gunzip regiment.txt battles.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&#34;view-contents-of-directory-1&#34;&gt;View Contents Of Directory&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;ls -l&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;total 8
+-rw-rw-r-- 1 othrif othrif 36 Jul 31 13:17 battles.txt
+-rw-rw-r-- 1 othrif othrif 46 Jul 31 13:17 regiment.txt
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
