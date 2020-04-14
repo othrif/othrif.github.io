@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Othmane Rifki</title>
-    <link>http://othmanerifki.github.io/technical_note/linux/search/</link>
-      <atom:link href="http://othmanerifki.github.io/technical_note/linux/search/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://othrif.github.io/technical_note/linux/search/</link>
+      <atom:link href="http://othrif.github.io/technical_note/linux/search/index.xml" rel="self" type="application/rss+xml" />
     <description>Othmane Rifki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Othmane Rifki</title>
-      <link>http://othmanerifki.github.io/technical_note/linux/search/</link>
+      <link>http://othrif.github.io/technical_note/linux/search/</link>
     </image>
     
     <item>
       <title>Find Files</title>
-      <link>http://othmanerifki.github.io/technical_note/linux/search/find_files/</link>
+      <link>http://othrif.github.io/technical_note/linux/search/find_files/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/linux/search/find_files/</guid>
+      <guid>http://othrif.github.io/technical_note/linux/search/find_files/</guid>
       <description>&lt;h2 id=&#34;make-files-and-directories&#34;&gt;Make Files And Directories&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;touch sales.txt, marketing.txt, data_science.csv, product.html; mkdir sales marketing&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2 id=&#34;view-files-and-directories&#34;&gt;View Files And Directories&lt;/h2&gt;

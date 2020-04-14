@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Othmane Rifki</title>
-    <link>http://othmanerifki.github.io/technical_note/linux/basics/</link>
-      <atom:link href="http://othmanerifki.github.io/technical_note/linux/basics/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://othrif.github.io/technical_note/linux/basics/</link>
+      <atom:link href="http://othrif.github.io/technical_note/linux/basics/index.xml" rel="self" type="application/rss+xml" />
     <description>Othmane Rifki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Othmane Rifki</title>
-      <link>http://othmanerifki.github.io/technical_note/linux/basics/</link>
+      <link>http://othrif.github.io/technical_note/linux/basics/</link>
     </image>
     
     <item>
       <title>Zip And Unzip Files Hello</title>
-      <link>http://othmanerifki.github.io/technical_note/linux/basics/zip_and_unzip_files/</link>
+      <link>http://othrif.github.io/technical_note/linux/basics/zip_and_unzip_files/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/linux/basics/zip_and_unzip_files/</guid>
+      <guid>http://othrif.github.io/technical_note/linux/basics/zip_and_unzip_files/</guid>
       <description>&lt;h2 id=&#34;make-files&#34;&gt;Make Files&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;echo &amp;#34;The number of soldiers in the regiment is 24.&amp;#34; &amp;gt; regiment.txt
 echo &amp;#34;The regiment has seen five battles.&amp;#34; &amp;gt; battles.txt&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;

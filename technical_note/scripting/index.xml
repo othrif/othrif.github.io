@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Othmane Rifki</title>
-    <link>http://othmanerifki.github.io/technical_note/scripting/</link>
-      <atom:link href="http://othmanerifki.github.io/technical_note/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://othrif.github.io/technical_note/scripting/</link>
+      <atom:link href="http://othrif.github.io/technical_note/scripting/index.xml" rel="self" type="application/rss+xml" />
     <description>Othmane Rifki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Othmane Rifki</title>
-      <link>http://othmanerifki.github.io/technical_note/scripting/</link>
+      <link>http://othrif.github.io/technical_note/scripting/</link>
     </image>
     
     <item>
       <title>Jupyter shortcuts</title>
-      <link>http://othmanerifki.github.io/technical_note/scripting/jupyter/</link>
+      <link>http://othrif.github.io/technical_note/scripting/jupyter/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/scripting/jupyter/</guid>
+      <guid>http://othrif.github.io/technical_note/scripting/jupyter/</guid>
       <description>&lt;h1 id=&#34;jupyter-shortcuts&#34;&gt;Jupyter shortcuts&lt;/h1&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -82,9 +82,9 @@
     
     <item>
       <title>Markdown Cheatsheet</title>
-      <link>http://othmanerifki.github.io/technical_note/scripting/markdown/</link>
+      <link>http://othrif.github.io/technical_note/scripting/markdown/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/scripting/markdown/</guid>
+      <guid>http://othrif.github.io/technical_note/scripting/markdown/</guid>
       <description>&lt;h1 id=&#34;markdown-cheatsheet&#34;&gt;Markdown Cheatsheet&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;headings-size&#34;&gt;Headings size&lt;/h3&gt;
@@ -350,9 +350,9 @@ many lines&lt;/p&gt;
     
     <item>
       <title>Working with git</title>
-      <link>http://othmanerifki.github.io/technical_note/scripting/git/</link>
+      <link>http://othrif.github.io/technical_note/scripting/git/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/scripting/git/</guid>
+      <guid>http://othrif.github.io/technical_note/scripting/git/</guid>
       <description>&lt;h1 id=&#34;working-with-git&#34;&gt;Working with git&lt;/h1&gt;
 &lt;h3 id=&#34;remove-submodule&#34;&gt;Remove submodule&lt;/h3&gt;
 &lt;p&gt;To remove a submodule from a git repository you need to:&lt;/p&gt;

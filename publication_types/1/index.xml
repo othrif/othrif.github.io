@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1 | Othmane Rifki</title>
-    <link>http://othmanerifki.github.io/publication_types/1/</link>
-      <atom:link href="http://othmanerifki.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://othrif.github.io/publication_types/1/</link>
+      <atom:link href="http://othrif.github.io/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>1</title>
-      <link>http://othmanerifki.github.io/publication_types/1/</link>
+      <link>http://othrif.github.io/publication_types/1/</link>
     </image>
     
     <item>
       <title>Evidence for the production of three massive vectorbosons in $pp$ collisions with the ATLAS detector</title>
-      <link>http://othmanerifki.github.io/publication/aad-2019-udh/</link>
+      <link>http://othrif.github.io/publication/aad-2019-udh/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://othmanerifki.github.io/publication/aad-2019-udh/</guid>
+      <guid>http://othrif.github.io/publication/aad-2019-udh/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The evolution of the region of interest builder for the ATLAS experiment at CERN</title>
-      <link>http://othmanerifki.github.io/publication/abbott-2016-yax/</link>
+      <link>http://othrif.github.io/publication/abbott-2016-yax/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>http://othmanerifki.github.io/publication/abbott-2016-yax/</guid>
+      <guid>http://othrif.github.io/publication/abbott-2016-yax/</guid>
       <description></description>
     </item>
     

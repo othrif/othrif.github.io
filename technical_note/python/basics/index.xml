@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Othmane Rifki</title>
-    <link>http://othmanerifki.github.io/technical_note/python/basics/</link>
-      <atom:link href="http://othmanerifki.github.io/technical_note/python/basics/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://othrif.github.io/technical_note/python/basics/</link>
+      <atom:link href="http://othrif.github.io/technical_note/python/basics/index.xml" rel="self" type="application/rss+xml" />
     <description>Othmane Rifki</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Othmane Rifki</title>
-      <link>http://othmanerifki.github.io/technical_note/python/basics/</link>
+      <link>http://othrif.github.io/technical_note/python/basics/</link>
     </image>
     
     <item>
       <title>File, dir handling with os module</title>
-      <link>http://othmanerifki.github.io/technical_note/python/basics/os_manip/</link>
+      <link>http://othrif.github.io/technical_note/python/basics/os_manip/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/python/basics/os_manip/</guid>
+      <guid>http://othrif.github.io/technical_note/python/basics/os_manip/</guid>
       <description>&lt;h3 id=&#34;preliminary&#34;&gt;Preliminary&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import os
 &lt;/code&gt;&lt;/pre&gt;
@@ -64,9 +64,9 @@ if dirpath.exists() and dirpath.is_dir():
     
     <item>
       <title>Print statements</title>
-      <link>http://othmanerifki.github.io/technical_note/python/basics/print/</link>
+      <link>http://othrif.github.io/technical_note/python/basics/print/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othmanerifki.github.io/technical_note/python/basics/print/</guid>
+      <guid>http://othrif.github.io/technical_note/python/basics/print/</guid>
       <description>&lt;h3 id=&#34;simple-printing&#34;&gt;Simple printing&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;Printing example!&#39;)
 &lt;/code&gt;&lt;/pre&gt;
