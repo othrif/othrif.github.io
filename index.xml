@@ -163,8 +163,17 @@ drwxrwxr-x 2 othrif othrif 4096 Jul 29 21:21 sales
       <link>http://othrif.github.io/technical_note/linux/basics/system/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/linux/basics/system/</guid>
-      <description>&lt;h3 id=&#34;which-linux-kernel-version&#34;&gt;Which linux kernel version&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;uname -r&lt;/code&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names. Knowing your os version and name can be very useful for security patches.&lt;/p&gt;
+&lt;h3 id=&#34;print-linux-kernel-version&#34;&gt;print Linux kernel version&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;uname -r&lt;/code&gt;&lt;br&gt;
+or
+&lt;code&gt;cat /proc/version&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;find-os-name-and-version-in-linux&#34;&gt;find os name and version in Linux&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;cat /etc/os-release&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;query-the-system-hostname-and-related-settings&#34;&gt;query the system hostname and related settings&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;gives-lsb-linux-standard-base-and-distribution-specific-information-on-the-cli&#34;&gt;gives LSB (Linux Standard Base) and distribution-specific information on the CLI&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;lsb_release -a&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

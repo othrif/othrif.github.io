@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Which linux kernel version uname -r">
+  <meta name="description" content="Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/linux/basics/system/">
@@ -232,7 +232,7 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/linux/basics/system/">
   <meta property="og:title" content="Linux system commands | Othmane Rifki">
-  <meta property="og:description" content="Which linux kernel version uname -r"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -568,8 +568,17 @@
   </header>
   <div class="content">
 
-  <h3 id="which-linux-kernel-version">Which linux kernel version</h3>
-<p><code>uname -r</code></p>
+  <p>Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names. Knowing your os version and name can be very useful for security patches.</p>
+<h3 id="print-linux-kernel-version">print Linux kernel version</h3>
+<p><code>uname -r</code><br>
+or
+<code>cat /proc/version</code></p>
+<h3 id="find-os-name-and-version-in-linux">find os name and version in Linux</h3>
+<p><code>cat /etc/os-release</code></p>
+<h3 id="query-the-system-hostname-and-related-settings">query the system hostname and related settings</h3>
+<p><code>hostnamectl</code></p>
+<h3 id="gives-lsb-linux-standard-base-and-distribution-specific-information-on-the-cli">gives LSB (Linux Standard Base) and distribution-specific information on the CLI</h3>
+<p><code>lsb_release -a</code></p>
 
 </div>
   <aside>
