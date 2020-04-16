@@ -159,6 +159,16 @@ drwxrwxr-x 2 othrif othrif 4096 Jul 29 21:21 sales
     </item>
     
     <item>
+      <title>Linux system commands</title>
+      <link>http://othrif.github.io/technical_note/linux/basics/system/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/linux/basics/system/</guid>
+      <description>&lt;h3 id=&#34;which-linux-kernel-version&#34;&gt;Which linux kernel version&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;uname -r&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Markdown Cheatsheet</title>
       <link>http://othrif.github.io/technical_note/scripting/markdown/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -546,6 +556,43 @@ Casting to int: x+y=17
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/template/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Python classes</title>
+      <link>http://othrif.github.io/technical_note/python/basics/classes/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/classes/</guid>
+      <description>&lt;h3 id=&#34;self-in-python-class&#34;&gt;Self in Python class&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class car(): 
+      
+    # init method or constructor 
+    def __init__(self, model, color): 
+        self.model = model 
+        self.color = color 
+          
+    def show(self): 
+        print(&amp;quot;Model is&amp;quot;, self.model ) 
+        print(&amp;quot;color is&amp;quot;, self.color ) 
+          
+# both objects have different self which  
+# contain their attributes 
+audi = car(&amp;quot;audi a4&amp;quot;, &amp;quot;blue&amp;quot;) 
+ferrari = car(&amp;quot;ferrari 488&amp;quot;, &amp;quot;green&amp;quot;) 
+  
+audi.show()     # same output as car.show(audi) 
+ferrari.show()  # same output as car.show(ferrari) 
+  
+# Behind the scene, in every instance method  
+# call, python sends the instances also with 
+# that method call like car.show(audi)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Model is audi a4
+color is blue
+Model is ferrari 488
+color is green
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
