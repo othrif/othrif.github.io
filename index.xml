@@ -13,6 +13,54 @@
     </image>
     
     <item>
+      <title>Command line tools</title>
+      <link>http://othrif.github.io/technical_note/linux/basics/commandline/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/linux/basics/commandline/</guid>
+      <description>&lt;h3 id=&#34;grep-commands&#34;&gt;Grep commands&lt;/h3&gt;
+&lt;h4 id=&#34;count-occurences&#34;&gt;Count occurences&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;grep -c &#39;&amp;lt;event&amp;gt;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concatenate-pdfs&#34;&gt;Concatenate PDFs&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=out.pdf in1.pdf in2.pdf in3.pdf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;match-regular-expressions&#34;&gt;Match regular expressions&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo mc16_13TeV.366035.Sh_221_NN30NNLO_Znunu_PTV280_500_CVetoBVeto.recon.AOD.e7033_e9238_s3126_r10724 | grep -Eq &#39;AOD.e[0-9]+_s[0-9]+_r[0-9]+&#39; &amp;amp;&amp;amp; echo &amp;quot;Match&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;find-pattern-anywhere-recursively&#34;&gt;Find pattern anywhere recursively&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;grep -rnw &#39;/path/to/somewhere/&#39; -e &#39;pattern&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;write-to-someone-in-linux&#34;&gt;Write to someone in linux:&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;write &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;if-you-want-to-find-the-size-of-a-subdirectory&#34;&gt;If you want to find the size of a subdirectory&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; ls -FaGl &amp;quot;${@}&amp;quot; | awk &#39;{ total += $4; print }; END { print total }&#39;;
+ ls -FaGl &amp;lt;dir path&amp;gt; | awk &#39;{ total += $4; print }; END { print total }&#39;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;if-you-want-to-find-matches-in-the-same-line-and-get-the-word-that-comes-after-the-space&#34;&gt;If you want to find matches in the same line and get the word that comes after the space&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;blabla THIS ... a bunch of random stuff ... blabla THIS&amp;quot; | grep -oP &amp;quot;(?&amp;lt;=blabla )[^ ]+&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;blabla THIS ... a bunch of random stuff ... blabla THIS&amp;quot; | awk &#39;{for(i=1;i&amp;lt;=NF;i++) if ($i==&amp;quot;blabla&amp;quot;) print $(i+1)}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&amp;rsquo;s you want to add numbers:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;blabla 111 ... a bunch of random stuff ... blabla 222&amp;quot; | awk &#39;{for(i=1;i&amp;lt;=NF;i++) if ($i==&amp;quot;blabla&amp;quot;) print $(i+1), total += $(i+1)} END{ print total}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;to-copy-data-from-the-machine-where-precious-data-is-to-the-machine-you-are-working-on&#34;&gt;To copy data from the &amp;ldquo;machine-where-precious-data-is&amp;rdquo; to the machine you are working on&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh user@machine-where-precious-data-is &amp;quot;tar czpf - /some/important/data&amp;quot; | tar xzpf - -C /new/root/directory
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reversly&#34;&gt;Reversly&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;tar cpf - /some/important/data | ssh user@destination-machine &amp;quot;tar xpf - -C /some/directory/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;kill-all-remote-sessions-of-a-user&#34;&gt;Kill all remote sessions of a user:&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pkill -KILL -u othrif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;remove-m&#34;&gt;Remove ^M&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dos2unix &amp;lt;filename&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>File, dir handling with os module</title>
       <link>http://othrif.github.io/technical_note/python/basics/os_manip/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -86,6 +134,51 @@ drwxrwxr-x 2 othrif othrif 4096 Jul 29 21:21 sales
 /home/othrif/example_directory/product.html
 /home/othrif/example_directory/sales.txt,
 /home/othrif/example_directory/marketing.txt,
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Functions</title>
+      <link>http://othrif.github.io/technical_note/python/basics/functions/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/functions/</guid>
+      <description>&lt;h3 id=&#34;exit-from-function-with-conditions&#34;&gt;Exit from function with conditions&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;outer_condition=True
+condition_a=True
+condition_b=False
+
+
+def some_function():
+    if condition_a:
+        # do something and return early
+        print(f&#39;condition a satisfied!&#39;)
+        return
+    if condition_b:
+        # do something else and return early
+        print(f&#39;condition b satisfied!&#39;)
+        return
+    return
+
+if outer_condition:
+    some_function()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;condition a satisfied!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;passing-a-list-as-an-argument&#34;&gt;Passing a list as an argument&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def my_function(food):
+  for x in food:
+    print(x)
+
+fruits = [&amp;quot;apple&amp;quot;, &amp;quot;banana&amp;quot;, &amp;quot;cherry&amp;quot;]
+
+my_function(fruits)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;apple
+banana
+cherry
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
