@@ -600,6 +600,11 @@ With percentage is 20.00%
 With scientific notation is 1.00E-06
 With general notation is 1e-06
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;formatting-columns-with-text&#34;&gt;Formatting columns with text&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;some_number=23
+some_other_number = 2.23432
+print(f&#39;{&amp;quot;d1=0:&amp;quot;:&amp;lt;20} limit = {some_number:.3f} \timpact = {some_other_number:.3%}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;
 &lt;p&gt;Not quite about printing, but a good illustration of what to expect&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello World&#39;
