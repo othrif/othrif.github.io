@@ -271,6 +271,17 @@ or
     </item>
     
     <item>
+      <title>Love mayouma</title>
+      <link>http://othrif.github.io/technical_note/python/basics/untitled/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/untitled/</guid>
+      <description>&lt;h1 id=&#34;i-love-you--mayouma-&#34;&gt;I LOVE YOU !!!! MAYOUMA !!!!&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Markdown Cheatsheet</title>
       <link>http://othrif.github.io/technical_note/scripting/markdown/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -604,6 +615,8 @@ With general notation is 1e-06
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;some_number=23
 some_other_number = 2.23432
 print(f&#39;{&amp;quot;d1=0:&amp;quot;:&amp;lt;20} limit = {some_number:.3f} \timpact = {some_other_number:.3%}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;d1=0:                limit = 23.000 	impact = 223.432%
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;
 &lt;p&gt;Not quite about printing, but a good illustration of what to expect&lt;/p&gt;
@@ -4587,14 +4600,6 @@ zero_to_1
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;First Jupyter notebook!&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://othrif.github.io/technical_note/python/basics/untitled/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/basics/untitled/</guid>
-      <description></description>
     </item>
     
   </channel>
