@@ -249,8 +249,8 @@ cherry
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;jupyter-kernels-in-macos&#34;&gt;Jupyter kernels in MacOS&lt;/h1&gt;
-&lt;p&gt;Jupyter kernels are located in: &lt;code&gt;~/Library/Jupyter/kernels&lt;/code&gt;
-List all kernels with: &lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Jupyter kernels are located in: &lt;code&gt;~/Library/Jupyter/kernels&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;List all kernels with: &lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;jupyter-installation-with-c&#34;&gt;Jupyter installation with C++&lt;/h1&gt;
 &lt;p&gt;C++ kernel for Jupyter is available via &lt;code&gt;xeus-cling&lt;/code&gt;. Here is the documentaiton: 
