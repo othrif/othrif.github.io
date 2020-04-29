@@ -623,6 +623,16 @@ many lines&lt;/p&gt;
     
     <item>
       <title>Print statements</title>
+      <link>http://othrif.github.io/technical_note/java/basics/print/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/java/basics/print/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Print statements</title>
       <link>http://othrif.github.io/technical_note/python/basics/print/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/print/</guid>
@@ -4672,14 +4682,6 @@ zero_to_1
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;First Jupyter notebook!&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://othrif.github.io/technical_note/java/basics/print/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://othrif.github.io/technical_note/java/basics/print/</guid>
-      <description></description>
     </item>
     
   </channel>

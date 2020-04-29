@@ -13,6 +13,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/java/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -79,6 +89,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/scripting/markdown/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/print/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -2563,18 +2578,6 @@
   
   <url>
     <loc>http://othrif.github.io/post/my-post/firstjupyter/</loc>
-  </url>
-  
-  <url>
-    <loc>http://othrif.github.io/technical_note/java/</loc>
-  </url>
-  
-  <url>
-    <loc>http://othrif.github.io/technical_note/java/basics/</loc>
-  </url>
-  
-  <url>
-    <loc>http://othrif.github.io/technical_note/java/basics/print/</loc>
   </url>
   
   <url>
