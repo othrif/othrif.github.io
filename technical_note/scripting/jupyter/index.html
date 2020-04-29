@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Jupyter shortcuts    Symbol Action     y cell format -&gt; code   m cell format -&gt; Markdown   a Add cell above   b Add cell below   c copy cell   v paste cell   x cut cell   d d delete cell   z undo   shift&#43;z redo   &lt;space&gt;&lt;space&gt; new line   --- horizontal line     ">
+  <meta name="description" content="Jupyter shortcuts    Symbol Action     y cell format -&gt; code   m cell format -&gt; Markdown   a Add cell above   b Add cell below   c copy cell   v paste cell   x cut cell   d d delete cell   z undo   shift&#43;z redo   &lt;space&gt;&lt;space&gt; new line   --- horizontal line     Jupyter kernels in MacOS Jupyter kernels are located in: ~/Library/Jupyter/kernels List all kernels with: jupyter kernelspec list">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/scripting/jupyter/">
@@ -231,8 +231,8 @@
   
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/scripting/jupyter/">
-  <meta property="og:title" content="Jupyter shortcuts | Othmane Rifki">
-  <meta property="og:description" content="Jupyter shortcuts    Symbol Action     y cell format -&gt; code   m cell format -&gt; Markdown   a Add cell above   b Add cell below   c copy cell   v paste cell   x cut cell   d d delete cell   z undo   shift&#43;z redo   &lt;space&gt;&lt;space&gt; new line   --- horizontal line     "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Jupyter shortcuts and installation | Othmane Rifki">
+  <meta property="og:description" content="Jupyter shortcuts    Symbol Action     y cell format -&gt; code   m cell format -&gt; Markdown   a Add cell above   b Add cell below   c copy cell   v paste cell   x cut cell   d d delete cell   z undo   shift&#43;z redo   &lt;space&gt;&lt;space&gt; new line   --- horizontal line     Jupyter kernels in MacOS Jupyter kernels are located in: ~/Library/Jupyter/kernels List all kernels with: jupyter kernelspec list"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +257,7 @@
 
 
 
-  <title>Jupyter shortcuts | Othmane Rifki</title>
+  <title>Jupyter shortcuts and installation | Othmane Rifki</title>
 
 </head>
 
@@ -561,7 +561,7 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Jupyter shortcuts</h1>
+    <h1 class="technical_note_title">Jupyter shortcuts and installation</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
@@ -628,6 +628,34 @@
 </tbody>
 </table>
 <hr>
+<h1 id="jupyter-kernels-in-macos">Jupyter kernels in MacOS</h1>
+<p>Jupyter kernels are located in: <code>~/Library/Jupyter/kernels</code>
+List all kernels with: <code>jupyter kernelspec list</code></p>
+<hr>
+<h1 id="jupyter-installation-with-c">Jupyter installation with C++</h1>
+<p>C++ kernel for Jupyter is available via <code>xeus-cling</code>. Here is the documentaiton: 
+<a href="https://xeus.readthedocs.io/en/latest/installation.html" target="_blank" rel="noopener">xeus.readthedocs.io</a></p>
+<ul>
+<li>Download a <code>miniconda</code> from here: <a href="https://docs.conda.io/en/latest/miniconda.html">https://docs.conda.io/en/latest/miniconda.html</a> and installed it.</li>
+<li>Install <code>xeus-cling</code> with <code>conda</code>: <code>conda install -c conda-forge xeus-cling</code></li>
+<li>Installation of <code>miniconda</code> will alter your <code>python</code> environment to <code>conda</code>. I removed it from the path by only keeping <code>source ~/.bashrc</code> in <code>~/.bash_profile</code> and removing all other lines changing the <code>PATH</code> to <code>conda</code></li>
+<li>Added the correct kernels:</li>
+</ul>
+<pre><code class="language-bash">sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp11 --sys-prefix 
+sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp14 --sys-prefix 
+sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp17 --sys-prefix 
+</code></pre>
+<hr>
+<h1 id="jupyter-installation-with-java">Jupyter installation with Java</h1>
+<p>Java kernel was easier.</p>
+<ul>
+<li>Install the Java Devleopment Kit (JDK) from <a href="https://www.oracle.com/java/technologies/javase-jdk14-downloads.html">https://www.oracle.com/java/technologies/javase-jdk14-downloads.html</a></li>
+<li>Then do:</li>
+</ul>
+<pre><code class="language-bash">git clone https://github.com/SpencerPark/IJava.git
+cd IJava/
+./gradlew installKernel
+</code></pre>
 
 </div>
   <aside>

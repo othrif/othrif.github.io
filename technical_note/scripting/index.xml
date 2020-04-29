@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Jupyter shortcuts</title>
+      <title>Jupyter shortcuts and installation</title>
       <link>http://othrif.github.io/technical_note/scripting/jupyter/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/scripting/jupyter/</guid>
@@ -77,6 +77,34 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
+&lt;h1 id=&#34;jupyter-kernels-in-macos&#34;&gt;Jupyter kernels in MacOS&lt;/h1&gt;
+&lt;p&gt;Jupyter kernels are located in: &lt;code&gt;~/Library/Jupyter/kernels&lt;/code&gt;
+List all kernels with: &lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;jupyter-installation-with-c&#34;&gt;Jupyter installation with C++&lt;/h1&gt;
+&lt;p&gt;C++ kernel for Jupyter is available via &lt;code&gt;xeus-cling&lt;/code&gt;. Here is the documentaiton: 
+&lt;a href=&#34;https://xeus.readthedocs.io/en/latest/installation.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xeus.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download a &lt;code&gt;miniconda&lt;/code&gt; from here: &lt;a href=&#34;https://docs.conda.io/en/latest/miniconda.html&#34;&gt;https://docs.conda.io/en/latest/miniconda.html&lt;/a&gt; and installed it.&lt;/li&gt;
+&lt;li&gt;Install &lt;code&gt;xeus-cling&lt;/code&gt; with &lt;code&gt;conda&lt;/code&gt;: &lt;code&gt;conda install -c conda-forge xeus-cling&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Installation of &lt;code&gt;miniconda&lt;/code&gt; will alter your &lt;code&gt;python&lt;/code&gt; environment to &lt;code&gt;conda&lt;/code&gt;. I removed it from the path by only keeping &lt;code&gt;source ~/.bashrc&lt;/code&gt; in &lt;code&gt;~/.bash_profile&lt;/code&gt; and removing all other lines changing the &lt;code&gt;PATH&lt;/code&gt; to &lt;code&gt;conda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Added the correct kernels:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp11 --sys-prefix 
+sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp14 --sys-prefix 
+sudo jupyter kernelspec install /Users/othmanerifki/opt/miniconda3/share/jupyter/kernels/xcpp17 --sys-prefix 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;jupyter-installation-with-java&#34;&gt;Jupyter installation with Java&lt;/h1&gt;
+&lt;p&gt;Java kernel was easier.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install the Java Devleopment Kit (JDK) from &lt;a href=&#34;https://www.oracle.com/java/technologies/javase-jdk14-downloads.html&#34;&gt;https://www.oracle.com/java/technologies/javase-jdk14-downloads.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Then do:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/SpencerPark/IJava.git
+cd IJava/
+./gradlew installKernel
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
