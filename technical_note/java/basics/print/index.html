@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Simple printing print(&#39;Printing example!&#39;)  Printing example!  f-string formatting: f &#39; &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... &#39;  where &lt;optional !">
+  <meta name="description" content="">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/java/basics/print/">
@@ -231,14 +231,12 @@
   
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/java/basics/print/">
-  <meta property="og:title" content="Print statements | Othmane Rifki">
-  <meta property="og:description" content="Simple printing print(&#39;Printing example!&#39;)  Printing example!  f-string formatting: f &#39; &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... &#39;  where &lt;optional !"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content=" | Othmane Rifki">
+  <meta property="og:description" content=""><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
     
-    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
@@ -257,7 +255,7 @@
 
 
 
-  <title>Print statements | Othmane Rifki</title>
+  <title> | Othmane Rifki</title>
 
 </head>
 
@@ -561,127 +559,14 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Print statements</h1>
+    <h1 class="technical_note_title"></h1>
     <div class="technical_note_date">
-      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+      <time datetime=" 0001-01-01T00:00:00Z ">Jan 1, 0001</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="simple-printing">Simple printing</h3>
-<pre><code class="language-python">print('Printing example!')
-</code></pre>
-<pre><code>Printing example!
-</code></pre>
-<h3 id="f-string-formatting">f-string formatting:</h3>
-<pre><code class="language-python">f ' &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... '
-</code></pre>
-<p>where <code>&lt;optional !s, !r, or !a&gt;</code> mean <code>!s (str), !r (repr), and !a (ascii)</code></p>
-<pre><code class="language-python">import datetime
-name = 'Othmane'
-age = 30
-anniversary = datetime.date(1989, 2, 6)
-print(f'My name is {name.lower()}, my age next year is {age+1}, my anniversary is {anniversary:%A, %B %d, %Y}.')
-print(f'He said his name is {name!r}.') # !r for repr
-print(r'Raw output: /Users/othmanerifki') # r for raw output
-message = (
-    f'Hi {name}.'
-    f'Your age is {age}.'
-)
-print(message)
-</code></pre>
-<pre><code>In lower case:  othmane
-My name is othmane, my age next year is 31, my anniversary is Monday, February 06, 1989.
-He said his name is 'Othmane'.
-Raw output: /Users/othmanerifki
-Hi Othmane.Your age is 30.
-</code></pre>
-<h3 id="quotation-braces">Quotation, braces:</h3>
-<pre><code class="language-python">print(f'Using quotation {name}.')
-print(f'Using quotation &quot;{name}&quot;.')
-print(f'Using quotation \'{name}\'.')
-print(f'Without braces {74}')
-print(f'With braces {{74}}')
-print(f'to show more {{{{74}}}}')
-</code></pre>
-<pre><code>Using quotation Othmane.
-Using quotation &quot;Othmane&quot;.
-Using quotation 'Othmane'.
-Without braces 74
-With braces {74}
-to show more {{74}}
-</code></pre>
-<h3 id="number-formatting">Number formatting</h3>
-<p><code>python f'{value:{width}.{precision}&lt;type&gt;}'</code><br>
-<code>&lt;type&gt;</code>: s(string), f(float), d(decimal), x(hex), X(HEX), e(exponent scientific notation), E(same as e with &lsquo;E&rsquo;), g(general, it rounds and format to scientific or fixed decimals), G(same as g but E), %(x100 and percent sign)</p>
-<pre><code class="language-python">weight = 83.1
-print(f'With float is {weight:.2f}kg')
-print(f'With percentage is {20/100:.2%}')
-print(f'With scientific notation is {10**-6:.2E}')
-print(f'With general notation is {10**-6:g}')
-</code></pre>
-<pre><code>With float is 83.10kg
-With percentage is 20.00%
-With scientific notation is 1.00E-06
-With general notation is 1e-06
-</code></pre>
-<h3 id="formatting-columns-with-text">Formatting columns with text</h3>
-<pre><code class="language-python">some_number=23
-some_other_number = 2.23432
-print(f'{&quot;d1=0:&quot;:&lt;20} limit = {some_number:.3f} \timpact = {some_other_number:.3%}')
-</code></pre>
-<pre><code>d1=0:                limit = 23.000 	impact = 223.432%
-</code></pre>
-<h3 id="indexing">Indexing</h3>
-<p>Not quite about printing, but a good illustration of what to expect</p>
-<pre><code class="language-python">txt = 'Hello World'
-print(f'Particular element: {txt[0]}')
-print(f'substring: {txt[0:5]}')
-print(f'substring: {txt[:5]}')
-print(f'substring: {txt[0:-6]}')
-print(f'substring: {txt[6:]}')
-print(f'skip 2: {txt[::2]}')
-print(f'skip 3: {txt[::3]}')
-print(f'Invert order: {txt[::-1]}')
-print(f'String length: {len(txt)}')
-print(f'Repetition: {&quot;.&quot;*10}')
-print(f'Concatenation: {txt+&quot; from Hamburg!&quot;}')
-print(f'Escape characters...')
-print(f'few examples in this line: \'\&quot;123\b \thorizontal')
-print(f'1234567 carriage return \rXXX')
-</code></pre>
-<pre><code>Particular element: H
-substring: Hello
-substring: Hello
-substring: Hello
-substring: World
-skip 2: HloWrd
-skip 3: HlWl
-Invert order: dlroW olleH
-String length: 11
-Repetition: ..........
-Concatenation: Hello World from Hamburg!
-Escape characters...
-few examples in this line: '&quot;12 	horizontal
-XXX4567 carriage return 
-</code></pre>
-<h3 id="casting">Casting</h3>
-<p>Same as above, not related to printing but gives a good illustration</p>
-<pre><code class="language-python">x=&quot;10&quot;
-y=&quot;7.1&quot;
-print(f'Test with x+y where x={x}, y={y}')
-print(f'No casting: x+y={x+y}')
-print(f'Casting to float: x+y={float(x)+float(y)}')
-print(f'Casting to int: x+y={int(x)+int(float(y))}') # int(7.1) give error
-</code></pre>
-<pre><code>Test with x+y where x=10, y=7.1
-No casting: x+y=107.1
-Casting to float: x+y=17.1
-Casting to int: x+y=17
-</code></pre>
-<pre><code class="language-python">
-</code></pre>
-
+  
 </div>
   <aside>
       <div class="bug_reporting">
