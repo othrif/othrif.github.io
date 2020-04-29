@@ -184,6 +184,61 @@ cherry
     </item>
     
     <item>
+      <title>Iterate over vector or array</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/iteration/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/iteration/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;iterate-over-stdvector&#34;&gt;Iterate over std::vector&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;std::vector&amp;lt;float&amp;gt; v = {7.3, 5.1, 16.3, 8.9}; // T = int, it can be anything else
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-iterators&#34;&gt;Using iterators&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+for(std::vector&amp;lt;float&amp;gt;::iterator it = v.begin(); it != v.end(); ++it) {
+    std::cout &amp;lt;&amp;lt; *it &amp;lt;&amp;lt; &amp;quot; &amp;quot;; /* ... */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-indices&#34;&gt;Using indices&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;for(std::vector&amp;lt;int&amp;gt;::size_type i = 0; i != v.size(); i++) {
+    std::cout &amp;lt;&amp;lt; v[i] &amp;lt;&amp;lt; &amp;quot; &amp;quot;; /* ... */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-range&#34;&gt;Using range&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;for(auto const&amp;amp; value: v) {
+     std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; &amp;quot; &amp;quot;; /* ... */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;iterate-over-arrays&#34;&gt;Iterate over arrays&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double a[] = {7.3, 5.1, 16.3, 8.9, 9.1}; // T = int, it can be anything else
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-indices-1&#34;&gt;Using indices&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;for(std::size_t i = 0; i != (sizeof a / sizeof *a); i++) {
+    std::cout &amp;lt;&amp;lt; a[i] &amp;lt;&amp;lt; &amp;quot; &amp;quot;; /* ... */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 9.1 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-range-1&#34;&gt;Using range&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;for(auto const&amp;amp; value: a) {
+     std::cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; &amp;quot; &amp;quot;; /* ... */
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 9.1 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Jupyter shortcuts and installation</title>
       <link>http://othrif.github.io/technical_note/scripting/jupyter/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -295,17 +350,6 @@ or
 &lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;gives-lsb-linux-standard-base-and-distribution-specific-information-on-the-cli&#34;&gt;gives LSB (Linux Standard Base) and distribution-specific information on the CLI&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;lsb_release -a&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Love mayouma</title>
-      <link>http://othrif.github.io/technical_note/python/basics/untitled/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/basics/untitled/</guid>
-      <description>&lt;h1 id=&#34;i-love-you--mayouma-&#34;&gt;I LOVE YOU !!!! MAYOUMA !!!!&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
