@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://othrif.github.io/technical_note/java/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -38,12 +48,22 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/os_manip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/os_manip/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://othrif.github.io/technical_note/linux/search/find_files/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/functions/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -63,6 +83,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/untitled/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/untitled/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -73,12 +98,22 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/print/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/print/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://othrif.github.io/technical_note/template/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/java/basics/classes/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
