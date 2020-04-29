@@ -626,7 +626,13 @@ many lines&lt;/p&gt;
       <link>http://othrif.github.io/technical_note/java/basics/print/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/java/basics/print/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+      <description>&lt;pre&gt;&lt;code class=&#34;language-Java&#34;&gt;String out = &amp;quot;Hello World! First time in Java&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Java&#34;&gt;out
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello World! First time in Java
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Java&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
