@@ -608,6 +608,10 @@
 <h3 id="remove-m">Remove ^M</h3>
 <pre><code class="language-bash">dos2unix &lt;filename&gt;
 </code></pre>
+<h3 id="device-or-resource-busy">Device or resource busy</h3>
+<pre><code class="language-bash">lsof +D &lt;path&gt;
+</code></pre>
+<p>Then kill PID with <code>kill -9 &lt;PID&gt;</code></p>
 
 </div>
   <aside>

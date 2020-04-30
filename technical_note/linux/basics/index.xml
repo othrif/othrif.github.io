@@ -57,6 +57,10 @@
 &lt;h3 id=&#34;remove-m&#34;&gt;Remove ^M&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dos2unix &amp;lt;filename&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;device-or-resource-busy&#34;&gt;Device or resource busy&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;lsof +D &amp;lt;path&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then kill PID with &lt;code&gt;kill -9 &amp;lt;PID&amp;gt;&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
