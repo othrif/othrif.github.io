@@ -593,10 +593,46 @@
     
     
     <div>
+      <h2><a href="/technical_note/cpp/basics/strings/" >Bitwise Operations</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  String size { string str = &quot;hello&quot;; cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl; }  String size is 5   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/cpp/basics/datatypes/" >Data types</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; using namespace std;  Size of common data types cout &lt;&lt; &quot;Size of char : &quot; &lt;&lt; sizeof(char) &lt;&lt; endl; cout &lt;&lt; &quot;Size of int : &quot; &lt;&lt; sizeof(int) &lt;&lt; endl; cout &lt;&lt; &quot;Size of unsigned int : &quot; &lt;&lt; sizeof(unsigned int) &lt;&lt; endl; cout &lt;&lt; &quot;Size of short int : &quot; &lt;&lt; sizeof(short int) &lt;&lt; endl; cout &lt;&lt; &quot;Size of long int : &quot; &lt;&lt; sizeof(long int) &lt;&lt; endl; cout &lt;&lt; &quot;Size of float : &quot; &lt;&lt; sizeof(float) &lt;&lt; endl; cout &lt;&lt; &quot;Size of double : &quot; &lt;&lt; sizeof(double) &lt;&lt; endl; cout &lt;&lt; &quot;Size of wchar_t : &quot; &lt;&lt; sizeof(wchar_t) &lt;&lt; endl;  Size of char : 1 Size of int : 4 Size of unsigned int : 4 Size of short int : 2 Size of long int : 8 Size of float : 4 Size of double : 8 Size of wchar_t : 4   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/cpp/basics/iteration/" >Iterate over vector or array</a></h2>
       <div class="article-style">
         
           #include &lt;iostream&gt; #include &lt;vector&gt;  Iterate over std::vector std::vector&lt;float&gt; v = {7.3, 5.1, 16.3, 8.9}; // T = int, it can be anything else  Using iterators for(std::vector&lt;float&gt;::iterator it = v.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/cpp/basics/bitwiseoperations/" >String manipulation</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  Convert between different Dec and Binary #include &lt;bitset&gt; std::bitset&lt;32&gt;(1).to_string()  &quot;00000000000000000000000000000001&quot;  Bitwise operations cout &lt;&lt; bitset&lt;32&gt;(1) &lt;&lt; endl; cout &lt;&lt; &quot;================================&quot; &lt;&lt; endl; for (int i = 0; i &lt; 32; i++) cout &lt;&lt; bitset&lt;32&gt;(1 &lt;&lt; i) &lt;&lt; endl;  00000000000000000000000000000001 ================================ 00000000000000000000000000000001 00000000000000000000000000000010 00000000000000000000000000000100 00000000000000000000000000001000 00000000000000000000000000010000 00000000000000000000000000100000 00000000000000000000000001000000 00000000000000000000000010000000 00000000000000000000000100000000 00000000000000000000001000000000 00000000000000000000010000000000 00000000000000000000100000000000 00000000000000000001000000000000 00000000000000000010000000000000 00000000000000000100000000000000 00000000000000001000000000000000 00000000000000010000000000000000 00000000000000100000000000000000 00000000000001000000000000000000 00000000000010000000000000000000 00000000000100000000000000000000 00000000001000000000000000000000 00000000010000000000000000000000 00000000100000000000000000000000 00000001000000000000000000000000 00000010000000000000000000000000 00000100000000000000000000000000 00001000000000000000000000000000 00010000000000000000000000000000 00100000000000000000000000000000 01000000000000000000000000000000 10000000000000000000000000000000  Check bits { int value = 7; cout &lt;&lt; value &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 ) &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 &lt;&lt; value) &lt;&lt; endl; unsigned int checker = 0; cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker = (1 &lt;&lt; value); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker |= (1 &lt;&lt; 3); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; cout &lt;&lt; bool(checker &amp; 1 &lt;&lt; value) &lt;&lt; endl; }  7 00000000000000000000000000000001 00000000000000000000000010000000 00000000000000000000000000000000 00000000000000000000000010000000 00000000000000000000000010001000 1   
         
       </div>
     </div>

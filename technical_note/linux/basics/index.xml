@@ -13,6 +13,28 @@
     </image>
     
     <item>
+      <title>ASCII vs Unicode</title>
+      <link>http://othrif.github.io/technical_note/linux/basics/ascii_unicode/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/linux/basics/ascii_unicode/</guid>
+      <description>&lt;p&gt;1 byte = 8-bit&lt;/p&gt;
+&lt;h3 id=&#34;ascii&#34;&gt;ASCII&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;extended ASCII&lt;/code&gt; or &lt;code&gt;8-bit ASCII&lt;/code&gt; has $2^8 = 256$ characters maximum&lt;/li&gt;
+&lt;li&gt;Complete table for &lt;code&gt;8-bit ASCII&lt;/code&gt; here: &lt;a href=&#34;https://theasciicode.com.ar/&#34;&gt;https://theasciicode.com.ar/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Original ASCII has $2^7 = 128$, with 8th bit as a parity bit&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;unicode&#34;&gt;Unicode&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unicode is a superset of ASCII&lt;/li&gt;
+&lt;li&gt;UTF-8: minimum 8 bits.&lt;/li&gt;
+&lt;li&gt;UTF-16: minimum 16 bits.&lt;/li&gt;
+&lt;li&gt;UTF-32: minimum and maximum 32 bits&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Command line tools</title>
       <link>http://othrif.github.io/technical_note/linux/basics/commandline/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

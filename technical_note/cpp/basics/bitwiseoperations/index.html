@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  Convert between different Dec and Binary #include &lt;bitset&gt; std::bitset&lt;32&gt;(1).to_string()  &quot;00000000000000000000000000000001&quot;  Bitwise operations cout &lt;&lt; bitset&lt;32&gt;(1) &lt;&lt; endl; cout &lt;&lt; &quot;================================&quot; &lt;&lt; endl; for (int i = 0; i &lt; 32; i&#43;&#43;) cout &lt;&lt; bitset&lt;32&gt;(1 &lt;&lt; i) &lt;&lt; endl;  00000000000000000000000000000001 ================================ 00000000000000000000000000000001 00000000000000000000000000000010 00000000000000000000000000000100 00000000000000000000000000001000 00000000000000000000000000010000 00000000000000000000000000100000 00000000000000000000000001000000 00000000000000000000000010000000 00000000000000000000000100000000 00000000000000000000001000000000 00000000000000000000010000000000 00000000000000000000100000000000 00000000000000000001000000000000 00000000000000000010000000000000 00000000000000000100000000000000 00000000000000001000000000000000 00000000000000010000000000000000 00000000000000100000000000000000 00000000000001000000000000000000 00000000000010000000000000000000 00000000000100000000000000000000 00000000001000000000000000000000 00000000010000000000000000000000 00000000100000000000000000000000 00000001000000000000000000000000 00000010000000000000000000000000 00000100000000000000000000000000 00001000000000000000000000000000 00010000000000000000000000000000 00100000000000000000000000000000 01000000000000000000000000000000 10000000000000000000000000000000  Check bits { int value = 7; cout &lt;&lt; value &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 ) &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 &lt;&lt; value) &lt;&lt; endl; unsigned int checker = 0; cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker = (1 &lt;&lt; value); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker |= (1 &lt;&lt; 3); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; cout &lt;&lt; bool(checker &amp; 1 &lt;&lt; value) &lt;&lt; endl; }  7 00000000000000000000000000000001 00000000000000000000000010000000 00000000000000000000000000000000 00000000000000000000000010000000 00000000000000000000000010001000 1   ">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/linux/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/linux/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/linux/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/linux/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/">
+  <meta property="og:title" content="String manipulation | Othmane Rifki">
+  <meta property="og:description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  Convert between different Dec and Binary #include &lt;bitset&gt; std::bitset&lt;32&gt;(1).to_string()  &quot;00000000000000000000000000000001&quot;  Bitwise operations cout &lt;&lt; bitset&lt;32&gt;(1) &lt;&lt; endl; cout &lt;&lt; &quot;================================&quot; &lt;&lt; endl; for (int i = 0; i &lt; 32; i&#43;&#43;) cout &lt;&lt; bitset&lt;32&gt;(1 &lt;&lt; i) &lt;&lt; endl;  00000000000000000000000000000001 ================================ 00000000000000000000000000000001 00000000000000000000000000000010 00000000000000000000000000000100 00000000000000000000000000001000 00000000000000000000000000010000 00000000000000000000000000100000 00000000000000000000000001000000 00000000000000000000000010000000 00000000000000000000000100000000 00000000000000000000001000000000 00000000000000000000010000000000 00000000000000000000100000000000 00000000000000000001000000000000 00000000000000000010000000000000 00000000000000000100000000000000 00000000000000001000000000000000 00000000000000010000000000000000 00000000000000100000000000000000 00000000000001000000000000000000 00000000000010000000000000000000 00000000000100000000000000000000 00000000001000000000000000000000 00000000010000000000000000000000 00000000100000000000000000000000 00000001000000000000000000000000 00000010000000000000000000000000 00000100000000000000000000000000 00001000000000000000000000000000 00010000000000000000000000000000 00100000000000000000000000000000 01000000000000000000000000000000 10000000000000000000000000000000  Check bits { int value = 7; cout &lt;&lt; value &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 ) &lt;&lt; endl; cout &lt;&lt; std::bitset&lt;32&gt;(1 &lt;&lt; value) &lt;&lt; endl; unsigned int checker = 0; cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker = (1 &lt;&lt; value); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; checker |= (1 &lt;&lt; 3); cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl; cout &lt;&lt; bool(checker &amp; 1 &lt;&lt; value) &lt;&lt; endl; }  7 00000000000000000000000000000001 00000000000000000000000010000000 00000000000000000000000000000000 00000000000000000000000010000000 00000000000000000000000010001000 1   "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>String manipulation | Othmane Rifki</title>
 
 </head>
 
@@ -552,96 +555,110 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">String manipulation</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+</code></pre>
+<h3 id="convert-between-different-dec-and-binary">Convert between different Dec and Binary</h3>
+<pre><code class="language-c++">#include &lt;bitset&gt;
 
+std::bitset&lt;32&gt;(1).to_string()
+</code></pre>
+<pre><code>&quot;00000000000000000000000000000001&quot;
+</code></pre>
+<h3 id="bitwise-operations">Bitwise operations</h3>
+<pre><code class="language-c++">cout &lt;&lt; bitset&lt;32&gt;(1) &lt;&lt; endl;
+cout &lt;&lt; &quot;================================&quot; &lt;&lt; endl;
+for (int i = 0; i &lt; 32; i++)
+cout &lt;&lt; bitset&lt;32&gt;(1 &lt;&lt; i) &lt;&lt; endl;
+</code></pre>
+<pre><code>00000000000000000000000000000001
+================================
+00000000000000000000000000000001
+00000000000000000000000000000010
+00000000000000000000000000000100
+00000000000000000000000000001000
+00000000000000000000000000010000
+00000000000000000000000000100000
+00000000000000000000000001000000
+00000000000000000000000010000000
+00000000000000000000000100000000
+00000000000000000000001000000000
+00000000000000000000010000000000
+00000000000000000000100000000000
+00000000000000000001000000000000
+00000000000000000010000000000000
+00000000000000000100000000000000
+00000000000000001000000000000000
+00000000000000010000000000000000
+00000000000000100000000000000000
+00000000000001000000000000000000
+00000000000010000000000000000000
+00000000000100000000000000000000
+00000000001000000000000000000000
+00000000010000000000000000000000
+00000000100000000000000000000000
+00000001000000000000000000000000
+00000010000000000000000000000000
+00000100000000000000000000000000
+00001000000000000000000000000000
+00010000000000000000000000000000
+00100000000000000000000000000000
+01000000000000000000000000000000
+10000000000000000000000000000000
+</code></pre>
+<h3 id="check-bits">Check bits</h3>
+<pre><code class="language-c++">{
+    int value = 7;
+    cout &lt;&lt; value &lt;&lt; endl;
+    cout &lt;&lt; std::bitset&lt;32&gt;(1 ) &lt;&lt; endl;
+    cout &lt;&lt; std::bitset&lt;32&gt;(1 &lt;&lt; value) &lt;&lt; endl;
+    unsigned int checker = 0;
+    cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl;
+    checker = (1 &lt;&lt; value);
+    cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl;
+    checker |= (1 &lt;&lt; 3);
+    cout &lt;&lt; std::bitset&lt;32&gt;(checker) &lt;&lt; endl;
+    cout &lt;&lt; bool(checker &amp; 1 &lt;&lt; value) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code>7
+00000000000000000000000000000001
+00000000000000000000000010000000
+00000000000000000000000000000000
+00000000000000000000000010000000
+00000000000000000000000010001000
+1
+</code></pre>
+<pre><code class="language-c++">
+</code></pre>
 
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/ascii_unicode/" >ASCII vs Unicode</a></h2>
-      <div class="article-style">
-        
-          1 byte = 8-bit
-ASCII  extended ASCII or 8-bit ASCII has $2^8 = 256$ characters maximum Complete table for 8-bit ASCII here: https://theasciicode.com.ar/ Original ASCII has $2^7 = 128$, with 8th bit as a parity bit  Unicode  Unicode is a superset of ASCII UTF-8: minimum 8 bits.
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/commandline/" >Command line tools</a></h2>
-      <div class="article-style">
-        
-          Grep commands Count occurences grep -c '&lt;event&gt;'  Concatenate PDFs gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=out.pdf in1.pdf in2.pdf in3.pdf  Match regular expressions echo mc16_13TeV.366035.Sh_221_NN30NNLO_Znunu_PTV280_500_CVetoBVeto.recon.AOD.e7033_e9238_s3126_r10724 | grep -Eq 'AOD.e[0-9]+_s[0-9]+_r[0-9]+' &amp;&amp; echo &quot;Match&quot;  Find pattern anywhere recursively grep -rnw '/path/to/somewhere/' -e 'pattern'  Write to someone in linux: write &lt;username&gt;
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/system/" >Linux system commands</a></h2>
-      <div class="article-style">
-        
-          Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/zip_and_unzip_files/" >Zip And Unzip Files Hello</a></h2>
-      <div class="article-style">
-        
-          Make Files echo &#34;The number of soldiers in the regiment is 24.&#34; &gt; regiment.txt echo &#34;The regiment has seen five battles.&#34; &gt; battles.txt Zip Files The -v argument is optional, prints an output with the details of the operation.
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
+    </div>
+</article>
 
-</div>
+
+
 
       
 

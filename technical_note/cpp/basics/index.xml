@@ -13,6 +13,60 @@
     </image>
     
     <item>
+      <title>Bitwise Operations</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/strings/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/strings/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;string-size&#34;&gt;String size&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{
+string str = &amp;quot;hello&amp;quot;;
+cout &amp;lt;&amp;lt; &amp;quot;String size is &amp;quot; &amp;lt;&amp;lt; str.length() &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;String size is 5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data types</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/datatypes/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/datatypes/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;size-of-common-data-types&#34;&gt;Size of common data types&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;   cout &amp;lt;&amp;lt; &amp;quot;Size of char : &amp;quot; &amp;lt;&amp;lt; sizeof(char) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of int : &amp;quot; &amp;lt;&amp;lt; sizeof(int) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of unsigned int : &amp;quot; &amp;lt;&amp;lt; sizeof(unsigned int) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of short int : &amp;quot; &amp;lt;&amp;lt; sizeof(short int) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of long int : &amp;quot; &amp;lt;&amp;lt; sizeof(long int) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of float : &amp;quot; &amp;lt;&amp;lt; sizeof(float) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of double : &amp;quot; &amp;lt;&amp;lt; sizeof(double) &amp;lt;&amp;lt; endl;
+   cout &amp;lt;&amp;lt; &amp;quot;Size of wchar_t : &amp;quot; &amp;lt;&amp;lt; sizeof(wchar_t) &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Size of char : 1
+Size of int : 4
+Size of unsigned int : 4
+Size of short int : 2
+Size of long int : 8
+Size of float : 4
+Size of double : 8
+Size of wchar_t : 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Iterate over vector or array</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/iteration/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -61,6 +115,91 @@ for(std::vector&amp;lt;float&amp;gt;::iterator it = v.begin(); it != v.end(); ++
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 9.1 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>String manipulation</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;convert-between-different-dec-and-binary&#34;&gt;Convert between different Dec and Binary&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;bitset&amp;gt;
+
+std::bitset&amp;lt;32&amp;gt;(1).to_string()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;00000000000000000000000000000001&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;bitwise-operations&#34;&gt;Bitwise operations&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;cout &amp;lt;&amp;lt; bitset&amp;lt;32&amp;gt;(1) &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; &amp;quot;================================&amp;quot; &amp;lt;&amp;lt; endl;
+for (int i = 0; i &amp;lt; 32; i++)
+cout &amp;lt;&amp;lt; bitset&amp;lt;32&amp;gt;(1 &amp;lt;&amp;lt; i) &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;00000000000000000000000000000001
+================================
+00000000000000000000000000000001
+00000000000000000000000000000010
+00000000000000000000000000000100
+00000000000000000000000000001000
+00000000000000000000000000010000
+00000000000000000000000000100000
+00000000000000000000000001000000
+00000000000000000000000010000000
+00000000000000000000000100000000
+00000000000000000000001000000000
+00000000000000000000010000000000
+00000000000000000000100000000000
+00000000000000000001000000000000
+00000000000000000010000000000000
+00000000000000000100000000000000
+00000000000000001000000000000000
+00000000000000010000000000000000
+00000000000000100000000000000000
+00000000000001000000000000000000
+00000000000010000000000000000000
+00000000000100000000000000000000
+00000000001000000000000000000000
+00000000010000000000000000000000
+00000000100000000000000000000000
+00000001000000000000000000000000
+00000010000000000000000000000000
+00000100000000000000000000000000
+00001000000000000000000000000000
+00010000000000000000000000000000
+00100000000000000000000000000000
+01000000000000000000000000000000
+10000000000000000000000000000000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;check-bits&#34;&gt;Check bits&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{
+    int value = 7;
+    cout &amp;lt;&amp;lt; value &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; std::bitset&amp;lt;32&amp;gt;(1 ) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; std::bitset&amp;lt;32&amp;gt;(1 &amp;lt;&amp;lt; value) &amp;lt;&amp;lt; endl;
+    unsigned int checker = 0;
+    cout &amp;lt;&amp;lt; std::bitset&amp;lt;32&amp;gt;(checker) &amp;lt;&amp;lt; endl;
+    checker = (1 &amp;lt;&amp;lt; value);
+    cout &amp;lt;&amp;lt; std::bitset&amp;lt;32&amp;gt;(checker) &amp;lt;&amp;lt; endl;
+    checker |= (1 &amp;lt;&amp;lt; 3);
+    cout &amp;lt;&amp;lt; std::bitset&amp;lt;32&amp;gt;(checker) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; bool(checker &amp;amp; 1 &amp;lt;&amp;lt; value) &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;7
+00000000000000000000000000000001
+00000000000000000000000010000000
+00000000000000000000000000000000
+00000000000000000000000010000000
+00000000000000000000000010001000
+1
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
