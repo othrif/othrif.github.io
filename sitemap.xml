@@ -53,7 +53,17 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/ascii_unicode/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -84,6 +94,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/functions/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/ascii/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

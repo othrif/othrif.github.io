@@ -13,6 +13,42 @@
     </image>
     
     <item>
+      <title>&#43;&#43;*ptr vs. *ptr&#43;&#43;</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rules&#34;&gt;Rules&lt;/h3&gt;
+&lt;p&gt;Prefix operator &lt;code&gt;++&lt;/code&gt; has the same precedence as dereference: &lt;code&gt;++*ptr&lt;/code&gt; = &lt;code&gt;++(*ptr)&lt;/code&gt;. &lt;code&gt;++ptr&lt;/code&gt; evaluates to the &lt;em&gt;incremented&lt;/em&gt; value of &lt;code&gt;ptr&lt;/code&gt;&lt;br&gt;
+Postfix operator &lt;code&gt;++&lt;/code&gt; has a higher precedence than dereference: So &lt;code&gt;*ptr++&lt;/code&gt; gets evaluated as &lt;code&gt;*(ptr++)&lt;/code&gt;. &lt;code&gt;ptr++&lt;/code&gt; evaluates to the current value of &lt;code&gt;ptr&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int x = 19;
+int *ptr = &amp;amp;x;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; ++(*ptr) &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;19
+20
+20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int x = 19;
+int *ptr = &amp;amp;x;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; (*ptr)++ &amp;lt;&amp;lt; endl; // *ptr++ means *(ptr++) and will give garbage
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;19
+19
+20
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>ASCII vs Unicode</title>
       <link>http://othrif.github.io/technical_note/linux/basics/ascii_unicode/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -31,6 +67,99 @@
 &lt;li&gt;UTF-16: minimum 16 bits.&lt;/li&gt;
 &lt;li&gt;UTF-32: minimum and maximum 32 bits&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Binary, Octal, and Hexadecimal Integers</title>
+      <link>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</guid>
+      <description>&lt;h1 id=&#34;summary-table&#34;&gt;Summary table&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;{&amp;quot;Decimal&amp;quot;:&amp;lt;10} {&amp;quot;Binary&amp;quot;:&amp;lt;15} {&amp;quot;Hexadecimal&amp;quot;:&amp;lt;10}&#39;)
+for i in range(32):
+    i_bin = bin(i)
+    i_oct = oct(i)
+    i_hex = hex(i)
+    print(f&#39;{i:10} {i_bin:15} {i_hex:10}&#39;)
+for i in range(5,10):
+    i = 2**i
+    i_bin = bin(i)
+    i_oct = oct(i)
+    i_hex = hex(i)
+    print(f&#39;{i:10} {i_bin:15} {i_hex:10}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Decimal    Binary          Hexadecimal
+         0 0b0             0x0       
+         1 0b1             0x1       
+         2 0b10            0x2       
+         3 0b11            0x3       
+         4 0b100           0x4       
+         5 0b101           0x5       
+         6 0b110           0x6       
+         7 0b111           0x7       
+         8 0b1000          0x8       
+         9 0b1001          0x9       
+        10 0b1010          0xa       
+        11 0b1011          0xb       
+        12 0b1100          0xc       
+        13 0b1101          0xd       
+        14 0b1110          0xe       
+        15 0b1111          0xf       
+        16 0b10000         0x10      
+        17 0b10001         0x11      
+        18 0b10010         0x12      
+        19 0b10011         0x13      
+        20 0b10100         0x14      
+        21 0b10101         0x15      
+        22 0b10110         0x16      
+        23 0b10111         0x17      
+        24 0b11000         0x18      
+        25 0b11001         0x19      
+        26 0b11010         0x1a      
+        27 0b11011         0x1b      
+        28 0b11100         0x1c      
+        29 0b11101         0x1d      
+        30 0b11110         0x1e      
+        31 0b11111         0x1f      
+        32 0b100000        0x20      
+        64 0b1000000       0x40      
+       128 0b10000000      0x80      
+       256 0b100000000     0x100     
+       512 0b1000000000    0x200     
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;convert-to-binary&#34;&gt;Convert to Binary&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 79
+# Base 2(binary)
+bin_a = bin(a)
+print(bin_a)
+print(int(bin_a, 2)) #Base 2(binary)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b1001111
+79
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;convert-to-octal&#34;&gt;Convert to Octal&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 79
+# Base 8(octal)
+oct_a = oct(a)
+print(oct_a)
+print(int(oct_a, 8))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0o117
+79
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;convert-to-hexadecimal&#34;&gt;Convert to Hexadecimal&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = 79
+# Base 16(hexadecimal)
+hex_a = hex(a)
+print(hex_a)
+print(int(hex_a, 16))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0x4f
+79
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -259,6 +388,29 @@ banana
 cherry
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Get ASCII of a character</title>
+      <link>http://othrif.github.io/technical_note/python/basics/ascii/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/ascii/</guid>
+      <description>&lt;h3 id=&#34;get-the-int-value-of-the-char&#34;&gt;Get the int value of the char&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ord(&#39;a&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;97
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-the-char-value-of-the-ascii-int&#34;&gt;Get the char value of the ascii int&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;chr(97)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;a&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;manipulations&#34;&gt;Manipulations&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;chr(ord(&#39;a&#39;) + 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;d&#39;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

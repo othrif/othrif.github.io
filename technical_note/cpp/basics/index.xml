@@ -13,6 +13,42 @@
     </image>
     
     <item>
+      <title>&#43;&#43;*ptr vs. *ptr&#43;&#43;</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;rules&#34;&gt;Rules&lt;/h3&gt;
+&lt;p&gt;Prefix operator &lt;code&gt;++&lt;/code&gt; has the same precedence as dereference: &lt;code&gt;++*ptr&lt;/code&gt; = &lt;code&gt;++(*ptr)&lt;/code&gt;. &lt;code&gt;++ptr&lt;/code&gt; evaluates to the &lt;em&gt;incremented&lt;/em&gt; value of &lt;code&gt;ptr&lt;/code&gt;&lt;br&gt;
+Postfix operator &lt;code&gt;++&lt;/code&gt; has a higher precedence than dereference: So &lt;code&gt;*ptr++&lt;/code&gt; gets evaluated as &lt;code&gt;*(ptr++)&lt;/code&gt;. &lt;code&gt;ptr++&lt;/code&gt; evaluates to the current value of &lt;code&gt;ptr&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int x = 19;
+int *ptr = &amp;amp;x;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; ++(*ptr) &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;19
+20
+20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int x = 19;
+int *ptr = &amp;amp;x;
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; (*ptr)++ &amp;lt;&amp;lt; endl; // *ptr++ means *(ptr++) and will give garbage
+cout &amp;lt;&amp;lt; *ptr &amp;lt;&amp;lt; endl;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;19
+19
+20
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Bitwise Operations</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/strings/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

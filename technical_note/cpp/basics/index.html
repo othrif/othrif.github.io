@@ -593,6 +593,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/cpp/basics/ptr_deref/" >&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; using namespace std;  Rules Prefix operator ++ has the same precedence as dereference: ++*ptr = ++(*ptr). ++ptr evaluates to the incremented value of ptr
+Postfix operator ++ has a higher precedence than dereference: So *ptr++ gets evaluated as *(ptr++).
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/cpp/basics/strings/" >Bitwise Operations</a></h2>
       <div class="article-style">
         
