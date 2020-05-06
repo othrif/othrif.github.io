@@ -224,6 +224,148 @@ cherry
     </item>
     
     <item>
+      <title>Lists, Tuples</title>
+      <link>http://othrif.github.io/technical_note/python/basics/lists/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/lists/</guid>
+      <description>&lt;h3 id=&#34;lists&#34;&gt;Lists&lt;/h3&gt;
+&lt;p&gt;Lists are mutable&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list.append(&#39;add one more&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;, &#39;add one more&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list.extend([&#39;another&#39;,&#39;even more&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;, &#39;add one more&#39;, &#39;another&#39;, &#39;even more&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;access-an-element&#34;&gt;Access an element&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_list[2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;apples&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(my_list)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tuples&#34;&gt;Tuples&lt;/h3&gt;
+&lt;p&gt;Tuples are immutable&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;t = (0,1,2,3,4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;access-an-element-1&#34;&gt;Access an element&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;t[2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(t)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;special-cases&#34;&gt;Special cases&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;single = (1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(single)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;int
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;single = (1,)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(single)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;appending&#34;&gt;Appending&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo = ([&#39;test&#39;],)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;([&#39;test&#39;],)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo[0].append(&#39;another test&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;([&#39;test&#39;, &#39;another test&#39;],)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo[0].append(&#39;yet another test&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;([&#39;test&#39;, &#39;another test&#39;, &#39;yet another test&#39;],)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;but this is not possible&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;galileo[0] = [&#39;reset&#39;,&#39;can\&#39;t be done&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-34-e195864df4a2&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 galileo[0] = [&#39;reset&#39;,&#39;can\&#39;t be done&#39;]
+
+
+TypeError: &#39;tuple&#39; object does not support item assignment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;packing-and-unpacking&#34;&gt;Packing and unpacking&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;date = 6,5,2020
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(date)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;day,month,year = date
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;day={day}, month={month}, year={year}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;day=6, month=5, year=2020
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;(day,month,year) = date
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;swap-variables-using-unpacking&#34;&gt;Swap variables using unpacking&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x,y = 1,2
+x,y = y,x
+print(f&#39;x={x}, y={y}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;x=2, y=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;remainder&#34;&gt;Remainder&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;first, *rest = (1,2,3,4,5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;first={first} rest={rest}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;first=1 rest=[2, 3, 4, 5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;first, *middle, last = (1,2,3,4,5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(middle)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;first={first} middle={middle} last={last}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;first=1 middle=[2, 3, 4] last=5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;first, *middle, last = [1,2,3,4,5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;first={first} middle={middle} last={last}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;first=1 middle=[2, 3, 4] last=5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a, *b, c = &#39;HELLOWORLD&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;E&#39;, &#39;L&#39;, &#39;L&#39;, &#39;O&#39;, &#39;W&#39;, &#39;O&#39;, &#39;R&#39;, &#39;L&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Manipulation, indexing, and slicing</title>
       <link>http://othrif.github.io/technical_note/python/basics/strings/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -555,6 +697,107 @@ ferrari.show()  # same output as car.show(ferrari)
 color is blue
 Model is ferrari 488
 color is green
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Splitting strings</title>
+      <link>http://othrif.github.io/technical_note/python/basics/splitting/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/splitting/</guid>
+      <description>&lt;h3 id=&#34;basic-splitting&#34;&gt;Basic splitting&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str = &amp;quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;splitseperatormaxsplitpositions&#34;&gt;split(seperator,maxsplit=positions)&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.split()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I&#39;,
+ &#39;am&#39;,
+ &#39;playing&#39;,
+ &#39;with;##9Strings&#39;,
+ &#39;()&#39;,
+ &#39;while&#39;,
+ &#39;testing&#39;,
+ &#39;how&#39;,
+ &#39;these&#39;,
+ &#39;randome&#39;,
+ &#39;##&#39;,
+ &#39;chE@sracters&#39;,
+ &#39;worK;here\\right&#39;,
+ &#39;##&#39;,
+ &#39;there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.split(&#39;##&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;&#39;,
+ &#39;9Strings () while testing \n how these randome &#39;,
+ &#39; chE@sracters worK;here\\right &#39;,
+ &#39; there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.split(&#39;##&#39;,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;&#39;,
+ &#39;9Strings () while testing \n how these randome &#39;,
+ &#39; chE@sracters worK;here\\right ## there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.split(&#39;##&#39;,maxsplit=2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;&#39;,
+ &#39;9Strings () while testing \n how these randome &#39;,
+ &#39; chE@sracters worK;here\\right ## there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;rsplitseperatormaxsplitpositions&#34;&gt;rsplit(seperator,maxsplit=positions)&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.rsplit(&#39;##&#39;,maxsplit=2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;##9Strings () while testing \n how these randome &#39;,
+ &#39; chE@sracters worK;here\\right &#39;,
+ &#39; there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;consecutive-delimiters&#34;&gt;Consecutive delimiters&lt;/h4&gt;
+&lt;p&gt;Consecutive delimiters give empty strings&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.rsplit(&#39;#&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;&#39;,
+ &#39;&#39;,
+ &#39;9Strings () while testing \n how these randome &#39;,
+ &#39;&#39;,
+ &#39; chE@sracters worK;here\\right &#39;,
+ &#39;&#39;,
+ &#39; there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;helo  ljdk lksd   klsd&#39;.rsplit()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;helo&#39;, &#39;ljdk&#39;, &#39;lksd&#39;, &#39;klsd&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;helo  ljdk lksd   klsd&#39;.rsplit(&#39; &#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;helo&#39;, &#39;&#39;, &#39;ljdk&#39;, &#39;lksd&#39;, &#39;&#39;, &#39;&#39;, &#39;klsd&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;disasembling-strings-to-lines&#34;&gt;Disasembling strings to lines&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.splitlines()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;##9Strings () while testing &#39;,
+ &#39; how these randome ## chE@sracters worK;&#39;,
+ &#39;here\\right ## there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Keep end of lines by passing &lt;code&gt;True&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;str.splitlines(True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;I am playing with;##9Strings () while testing \n&#39;,
+ &#39; how these randome ## chE@sracters worK;\n&#39;,
+ &#39;here\\right ## there&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;partition&#34;&gt;Partition&lt;/h3&gt;
+&lt;p&gt;Split string at the first occurence of seperator, and return 3 tuple: (before sep, sep, after sep)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;first;second;third&#39;.partition(&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(&#39;first&#39;, &#39;;&#39;, &#39;second;third&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;compare with&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;first;second;third&#39;.split(&#39;;&#39;,1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;first&#39;, &#39;second;third&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
