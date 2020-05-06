@@ -224,6 +224,217 @@ cherry
     </item>
     
     <item>
+      <title>Manipulation, indexing, and slicing</title>
+      <link>http://othrif.github.io/technical_note/python/basics/strings/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/strings/</guid>
+      <description>&lt;h3 id=&#34;access-elements&#34;&gt;Access elements&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello world!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;H&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[4]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;o&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;substrings&#34;&gt;Substrings&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[0:5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Hello&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;backwards&#34;&gt;Backwards&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[-1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[-5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;o&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;skip-over&#34;&gt;Skip over&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[::2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Hlowrd&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reverse&#34;&gt;Reverse&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[::-1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;!dlrow olleH&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concatenation&#34;&gt;Concatenation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;language = &#39;Python&#39;
+language + &#39; is great!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python is great!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;repetition&#34;&gt;Repetition&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;.&#39;*100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;....................................................................................................&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;100*&#39;.&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;....................................................................................................&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;length&#34;&gt;Length&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;len(language)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;escape-characters&#34;&gt;Escape Characters&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\N{GREEK CAPITAL LETTER DELTA}&#39;)
+print(&#39;\u0394&#39;) # unicode 16-bit hex
+print(&#39;\U00000394&#39;)# unicode 32-bit hex
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Δ
+Δ
+Δ
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello World&#39;
+print(f&#39;Particular element: {txt[0]}&#39;)
+print(f&#39;substring: {txt[0:5]}&#39;)
+print(f&#39;substring: {txt[:5]}&#39;)
+print(f&#39;substring: {txt[0:-6]}&#39;)
+print(f&#39;substring: {txt[6:]}&#39;)
+print(f&#39;skip 2: {txt[::2]}&#39;)
+print(f&#39;skip 3: {txt[::3]}&#39;)
+print(f&#39;Invert order: {txt[::-1]}&#39;)
+print(f&#39;String length: {len(txt)}&#39;)
+print(f&#39;Repetition: {&amp;quot;.&amp;quot;*10}&#39;)
+print(f&#39;Concatenation: {txt+&amp;quot; from Hamburg!&amp;quot;}&#39;)
+print(f&#39;Escape characters...&#39;)
+print(f&#39;few examples in this line: \&#39;\&amp;quot;123\b \thorizontal&#39;)
+print(f&#39;1234567 carriage return \rXXX&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Particular element: H
+substring: Hello
+substring: Hello
+substring: Hello
+substring: World
+skip 2: HloWrd
+skip 3: HlWl
+Invert order: dlroW olleH
+String length: 11
+Repetition: ..........
+Concatenation: Hello World from Hamburg!
+Escape characters...
+few examples in this line: &#39;&amp;quot;12 	horizontal
+XXX4567 carriage return 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;strings-are-immutable&#34;&gt;Strings are immutable&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;language[9]=-1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-45-4d8be7846d5d&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 language[9]=-1
+
+
+TypeError: &#39;str&#39; object does not support item assignment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you cannot change the values inside of string&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;~1
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-2
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Operators</title>
+      <link>http://othrif.github.io/technical_note/python/basics/operators/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/operators/</guid>
+      <description>&lt;h3 id=&#34;bitwise-operation&#34;&gt;Bitwise operation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x=3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(x))
+print(bin(~x))
+~x # = -(x+1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b11
+-0b100
+
+
+
+
+
+-4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(6))
+print(bin(3))
+print(bin(6 | 3))
+6 | 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b110
+0b11
+0b111
+
+
+
+
+
+7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;bitwise-xor&#34;&gt;Bitwise XOR&lt;/h3&gt;
+&lt;p&gt;each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(6))
+print(bin(3))
+print(bin(6 ^ 3))
+6 ^ 3
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b110
+0b11
+0b101
+
+
+
+
+
+5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;use XOR as a short-cut to setting the value of a register to zero&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;6 ^ 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;shift-operators&#34;&gt;Shift operators&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(1))
+print(bin(1 &amp;lt;&amp;lt; 5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b1
+0b100000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(5))
+print(bin(5 &amp;lt;&amp;lt; 1))
+print(5 &amp;lt;&amp;lt; 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b101
+0b1010
+10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(2))
+print(bin(2 &amp;lt;&amp;lt; 3))
+print(2 &amp;lt;&amp;lt; 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b10
+0b10000
+16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Print statements</title>
       <link>http://othrif.github.io/technical_note/python/basics/print/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -291,39 +502,6 @@ some_other_number = 2.23432
 print(f&#39;{&amp;quot;d1=0:&amp;quot;:&amp;lt;20} limit = {some_number:.3f} \timpact = {some_other_number:.3%}&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;d1=0:                limit = 23.000 	impact = 223.432%
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;
-&lt;p&gt;Not quite about printing, but a good illustration of what to expect&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello World&#39;
-print(f&#39;Particular element: {txt[0]}&#39;)
-print(f&#39;substring: {txt[0:5]}&#39;)
-print(f&#39;substring: {txt[:5]}&#39;)
-print(f&#39;substring: {txt[0:-6]}&#39;)
-print(f&#39;substring: {txt[6:]}&#39;)
-print(f&#39;skip 2: {txt[::2]}&#39;)
-print(f&#39;skip 3: {txt[::3]}&#39;)
-print(f&#39;Invert order: {txt[::-1]}&#39;)
-print(f&#39;String length: {len(txt)}&#39;)
-print(f&#39;Repetition: {&amp;quot;.&amp;quot;*10}&#39;)
-print(f&#39;Concatenation: {txt+&amp;quot; from Hamburg!&amp;quot;}&#39;)
-print(f&#39;Escape characters...&#39;)
-print(f&#39;few examples in this line: \&#39;\&amp;quot;123\b \thorizontal&#39;)
-print(f&#39;1234567 carriage return \rXXX&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Particular element: H
-substring: Hello
-substring: Hello
-substring: Hello
-substring: World
-skip 2: HloWrd
-skip 3: HlWl
-Invert order: dlroW olleH
-String length: 11
-Repetition: ..........
-Concatenation: Hello World from Hamburg!
-Escape characters...
-few examples in this line: &#39;&amp;quot;12 	horizontal
-XXX4567 carriage return 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;casting&#34;&gt;Casting&lt;/h3&gt;
 &lt;p&gt;Same as above, not related to printing but gives a good illustration&lt;/p&gt;

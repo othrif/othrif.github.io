@@ -630,10 +630,34 @@ Postfix operator ++ has a higher precedence than dereference: So *ptr++ gets eva
     
     
     <div>
+      <h2><a href="/technical_note/cpp/basics/func_args/" >Function arguments, by reference</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; using namespace std;  Pass by pointer Pass-by-pointer means to pass a pointer argument in the calling function to the corresponding formal parameter of the called function. The called function can modify the value of the variable to which the pointer argument points Pass by pointer using a pointer, here you can pass a NULL pointer
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/cpp/basics/iteration/" >Iterate over vector or array</a></h2>
       <div class="article-style">
         
           #include &lt;iostream&gt; #include &lt;vector&gt;  Iterate over std::vector std::vector&lt;float&gt; v = {7.3, 5.1, 16.3, 8.9}; // T = int, it can be anything else  Using iterators for(std::vector&lt;float&gt;::iterator it = v.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/cpp/basics/sort/" >Sorting</a></h2>
+      <div class="article-style">
+        
+          #include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  Sort string string str = &quot;hgfedcba&quot;; string c_str(str); sort(c_str.begin(), c_str.end()); cout &lt;&lt; c_str &lt;&lt; endl;  abcdefgh  
         
       </div>
     </div>

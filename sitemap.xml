@@ -93,6 +93,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/cpp/basics/func_args/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/functions/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -118,7 +123,17 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/strings/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/scripting/markdown/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/operators/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -139,6 +154,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/classes/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/cpp/basics/sort/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

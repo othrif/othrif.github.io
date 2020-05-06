@@ -103,6 +103,124 @@ Size of wchar_t : 4
     </item>
     
     <item>
+      <title>Function arguments, by reference</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/func_args/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/func_args/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-pointer&#34;&gt;Pass by pointer&lt;/h3&gt;
+&lt;p&gt;Pass-by-pointer means to pass a pointer argument in the calling function to the corresponding formal parameter of the called function. The called function can modify the value of the variable to which the pointer argument points
+Pass by pointer using a pointer, here you can pass a &lt;code&gt;NULL&lt;/code&gt; pointer&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f1(double* x, double* y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; *x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; *y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return *x * *y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void swapnum_byPointer(int *i, int *j) {
+  int temp = *i;
+  *i = *j;
+  *j = temp;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 10;
+int b = 20;
+swapnum_byPointer(&amp;amp;a, &amp;amp;b);
+cout &amp;lt;&amp;lt; &amp;quot;A is &amp;quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &amp;quot; and B is &amp;quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;A is 20 and B is 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-reference&#34;&gt;Pass by reference&lt;/h3&gt;
+&lt;p&gt;Pass by reference by creating an alias to the arguments you pass. Use &lt;code&gt;const&lt;/code&gt; to not change these arguments&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f2(double const &amp;amp;x, double const &amp;amp;y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pass by reference by creating an alias to the arguments you pass. Do not use &lt;code&gt;const&lt;/code&gt; if you plan to modify the arguments&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f3(double &amp;amp;x, double &amp;amp;y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{double a, b;
+a = 2;
+b = 3; 
+std::cout &amp;lt;&amp;lt; f1(&amp;amp;a, &amp;amp;b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+std::cout &amp;lt;&amp;lt; f2(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+std::cout &amp;lt;&amp;lt; f3(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;val x: 2
+val y: 3
+6
+val x: 2
+val y: 3
+6
+val x: 2
+val y: 3
+6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void swapnum(int &amp;amp;i, int &amp;amp;j) {
+  int temp = i;
+  i = j;
+  j = temp;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 10;
+int b = 20;
+swapnum(a, b);
+cout &amp;lt;&amp;lt; &amp;quot;A is &amp;quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &amp;quot; and B is &amp;quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;A is 20 and B is 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void modify_const(const int&amp;amp; x) {
+  int&amp;amp; y = const_cast&amp;lt;int&amp;amp;&amp;gt;(x);
+  ++y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 5;
+  modify_const(a);
+  cout &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-value&#34;&gt;Pass by value&lt;/h3&gt;
+&lt;p&gt;The value of an argument is copied to a non-pointer or non-reference parameter in the called function definition. The parameter in the called function is initialized with the value of the passed argument. As long as the parameter has not been declared as constant, the value of the parameter can be changed, but the changes are only performed within the scope of the called function only; they have no effect on the value of the argument in the calling function.&lt;/p&gt;
+&lt;p&gt;Pass-by-reference is more efficient than pass-by-value, because it does not copy the arguments.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f4(double x, double y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;result&#34;&gt;Result&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{double a, b;
+a = 2;
+b = 3; 
+std::cout &amp;lt;&amp;lt; f4(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;val x: 2
+val y: 3
+6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Iterate over vector or array</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/iteration/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -153,6 +271,26 @@ for(std::vector&amp;lt;float&amp;gt;::iterator it = v.begin(); it != v.end(); ++
 &lt;pre&gt;&lt;code&gt;7.3 5.1 16.3 8.9 9.1 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sorting</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/sort/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/sort/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sort-string&#34;&gt;Sort string&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &amp;quot;hgfedcba&amp;quot;;
+ string c_str(str);
+ sort(c_str.begin(), c_str.end());
+cout &amp;lt;&amp;lt; c_str &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abcdefgh
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

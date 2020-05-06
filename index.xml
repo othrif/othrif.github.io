@@ -348,6 +348,124 @@ drwxrwxr-x 2 othrif othrif 4096 Jul 29 21:21 sales
     </item>
     
     <item>
+      <title>Function arguments, by reference</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/func_args/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/func_args/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-pointer&#34;&gt;Pass by pointer&lt;/h3&gt;
+&lt;p&gt;Pass-by-pointer means to pass a pointer argument in the calling function to the corresponding formal parameter of the called function. The called function can modify the value of the variable to which the pointer argument points
+Pass by pointer using a pointer, here you can pass a &lt;code&gt;NULL&lt;/code&gt; pointer&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f1(double* x, double* y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; *x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; *y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return *x * *y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void swapnum_byPointer(int *i, int *j) {
+  int temp = *i;
+  *i = *j;
+  *j = temp;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 10;
+int b = 20;
+swapnum_byPointer(&amp;amp;a, &amp;amp;b);
+cout &amp;lt;&amp;lt; &amp;quot;A is &amp;quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &amp;quot; and B is &amp;quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;A is 20 and B is 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-reference&#34;&gt;Pass by reference&lt;/h3&gt;
+&lt;p&gt;Pass by reference by creating an alias to the arguments you pass. Use &lt;code&gt;const&lt;/code&gt; to not change these arguments&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f2(double const &amp;amp;x, double const &amp;amp;y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pass by reference by creating an alias to the arguments you pass. Do not use &lt;code&gt;const&lt;/code&gt; if you plan to modify the arguments&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f3(double &amp;amp;x, double &amp;amp;y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{double a, b;
+a = 2;
+b = 3; 
+std::cout &amp;lt;&amp;lt; f1(&amp;amp;a, &amp;amp;b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+std::cout &amp;lt;&amp;lt; f2(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+std::cout &amp;lt;&amp;lt; f3(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;val x: 2
+val y: 3
+6
+val x: 2
+val y: 3
+6
+val x: 2
+val y: 3
+6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void swapnum(int &amp;amp;i, int &amp;amp;j) {
+  int temp = i;
+  i = j;
+  j = temp;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 10;
+int b = 20;
+swapnum(a, b);
+cout &amp;lt;&amp;lt; &amp;quot;A is &amp;quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; &amp;quot; and B is &amp;quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;A is 20 and B is 10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void modify_const(const int&amp;amp; x) {
+  int&amp;amp; y = const_cast&amp;lt;int&amp;amp;&amp;gt;(x);
+  ++y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{int a = 5;
+  modify_const(a);
+  cout &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;pass-by-value&#34;&gt;Pass by value&lt;/h3&gt;
+&lt;p&gt;The value of an argument is copied to a non-pointer or non-reference parameter in the called function definition. The parameter in the called function is initialized with the value of the passed argument. As long as the parameter has not been declared as constant, the value of the parameter can be changed, but the changes are only performed within the scope of the called function only; they have no effect on the value of the argument in the calling function.&lt;/p&gt;
+&lt;p&gt;Pass-by-reference is more efficient than pass-by-value, because it does not copy the arguments.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;double f4(double x, double y)
+{
+    std::cout &amp;lt;&amp;lt; &amp;quot;val x: &amp;quot; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    std::cout &amp;lt;&amp;lt; &amp;quot;val y: &amp;quot; &amp;lt;&amp;lt; y &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+    return x * y;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;result&#34;&gt;Result&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{double a, b;
+a = 2;
+b = 3; 
+std::cout &amp;lt;&amp;lt; f4(a, b) &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;val x: 2
+val y: 3
+6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Functions</title>
       <link>http://othrif.github.io/technical_note/python/basics/functions/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -582,6 +700,130 @@ or
 &lt;p&gt;&lt;code&gt;hostnamectl&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;gives-lsb-linux-standard-base-and-distribution-specific-information-on-the-cli&#34;&gt;gives LSB (Linux Standard Base) and distribution-specific information on the CLI&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;lsb_release -a&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Manipulation, indexing, and slicing</title>
+      <link>http://othrif.github.io/technical_note/python/basics/strings/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/strings/</guid>
+      <description>&lt;h3 id=&#34;access-elements&#34;&gt;Access elements&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello world!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;H&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[4]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;o&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;substrings&#34;&gt;Substrings&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[0:5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Hello&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;backwards&#34;&gt;Backwards&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[-1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[-5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;o&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;skip-over&#34;&gt;Skip over&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[::2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Hlowrd&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reverse&#34;&gt;Reverse&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt[::-1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;!dlrow olleH&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concatenation&#34;&gt;Concatenation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;language = &#39;Python&#39;
+language + &#39; is great!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;Python is great!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;repetition&#34;&gt;Repetition&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;&#39;.&#39;*100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;....................................................................................................&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;100*&#39;.&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;....................................................................................................&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;length&#34;&gt;Length&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;len(language)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;escape-characters&#34;&gt;Escape Characters&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;\N{GREEK CAPITAL LETTER DELTA}&#39;)
+print(&#39;\u0394&#39;) # unicode 16-bit hex
+print(&#39;\U00000394&#39;)# unicode 32-bit hex
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Δ
+Δ
+Δ
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello World&#39;
+print(f&#39;Particular element: {txt[0]}&#39;)
+print(f&#39;substring: {txt[0:5]}&#39;)
+print(f&#39;substring: {txt[:5]}&#39;)
+print(f&#39;substring: {txt[0:-6]}&#39;)
+print(f&#39;substring: {txt[6:]}&#39;)
+print(f&#39;skip 2: {txt[::2]}&#39;)
+print(f&#39;skip 3: {txt[::3]}&#39;)
+print(f&#39;Invert order: {txt[::-1]}&#39;)
+print(f&#39;String length: {len(txt)}&#39;)
+print(f&#39;Repetition: {&amp;quot;.&amp;quot;*10}&#39;)
+print(f&#39;Concatenation: {txt+&amp;quot; from Hamburg!&amp;quot;}&#39;)
+print(f&#39;Escape characters...&#39;)
+print(f&#39;few examples in this line: \&#39;\&amp;quot;123\b \thorizontal&#39;)
+print(f&#39;1234567 carriage return \rXXX&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Particular element: H
+substring: Hello
+substring: Hello
+substring: Hello
+substring: World
+skip 2: HloWrd
+skip 3: HlWl
+Invert order: dlroW olleH
+String length: 11
+Repetition: ..........
+Concatenation: Hello World from Hamburg!
+Escape characters...
+few examples in this line: &#39;&amp;quot;12 	horizontal
+XXX4567 carriage return 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;strings-are-immutable&#34;&gt;Strings are immutable&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;language[9]=-1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-45-4d8be7846d5d&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 language[9]=-1
+
+
+TypeError: &#39;str&#39; object does not support item assignment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;you cannot change the values inside of string&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;~1
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;-2
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -854,6 +1096,93 @@ many lines&lt;/p&gt;
     </item>
     
     <item>
+      <title>Operators</title>
+      <link>http://othrif.github.io/technical_note/python/basics/operators/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/operators/</guid>
+      <description>&lt;h3 id=&#34;bitwise-operation&#34;&gt;Bitwise operation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x=3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(x))
+print(bin(~x))
+~x # = -(x+1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b11
+-0b100
+
+
+
+
+
+-4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(6))
+print(bin(3))
+print(bin(6 | 3))
+6 | 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b110
+0b11
+0b111
+
+
+
+
+
+7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;bitwise-xor&#34;&gt;Bitwise XOR&lt;/h3&gt;
+&lt;p&gt;each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(6))
+print(bin(3))
+print(bin(6 ^ 3))
+6 ^ 3
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b110
+0b11
+0b101
+
+
+
+
+
+5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;use XOR as a short-cut to setting the value of a register to zero&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;6 ^ 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;shift-operators&#34;&gt;Shift operators&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(1))
+print(bin(1 &amp;lt;&amp;lt; 5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b1
+0b100000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(5))
+print(bin(5 &amp;lt;&amp;lt; 1))
+print(5 &amp;lt;&amp;lt; 1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b101
+0b1010
+10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(bin(2))
+print(bin(2 &amp;lt;&amp;lt; 3))
+print(2 &amp;lt;&amp;lt; 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0b10
+0b10000
+16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Print statements</title>
       <link>http://othrif.github.io/technical_note/java/basics/print/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -938,39 +1267,6 @@ print(f&#39;{&amp;quot;d1=0:&amp;quot;:&amp;lt;20} limit = {some_number:.3f} \ti
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;d1=0:                limit = 23.000 	impact = 223.432%
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;indexing&#34;&gt;Indexing&lt;/h3&gt;
-&lt;p&gt;Not quite about printing, but a good illustration of what to expect&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;txt = &#39;Hello World&#39;
-print(f&#39;Particular element: {txt[0]}&#39;)
-print(f&#39;substring: {txt[0:5]}&#39;)
-print(f&#39;substring: {txt[:5]}&#39;)
-print(f&#39;substring: {txt[0:-6]}&#39;)
-print(f&#39;substring: {txt[6:]}&#39;)
-print(f&#39;skip 2: {txt[::2]}&#39;)
-print(f&#39;skip 3: {txt[::3]}&#39;)
-print(f&#39;Invert order: {txt[::-1]}&#39;)
-print(f&#39;String length: {len(txt)}&#39;)
-print(f&#39;Repetition: {&amp;quot;.&amp;quot;*10}&#39;)
-print(f&#39;Concatenation: {txt+&amp;quot; from Hamburg!&amp;quot;}&#39;)
-print(f&#39;Escape characters...&#39;)
-print(f&#39;few examples in this line: \&#39;\&amp;quot;123\b \thorizontal&#39;)
-print(f&#39;1234567 carriage return \rXXX&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Particular element: H
-substring: Hello
-substring: Hello
-substring: Hello
-substring: World
-skip 2: HloWrd
-skip 3: HlWl
-Invert order: dlroW olleH
-String length: 11
-Repetition: ..........
-Concatenation: Hello World from Hamburg!
-Escape characters...
-few examples in this line: &#39;&amp;quot;12 	horizontal
-XXX4567 carriage return 
-&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;casting&#34;&gt;Casting&lt;/h3&gt;
 &lt;p&gt;Same as above, not related to printing but gives a good illustration&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x=&amp;quot;10&amp;quot;
@@ -1031,6 +1327,26 @@ ferrari.show()  # same output as car.show(ferrari)
 color is blue
 Model is ferrari 488
 color is green
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sorting</title>
+      <link>http://othrif.github.io/technical_note/cpp/basics/sort/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/cpp/basics/sort/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sort-string&#34;&gt;Sort string&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;string str = &amp;quot;hgfedcba&amp;quot;;
+ string c_str(str);
+ sort(c_str.begin(), c_str.end());
+cout &amp;lt;&amp;lt; c_str &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;abcdefgh
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
