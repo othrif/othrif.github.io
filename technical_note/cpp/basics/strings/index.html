@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  String size { string str = &quot;hello&quot;; cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl; }  String size is 5   ">
+  <meta name="description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  String size { string str = &quot;hello&quot;; cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl; }  String size is 5  String append For one character, use pash_back() otherwise append()">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/cpp/basics/strings/">
@@ -232,7 +232,7 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/cpp/basics/strings/">
   <meta property="og:title" content="Bitwise Operations | Othmane Rifki">
-  <meta property="og:description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  String size { string str = &quot;hello&quot;; cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl; }  String size is 5   "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="#include &lt;iostream&gt; #include &lt;string&gt; using namespace std;  String size { string str = &quot;hello&quot;; cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl; }  String size is 5  String append For one character, use pash_back() otherwise append()"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -579,6 +579,55 @@ cout &lt;&lt; &quot;String size is &quot; &lt;&lt; str.length() &lt;&lt; endl;
 }
 </code></pre>
 <pre><code>String size is 5
+</code></pre>
+<h3 id="string-append">String append</h3>
+<p>For one character, use <code>pash_back()</code> otherwise <code>append()</code></p>
+<pre><code class="language-c++">{
+string inStr = &quot;123&quot;; 
+string outStr = &quot;&quot;; 
+outStr.append(&quot;4&quot;); 
+outStr.append(inStr);
+char x = 'X';
+outStr.push_back(x); // Valid when appending 1 char
+cout &lt;&lt; outStr &lt;&lt; endl;
+}
+</code></pre>
+<pre><code>4123X
+</code></pre>
+<h3 id="string-check-space">String check space</h3>
+<pre><code class="language-c++">{string str = &quot; HEY &quot;;
+ 
+ for(size_t i = 0; i&lt;str.length(); i++){
+     if( isspace(str[i]) )
+         cout &lt;&lt; &quot;Found space!&quot; &lt;&lt; endl;
+     else
+         cout &lt;&lt; &quot;Space Not found!&quot; &lt;&lt; endl;
+ }
+}
+</code></pre>
+<pre><code>Found space!
+Space Not found!
+Space Not found!
+Space Not found!
+Found space!
+</code></pre>
+<pre><code class="language-c++">{string str = &quot; &quot;;
+if(str == &quot; &quot;)
+    cout &lt;&lt; &quot;Found!&quot; &lt;&lt; endl;
+ else
+     cout &lt;&lt; &quot;Not found!&quot; &lt;&lt; endl;
+}
+</code></pre>
+<pre><code>Found!
+</code></pre>
+<h3 id="erase-a-string">Erase a string</h3>
+<pre><code class="language-c++">{
+    string str (&quot;This is an example sentence.&quot;);
+    str.erase (str.begin()+5, str.end()-9);
+    cout &lt;&lt; str &lt;&lt; endl;
+}
+</code></pre>
+<pre><code>This sentence.
 </code></pre>
 <pre><code class="language-c++">
 </code></pre>

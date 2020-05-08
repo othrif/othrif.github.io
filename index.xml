@@ -180,6 +180,55 @@ cout &amp;lt;&amp;lt; &amp;quot;String size is &amp;quot; &amp;lt;&amp;lt; str.l
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;String size is 5
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;string-append&#34;&gt;String append&lt;/h3&gt;
+&lt;p&gt;For one character, use &lt;code&gt;pash_back()&lt;/code&gt; otherwise &lt;code&gt;append()&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{
+string inStr = &amp;quot;123&amp;quot;; 
+string outStr = &amp;quot;&amp;quot;; 
+outStr.append(&amp;quot;4&amp;quot;); 
+outStr.append(inStr);
+char x = &#39;X&#39;;
+outStr.push_back(x); // Valid when appending 1 char
+cout &amp;lt;&amp;lt; outStr &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;4123X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;string-check-space&#34;&gt;String check space&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{string str = &amp;quot; HEY &amp;quot;;
+ 
+ for(size_t i = 0; i&amp;lt;str.length(); i++){
+     if( isspace(str[i]) )
+         cout &amp;lt;&amp;lt; &amp;quot;Found space!&amp;quot; &amp;lt;&amp;lt; endl;
+     else
+         cout &amp;lt;&amp;lt; &amp;quot;Space Not found!&amp;quot; &amp;lt;&amp;lt; endl;
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Found space!
+Space Not found!
+Space Not found!
+Space Not found!
+Found space!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{string str = &amp;quot; &amp;quot;;
+if(str == &amp;quot; &amp;quot;)
+    cout &amp;lt;&amp;lt; &amp;quot;Found!&amp;quot; &amp;lt;&amp;lt; endl;
+ else
+     cout &amp;lt;&amp;lt; &amp;quot;Not found!&amp;quot; &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Found!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;erase-a-string&#34;&gt;Erase a string&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{
+    string str (&amp;quot;This is an example sentence.&amp;quot;);
+    str.erase (str.begin()+5, str.end()-9);
+    cout &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;This sentence.
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
