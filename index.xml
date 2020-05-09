@@ -229,6 +229,34 @@ if(str == &amp;quot; &amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;This sentence.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;copy-string-to-char-array&#34;&gt;Copy string to char array&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;string&amp;gt;
+#include &amp;lt;cstring&amp;gt;
+using namespace std;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{std::string s = &amp;quot;Hello World!&amp;quot;;
+
+char cstr[s.size() + 1]; // +1 for /0 character
+strcpy(cstr, s.c_str()); // or pass &amp;amp;s[0]
+
+std::cout &amp;lt;&amp;lt; cstr &amp;lt;&amp;lt; &#39;\n&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;alternatively, if you will not remember &lt;code&gt;strcpy&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;{
+    std::string s = &amp;quot;Hello World!&amp;quot;;
+    char cstr[s.size() + 1]; // +1 for /0 character
+    for (int i=0; i&amp;lt;s.size(); i++)
+        cstr[i] = s[i];
+    std::cout &amp;lt;&amp;lt; cstr &amp;lt;&amp;lt; &#39;\n&#39;;
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Hello World!
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
