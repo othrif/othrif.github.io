@@ -666,6 +666,31 @@ for(std::vector&amp;lt;float&amp;gt;::iterator it = v.begin(); it != v.end(); ++
     </item>
     
     <item>
+      <title>Join strings</title>
+      <link>http://othrif.github.io/technical_note/python/basics/join/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/join/</guid>
+      <description>&lt;h3 id=&#34;basic-join&#34;&gt;Basic join&lt;/h3&gt;
+&lt;p&gt;Syntax: &lt;code&gt;str.join(iterable)&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [&amp;quot;First&amp;quot;, &amp;quot;Second&amp;quot;, &amp;quot;Third&amp;quot;]
+&#39;_&#39;.join(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;First_Second_Third&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;num = &#39;12345&#39;
+&#39;-&#39;.join(num)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;1-2-3-4-5&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;let = &#39;abcdefg&#39;
+&#39;.&#39;.join(let)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;a.b.c.d.e.f.g&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Jupyter shortcuts and installation</title>
       <link>http://othrif.github.io/technical_note/scripting/jupyter/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1511,6 +1536,37 @@ Casting to int: x+y=17
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/template/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Python 3 in MacOS</title>
+      <link>http://othrif.github.io/technical_note/python/basics/macos_env/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/macos_env/</guid>
+      <description>&lt;h3 id=&#34;change-python-to-point-to-python3-by-default&#34;&gt;Change python to point to python3 by default&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ls -l /usr/local/bin/python*
+ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;which-python-version&#34;&gt;Which Python version&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python -V
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;install-package&#34;&gt;Install package&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage --upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;upgrade-package&#34;&gt;Upgrade package&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage --upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;main-packages-used&#34;&gt;Main packages used&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install numpy
+pip install scipy
+pip install scikit-learn
+pip install matplotlib
+pip install pandas
+pip install jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
