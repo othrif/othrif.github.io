@@ -535,6 +535,53 @@ std::cout &amp;lt;&amp;lt; cstr &amp;lt;&amp;lt; &#39;\n&#39;;
     </item>
     
     <item>
+      <title>Broadcasting</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/broadcasting/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/broadcasting/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;broadcasting&#34;&gt;Broadcasting&lt;/h3&gt;
+&lt;p&gt;Broadcast- ing allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids&lt;/p&gt;
+&lt;p&gt;different dimensions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array([1,2,3])+1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([2, 3, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;same dimensions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary1 = np.array([1,2,3])
+ary2 = np.array([2,4,1])
+ary1+ary2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([3, 6, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;different shapes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary3 = np.array([[2,4,1],[1,2,3]])
+ary1+ary3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[3, 6, 4],
+       [2, 4, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;number of elements along the explicit axes and the implicit grid have to match:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try:
+    print(ary1 + np.array([2,3]))
+except ValueError as e:
+    print(&#39;ValueError:&#39;, e)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ValueError: operands could not be broadcast together with shapes (3,) (2,) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the 2-element array must have two elements along its first axis as well&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary3 + np.array([[2], [3]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[4, 6, 3],
+       [4, 5, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Command line tools</title>
       <link>http://othrif.github.io/technical_note/linux/basics/commandline/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

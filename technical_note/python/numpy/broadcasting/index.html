@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import numpy as np  Broadcasting Broadcast- ing allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids
+different dimensions:">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/numpy/broadcasting/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/numpy/broadcasting/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/numpy/broadcasting/">
+  <meta property="og:title" content="Broadcasting | Othmane Rifki">
+  <meta property="og:description" content="import numpy as np  Broadcasting Broadcast- ing allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids
+different dimensions:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Broadcasting | Othmane Rifki</title>
 
 </head>
 
@@ -552,135 +557,72 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Broadcasting</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/array/" >Array construction routines</a></h2>
-      <div class="article-style">
-        
-          Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/indexing/" >Array indexing</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Basics ary = np.array([1,2,3,4,5])  ary[0]  array([1, 2, 3])  ary[:3] # equivalent to ary[0:3]  array([1, 2, 3])  ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])  ary2d  array([[ 1, 2, 3, 3], [ 4, 5, 6, 1], [ 2, 52, 36, 1]])  ary2d[1,2]  6  ary2d[1]  array([4, 5, 6])  ary2d[0] # entire first row  array([1, 2, 3])  ary2d[:,0] # entire first column  array([1, 4])  ary2d[1:3,2:4] # bottom 2x2  array([[ 6, 1], [36, 1]])  ary2d[:,:2] # first two columns  array([[ 1, 2], [ 4, 5], [ 2, 52]])   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/array_math/" >Array math and universal functions</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Universal functions NumPy provides vectorized wrappers for performing element-wise operations implicitly via ufuncs – short for universal functions
-ufuncs are implemented in compiled C code and very fast and efficient compared to vanilla Python Checkout more details here: https://numpy.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/broadcasting/" >Broadcasting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Broadcasting Broadcast- ing allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids
-different dimensions:
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/performance/generator/" >List comprehension and generator expressions</a></h2>
-      <div class="article-style">
-        
-          List comprehension It more compact notation, compare the following for-loops expression:
-lst=[[1,2,3],[4,5,6]] for row_idx, row_val in enumerate(lst): for col_idx, col_val in enumerate(row_val): lst[row_idx][col_idx] += 1 lst  [[2, 3, 4], [5, 6, 7]]  with the list comprehension expression, the above for loops simplifies greatly:
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/syntax/" >Numpy syntax</a></h2>
-      <div class="article-style">
-        
-          NumPy array data structure Python interface for working with multi-dimensional array data structures efficiently
-NumPy array data structure is called ndarray, which is short for n-dimensional array
-Advantage NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">import numpy as np
+</code></pre>
+<h3 id="broadcasting">Broadcasting</h3>
+<p>Broadcast- ing allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids</p>
+<p>different dimensions:</p>
+<pre><code class="language-python">np.array([1,2,3])+1
+</code></pre>
+<pre><code>array([2, 3, 4])
+</code></pre>
+<p>same dimensions:</p>
+<pre><code class="language-python">ary1 = np.array([1,2,3])
+ary2 = np.array([2,4,1])
+ary1+ary2
+</code></pre>
+<pre><code>array([3, 6, 4])
+</code></pre>
+<p>different shapes:</p>
+<pre><code class="language-python">ary3 = np.array([[2,4,1],[1,2,3]])
+ary1+ary3
+</code></pre>
+<pre><code>array([[3, 6, 4],
+       [2, 4, 6]])
+</code></pre>
+<p>number of elements along the explicit axes and the implicit grid have to match:</p>
+<pre><code class="language-python">try:
+    print(ary1 + np.array([2,3]))
+except ValueError as e:
+    print('ValueError:', e)
+</code></pre>
+<pre><code>ValueError: operands could not be broadcast together with shapes (3,) (2,) 
+</code></pre>
+<p>the 2-element array must have two elements along its first axis as well</p>
+<pre><code class="language-python">ary3 + np.array([[2], [3]])
+</code></pre>
+<pre><code>array([[4, 6, 3],
+       [4, 5, 6]])
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
