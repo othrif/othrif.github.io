@@ -28,10 +28,12 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="NumPy array data structure Python interface for working with multi-dimensional array data structures efficiently
+NumPy array data structure is called ndarray, which is short for n-dimensional array
+Advantage NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/numpy/syntax/">
 
   
 
@@ -211,14 +213,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/numpy/syntax/">
 
   
   
@@ -232,29 +232,36 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/numpy/syntax/">
+  <meta property="og:title" content="Numpy syntax | Othmane Rifki">
+  <meta property="og:description" content="NumPy array data structure Python interface for working with multi-dimensional array data structures efficiently
+NumPy array data structure is called ndarray, which is short for n-dimensional array
+Advantage NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Numpy syntax | Othmane Rifki</title>
 
 </head>
 
@@ -552,84 +559,121 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Numpy syntax</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <h3 id="numpy-array-data-structure">NumPy array data structure</h3>
+<p>Python interface for working with multi-dimensional array data structures efficiently<br>
+NumPy array data structure is called <code>ndarray</code>, which is short for n-dimensional array</p>
+<h3 id="advantage">Advantage</h3>
+<p>NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU. While Python lists are arrays of pointers to objects in random locations in memory, leading to a more expensive memory-look-up.</p>
+<h3 id="disadvantage">Disadvantage</h3>
+<p>NumPy arrays have a fixed size and are homogenous, which means that all elements must have the same type<br>
+Adding and removing elements from the end of a Python list is very efficient, altering the size of a NumPy array is very expensive since it requires creating a new array and carrying over the contents of the old array</p>
+<h3 id="n-dimenstional-arrays">N-dimenstional Arrays</h3>
+<p>NumPy arrays can have up to 32 dimensions</p>
+<pre><code class="language-python">import numpy as np
+</code></pre>
+<h4 id="array-function"><code>array</code> function</h4>
+<p>Create a NumPy array from a list of lists</p>
+<pre><code class="language-python">lstint = [[1,2,3],
+      [4,5,6]]
+</code></pre>
+<pre><code class="language-python">ary2dint = np.array(lstint)
+ary2dint
+</code></pre>
+<pre><code>array([[1, 2, 3],
+       [4, 5, 6]])
+</code></pre>
+<h4 id="data-type-function-dtype">Data type function <code>dtype</code></h4>
+<p>All data types defined here: <a href="https://numpy.org/doc/stable/user/basics.types.html">https://numpy.org/doc/stable/user/basics.types.html</a></p>
+<pre><code class="language-python">ary2dint.dtype
+</code></pre>
+<pre><code>dtype('int64')
+</code></pre>
+<p>Numpy array sees what type will work for all elements of the list before creating it</p>
+<pre><code class="language-python">lstfloat = [[1,2.3,3],
+      [4,5,6]]
+</code></pre>
+<pre><code class="language-python">ary2df = np.array(lstfloat)
+</code></pre>
+<pre><code class="language-python">ary2df.dtype
+</code></pre>
+<pre><code>dtype('float64')
+</code></pre>
+<h3 id="cast-array-type-with-astype">Cast array type with <code>astype</code></h3>
+<pre><code class="language-python">ary2dint.dtype
+</code></pre>
+<pre><code>dtype('int64')
+</code></pre>
+<pre><code class="language-python">ary2dintTOfloat = ary2dint.astype(np.float)
+</code></pre>
+<pre><code class="language-python">ary2dintTOfloat.dtype
+</code></pre>
+<pre><code>dtype('float64')
+</code></pre>
+<h4 id="size-in-byte-with-itemsize">Size in byte with <code>itemsize</code></h4>
+<p>Returns size of each element in the array (remember that ndarrays are homogeneous)</p>
+<pre><code class="language-python">ary2dintTOfloat.itemsize
+</code></pre>
+<pre><code>8
+</code></pre>
+<p>each element takes up 8 bytes * 8 bits/byte = 64 bits in memory</p>
+<h4 id="size-of-array-with-size">Size of array with <code>size</code></h4>
+<pre><code class="language-python">ary2dintTOfloat.size
+</code></pre>
+<pre><code>6
+</code></pre>
+<h4 id="dimension-of-array-with-ndim">Dimension of array with <code>ndim</code></h4>
+<p>number of dimensions of an array, similar to a rank of a tensor</p>
+<pre><code class="language-python">ary2dintTOfloat.ndim
+</code></pre>
+<pre><code>2
+</code></pre>
+<h4 id="elements-of-each-dim-with-shape">Elements of each dim with <code>shape</code></h4>
+<p>number of elements along each array dimension (in the context of NumPy arrays, we may also refer to them as axes)<br>
+Returns a tuple <code>()</code>.</p>
+<pre><code class="language-python">ary_shape = ary2dintTOfloat.shape
+</code></pre>
+<pre><code class="language-python">type(ary_shape)
+</code></pre>
+<pre><code>tuple
+</code></pre>
+<pre><code class="language-python">np.array([1, 2, 3]).shape
+</code></pre>
+<pre><code>(3,)
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
+<pre><code class="language-python">scalar = np.array(5)
+scalar
+</code></pre>
+<pre><code>array(5)
+</code></pre>
 
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/" ></a></h2>
-      <div class="article-style">
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/array/" >Array construction routines</a></h2>
-      <div class="article-style">
-        
-          N-dimenstional Arrays NumPy arrays can have up to 32 dimensions
-import numpy as np  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/syntax/" >Numpy syntax</a></h2>
-      <div class="article-style">
-        
-          NumPy array data structure Python interface for working with multi-dimensional array data structures efficiently
-NumPy array data structure is called ndarray, which is short for n-dimensional array
-Advantage NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU.
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
+    </div>
+</article>
 
-</div>
+
+
 
       
 

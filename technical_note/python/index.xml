@@ -12,5 +12,113 @@
       <link>http://othrif.github.io/technical_note/python/</link>
     </image>
     
+    <item>
+      <title>Array construction routines</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/array/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/array/</guid>
+      <description>&lt;h3 id=&#34;n-dimenstional-arrays&#34;&gt;N-dimenstional Arrays&lt;/h3&gt;
+&lt;p&gt;NumPy arrays can have up to 32 dimensions&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Numpy syntax</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/syntax/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/syntax/</guid>
+      <description>&lt;h3 id=&#34;numpy-array-data-structure&#34;&gt;NumPy array data structure&lt;/h3&gt;
+&lt;p&gt;Python interface for working with multi-dimensional array data structures efficiently&lt;br&gt;
+NumPy array data structure is called &lt;code&gt;ndarray&lt;/code&gt;, which is short for n-dimensional array&lt;/p&gt;
+&lt;h3 id=&#34;advantage&#34;&gt;Advantage&lt;/h3&gt;
+&lt;p&gt;NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU. While Python lists are arrays of pointers to objects in random locations in memory, leading to a more expensive memory-look-up.&lt;/p&gt;
+&lt;h3 id=&#34;disadvantage&#34;&gt;Disadvantage&lt;/h3&gt;
+&lt;p&gt;NumPy arrays have a fixed size and are homogenous, which means that all elements must have the same type&lt;br&gt;
+Adding and removing elements from the end of a Python list is very efficient, altering the size of a NumPy array is very expensive since it requires creating a new array and carrying over the contents of the old array&lt;/p&gt;
+&lt;h3 id=&#34;n-dimenstional-arrays&#34;&gt;N-dimenstional Arrays&lt;/h3&gt;
+&lt;p&gt;NumPy arrays can have up to 32 dimensions&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;array-function&#34;&gt;&lt;code&gt;array&lt;/code&gt; function&lt;/h4&gt;
+&lt;p&gt;Create a NumPy array from a list of lists&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lstint = [[1,2,3],
+      [4,5,6]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint = np.array(lstint)
+ary2dint
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1, 2, 3],
+       [4, 5, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;data-type-function-dtype&#34;&gt;Data type function &lt;code&gt;dtype&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;All data types defined here: &lt;a href=&#34;https://numpy.org/doc/stable/user/basics.types.html&#34;&gt;https://numpy.org/doc/stable/user/basics.types.html&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;int64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Numpy array sees what type will work for all elements of the list before creating it&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lstfloat = [[1,2.3,3],
+      [4,5,6]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2df = np.array(lstfloat)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2df.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;float64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;cast-array-type-with-astype&#34;&gt;Cast array type with &lt;code&gt;astype&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;int64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat = ary2dint.astype(np.float)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;float64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;size-in-byte-with-itemsize&#34;&gt;Size in byte with &lt;code&gt;itemsize&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Returns size of each element in the array (remember that ndarrays are homogeneous)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.itemsize
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;each element takes up 8 bytes * 8 bits/byte = 64 bits in memory&lt;/p&gt;
+&lt;h4 id=&#34;size-of-array-with-size&#34;&gt;Size of array with &lt;code&gt;size&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.size
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;dimension-of-array-with-ndim&#34;&gt;Dimension of array with &lt;code&gt;ndim&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;number of dimensions of an array, similar to a rank of a tensor&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.ndim
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;elements-of-each-dim-with-shape&#34;&gt;Elements of each dim with &lt;code&gt;shape&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;number of elements along each array dimension (in the context of NumPy arrays, we may also refer to them as axes)&lt;br&gt;
+Returns a tuple &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary_shape = ary2dintTOfloat.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(ary_shape)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array([1, 2, 3]).shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(3,)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;scalar = np.array(5)
+scalar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array(5)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
