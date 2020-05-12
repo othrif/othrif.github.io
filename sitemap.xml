@@ -63,6 +63,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/indexing/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/array_math/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/ascii_unicode/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -129,6 +139,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/system/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/performance/generator/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

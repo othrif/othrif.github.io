@@ -28,11 +28,10 @@
   
     
   
-  <meta name="description" content="Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1.">
+  <meta name="description" content="import numpy as np  Basics ary = np.array([1,2,3,4,5])  ary[0]  array([1, 2, 3])  ary[:3] # equivalent to ary[0:3]  array([1, 2, 3])  ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])  ary2d  array([[ 1, 2, 3, 3], [ 4, 5, 6, 1], [ 2, 52, 36, 1]])  ary2d[1,2]  6  ary2d[1]  array([4, 5, 6])  ary2d[0] # entire first row  array([1, 2, 3])  ary2d[:,0] # entire first column  array([1, 4])  ary2d[1:3,2:4] # bottom 2x2  array([[ 6, 1], [36, 1]])  ary2d[:,:2] # first two columns  array([[ 1, 2], [ 4, 5], [ 2, 52]])   ">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/numpy/array/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/numpy/indexing/">
 
   
 
@@ -217,7 +216,7 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/numpy/array/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/numpy/indexing/">
 
   
   
@@ -231,10 +230,9 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/numpy/array/">
-  <meta property="og:title" content="Array construction routines | Othmane Rifki">
-  <meta property="og:description" content="Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/numpy/indexing/">
+  <meta property="og:title" content="Array indexing | Othmane Rifki">
+  <meta property="og:description" content="import numpy as np  Basics ary = np.array([1,2,3,4,5])  ary[0]  array([1, 2, 3])  ary[:3] # equivalent to ary[0:3]  array([1, 2, 3])  ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])  ary2d  array([[ 1, 2, 3, 3], [ 4, 5, 6, 1], [ 2, 52, 36, 1]])  ary2d[1,2]  6  ary2d[1]  array([4, 5, 6])  ary2d[0] # entire first row  array([1, 2, 3])  ary2d[:,0] # entire first column  array([1, 4])  ary2d[1:3,2:4] # bottom 2x2  array([[ 6, 1], [36, 1]])  ary2d[:,:2] # first two columns  array([[ 1, 2], [ 4, 5], [ 2, 52]])   "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -259,7 +257,7 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
 
 
 
-  <title>Array construction routines | Othmane Rifki</title>
+  <title>Array indexing | Othmane Rifki</title>
 
 </head>
 
@@ -563,71 +561,60 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Array construction routines</h1>
+    <h1 class="technical_note_title">Array indexing</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="routines">Routines</h3>
-<p>Several exist here: <a href="https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines">https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines</a> <br>
-Focus on the most used</p>
-<pre><code class="language-python">import numpy as np
+  <pre><code class="language-python">import numpy as np
 </code></pre>
-<h3 id="ones-zeros-eye-diag"><code>ones</code>, <code>zeros</code>, <code>eye</code>, <code>diag</code></h3>
-<pre><code class="language-python">np.ones((3, 3))
+<h3 id="basics">Basics</h3>
+<pre><code class="language-python">ary = np.array([1,2,3,4,5])
 </code></pre>
-<pre><code>array([[1., 1., 1.],
-       [1., 1., 1.],
-       [1., 1., 1.]])
+<pre><code class="language-python">ary[0]
 </code></pre>
-<pre><code class="language-python">np.zeros((3, 3))
+<pre><code>array([1, 2, 3])
 </code></pre>
-<pre><code>array([[0., 0., 0.],
-       [0., 0., 0.],
-       [0., 0., 0.]])
+<pre><code class="language-python">ary[:3] # equivalent to ary[0:3]
 </code></pre>
-<pre><code class="language-python">np.eye(3)
+<pre><code>array([1, 2, 3])
 </code></pre>
-<pre><code>array([[1., 0., 0.],
-       [0., 1., 0.],
-       [0., 0., 1.]])
+<pre><code class="language-python">ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])
 </code></pre>
-<pre><code class="language-python">np.diag((1,2,3))
+<pre><code class="language-python">ary2d
 </code></pre>
-<pre><code>array([[1, 0, 0],
-       [0, 2, 0],
-       [0, 0, 3]])
+<pre><code>array([[ 1,  2,  3,  3],
+       [ 4,  5,  6,  1],
+       [ 2, 52, 36,  1]])
 </code></pre>
-<h3 id="numbers-in-range">Numbers in range</h3>
-<pre><code class="language-python">np.arange(3,13)
+<pre><code class="language-python">ary2d[1,2]
 </code></pre>
-<pre><code>array([ 3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+<pre><code>6
 </code></pre>
-<pre><code class="language-python">np.arange(5)
+<pre><code class="language-python">ary2d[1]
 </code></pre>
-<pre><code>array([0, 1, 2, 3, 4])
+<pre><code>array([4, 5, 6])
 </code></pre>
-<pre><code class="language-python">np.arange(1,10,2)
+<pre><code class="language-python">ary2d[0] # entire first row
 </code></pre>
-<pre><code>array([1, 3, 5, 7, 9])
+<pre><code>array([1, 2, 3])
 </code></pre>
-<pre><code class="language-python">np.linspace(0, 5, 5)
+<pre><code class="language-python">ary2d[:,0] # entire first column
 </code></pre>
-<pre><code>array([0.  , 1.25, 2.5 , 3.75, 5.  ])
+<pre><code>array([1, 4])
 </code></pre>
-<h3 id="work-with-generators-fromiter">Work with generators <code>fromiter</code></h3>
-<pre><code class="language-python">generator_expression = (i for i in range(10) if i % 2)
+<pre><code class="language-python">ary2d[1:3,2:4] # bottom 2x2 
 </code></pre>
-<pre><code class="language-python">type(generator_expression)
-
+<pre><code>array([[ 6,  1],
+       [36,  1]])
 </code></pre>
-<pre><code>generator
+<pre><code class="language-python">ary2d[:,:2] # first two columns
 </code></pre>
-<pre><code class="language-python">np.fromiter(generator_expression, dtype=int)
-</code></pre>
-<pre><code>array([1, 3, 5, 7, 9])
+<pre><code>array([[ 1,  2],
+       [ 4,  5],
+       [ 2, 52]])
 </code></pre>
 <pre><code class="language-python">
 </code></pre>

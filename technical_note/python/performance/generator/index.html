@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1.">
+  <meta name="description" content="List comprehension It more compact notation, compare the following for-loops expression:
+lst=[[1,2,3],[4,5,6]] for row_idx, row_val in enumerate(lst): for col_idx, col_val in enumerate(row_val): lst[row_idx][col_idx] &#43;= 1 lst  [[2, 3, 4], [5, 6, 7]]  with the list comprehension expression, the above for loops simplifies greatly:">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/numpy/array/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/performance/generator/">
 
   
 
@@ -217,7 +217,7 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/numpy/array/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/performance/generator/">
 
   
   
@@ -231,10 +231,10 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/numpy/array/">
-  <meta property="og:title" content="Array construction routines | Othmane Rifki">
-  <meta property="og:description" content="Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/performance/generator/">
+  <meta property="og:title" content="List comprehension and generator expressions | Othmane Rifki">
+  <meta property="og:description" content="List comprehension It more compact notation, compare the following for-loops expression:
+lst=[[1,2,3],[4,5,6]] for row_idx, row_val in enumerate(lst): for col_idx, col_val in enumerate(row_val): lst[row_idx][col_idx] &#43;= 1 lst  [[2, 3, 4], [5, 6, 7]]  with the list comprehension expression, the above for loops simplifies greatly:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -259,7 +259,7 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
 
 
 
-  <title>Array construction routines | Othmane Rifki</title>
+  <title>List comprehension and generator expressions | Othmane Rifki</title>
 
 </head>
 
@@ -563,72 +563,42 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Array construction routines</h1>
+    <h1 class="technical_note_title">List comprehension and generator expressions</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="routines">Routines</h3>
-<p>Several exist here: <a href="https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines">https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines</a> <br>
-Focus on the most used</p>
-<pre><code class="language-python">import numpy as np
+  <h3 id="list-comprehension">List comprehension</h3>
+<p>It more compact notation, compare the following for-loops expression:</p>
+<pre><code class="language-python">lst=[[1,2,3],[4,5,6]]
+for row_idx, row_val in enumerate(lst):
+    for col_idx, col_val in enumerate(row_val): 
+        lst[row_idx][col_idx] += 1
+lst
 </code></pre>
-<h3 id="ones-zeros-eye-diag"><code>ones</code>, <code>zeros</code>, <code>eye</code>, <code>diag</code></h3>
-<pre><code class="language-python">np.ones((3, 3))
+<pre><code>[[2, 3, 4], [5, 6, 7]]
 </code></pre>
-<pre><code>array([[1., 1., 1.],
-       [1., 1., 1.],
-       [1., 1., 1.]])
+<p>with the list comprehension expression, the above for loops simplifies greatly:</p>
+<pre><code class="language-python">lst=[[1,2,3],[4,5,6]]
+[[cell + 1 for cell in row] for row in lst]
 </code></pre>
-<pre><code class="language-python">np.zeros((3, 3))
+<pre><code>[[2, 3, 4], [5, 6, 7]]
 </code></pre>
-<pre><code>array([[0., 0., 0.],
-       [0., 0., 0.],
-       [0., 0., 0.]])
+<p>the following summation code will build a full list of squares in memory, iterate over those values, and, when the reference is no longer needed, delete the list:</p>
+<pre><code class="language-python">sum([x*x for x in range(10)])
 </code></pre>
-<pre><code class="language-python">np.eye(3)
+<pre><code>285
 </code></pre>
-<pre><code>array([[1., 0., 0.],
-       [0., 1., 0.],
-       [0., 0., 1.]])
+<h3 id="generator-expressions">Generator expressions</h3>
+<p>Many of the use cases do not need to have a full list created in memory. Instead, they only need to iterate over the elements one at a time. Memory is conserved by using a generator expression instead:</p>
+<pre><code class="language-python">sum(x*x for x in range(10))
 </code></pre>
-<pre><code class="language-python">np.diag((1,2,3))
+<pre><code>285
 </code></pre>
-<pre><code>array([[1, 0, 0],
-       [0, 2, 0],
-       [0, 0, 3]])
-</code></pre>
-<h3 id="numbers-in-range">Numbers in range</h3>
-<pre><code class="language-python">np.arange(3,13)
-</code></pre>
-<pre><code>array([ 3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
-</code></pre>
-<pre><code class="language-python">np.arange(5)
-</code></pre>
-<pre><code>array([0, 1, 2, 3, 4])
-</code></pre>
-<pre><code class="language-python">np.arange(1,10,2)
-</code></pre>
-<pre><code>array([1, 3, 5, 7, 9])
-</code></pre>
-<pre><code class="language-python">np.linspace(0, 5, 5)
-</code></pre>
-<pre><code>array([0.  , 1.25, 2.5 , 3.75, 5.  ])
-</code></pre>
-<h3 id="work-with-generators-fromiter">Work with generators <code>fromiter</code></h3>
-<pre><code class="language-python">generator_expression = (i for i in range(10) if i % 2)
-</code></pre>
-<pre><code class="language-python">type(generator_expression)
-
-</code></pre>
-<pre><code>generator
-</code></pre>
-<pre><code class="language-python">np.fromiter(generator_expression, dtype=int)
-</code></pre>
-<pre><code>array([1, 3, 5, 7, 9])
-</code></pre>
+<h3 id="more-examples">More examples</h3>
+<p>Check here <a href="https://www.python.org/dev/peps/pep-0289/">https://www.python.org/dev/peps/pep-0289/</a></p>
 <pre><code class="language-python">
 </code></pre>
 
