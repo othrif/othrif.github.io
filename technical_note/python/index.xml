@@ -326,8 +326,6 @@ except ValueError as e:
 &lt;pre&gt;&lt;code&gt;array([[4, 6, 3],
        [4, 5, 6]])
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -605,6 +605,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/datetime/" >Datetime</a></h2>
+      <div class="article-style">
+        
+          Convert string to datetime datetime.strptime(date_string, format)
+from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strptime(date_string, '%m/%d/%Y %I:%M:%S %p')  datetime.datetime(2019, 3, 1, 0, 0)  Find last month import datetime today = datetime.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
       <div class="article-style">
         
@@ -691,22 +704,10 @@ my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/print/" >Print statements</a></h2>
+      <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
       <div class="article-style">
         
-          Simple printing print('Printing example!')  Printing example!  f-string formatting: f ' &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... '  where &lt;optional !
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/macos_env/" >Python 3 in MacOS</a></h2>
-      <div class="article-style">
-        
-          Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage --upgrade  Upgrade package pip install SomePackage --upgrade  Main packages used pip install numpy pip install scipy pip install scikit-learn pip install matplotlib pip install pandas pip install jupyter notebook   
+          import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
         
       </div>
     </div>

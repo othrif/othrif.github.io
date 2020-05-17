@@ -106,6 +106,22 @@ or
     </item>
     
     <item>
+      <title>Sort by size of files/directories</title>
+      <link>http://othrif.github.io/technical_note/linux/basics/sortsize/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/linux/basics/sortsize/</guid>
+      <description>&lt;h3 id=&#34;human-readable&#34;&gt;Human readable&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;du -sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sort-by-size&#34;&gt;Sort by size&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;du -h -d 1 | sort -n -r
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;du -d 1 : Only the disk usage of the current level of directories and files is displayed &lt;br&gt;
+sort -n -r : Sort in reverse order according to value&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Zip And Unzip Files Hello</title>
       <link>http://othrif.github.io/technical_note/linux/basics/zip_and_unzip_files/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

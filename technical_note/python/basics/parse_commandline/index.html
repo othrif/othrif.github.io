@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import argparse parser = argparse.ArgumentParser(description=&#39;Program to analyze something.&#39;) parser.add_argument(dest=&#39;filenames&#39;, metavar=&#39;filename&#39;, nargs=&#39;*&#39;) parser.add_argument(&#39;-i&#39;, &#39;--input&#39;, metavar=&#39;input_file&#39;, required=False, dest=&#39;input_file&#39;, action=&#39;store&#39;, default=&#39;./input/dummy.csv&#39;, help=&#39;Input csv file&#39;) parser.add_argument(&#39;-o&#39;, &#39;--output&#39;, metavar=&#39;output_file&#39;, required=False, dest=&#39;output_file&#39;, action=&#39;store&#39;, default=&#39;./output/out_dummy.csv&#39;, help=&#39;Output csv file with results&#39;) parser.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/linux/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/parse_commandline/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/linux/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/linux/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/parse_commandline/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/linux/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/parse_commandline/">
+  <meta property="og:title" content="Parsing command line options | Othmane Rifki">
+  <meta property="og:description" content="import argparse parser = argparse.ArgumentParser(description=&#39;Program to analyze something.&#39;) parser.add_argument(dest=&#39;filenames&#39;, metavar=&#39;filename&#39;, nargs=&#39;*&#39;) parser.add_argument(&#39;-i&#39;, &#39;--input&#39;, metavar=&#39;input_file&#39;, required=False, dest=&#39;input_file&#39;, action=&#39;store&#39;, default=&#39;./input/dummy.csv&#39;, help=&#39;Input csv file&#39;) parser.add_argument(&#39;-o&#39;, &#39;--output&#39;, metavar=&#39;output_file&#39;, required=False, dest=&#39;output_file&#39;, action=&#39;store&#39;, default=&#39;./output/out_dummy.csv&#39;, help=&#39;Output csv file with results&#39;) parser."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Parsing command line options | Othmane Rifki</title>
 
 </head>
 
@@ -552,108 +555,46 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/ascii_unicode/" >ASCII vs Unicode</a></h2>
-      <div class="article-style">
-        
-          1 byte = 8-bit
-ASCII  extended ASCII or 8-bit ASCII has $2^8 = 256$ characters maximum Complete table for 8-bit ASCII here: https://theasciicode.com.ar/ Original ASCII has $2^7 = 128$, with 8th bit as a parity bit  Unicode  Unicode is a superset of ASCII UTF-8: minimum 8 bits.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Parsing command line options</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/commandline/" >Command line tools</a></h2>
-      <div class="article-style">
-        
-          Grep commands Count occurences grep -c '&lt;event&gt;'  Concatenate PDFs gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=out.pdf in1.pdf in2.pdf in3.pdf  Match regular expressions echo mc16_13TeV.366035.Sh_221_NN30NNLO_Znunu_PTV280_500_CVetoBVeto.recon.AOD.e7033_e9238_s3126_r10724 | grep -Eq 'AOD.e[0-9]+_s[0-9]+_r[0-9]+' &amp;&amp; echo &quot;Match&quot;  Find pattern anywhere recursively grep -rnw '/path/to/somewhere/' -e 'pattern'  Write to someone in linux: write &lt;username&gt;
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/system/" >Linux system commands</a></h2>
-      <div class="article-style">
-        
-          Linux is a free and open source operating system. There are many variants of Linux out there. They are typically called Linux distribution. Suse, OpenSUSE, Debian, Ubuntu, CentOS, Arch, Fedora, RHEL, Scientific Linux (SLC), all are common Linux distribution names.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/sortsize/" >Sort by size of files/directories</a></h2>
-      <div class="article-style">
-        
-          Human readable du -sh  Sort by size du -h -d 1 | sort -n -r  du -d 1 : Only the disk usage of the current level of directories and files is displayed sort -n -r : Sort in reverse order according to value
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/linux/basics/zip_and_unzip_files/" >Zip And Unzip Files Hello</a></h2>
-      <div class="article-style">
-        
-          Make Files echo &#34;The number of soldiers in the regiment is 24.&#34; &gt; regiment.txt echo &#34;The regiment has seen five battles.&#34; &gt; battles.txt Zip Files The -v argument is optional, prints an output with the details of the operation.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">import argparse
+
+parser = argparse.ArgumentParser(description='Program to analyze something.')
+parser.add_argument(dest='filenames', metavar='filename', nargs='*')
+parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file')
+parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results')
+parser.add_argument('--choice', dest='mychoice', action='store', choices='{'slow','fast'}', default='slow', help='my speed choice')
+parser.add_argument('-p', '--pat', metavar='pattern', required=True, dest='mychoice', action='append', help='can append to the list of arguments here')
+parser.add_argument('-v', '--verbose', dest='verbose', action='store_true', help='Verbose mode')
+args = parser.parse_args()
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

@@ -106,6 +106,43 @@ print(int(hex_a, 16))
     </item>
     
     <item>
+      <title>Datetime</title>
+      <link>http://othrif.github.io/technical_note/python/basics/datetime/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/datetime/</guid>
+      <description>&lt;h3 id=&#34;convert-string-to-datetime&#34;&gt;Convert string to datetime&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;datetime.strptime(date_string, format)&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from datetime import datetime
+date_string=&#39;03/01/2019 12:00:00 AM&#39;
+datetime.strptime(date_string, &#39;%m/%d/%Y %I:%M:%S %p&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;datetime.datetime(2019, 3, 1, 0, 0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;find-last-month&#34;&gt;Find last month&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import datetime
+today = datetime.date.today()
+print(today)
+first = today.replace(day=1)
+print(first)
+lastMonth = first - datetime.timedelta(days=1)
+print(lastMonth)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020-05-17
+2020-05-01
+2020-04-30
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;count-number-of-months&#34;&gt;Count number of months&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def diff_month(d1, d2):
+    return (d1.year - d2.year) * 12 + d1.month - d2.month
+num_months = diff_month(first,lastMonth)
+print(num_months)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>File, dir handling with os module</title>
       <link>http://othrif.github.io/technical_note/python/basics/os_manip/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -595,6 +632,27 @@ print(2 &amp;lt;&amp;lt; 3)
 &lt;pre&gt;&lt;code&gt;0b10
 0b10000
 16
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Parsing command line options</title>
+      <link>http://othrif.github.io/technical_note/python/basics/parse_commandline/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/parse_commandline/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import argparse
+
+parser = argparse.ArgumentParser(description=&#39;Program to analyze something.&#39;)
+parser.add_argument(dest=&#39;filenames&#39;, metavar=&#39;filename&#39;, nargs=&#39;*&#39;)
+parser.add_argument(&#39;-i&#39;, &#39;--input&#39;, metavar=&#39;input_file&#39;, required=False, dest=&#39;input_file&#39;, action=&#39;store&#39;, default=&#39;./input/dummy.csv&#39;, help=&#39;Input csv file&#39;)
+parser.add_argument(&#39;-o&#39;, &#39;--output&#39;, metavar=&#39;output_file&#39;, required=False, dest=&#39;output_file&#39;, action=&#39;store&#39;, default=&#39;./output/out_dummy.csv&#39;, help=&#39;Output csv file with results&#39;)
+parser.add_argument(&#39;--choice&#39;, dest=&#39;mychoice&#39;, action=&#39;store&#39;, choices=&#39;{&#39;slow&#39;,&#39;fast&#39;}&#39;, default=&#39;slow&#39;, help=&#39;my speed choice&#39;)
+parser.add_argument(&#39;-p&#39;, &#39;--pat&#39;, metavar=&#39;pattern&#39;, required=True, dest=&#39;mychoice&#39;, action=&#39;append&#39;, help=&#39;can append to the list of arguments here&#39;)
+parser.add_argument(&#39;-v&#39;, &#39;--verbose&#39;, dest=&#39;verbose&#39;, action=&#39;store_true&#39;, help=&#39;Verbose mode&#39;)
+args = parser.parse_args()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
