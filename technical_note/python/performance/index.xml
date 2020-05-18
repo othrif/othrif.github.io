@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Othmane Rifki</title>
+    <link>http://othrif.github.io/technical_note/python/performance/</link>
+      <atom:link href="http://othrif.github.io/technical_note/python/performance/index.xml" rel="self" type="application/rss+xml" />
+    <description>Othmane Rifki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Othmane Rifki</title>
+      <link>http://othrif.github.io/technical_note/python/performance/</link>
+    </image>
+    
+    <item>
+      <title>List comprehension and generator expressions</title>
+      <link>http://othrif.github.io/technical_note/python/performance/generator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/performance/generator/</guid>
+      <description>&lt;h3 id=&#34;list-comprehension&#34;&gt;List comprehension&lt;/h3&gt;
+&lt;p&gt;It more compact notation, compare the following for-loops expression:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lst=[[1,2,3],[4,5,6]]
+for row_idx, row_val in enumerate(lst):
+    for col_idx, col_val in enumerate(row_val): 
+        lst[row_idx][col_idx] += 1
+lst
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[2, 3, 4], [5, 6, 7]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;with the list comprehension expression, the above for loops simplifies greatly:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lst=[[1,2,3],[4,5,6]]
+[[cell + 1 for cell in row] for row in lst]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[2, 3, 4], [5, 6, 7]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the following summation code will build a full list of squares in memory, iterate over those values, and, when the reference is no longer needed, delete the list:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sum([x*x for x in range(10)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;285
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;generator-expressions&#34;&gt;Generator expressions&lt;/h3&gt;
+&lt;p&gt;Many of the use cases do not need to have a full list created in memory. Instead, they only need to iterate over the elements one at a time. Memory is conserved by using a generator expression instead:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sum(x*x for x in range(10))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;285
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;more-examples&#34;&gt;More examples&lt;/h3&gt;
+&lt;p&gt;Check here &lt;a href=&#34;https://www.python.org/dev/peps/pep-0289/&#34;&gt;https://www.python.org/dev/peps/pep-0289/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

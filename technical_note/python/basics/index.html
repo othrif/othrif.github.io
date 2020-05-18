@@ -643,6 +643,18 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/dictionary/" >Dictionaries</a></h2>
+      <div class="article-style">
+        
+          Basics # Definition of dictionary europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin', 'norway':'oslo' } # Print out the keys in europe print(europe.keys()) # Print out value that belongs to key 'norway' print(europe['norway'])  dict_keys(['spain', 'france', 'germany', 'norway']) oslo  Add/Remove an element europe['italy'] = 'rome'  europe  {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}  del(europe['france'])  europe  {'spain': 'madrid', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
       <div class="article-style">
         
@@ -697,18 +709,6 @@ x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'Fir
         
           Lists Lists are mutable
 my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
         
       </div>
     </div>

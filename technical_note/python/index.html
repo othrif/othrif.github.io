@@ -603,10 +603,8 @@
     
     
     <div>
-      <h2><a href="/technical_note/python/numpy/2dnumpy/" >2D Numpy arrays</a></h2>
+      <h2><a href="/technical_note/python/matplotlib/" ></a></h2>
       <div class="article-style">
-        
-          Subset numpy arrays baseball = [[180, 78.4], [215, 102.7], [210, 98.5], [188, 75.2]]  np_baseball = np.array(baseball)  print(baseball_np) print(type(np_baseball)) print(np_baseball.shape)  [[180. 78.4] [215. 102.7] [210. 98.5] [188. 75.2]] &lt;class 'numpy.
         
       </div>
     </div>
@@ -615,11 +613,8 @@
     
     
     <div>
-      <h2><a href="/technical_note/python/numpy/array/" >Array construction routines</a></h2>
+      <h2><a href="/technical_note/python/numpy/" ></a></h2>
       <div class="article-style">
-        
-          Routines Several exist here: https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines Focus on the most used
-import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.], [1., 1., 1.], [1., 1., 1.
         
       </div>
     </div>
@@ -628,101 +623,14 @@ import numpy as np  ones, zeros, eye, diag np.ones((3, 3))  array([[1., 1., 1.],
     
     
     <div>
-      <h2><a href="/technical_note/python/numpy/indexing/" >Array indexing</a></h2>
+      <h2><a href="/technical_note/python/performance/" ></a></h2>
       <div class="article-style">
-        
-          import numpy as np  Basics ary = np.array([1,2,3,4,5])  ary[0]  array([1, 2, 3])  ary[:3] # equivalent to ary[0:3]  array([1, 2, 3])  ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])  ary2d  array([[ 1, 2, 3, 3], [ 4, 5, 6, 1], [ 2, 52, 36, 1]])  ary2d[1,2]  6  ary2d[1]  array([4, 5, 6])  ary2d[0] # entire first row  array([1, 2, 3])  ary2d[:,0] # entire first column  array([1, 4])  ary2d[1:3,2:4] # bottom 2x2  array([[ 6, 1], [36, 1]])  ary2d[:,:2] # first two columns  array([[ 1, 2], [ 4, 5], [ 2, 52]])   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/array_math/" >Array math and universal functions</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Universal functions NumPy provides vectorized wrappers for performing element-wise operations implicitly via ufuncs – short for universal functions
-ufuncs are implemented in compiled C code and very fast and efficient compared to vanilla Python Checkout more details here: https://numpy.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlib/basics/basic/" >Basics of plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlib/basics/basics/" >Basics of plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/broadcasting/" >Broadcasting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Broadcasting Broadcasting allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids
-different dimensions:
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/performance/generator/" >List comprehension and generator expressions</a></h2>
-      <div class="article-style">
-        
-          List comprehension It more compact notation, compare the following for-loops expression:
-lst=[[1,2,3],[4,5,6]] for row_idx, row_val in enumerate(lst): for col_idx, col_val in enumerate(row_val): lst[row_idx][col_idx] += 1 lst  [[2, 3, 4], [5, 6, 7]]  with the list comprehension expression, the above for loops simplifies greatly:
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/stat/" >Numpy summary statistics</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Generate some data Randomly sample from a nomral distribution 5000 times with give mean and standard deviation
-height = np.round(np.random.normal(1.75, 0.20, 5000), 2) weight = np.
         
       </div>
     </div>
   
 
   
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/page/2/">&raquo;</a></li>
-    
-  </ul>
-</nav>
-
 
 </div>
 

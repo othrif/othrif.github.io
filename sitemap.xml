@@ -48,6 +48,21 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/performance/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/scripting/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -129,6 +144,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/datetime/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/dictionary/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

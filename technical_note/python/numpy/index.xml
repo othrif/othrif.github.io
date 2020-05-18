@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Othmane Rifki</title>
+    <link>http://othrif.github.io/technical_note/python/numpy/</link>
+      <atom:link href="http://othrif.github.io/technical_note/python/numpy/index.xml" rel="self" type="application/rss+xml" />
+    <description>Othmane Rifki</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Othmane Rifki</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/</link>
+    </image>
+    
+    <item>
+      <title>2D Numpy arrays</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/2dnumpy/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/2dnumpy/</guid>
+      <description>&lt;h3 id=&#34;subset-numpy-arrays&#34;&gt;Subset numpy arrays&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;baseball = [[180, 78.4],
+            [215, 102.7],
+            [210, 98.5],
+            [188, 75.2]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_baseball = np.array(baseball)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(baseball_np)
+print(type(np_baseball))
+print(np_baseball.shape)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[180.   78.4]
+ [215.  102.7]
+ [210.   98.5]
+ [188.   75.2]]
+&amp;lt;class &#39;numpy.ndarray&#39;&amp;gt;
+(4, 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_baseball[2][1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;98.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_baseball[2,1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;98.5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_baseball[:,1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 78.4, 102.7,  98.5,  75.2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2d-arithmetic&#34;&gt;2D Arithmetic&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_mat = np.array([[1, 2],
+                   [3, 4],
+                   [5, 6]])
+np_mat * 2
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 2,  4],
+       [ 6,  8],
+       [10, 12]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_mat + np.array([10, 10])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[11, 12],
+       [13, 14],
+       [15, 16]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_mat + np_mat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 2,  4],
+       [ 6,  8],
+       [10, 12]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Array construction routines</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/array/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/array/</guid>
+      <description>&lt;h3 id=&#34;routines&#34;&gt;Routines&lt;/h3&gt;
+&lt;p&gt;Several exist here: &lt;a href=&#34;https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines&#34;&gt;https://numpy.org/doc/stable/reference/routines.array-creation.html?highlight=array%20creation%20routines&lt;/a&gt; &lt;br&gt;
+Focus on the most used&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;ones-zeros-eye-diag&#34;&gt;&lt;code&gt;ones&lt;/code&gt;, &lt;code&gt;zeros&lt;/code&gt;, &lt;code&gt;eye&lt;/code&gt;, &lt;code&gt;diag&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.ones((3, 3))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1., 1., 1.],
+       [1., 1., 1.],
+       [1., 1., 1.]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.zeros((3, 3))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[0., 0., 0.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.eye(3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.diag((1,2,3))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1, 0, 0],
+       [0, 2, 0],
+       [0, 0, 3]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;numbers-in-range&#34;&gt;Numbers in range&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.arange(3,13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.arange(5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([0, 1, 2, 3, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.arange(1,10,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 3, 5, 7, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.linspace(0, 5, 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([0.  , 1.25, 2.5 , 3.75, 5.  ])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;work-with-generators-fromiter&#34;&gt;Work with generators &lt;code&gt;fromiter&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;generator_expression = (i for i in range(10) if i % 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(generator_expression)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;generator
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.fromiter(generator_expression, dtype=int)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 3, 5, 7, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;subset-numpy-arrays&#34;&gt;Subset numpy arrays&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [4 , 9 , 6, 3, 1]
+y = np.array(x)
+y[1]
+high = y &amp;gt; 5
+y[high]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([9, 6])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(y[high])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[9 6]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Array indexing</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/indexing/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/indexing/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;basics&#34;&gt;Basics&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary = np.array([1,2,3,4,5])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary[0]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 2, 3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary[:3] # equivalent to ary[0:3]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 2, 3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d = np.array([[1,2,3,3],[4,5,6,1],[2,52,36,1]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 1,  2,  3,  3],
+       [ 4,  5,  6,  1],
+       [ 2, 52, 36,  1]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[1,2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([4, 5, 6])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[0] # entire first row
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 2, 3])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[:,0] # entire first column
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[1:3,2:4] # bottom 2x2 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 6,  1],
+       [36,  1]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2d[:,:2] # first two columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 1,  2],
+       [ 4,  5],
+       [ 2, 52]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Array math and universal functions</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/array_math/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/array_math/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;universal-functions&#34;&gt;Universal functions&lt;/h3&gt;
+&lt;p&gt;NumPy provides vectorized wrappers for performing element-wise operations implicitly via &lt;code&gt;ufuncs&lt;/code&gt; – short for universal functions&lt;br&gt;
+&lt;code&gt;ufuncs&lt;/code&gt; are implemented in compiled C code and very fast and efficient compared to vanilla Python &lt;br&gt;
+Checkout more details here: &lt;a href=&#34;https://numpy.org/doc/stable/reference/ufuncs.html?highlight=ufuncs&#34;&gt;https://numpy.org/doc/stable/reference/ufuncs.html?highlight=ufuncs&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;binary-ufuncs&#34;&gt;Binary ufuncs&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;add&lt;/code&gt;, &lt;code&gt;subtract&lt;/code&gt;, &lt;code&gt;divide&lt;/code&gt;, &lt;code&gt;multiply&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Using list comprehension:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lst = [[1,2,3],[4,5,6],[7,8,9]]
+[[cell+1 for cell in row] for row in lst] 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[2, 3, 4], [5, 6, 7], [8, 9, 10]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using Numpy &lt;code&gt;add&lt;/code&gt; ufunc&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lst = [[1,2,3],[4,5,6],[7,8,9]]
+ary = np.array(lst)
+ary = np.add(ary,1)
+print(ary)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[ 2  3  4]
+ [ 5  6  7]
+ [ 8  9 10]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Also uses operator overloading with math symbols: &lt;code&gt;+,-,/,*,**&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary = np.array(lst)
+ary+1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 2,  3,  4],
+       [ 5,  6,  7],
+       [ 8,  9, 10]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;(ary+1)**2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[  4,   9,  16],
+       [ 25,  36,  49],
+       [ 64,  81, 100]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;unary-ufuncs&#34;&gt;Unary ufuncs&lt;/h4&gt;
+&lt;p&gt;Unary ufuncs: &lt;code&gt;log&lt;/code&gt;, &lt;code&gt;log10&lt;/code&gt;, &lt;code&gt;exp&lt;/code&gt;, &lt;code&gt;sqrt&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;reduce&lt;/code&gt;: compute the sum or product of array element along a given axis. By default, axis=0 for rows.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.add.reduce(ary) # sum along rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([12, 15, 18])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.add.reduce(ary,axis=1) # sum along columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 6, 15, 24])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;shorthands:  &lt;code&gt;add.reduce&lt;/code&gt; = &lt;code&gt;sum&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary.sum(axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 6, 15, 24])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.sum(ary, axis=1) # equivalent to ary.sum(...)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 6, 15, 24])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary.sum() # sum over all elements of the array
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;other-unary-ufuncs&#34;&gt;Other unary ufuncs&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mean&lt;/code&gt;: computes the mean&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;std&lt;/code&gt;: computes the standard deviation&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt;: computes variance&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.sort&lt;/code&gt;: sorts an array 
+&lt;a href=&#34;https://docs.scipy.org/doc/numpy/reference/generated/numpy.sort.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.argsort&lt;/code&gt;: returns indices that would sort an array&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.min&lt;/code&gt;: returns the minimum value of an array&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.max&lt;/code&gt;: returns the maximum value of an array&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.argmin&lt;/code&gt;: returns the index of the minimum value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.argmax&lt;/code&gt;: returns the index of the maximum value&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;np.array_equal&lt;/code&gt;: returns if the two arrays have the same shape and elements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary.mean(axis=0) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([4., 5., 6.])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary_std = ary.std(axis=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary_var = ary.var(axis=1) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array_equal(ary_std**2,ary_var)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary=np.array([[3,11,8],[10,9,209]])
+ary
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[  3,  11,   8],
+       [ 10,   9, 209]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.sort(ary) # sort along the last axis, i.e. columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 1,  3,  8],
+       [ 2,  9, 10]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.sort(ary,axis=1) # sort along the columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 1,  3,  8],
+       [ 2,  9, 10]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.sort(ary,axis=0) # sort along the rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[ 3,  1,  2],
+       [10,  9,  8]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.sort(ary,axis=None) # sort along flatened array 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 1,  2,  3,  8,  9, 10])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.argsort(ary,axis=0) # sort along the rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[0, 0, 1],
+       [1, 1, 0]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+np.min(ary,axis=1) # find min along columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([3, 9])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.max(ary,axis=0) # find max along rows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 10,  11, 209])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.argmax(ary, axis=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([1, 0, 1])
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Broadcasting</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/broadcasting/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/broadcasting/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;broadcasting&#34;&gt;Broadcasting&lt;/h3&gt;
+&lt;p&gt;Broadcasting allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids&lt;/p&gt;
+&lt;p&gt;different dimensions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array([1,2,3])+1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([2, 3, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;same dimensions:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary1 = np.array([1,2,3])
+ary2 = np.array([2,4,1])
+ary1+ary2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([3, 6, 4])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;different shapes:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary3 = np.array([[2,4,1],[1,2,3]])
+ary1+ary3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[3, 6, 4],
+       [2, 4, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;number of elements along the explicit axes and the implicit grid have to match:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try:
+    print(ary1 + np.array([2,3]))
+except ValueError as e:
+    print(&#39;ValueError:&#39;, e)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ValueError: operands could not be broadcast together with shapes (3,) (2,) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the 2-element array must have two elements along its first axis as well&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary3 + np.array([[2], [3]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[4, 6, 3],
+       [4, 5, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Numpy summary statistics</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/stat/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/stat/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;p&gt;Randomly sample from a nomral distribution 5000 times with give mean and standard deviation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;height = np.round(np.random.normal(1.75, 0.20, 5000), 2)
+weight = np.round(np.random.normal(60.32, 15, 5000), 2)
+np_city = np.column_stack((height, weight))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_city.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(5000, 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;basics-staistics&#34;&gt;Basics staistics&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.round(np.mean(np_city[:,0]),2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1.75
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.round(np.mean(np_city[:,1]),2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;60.43
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(np.round(np.mean(np_city,axis=0),2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[ 1.75 60.43]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(np.round(np.median(np_city,axis=0),2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[ 1.76 60.56]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(np.round(np.std(np_city,axis=0),2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[ 0.2  14.84]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;correlation-coefficient&#34;&gt;Correlation coefficient&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.corrcoef(np_city[:,0], np_city[:,1])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1.        , 0.00446188],
+       [0.00446188, 1.        ]])
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Numpy syntax</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/syntax/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/syntax/</guid>
+      <description>&lt;h3 id=&#34;numpy-array-data-structure&#34;&gt;NumPy array data structure&lt;/h3&gt;
+&lt;p&gt;Python interface for working with multi-dimensional array data structures efficiently&lt;br&gt;
+NumPy array data structure is called &lt;code&gt;ndarray&lt;/code&gt;, which is short for n-dimensional array&lt;/p&gt;
+&lt;h3 id=&#34;advantage&#34;&gt;Advantage&lt;/h3&gt;
+&lt;p&gt;NumPy arrays use contiguous blocks of memory that can be efficiently cached by the CPU. While Python lists are arrays of pointers to objects in random locations in memory, leading to a more expensive memory-look-up.&lt;/p&gt;
+&lt;h3 id=&#34;disadvantage&#34;&gt;Disadvantage&lt;/h3&gt;
+&lt;p&gt;NumPy arrays have a fixed size and are homogenous, which means that all elements must have the same type&lt;br&gt;
+Adding and removing elements from the end of a Python list is very efficient, altering the size of a NumPy array is very expensive since it requires creating a new array and carrying over the contents of the old array&lt;/p&gt;
+&lt;h3 id=&#34;n-dimenstional-arrays&#34;&gt;N-dimenstional Arrays&lt;/h3&gt;
+&lt;p&gt;NumPy arrays can have up to 32 dimensions&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;array-function&#34;&gt;&lt;code&gt;array&lt;/code&gt; function&lt;/h4&gt;
+&lt;p&gt;Create a NumPy array from a list of lists&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lstint = [[1,2,3],
+      [4,5,6]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint = np.array(lstint)
+ary2dint
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[1, 2, 3],
+       [4, 5, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;data-type-function-dtype&#34;&gt;Data type function &lt;code&gt;dtype&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;All data types defined here: &lt;a href=&#34;https://numpy.org/doc/stable/user/basics.types.html&#34;&gt;https://numpy.org/doc/stable/user/basics.types.html&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;int64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Numpy array sees what type will work for all elements of the list before creating it&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lstfloat = [[1,2.3,3],
+      [4,5,6]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2df = np.array(lstfloat)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2df.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;float64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;cast-array-type-with-astype&#34;&gt;Cast array type with &lt;code&gt;astype&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dint.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;int64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat = ary2dint.astype(np.float)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.dtype
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dtype(&#39;float64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;size-in-byte-with-itemsize&#34;&gt;Size in byte with &lt;code&gt;itemsize&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Returns size of each element in the array (remember that ndarrays are homogeneous)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.itemsize
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;each element takes up 8 bytes * 8 bits/byte = 64 bits in memory&lt;/p&gt;
+&lt;h4 id=&#34;size-of-array-with-size&#34;&gt;Size of array with &lt;code&gt;size&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.size
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;dimension-of-array-with-ndim&#34;&gt;Dimension of array with &lt;code&gt;ndim&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;number of dimensions of an array, similar to a rank of a tensor&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary2dintTOfloat.ndim
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;elements-of-each-dim-with-shape&#34;&gt;Elements of each dim with &lt;code&gt;shape&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;number of elements along each array dimension (in the context of NumPy arrays, we may also refer to them as axes)&lt;br&gt;
+Returns a tuple &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ary_shape = ary2dintTOfloat.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(ary_shape)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;tuple
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array([1, 2, 3]).shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(3,)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;scalar = np.array(5)
+scalar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array(5)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Subsetting Numpy arrays</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/subsetting/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/subsetting/</guid>
+      <description>&lt;h3 id=&#34;subset-numpy-arrays&#34;&gt;Subset numpy arrays&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [4 , 9 , 6, 3, 1]
+y = np.array(x)
+y[1]
+high = y &amp;gt; 5
+y[high]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([9, 6])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(y[high])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[9 6]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;indexing-similar-between-lists-and-numpy-arrays&#34;&gt;Indexing similar between lists and Numpy arrays&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]
+x[1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;b&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np_x = np.array(x)
+np_x[1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;b&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;methods-can-be-different&#34;&gt;Methods can be different&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [4 , 9 , 6, 3, 1]
+x+x
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[4, 9, 6, 3, 1, 4, 9, 6, 3, 1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.array(x)+np.array(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([ 8, 18, 12,  6,  2])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

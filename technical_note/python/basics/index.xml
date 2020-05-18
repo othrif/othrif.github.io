@@ -310,6 +310,46 @@ print(num_months)
     </item>
     
     <item>
+      <title>Dictionaries</title>
+      <link>http://othrif.github.io/technical_note/python/basics/dictionary/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/dictionary/</guid>
+      <description>&lt;h3 id=&#34;basics&#34;&gt;Basics&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Definition of dictionary
+europe = {&#39;spain&#39;:&#39;madrid&#39;, &#39;france&#39;:&#39;paris&#39;, &#39;germany&#39;:&#39;berlin&#39;, &#39;norway&#39;:&#39;oslo&#39; }
+
+# Print out the keys in europe
+print(europe.keys())
+
+# Print out value that belongs to key &#39;norway&#39;
+print(europe[&#39;norway&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_keys([&#39;spain&#39;, &#39;france&#39;, &#39;germany&#39;, &#39;norway&#39;])
+oslo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;addremove-an-element&#34;&gt;Add/Remove an element&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;europe[&#39;italy&#39;] = &#39;rome&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;europe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;spain&#39;: &#39;madrid&#39;,
+ &#39;france&#39;: &#39;paris&#39;,
+ &#39;germany&#39;: &#39;berlin&#39;,
+ &#39;norway&#39;: &#39;oslo&#39;,
+ &#39;italy&#39;: &#39;rome&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;del(europe[&#39;france&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;europe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;spain&#39;: &#39;madrid&#39;, &#39;germany&#39;: &#39;berlin&#39;, &#39;norway&#39;: &#39;oslo&#39;, &#39;italy&#39;: &#39;rome&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>File, dir handling with os module</title>
       <link>http://othrif.github.io/technical_note/python/basics/os_manip/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
