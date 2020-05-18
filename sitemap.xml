@@ -58,6 +58,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/2dnumpy/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/array/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -78,6 +83,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/basic/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -89,6 +99,16 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/broadcasting/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/builtin_functions/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/builtin_methods/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -173,6 +193,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/class_method/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/stat/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/syntax/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -213,6 +243,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/conventions/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/samelinecommand/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/sortsize/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -229,6 +269,16 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/cpp/basics/bitwiseoperations/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/subsetting/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/template/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

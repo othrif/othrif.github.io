@@ -28,11 +28,10 @@
   
     
   
-  <meta name="description" content="Lists Lists are mutable
-my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.append(&#39;add one more&#39;)  my_list  [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;, &#39;add one more&#39;]  my_list.extend([&#39;another&#39;,&#39;even more&#39;])  my_list  [&#39;Hello world!">
+  <meta name="description" content="Import packages and modules import numpy as np   ">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/lists/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/conventions/">
 
   
 
@@ -217,7 +216,7 @@ my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/lists/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/conventions/">
 
   
   
@@ -231,10 +230,9 @@ my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/lists/">
-  <meta property="og:title" content="Lists, Tuples | Othmane Rifki">
-  <meta property="og:description" content="Lists Lists are mutable
-my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.append(&#39;add one more&#39;)  my_list  [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;, &#39;add one more&#39;]  my_list.extend([&#39;another&#39;,&#39;even more&#39;])  my_list  [&#39;Hello world!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/conventions/">
+  <meta property="og:title" content="Python conventions | Othmane Rifki">
+  <meta property="og:description" content="Import packages and modules import numpy as np   "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -259,7 +257,7 @@ my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.
 
 
 
-  <title>Lists, Tuples | Othmane Rifki</title>
+  <title>Python conventions | Othmane Rifki</title>
 
 </head>
 
@@ -563,194 +561,17 @@ my_list = [&#39;Hello world!&#39;, &#39;banans&#39;, &#39;apples&#39;]  my_list.
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Lists, Tuples</h1>
+    <h1 class="technical_note_title">Python conventions</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="lists">Lists</h3>
-<p>Lists are mutable</p>
-<pre><code class="language-python">my_list = ['Hello world!', 'banans', 'apples']
+  <h3 id="import-packages-and-modules">Import packages and modules</h3>
+<pre><code class="language-python">import numpy as np
 </code></pre>
-<pre><code class="language-python">my_list.append('add one more')
-</code></pre>
-<pre><code class="language-python">my_list
-</code></pre>
-<pre><code>['Hello world!', 'banans', 'apples', 'add one more']
-</code></pre>
-<pre><code class="language-python">my_list.extend(['another','even more'])
-</code></pre>
-<pre><code class="language-python">my_list
-</code></pre>
-<pre><code>['Hello world!', 'banans', 'apples', 'add one more', 'another', 'even more']
-</code></pre>
-<h4 id="access-an-element">Access an element</h4>
-<pre><code class="language-python">my_list[2]
-</code></pre>
-<pre><code>'apples'
-</code></pre>
-<pre><code class="language-python">type(my_list)
-</code></pre>
-<pre><code>list
-</code></pre>
-<h3 id="subsetting-a-list">Subsetting a list</h3>
-<p><code>list[inclusive:exluive]</code></p>
-<pre><code class="language-python">my_list[1:3]
-</code></pre>
-<pre><code>['banans', 'apples']
-</code></pre>
-<h3 id="del-element">Del element</h3>
-<pre><code class="language-python">my_list
-</code></pre>
-<pre><code>['Hello world!', 'banans', 'apples', 'add one more', 'another', 'even more']
-</code></pre>
-<pre><code class="language-python">del(my_list[1])
-</code></pre>
-<pre><code class="language-python">my_list
-</code></pre>
-<pre><code>['Hello world!', 'apples', 'add one more', 'another', 'even more']
-</code></pre>
-<h4 id="copy-list-with-list">Copy list with <code>list()</code></h4>
-<ul>
-<li><code>list1 = list0</code> allows the list to point to the same memory area. Any changes to <code>list1</code> will affect <code>list0</code></li>
-<li>To copy <code>list()</code> or <code>[:]</code>, use the syntax: <code>list1=list(list0)</code> or <code>list1=list0[:]</code></li>
-</ul>
-<pre><code class="language-python"># Create list areas
-areas = [11.25, 18.0, 20.0, 10.75, 9.50]
-print(f'before after: {areas}')
-
-# Create areas_copy
-areas_copy1 = areas
-areas_copy2 = list(areas)
-areas_copy3 = areas[:]
-
-# Change areas_copy
-areas_copy1[0] = 1.0
-areas_copy2[0] = 2.0
-areas_copy3[0] = 3.0
-
-# Print areas
-print(f'areas after: {areas}')
-print(f'areas_copy1 after: {areas_copy1}')
-print(f'areas_copy2 after: {areas_copy2}')
-print(f'areas_copy3 after: {areas_copy3}')
-</code></pre>
-<pre><code>before after: [11.25, 18.0, 20.0, 10.75, 9.5]
-areas after: [1.0, 18.0, 20.0, 10.75, 9.5]
-areas_copy1 after: [1.0, 18.0, 20.0, 10.75, 9.5]
-areas_copy2 after: [2.0, 18.0, 20.0, 10.75, 9.5]
-areas_copy3 after: [3.0, 18.0, 20.0, 10.75, 9.5]
-</code></pre>
-<h3 id="tuples">Tuples</h3>
-<p>Tuples are immutable</p>
-<pre><code class="language-python">t = (0,1,2,3,4)
-</code></pre>
-<h4 id="access-an-element-1">Access an element</h4>
-<pre><code class="language-python">t[2]
-</code></pre>
-<pre><code>2
-</code></pre>
-<pre><code class="language-python">type(t)
-</code></pre>
-<pre><code>tuple
-</code></pre>
-<h4 id="special-cases">Special cases</h4>
-<pre><code class="language-python">single = (1)
-</code></pre>
-<pre><code class="language-python">type(single)
-</code></pre>
-<pre><code>int
-</code></pre>
-<pre><code class="language-python">single = (1,)
-</code></pre>
-<pre><code class="language-python">type(single)
-</code></pre>
-<pre><code>tuple
-</code></pre>
-<h4 id="appending">Appending</h4>
-<pre><code class="language-python">galileo = (['test'],)
-</code></pre>
-<pre><code class="language-python">galileo
-</code></pre>
-<pre><code>(['test'],)
-</code></pre>
-<pre><code class="language-python">galileo[0].append('another test')
-</code></pre>
-<pre><code class="language-python">galileo
-</code></pre>
-<pre><code>(['test', 'another test'],)
-</code></pre>
-<pre><code class="language-python">galileo[0].append('yet another test')
-</code></pre>
-<pre><code class="language-python">galileo
-</code></pre>
-<pre><code>(['test', 'another test', 'yet another test'],)
-</code></pre>
-<p>but this is not possible</p>
-<pre><code class="language-python">galileo[0] = ['reset','can\'t be done']
-</code></pre>
-<pre><code>---------------------------------------------------------------------------
-
-TypeError                                 Traceback (most recent call last)
-
-&lt;ipython-input-34-e195864df4a2&gt; in &lt;module&gt;
-----&gt; 1 galileo[0] = ['reset','can\'t be done']
-
-
-TypeError: 'tuple' object does not support item assignment
-</code></pre>
-<h3 id="packing-and-unpacking">Packing and unpacking</h3>
-<pre><code class="language-python">date = 6,5,2020
-</code></pre>
-<pre><code class="language-python">type(date)
-</code></pre>
-<pre><code>tuple
-</code></pre>
-<pre><code class="language-python">day,month,year = date
-</code></pre>
-<pre><code class="language-python">print(f'day={day}, month={month}, year={year}')
-</code></pre>
-<pre><code>day=6, month=5, year=2020
-</code></pre>
-<pre><code class="language-python">(day,month,year) = date
-</code></pre>
-<h4 id="swap-variables-using-unpacking">Swap variables using unpacking</h4>
-<pre><code class="language-python">x,y = 1,2
-x,y = y,x
-print(f'x={x}, y={y}')
-</code></pre>
-<pre><code>x=2, y=1
-</code></pre>
-<h4 id="remainder">Remainder</h4>
-<pre><code class="language-python">first, *rest = (1,2,3,4,5)
-</code></pre>
-<pre><code class="language-python">print(f'first={first} rest={rest}')
-</code></pre>
-<pre><code>first=1 rest=[2, 3, 4, 5]
-</code></pre>
-<pre><code class="language-python">first, *middle, last = (1,2,3,4,5)
-</code></pre>
-<pre><code class="language-python">type(middle)
-</code></pre>
-<pre><code>list
-</code></pre>
-<pre><code class="language-python">print(f'first={first} middle={middle} last={last}')
-</code></pre>
-<pre><code>first=1 middle=[2, 3, 4] last=5
-</code></pre>
-<pre><code class="language-python">first, *middle, last = [1,2,3,4,5]
-</code></pre>
-<pre><code class="language-python">print(f'first={first} middle={middle} last={last}')
-</code></pre>
-<pre><code>first=1 middle=[2, 3, 4] last=5
-</code></pre>
-<pre><code class="language-python">a, *b, c = 'HELLOWORLD'
-</code></pre>
-<pre><code class="language-python">b
-</code></pre>
-<pre><code>['E', 'L', 'L', 'O', 'W', 'O', 'R', 'L']
+<pre><code class="language-python">
 </code></pre>
 
 </div>
