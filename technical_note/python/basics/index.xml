@@ -350,6 +350,24 @@ oslo
     </item>
     
     <item>
+      <title>Enumerate a dictionary</title>
+      <link>http://othrif.github.io/technical_note/python/basics/enumerate/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/enumerate/</guid>
+      <description>&lt;h3 id=&#34;enumerate-through-both-keys-and-values&#34;&gt;Enumerate through both keys and values&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;example_dict = {1:&#39;a&#39;, 2:&#39;b&#39;, 3:&#39;c&#39;, 4:&#39;d&#39;}
+for i, (k, v) in enumerate(example_dict.items()):
+    print(i, k, v)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0 1 a
+1 2 b
+2 3 c
+3 4 d
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>File, dir handling with os module</title>
       <link>http://othrif.github.io/technical_note/python/basics/os_manip/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

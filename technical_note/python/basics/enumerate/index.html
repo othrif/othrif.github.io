@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Enumerate through both keys and values example_dict = {1:&#39;a&#39;, 2:&#39;b&#39;, 3:&#39;c&#39;, 4:&#39;d&#39;} for i, (k, v) in enumerate(example_dict.items()): print(i, k, v)  0 1 a 1 2 b 2 3 c 3 4 d  ">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/enumerate/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/enumerate/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/enumerate/">
+  <meta property="og:title" content="Enumerate a dictionary | Othmane Rifki">
+  <meta property="og:description" content="Enumerate through both keys and values example_dict = {1:&#39;a&#39;, 2:&#39;b&#39;, 3:&#39;c&#39;, 4:&#39;d&#39;} for i, (k, v) in enumerate(example_dict.items()): print(i, k, v)  0 1 a 1 2 b 2 3 c 3 4 d  "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Enumerate a dictionary | Othmane Rifki</title>
 
 </head>
 
@@ -552,80 +555,43 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Enumerate a dictionary</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/2/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
+  <h3 id="enumerate-through-both-keys-and-values">Enumerate through both keys and values</h3>
+<pre><code class="language-python">example_dict = {1:'a', 2:'b', 3:'c', 4:'d'}
+for i, (k, v) in enumerate(example_dict.items()):
+    print(i, k, v)
+</code></pre>
+<pre><code>0 1 a
+1 2 b
+2 3 c
+3 4 d
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
