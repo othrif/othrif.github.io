@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="DataFrames store tabular data where you can label the rows and the columns.
+DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;] dr = [True, False, False, False, True, True, True] cpc = [809, 731, 588, 18, 200, 70, 45] cars_dict = { &#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc } cars = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/dataframe/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/dataframe/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/dataframe/">
+  <meta property="og:title" content="DataFrames basics | Othmane Rifki">
+  <meta property="og:description" content="DataFrames store tabular data where you can label the rows and the columns.
+DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;] dr = [True, False, False, False, True, True, True] cpc = [809, 731, 588, 18, 200, 70, 45] cars_dict = { &#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc } cars = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>DataFrames basics | Othmane Rifki</title>
 
 </head>
 
@@ -552,100 +557,120 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">DataFrames basics</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="dataframes">DataFrames</h3>
+<p>store tabular data where you can label the rows and the columns.</p>
+<h4 id="dataframe-from-dictionary">DataFrame from dictionary</h4>
+<pre><code class="language-python">import pandas as pd
+
+# Build cars DataFrame
+names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+cars_dict = { 'country':names, 'drives_right':dr, 'cars_per_cap':cpc }
+cars = pd.DataFrame(cars_dict)
+print(cars)
+
+# Definition of row_labels
+row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
+
+# Specify row labels of cars
 
 
+# Print cars again
 
+</code></pre>
+<pre><code>         country  drives_right  cars_per_cap
+0  United States          True           809
+1      Australia         False           731
+2          Japan         False           588
+3          India         False            18
+4         Russia          True           200
+5        Morocco          True            70
+6          Egypt          True            45
+</code></pre>
+<h4 id="set-the-row-attribute">Set the row attribute</h4>
+<pre><code class="language-python"># Definition of row_labels
+row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
 
-  
+# Specify row labels of cars
+cars.index = row_labels
 
+# Print cars again
+print(cars)
+cars.to_csv('cars.csv',index=True)
+</code></pre>
+<pre><code>           country  drives_right  cars_per_cap
+US   United States          True           809
+AUS      Australia         False           731
+JPN          Japan         False           588
+IN           India         False            18
+RU          Russia          True           200
+MOR        Morocco          True            70
+EG           Egypt          True            45
+</code></pre>
+<h4 id="read-csv">Read csv</h4>
+<pre><code class="language-python"># Import pandas as pd
+import pandas as pd
 
+# Import the cars.csv data: cars
+cars = pd.read_csv('cars.csv')
 
+# Print out cars
+print(cars)
+</code></pre>
+<pre><code>  Unnamed: 0        country  drives_right  cars_per_cap
+0         US  United States          True           809
+1        AUS      Australia         False           731
+2        JPN          Japan         False           588
+3         IN          India         False            18
+4         RU         Russia          True           200
+5        MOR        Morocco          True            70
+6         EG          Egypt          True            45
+</code></pre>
+<pre><code class="language-python">#Fix import by including index_col
+cars = pd.read_csv('cars.csv',index_col=0)
 
+# Print out cars
+print(cars)
+</code></pre>
+<pre><code>           country  drives_right  cars_per_cap
+US   United States          True           809
+AUS      Australia         False           731
+JPN          Japan         False           588
+IN           India         False            18
+RU          Russia          True           200
+MOR        Morocco          True            70
+EG           Egypt          True            45
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/" ></a></h2>
-      <div class="article-style">
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlib/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/performance/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/dataframe/" >DataFrames basics</a></h2>
-      <div class="article-style">
-        
-          DataFrames store tabular data where you can label the rows and the columns.
-DataFrame from dictionary import pandas as pd # Build cars DataFrame names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt'] dr = [True, False, False, False, True, True, True] cpc = [809, 731, 588, 18, 200, 70, 45] cars_dict = { 'country':names, 'drives_right':dr, 'cars_per_cap':cpc } cars = pd.
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
+    </div>
+</article>
 
-</div>
+
+
 
       
 
