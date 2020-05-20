@@ -362,6 +362,28 @@ np.min(ary,axis=1) # find min along columns
     </item>
     
     <item>
+      <title>Boolean operators with Numpy</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/boolean_manip/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/boolean_manip/</guid>
+      <description>&lt;p&gt;The operational operators like &lt;code&gt;&amp;lt;&lt;/code&gt; and &lt;code&gt;&amp;gt;=&lt;/code&gt; worked with Numpy arrays out of the box. Unfortunately, this is not true for the boolean operators and, or, and not&lt;br&gt;
+To use these operators with Numpy, you will need &lt;code&gt;np.logical_and()&lt;/code&gt;, &lt;code&gt;np.logical_or()&lt;/code&gt; and &lt;code&gt;np.logical_not()&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+my_house = np.array([18.0, 20.0, 10.75, 9.50])
+your_house = np.array([14.0, 24.0, 14.25, 9.0])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.logical_or(my_house&amp;gt;18.5,my_house&amp;lt;10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(np.logical_or(my_house&amp;lt;11,your_house&amp;lt;11))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[False False  True  True]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Broadcasting</title>
       <link>http://othrif.github.io/technical_note/python/numpy/broadcasting/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -402,6 +424,64 @@ except ValueError as e:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;array([[4, 6, 3],
        [4, 5, 6]])
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Loop over maps, numpy arrays</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/loop/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/loop/</guid>
+      <description>&lt;h3 id=&#34;loop-over-maps&#34;&gt;Loop over maps&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Definition of dictionary
+europe = {&#39;spain&#39;:&#39;madrid&#39;, &#39;france&#39;:&#39;paris&#39;, &#39;germany&#39;:&#39;berlin&#39;,
+          &#39;norway&#39;:&#39;oslo&#39;, &#39;italy&#39;:&#39;rome&#39;, &#39;poland&#39;:&#39;warsaw&#39;, &#39;austria&#39;:&#39;vienna&#39; }
+          
+# Iterate over europe
+for k,v in europe.items():
+    print(&#39;the capital of &#39; + str(k) +&#39; is &#39; + str(v))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;the capital of spain is madrid
+the capital of france is paris
+the capital of germany is berlin
+the capital of norway is oslo
+the capital of italy is rome
+the capital of poland is warsaw
+the capital of austria is vienna
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;loop-over-1d-numpy-array&#34;&gt;Loop over 1D Numpy array&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+np_height = [1.2,32,23.2,23.1]
+# For loop over np_height
+for x in np_height:
+    print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1.2
+32
+23.2
+23.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;loop-over-2d-numpy-array&#34;&gt;Loop over 2D Numpy array&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+baseball = [[180, 78.4],
+            [215, 102.7],
+            [210, 98.5],
+            [188, 75.2]]
+np_baseball = np.array(baseball)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# flatten, printing rows sequentially
+for x in np.nditer(np_baseball):
+    print(x)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;180.0
+78.4
+215.0
+102.7
+210.0
+98.5
+188.0
+75.2
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -545,6 +625,44 @@ Returns a tuple &lt;code&gt;()&lt;/code&gt;.&lt;/p&gt;
 scalar
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;array(5)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Random numbers</title>
+      <link>http://othrif.github.io/technical_note/python/numpy/rand/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/numpy/rand/</guid>
+      <description>&lt;h3 id=&#34;generate-between-0-and-1&#34;&gt;Generate between 0 and 1&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+np.random.rand()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.719150310154773
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;generate-either-0-and-1&#34;&gt;Generate either 0 and 1&lt;/h3&gt;
+&lt;p&gt;This changes every time i run this code&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in range(5):
+    print(np.random.randint(0,2)) # generate 0 or 1, not [0,2) upper boundary is exclusive
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0
+1
+0
+0
+0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reproducibility-with-seed&#34;&gt;Reproducibility with &lt;code&gt;seed()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Insure reproducibility of the resutls by setting a seed. The sequence of random generated will be the same, everytime you run your program. this is why this is a &lt;em&gt;pseudo random generator&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.random.seed(123)
+for i in range(5):
+    print(np.random.randint(0,2)) # generate 0 or 1
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0
+1
+0
+0
+0
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

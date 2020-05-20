@@ -643,11 +643,36 @@ ufuncs are implemented in compiled C code and very fast and efficient compared t
     
     
     <div>
+      <h2><a href="/technical_note/python/numpy/boolean_manip/" >Boolean operators with Numpy</a></h2>
+      <div class="article-style">
+        
+          The operational operators like &lt; and &gt;= worked with Numpy arrays out of the box. Unfortunately, this is not true for the boolean operators and, or, and not
+To use these operators with Numpy, you will need np.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/numpy/broadcasting/" >Broadcasting</a></h2>
       <div class="article-style">
         
           import numpy as np  Broadcasting Broadcasting allows us to perform vectorized operations between two arrays even if their dimensions do not match by creating implicit multidimensional grids
 different dimensions:
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/numpy/loop/" >Loop over maps, numpy arrays</a></h2>
+      <div class="article-style">
+        
+          Loop over maps # Definition of dictionary europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin', 'norway':'oslo', 'italy':'rome', 'poland':'warsaw', 'austria':'vienna' } # Iterate over europe for k,v in europe.items(): print('the capital of ' + str(k) +' is ' + str(v))  the capital of spain is madrid the capital of france is paris the capital of germany is berlin the capital of norway is oslo the capital of italy is rome the capital of poland is warsaw the capital of austria is vienna  Loop over 1D Numpy array import numpy as np np_height = [1.
         
       </div>
     </div>
@@ -683,16 +708,26 @@ Advantage NumPy arrays use contiguous blocks of memory that can be efficiently c
     
     
     <div>
-      <h2><a href="/technical_note/python/numpy/subsetting/" >Subsetting Numpy arrays</a></h2>
+      <h2><a href="/technical_note/python/numpy/rand/" >Random numbers</a></h2>
       <div class="article-style">
         
-          Subset numpy arrays x = [4 , 9 , 6, 3, 1] y = np.array(x) y[1] high = y &gt; 5 y[high]  array([9, 6])  print(y[high])  [9 6]  Indexing similar between lists and Numpy arrays x = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] x[1]  'b'  np_x = np.
+          Generate between 0 and 1 import numpy as np np.random.rand()  0.719150310154773  Generate either 0 and 1 This changes every time i run this code
+for i in range(5): print(np.
         
       </div>
     </div>
   
 
   
+<nav>
+  <ul class="pagination justify-content-center">
+    
+    
+    <li class="page-item"><a class="page-link" href="/technical_note/python/numpy/page/2/">&raquo;</a></li>
+    
+  </ul>
+</nav>
+
 
 </div>
 

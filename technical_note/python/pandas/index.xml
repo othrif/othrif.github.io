@@ -13,6 +13,100 @@
     </image>
     
     <item>
+      <title>Boolean operators with Pandas</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/boolean_manip/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/boolean_manip/</guid>
+      <description>&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+# Build cars DataFrame
+names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;]
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&#39;, &#39;MOR&#39;, &#39;EG&#39;]
+cars_dict = {&#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc }
+cars = pd.DataFrame(cars_dict)
+cars.index = row_labels
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
+US   United States          True           809
+AUS      Australia         False           731
+JPN          Japan         False           588
+IN           India         False            18
+RU          Russia          True           200
+MOR        Morocco          True            70
+EG           Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;drives_right&#39;]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+cpc = cars[&#39;cars_per_cap&#39;]
+between = np.logical_and(cpc&amp;gt;100,cpc&amp;lt;500)
+medium = cars[between]
+print(medium)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   country  drives_right  cars_per_cap
+RU  Russia          True           200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>DataFrames basics</title>
       <link>http://othrif.github.io/technical_note/python/pandas/dataframe/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -608,6 +702,131 @@ cars.loc[[&#39;RU&#39;]]
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Loops with DataFrames</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/loops/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/loops/</guid>
+      <description>&lt;h4 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+# Build cars DataFrame
+names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;]
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&#39;, &#39;MOR&#39;, &#39;EG&#39;]
+cars_dict = {&#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc }
+cars = pd.DataFrame(cars_dict)
+cars.index = row_labels
+cars2 = cars
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
+US   United States          True           809
+AUS      Australia         False           731
+JPN          Japan         False           588
+IN           India         False            18
+RU          Russia          True           200
+MOR        Morocco          True            70
+EG           Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;loop-over-dataframe&#34;&gt;Loop over DataFrame&lt;/h3&gt;
+&lt;p&gt;Iterating over a Pandas DataFrame is typically done with the &lt;code&gt;iterrows()&lt;/code&gt;  &lt;br&gt;
+On every run, a Pandas Series is generated.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for lab, row in cars.iterrows() :
+    print(lab)
+    print(row)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;US
+country         United States
+drives_right             True
+cars_per_cap              809
+Name: US, dtype: object
+AUS
+country         Australia
+drives_right        False
+cars_per_cap          731
+Name: AUS, dtype: object
+JPN
+country         Japan
+drives_right    False
+cars_per_cap      588
+Name: JPN, dtype: object
+IN
+country         India
+drives_right    False
+cars_per_cap       18
+Name: IN, dtype: object
+RU
+country         Russia
+drives_right      True
+cars_per_cap       200
+Name: RU, dtype: object
+MOR
+country         Morocco
+drives_right       True
+cars_per_cap         70
+Name: MOR, dtype: object
+EG
+country         Egypt
+drives_right     True
+cars_per_cap       45
+Name: EG, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Pick a specific element in the series
+for lab, row in cars.iterrows() :
+    print(lab+&#39;:&#39;+str(row[&#39;cars_per_cap&#39;]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;US:809
+AUS:731
+JPN:588
+IN:18
+RU:200
+MOR:70
+EG:45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;add-a-new-column-with-for-loop&#34;&gt;Add a new column with for-loop&lt;/h3&gt;
+&lt;p&gt;Adding a new column with for-loop is not very efficient. On every iteration, you&amp;rsquo;re creating a new Pandas Series.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for lab,row in cars.iterrows():
+    cars.loc[lab,&#39;COUNTRY&#39;] = row[&#39;country&#39;].upper()
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap        COUNTRY
+US   United States          True           809  UNITED STATES
+AUS      Australia         False           731      AUSTRALIA
+JPN          Japan         False           588          JAPAN
+IN           India         False            18          INDIA
+RU          Russia          True           200         RUSSIA
+MOR        Morocco          True            70        MOROCCO
+EG           Egypt          True            45          EGYPT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars2[&#39;COUNTRY&#39;] = cars[&#39;country&#39;].apply(str.upper)
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap        COUNTRY
+US   United States          True           809  UNITED STATES
+AUS      Australia         False           731      AUSTRALIA
+JPN          Japan         False           588          JAPAN
+IN           India         False            18          INDIA
+RU          Russia          True           200         RUSSIA
+MOR        Morocco          True            70        MOROCCO
+EG           Egypt          True            45          EGYPT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars2[&#39;Length&#39;] = cars[&#39;country&#39;].apply(len)
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap        COUNTRY  Length
+US   United States          True           809  UNITED STATES      13
+AUS      Australia         False           731      AUSTRALIA       9
+JPN          Japan         False           588          JAPAN       5
+IN           India         False            18          INDIA       5
+RU          Russia          True           200         RUSSIA       6
+MOR        Morocco          True            70        MOROCCO       7
+EG           Egypt          True            45          EGYPT       5
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

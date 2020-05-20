@@ -113,6 +113,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/boolean_manip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/boolean_manip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/broadcasting/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -218,6 +228,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/loop/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/loops/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/strings/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -279,6 +299,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/conventions/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/numpy/rand/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
