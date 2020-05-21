@@ -2651,6 +2651,56 @@ df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
+&lt;h3 id=&#34;adding-a-column&#34;&gt;Adding a column&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.pivot_table(values=&#39;weekly_sales&#39;, index=&#39;type&#39;, columns=&#39;is_holiday&#39;, aggfunc=np.max)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;th&gt;True&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
+      &lt;td&gt;46381.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;td&gt;39773.71&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;td&gt;22517.56&lt;/td&gt;
+      &lt;td&gt;50605.27&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;fill-missing-with-0-with&#34;&gt;Fill missing with 0 with&lt;/h3&gt;
 </description>
     </item>
     

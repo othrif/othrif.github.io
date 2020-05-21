@@ -966,6 +966,56 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
   </tbody>
 </table>
 </div>
+<h3 id="adding-a-column">Adding a column</h3>
+<pre><code class="language-python">df.pivot_table(values='weekly_sales', index='type', columns='is_holiday', aggfunc=np.max)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_holiday</th>
+      <th>False</th>
+      <th>True</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>57258.43</td>
+      <td>46381.43</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>39773.71</td>
+      <td>21827.90</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>22517.56</td>
+      <td>50605.27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="fill-missing-with-0-with">Fill missing with 0 with</h3>
 
 </div>
   <aside>
