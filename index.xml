@@ -1138,10 +1138,6 @@ row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&
 
 # Specify row labels of cars
 cars.index = row_labels
-
-# Print cars again
-print(cars)
-cars.to_csv(&#39;cars.csv&#39;,index=True)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
 US   United States          True           809
@@ -1151,6 +1147,187 @@ IN           India         False            18
 RU          Russia          True           200
 MOR        Morocco          True            70
 EG           Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;useful-exploration&#34;&gt;Useful exploration&lt;/h3&gt;
+&lt;h4 id=&#34;methods&#34;&gt;Methods&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.head()&lt;/code&gt; first few rows&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.info()&lt;/code&gt; name of columns, data type and number of missing values&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.describe()&lt;/code&gt; summary statistics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;attributes&#34;&gt;Attributes&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.shape&lt;/code&gt; attribute for rows x columns&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.values&lt;/code&gt; converts to a 2D numpy array&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.columns&lt;/code&gt; An index of columns: the column names.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.index&lt;/code&gt; An index for the rows: either row numbers or row names&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.info()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+Int64Index: 7 entries, 0 to 6
+Data columns (total 3 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   country       7 non-null      object
+ 1   drives_right  7 non-null      bool  
+ 2   cars_per_cap  7 non-null      int64 
+dtypes: bool(1), int64(1), object(1)
+memory usage: 175.0+ bytes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(7, 3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.describe()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;count&lt;/th&gt;
+      &lt;td&gt;7.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;mean&lt;/th&gt;
+      &lt;td&gt;351.571429&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;std&lt;/th&gt;
+      &lt;td&gt;345.595552&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;min&lt;/th&gt;
+      &lt;td&gt;18.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25%&lt;/th&gt;
+      &lt;td&gt;57.500000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;50%&lt;/th&gt;
+      &lt;td&gt;200.000000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;75%&lt;/th&gt;
+      &lt;td&gt;659.500000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;max&lt;/th&gt;
+      &lt;td&gt;809.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.values
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([[&#39;United States&#39;, True, 809],
+       [&#39;Australia&#39;, False, 731],
+       [&#39;Japan&#39;, False, 588],
+       [&#39;India&#39;, False, 18],
+       [&#39;Russia&#39;, True, 200],
+       [&#39;Morocco&#39;, True, 70],
+       [&#39;Egypt&#39;, True, 45]], dtype=object)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Index([&#39;country&#39;, &#39;drives_right&#39;, &#39;cars_per_cap&#39;], dtype=&#39;object&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.index
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Int64Index([0, 1, 2, 3, 4, 5, 6], dtype=&#39;int64&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;save-to-csv&#34;&gt;Save to csv&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print cars again
+print(cars)
+cars.to_csv(&#39;cars.csv&#39;,index=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         country  drives_right  cars_per_cap
+0  United States          True           809
+1      Australia         False           731
+2          Japan         False           588
+3          India         False            18
+4         Russia          True           200
+5        Morocco          True            70
+6          Egypt          True            45
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;read-csv&#34;&gt;Read csv&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas as pd
@@ -1162,19 +1339,56 @@ cars = pd.read_csv(&#39;cars.csv&#39;)
 # Print out cars
 print(cars)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;  Unnamed: 0        country  drives_right  cars_per_cap
-0         US  United States          True           809
-1        AUS      Australia         False           731
-2        JPN          Japan         False           588
-3         IN          India         False            18
-4         RU         Russia          True           200
-5        MOR        Morocco          True            70
-6         EG          Egypt          True            45
+&lt;pre&gt;&lt;code&gt;   Unnamed: 0        country  drives_right  cars_per_cap
+0           0  United States          True           809
+1           1      Australia         False           731
+2           2          Japan         False           588
+3           3          India         False            18
+4           4         Russia          True           200
+5           5        Morocco          True            70
+6           6          Egypt          True            45
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#Fix import by including index_col
 cars = pd.read_csv(&#39;cars.csv&#39;,index_col=0)
 
 # Print out cars
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         country  drives_right  cars_per_cap
+0  United States          True           809
+1      Australia         False           731
+2          Japan         False           588
+3          India         False            18
+4         Russia          True           200
+5        Morocco          True            70
+6          Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DataFrames manipulation</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/sortdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/sortdf/</guid>
+      <description>&lt;p&gt;Most common types of data manipulation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sorting rows&lt;/li&gt;
+&lt;li&gt;subsetting columns&lt;/li&gt;
+&lt;li&gt;subsetting rows&lt;/li&gt;
+&lt;li&gt;adding new columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+# Build cars DataFrame
+names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;]
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&#39;, &#39;MOR&#39;, &#39;EG&#39;]
+cars_dict = {&#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc }
+cars = pd.DataFrame(cars_dict)
+cars.index = row_labels
 print(cars)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
@@ -1186,7 +1400,620 @@ RU          Russia          True           200
 MOR        Morocco          True            70
 EG           Egypt          True            45
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;h3 id=&#34;sorting-row&#34;&gt;Sorting row&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values(&#39;cars_per_cap&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values([&#39;drives_right&#39;,&#39;cars_per_cap&#39;], ascending=[True,False])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;subsetting-columns&#34;&gt;subsetting columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;country&#39;].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;US     United States
+AUS        Australia
+JPN            Japan
+IN             India
+RU            Russia
+Name: country, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[[&#39;country&#39;,&#39;cars_per_cap&#39;]].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;subsetting-rows&#34;&gt;subsetting rows&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;cars_per_cap&#39;]&amp;lt;100].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;subsetting-by-categorical-variables&#34;&gt;Subsetting by categorical variables&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.isin()&lt;/code&gt; one condition instead of several &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;|&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;country&#39;].isin([&#39;Morocco&#39;,&#39;Egypt&#39;])]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;adding-new-columns&#34;&gt;adding new columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;cars_per_cap_10&#39;] = cars[&#39;cars_per_cap&#39;]*10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+      &lt;th&gt;cars_per_cap_10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+      &lt;td&gt;8090&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+      &lt;td&gt;7310&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+      &lt;td&gt;5880&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;180&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+      &lt;td&gt;2000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DataFrames statistics</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/statdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/statdf/</guid>
+      <description>&lt;p&gt;Most common summary statistics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.mean()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.std()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.var()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.median()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.mode()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.min()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.max()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.sum()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.quantile()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+from pandas import Timestamp
+
+mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;]
+content = np.array([[1, &#39;A&#39;, 1, Timestamp(&#39;2010-02-05 00:00:00&#39;), 24924.5, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-03-05 00:00:00&#39;), 21827.9, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-04-02 00:00:00&#39;), 57258.43, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-05-07 00:00:00&#39;), 17413.94, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-06-04 00:00:00&#39;), 17558.09, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-07-02 00:00:00&#39;), 16333.14, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-08-06 00:00:00&#39;), 17508.41, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-09-03 00:00:00&#39;), 16241.78, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-10-01 00:00:00&#39;), 20094.19, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-11-05 00:00:00&#39;), 34238.88, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-12-03 00:00:00&#39;), 22517.56, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2011-01-07 00:00:00&#39;), 15984.24, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-02-05 00:00:00&#39;), 50605.27, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-03-05 00:00:00&#39;), 48397.98, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-04-02 00:00:00&#39;), 47450.5, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-05-07 00:00:00&#39;), 47903.01, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-06-04 00:00:00&#39;), 48754.47, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-07-02 00:00:00&#39;), 47077.72, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-08-06 00:00:00&#39;), 50031.73, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-09-03 00:00:00&#39;), 49015.05, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-10-01 00:00:00&#39;), 45829.02, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-11-05 00:00:00&#39;), 46381.43, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-12-03 00:00:00&#39;), 44405.02, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2011-01-07 00:00:00&#39;), 43202.29, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-02-05 00:00:00&#39;), 13740.12, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-03-05 00:00:00&#39;), 12275.58, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-04-02 00:00:00&#39;), 11157.08, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-05-07 00:00:00&#39;), 9372.8, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-06-04 00:00:00&#39;), 8001.41, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-07-02 00:00:00&#39;), 7857.88, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-08-06 00:00:00&#39;), 26719.02, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-09-03 00:00:00&#39;), 19081.8, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-10-01 00:00:00&#39;), 9775.17, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-11-05 00:00:00&#39;), 9825.22, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-12-03 00:00:00&#39;), 10856.85, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2011-01-07 00:00:00&#39;), 15808.15, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-02-05 00:00:00&#39;), 39954.04, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-03-05 00:00:00&#39;), 38086.19, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-04-02 00:00:00&#39;), 37809.49, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-05-07 00:00:00&#39;), 37168.34, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-06-04 00:00:00&#39;), 40548.19, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-07-02 00:00:00&#39;), 39773.71, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-08-06 00:00:00&#39;), 40973.88, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-09-03 00:00:00&#39;), 38321.88, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-10-01 00:00:00&#39;), 34912.45, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-11-05 00:00:00&#39;), 37980.55, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-12-03 00:00:00&#39;), 37110.55, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2011-01-07 00:00:00&#39;), 37947.8, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-02-05 00:00:00&#39;), 32229.38, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-03-05 00:00:00&#39;), 23082.14, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-04-02 00:00:00&#39;), 29967.92, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-05-07 00:00:00&#39;), 19260.44, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-06-04 00:00:00&#39;), 22932.26, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-07-02 00:00:00&#39;), 18887.71, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-08-06 00:00:00&#39;), 16926.17, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-09-03 00:00:00&#39;), 15390.52, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-10-01 00:00:00&#39;), 23381.38, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-11-05 00:00:00&#39;), 23903.81, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-12-03 00:00:00&#39;), 36472.02, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2011-01-07 00:00:00&#39;), 22699.69, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-02-05 00:00:00&#39;), 5749.03, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-03-05 00:00:00&#39;), 4221.25, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-04-02 00:00:00&#39;), 4132.61, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-05-07 00:00:00&#39;), 7477.7, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-06-04 00:00:00&#39;), 5484.9, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-07-02 00:00:00&#39;), 4541.91, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-08-06 00:00:00&#39;), 4700.38, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-09-03 00:00:00&#39;), 3553.75, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-10-01 00:00:00&#39;), 2876.19, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-11-05 00:00:00&#39;), 5036.99, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-12-03 00:00:00&#39;), 6356.96, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2011-01-07 00:00:00&#39;), 1376.15, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-02-05 00:00:00&#39;), 21084.08, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-03-05 00:00:00&#39;), 19659.7, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-04-02 00:00:00&#39;), 22427.62, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-05-07 00:00:00&#39;), 20457.62, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-06-04 00:00:00&#39;), 44563.68, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-07-02 00:00:00&#39;), 22589.0, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-08-06 00:00:00&#39;), 21842.57, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-09-03 00:00:00&#39;), 18005.65, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-10-01 00:00:00&#39;), 16481.79, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-11-05 00:00:00&#39;), 19136.58, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-12-03 00:00:00&#39;), 47406.83, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2011-01-07 00:00:00&#39;), 17516.16, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-02-05 00:00:00&#39;), 40129.01, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-03-05 00:00:00&#39;), 38776.09, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-04-02 00:00:00&#39;), 38151.58, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-05-07 00:00:00&#39;), 35393.78, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-06-04 00:00:00&#39;), 35181.47, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-07-02 00:00:00&#39;), 35580.01, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-08-06 00:00:00&#39;), 34833.35, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-09-03 00:00:00&#39;), 35562.68, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-10-01 00:00:00&#39;), 34658.25, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-11-05 00:00:00&#39;), 36182.58, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-12-03 00:00:00&#39;), 36222.74, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2011-01-07 00:00:00&#39;), 36599.46, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-02-05 00:00:00&#39;), 16930.99, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-03-05 00:00:00&#39;), 24064.7, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-04-02 00:00:00&#39;), 25435.02, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-05-07 00:00:00&#39;), 27588.34, False]])
+df = pd.DataFrame(content, columns=mycols)
+df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;store&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-02-05&lt;/td&gt;
+      &lt;td&gt;24924.5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10462.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-03-05&lt;/td&gt;
+      &lt;td&gt;21827.9&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;9162.84&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-04-02&lt;/td&gt;
+      &lt;td&gt;57258.4&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;24035.7&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-05-07&lt;/td&gt;
+      &lt;td&gt;17413.9&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;7309.96&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-06-04&lt;/td&gt;
+      &lt;td&gt;17558.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;7370.47&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;weekly_sales&#39;].mean()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;26291.1529
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;weekly_sales&#39;].sum()*1e-6 # in millions
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2.62911529
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.sort_values(&#39;weekly_sales&#39;,ascending=False).head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;store&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-04-02&lt;/td&gt;
+      &lt;td&gt;57258.4&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2010-02-05&lt;/td&gt;
+      &lt;td&gt;50605.3&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2010-08-06&lt;/td&gt;
+      &lt;td&gt;50031.7&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2010-09-03&lt;/td&gt;
+      &lt;td&gt;49015.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2010-06-04&lt;/td&gt;
+      &lt;td&gt;48754.5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;efficient-summaries-with-agg&#34;&gt;Efficient summaries with &lt;code&gt;.agg()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.agg()&lt;/code&gt; method allows you to apply your own custom functions to a DataFrame, as well as apply functions to more than one column of a DataFrame at once, making your aggregations super efficient.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A custom inter-quartile range function. Alternative to standard deviation that is helpful if your data contains outliers
+def iqr(column):
+    return column.quantile(0.75) - column.quantile(0.25)
+
+print(iqr(df[&#39;weekly_sales&#39;]))
+print(df[&#39;weekly_sales&#39;].agg(iqr))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;21645.687500000004
+21645.687500000004
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(df[[&#39;weekly_sales&#39;,&#39;frac_sales&#39;]].agg(iqr))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;weekly_sales    21645.687500
+frac_sales       9086.348194
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(df[[&#39;weekly_sales&#39;,&#39;frac_sales&#39;]].agg([iqr,np.median]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;        weekly_sales   frac_sales
+iqr       21645.6875  9086.348194
+median    23231.7600  9752.143956
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;cumulative-statistics&#34;&gt;Cumulative statistics&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.cumsum()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.cummax()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;cum_weekly_sales&#39;] = df[&#39;weekly_sales&#39;].cumsum()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;cum_max_sales&#39;] = df[&#39;weekly_sales&#39;].cummax()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(df[[&#39;date&#39;,&#39;weekly_sales&#39;,&#39;cum_weekly_sales&#39;,&#39;cum_max_sales&#39;]])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         date weekly_sales cum_weekly_sales cum_max_sales
+0  2010-02-05      24924.5          24924.5       24924.5
+1  2010-03-05      21827.9          46752.4       24924.5
+2  2010-04-02      57258.4           104011       57258.4
+3  2010-05-07      17413.9           121425       57258.4
+4  2010-06-04      17558.1           138983       57258.4
+..        ...          ...              ...           ...
+95 2011-01-07      36599.5       2.5351e+06       57258.4
+96 2010-02-05        16931      2.55203e+06       57258.4
+97 2010-03-05      24064.7      2.57609e+06       57258.4
+98 2010-04-02        25435      2.60153e+06       57258.4
+99 2010-05-07      27588.3      2.62912e+06       57258.4
+
+[100 rows x 4 columns]
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

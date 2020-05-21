@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="DataFrames store tabular data where you can label the rows and the columns.
-DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;] dr = [True, False, False, False, True, True, True] cpc = [809, 731, 588, 18, 200, 70, 45] cars_dict = { &#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc } cars = pd.">
+  <meta name="description" content="Most common summary statistics:
+ .mean() .std() .var() .median() .mode() .min() .max() .sum() .quantile()  Generate some data import pandas as pd import numpy as np from pandas import Timestamp mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;] content = np.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/dataframe/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/statdf/">
 
   
 
@@ -217,7 +217,7 @@ DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/dataframe/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/statdf/">
 
   
   
@@ -231,10 +231,10 @@ DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/dataframe/">
-  <meta property="og:title" content="DataFrames basics | Othmane Rifki">
-  <meta property="og:description" content="DataFrames store tabular data where you can label the rows and the columns.
-DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;] dr = [True, False, False, False, True, True, True] cpc = [809, 731, 588, 18, 200, 70, 45] cars_dict = { &#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc } cars = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/statdf/">
+  <meta property="og:title" content="DataFrames statistics | Othmane Rifki">
+  <meta property="og:description" content="Most common summary statistics:
+ .mean() .std() .var() .median() .mode() .min() .max() .sum() .quantile()  Generate some data import pandas as pd import numpy as np from pandas import Timestamp mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;] content = np."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -259,7 +259,7 @@ DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#
 
 
 
-  <title>DataFrames basics | Othmane Rifki</title>
+  <title>DataFrames statistics | Othmane Rifki</title>
 
 </head>
 
@@ -563,66 +563,36 @@ DataFrame from dictionary import pandas as pd # Build cars DataFrame names = [&#
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">DataFrames basics</h1>
+    <h1 class="technical_note_title">DataFrames statistics</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="dataframes">DataFrames</h3>
-<p>store tabular data where you can label the rows and the columns.</p>
-<h4 id="dataframe-from-dictionary">DataFrame from dictionary</h4>
+  <p>Most common summary statistics:</p>
+<ul>
+<li><code>.mean()</code></li>
+<li><code>.std()</code></li>
+<li><code>.var()</code></li>
+<li><code>.median()</code></li>
+<li><code>.mode()</code></li>
+<li><code>.min()</code></li>
+<li><code>.max()</code></li>
+<li><code>.sum()</code></li>
+<li><code>.quantile()</code></li>
+</ul>
+<h3 id="generate-some-data">Generate some data</h3>
 <pre><code class="language-python">import pandas as pd
+import numpy as np
+from pandas import Timestamp
 
-# Build cars DataFrame
-names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
-dr =  [True, False, False, False, True, True, True]
-cpc = [809, 731, 588, 18, 200, 70, 45]
-cars_dict = { 'country':names, 'drives_right':dr, 'cars_per_cap':cpc }
-cars = pd.DataFrame(cars_dict)
-print(cars)
+mycols = ['store', 'type', 'department', 'date', 'weekly_sales', 'is_holiday']
+content = np.array([[1, 'A', 1, Timestamp('2010-02-05 00:00:00'), 24924.5, False],[1, 'A', 1, Timestamp('2010-03-05 00:00:00'), 21827.9, False],[1, 'A', 1, Timestamp('2010-04-02 00:00:00'), 57258.43, False],[1, 'A', 1, Timestamp('2010-05-07 00:00:00'), 17413.94, False],[1, 'A', 1, Timestamp('2010-06-04 00:00:00'), 17558.09, False],[1, 'A', 1, Timestamp('2010-07-02 00:00:00'), 16333.14, False],[1, 'A', 1, Timestamp('2010-08-06 00:00:00'), 17508.41, False],[1, 'A', 1, Timestamp('2010-09-03 00:00:00'), 16241.78, False],[1, 'A', 1, Timestamp('2010-10-01 00:00:00'), 20094.19, False],[1, 'A', 1, Timestamp('2010-11-05 00:00:00'), 34238.88, False],[1, 'A', 1, Timestamp('2010-12-03 00:00:00'), 22517.56, False],[1, 'A', 1, Timestamp('2011-01-07 00:00:00'), 15984.24, False],[1, 'A', 2, Timestamp('2010-02-05 00:00:00'), 50605.27, False],[1, 'A', 2, Timestamp('2010-03-05 00:00:00'), 48397.98, False],[1, 'A', 2, Timestamp('2010-04-02 00:00:00'), 47450.5, False],[1, 'A', 2, Timestamp('2010-05-07 00:00:00'), 47903.01, False],[1, 'A', 2, Timestamp('2010-06-04 00:00:00'), 48754.47, False],[1, 'A', 2, Timestamp('2010-07-02 00:00:00'), 47077.72, False],[1, 'A', 2, Timestamp('2010-08-06 00:00:00'), 50031.73, False],[1, 'A', 2, Timestamp('2010-09-03 00:00:00'), 49015.05, False],[1, 'A', 2, Timestamp('2010-10-01 00:00:00'), 45829.02, False],[1, 'A', 2, Timestamp('2010-11-05 00:00:00'), 46381.43, False],[1, 'A', 2, Timestamp('2010-12-03 00:00:00'), 44405.02, False],[1, 'A', 2, Timestamp('2011-01-07 00:00:00'), 43202.29, False],[1, 'A', 3, Timestamp('2010-02-05 00:00:00'), 13740.12, False],[1, 'A', 3, Timestamp('2010-03-05 00:00:00'), 12275.58, False],[1, 'A', 3, Timestamp('2010-04-02 00:00:00'), 11157.08, False],[1, 'A', 3, Timestamp('2010-05-07 00:00:00'), 9372.8, False],[1, 'A', 3, Timestamp('2010-06-04 00:00:00'), 8001.41, False],[1, 'A', 3, Timestamp('2010-07-02 00:00:00'), 7857.88, False],[1, 'A', 3, Timestamp('2010-08-06 00:00:00'), 26719.02, False],[1, 'A', 3, Timestamp('2010-09-03 00:00:00'), 19081.8, False],[1, 'A', 3, Timestamp('2010-10-01 00:00:00'), 9775.17, False],[1, 'A', 3, Timestamp('2010-11-05 00:00:00'), 9825.22, False],[1, 'A', 3, Timestamp('2010-12-03 00:00:00'), 10856.85, False],[1, 'A', 3, Timestamp('2011-01-07 00:00:00'), 15808.15, False],[1, 'A', 4, Timestamp('2010-02-05 00:00:00'), 39954.04, False],[1, 'A', 4, Timestamp('2010-03-05 00:00:00'), 38086.19, False],[1, 'A', 4, Timestamp('2010-04-02 00:00:00'), 37809.49, False],[1, 'A', 4, Timestamp('2010-05-07 00:00:00'), 37168.34, False],[1, 'A', 4, Timestamp('2010-06-04 00:00:00'), 40548.19, False],[1, 'A', 4, Timestamp('2010-07-02 00:00:00'), 39773.71, False],[1, 'A', 4, Timestamp('2010-08-06 00:00:00'), 40973.88, False],[1, 'A', 4, Timestamp('2010-09-03 00:00:00'), 38321.88, False],[1, 'A', 4, Timestamp('2010-10-01 00:00:00'), 34912.45, False],[1, 'A', 4, Timestamp('2010-11-05 00:00:00'), 37980.55, False],[1, 'A', 4, Timestamp('2010-12-03 00:00:00'), 37110.55, False],[1, 'A', 4, Timestamp('2011-01-07 00:00:00'), 37947.8, False],[1, 'A', 5, Timestamp('2010-02-05 00:00:00'), 32229.38, False],[1, 'A', 5, Timestamp('2010-03-05 00:00:00'), 23082.14, False],[1, 'A', 5, Timestamp('2010-04-02 00:00:00'), 29967.92, False],[1, 'A', 5, Timestamp('2010-05-07 00:00:00'), 19260.44, False],[1, 'A', 5, Timestamp('2010-06-04 00:00:00'), 22932.26, False],[1, 'A', 5, Timestamp('2010-07-02 00:00:00'), 18887.71, False],[1, 'A', 5, Timestamp('2010-08-06 00:00:00'), 16926.17, False],[1, 'A', 5, Timestamp('2010-09-03 00:00:00'), 15390.52, False],[1, 'A', 5, Timestamp('2010-10-01 00:00:00'), 23381.38, False],[1, 'A', 5, Timestamp('2010-11-05 00:00:00'), 23903.81, False],[1, 'A', 5, Timestamp('2010-12-03 00:00:00'), 36472.02, False],[1, 'A', 5, Timestamp('2011-01-07 00:00:00'), 22699.69, False],[1, 'A', 6, Timestamp('2010-02-05 00:00:00'), 5749.03, False],[1, 'A', 6, Timestamp('2010-03-05 00:00:00'), 4221.25, False],[1, 'A', 6, Timestamp('2010-04-02 00:00:00'), 4132.61, False],[1, 'A', 6, Timestamp('2010-05-07 00:00:00'), 7477.7, False],[1, 'A', 6, Timestamp('2010-06-04 00:00:00'), 5484.9, False],[1, 'A', 6, Timestamp('2010-07-02 00:00:00'), 4541.91, False],[1, 'A', 6, Timestamp('2010-08-06 00:00:00'), 4700.38, False],[1, 'A', 6, Timestamp('2010-09-03 00:00:00'), 3553.75, False],[1, 'A', 6, Timestamp('2010-10-01 00:00:00'), 2876.19, False],[1, 'A', 6, Timestamp('2010-11-05 00:00:00'), 5036.99, False],[1, 'A', 6, Timestamp('2010-12-03 00:00:00'), 6356.96, False],[1, 'A', 6, Timestamp('2011-01-07 00:00:00'), 1376.15, False],[1, 'A', 7, Timestamp('2010-02-05 00:00:00'), 21084.08, False],[1, 'A', 7, Timestamp('2010-03-05 00:00:00'), 19659.7, False],[1, 'A', 7, Timestamp('2010-04-02 00:00:00'), 22427.62, False],[1, 'A', 7, Timestamp('2010-05-07 00:00:00'), 20457.62, False],[1, 'A', 7, Timestamp('2010-06-04 00:00:00'), 44563.68, False],[1, 'A', 7, Timestamp('2010-07-02 00:00:00'), 22589.0, False],[1, 'A', 7, Timestamp('2010-08-06 00:00:00'), 21842.57, False],[1, 'A', 7, Timestamp('2010-09-03 00:00:00'), 18005.65, False],[1, 'A', 7, Timestamp('2010-10-01 00:00:00'), 16481.79, False],[1, 'A', 7, Timestamp('2010-11-05 00:00:00'), 19136.58, False],[1, 'A', 7, Timestamp('2010-12-03 00:00:00'), 47406.83, False],[1, 'A', 7, Timestamp('2011-01-07 00:00:00'), 17516.16, False],[1, 'A', 8, Timestamp('2010-02-05 00:00:00'), 40129.01, False],[1, 'A', 8, Timestamp('2010-03-05 00:00:00'), 38776.09, False],[1, 'A', 8, Timestamp('2010-04-02 00:00:00'), 38151.58, False],[1, 'A', 8, Timestamp('2010-05-07 00:00:00'), 35393.78, False],[1, 'A', 8, Timestamp('2010-06-04 00:00:00'), 35181.47, False],[1, 'A', 8, Timestamp('2010-07-02 00:00:00'), 35580.01, False],[1, 'A', 8, Timestamp('2010-08-06 00:00:00'), 34833.35, False],[1, 'A', 8, Timestamp('2010-09-03 00:00:00'), 35562.68, False],[1, 'A', 8, Timestamp('2010-10-01 00:00:00'), 34658.25, False],[1, 'A', 8, Timestamp('2010-11-05 00:00:00'), 36182.58, False],[1, 'A', 8, Timestamp('2010-12-03 00:00:00'), 36222.74, False],[1, 'A', 8, Timestamp('2011-01-07 00:00:00'), 36599.46, False],[1, 'A', 9, Timestamp('2010-02-05 00:00:00'), 16930.99, False],[1, 'A', 9, Timestamp('2010-03-05 00:00:00'), 24064.7, False],[1, 'A', 9, Timestamp('2010-04-02 00:00:00'), 25435.02, False],[1, 'A', 9, Timestamp('2010-05-07 00:00:00'), 27588.34, False]])
+df = pd.DataFrame(content, columns=mycols)
+df['frac_sales'] = df['weekly_sales']*np.random.rand()
 </code></pre>
-<pre><code>         country  drives_right  cars_per_cap
-0  United States          True           809
-1      Australia         False           731
-2          Japan         False           588
-3          India         False            18
-4         Russia          True           200
-5        Morocco          True            70
-6          Egypt          True            45
-</code></pre>
-<h4 id="set-the-row-attribute">Set the row attribute</h4>
-<pre><code class="language-python"># Definition of row_labels
-row_labels = ['US', 'AUS', 'JPN', 'IN', 'RU', 'MOR', 'EG']
-
-# Specify row labels of cars
-cars.index = row_labels
-</code></pre>
-<pre><code>           country  drives_right  cars_per_cap
-US   United States          True           809
-AUS      Australia         False           731
-JPN          Japan         False           588
-IN           India         False            18
-RU          Russia          True           200
-MOR        Morocco          True            70
-EG           Egypt          True            45
-</code></pre>
-<h3 id="useful-exploration">Useful exploration</h3>
-<h4 id="methods">Methods</h4>
-<ul>
-<li><code>.head()</code> first few rows</li>
-<li><code>.info()</code> name of columns, data type and number of missing values&hellip;</li>
-<li><code>.describe()</code> summary statistics</li>
-</ul>
-<h4 id="attributes">Attributes</h4>
-<ul>
-<li><code>.shape</code> attribute for rows x columns</li>
-<li><code>.values</code> converts to a 2D numpy array</li>
-<li><code>.columns</code> An index of columns: the column names.</li>
-<li><code>.index</code> An index for the rows: either row numbers or row names</li>
-</ul>
-<pre><code class="language-python">cars.head()
+<pre><code class="language-python">df.head()
 </code></pre>
 <div>
 <style scoped>
@@ -642,63 +612,78 @@ EG           Egypt          True            45
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>country</th>
-      <th>drives_right</th>
-      <th>cars_per_cap</th>
+      <th>store</th>
+      <th>type</th>
+      <th>department</th>
+      <th>date</th>
+      <th>weekly_sales</th>
+      <th>is_holiday</th>
+      <th>frac_sales</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>United States</td>
-      <td>True</td>
-      <td>809</td>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-02-05</td>
+      <td>24924.5</td>
+      <td>False</td>
+      <td>10462.7</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Australia</td>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-03-05</td>
+      <td>21827.9</td>
       <td>False</td>
-      <td>731</td>
+      <td>9162.84</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>Japan</td>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-04-02</td>
+      <td>57258.4</td>
       <td>False</td>
-      <td>588</td>
+      <td>24035.7</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>India</td>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-05-07</td>
+      <td>17413.9</td>
       <td>False</td>
-      <td>18</td>
+      <td>7309.96</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>Russia</td>
-      <td>True</td>
-      <td>200</td>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-06-04</td>
+      <td>17558.1</td>
+      <td>False</td>
+      <td>7370.47</td>
     </tr>
   </tbody>
 </table>
 </div>
-<pre><code class="language-python">cars.info()
+<pre><code class="language-python">df['weekly_sales'].mean()
 </code></pre>
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-Int64Index: 7 entries, 0 to 6
-Data columns (total 3 columns):
- #   Column        Non-Null Count  Dtype 
----  ------        --------------  ----- 
- 0   country       7 non-null      object
- 1   drives_right  7 non-null      bool  
- 2   cars_per_cap  7 non-null      int64 
-dtypes: bool(1), int64(1), object(1)
-memory usage: 175.0+ bytes
+<pre><code>26291.1529
 </code></pre>
-<pre><code class="language-python">cars.shape
+<pre><code class="language-python">df['weekly_sales'].sum()*1e-6 # in millions
 </code></pre>
-<pre><code>(7, 3)
+<pre><code>2.62911529
 </code></pre>
-<pre><code class="language-python">cars.describe()
+<pre><code class="language-python">df.sort_values('weekly_sales',ascending=False).head()
 </code></pre>
 <div>
 <style scoped>
@@ -718,110 +703,112 @@ memory usage: 175.0+ bytes
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>cars_per_cap</th>
+      <th>store</th>
+      <th>type</th>
+      <th>department</th>
+      <th>date</th>
+      <th>weekly_sales</th>
+      <th>is_holiday</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>count</th>
-      <td>7.000000</td>
+      <th>2</th>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-04-02</td>
+      <td>57258.4</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>mean</th>
-      <td>351.571429</td>
+      <th>12</th>
+      <td>1</td>
+      <td>A</td>
+      <td>2</td>
+      <td>2010-02-05</td>
+      <td>50605.3</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>std</th>
-      <td>345.595552</td>
+      <th>18</th>
+      <td>1</td>
+      <td>A</td>
+      <td>2</td>
+      <td>2010-08-06</td>
+      <td>50031.7</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>min</th>
-      <td>18.000000</td>
+      <th>19</th>
+      <td>1</td>
+      <td>A</td>
+      <td>2</td>
+      <td>2010-09-03</td>
+      <td>49015.1</td>
+      <td>False</td>
     </tr>
     <tr>
-      <th>25%</th>
-      <td>57.500000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>200.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>659.500000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>809.000000</td>
+      <th>16</th>
+      <td>1</td>
+      <td>A</td>
+      <td>2</td>
+      <td>2010-06-04</td>
+      <td>48754.5</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
 </div>
-<pre><code class="language-python">cars.values
-</code></pre>
-<pre><code>array([['United States', True, 809],
-       ['Australia', False, 731],
-       ['Japan', False, 588],
-       ['India', False, 18],
-       ['Russia', True, 200],
-       ['Morocco', True, 70],
-       ['Egypt', True, 45]], dtype=object)
-</code></pre>
-<pre><code class="language-python">cars.columns
-</code></pre>
-<pre><code>Index(['country', 'drives_right', 'cars_per_cap'], dtype='object')
-</code></pre>
-<pre><code class="language-python">cars.index
-</code></pre>
-<pre><code>Int64Index([0, 1, 2, 3, 4, 5, 6], dtype='int64')
-</code></pre>
-<h3 id="save-to-csv">Save to csv</h3>
-<pre><code class="language-python"># Print cars again
-print(cars)
-cars.to_csv('cars.csv',index=True)
-</code></pre>
-<pre><code>         country  drives_right  cars_per_cap
-0  United States          True           809
-1      Australia         False           731
-2          Japan         False           588
-3          India         False            18
-4         Russia          True           200
-5        Morocco          True            70
-6          Egypt          True            45
-</code></pre>
-<h4 id="read-csv">Read csv</h4>
-<pre><code class="language-python"># Import pandas as pd
-import pandas as pd
+<h3 id="efficient-summaries-with-agg">Efficient summaries with <code>.agg()</code></h3>
+<p><code>.agg()</code> method allows you to apply your own custom functions to a DataFrame, as well as apply functions to more than one column of a DataFrame at once, making your aggregations super efficient.</p>
+<pre><code class="language-python"># A custom inter-quartile range function. Alternative to standard deviation that is helpful if your data contains outliers
+def iqr(column):
+    return column.quantile(0.75) - column.quantile(0.25)
 
-# Import the cars.csv data: cars
-cars = pd.read_csv('cars.csv')
+print(iqr(df['weekly_sales']))
+print(df['weekly_sales'].agg(iqr))
+</code></pre>
+<pre><code>21645.687500000004
+21645.687500000004
+</code></pre>
+<pre><code class="language-python">print(df[['weekly_sales','frac_sales']].agg(iqr))
+</code></pre>
+<pre><code>weekly_sales    21645.687500
+frac_sales       9086.348194
+dtype: float64
+</code></pre>
+<pre><code class="language-python">print(df[['weekly_sales','frac_sales']].agg([iqr,np.median]))
+</code></pre>
+<pre><code>        weekly_sales   frac_sales
+iqr       21645.6875  9086.348194
+median    23231.7600  9752.143956
+</code></pre>
+<h3 id="cumulative-statistics">Cumulative statistics</h3>
+<ul>
+<li><code>.cumsum()</code></li>
+<li><code>.cummax()</code></li>
+</ul>
+<pre><code class="language-python">df['cum_weekly_sales'] = df['weekly_sales'].cumsum()
+</code></pre>
+<pre><code class="language-python">df['cum_max_sales'] = df['weekly_sales'].cummax()
+</code></pre>
+<pre><code class="language-python">print(df[['date','weekly_sales','cum_weekly_sales','cum_max_sales']])
+</code></pre>
+<pre><code>         date weekly_sales cum_weekly_sales cum_max_sales
+0  2010-02-05      24924.5          24924.5       24924.5
+1  2010-03-05      21827.9          46752.4       24924.5
+2  2010-04-02      57258.4           104011       57258.4
+3  2010-05-07      17413.9           121425       57258.4
+4  2010-06-04      17558.1           138983       57258.4
+..        ...          ...              ...           ...
+95 2011-01-07      36599.5       2.5351e+06       57258.4
+96 2010-02-05        16931      2.55203e+06       57258.4
+97 2010-03-05      24064.7      2.57609e+06       57258.4
+98 2010-04-02        25435      2.60153e+06       57258.4
+99 2010-05-07      27588.3      2.62912e+06       57258.4
 
-# Print out cars
-print(cars)
-</code></pre>
-<pre><code>   Unnamed: 0        country  drives_right  cars_per_cap
-0           0  United States          True           809
-1           1      Australia         False           731
-2           2          Japan         False           588
-3           3          India         False            18
-4           4         Russia          True           200
-5           5        Morocco          True            70
-6           6          Egypt          True            45
-</code></pre>
-<pre><code class="language-python">#Fix import by including index_col
-cars = pd.read_csv('cars.csv',index_col=0)
-
-# Print out cars
-print(cars)
-</code></pre>
-<pre><code>         country  drives_right  cars_per_cap
-0  United States          True           809
-1      Australia         False           731
-2          Japan         False           588
-3          India         False            18
-4         Russia          True           200
-5        Morocco          True            70
-6          Egypt          True            45
+[100 rows x 4 columns]
 </code></pre>
 
 </div>
