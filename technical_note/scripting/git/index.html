@@ -28,9 +28,7 @@
   
     
   
-  <meta name="description" content="Working with git Remove submodule To remove a submodule from a git repository you need to:
-Delete the relevant section from the .gitmodules file
-Stage the .gitmodules changes: git add .">
+  <meta name="description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt;  Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add .">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/scripting/git/">
@@ -234,9 +232,7 @@ Stage the .gitmodules changes: git add .">
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/scripting/git/">
   <meta property="og:title" content="Working with git | Othmane Rifki">
-  <meta property="og:description" content="Working with git Remove submodule To remove a submodule from a git repository you need to:
-Delete the relevant section from the .gitmodules file
-Stage the .gitmodules changes: git add ."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt;  Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add ."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -572,7 +568,20 @@ Stage the .gitmodules changes: git add ."><meta property="og:image" content="img
   </header>
   <div class="content">
 
-  <h1 id="working-with-git">Working with git</h1>
+  <h3 id="bring-your-branch-up-to-date-with-master">Bring your branch up-to-date with master</h3>
+<pre><code class="language-bash">git checkout master
+git fetch -p origin
+git merge origin/master
+git checkout &lt;feature-branch&gt;
+git merge master
+git push origin &lt;feature-branch&gt;
+</code></pre>
+<h3 id="create-a-new-branch-and-check-out-an-old--commit">Create a new branch and check out an old  commit</h3>
+<pre><code class="language-bash">git checkout -b &lt;new branch&gt; &lt;SHA-1&gt;
+git add .
+git commit -m &quot;added a new branch from old commit&quot;
+git push --set-upstream origin &lt;new branch&gt;
+</code></pre>
 <h3 id="remove-submodule">Remove submodule</h3>
 <p>To remove a submodule from a git repository you need to:</p>
 <p>Delete the relevant section from the <code>.gitmodules</code> file<br>
@@ -582,20 +591,6 @@ Run <code>git rm --cached path_to_submodule</code> (no trailing slash) <br>
 Run <code>rm -rf .git/modules/path_to_submodule</code> (no trailing slash)<br>
 Commit <code>git commit -m &quot;Removed submodule&quot;</code> <br>
 Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></p>
-<p>Foldable text:</p>
-<details>
-  <summary>Title 1</summary>
-  <p>Content 1 Content 1 Content 1 Content 1 Content 1</p>
-</details>
-<details>
-  <summary>Title 2</summary>
-  <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
-</details>
-<pre><code>Markup : &lt;details&gt;
-           &lt;summary&gt;Title 1&lt;/summary&gt;
-           &lt;p&gt;Content 1 Content 1 Content 1 Content 1 Content 1&lt;/p&gt;
-         &lt;/details&gt;
-</code></pre>
 <pre><code class="language-python">
 </code></pre>
 

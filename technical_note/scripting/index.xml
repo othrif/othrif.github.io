@@ -381,7 +381,20 @@ many lines&lt;/p&gt;
       <link>http://othrif.github.io/technical_note/scripting/git/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/scripting/git/</guid>
-      <description>&lt;h1 id=&#34;working-with-git&#34;&gt;Working with git&lt;/h1&gt;
+      <description>&lt;h3 id=&#34;bring-your-branch-up-to-date-with-master&#34;&gt;Bring your branch up-to-date with master&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout master
+git fetch -p origin
+git merge origin/master
+git checkout &amp;lt;feature-branch&amp;gt;
+git merge master
+git push origin &amp;lt;feature-branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;create-a-new-branch-and-check-out-an-old--commit&#34;&gt;Create a new branch and check out an old  commit&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git checkout -b &amp;lt;new branch&amp;gt; &amp;lt;SHA-1&amp;gt;
+git add .
+git commit -m &amp;quot;added a new branch from old commit&amp;quot;
+git push --set-upstream origin &amp;lt;new branch&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;remove-submodule&#34;&gt;Remove submodule&lt;/h3&gt;
 &lt;p&gt;To remove a submodule from a git repository you need to:&lt;/p&gt;
 &lt;p&gt;Delete the relevant section from the &lt;code&gt;.gitmodules&lt;/code&gt; file&lt;br&gt;
@@ -391,20 +404,6 @@ Run &lt;code&gt;git rm --cached path_to_submodule&lt;/code&gt; (no trailing slas
 Run &lt;code&gt;rm -rf .git/modules/path_to_submodule&lt;/code&gt; (no trailing slash)&lt;br&gt;
 Commit &lt;code&gt;git commit -m &amp;quot;Removed submodule&amp;quot;&lt;/code&gt; &lt;br&gt;
 Delete the now untracked submodule files &lt;code&gt;rm -rf path_to_submodule&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Foldable text:&lt;/p&gt;
-&lt;details&gt;
-  &lt;summary&gt;Title 1&lt;/summary&gt;
-  &lt;p&gt;Content 1 Content 1 Content 1 Content 1 Content 1&lt;/p&gt;
-&lt;/details&gt;
-&lt;details&gt;
-  &lt;summary&gt;Title 2&lt;/summary&gt;
-  &lt;p&gt;Content 2 Content 2 Content 2 Content 2 Content 2&lt;/p&gt;
-&lt;/details&gt;
-&lt;pre&gt;&lt;code&gt;Markup : &amp;lt;details&amp;gt;
-           &amp;lt;summary&amp;gt;Title 1&amp;lt;/summary&amp;gt;
-           &amp;lt;p&amp;gt;Content 1 Content 1 Content 1 Content 1 Content 1&amp;lt;/p&amp;gt;
-         &amp;lt;/details&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>

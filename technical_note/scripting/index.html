@@ -620,9 +620,7 @@
       <h2><a href="/technical_note/scripting/git/" >Working with git</a></h2>
       <div class="article-style">
         
-          Working with git Remove submodule To remove a submodule from a git repository you need to:
-Delete the relevant section from the .gitmodules file
-Stage the .gitmodules changes: git add .
+          Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt;  Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add .
         
       </div>
     </div>
