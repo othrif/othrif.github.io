@@ -32,7 +32,7 @@
  .mean() .std() .var() .median() .mode() .min() .max() .sum() .quantile()  Generate some data import pandas as pd import numpy as np from pandas import Timestamp mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;] content = np.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/countingdf/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/pivotdf/">
 
   
 
@@ -217,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/countingdf/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/pivotdf/">
 
   
   
@@ -231,8 +231,8 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/countingdf/">
-  <meta property="og:title" content="DataFrames counting | Othmane Rifki">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/pivotdf/">
+  <meta property="og:title" content="DataFrames pivot tables | Othmane Rifki">
   <meta property="og:description" content="Most common summary statistics:
  .mean() .std() .var() .median() .mode() .min() .max() .sum() .quantile()  Generate some data import pandas as pd import numpy as np from pandas import Timestamp mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;] content = np."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
@@ -259,7 +259,7 @@
 
 
 
-  <title>DataFrames counting | Othmane Rifki</title>
+  <title>DataFrames pivot tables | Othmane Rifki</title>
 
 </head>
 
@@ -563,7 +563,7 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">DataFrames counting</h1>
+    <h1 class="technical_note_title">DataFrames pivot tables</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
@@ -630,7 +630,7 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
       <td>2010-02-05</td>
       <td>24924.5</td>
       <td>False</td>
-      <td>11757.6</td>
+      <td>13457.3</td>
     </tr>
     <tr>
       <th>1</th>
@@ -640,7 +640,7 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
       <td>2010-03-05</td>
       <td>21827.9</td>
       <td>True</td>
-      <td>10296.9</td>
+      <td>11785.3</td>
     </tr>
     <tr>
       <th>2</th>
@@ -650,7 +650,7 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
       <td>2010-04-02</td>
       <td>57258.4</td>
       <td>False</td>
-      <td>27010.5</td>
+      <td>30915</td>
     </tr>
     <tr>
       <th>3</th>
@@ -660,7 +660,7 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
       <td>2010-05-07</td>
       <td>17413.9</td>
       <td>False</td>
-      <td>8214.67</td>
+      <td>9402.16</td>
     </tr>
     <tr>
       <th>4</th>
@@ -670,310 +670,12 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
       <td>2010-06-04</td>
       <td>17558.1</td>
       <td>False</td>
-      <td>8282.67</td>
+      <td>9479.98</td>
     </tr>
   </tbody>
 </table>
 </div>
-<h3 id="drop-duplicates-with-drop_duplicates">Drop duplicates with <code>.drop_duplicates()</code></h3>
-<pre><code class="language-python">df.drop_duplicates(subset='type')
-</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>store</th>
-      <th>type</th>
-      <th>department</th>
-      <th>date</th>
-      <th>weekly_sales</th>
-      <th>is_holiday</th>
-      <th>frac_sales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>A</td>
-      <td>1</td>
-      <td>2010-02-05</td>
-      <td>24924.5</td>
-      <td>False</td>
-      <td>11757.6</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>B</td>
-      <td>1</td>
-      <td>2010-03-05</td>
-      <td>21827.9</td>
-      <td>True</td>
-      <td>10296.9</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>C</td>
-      <td>1</td>
-      <td>2010-05-07</td>
-      <td>17413.9</td>
-      <td>False</td>
-      <td>8214.67</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<pre><code class="language-python">df.drop_duplicates(subset=['type','is_holiday'])
-</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>store</th>
-      <th>type</th>
-      <th>department</th>
-      <th>date</th>
-      <th>weekly_sales</th>
-      <th>is_holiday</th>
-      <th>frac_sales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>A</td>
-      <td>1</td>
-      <td>2010-02-05</td>
-      <td>24924.5</td>
-      <td>False</td>
-      <td>11757.6</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>B</td>
-      <td>1</td>
-      <td>2010-03-05</td>
-      <td>21827.9</td>
-      <td>True</td>
-      <td>10296.9</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>C</td>
-      <td>1</td>
-      <td>2010-05-07</td>
-      <td>17413.9</td>
-      <td>False</td>
-      <td>8214.67</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>1</td>
-      <td>B</td>
-      <td>1</td>
-      <td>2010-09-03</td>
-      <td>16241.8</td>
-      <td>False</td>
-      <td>7661.72</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1</td>
-      <td>A</td>
-      <td>1</td>
-      <td>2010-10-01</td>
-      <td>20094.2</td>
-      <td>True</td>
-      <td>9479.02</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>1</td>
-      <td>C</td>
-      <td>2</td>
-      <td>2010-02-05</td>
-      <td>50605.3</td>
-      <td>True</td>
-      <td>23872</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<pre><code class="language-python">df_unique = df.drop_duplicates(subset=['type','is_holiday'])
-</code></pre>
-<h3 id="count-with-value_counts">Count with <code>.value_counts()</code></h3>
-<pre><code class="language-python">df_unique['type'].value_counts()
-</code></pre>
-<pre><code>C    2
-A    2
-B    2
-Name: type, dtype: int64
-</code></pre>
-<pre><code class="language-python">df_unique['type'].value_counts(sort=True)
-</code></pre>
-<pre><code>C    2
-A    2
-B    2
-Name: type, dtype: int64
-</code></pre>
-<pre><code class="language-python">df_unique['type'].value_counts(normalize=True)
-</code></pre>
-<pre><code>C    0.333333
-A    0.333333
-B    0.333333
-Name: type, dtype: float64
-</code></pre>
-<h3 id="grouping-with-groupby">Grouping with <code>.groupby()</code></h3>
-<pre><code class="language-python">df.groupby('type')['weekly_sales'].min()
-</code></pre>
-<pre><code>type
-A    1376.15
-B    2876.19
-C    7857.88
-Name: weekly_sales, dtype: float64
-</code></pre>
-<p>Example of how much the syntax gets simplified with <code>.groupby()</code></p>
-<pre><code class="language-python"># Calc total weekly sales
-sales_all = df[&quot;weekly_sales&quot;].sum()
-
-# Subset for type A stores, calc total weekly sales
-sales_A = df[df[&quot;type&quot;] == &quot;A&quot;][&quot;weekly_sales&quot;].sum()
-
-# Subset for type B stores, calc total weekly sales
-sales_B = df[df[&quot;type&quot;] == &quot;B&quot;][&quot;weekly_sales&quot;].sum()
-
-# Subset for type C stores, calc total weekly sales
-sales_C = df[df[&quot;type&quot;] == &quot;C&quot;][&quot;weekly_sales&quot;].sum()
-
-print('all=', sales_all)
-print('A ', sales_A)
-print('B ', sales_B)
-print('C ', sales_C)
-</code></pre>
-<pre><code>all= 2629115.29
-A  2324619.4500000007
-B  154701.55
-C  149794.29
-</code></pre>
-<pre><code class="language-python">df.groupby('type')['weekly_sales'].sum()
-</code></pre>
-<pre><code>type
-A    2324619.45
-B     154701.55
-C     149794.29
-Name: weekly_sales, dtype: float64
-</code></pre>
-<pre><code class="language-python">print('A ', sales_A/sales_all)
-print('B ', sales_B/sales_all)
-print('C ', sales_C/sales_all)
-</code></pre>
-<pre><code>A  0.8841831542503412
-B  0.05884167597686444
-C  0.056975169772794564
-</code></pre>
-<pre><code class="language-python">df.groupby(&quot;type&quot;)[&quot;weekly_sales&quot;].sum()/df['weekly_sales'].sum()
-</code></pre>
-<pre><code>type
-A    0.884183
-B    0.058842
-C    0.056975
-Name: weekly_sales, dtype: float64
-</code></pre>
-<h4 id="multiple-categories">Multiple categories</h4>
-<pre><code class="language-python">df.groupby(['type','is_holiday'])['weekly_sales'].sum()
-</code></pre>
-<pre><code>type  is_holiday
-A     False         2248771.03
-      True            75848.42
-B     False          132873.65
-      True            21827.90
-C     False           91331.14
-      True            58463.15
-Name: weekly_sales, dtype: float64
-</code></pre>
-<h4 id="multiple-grouped-summaries">Multiple grouped summaries</h4>
-<pre><code class="language-python">df.groupby('type')['weekly_sales'].agg([np.min,np.max])
-</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-</code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>amin</th>
-      <th>amax</th>
-    </tr>
-    <tr>
-      <th>type</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>A</th>
-      <td>1376.15</td>
-      <td>57258.43</td>
-    </tr>
-    <tr>
-      <th>B</th>
-      <td>2876.19</td>
-      <td>39773.71</td>
-    </tr>
-    <tr>
-      <th>C</th>
-      <td>7857.88</td>
-      <td>50605.27</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<pre><code class="language-python">df.groupby('type')[['weekly_sales','frac_sales']].agg([np.min,np.max])
+<pre><code class="language-python">df.groupby(['type','is_holiday'])[['weekly_sales','frac_sales']].agg([np.min,np.max])
 </code></pre>
 <div>
 <style scoped>
@@ -997,10 +699,12 @@ Name: weekly_sales, dtype: float64
   <thead>
     <tr>
       <th></th>
+      <th></th>
       <th colspan="2" halign="left">weekly_sales</th>
       <th colspan="2" halign="left">frac_sales</th>
     </tr>
     <tr>
+      <th></th>
       <th></th>
       <th>amin</th>
       <th>amax</th>
@@ -1009,6 +713,7 @@ Name: weekly_sales, dtype: float64
     </tr>
     <tr>
       <th>type</th>
+      <th>is_holiday</th>
       <th></th>
       <th></th>
       <th></th>
@@ -1017,31 +722,250 @@ Name: weekly_sales, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>A</th>
+      <th rowspan="2" valign="top">A</th>
+      <th>False</th>
       <td>1376.15</td>
       <td>57258.43</td>
-      <td>1141.613223</td>
-      <td>47499.895208</td>
+      <td>743.012533</td>
+      <td>30915.039145</td>
     </tr>
     <tr>
-      <th>B</th>
+      <th>True</th>
+      <td>9372.80</td>
+      <td>46381.43</td>
+      <td>5060.573245</td>
+      <td>25042.316460</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">B</th>
+      <th>False</th>
       <td>2876.19</td>
       <td>39773.71</td>
-      <td>2386.001914</td>
-      <td>32995.090104</td>
+      <td>1552.915901</td>
+      <td>21474.668474</td>
     </tr>
     <tr>
-      <th>C</th>
+      <th>True</th>
+      <td>21827.90</td>
+      <td>21827.90</td>
+      <td>11785.345546</td>
+      <td>11785.345546</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">C</th>
+      <th>False</th>
+      <td>16333.14</td>
+      <td>22517.56</td>
+      <td>8818.608237</td>
+      <td>12157.707587</td>
+    </tr>
+    <tr>
+      <th>True</th>
       <td>7857.88</td>
       <td>50605.27</td>
-      <td>6518.664179</td>
-      <td>41980.631009</td>
+      <td>4242.635849</td>
+      <td>27322.857141</td>
     </tr>
   </tbody>
 </table>
 </div>
-<pre><code class="language-python">
+<pre><code class="language-python">df.pivot_table(values=['weekly_sales','frac_sales'], index=['type','is_holiday'],aggfunc=[np.min,np.max])
 </code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">amin</th>
+      <th colspan="2" halign="left">amax</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>frac_sales</th>
+      <th>weekly_sales</th>
+      <th>frac_sales</th>
+      <th>weekly_sales</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th>is_holiday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">A</th>
+      <th>False</th>
+      <td>743.012533</td>
+      <td>1376.15</td>
+      <td>30915.039145</td>
+      <td>57258.43</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>5060.573245</td>
+      <td>9372.80</td>
+      <td>25042.316460</td>
+      <td>46381.43</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">B</th>
+      <th>False</th>
+      <td>1552.915901</td>
+      <td>2876.19</td>
+      <td>21474.668474</td>
+      <td>39773.71</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>11785.345546</td>
+      <td>21827.90</td>
+      <td>11785.345546</td>
+      <td>21827.90</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">C</th>
+      <th>False</th>
+      <td>8818.608237</td>
+      <td>16333.14</td>
+      <td>12157.707587</td>
+      <td>22517.56</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>4242.635849</td>
+      <td>7857.88</td>
+      <td>27322.857141</td>
+      <td>50605.27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h4 id="add-margins">Add margins</h4>
+<pre><code class="language-python">df.pivot_table(values=['weekly_sales','frac_sales'], index=['type','is_holiday'],aggfunc=[np.min,np.max], margins=True)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th colspan="2" halign="left">amin</th>
+      <th colspan="2" halign="left">amax</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>frac_sales</th>
+      <th>weekly_sales</th>
+      <th>frac_sales</th>
+      <th>weekly_sales</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th>is_holiday</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">A</th>
+      <th>False</th>
+      <td>743.012533</td>
+      <td>1376.15</td>
+      <td>30915.039145</td>
+      <td>57258.43</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>5060.573245</td>
+      <td>9372.80</td>
+      <td>25042.316460</td>
+      <td>46381.43</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">B</th>
+      <th>False</th>
+      <td>1552.915901</td>
+      <td>2876.19</td>
+      <td>21474.668474</td>
+      <td>39773.71</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>11785.345546</td>
+      <td>21827.90</td>
+      <td>11785.345546</td>
+      <td>21827.90</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">C</th>
+      <th>False</th>
+      <td>8818.608237</td>
+      <td>16333.14</td>
+      <td>12157.707587</td>
+      <td>22517.56</td>
+    </tr>
+    <tr>
+      <th>True</th>
+      <td>4242.635849</td>
+      <td>7857.88</td>
+      <td>27322.857141</td>
+      <td>50605.27</td>
+    </tr>
+    <tr>
+      <th>All</th>
+      <th></th>
+      <td>743.012533</td>
+      <td>1376.15</td>
+      <td>30915.039145</td>
+      <td>57258.43</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 </div>
   <aside>

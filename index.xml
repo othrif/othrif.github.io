@@ -1821,22 +1821,22 @@ Name: weekly_sales, dtype: float64
       &lt;th&gt;A&lt;/th&gt;
       &lt;td&gt;1376.15&lt;/td&gt;
       &lt;td&gt;57258.43&lt;/td&gt;
-      &lt;td&gt;649.170294&lt;/td&gt;
-      &lt;td&gt;27010.479835&lt;/td&gt;
+      &lt;td&gt;1141.613223&lt;/td&gt;
+      &lt;td&gt;47499.895208&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;B&lt;/th&gt;
       &lt;td&gt;2876.19&lt;/td&gt;
       &lt;td&gt;39773.71&lt;/td&gt;
-      &lt;td&gt;1356.783132&lt;/td&gt;
-      &lt;td&gt;18762.424885&lt;/td&gt;
+      &lt;td&gt;2386.001914&lt;/td&gt;
+      &lt;td&gt;32995.090104&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;C&lt;/th&gt;
       &lt;td&gt;7857.88&lt;/td&gt;
       &lt;td&gt;50605.27&lt;/td&gt;
-      &lt;td&gt;3706.792332&lt;/td&gt;
-      &lt;td&gt;23871.989241&lt;/td&gt;
+      &lt;td&gt;6518.664179&lt;/td&gt;
+      &lt;td&gt;41980.631009&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -2243,6 +2243,410 @@ Name: country, dtype: object
       &lt;td&gt;True&lt;/td&gt;
       &lt;td&gt;200&lt;/td&gt;
       &lt;td&gt;2000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DataFrames pivot tables</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/pivotdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/pivotdf/</guid>
+      <description>&lt;p&gt;Most common summary statistics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.mean()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.std()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.var()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.median()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.mode()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.min()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.max()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.sum()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.quantile()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+from pandas import Timestamp
+
+mycols = [&#39;store&#39;, &#39;type&#39;, &#39;department&#39;, &#39;date&#39;, &#39;weekly_sales&#39;, &#39;is_holiday&#39;]
+content = np.array([[1, &#39;A&#39;, 1, Timestamp(&#39;2010-02-05 00:00:00&#39;), 24924.5, False],[1, &#39;B&#39;, 1, Timestamp(&#39;2010-03-05 00:00:00&#39;), 21827.9, True],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-04-02 00:00:00&#39;), 57258.43, False],[1, &#39;C&#39;, 1, Timestamp(&#39;2010-05-07 00:00:00&#39;), 17413.94, False],[1, &#39;C&#39;, 1, Timestamp(&#39;2010-06-04 00:00:00&#39;), 17558.09, False],[1, &#39;C&#39;, 1, Timestamp(&#39;2010-07-02 00:00:00&#39;), 16333.14, False],[1, &#39;C&#39;, 1, Timestamp(&#39;2010-08-06 00:00:00&#39;), 17508.41, False],[1, &#39;B&#39;, 1, Timestamp(&#39;2010-09-03 00:00:00&#39;), 16241.78, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2010-10-01 00:00:00&#39;), 20094.19, True],[1, &#39;B&#39;, 1, Timestamp(&#39;2010-11-05 00:00:00&#39;), 34238.88, False],[1, &#39;C&#39;, 1, Timestamp(&#39;2010-12-03 00:00:00&#39;), 22517.56, False],[1, &#39;A&#39;, 1, Timestamp(&#39;2011-01-07 00:00:00&#39;), 15984.24, False],[1, &#39;C&#39;, 2, Timestamp(&#39;2010-02-05 00:00:00&#39;), 50605.27, True],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-03-05 00:00:00&#39;), 48397.98, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-04-02 00:00:00&#39;), 47450.5, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-05-07 00:00:00&#39;), 47903.01, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-06-04 00:00:00&#39;), 48754.47, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-07-02 00:00:00&#39;), 47077.72, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-08-06 00:00:00&#39;), 50031.73, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-09-03 00:00:00&#39;), 49015.05, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-10-01 00:00:00&#39;), 45829.02, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-11-05 00:00:00&#39;), 46381.43, True],[1, &#39;A&#39;, 2, Timestamp(&#39;2010-12-03 00:00:00&#39;), 44405.02, False],[1, &#39;A&#39;, 2, Timestamp(&#39;2011-01-07 00:00:00&#39;), 43202.29, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-02-05 00:00:00&#39;), 13740.12, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-03-05 00:00:00&#39;), 12275.58, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-04-02 00:00:00&#39;), 11157.08, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-05-07 00:00:00&#39;), 9372.8, True],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-06-04 00:00:00&#39;), 8001.41, False],[1, &#39;C&#39;, 3, Timestamp(&#39;2010-07-02 00:00:00&#39;), 7857.88, True],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-08-06 00:00:00&#39;), 26719.02, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-09-03 00:00:00&#39;), 19081.8, False],[1, &#39;B&#39;, 3, Timestamp(&#39;2010-10-01 00:00:00&#39;), 9775.17, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-11-05 00:00:00&#39;), 9825.22, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2010-12-03 00:00:00&#39;), 10856.85, False],[1, &#39;A&#39;, 3, Timestamp(&#39;2011-01-07 00:00:00&#39;), 15808.15, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-02-05 00:00:00&#39;), 39954.04, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-03-05 00:00:00&#39;), 38086.19, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-04-02 00:00:00&#39;), 37809.49, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-05-07 00:00:00&#39;), 37168.34, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-06-04 00:00:00&#39;), 40548.19, False],[1, &#39;B&#39;, 4, Timestamp(&#39;2010-07-02 00:00:00&#39;), 39773.71, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-08-06 00:00:00&#39;), 40973.88, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-09-03 00:00:00&#39;), 38321.88, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-10-01 00:00:00&#39;), 34912.45, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-11-05 00:00:00&#39;), 37980.55, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2010-12-03 00:00:00&#39;), 37110.55, False],[1, &#39;A&#39;, 4, Timestamp(&#39;2011-01-07 00:00:00&#39;), 37947.8, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-02-05 00:00:00&#39;), 32229.38, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-03-05 00:00:00&#39;), 23082.14, False],[1, &#39;B&#39;, 5, Timestamp(&#39;2010-04-02 00:00:00&#39;), 29967.92, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-05-07 00:00:00&#39;), 19260.44, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-06-04 00:00:00&#39;), 22932.26, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-07-02 00:00:00&#39;), 18887.71, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-08-06 00:00:00&#39;), 16926.17, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-09-03 00:00:00&#39;), 15390.52, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-10-01 00:00:00&#39;), 23381.38, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-11-05 00:00:00&#39;), 23903.81, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2010-12-03 00:00:00&#39;), 36472.02, False],[1, &#39;A&#39;, 5, Timestamp(&#39;2011-01-07 00:00:00&#39;), 22699.69, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-02-05 00:00:00&#39;), 5749.03, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-03-05 00:00:00&#39;), 4221.25, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-04-02 00:00:00&#39;), 4132.61, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-05-07 00:00:00&#39;), 7477.7, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-06-04 00:00:00&#39;), 5484.9, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-07-02 00:00:00&#39;), 4541.91, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-08-06 00:00:00&#39;), 4700.38, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-09-03 00:00:00&#39;), 3553.75, False],[1, &#39;B&#39;, 6, Timestamp(&#39;2010-10-01 00:00:00&#39;), 2876.19, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-11-05 00:00:00&#39;), 5036.99, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2010-12-03 00:00:00&#39;), 6356.96, False],[1, &#39;A&#39;, 6, Timestamp(&#39;2011-01-07 00:00:00&#39;), 1376.15, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-02-05 00:00:00&#39;), 21084.08, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-03-05 00:00:00&#39;), 19659.7, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-04-02 00:00:00&#39;), 22427.62, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-05-07 00:00:00&#39;), 20457.62, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-06-04 00:00:00&#39;), 44563.68, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-07-02 00:00:00&#39;), 22589.0, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-08-06 00:00:00&#39;), 21842.57, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-09-03 00:00:00&#39;), 18005.65, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-10-01 00:00:00&#39;), 16481.79, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-11-05 00:00:00&#39;), 19136.58, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2010-12-03 00:00:00&#39;), 47406.83, False],[1, &#39;A&#39;, 7, Timestamp(&#39;2011-01-07 00:00:00&#39;), 17516.16, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-02-05 00:00:00&#39;), 40129.01, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-03-05 00:00:00&#39;), 38776.09, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-04-02 00:00:00&#39;), 38151.58, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-05-07 00:00:00&#39;), 35393.78, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-06-04 00:00:00&#39;), 35181.47, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-07-02 00:00:00&#39;), 35580.01, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-08-06 00:00:00&#39;), 34833.35, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-09-03 00:00:00&#39;), 35562.68, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-10-01 00:00:00&#39;), 34658.25, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-11-05 00:00:00&#39;), 36182.58, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2010-12-03 00:00:00&#39;), 36222.74, False],[1, &#39;A&#39;, 8, Timestamp(&#39;2011-01-07 00:00:00&#39;), 36599.46, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-02-05 00:00:00&#39;), 16930.99, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-03-05 00:00:00&#39;), 24064.7, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-04-02 00:00:00&#39;), 25435.02, False],[1, &#39;A&#39;, 9, Timestamp(&#39;2010-05-07 00:00:00&#39;), 27588.34, False]])
+df = pd.DataFrame(content, columns=mycols)
+df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;store&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-02-05&lt;/td&gt;
+      &lt;td&gt;24924.5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;13457.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-03-05&lt;/td&gt;
+      &lt;td&gt;21827.9&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;11785.3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-04-02&lt;/td&gt;
+      &lt;td&gt;57258.4&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;30915&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-05-07&lt;/td&gt;
+      &lt;td&gt;17413.9&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;9402.16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-06-04&lt;/td&gt;
+      &lt;td&gt;17558.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;9479.98&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.groupby([&#39;type&#39;,&#39;is_holiday&#39;])[[&#39;weekly_sales&#39;,&#39;frac_sales&#39;]].agg([np.min,np.max])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;weekly_sales&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;frac_sales&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;amin&lt;/th&gt;
+      &lt;th&gt;amax&lt;/th&gt;
+      &lt;th&gt;amin&lt;/th&gt;
+      &lt;th&gt;amax&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;A&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;1376.15&lt;/td&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
+      &lt;td&gt;743.012533&lt;/td&gt;
+      &lt;td&gt;30915.039145&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;9372.80&lt;/td&gt;
+      &lt;td&gt;46381.43&lt;/td&gt;
+      &lt;td&gt;5060.573245&lt;/td&gt;
+      &lt;td&gt;25042.316460&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;B&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;2876.19&lt;/td&gt;
+      &lt;td&gt;39773.71&lt;/td&gt;
+      &lt;td&gt;1552.915901&lt;/td&gt;
+      &lt;td&gt;21474.668474&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;C&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;16333.14&lt;/td&gt;
+      &lt;td&gt;22517.56&lt;/td&gt;
+      &lt;td&gt;8818.608237&lt;/td&gt;
+      &lt;td&gt;12157.707587&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;7857.88&lt;/td&gt;
+      &lt;td&gt;50605.27&lt;/td&gt;
+      &lt;td&gt;4242.635849&lt;/td&gt;
+      &lt;td&gt;27322.857141&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.pivot_table(values=[&#39;weekly_sales&#39;,&#39;frac_sales&#39;], index=[&#39;type&#39;,&#39;is_holiday&#39;],aggfunc=[np.min,np.max])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;amin&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;amax&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;A&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;743.012533&lt;/td&gt;
+      &lt;td&gt;1376.15&lt;/td&gt;
+      &lt;td&gt;30915.039145&lt;/td&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;5060.573245&lt;/td&gt;
+      &lt;td&gt;9372.80&lt;/td&gt;
+      &lt;td&gt;25042.316460&lt;/td&gt;
+      &lt;td&gt;46381.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;B&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;1552.915901&lt;/td&gt;
+      &lt;td&gt;2876.19&lt;/td&gt;
+      &lt;td&gt;21474.668474&lt;/td&gt;
+      &lt;td&gt;39773.71&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;C&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;8818.608237&lt;/td&gt;
+      &lt;td&gt;16333.14&lt;/td&gt;
+      &lt;td&gt;12157.707587&lt;/td&gt;
+      &lt;td&gt;22517.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;4242.635849&lt;/td&gt;
+      &lt;td&gt;7857.88&lt;/td&gt;
+      &lt;td&gt;27322.857141&lt;/td&gt;
+      &lt;td&gt;50605.27&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;add-margins&#34;&gt;Add margins&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.pivot_table(values=[&#39;weekly_sales&#39;,&#39;frac_sales&#39;], index=[&#39;type&#39;,&#39;is_holiday&#39;],aggfunc=[np.min,np.max], margins=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead tr th {
+    text-align: left;
+}
+
+.dataframe thead tr:last-of-type th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;amin&lt;/th&gt;
+      &lt;th colspan=&#34;2&#34; halign=&#34;left&#34;&gt;amax&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;A&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;743.012533&lt;/td&gt;
+      &lt;td&gt;1376.15&lt;/td&gt;
+      &lt;td&gt;30915.039145&lt;/td&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;5060.573245&lt;/td&gt;
+      &lt;td&gt;9372.80&lt;/td&gt;
+      &lt;td&gt;25042.316460&lt;/td&gt;
+      &lt;td&gt;46381.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;B&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;1552.915901&lt;/td&gt;
+      &lt;td&gt;2876.19&lt;/td&gt;
+      &lt;td&gt;21474.668474&lt;/td&gt;
+      &lt;td&gt;39773.71&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+      &lt;td&gt;11785.345546&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;C&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;td&gt;8818.608237&lt;/td&gt;
+      &lt;td&gt;16333.14&lt;/td&gt;
+      &lt;td&gt;12157.707587&lt;/td&gt;
+      &lt;td&gt;22517.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;True&lt;/th&gt;
+      &lt;td&gt;4242.635849&lt;/td&gt;
+      &lt;td&gt;7857.88&lt;/td&gt;
+      &lt;td&gt;27322.857141&lt;/td&gt;
+      &lt;td&gt;50605.27&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;All&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;td&gt;743.012533&lt;/td&gt;
+      &lt;td&gt;1376.15&lt;/td&gt;
+      &lt;td&gt;30915.039145&lt;/td&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
