@@ -1015,7 +1015,167 @@ df['frac_sales'] = df['weekly_sales']*np.random.rand()
   </tbody>
 </table>
 </div>
-<h3 id="fill-missing-with-0-with">Fill missing with 0 with</h3>
+<h3 id="fill-missing-with-0">Fill missing with 0</h3>
+<pre><code class="language-python">df.pivot_table(values='weekly_sales', index='type', columns='is_holiday', aggfunc=np.max, fill_value=0)
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>is_holiday</th>
+      <th>False</th>
+      <th>True</th>
+    </tr>
+    <tr>
+      <th>type</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>57258.43</td>
+      <td>46381.43</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>39773.71</td>
+      <td>21827.90</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>22517.56</td>
+      <td>50605.27</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="working-with-pivot-tables">Working with pivot tables</h3>
+<pre><code class="language-python">df['year'] = df['date'].dt.year
+</code></pre>
+<pre><code class="language-python">df.head()
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>store</th>
+      <th>type</th>
+      <th>department</th>
+      <th>date</th>
+      <th>weekly_sales</th>
+      <th>is_holiday</th>
+      <th>frac_sales</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-02-05</td>
+      <td>24924.5</td>
+      <td>False</td>
+      <td>220.866</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>B</td>
+      <td>1</td>
+      <td>2010-03-05</td>
+      <td>21827.9</td>
+      <td>True</td>
+      <td>193.426</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>A</td>
+      <td>1</td>
+      <td>2010-04-02</td>
+      <td>57258.4</td>
+      <td>False</td>
+      <td>507.39</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>C</td>
+      <td>1</td>
+      <td>2010-05-07</td>
+      <td>17413.9</td>
+      <td>False</td>
+      <td>154.312</td>
+      <td>2010</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>C</td>
+      <td>1</td>
+      <td>2010-06-04</td>
+      <td>17558.1</td>
+      <td>False</td>
+      <td>155.589</td>
+      <td>2010</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code class="language-python">df_by_type_vs_year = df.pivot_table(values='weekly_sales', index=['type','is_holiday'], columns='year',aggfunc=np.min)
+</code></pre>
+<pre><code class="language-python"># Get the worldwide mean temp by year
+mean_temp_by_year = df_by_type_vs_year.mean()
+# Filter for the year that had the highest mean temp
+print(mean_temp_by_year[mean_temp_by_year==mean_temp_by_year.max()])
+</code></pre>
+<pre><code>year
+2010    10303.61
+dtype: float64
+</code></pre>
+<pre><code class="language-python"># Get the mean temp by city
+mean_temp_by_city = df_by_type_vs_year.mean(axis='columns')
+# Filter for the city that had the lowest mean temp
+print(mean_temp_by_city[mean_temp_by_city==mean_temp_by_city.min()])
+</code></pre>
+<pre><code>type  is_holiday
+A     False         2464.95
+dtype: float64
+</code></pre>
 
 </div>
   <aside>

@@ -143,6 +143,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/createdf/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/cpp/basics/datatypes/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -273,7 +278,17 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/plotpandas/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/class_method/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/missingdata/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -329,6 +344,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/rand/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/handlecsv/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

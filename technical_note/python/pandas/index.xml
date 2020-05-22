@@ -107,6 +107,55 @@ RU  Russia          True           200
     </item>
     
     <item>
+      <title>Creating DataFrames</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/createdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/createdf/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;From a list of dictionaries: construct row by row&lt;/li&gt;
+&lt;li&gt;From a dictionary of lists: construct column by column&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;from-a-list-of-dictionaries&#34;&gt;From a list of dictionaries&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd 
+
+# Create a list of dictionaries with new data
+avocados_list = [
+    {&#39;date&#39;: &#39;2019-11-03&#39;, &#39;small_sold&#39;: 10376832, &#39;large_sold&#39;: 7835071},
+    {&#39;date&#39;: &#39;2019-11-10&#39;, &#39;small_sold&#39;: 10717154, &#39;large_sold&#39;: 8561348}
+]
+
+# Convert list into DataFrame
+avocados_2019 = pd.DataFrame(avocados_list)
+
+# Print the new DataFrame
+print(avocados_2019)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         date  small_sold  large_sold
+0  2019-11-03    10376832     7835071
+1  2019-11-10    10717154     8561348
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;from-a-dictionary-of-lists&#34;&gt;From a dictionary of lists&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a dictionary of lists with new data
+avocados_dict = {
+    &#39;date&#39;: [&#39;2019-11-17&#39;, &#39;2019-12-01&#39;],
+    &#39;small_sold&#39;: [10859987, 9291631],
+    &#39;large_sold&#39;: [7674135, 6238096]
+}
+
+# Convert dictionary into DataFrame
+avocados_2019 = pd.DataFrame(avocados_dict)
+
+# Print the new DataFrame
+print(avocados_2019)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         date  small_sold  large_sold
+0  2019-11-17    10859987     7674135
+1  2019-12-01     9291631     6238096
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>DataFrames basics</title>
       <link>http://othrif.github.io/technical_note/python/pandas/dataframe/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1701,7 +1750,167 @@ df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;fill-missing-with-0-with&#34;&gt;Fill missing with 0 with&lt;/h3&gt;
+&lt;h3 id=&#34;fill-missing-with-0&#34;&gt;Fill missing with 0&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.pivot_table(values=&#39;weekly_sales&#39;, index=&#39;type&#39;, columns=&#39;is_holiday&#39;, aggfunc=np.max, fill_value=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;False&lt;/th&gt;
+      &lt;th&gt;True&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;td&gt;57258.43&lt;/td&gt;
+      &lt;td&gt;46381.43&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;td&gt;39773.71&lt;/td&gt;
+      &lt;td&gt;21827.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;td&gt;22517.56&lt;/td&gt;
+      &lt;td&gt;50605.27&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;working-with-pivot-tables&#34;&gt;Working with pivot tables&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&#39;year&#39;] = df[&#39;date&#39;].dt.year
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;store&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+      &lt;th&gt;frac_sales&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-02-05&lt;/td&gt;
+      &lt;td&gt;24924.5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;220.866&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-03-05&lt;/td&gt;
+      &lt;td&gt;21827.9&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;193.426&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-04-02&lt;/td&gt;
+      &lt;td&gt;57258.4&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;507.39&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-05-07&lt;/td&gt;
+      &lt;td&gt;17413.9&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;154.312&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2010-06-04&lt;/td&gt;
+      &lt;td&gt;17558.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;155.589&lt;/td&gt;
+      &lt;td&gt;2010&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_by_type_vs_year = df.pivot_table(values=&#39;weekly_sales&#39;, index=[&#39;type&#39;,&#39;is_holiday&#39;], columns=&#39;year&#39;,aggfunc=np.min)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get the worldwide mean temp by year
+mean_temp_by_year = df_by_type_vs_year.mean()
+# Filter for the year that had the highest mean temp
+print(mean_temp_by_year[mean_temp_by_year==mean_temp_by_year.max()])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;year
+2010    10303.61
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get the mean temp by city
+mean_temp_by_city = df_by_type_vs_year.mean(axis=&#39;columns&#39;)
+# Filter for the city that had the lowest mean temp
+print(mean_temp_by_city[mean_temp_by_city==mean_temp_by_city.min()])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;type  is_holiday
+A     False         2464.95
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -3787,6 +3996,541 @@ EG           Egypt          True            45          EGYPT       5
     </item>
     
     <item>
+      <title>Matplotlib with pandas</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/plotpandas/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/plotpandas/</guid>
+      <description>&lt;h3 id=&#34;get-data-from-csv&#34;&gt;Get data from csv&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+avocados = pd.read_csv(&#39;avocado.csv&#39;,index_col=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;AveragePrice&lt;/th&gt;
+      &lt;th&gt;Total Volume&lt;/th&gt;
+      &lt;th&gt;4046&lt;/th&gt;
+      &lt;th&gt;4225&lt;/th&gt;
+      &lt;th&gt;4770&lt;/th&gt;
+      &lt;th&gt;Total Bags&lt;/th&gt;
+      &lt;th&gt;Small Bags&lt;/th&gt;
+      &lt;th&gt;Large Bags&lt;/th&gt;
+      &lt;th&gt;XLarge Bags&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;region&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2015-12-27&lt;/td&gt;
+      &lt;td&gt;1.33&lt;/td&gt;
+      &lt;td&gt;64236.62&lt;/td&gt;
+      &lt;td&gt;1036.74&lt;/td&gt;
+      &lt;td&gt;54454.85&lt;/td&gt;
+      &lt;td&gt;48.16&lt;/td&gt;
+      &lt;td&gt;8696.87&lt;/td&gt;
+      &lt;td&gt;8603.62&lt;/td&gt;
+      &lt;td&gt;93.25&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;conventional&lt;/td&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;Albany&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2015-12-20&lt;/td&gt;
+      &lt;td&gt;1.35&lt;/td&gt;
+      &lt;td&gt;54876.98&lt;/td&gt;
+      &lt;td&gt;674.28&lt;/td&gt;
+      &lt;td&gt;44638.81&lt;/td&gt;
+      &lt;td&gt;58.33&lt;/td&gt;
+      &lt;td&gt;9505.56&lt;/td&gt;
+      &lt;td&gt;9408.07&lt;/td&gt;
+      &lt;td&gt;97.49&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;conventional&lt;/td&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;Albany&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2015-12-13&lt;/td&gt;
+      &lt;td&gt;0.93&lt;/td&gt;
+      &lt;td&gt;118220.22&lt;/td&gt;
+      &lt;td&gt;794.70&lt;/td&gt;
+      &lt;td&gt;109149.67&lt;/td&gt;
+      &lt;td&gt;130.50&lt;/td&gt;
+      &lt;td&gt;8145.35&lt;/td&gt;
+      &lt;td&gt;8042.21&lt;/td&gt;
+      &lt;td&gt;103.14&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;conventional&lt;/td&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;Albany&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2015-12-06&lt;/td&gt;
+      &lt;td&gt;1.08&lt;/td&gt;
+      &lt;td&gt;78992.15&lt;/td&gt;
+      &lt;td&gt;1132.00&lt;/td&gt;
+      &lt;td&gt;71976.41&lt;/td&gt;
+      &lt;td&gt;72.58&lt;/td&gt;
+      &lt;td&gt;5811.16&lt;/td&gt;
+      &lt;td&gt;5677.40&lt;/td&gt;
+      &lt;td&gt;133.76&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;conventional&lt;/td&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;Albany&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2015-11-29&lt;/td&gt;
+      &lt;td&gt;1.28&lt;/td&gt;
+      &lt;td&gt;51039.60&lt;/td&gt;
+      &lt;td&gt;941.48&lt;/td&gt;
+      &lt;td&gt;43838.39&lt;/td&gt;
+      &lt;td&gt;75.78&lt;/td&gt;
+      &lt;td&gt;6183.95&lt;/td&gt;
+      &lt;td&gt;5986.26&lt;/td&gt;
+      &lt;td&gt;197.69&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;conventional&lt;/td&gt;
+      &lt;td&gt;2015&lt;/td&gt;
+      &lt;td&gt;Albany&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.columns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Index([&#39;Date&#39;, &#39;AveragePrice&#39;, &#39;Total Volume&#39;, &#39;4046&#39;, &#39;4225&#39;, &#39;4770&#39;,
+       &#39;Total Bags&#39;, &#39;Small Bags&#39;, &#39;Large Bags&#39;, &#39;XLarge Bags&#39;, &#39;type&#39;, &#39;year&#39;,
+       &#39;region&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;plot-data-with-bar&#34;&gt;Plot data with bar&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+# Get the total number of avocados sold of each size
+nb_sold_by_type = avocados.groupby(&#39;type&#39;)[&#39;Total Volume&#39;].sum()
+
+# Create a bar plot of the number of avocados sold by size
+nb_sold_by_type.plot(kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1163b2a58&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotPandas_6_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;plot-data-with-line&#34;&gt;Plot data with line&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Get the total number of avocados sold on each date
+nb_sold_by_date = avocados.groupby(&#39;Date&#39;)[&#39;Total Bags&#39;].sum()
+
+# Create a line plot of the number of avocados sold by date
+nb_sold_by_date.plot(kind=&#39;line&#39;)
+
+# Show the plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotPandas_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;plot-with-scatter&#34;&gt;Plot with scatter&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Scatter plot of nb_sold vs avg_price with title
+avocados.plot(x=&#39;Total Volume&#39;, y=&#39;AveragePrice&#39;, kind=&#39;scatter&#39;, title=&#39;Number of avocados sold vs. average price&#39;)
+
+# Show the plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotPandas_10_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;plot-with-histograms&#34;&gt;Plot with histograms&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Histogram of conventional avg_price 
+avocados[avocados[&#39;type&#39;]==&#39;conventional&#39;][&#39;AveragePrice&#39;].hist(alpha=0.7, bins=20)
+
+# Histogram of organic avg_price
+avocados[avocados[&#39;type&#39;]==&#39;organic&#39;][&#39;AveragePrice&#39;].hist(alpha=0.7, bins=20)
+
+# Add a legend
+plt.legend([&#39;conventional&#39;,&#39;organic&#39;])
+
+# Show the plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotPandas_12_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Missing data with pandas</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/missingdata/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/missingdata/</guid>
+      <description>&lt;p&gt;This deals with &lt;code&gt;NaN&lt;/code&gt; = Not a Number&lt;/p&gt;
+&lt;h3 id=&#34;get-data-from-csv&#34;&gt;Get data from csv&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+avocados = pd.read_csv(&#39;avocado.csv&#39;,index_col=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;artifically-delete-some-data&#34;&gt;artifically delete some data&lt;/h3&gt;
+&lt;p&gt;Delete 100 &lt;code&gt;AveragePrice&lt;/code&gt; values at random rows&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+for i in range(100):
+    idx=np.random.randint(0,avocados.shape[0])
+    avocados.iloc[idx,1]=np.NaN
+    avocados.iloc[idx,-4]=np.NaN
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;check-for-missing-values-with-isna&#34;&gt;Check for missing values with &lt;code&gt;isna()&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.isna()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;AveragePrice&lt;/th&gt;
+      &lt;th&gt;Total Volume&lt;/th&gt;
+      &lt;th&gt;4046&lt;/th&gt;
+      &lt;th&gt;4225&lt;/th&gt;
+      &lt;th&gt;4770&lt;/th&gt;
+      &lt;th&gt;Total Bags&lt;/th&gt;
+      &lt;th&gt;Small Bags&lt;/th&gt;
+      &lt;th&gt;Large Bags&lt;/th&gt;
+      &lt;th&gt;XLarge Bags&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;year&lt;/th&gt;
+      &lt;th&gt;region&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;18249 rows × 13 columns&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;add-any&#34;&gt;Add &lt;code&gt;any()&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.isna().any()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Date            False
+AveragePrice     True
+Total Volume    False
+4046            False
+4225            False
+4770            False
+Total Bags      False
+Small Bags      False
+Large Bags      False
+XLarge Bags      True
+type            False
+year            False
+region          False
+dtype: bool
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;use-counts&#34;&gt;Use counts&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.isna().sum()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Date              0
+AveragePrice    100
+Total Volume      0
+4046              0
+4225              0
+4770              0
+Total Bags        0
+Small Bags        0
+Large Bags        0
+XLarge Bags     100
+type              0
+year              0
+region            0
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;plot-it&#34;&gt;Plot it!&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+avocados.isna().sum().plot(kind=&#39;bar&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;missingdata_13_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;remove-the-rows-that-have-nan&#34;&gt;Remove the rows that have NaN&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(18249, 13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados_drop=avocados.dropna()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados_drop.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(18149, 13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;replace-the-nan-with-a-value&#34;&gt;Replace the NaN with a value&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados_rep=avocados.fillna(0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;avocados_rep.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(18249, 13)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reading and writing CSVs</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/handlecsv/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/handlecsv/</guid>
+      <description>&lt;p&gt;CSV = comma-seperated-values&lt;/p&gt;
+&lt;h4 id=&#34;csv-to-dataframe&#34;&gt;CSV to DataFrame&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+cars = pd.read_csv(&#39;cars.csv&#39;,index_col=0)
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         country  drives_right  cars_per_cap
+0  United States          True           809
+1      Australia         False           731
+2          Japan         False           588
+3          India         False            18
+4         Russia          True           200
+5        Morocco          True            70
+6          Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;manipulate-dataframe&#34;&gt;Manipulate DataFrame&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+cars[&#39;cars_rand&#39;] = cars[&#39;cars_per_cap&#39;]*np.random.randint(0,10)
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         country  drives_right  cars_per_cap  cars_rand
+0  United States          True           809       3236
+1      Australia         False           731       2924
+2          Japan         False           588       2352
+3          India         False            18         72
+4         Russia          True           200        800
+5        Morocco          True            70        280
+6          Egypt          True            45        180
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dataframe-to-csv&#34;&gt;DataFrame to csv&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.to_csv(&#39;cars.csv&#39;)
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         country  drives_right  cars_per_cap  cars_rand
+0  United States          True           809       3236
+1      Australia         False           731       2924
+2          Japan         False           588       2352
+3          India         False            18         72
+4         Russia          True           200        800
+5        Morocco          True            70        280
+6          Egypt          True            45        180
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Slicing and subsetting with .loc and .iloc</title>
       <link>http://othrif.github.io/technical_note/python/pandas/indexlociloc/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -4358,8 +5102,54 @@ df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
 &lt;/table&gt;
 &lt;p&gt;85 rows × 3 columns&lt;/p&gt;
 &lt;/div&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;h3 id=&#34;iloc&#34;&gt;&lt;code&gt;iloc[]&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.iloc[:5,2:3]
 &lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -4369,7 +5159,11 @@ df[&#39;frac_sales&#39;] = df[&#39;weekly_sales&#39;]*np.random.rand()
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/pandas/slicetimeseries/</guid>
       <description>&lt;p&gt;Add the date column to the index, then use &lt;code&gt;.loc[]&lt;/code&gt; to perform the subsetting. The important thing to remember is to keep your dates in ISO 8601 format, that is, &lt;code&gt;yyyy-mm-dd&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Important: When filtering between &lt;code&gt;2010&lt;/code&gt; and &lt;code&gt;2012&lt;/code&gt;, the dates go from &lt;code&gt;2010-01-01&lt;/code&gt; to &lt;code&gt;2012-01-01&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Important:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;When filtering with &lt;code&gt;[]&lt;/code&gt; between &lt;code&gt;2010&lt;/code&gt; and &lt;code&gt;2012&lt;/code&gt;, the dates go from &lt;code&gt;2010-01-01&lt;/code&gt; to &lt;code&gt;2012-01-01&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;When filter with &lt;code&gt;.loc[]&lt;/code&gt; is inclusive in dates, see the two cases below&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
@@ -4456,8 +5250,8 @@ df = pd.DataFrame(content, columns=mycols)
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;p&gt;The time range below gives january-february, Note it excludes &lt;code&gt;2010-03&lt;/code&gt; which refers to &lt;code&gt;2010-03-01&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[ (&#39;2010-01&#39; &amp;lt; df[&#39;date&#39;]) &amp;amp; (df[&#39;date&#39;] &amp;lt; &#39;2010-03&#39;)]
+&lt;p&gt;The time range below gives january-february, Note the real range is &lt;code&gt;2010-01-01&lt;/code&gt; to &lt;code&gt;2010-03-01&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[ (&#39;2010-01&#39; &amp;lt;= df[&#39;date&#39;]) &amp;amp; (df[&#39;date&#39;] &amp;lt; &#39;2010-03&#39;)]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;div&gt;
 &lt;style scoped&gt;
@@ -4565,6 +5359,190 @@ df = pd.DataFrame(content, columns=mycols)
       &lt;td&gt;9&lt;/td&gt;
       &lt;td&gt;2010-02-05&lt;/td&gt;
       &lt;td&gt;16931&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_ind = df.set_index(&#39;date&#39;).sort_index()
+df_ind.loc[&#39;2010-01&#39;:&#39;2010-03&#39;] # loc is inclusive in dates
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;store&lt;/th&gt;
+      &lt;th&gt;type&lt;/th&gt;
+      &lt;th&gt;department&lt;/th&gt;
+      &lt;th&gt;weekly_sales&lt;/th&gt;
+      &lt;th&gt;is_holiday&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;24924.5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;16931&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;40129&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;21084.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;5749.03&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;32229.4&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;39954&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;50605.3&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-02-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;13740.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;24064.7&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;38776.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;19659.7&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;4221.25&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;38086.2&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;12275.6&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;23082.1&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;B&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;21827.9&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2010-03-05&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;48398&lt;/td&gt;
       &lt;td&gt;False&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
