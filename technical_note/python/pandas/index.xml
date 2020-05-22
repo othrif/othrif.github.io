@@ -897,410 +897,6 @@ Name: weekly_sales, dtype: float64
     </item>
     
     <item>
-      <title>DataFrames manipulation</title>
-      <link>http://othrif.github.io/technical_note/python/pandas/sortdf/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/pandas/sortdf/</guid>
-      <description>&lt;p&gt;Most common types of data manipulation:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;sorting rows&lt;/li&gt;
-&lt;li&gt;subsetting columns&lt;/li&gt;
-&lt;li&gt;subsetting rows&lt;/li&gt;
-&lt;li&gt;adding new columns&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-
-# Build cars DataFrame
-names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;]
-dr =  [True, False, False, False, True, True, True]
-cpc = [809, 731, 588, 18, 200, 70, 45]
-row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&#39;, &#39;MOR&#39;, &#39;EG&#39;]
-cars_dict = {&#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc }
-cars = pd.DataFrame(cars_dict)
-cars.index = row_labels
-print(cars)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
-US   United States          True           809
-AUS      Australia         False           731
-JPN          Japan         False           588
-IN           India         False            18
-RU          Russia          True           200
-MOR        Morocco          True            70
-EG           Egypt          True            45
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;sorting-row&#34;&gt;Sorting row&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values(&#39;cars_per_cap&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;drives_right&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;IN&lt;/th&gt;
-      &lt;td&gt;India&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;EG&lt;/th&gt;
-      &lt;td&gt;Egypt&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;45&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;MOR&lt;/th&gt;
-      &lt;td&gt;Morocco&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;70&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;RU&lt;/th&gt;
-      &lt;td&gt;Russia&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;200&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;JPN&lt;/th&gt;
-      &lt;td&gt;Japan&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;588&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;AUS&lt;/th&gt;
-      &lt;td&gt;Australia&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;731&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;US&lt;/th&gt;
-      &lt;td&gt;United States&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;809&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values([&#39;drives_right&#39;,&#39;cars_per_cap&#39;], ascending=[True,False])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;drives_right&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;AUS&lt;/th&gt;
-      &lt;td&gt;Australia&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;731&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;JPN&lt;/th&gt;
-      &lt;td&gt;Japan&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;588&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;IN&lt;/th&gt;
-      &lt;td&gt;India&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;US&lt;/th&gt;
-      &lt;td&gt;United States&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;809&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;RU&lt;/th&gt;
-      &lt;td&gt;Russia&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;200&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;MOR&lt;/th&gt;
-      &lt;td&gt;Morocco&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;70&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;EG&lt;/th&gt;
-      &lt;td&gt;Egypt&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;45&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;subsetting-columns&#34;&gt;subsetting columns&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;country&#39;].head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;US     United States
-AUS        Australia
-JPN            Japan
-IN             India
-RU            Russia
-Name: country, dtype: object
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[[&#39;country&#39;,&#39;cars_per_cap&#39;]].head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;US&lt;/th&gt;
-      &lt;td&gt;United States&lt;/td&gt;
-      &lt;td&gt;809&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;AUS&lt;/th&gt;
-      &lt;td&gt;Australia&lt;/td&gt;
-      &lt;td&gt;731&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;JPN&lt;/th&gt;
-      &lt;td&gt;Japan&lt;/td&gt;
-      &lt;td&gt;588&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;IN&lt;/th&gt;
-      &lt;td&gt;India&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;RU&lt;/th&gt;
-      &lt;td&gt;Russia&lt;/td&gt;
-      &lt;td&gt;200&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;subsetting-rows&#34;&gt;subsetting rows&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;cars_per_cap&#39;]&amp;lt;100].head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;drives_right&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;IN&lt;/th&gt;
-      &lt;td&gt;India&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;MOR&lt;/th&gt;
-      &lt;td&gt;Morocco&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;70&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;EG&lt;/th&gt;
-      &lt;td&gt;Egypt&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;45&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;h4 id=&#34;subsetting-by-categorical-variables&#34;&gt;Subsetting by categorical variables&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.isin()&lt;/code&gt; one condition instead of several &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;|&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;country&#39;].isin([&#39;Morocco&#39;,&#39;Egypt&#39;])]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;drives_right&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;MOR&lt;/th&gt;
-      &lt;td&gt;Morocco&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;70&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;EG&lt;/th&gt;
-      &lt;td&gt;Egypt&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;45&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;h3 id=&#34;adding-new-columns&#34;&gt;adding new columns&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;cars_per_cap_10&#39;] = cars[&#39;cars_per_cap&#39;]*10
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;country&lt;/th&gt;
-      &lt;th&gt;drives_right&lt;/th&gt;
-      &lt;th&gt;cars_per_cap&lt;/th&gt;
-      &lt;th&gt;cars_per_cap_10&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;US&lt;/th&gt;
-      &lt;td&gt;United States&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;809&lt;/td&gt;
-      &lt;td&gt;8090&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;AUS&lt;/th&gt;
-      &lt;td&gt;Australia&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;731&lt;/td&gt;
-      &lt;td&gt;7310&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;JPN&lt;/th&gt;
-      &lt;td&gt;Japan&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;588&lt;/td&gt;
-      &lt;td&gt;5880&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;IN&lt;/th&gt;
-      &lt;td&gt;India&lt;/td&gt;
-      &lt;td&gt;False&lt;/td&gt;
-      &lt;td&gt;18&lt;/td&gt;
-      &lt;td&gt;180&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;RU&lt;/th&gt;
-      &lt;td&gt;Russia&lt;/td&gt;
-      &lt;td&gt;True&lt;/td&gt;
-      &lt;td&gt;200&lt;/td&gt;
-      &lt;td&gt;2000&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
       <title>DataFrames pivot tables</title>
       <link>http://othrif.github.io/technical_note/python/pandas/pivotdf/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -5550,6 +5146,410 @@ df_ind.loc[&#39;2010-01&#39;:&#39;2010-03&#39;] # loc is inclusive in dates
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sort DataFrames</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/sortdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/sortdf/</guid>
+      <description>&lt;p&gt;Most common types of data manipulation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sorting rows&lt;/li&gt;
+&lt;li&gt;subsetting columns&lt;/li&gt;
+&lt;li&gt;subsetting rows&lt;/li&gt;
+&lt;li&gt;adding new columns&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;generate-some-data&#34;&gt;Generate some data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+# Build cars DataFrame
+names = [&#39;United States&#39;, &#39;Australia&#39;, &#39;Japan&#39;, &#39;India&#39;, &#39;Russia&#39;, &#39;Morocco&#39;, &#39;Egypt&#39;]
+dr =  [True, False, False, False, True, True, True]
+cpc = [809, 731, 588, 18, 200, 70, 45]
+row_labels = [&#39;US&#39;, &#39;AUS&#39;, &#39;JPN&#39;, &#39;IN&#39;, &#39;RU&#39;, &#39;MOR&#39;, &#39;EG&#39;]
+cars_dict = {&#39;country&#39;:names, &#39;drives_right&#39;:dr, &#39;cars_per_cap&#39;:cpc }
+cars = pd.DataFrame(cars_dict)
+cars.index = row_labels
+print(cars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           country  drives_right  cars_per_cap
+US   United States          True           809
+AUS      Australia         False           731
+JPN          Japan         False           588
+IN           India         False            18
+RU          Russia          True           200
+MOR        Morocco          True            70
+EG           Egypt          True            45
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;sorting-row&#34;&gt;Sorting row&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values(&#39;cars_per_cap&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.sort_values([&#39;drives_right&#39;,&#39;cars_per_cap&#39;], ascending=[True,False])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;subsetting-columns&#34;&gt;subsetting columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;country&#39;].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;US     United States
+AUS        Australia
+JPN            Japan
+IN             India
+RU            Russia
+Name: country, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[[&#39;country&#39;,&#39;cars_per_cap&#39;]].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;subsetting-rows&#34;&gt;subsetting rows&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;cars_per_cap&#39;]&amp;lt;100].head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;subsetting-by-categorical-variables&#34;&gt;Subsetting by categorical variables&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.isin()&lt;/code&gt; one condition instead of several &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;|&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[cars[&#39;country&#39;].isin([&#39;Morocco&#39;,&#39;Egypt&#39;])]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;MOR&lt;/th&gt;
+      &lt;td&gt;Morocco&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;EG&lt;/th&gt;
+      &lt;td&gt;Egypt&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;adding-new-columns&#34;&gt;adding new columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars[&#39;cars_per_cap_10&#39;] = cars[&#39;cars_per_cap&#39;]*10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cars.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+      &lt;th&gt;drives_right&lt;/th&gt;
+      &lt;th&gt;cars_per_cap&lt;/th&gt;
+      &lt;th&gt;cars_per_cap_10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;US&lt;/th&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;809&lt;/td&gt;
+      &lt;td&gt;8090&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;AUS&lt;/th&gt;
+      &lt;td&gt;Australia&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;731&lt;/td&gt;
+      &lt;td&gt;7310&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;JPN&lt;/th&gt;
+      &lt;td&gt;Japan&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;588&lt;/td&gt;
+      &lt;td&gt;5880&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;IN&lt;/th&gt;
+      &lt;td&gt;India&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;180&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;RU&lt;/th&gt;
+      &lt;td&gt;Russia&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+      &lt;td&gt;2000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
 </description>
     </item>
     
