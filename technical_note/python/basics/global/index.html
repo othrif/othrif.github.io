@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="the keyword global within a function to alter the value of a variable defined in the global scope.
+team = &quot;teen titans&quot; def change_team(): &quot;&quot;&quot;Change the value of the global variable team.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/global/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/global/">
 
   
   
@@ -230,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/global/">
+  <meta property="og:title" content="Key word global | Othmane Rifki">
+  <meta property="og:description" content="the keyword global within a function to alter the value of a variable defined in the global scope.
+team = &quot;teen titans&quot; def change_team(): &quot;&quot;&quot;Change the value of the global variable team."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Key word global | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +467,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +557,49 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Key word global</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
+  <p>the keyword global within a function to alter the value of a variable defined in the global scope.</p>
+<pre><code class="language-python">team = &quot;teen titans&quot;
 
-  <p>Perhaps you were looking for one of these?</p>
+def change_team():
+    &quot;&quot;&quot;Change the value of the global variable team.&quot;&quot;&quot;
+    global team
+    team = 'justice league'
+    
 
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
-    
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/numpy/indexing/">Array indexing</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array_math/">Array math and universal functions</a></li>
-    
-      <li><a href="/technical_note/linux/basics/ascii_unicode/">ASCII vs Unicode</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/basics/">Basics of plotting</a></li>
-    
-      <li><a href="/technical_note/python/basics/bin_dec_hex/">Binary, Octal, and Hexadecimal Integers</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/strings/">Bitwise Operations</a></li>
-    
-  </ul>
-  
+print(team)
+change_team()
+print(team)
+</code></pre>
+<pre><code>teen titans
+justice league
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

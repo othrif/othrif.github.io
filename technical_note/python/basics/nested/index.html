@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Nested function To avoid writing out the same computations within functions repeatedly.
+def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with &#39;!!!&#39;.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with &#39;!">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/nested/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/nested/">
 
   
   
@@ -230,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/nested/">
+  <meta property="og:title" content="Nested functions, keyword nonlocal | Othmane Rifki">
+  <meta property="og:description" content="Nested function To avoid writing out the same computations within functions repeatedly.
+def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with &#39;!!!&#39;.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with &#39;!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Nested functions, keyword nonlocal | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +467,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +557,107 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Nested functions, keyword nonlocal</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
+  <h3 id="nested-function">Nested function</h3>
+<p>To avoid writing out the same computations within functions repeatedly.</p>
+<pre><code class="language-python">def three_shouts(word1, word2, word3):
+    &quot;&quot;&quot;Returns a tuple of strings
+    concatenated with '!!!'.&quot;&quot;&quot;
 
-  <p>Perhaps you were looking for one of these?</p>
+    # Define inner
+    def inner(word):
+        &quot;&quot;&quot;Returns a string concatenated with '!!!'.&quot;&quot;&quot;
+        return word + '!!!'
 
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
+    # Return a tuple of strings
+    return (inner(word1), inner(word2), inner(word3))
+
+print(three_shouts('a', 'b', 'c'))
+</code></pre>
+<pre><code>('a!!!', 'b!!!', 'c!!!')
+</code></pre>
+<h3 id="closure">Closure</h3>
+<p>The nested or inner function remembers the state of its enclosing scope when called. Thus, anything defined locally in the enclosing scope is available to the inner function even when the outer function has finished execution.</p>
+<pre><code class="language-python">def echo(n):
+    &quot;&quot;&quot;Return the inner_echo function.&quot;&quot;&quot;
+
+    def inner_echo(word1):
+        &quot;&quot;&quot;Concatenate n copies of word1.&quot;&quot;&quot;
+        echo_word = word1 * n
+        return echo_word
+
+    return inner_echo
+
+# Call echo: twice
+twice = echo(2)
+
+# Call echo: thrice
+thrice = echo(3)
+
+# Call twice() and thrice() then print
+print(twice('hello'), thrice('hello'))
+</code></pre>
+<pre><code>hellohello hellohellohello
+</code></pre>
+<h3 id="keyword-nonlocal">Keyword <code>nonlocal</code></h3>
+<p>nonlocal within a nested function alters the value of a variable defined in the enclosing scope</p>
+<pre><code class="language-python"># Define echo_shout()
+def echo_shout(word):
+    &quot;&quot;&quot;Change the value of a nonlocal variable&quot;&quot;&quot;
     
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
+    # Concatenate word with itself: echo_word
+    echo_word = word+word
     
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
+    # Print echo_word
+    print(echo_word)
     
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
+    # Define inner function shout()
+    def shout():
+        &quot;&quot;&quot;Alter a variable in the enclosing scope&quot;&quot;&quot;    
+        # Use echo_word in nonlocal scope
+        nonlocal echo_word
+        
+        # Change echo_word to echo_word concatenated with '!!!'
+        echo_word = word
     
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
+    # Call function shout()
+    shout()
     
-      <li><a href="/technical_note/python/numpy/indexing/">Array indexing</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array_math/">Array math and universal functions</a></li>
-    
-      <li><a href="/technical_note/linux/basics/ascii_unicode/">ASCII vs Unicode</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/basics/">Basics of plotting</a></li>
-    
-      <li><a href="/technical_note/python/basics/bin_dec_hex/">Binary, Octal, and Hexadecimal Integers</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/strings/">Bitwise Operations</a></li>
-    
-  </ul>
-  
+    # Print echo_word
+    print(echo_word)
+
+# Call function echo_shout() with argument 'hello'
+echo_shout('hello')
+</code></pre>
+<pre><code>hellohello
+hello
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

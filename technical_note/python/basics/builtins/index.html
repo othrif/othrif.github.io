@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="To query builtins, you&rsquo;ll need to import builtins because the name builtins is not itself built in&hellip;No, I’m serious!
+import builtins  &lt;module &#39;builtins&#39; (built-in)&gt;  print a list of all the names in the module builtins">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/builtins/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/builtins/">
 
   
   
@@ -230,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/builtins/">
+  <meta property="og:title" content="Builtins | Othmane Rifki">
+  <meta property="og:description" content="To query builtins, you&rsquo;ll need to import builtins because the name builtins is not itself built in&hellip;No, I’m serious!
+import builtins  &lt;module &#39;builtins&#39; (built-in)&gt;  print a list of all the names in the module builtins"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Builtins | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +467,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +557,195 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Builtins</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
-
-  <p>Perhaps you were looking for one of these?</p>
-
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
-    
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/numpy/indexing/">Array indexing</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array_math/">Array math and universal functions</a></li>
-    
-      <li><a href="/technical_note/linux/basics/ascii_unicode/">ASCII vs Unicode</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/basics/">Basics of plotting</a></li>
-    
-      <li><a href="/technical_note/python/basics/bin_dec_hex/">Binary, Octal, and Hexadecimal Integers</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/strings/">Bitwise Operations</a></li>
-    
-  </ul>
-  
+  <p>To query builtins, you&rsquo;ll need to import builtins because the name builtins is not itself built in&hellip;No, I’m serious!</p>
+<pre><code class="language-python">import builtins
+</code></pre>
+<pre><code>&lt;module 'builtins' (built-in)&gt;
+</code></pre>
+<p>print a list of all the names in the module <code>builtins</code></p>
+<pre><code class="language-python">dir(builtins)
+</code></pre>
+<pre><code>['ArithmeticError',
+ 'AssertionError',
+ 'AttributeError',
+ 'BaseException',
+ 'BlockingIOError',
+ 'BrokenPipeError',
+ 'BufferError',
+ 'BytesWarning',
+ 'ChildProcessError',
+ 'ConnectionAbortedError',
+ 'ConnectionError',
+ 'ConnectionRefusedError',
+ 'ConnectionResetError',
+ 'DeprecationWarning',
+ 'EOFError',
+ 'Ellipsis',
+ 'EnvironmentError',
+ 'Exception',
+ 'False',
+ 'FileExistsError',
+ 'FileNotFoundError',
+ 'FloatingPointError',
+ 'FutureWarning',
+ 'GeneratorExit',
+ 'IOError',
+ 'ImportError',
+ 'ImportWarning',
+ 'IndentationError',
+ 'IndexError',
+ 'InterruptedError',
+ 'IsADirectoryError',
+ 'KeyError',
+ 'KeyboardInterrupt',
+ 'LookupError',
+ 'MemoryError',
+ 'ModuleNotFoundError',
+ 'NameError',
+ 'None',
+ 'NotADirectoryError',
+ 'NotImplemented',
+ 'NotImplementedError',
+ 'OSError',
+ 'OverflowError',
+ 'PendingDeprecationWarning',
+ 'PermissionError',
+ 'ProcessLookupError',
+ 'RecursionError',
+ 'ReferenceError',
+ 'ResourceWarning',
+ 'RuntimeError',
+ 'RuntimeWarning',
+ 'StopAsyncIteration',
+ 'StopIteration',
+ 'SyntaxError',
+ 'SyntaxWarning',
+ 'SystemError',
+ 'SystemExit',
+ 'TabError',
+ 'TimeoutError',
+ 'True',
+ 'TypeError',
+ 'UnboundLocalError',
+ 'UnicodeDecodeError',
+ 'UnicodeEncodeError',
+ 'UnicodeError',
+ 'UnicodeTranslateError',
+ 'UnicodeWarning',
+ 'UserWarning',
+ 'ValueError',
+ 'Warning',
+ 'ZeroDivisionError',
+ '__IPYTHON__',
+ '__build_class__',
+ '__debug__',
+ '__doc__',
+ '__import__',
+ '__loader__',
+ '__name__',
+ '__package__',
+ '__spec__',
+ 'abs',
+ 'all',
+ 'any',
+ 'ascii',
+ 'bin',
+ 'bool',
+ 'breakpoint',
+ 'bytearray',
+ 'bytes',
+ 'callable',
+ 'chr',
+ 'classmethod',
+ 'compile',
+ 'complex',
+ 'copyright',
+ 'credits',
+ 'delattr',
+ 'dict',
+ 'dir',
+ 'display',
+ 'divmod',
+ 'enumerate',
+ 'eval',
+ 'exec',
+ 'filter',
+ 'float',
+ 'format',
+ 'frozenset',
+ 'get_ipython',
+ 'getattr',
+ 'globals',
+ 'hasattr',
+ 'hash',
+ 'help',
+ 'hex',
+ 'id',
+ 'input',
+ 'int',
+ 'isinstance',
+ 'issubclass',
+ 'iter',
+ 'len',
+ 'license',
+ 'list',
+ 'locals',
+ 'map',
+ 'max',
+ 'memoryview',
+ 'min',
+ 'next',
+ 'object',
+ 'oct',
+ 'open',
+ 'ord',
+ 'pow',
+ 'print',
+ 'property',
+ 'range',
+ 'repr',
+ 'reversed',
+ 'round',
+ 'set',
+ 'setattr',
+ 'slice',
+ 'sorted',
+ 'staticmethod',
+ 'str',
+ 'sum',
+ 'super',
+ 'tuple',
+ 'type',
+ 'vars',
+ 'zip']
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

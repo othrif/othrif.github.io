@@ -13,6 +13,71 @@
     </image>
     
     <item>
+      <title>*args, **kwargs</title>
+      <link>http://othrif.github.io/technical_note/python/basics/argskwargs/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/argskwargs/</guid>
+      <description>&lt;h3 id=&#34;functions-with-variable-arguments-args&#34;&gt;Functions with variable arguments (*args)&lt;/h3&gt;
+&lt;p&gt;It allows you to pass a variable number of arguments to functions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def gibberish(*args):
+    &amp;quot;&amp;quot;&amp;quot;Concatenate strings in *args together.&amp;quot;&amp;quot;&amp;quot;
+
+    hodgepodge = &#39;&#39;
+
+    for word in args:
+        hodgepodge += word
+
+    return hodgepodge
+
+# Call gibberish() with one string: one_word
+one_word = gibberish(&#39;luke&#39;)
+
+# Call gibberish() with five strings: many_words
+many_words = gibberish(&amp;quot;luke&amp;quot;, &amp;quot;leia&amp;quot;, &amp;quot;han&amp;quot;, &amp;quot;obi&amp;quot;, &amp;quot;darth&amp;quot;)
+
+# Print one_word and many_words
+print(one_word)
+print(many_words)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;luke
+lukeleiahanobidarth
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;functions-with-variable-length-keyword-arguments-kwargs&#34;&gt;Functions with variable-length keyword arguments (**kwargs)&lt;/h3&gt;
+&lt;p&gt;It allows you to pass a variable number of keyword arguments to functions. Wthin the function definition, kwargs is a dictionary.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def report_status(**kwargs):
+    &amp;quot;&amp;quot;&amp;quot;Print out the status of a movie character.&amp;quot;&amp;quot;&amp;quot;
+
+    print(&amp;quot;\nBEGIN: REPORT\n&amp;quot;)
+    for key, val in kwargs.items():
+        print(key + &amp;quot;: &amp;quot; + val)
+    print(&amp;quot;\nEND REPORT&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;report_status(name=&amp;quot;luke&amp;quot;, affiliation=&amp;quot;jedi&amp;quot;, status=&amp;quot;missing&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;BEGIN: REPORT
+
+name: luke
+affiliation: jedi
+status: missing
+
+END REPORT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;report_status(name=&amp;quot;anakin&amp;quot;, affiliation=&amp;quot;sith lord&amp;quot;, status=&amp;quot;deceased&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;BEGIN: REPORT
+
+name: anakin
+affiliation: sith lord
+status: deceased
+
+END REPORT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>&#43;&#43;*ptr vs. *ptr&#43;&#43;</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/ptr_deref/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1017,6 +1082,176 @@ mystr.capitalize()
 &lt;pre&gt;&lt;code&gt;2
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Builtins</title>
+      <link>http://othrif.github.io/technical_note/python/basics/builtins/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/builtins/</guid>
+      <description>&lt;p&gt;To query builtins, you&amp;rsquo;ll need to import builtins because the name builtins is not itself built in&amp;hellip;No, I’m serious!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import builtins
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;module &#39;builtins&#39; (built-in)&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;print a list of all the names in the module &lt;code&gt;builtins&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dir(builtins)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;ArithmeticError&#39;,
+ &#39;AssertionError&#39;,
+ &#39;AttributeError&#39;,
+ &#39;BaseException&#39;,
+ &#39;BlockingIOError&#39;,
+ &#39;BrokenPipeError&#39;,
+ &#39;BufferError&#39;,
+ &#39;BytesWarning&#39;,
+ &#39;ChildProcessError&#39;,
+ &#39;ConnectionAbortedError&#39;,
+ &#39;ConnectionError&#39;,
+ &#39;ConnectionRefusedError&#39;,
+ &#39;ConnectionResetError&#39;,
+ &#39;DeprecationWarning&#39;,
+ &#39;EOFError&#39;,
+ &#39;Ellipsis&#39;,
+ &#39;EnvironmentError&#39;,
+ &#39;Exception&#39;,
+ &#39;False&#39;,
+ &#39;FileExistsError&#39;,
+ &#39;FileNotFoundError&#39;,
+ &#39;FloatingPointError&#39;,
+ &#39;FutureWarning&#39;,
+ &#39;GeneratorExit&#39;,
+ &#39;IOError&#39;,
+ &#39;ImportError&#39;,
+ &#39;ImportWarning&#39;,
+ &#39;IndentationError&#39;,
+ &#39;IndexError&#39;,
+ &#39;InterruptedError&#39;,
+ &#39;IsADirectoryError&#39;,
+ &#39;KeyError&#39;,
+ &#39;KeyboardInterrupt&#39;,
+ &#39;LookupError&#39;,
+ &#39;MemoryError&#39;,
+ &#39;ModuleNotFoundError&#39;,
+ &#39;NameError&#39;,
+ &#39;None&#39;,
+ &#39;NotADirectoryError&#39;,
+ &#39;NotImplemented&#39;,
+ &#39;NotImplementedError&#39;,
+ &#39;OSError&#39;,
+ &#39;OverflowError&#39;,
+ &#39;PendingDeprecationWarning&#39;,
+ &#39;PermissionError&#39;,
+ &#39;ProcessLookupError&#39;,
+ &#39;RecursionError&#39;,
+ &#39;ReferenceError&#39;,
+ &#39;ResourceWarning&#39;,
+ &#39;RuntimeError&#39;,
+ &#39;RuntimeWarning&#39;,
+ &#39;StopAsyncIteration&#39;,
+ &#39;StopIteration&#39;,
+ &#39;SyntaxError&#39;,
+ &#39;SyntaxWarning&#39;,
+ &#39;SystemError&#39;,
+ &#39;SystemExit&#39;,
+ &#39;TabError&#39;,
+ &#39;TimeoutError&#39;,
+ &#39;True&#39;,
+ &#39;TypeError&#39;,
+ &#39;UnboundLocalError&#39;,
+ &#39;UnicodeDecodeError&#39;,
+ &#39;UnicodeEncodeError&#39;,
+ &#39;UnicodeError&#39;,
+ &#39;UnicodeTranslateError&#39;,
+ &#39;UnicodeWarning&#39;,
+ &#39;UserWarning&#39;,
+ &#39;ValueError&#39;,
+ &#39;Warning&#39;,
+ &#39;ZeroDivisionError&#39;,
+ &#39;__IPYTHON__&#39;,
+ &#39;__build_class__&#39;,
+ &#39;__debug__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__import__&#39;,
+ &#39;__loader__&#39;,
+ &#39;__name__&#39;,
+ &#39;__package__&#39;,
+ &#39;__spec__&#39;,
+ &#39;abs&#39;,
+ &#39;all&#39;,
+ &#39;any&#39;,
+ &#39;ascii&#39;,
+ &#39;bin&#39;,
+ &#39;bool&#39;,
+ &#39;breakpoint&#39;,
+ &#39;bytearray&#39;,
+ &#39;bytes&#39;,
+ &#39;callable&#39;,
+ &#39;chr&#39;,
+ &#39;classmethod&#39;,
+ &#39;compile&#39;,
+ &#39;complex&#39;,
+ &#39;copyright&#39;,
+ &#39;credits&#39;,
+ &#39;delattr&#39;,
+ &#39;dict&#39;,
+ &#39;dir&#39;,
+ &#39;display&#39;,
+ &#39;divmod&#39;,
+ &#39;enumerate&#39;,
+ &#39;eval&#39;,
+ &#39;exec&#39;,
+ &#39;filter&#39;,
+ &#39;float&#39;,
+ &#39;format&#39;,
+ &#39;frozenset&#39;,
+ &#39;get_ipython&#39;,
+ &#39;getattr&#39;,
+ &#39;globals&#39;,
+ &#39;hasattr&#39;,
+ &#39;hash&#39;,
+ &#39;help&#39;,
+ &#39;hex&#39;,
+ &#39;id&#39;,
+ &#39;input&#39;,
+ &#39;int&#39;,
+ &#39;isinstance&#39;,
+ &#39;issubclass&#39;,
+ &#39;iter&#39;,
+ &#39;len&#39;,
+ &#39;license&#39;,
+ &#39;list&#39;,
+ &#39;locals&#39;,
+ &#39;map&#39;,
+ &#39;max&#39;,
+ &#39;memoryview&#39;,
+ &#39;min&#39;,
+ &#39;next&#39;,
+ &#39;object&#39;,
+ &#39;oct&#39;,
+ &#39;open&#39;,
+ &#39;ord&#39;,
+ &#39;pow&#39;,
+ &#39;print&#39;,
+ &#39;property&#39;,
+ &#39;range&#39;,
+ &#39;repr&#39;,
+ &#39;reversed&#39;,
+ &#39;round&#39;,
+ &#39;set&#39;,
+ &#39;setattr&#39;,
+ &#39;slice&#39;,
+ &#39;sorted&#39;,
+ &#39;staticmethod&#39;,
+ &#39;str&#39;,
+ &#39;sum&#39;,
+ &#39;super&#39;,
+ &#39;tuple&#39;,
+ &#39;type&#39;,
+ &#39;vars&#39;,
+ &#39;zip&#39;]
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -2853,6 +3088,77 @@ for i, (k, v) in enumerate(example_dict.items()):
 1 2 b
 2 3 c
 3 4 d
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Error and exception</title>
+      <link>http://othrif.github.io/technical_note/python/basics/exception/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/exception/</guid>
+      <description>&lt;h3 id=&#34;error-handling-with-try-except&#34;&gt;Error handling with try-except&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def shout_echo(word1, echo=1):
+    &amp;quot;&amp;quot;&amp;quot;Concatenate echo copies of word1 and three
+    exclamation marks at the end of the string.&amp;quot;&amp;quot;&amp;quot;
+
+    echo_word=&#39;&#39;
+    shout_words=&#39;&#39;
+
+    # Add exception handling with try-except
+    try:
+        echo_word = word1*echo
+        shout_words = echo_word+&#39;!!!&#39;
+    except:
+        print(&amp;quot;word1 must be a string and echo must be an integer.&amp;quot;)
+        
+    return shout_words
+
+shout_echo(&#39;particle&#39;, echo=&#39;accelerator&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;word1 must be a string and echo must be an integer.
+
+
+
+
+
+&#39;&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;error-handling-by-raising-an-error&#34;&gt;Error handling by raising an error&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def shout_echo(word1, echo=1):
+    &amp;quot;&amp;quot;&amp;quot;Concatenate echo copies of word1 and three
+    exclamation marks at the end of the string.&amp;quot;&amp;quot;&amp;quot;
+
+    # Raise an error with raise
+    if echo&amp;lt;0:
+        raise ValueError(&#39;echo must be greater than or equal to 0&#39;)
+
+    echo_word = word1*echo
+    shout_words = echo_word+&#39;!!!&#39;
+
+    return shout_word
+
+shout_echo(&amp;quot;particle&amp;quot;, echo=-5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&amp;lt;ipython-input-13-85d647f11453&amp;gt; in &amp;lt;module&amp;gt;
+     12     return shout_word
+     13 
+---&amp;gt; 14 shout_echo(&amp;quot;particle&amp;quot;, echo=-5)
+
+
+&amp;lt;ipython-input-13-85d647f11453&amp;gt; in shout_echo(word1, echo)
+      5     # Raise an error with raise
+      6     if echo&amp;lt;0:
+----&amp;gt; 7         raise ValueError(&#39;echo must be greater than or equal to 0&#39;)
+      8 
+      9     echo_word = word1*echo
+
+
+ValueError: echo must be greater than or equal to 0
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -5006,6 +5312,91 @@ cd IJava/
     </item>
     
     <item>
+      <title>Key word global</title>
+      <link>http://othrif.github.io/technical_note/python/basics/global/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/global/</guid>
+      <description>&lt;p&gt;the keyword global within a function to alter the value of a variable defined in the global scope.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;team = &amp;quot;teen titans&amp;quot;
+
+def change_team():
+    &amp;quot;&amp;quot;&amp;quot;Change the value of the global variable team.&amp;quot;&amp;quot;&amp;quot;
+    global team
+    team = &#39;justice league&#39;
+    
+
+print(team)
+change_team()
+print(team)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;teen titans
+justice league
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Lambda functions and map(), filter(), reduce()</title>
+      <link>http://othrif.github.io/technical_note/python/basics/lambda/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/lambda/</guid>
+      <description>&lt;h3 id=&#34;basic-syntax&#34;&gt;Basic syntax&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lambda arguments : &amp;lt;do something&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;myfunc = lambda a: a+&#39;!!!&#39;
+myfunc(&#39;hello&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&#39;hello!!!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;converting-a-function-to-lambda&#34;&gt;Converting a function to lambda&lt;/h3&gt;
+&lt;p&gt;Compare the two functions and how &lt;code&gt;lambda&lt;/code&gt; is much more concise&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def echo_word_def(word1, echo):
+    &amp;quot;&amp;quot;&amp;quot;Concatenate echo copies of word1.&amp;quot;&amp;quot;&amp;quot;
+    words = word1 * echo
+    return words
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;echo_word_lambda = (lambda word1, echo: word1*echo)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(echo_word_def(&#39;hey&#39;,5))
+print(echo_word_lambda(&#39;hey&#39;,5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;heyheyheyheyhey
+heyheyheyheyhey
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;map-and-lambda-functions&#34;&gt;&lt;code&gt;Map()&lt;/code&gt; and lambda functions&lt;/h3&gt;
+&lt;p&gt;map() applies a function over an object, such as a list. The syntax follows &lt;code&gt; map(func, list)&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nums = [2, 4, 6, 8, 10]
+
+result = map(lambda a: a ** 2, nums)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;in this example, a lambda function, which raises a value &lt;code&gt;a&lt;/code&gt; to the power of 2, is passed to &lt;code&gt;map()&lt;/code&gt; alongside a list of numbers, &lt;code&gt;nums&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;list(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[4, 16, 36, 64, 100]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;filter-and-lambda-functions&#34;&gt;&lt;code&gt;Filter()&lt;/code&gt; and lambda functions&lt;/h3&gt;
+&lt;p&gt;The function &lt;code&gt;filter()&lt;/code&gt; offers a way to filter out elements from a list that don&amp;rsquo;t satisfy certain criteria.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fellowship = [&#39;frodo&#39;, &#39;samwise&#39;, &#39;merry&#39;, &#39;pippin&#39;, &#39;aragorn&#39;, &#39;boromir&#39;, &#39;legolas&#39;, &#39;gimli&#39;, &#39;gandalf&#39;]
+result = filter(lambda a: len(a)&amp;gt;6, fellowship)
+result_list = list(result)
+print(result_list)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;samwise&#39;, &#39;aragorn&#39;, &#39;boromir&#39;, &#39;legolas&#39;, &#39;gandalf&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;reduce-and-lambda-functions&#34;&gt;&lt;code&gt;Reduce()&lt;/code&gt; and lambda functions&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;reduce()&lt;/code&gt; function is useful for performing some computation on a list and, unlike &lt;code&gt;map()&lt;/code&gt; and &lt;code&gt;filter()&lt;/code&gt;, returns a single value as a result. To use reduce(), you must import it from the functools module.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import reduce 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;stark = [&#39;robb&#39;, &#39;sansa&#39;, &#39;arya&#39;, &#39;brandon&#39;, &#39;rickon&#39;]
+result = reduce(lambda item1,item2: item1+item2 , stark)
+print(result)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;robbsansaaryabrandonrickon
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Linux system commands</title>
       <link>http://othrif.github.io/technical_note/linux/basics/system/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -6336,6 +6727,88 @@ plt.show()
 &lt;pre&gt;&lt;code&gt;(18249, 13)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nested functions, keyword nonlocal</title>
+      <link>http://othrif.github.io/technical_note/python/basics/nested/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/nested/</guid>
+      <description>&lt;h3 id=&#34;nested-function&#34;&gt;Nested function&lt;/h3&gt;
+&lt;p&gt;To avoid writing out the same computations within functions repeatedly.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def three_shouts(word1, word2, word3):
+    &amp;quot;&amp;quot;&amp;quot;Returns a tuple of strings
+    concatenated with &#39;!!!&#39;.&amp;quot;&amp;quot;&amp;quot;
+
+    # Define inner
+    def inner(word):
+        &amp;quot;&amp;quot;&amp;quot;Returns a string concatenated with &#39;!!!&#39;.&amp;quot;&amp;quot;&amp;quot;
+        return word + &#39;!!!&#39;
+
+    # Return a tuple of strings
+    return (inner(word1), inner(word2), inner(word3))
+
+print(three_shouts(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(&#39;a!!!&#39;, &#39;b!!!&#39;, &#39;c!!!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;closure&#34;&gt;Closure&lt;/h3&gt;
+&lt;p&gt;The nested or inner function remembers the state of its enclosing scope when called. Thus, anything defined locally in the enclosing scope is available to the inner function even when the outer function has finished execution.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def echo(n):
+    &amp;quot;&amp;quot;&amp;quot;Return the inner_echo function.&amp;quot;&amp;quot;&amp;quot;
+
+    def inner_echo(word1):
+        &amp;quot;&amp;quot;&amp;quot;Concatenate n copies of word1.&amp;quot;&amp;quot;&amp;quot;
+        echo_word = word1 * n
+        return echo_word
+
+    return inner_echo
+
+# Call echo: twice
+twice = echo(2)
+
+# Call echo: thrice
+thrice = echo(3)
+
+# Call twice() and thrice() then print
+print(twice(&#39;hello&#39;), thrice(&#39;hello&#39;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hellohello hellohellohello
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;keyword-nonlocal&#34;&gt;Keyword &lt;code&gt;nonlocal&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;nonlocal within a nested function alters the value of a variable defined in the enclosing scope&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define echo_shout()
+def echo_shout(word):
+    &amp;quot;&amp;quot;&amp;quot;Change the value of a nonlocal variable&amp;quot;&amp;quot;&amp;quot;
+    
+    # Concatenate word with itself: echo_word
+    echo_word = word+word
+    
+    # Print echo_word
+    print(echo_word)
+    
+    # Define inner function shout()
+    def shout():
+        &amp;quot;&amp;quot;&amp;quot;Alter a variable in the enclosing scope&amp;quot;&amp;quot;&amp;quot;    
+        # Use echo_word in nonlocal scope
+        nonlocal echo_word
+        
+        # Change echo_word to echo_word concatenated with &#39;!!!&#39;
+        echo_word = word
+    
+    # Call function shout()
+    shout()
+    
+    # Print echo_word
+    print(echo_word)
+
+# Call function echo_shout() with argument &#39;hello&#39;
+echo_shout(&#39;hello&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;hellohello
+hello
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

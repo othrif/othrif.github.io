@@ -593,6 +593,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/argskwargs/" >*args, **kwargs</a></h2>
+      <div class="article-style">
+        
+          Functions with variable arguments (*args) It allows you to pass a variable number of arguments to functions.
+def gibberish(*args): &quot;&quot;&quot;Concatenate strings in *args together.&quot;&quot;&quot; hodgepodge = '' for word in args: hodgepodge += word return hodgepodge # Call gibberish() with one string: one_word one_word = gibberish('luke') # Call gibberish() with five strings: many_words many_words = gibberish(&quot;luke&quot;, &quot;leia&quot;, &quot;han&quot;, &quot;obi&quot;, &quot;darth&quot;) # Print one_word and many_words print(one_word) print(many_words)  luke lukeleiahanobidarth  Functions with variable-length keyword arguments (**kwargs) It allows you to pass a variable number of keyword arguments to functions.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/bin_dec_hex/" >Binary, Octal, and Hexadecimal Integers</a></h2>
       <div class="article-style">
         
@@ -622,6 +635,19 @@
       <div class="article-style">
         
           List of most widely used methods per object type  Everything = object Objects have methods associated depending on type Unlike functions, methods are only called on an object (list, str, etc.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/builtins/" >Builtins</a></h2>
+      <div class="article-style">
+        
+          To query builtins, you&rsquo;ll need to import builtins because the name builtins is not itself built in&hellip;No, I’m serious!
+import builtins  &lt;module 'builtins' (built-in)&gt;  print a list of all the names in the module builtins
         
       </div>
     </div>
@@ -667,47 +693,22 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/exception/" >Error and exception</a></h2>
+      <div class="article-style">
+        
+          Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word='' shout_words='' # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word+'!
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
       <div class="article-style">
         
           Preliminary import os  Current location print(f'Current location is: {os.getcwd()!r}')  Current location is: '/Users/othmanerifki/projects/website/othrif.hugo/content/technical_note/python/basics'  Create dir if it does not exist path='/tmp/test' if not os.path.exists(path): os.mkdir(path)  Check by going to the newly created area and outputing path os.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/functions/" >Functions</a></h2>
-      <div class="article-style">
-        
-          Exit from function with conditions outer_condition=True condition_a=True condition_b=False def some_function(): if condition_a: # do something and return early print(f'condition a satisfied!') return if condition_b: # do something else and return early print(f'condition b satisfied!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/ascii/" >Get ASCII of a character</a></h2>
-      <div class="article-style">
-        
-          Get the int value of the char ord('a')  97  Get the char value of the ascii int chr(97)  'a'  Manipulations chr(ord('a') + 3)  'd'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/join/" >Join strings</a></h2>
-      <div class="article-style">
-        
-          Basic join Syntax: str.join(iterable)
-x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'First_Second_Third'  num = '12345' '-'.join(num)  '1-2-3-4-5'  let = 'abcdefg' '.'.join(let)  'a.b.c.d.e.f.g'  
         
       </div>
     </div>
