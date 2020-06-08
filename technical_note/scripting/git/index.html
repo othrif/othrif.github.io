@@ -591,6 +591,10 @@ Run <code>git rm --cached path_to_submodule</code> (no trailing slash) <br>
 Run <code>rm -rf .git/modules/path_to_submodule</code> (no trailing slash)<br>
 Commit <code>git commit -m &quot;Removed submodule&quot;</code> <br>
 Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></p>
+<h3 id="transfer-from-github-to-gitlab">Transfer from <code>github</code> to <code>gitlab</code></h3>
+<pre><code>git remote add github https://github.com/othrif/vbfmet-recast.git
+git push --mirror github
+</code></pre>
 <pre><code class="language-python">
 </code></pre>
 
