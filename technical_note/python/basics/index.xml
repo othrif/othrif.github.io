@@ -78,6 +78,30 @@ END REPORT
     </item>
     
     <item>
+      <title>Alter variable defined in global scope</title>
+      <link>http://othrif.github.io/technical_note/python/basics/global/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/global/</guid>
+      <description>&lt;p&gt;the keyword global within a function to alter the value of a variable defined in the global scope.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;team = &amp;quot;teen titans&amp;quot;
+
+def change_team():
+    &amp;quot;&amp;quot;&amp;quot;Change the value of the global variable team.&amp;quot;&amp;quot;&amp;quot;
+    global team
+    team = &#39;justice league&#39;
+    
+
+print(team)
+change_team()
+print(team)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;teen titans
+justice league
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Binary, Octal, and Hexadecimal Integers</title>
       <link>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -988,30 +1012,6 @@ print(values_sum)
 &#39;.&#39;.join(let)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&#39;a.b.c.d.e.f.g&#39;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Key word global</title>
-      <link>http://othrif.github.io/technical_note/python/basics/global/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/basics/global/</guid>
-      <description>&lt;p&gt;the keyword global within a function to alter the value of a variable defined in the global scope.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;team = &amp;quot;teen titans&amp;quot;
-
-def change_team():
-    &amp;quot;&amp;quot;&amp;quot;Change the value of the global variable team.&amp;quot;&amp;quot;&amp;quot;
-    global team
-    team = &#39;justice league&#39;
-    
-
-print(team)
-change_team()
-print(team)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;teen titans
-justice league
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

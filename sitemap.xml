@@ -83,6 +83,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/global/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/array/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -268,11 +273,6 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/basics/global/</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/lambda/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -284,6 +284,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/performance/generator/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/list_comprehesion/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

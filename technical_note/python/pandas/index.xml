@@ -3510,6 +3510,68 @@ cars.loc[[&#39;RU&#39;]]
     </item>
     
     <item>
+      <title>List comprehesion</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/list_comprehesion/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/list_comprehesion/</guid>
+      <description>&lt;h3 id=&#34;list-comprehesion&#34;&gt;List comprehesion&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[output expression for iterator variable in iterable]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;doctor = [&#39;house&#39;, &#39;cuddy&#39;, &#39;chase&#39;, &#39;thirteen&#39;, &#39;wilson&#39;]
+new_doctor = [doc[0] for doc in doctor]
+print(new_doctor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;h&#39;, &#39;c&#39;, &#39;c&#39;, &#39;t&#39;, &#39;w&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;squares = [i**2 for i in range(10)]
+print(squares)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nested-list-comprehesion&#34;&gt;Nested list comprehesion&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[[output expression] for iterator variable in iterable]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a 5 x 5 matrix using a list of lists
+matrix = [[col for col in range(5)] for row in range(5)]
+print(matrix)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;conditional-list-comprehesion&#34;&gt;Conditional list comprehesion&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[ output expression for iterator variable in iterable if predicate expression ].
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a list of strings: fellowship
+fellowship = [&#39;frodo&#39;, &#39;samwise&#39;, &#39;merry&#39;, &#39;aragorn&#39;, &#39;legolas&#39;, &#39;boromir&#39;, &#39;gimli&#39;]
+
+# Create list comprehension: new_fellowship
+new_fellowship = [fellow for fellow in fellowship if len(fellow)&amp;gt;=7]
+
+# Print the new list
+print(new_fellowship)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;samwise&#39;, &#39;aragorn&#39;, &#39;legolas&#39;, &#39;boromir&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;if-else-conditional-on-output-expression&#34;&gt;if-else conditional on output expression&lt;/h3&gt;
+&lt;p&gt;In the previous example, you used an if conditional statement in the predicate expression part of a list comprehension to evaluate an iterator variable. In this exercise, you will use an if-else statement on the output expression of the list.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[ output expression true if condition else output expression false for iterator variable in iterable if predicate expression ].
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a list of strings: fellowship
+fellowship = [&#39;frodo&#39;, &#39;samwise&#39;, &#39;merry&#39;, &#39;aragorn&#39;, &#39;legolas&#39;, &#39;boromir&#39;, &#39;gimli&#39;]
+
+# Create list comprehension: new_fellowship
+new_fellowship = [member if len(member)&amp;gt;=7 else &#39;&#39; for member in fellowship]
+
+# Print the new list
+print(new_fellowship)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;&#39;, &#39;samwise&#39;, &#39;&#39;, &#39;aragorn&#39;, &#39;legolas&#39;, &#39;boromir&#39;, &#39;&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Load data in chunks</title>
       <link>http://othrif.github.io/technical_note/python/pandas/file_chunks/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
