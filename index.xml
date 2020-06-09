@@ -6017,22 +6017,28 @@ Name: text, dtype: object
       <description>&lt;h3 id=&#34;loading-data-in-chunks&#34;&gt;Loading data in chunks&lt;/h3&gt;
 &lt;p&gt;the data we have to process reaches a size that is too much for a computer&amp;rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-counts_dict = {}
-csv_url=&#39;../datasets/tweets.csv&#39;
+def count_entries(csv_file, c_size, colname):
+    &amp;quot;&amp;quot;&amp;quot;Return a dictionary with counts of
+    occurrences as value for each key.&amp;quot;&amp;quot;&amp;quot;
+    
+    # Initialize an empty dictionary: counts_dict
+    counts_dict = {}
 
-# Iterate over the file chunk by chunk
-for chunk in pd.read_csv(csv_url, chunksize=10):
+    # Iterate over the file chunk by chunk
+    for chunk in pd.read_csv(csv_file, chunksize=c_size):
 
-    # Iterate over the column in DataFrame
-    for entry in chunk[&#39;lang&#39;]:
-        if entry in counts_dict.keys():
-            counts_dict[entry] += 1
-        else:
-            counts_dict[entry] = 1
+        # Iterate over the column in DataFrame
+        for entry in chunk[colname]:
+            if entry in counts_dict.keys():
+                counts_dict[entry] += 1
+            else:
+                counts_dict[entry] = 1
 
-# Print the populated dictionary
-print(counts_dict)
-
+    # Return counts_dict
+    return counts_dict
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;result_counts = count_entries(csv_file=&#39;../datasets/tweets.csv&#39;,c_size=10, colname=&#39;lang&#39;)
+print(result_counts)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;{&#39;en&#39;: 97, &#39;et&#39;: 1, &#39;und&#39;: 2}
 &lt;/code&gt;&lt;/pre&gt;
