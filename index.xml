@@ -3099,6 +3099,26 @@ oslo
     </item>
     
     <item>
+      <title>Dictionary comprehesion</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/dict_comprehesion/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/dict_comprehesion/</guid>
+      <description>&lt;p&gt;main difference between a list comprehension and a dict comprehension is the use of curly braces &lt;code&gt;{}&lt;/code&gt; instead of &lt;code&gt;[]&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a list of strings: fellowship
+fellowship = [&#39;frodo&#39;, &#39;samwise&#39;, &#39;merry&#39;, &#39;aragorn&#39;, &#39;legolas&#39;, &#39;boromir&#39;, &#39;gimli&#39;]
+
+# Create dict comprehension: new_fellowship
+new_fellowship = {member: len(member) for member in fellowship}
+
+# Print the new dictionary
+print(new_fellowship)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;frodo&#39;: 5, &#39;samwise&#39;: 7, &#39;merry&#39;: 5, &#39;aragorn&#39;: 7, &#39;legolas&#39;: 7, &#39;boromir&#39;: 7, &#39;gimli&#39;: 5}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Do not truncate column</title>
       <link>http://othrif.github.io/technical_note/python/pandas/no_truncate/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
