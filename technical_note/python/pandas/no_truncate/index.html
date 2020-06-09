@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import pandas as pd counts_dict = {} csv_url=&#39;../datasets/tweets.csv&#39; chunk = pd.read_csv(csv_url) print(chunk[&#39;text&#39;])  0 RT @bpolitics: .@krollbondrating&#39;s Christopher... 1 RT @HeidiAlpine: @dmartosko Cruz video found..... 2 Njihuni me Zonjën Trump !">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/no_truncate/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/no_truncate/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/no_truncate/">
+  <meta property="og:title" content="Do not truncate column | Othmane Rifki">
+  <meta property="og:description" content="import pandas as pd counts_dict = {} csv_url=&#39;../datasets/tweets.csv&#39; chunk = pd.read_csv(csv_url) print(chunk[&#39;text&#39;])  0 RT @bpolitics: .@krollbondrating&#39;s Christopher... 1 RT @HeidiAlpine: @dmartosko Cruz video found..... 2 Njihuni me Zonjën Trump !"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Do not truncate column | Othmane Rifki</title>
 
 </head>
 
@@ -552,182 +555,68 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/functions/" >Functions</a></h2>
-      <div class="article-style">
-        
-          Exit from function with conditions outer_condition=True condition_a=True condition_b=False def some_function(): if condition_a: # do something and return early print(f'condition a satisfied!') return if condition_b: # do something else and return early print(f'condition b satisfied!
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Do not truncate column</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/ascii/" >Get ASCII of a character</a></h2>
-      <div class="article-style">
-        
-          Get the int value of the char ord('a')  97  Get the char value of the ascii int chr(97)  'a'  Manipulations chr(ord('a') + 3)  'd'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
-      <div class="article-style">
-        
-          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
-mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
-      <div class="article-style">
-        
-          Iterarble and iterator an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call next() on it
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/join/" >Join strings</a></h2>
-      <div class="article-style">
-        
-          Basic join Syntax: str.join(iterable)
-x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'First_Second_Third'  num = '12345' '-'.join(num)  '1-2-3-4-5'  let = 'abcdefg' '.'.join(let)  'a.b.c.d.e.f.g'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/global/" >Key word global</a></h2>
-      <div class="article-style">
-        
-          the keyword global within a function to alter the value of a variable defined in the global scope.
-team = &quot;teen titans&quot; def change_team(): &quot;&quot;&quot;Change the value of the global variable team.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lambda/" >Lambda functions and map(), filter(), reduce()</a></h2>
-      <div class="article-style">
-        
-          Basic syntax lambda arguments : &lt;do something&gt;  myfunc = lambda a: a+'!!!' myfunc('hello')  'hello!!!'  Converting a function to lambda Compare the two functions and how lambda is much more concise
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/3/">&raquo;</a></li>
-    
-  </ul>
-</nav>
-
+  <pre><code class="language-python">import pandas as pd
+counts_dict = {}
+csv_url='../datasets/tweets.csv'
+chunk = pd.read_csv(csv_url)
+print(chunk['text'])
+</code></pre>
+<pre><code>0     RT @bpolitics: .@krollbondrating's Christopher...
+1     RT @HeidiAlpine: @dmartosko Cruz video found.....
+2     Njihuni me Zonjën Trump !!! | Ekskluzive https...
+3     Your an idiot she shouldn't have tried to grab...
+4     RT @AlanLohner: The anti-American D.C. elites ...
+                            ...                        
+95    RT @claytoncubitt: Stop asking Bernie supporte...
+96    Kasich is gonna fuck this up for Ted Cruz  htt...
+97    RT @akaMaude13: Seriously can't make this up. ...
+98    Kasich is gonna fuck this up for Ted Cruz  htt...
+99    @marklevinshow try reporting this truth. https...
+Name: text, Length: 100, dtype: object
+</code></pre>
+<pre><code class="language-python">pd.set_option('display.max_colwidth',None)
+print(chunk['text'])
+</code></pre>
+<pre><code>0     RT @bpolitics: .@krollbondrating's Christopher Whalen says Clinton is the weakest Dem candidate in 50 years https://t.co/pLk7rvoRSn https:/…
+1                               RT @HeidiAlpine: @dmartosko Cruz video found.....racing from the scene.... #cruzsexscandal https://t.co/zuAPZfQDk3
+2                                                                                 Njihuni me Zonjën Trump !!! | Ekskluzive https://t.co/4KmsQi47VD
+3                                       Your an idiot she shouldn't have tried to grab trump after the fact she's an idiot https://t.co/lpASyeNVpG
+4     RT @AlanLohner: The anti-American D.C. elites despise Trump for his America-first foreign policy. Trump threatens their gravy train. https:…
+                                                                          ...                                                                     
+95    RT @claytoncubitt: Stop asking Bernie supporters if they’ll vote for Hillary against Trump. We got a plan to beat Trump already. Called Ber…
+96                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+97                                                 RT @akaMaude13: Seriously can't make this up. What a joke. #NeverTrump  https://t.co/JkTx6mdRgC
+98                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+99                                                                                @marklevinshow try reporting this truth. https://t.co/z76fZzCRK3
+Name: text, Length: 100, dtype: object
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

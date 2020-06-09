@@ -1759,6 +1759,49 @@ median    23231.7600  9752.143956
     </item>
     
     <item>
+      <title>Do not truncate column</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/no_truncate/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/no_truncate/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+counts_dict = {}
+csv_url=&#39;../datasets/tweets.csv&#39;
+chunk = pd.read_csv(csv_url)
+print(chunk[&#39;text&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     RT @bpolitics: .@krollbondrating&#39;s Christopher...
+1     RT @HeidiAlpine: @dmartosko Cruz video found.....
+2     Njihuni me Zonjën Trump !!! | Ekskluzive https...
+3     Your an idiot she shouldn&#39;t have tried to grab...
+4     RT @AlanLohner: The anti-American D.C. elites ...
+                            ...                        
+95    RT @claytoncubitt: Stop asking Bernie supporte...
+96    Kasich is gonna fuck this up for Ted Cruz  htt...
+97    RT @akaMaude13: Seriously can&#39;t make this up. ...
+98    Kasich is gonna fuck this up for Ted Cruz  htt...
+99    @marklevinshow try reporting this truth. https...
+Name: text, Length: 100, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.set_option(&#39;display.max_colwidth&#39;,None)
+print(chunk[&#39;text&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     RT @bpolitics: .@krollbondrating&#39;s Christopher Whalen says Clinton is the weakest Dem candidate in 50 years https://t.co/pLk7rvoRSn https:/…
+1                               RT @HeidiAlpine: @dmartosko Cruz video found.....racing from the scene.... #cruzsexscandal https://t.co/zuAPZfQDk3
+2                                                                                 Njihuni me Zonjën Trump !!! | Ekskluzive https://t.co/4KmsQi47VD
+3                                       Your an idiot she shouldn&#39;t have tried to grab trump after the fact she&#39;s an idiot https://t.co/lpASyeNVpG
+4     RT @AlanLohner: The anti-American D.C. elites despise Trump for his America-first foreign policy. Trump threatens their gravy train. https:…
+                                                                          ...                                                                     
+95    RT @claytoncubitt: Stop asking Bernie supporters if they’ll vote for Hillary against Trump. We got a plan to beat Trump already. Called Ber…
+96                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+97                                                 RT @akaMaude13: Seriously can&#39;t make this up. What a joke. #NeverTrump  https://t.co/JkTx6mdRgC
+98                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+99                                                                                @marklevinshow try reporting this truth. https://t.co/z76fZzCRK3
+Name: text, Length: 100, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Explicit indexing in DataFrames</title>
       <link>http://othrif.github.io/technical_note/python/pandas/explicitindex/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -3462,6 +3505,36 @@ cars.loc[[&#39;RU&#39;]]
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load data in chunks</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/file_chunks/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/file_chunks/</guid>
+      <description>&lt;h3 id=&#34;loading-data-in-chunks&#34;&gt;Loading data in chunks&lt;/h3&gt;
+&lt;p&gt;the data we have to process reaches a size that is too much for a computer&amp;rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+counts_dict = {}
+csv_url=&#39;../datasets/tweets.csv&#39;
+
+# Iterate over the file chunk by chunk
+for chunk in pd.read_csv(csv_url, chunksize=10):
+
+    # Iterate over the column in DataFrame
+    for entry in chunk[&#39;lang&#39;]:
+        if entry in counts_dict.keys():
+            counts_dict[entry] += 1
+        else:
+            counts_dict[entry] = 1
+
+# Print the populated dictionary
+print(counts_dict)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;en&#39;: 97, &#39;et&#39;: 1, &#39;und&#39;: 2}
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

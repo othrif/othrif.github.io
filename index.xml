@@ -3075,6 +3075,49 @@ oslo
     </item>
     
     <item>
+      <title>Do not truncate column</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/no_truncate/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/no_truncate/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+counts_dict = {}
+csv_url=&#39;../datasets/tweets.csv&#39;
+chunk = pd.read_csv(csv_url)
+print(chunk[&#39;text&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     RT @bpolitics: .@krollbondrating&#39;s Christopher...
+1     RT @HeidiAlpine: @dmartosko Cruz video found.....
+2     Njihuni me Zonjën Trump !!! | Ekskluzive https...
+3     Your an idiot she shouldn&#39;t have tried to grab...
+4     RT @AlanLohner: The anti-American D.C. elites ...
+                            ...                        
+95    RT @claytoncubitt: Stop asking Bernie supporte...
+96    Kasich is gonna fuck this up for Ted Cruz  htt...
+97    RT @akaMaude13: Seriously can&#39;t make this up. ...
+98    Kasich is gonna fuck this up for Ted Cruz  htt...
+99    @marklevinshow try reporting this truth. https...
+Name: text, Length: 100, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;pd.set_option(&#39;display.max_colwidth&#39;,None)
+print(chunk[&#39;text&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0     RT @bpolitics: .@krollbondrating&#39;s Christopher Whalen says Clinton is the weakest Dem candidate in 50 years https://t.co/pLk7rvoRSn https:/…
+1                               RT @HeidiAlpine: @dmartosko Cruz video found.....racing from the scene.... #cruzsexscandal https://t.co/zuAPZfQDk3
+2                                                                                 Njihuni me Zonjën Trump !!! | Ekskluzive https://t.co/4KmsQi47VD
+3                                       Your an idiot she shouldn&#39;t have tried to grab trump after the fact she&#39;s an idiot https://t.co/lpASyeNVpG
+4     RT @AlanLohner: The anti-American D.C. elites despise Trump for his America-first foreign policy. Trump threatens their gravy train. https:…
+                                                                          ...                                                                     
+95    RT @claytoncubitt: Stop asking Bernie supporters if they’ll vote for Hillary against Trump. We got a plan to beat Trump already. Called Ber…
+96                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+97                                                 RT @akaMaude13: Seriously can&#39;t make this up. What a joke. #NeverTrump  https://t.co/JkTx6mdRgC
+98                                                                              Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R
+99                                                                                @marklevinshow try reporting this truth. https://t.co/z76fZzCRK3
+Name: text, Length: 100, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Enumerate a dictionary</title>
       <link>http://othrif.github.io/technical_note/python/basics/enumerate/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -5136,6 +5179,182 @@ cars.loc[[&#39;RU&#39;]]
     </item>
     
     <item>
+      <title>Iterables with enumerate() and zip()</title>
+      <link>http://othrif.github.io/technical_note/python/basics/iterators_enum_zip/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/iterators_enum_zip/</guid>
+      <description>&lt;h3 id=&#34;using-enumerate&#34;&gt;Using &lt;code&gt;enumerate()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;enumerate()&lt;/code&gt; returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mutants = [&#39;charles xavier&#39;, 
+            &#39;bobby drake&#39;, 
+            &#39;kurt wagner&#39;, 
+            &#39;max eisenhardt&#39;, 
+            &#39;kitty pryde&#39;]
+
+# Create a list of tuples
+mutant_list = list(enumerate(mutants))
+print(mutant_list)
+
+# Unpack and print the tuple pairs
+for index1,value1 in enumerate(mutants):
+    print(index1, value1)
+
+# Change the start index
+for index2,value2 in enumerate(mutants, start=1):
+    print(index2, value2)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(0, &#39;charles xavier&#39;), (1, &#39;bobby drake&#39;), (2, &#39;kurt wagner&#39;), (3, &#39;max eisenhardt&#39;), (4, &#39;kitty pryde&#39;)]
+0 charles xavier
+1 bobby drake
+2 kurt wagner
+3 max eisenhardt
+4 kitty pryde
+1 charles xavier
+2 bobby drake
+3 kurt wagner
+4 max eisenhardt
+5 kitty pryde
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-zip&#34;&gt;Using &lt;code&gt;zip()&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;takes any number of iterables and returns a zip object that is an iterator of tuples. If you wanted to print the values of a zip object, you can convert it into a list and then print it. Printing just a zip object will not return the values unless you unpack it first.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mutants=[&#39;charles xavier&#39;, &#39;bobby drake&#39;, &#39;kurt wagner&#39;, &#39;max eisenhardt&#39;, &#39;kitty pryde&#39;]
+aliases=[&#39;prof x&#39;, &#39;iceman&#39;, &#39;nightcrawler&#39;, &#39;magneto&#39;, &#39;shadowcat&#39;]
+powers=[&#39;telepathy&#39;, &#39;thermokinesis&#39;, &#39;teleportation&#39;, &#39;magnetokinesis&#39;, &#39;intangibility&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a list of tuples
+mutant_data = list(zip(mutants,aliases,powers))
+print(mutant_data)
+
+# Create a zip object using the three lists
+mutant_zip = zip(mutants,aliases,powers)
+print(mutant_zip)
+
+# Unpack the zip object and print the tuple values
+for value1,value2,value3 in mutant_zip:
+    print(value1, value2, value3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[(&#39;charles xavier&#39;, &#39;prof x&#39;, &#39;telepathy&#39;), (&#39;bobby drake&#39;, &#39;iceman&#39;, &#39;thermokinesis&#39;), (&#39;kurt wagner&#39;, &#39;nightcrawler&#39;, &#39;teleportation&#39;), (&#39;max eisenhardt&#39;, &#39;magneto&#39;, &#39;magnetokinesis&#39;), (&#39;kitty pryde&#39;, &#39;shadowcat&#39;, &#39;intangibility&#39;)]
+&amp;lt;zip object at 0x10ac88b88&amp;gt;
+charles xavier prof x telepathy
+bobby drake iceman thermokinesis
+kurt wagner nightcrawler teleportation
+max eisenhardt magneto magnetokinesis
+kitty pryde shadowcat intangibility
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using--and-zip-to-unzip&#34;&gt;Using * and zip to &amp;lsquo;unzip&amp;rsquo;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;*&lt;/code&gt; unpacks an iterable such as a list or a tuple into positional arguments in a function call.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a zip object from mutants and powers
+z1 = zip(mutants,powers)
+
+# Print the tuples in z1 by unpacking with *
+print(*z1)
+
+# Re-create a zip object from mutants and powers, as the print(*) exhausted all elements of z1
+z1 = zip(mutants,powers)
+
+# &#39;Unzip&#39; the tuples in z1 by unpacking with * and zip(): result1, result2
+result1, result2 = zip(*z1)
+
+# Check if unpacked tuples are equivalent to original tuples
+print(result1 == mutants)
+print(result2 == powers)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(&#39;charles xavier&#39;, &#39;telepathy&#39;) (&#39;bobby drake&#39;, &#39;thermokinesis&#39;) (&#39;kurt wagner&#39;, &#39;teleportation&#39;) (&#39;max eisenhardt&#39;, &#39;magnetokinesis&#39;) (&#39;kitty pryde&#39;, &#39;intangibility&#39;)
+False
+False
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Iterables with itr() and next()</title>
+      <link>http://othrif.github.io/technical_note/python/basics/iterators/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/iterators/</guid>
+      <description>&lt;h3 id=&#34;iterarble-and-iterator&#34;&gt;Iterarble and iterator&lt;/h3&gt;
+&lt;p&gt;an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call &lt;code&gt;next()&lt;/code&gt; on it&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;flash = [&#39;jay garrick&#39;, &#39;barry allen&#39;, &#39;wally west&#39;, &#39;bart allen&#39;]
+
+# Print each list item in flash using a for loop
+for item in flash:
+    print(&#39;for-loop:&#39;+item)
+
+
+# Create an iterator for flash: superhero
+superhero = iter(flash)
+
+# Print each item from the iterator
+print(&#39;next-iter:&#39;+next(superhero))
+print(&#39;next-iter:&#39;+next(superhero))
+print(&#39;next-iter:&#39;+next(superhero))
+print(&#39;next-iter:&#39;+next(superhero))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;for-loop:jay garrick
+for-loop:barry allen
+for-loop:wally west
+for-loop:bart allen
+next-iter:jay garrick
+next-iter:barry allen
+next-iter:wally west
+next-iter:bart allen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;iterator-with-range&#34;&gt;Iterator with &lt;code&gt;range()&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;small_value = iter(range(3))
+
+print(&#39;next-iter:&#39;+str(next(small_value)))
+print(&#39;next-iter:&#39;+str(next(small_value)))
+print(&#39;next-iter:&#39;+str(next(small_value)))
+
+for i in range(3):
+    print(&#39;for-loop:&#39;+str(i))
+
+
+# Create an iterator for range(10 ** 100): googol
+googol = iter(range(10 ** 100))
+
+# Print the first 5 values from googol
+print(&#39;googol:&#39;+str(next(googol)))
+print(&#39;googol:&#39;+str(next(googol)))
+print(&#39;googol:&#39;+str(next(googol)))
+print(&#39;googol:&#39;+str(next(googol)))
+print(&#39;googol:&#39;+str(next(googol)))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;next-iter:0
+next-iter:1
+next-iter:2
+for-loop:0
+for-loop:1
+for-loop:2
+googol:0
+googol:1
+googol:2
+googol:3
+googol:4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;functions-that-take-iterators-and-iterables-as-arguments&#34;&gt;Functions that take iterators and iterables as arguments&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;values = range(10,21)
+print(values)
+
+
+values_list = list(values)
+print(values_list)
+
+
+values_sum = sum(values)
+print(values_sum)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;range(10, 21)
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+165
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Iterate over vector or array</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/iteration/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -5640,6 +5859,182 @@ print(f&#39;x={x}, y={y}&#39;)
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;b
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;[&#39;E&#39;, &#39;L&#39;, &#39;L&#39;, &#39;O&#39;, &#39;W&#39;, &#39;O&#39;, &#39;R&#39;, &#39;L&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load data in chunks</title>
+      <link>http://othrif.github.io/technical_note/python/basics/iterators_file/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/iterators_file/</guid>
+      <description>&lt;h3 id=&#34;loading-data-in-chunks&#34;&gt;Loading data in chunks&lt;/h3&gt;
+&lt;p&gt;the data we have to process reaches a size that is too much for a computer&amp;rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+counts_dict = {}
+csv_url=&#39;../datasets/tweets.csv&#39;
+pd.set_option(&#39;display.max_colwidth&#39;,-1)
+# Iterate over the file chunk by chunk
+for chunk in pd.read_csv(csv_url, chunksize=10):
+    print(chunk[&#39;text&#39;])
+    # Iterate over the column in DataFrame
+    for entry in chunk[&#39;lang&#39;]:
+        if entry in counts_dict.keys():
+            counts_dict[entry] += 1
+        else:
+            counts_dict[entry] = 1
+
+# Print the populated dictionary
+print(counts_dict)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0    RT @bpolitics: .@krollbondrating&#39;s Christopher Whalen says Clinton is the weakest Dem candidate in 50 years https://t.co/pLk7rvoRSn https:/…
+1    RT @HeidiAlpine: @dmartosko Cruz video found.....racing from the scene.... #cruzsexscandal https://t.co/zuAPZfQDk3                          
+2    Njihuni me Zonjën Trump !!! | Ekskluzive https://t.co/4KmsQi47VD                                                                            
+3    Your an idiot she shouldn&#39;t have tried to grab trump after the fact she&#39;s an idiot https://t.co/lpASyeNVpG                                  
+4    RT @AlanLohner: The anti-American D.C. elites despise Trump for his America-first foreign policy. Trump threatens their gravy train. https:…
+5    RT @BIackPplTweets: Young Donald trump meets his neighbor  https://t.co/RFlu17Z1eE                                                          
+6    RT @trumpresearch: @WaitingInBagdad @thehill Trump supporters have selective amnisia.                                                       
+7    RT @HouseCracka: 29,000+ PEOPLE WATCHING TRUMP LIVE ON ONE STREAM!!!\n\nhttps://t.co/7QCFz9ehNe                                             
+8    RT @urfavandtrump: RT for Brendon Urie\nFav for Donald Trump https://t.co/PZ5vS94lOg                                                        
+9    RT @trapgrampa: This is how I see #Trump every time he speaks. https://t.co/fYSiHNS0nT                                                      
+Name: text, dtype: object
+10    RT @trumpresearch: @WaitingInBagdad @thehill Trump supporters have selective amnisia.                                                        
+11    RT @Pjw20161951: NO KIDDING: #SleazyDonald just attacked Scott Walker for NOT RAISING TAXES in WI! #LyinTrump\n#NeverTrump  #CruzCrew  https…
+12    RT @urfavandtrump: RT for Brendon Urie\nFav for Donald Trump https://t.co/PZ5vS94lOg                                                         
+13    RT @ggreenwald: The media spent all day claiming @SusanSarandon said she might vote for Trump. A total fabrication, but whatever... https:/… 
+14    RT @Pjw20161951: NO KIDDING: #SleazyDonald just attacked Scott Walker for NOT RAISING TAXES in WI! #LyinTrump\n#NeverTrump  #CruzCrew  https…
+15    RT @trapgrampa: This is how I see #Trump every time he speaks. https://t.co/fYSiHNS0nT                                                       
+16    RT @mitchellvii: So let me get this straight.  Any reporter can assault Mr Trump at any time and Corey can do nothing?  Michelle is clearly… 
+17    Your an idiot she shouldn&#39;t have tried to grab trump after the fact she&#39;s an idiot https://t.co/lpASyeNVpG                                   
+18    RT @paulbenedict7: How #Trump Sacks RINO Strongholds by Hitting Positions Held by Dems and GOP https://t.co/D7ulnAJhis   #tcot #PJNET https… 
+19    RT @DRUDGE_REPORT: VIDEO:  Trump emotional moment with Former Miss Wisconsin who has terminal illness... https://t.co/qt06aG9inT             
+Name: text, dtype: object
+20    #HillYes #ImWithHer #RollHillary @HillaryClinton  https://t.co/OwYXKIalyn                                                                   
+21    RT @ggreenwald: The media spent all day claiming @SusanSarandon said she might vote for Trump. A total fabrication, but whatever... https:/…
+22    RT @DennisApgar: Thank God I seen Trump at first stop in Wisconsin media doesn&#39;t know how great he is, advice watch live streaming https://…
+23    RT @paulbenedict7: How #Trump Sacks RINO Strongholds by Hitting Positions Held by Dems and GOP https://t.co/D7ulnAJhis   #tcot #PJNET https…
+24    RT @DRUDGE_REPORT: VIDEO:  Trump emotional moment with Former Miss Wisconsin who has terminal illness... https://t.co/qt06aG9inT            
+25    RT @DennisApgar: Thank God I seen Trump at first stop in Wisconsin media doesn&#39;t know how great he is, advice watch live streaming https://…
+26    RT @mitchellvii: So let me get this straight.  Any reporter can assault Mr Trump at any time and Corey can do nothing?  Michelle is clearly…
+27    Trump won&#39;t do a yes ma&#39;am for this.  https://t.co/r3WkGZDjPH                                                                               
+28    RT @sciam: Trump&#39;s idiosyncratic patterns of speech are why people tend either to love or hate him https://t.co/QXwquVgs3c https://t.co/P9N…
+29    #HillYes #ImWithHer #RollHillary @HillaryClinton  https://t.co/OwYXKIalyn                                                                   
+Name: text, dtype: object
+30    RT @Norsu2: Nightmare WI poll for Ted Cruz has Kasich surging: Trump 29, Kasich 27, Cruz 25. https://t.co/lJsgbLYY1P #NeverTrump                
+31    RT @thehill: WATCH: Protester pepper-sprayed point blank at Trump rally https://t.co/B5f65Al9ld https://t.co/skAfByXuQc                         
+32    RT @sciam: Trump&#39;s idiosyncratic patterns of speech are why people tend either to love or hate him https://t.co/QXwquVgs3c https://t.co/P9N…    
+33    RT @ggreenwald: The media spent all day claiming @SusanSarandon said she might vote for Trump. A total fabrication, but whatever... https:/…    
+34    Opinion: The big story is -- Sanders https://t.co/9Z9ZVnZ1Zi                                                                                    
+35    GOP speechwriter: By November, Ivanka will be voting for Clinton | TheHill https://t.co/tUT7LpEHak                                              
+36    This dude must have some serious issues  https://t.co/ojYaDpnSoe                                                                                
+37    RT @DebbieStout5: Wow! Last I checked it was just 12 points &amp;amp;amp; that wasn&#39;t more than a day ago. Oh boy Trump ppl might want to rethink🤔 http…
+38    RT @tyleroakley: i&#39;m a messy bitch, but at least i&#39;m not voting for trump                                                                       
+39    RT @vandives: Trump supporters r tired of justice NOT being served. There&#39;s no justice anymore. Hardworking Americans get screwed. That&#39;s n…    
+Name: text, dtype: object
+40    Opinion: The big story is -- Sanders https://t.co/9Z9ZVnZ1Zi                                                                                  
+41    RT @AP: BREAKING: Trump vows to stand by campaign manager charged with battery, says he does not discard people.                              
+42    It Cometh from the Pit. And Hath a Knout https://t.co/iyF5HPDJNU\n#Trump\n#Election2016 https://t.co/W4ZXQfUHi8                               
+43    RT @AP: BREAKING: Trump vows to stand by campaign manager charged with battery, says he does not discard people.                              
+44    @footlooseracer @hautedamn @z0mgItsHutch So much sadness and pure stupidity from the people who support Trump. Very sad.                      
+45    RT @urfavandtrump: RT for Jerrie (Little Mix)\nFav for Donald Trump https://t.co/nEVxElW6iG                                                   
+46    RT @urfavandtrump: RT for Jerrie (Little Mix)\nFav for Donald Trump https://t.co/nEVxElW6iG                                                   
+47    PSA: @piersmorgan is a asshole. https://t.co/2Gjp2NPo0w                                                                                       
+48    RT @NoahCRothman: When Walker was fighting for reforms, Trump was defending unions and collective bargaining privileges https://t.co/e1UWNN…  
+49    RT @RedheadAndRight: Report: Secret Service Says Michelle Fields Touched Trump https://t.co/c5c2sD8VO2\n\nThis is the only article you will n…
+Name: text, dtype: object
+50    Me listening to DONALD TRUMP saying that he has no small hands ( allegedly ) https://t.co/LhUYdi8Vgf https://t.co/IwD9Lg84HY                  
+51    RT @AIIAmericanGirI: VIDEO=&amp;amp;gt; Anti-Trump Protester SLUGS Elderly Trump Supporter in the Face\nhttps://t.co/GeEryMDuDY                       
+52    RT @NoahCRothman: When Walker was fighting for reforms, Trump was defending unions and collective bargaining privileges https://t.co/e1UWNN…  
+53    PSA: @piersmorgan is a asshole. https://t.co/2Gjp2NPo0w                                                                                       
+54    RT @JusticeRanger1: @realDonaldTrump @Pudingtane @DanScavino @GOP @infowars @EricTrump \nURGENT PUBLIC TRUMP ALERT:\nCOVERT KILL MEANS https:…
+55    RT @AIIAmericanGirI: VIDEO=&amp;amp;gt; Anti-Trump Protester SLUGS Elderly Trump Supporter in the Face\nhttps://t.co/GeEryMDuDY                       
+56    Susan Sarandon Shares Interesting Opinion on Donald Trump https://t.co/Gjzkpr5mrH                                                             
+57    RT @RedheadAndRight: Report: Secret Service Says Michelle Fields Touched Trump https://t.co/c5c2sD8VO2\n\nThis is the only article you will n…
+58    @jbrading dude you are annoying af. Deion sanders fucking hates you guys.                                                                     
+59    RT @JusticeRanger1: @realDonaldTrump @Pudingtane @DanScavino @GOP @infowars @EricTrump \nURGENT PUBLIC TRUMP ALERT:\nCOVERT KILL MEANS https:…
+Name: text, dtype: object
+60    RT @Schneider_CM: Trump says nobody had ever heard of executive orders before Obama started signing them. Never heard of the Emancipation P…
+61    RT @RonBasler1: @DavidWhitDennis @realDonaldTrump @tedcruz \n\nCRUZ SCREWS HOOKERS\n\nCRUZ / CLINTON                                        
+62    Susan Sarandon Shares Interesting Opinion on Donald Trump https://t.co/Gjzkpr5mrH                                                           
+63    @realDonaldTrump Its too bad Cruz doesn&#39;t have enough brains to realize he&#39;s being led down the primrose lane to be neutered by the Elites!!
+64    RT @DonaldsAngel: Former Ms. WI just said that she is terminally ill but because of Trump pageant, her 7 yr. old son has his college educat…
+65    Photo: #Donald #Trump #Protest in #Milwaukee ahead of CNN GOP #Town #Hall with #Trump, Ted #Cruz, ... https://t.co/8NOguZUSCK               
+66    RT @Schneider_CM: Trump says nobody had ever heard of executive orders before Obama started signing them. Never heard of the Emancipation P…
+67    @jbrading dude you are annoying af. Deion sanders fucking hates you guys.                                                                   
+68    RT @DonaldsAngel: Former Ms. WI just said that she is terminally ill but because of Trump pageant, her 7 yr. old son has his college educat…
+69    Photo: #Donald #Trump #Protest in #Milwaukee ahead of CNN GOP #Town #Hall with #Trump, Ted #Cruz, ... https://t.co/8NOguZUSCK               
+Name: text, dtype: object
+70    RT @Dodarey: @DR8801 @SykesCharlie Charlie, let&#39;s see you get a straight &amp;quot;yes&amp;quot; or &amp;quot;no&amp;quot; answer from Cruz a/b being unfaithful to his wife @T… 
+71    RT @RonBasler1: @DavidWhitDennis @realDonaldTrump @tedcruz \n\nCRUZ SCREWS HOOKERS\n\nCRUZ / CLINTON                                         
+72    RT @RockCliffOne: Remember when the idea of a diabolical moron holding the world hostage was an idea for a funny movie? #Trump #GOP https:/… 
+73    RT @HillaryClinton: &amp;quot;Every day, another Republican bemoans the rise of Donald Trump... but [he] didn’t come out of nowhere.&amp;quot; —Hillary\nhttps…
+74    @realDonaldTrump @MELANIATRUMP Get Them Good Mr.Trump ,Great Picture of You and The First Lady                                               
+75    @realDonaldTrump Its too bad Cruz doesn&#39;t have enough brains to realize he&#39;s being led down the primrose lane to be neutered by the Elites!! 
+76    I just saw this. I&#39;m speechless.  https://t.co/cmUYxtrX0Y                                                                                    
+77    RT @Dodarey: @DR8801 @SykesCharlie Charlie, let&#39;s see you get a straight &amp;quot;yes&amp;quot; or &amp;quot;no&amp;quot; answer from Cruz a/b being unfaithful to his wife @T… 
+78    I just saw this. I&#39;m speechless.  https://t.co/cmUYxtrX0Y                                                                                    
+79    Trump campaign chief charged with battery https://t.co/SpIukqj3Rb                                                                            
+Name: text, dtype: object
+80    RT @HillaryClinton: &amp;quot;Every day, another Republican bemoans the rise of Donald Trump... but [he] didn’t come out of nowhere.&amp;quot; —Hillary\nhttps…
+81    @realDonaldTrump @MELANIATRUMP Get Them Good Mr.Trump ,Great Picture of You and The First Lady                                               
+82    RT @RockCliffOne: Remember when the idea of a diabolical moron holding the world hostage was an idea for a funny movie? #Trump #GOP https:/… 
+83    RT @immigrant4trump: @immigrant4trump msm, cable news attacking trump all day, from 8am to 10pm today, then the reruns come on, repeating t… 
+84    @ErinBurnett @Bakari_Sellers @benfergusonshow @BernieSanders Again @CNN allows Jeff Lord far too much time to spin wacky Trump.              
+85    RT @immigrant4trump: @immigrant4trump msm, cable news attacking trump all day, from 8am to 10pm today, then the reruns come on, repeating t… 
+86    @ErinBurnett @Bakari_Sellers @benfergusonshow @BernieSanders Again @CNN allows Jeff Lord far too much time to spin wacky Trump.              
+87    @noreallyhowcome @TVineberg Learn about Bernie https://t.co/bhaUnQ4jrr Learn about Hillary https://t.co/eAbfWrAG4G https://t.co/W53JJCkDFv   
+88    RT @GlendaJazzey: Donald Trump’s Campaign Financing Dodge, @rrotunda https://t.co/L8flI4lswG via @VerdictJustia                              
+89    Trump who prides himself on the ability to spot a good deal missed out on a big one in Louisiana. C&#39;est la vie.  https://t.co/MZrvWwTWZV     
+Name: text, dtype: object
+90    Judicial Watch: Obama Administration Withholds Draft Whitewater Indictment of Hillary Clinton https://t.co/EuW9J1WVm1                       
+91    I don&#39;t understand how anyone can support a hateful person like @realDonaldTrump  https://t.co/BbYMxRWadC                                   
+92    RT @TUSK81: LOUDER FOR THE PEOPLE IN THE BACK https://t.co/hlPVyNLXzx                                                                       
+93    RT @loopzoop: Well...put it back https://t.co/8Yb7BDT5VM                                                                                    
+94    Donald Trump: Victim. https://t.co/qvK17ZnUTZ                                                                                               
+95    RT @claytoncubitt: Stop asking Bernie supporters if they’ll vote for Hillary against Trump. We got a plan to beat Trump already. Called Ber…
+96    Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R                                                                          
+97    RT @akaMaude13: Seriously can&#39;t make this up. What a joke. #NeverTrump  https://t.co/JkTx6mdRgC                                             
+98    Kasich is gonna fuck this up for Ted Cruz  https://t.co/JYYok5qx7R                                                                          
+99    @marklevinshow try reporting this truth. https://t.co/z76fZzCRK3                                                                            
+Name: text, dtype: object
+{&#39;en&#39;: 97, &#39;et&#39;: 1, &#39;und&#39;: 2}
+
+
+/Users/othmanerifki/Library/Python/3.7/lib/python/site-packages/ipykernel_launcher.py:4: FutureWarning: Passing a negative integer is deprecated in version 1.0 and will not be supported in future version. Instead, use None to not limit the column width.
+  after removing the cwd from sys.path.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Load data in chunks</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/file_chunks/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/file_chunks/</guid>
+      <description>&lt;h3 id=&#34;loading-data-in-chunks&#34;&gt;Loading data in chunks&lt;/h3&gt;
+&lt;p&gt;the data we have to process reaches a size that is too much for a computer&amp;rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+counts_dict = {}
+csv_url=&#39;../datasets/tweets.csv&#39;
+
+# Iterate over the file chunk by chunk
+for chunk in pd.read_csv(csv_url, chunksize=10):
+
+    # Iterate over the column in DataFrame
+    for entry in chunk[&#39;lang&#39;]:
+        if entry in counts_dict.keys():
+            counts_dict[entry] += 1
+        else:
+            counts_dict[entry] = 1
+
+# Print the populated dictionary
+print(counts_dict)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;en&#39;: 97, &#39;et&#39;: 1, &#39;und&#39;: 2}
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

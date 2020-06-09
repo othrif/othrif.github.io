@@ -193,6 +193,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/no_truncate/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/enumerate/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -238,6 +243,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/iterators_enum_zip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/iterators/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/cpp/basics/iteration/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -274,6 +289,16 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/lists/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/iterators_file/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/file_chunks/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
