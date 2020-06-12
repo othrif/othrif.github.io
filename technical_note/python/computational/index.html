@@ -31,7 +31,7 @@
   <meta name="description" content="Postdoctoral Fellow">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/computational/">
 
   
 
@@ -211,14 +211,14 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
+  <link rel="alternate" href="/technical_note/python/computational/index.xml" type="application/rss+xml" title="Othmane Rifki">
   
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/computational/">
 
   
   
@@ -232,7 +232,7 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/computational/">
   <meta property="og:title" content=" | Othmane Rifki">
   <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
@@ -593,58 +593,11 @@
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/" ></a></h2>
+      <h2><a href="/technical_note/python/computational/secant/" >Secant method</a></h2>
       <div class="article-style">
         
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/computational/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlib/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/numpy/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/performance/" ></a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
+          Root-finding algorithm that has $(1+\sqrt{5})/2$ convergence.
+def secant_method(f, x0, x1, iterations): &quot;&quot;&quot;Return the root calculated using the secant method.&quot;&quot;&quot; for i in range(iterations): x2 = x1 - f(x1) * (x1 - x0) / float(f(x1) - f(x0)) x0, x1 = x1, x2 return x2 def f_example(x): return x**2 - 612 root = secant_method(f_example, 10, 30, 5) print(&quot;Root: {}&quot;.
         
       </div>
     </div>

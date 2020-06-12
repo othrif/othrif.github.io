@@ -7941,6 +7941,33 @@ again
     </item>
     
     <item>
+      <title>Secant method</title>
+      <link>http://othrif.github.io/technical_note/python/computational/secant/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/computational/secant/</guid>
+      <description>&lt;p&gt;Root-finding algorithm that has $(1+\sqrt{5})/2$ convergence.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def secant_method(f, x0, x1, iterations):
+    &amp;quot;&amp;quot;&amp;quot;Return the root calculated using the secant method.&amp;quot;&amp;quot;&amp;quot;
+    for i in range(iterations):
+        x2 = x1 - f(x1) * (x1 - x0) / float(f(x1) - f(x0))
+        x0, x1 = x1, x2
+    return x2
+
+def f_example(x):
+    return x**2 - 612
+
+root = secant_method(f_example, 10, 30, 5)
+
+print(&amp;quot;Root: {}&amp;quot;.format(root))  # Root: 24.738633748750722
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Root: 24.738633748750722
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Slicing and subsetting with .loc and .iloc</title>
       <link>http://othrif.github.io/technical_note/python/pandas/indexlociloc/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
