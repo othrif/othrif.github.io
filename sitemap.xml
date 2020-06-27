@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://othrif.github.io/technical_note/codingproblems/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/cpp/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -163,6 +168,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/codingproblems/anagram/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/commandline/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -239,6 +249,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/linux/search/find_files/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/codingproblems/wordadded/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
