@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Handling exception Built-in exceptions inherit from class BaseException or Exception
+# MODIFY the function to catch exceptions def invert_at_index(x, ind): try: return 1/x[ind] except ZeroDivisionError: print(&quot;Cannot divide by zero!&quot;) except IndexError: print(&quot;Index out of range!">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/custom_exception/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/custom_exception/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/custom_exception/">
+  <meta property="og:title" content="Custom exception | Othmane Rifki">
+  <meta property="og:description" content="Handling exception Built-in exceptions inherit from class BaseException or Exception
+# MODIFY the function to catch exceptions def invert_at_index(x, ind): try: return 1/x[ind] except ZeroDivisionError: print(&quot;Cannot divide by zero!&quot;) except IndexError: print(&quot;Index out of range!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Custom exception | Othmane Rifki</title>
 
 </head>
 
@@ -552,181 +557,151 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/custom_exception/" >Custom exception</a></h2>
-      <div class="article-style">
-        
-          Handling exception Built-in exceptions inherit from class BaseException or Exception
-# MODIFY the function to catch exceptions def invert_at_index(x, ind): try: return 1/x[ind] except ZeroDivisionError: print(&quot;Cannot divide by zero!&quot;) except IndexError: print(&quot;Index out of range!
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Custom exception</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/datetime/" >Datetime</a></h2>
-      <div class="article-style">
-        
-          Convert string to datetime datetime.strptime(date_string, format)
-from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strptime(date_string, '%m/%d/%Y %I:%M:%S %p')  datetime.datetime(2019, 3, 1, 0, 0)  Find last month import datetime today = datetime.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/dictionary/" >Dictionaries</a></h2>
-      <div class="article-style">
-        
-          Basics # Definition of dictionary europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin', 'norway':'oslo' } # Print out the keys in europe print(europe.keys()) # Print out value that belongs to key 'norway' print(europe['norway'])  dict_keys(['spain', 'france', 'germany', 'norway']) oslo  Add/Remove an element europe['italy'] = 'rome'  europe  {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}  del(europe['france'])  europe  {'spain': 'madrid', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/enumerate/" >Enumerate a dictionary</a></h2>
-      <div class="article-style">
-        
-          Enumerate through both keys and values example_dict = {1:'a', 2:'b', 3:'c', 4:'d'} for i, (k, v) in enumerate(example_dict.items()): print(i, k, v)  0 1 a 1 2 b 2 3 c 3 4 d  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/exception/" >Error and exception</a></h2>
-      <div class="article-style">
-        
-          Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word='' shout_words='' # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word+'!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
-      <div class="article-style">
-        
-          Preliminary import os  Current location print(f'Current location is: {os.getcwd()!r}')  Current location is: '/Users/othmanerifki/projects/website/othrif.hugo/content/technical_note/python/basics'  Create dir if it does not exist path='/tmp/test' if not os.path.exists(path): os.mkdir(path)  Check by going to the newly created area and outputing path os.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/functions/" >Functions</a></h2>
-      <div class="article-style">
-        
-          Exit from function with conditions outer_condition=True condition_a=True condition_b=False def some_function(): if condition_a: # do something and return early print(f'condition a satisfied!') return if condition_b: # do something else and return early print(f'condition b satisfied!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/ascii/" >Get ASCII of a character</a></h2>
-      <div class="article-style">
-        
-          Get the int value of the char ord('a')  97  Get the char value of the ascii int chr(97)  'a'  Manipulations chr(ord('a') + 3)  'd'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
-      <div class="article-style">
-        
-          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
-mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
-      <div class="article-style">
-        
-          Iterarble and iterator an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call next() on it
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/3/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+  <h3 id="handling-exception">Handling exception</h3>
+<p>Built-in exceptions inherit from class <code>BaseException</code> or <code>Exception</code></p>
+<pre><code class="language-python"># MODIFY the function to catch exceptions
+def invert_at_index(x, ind):
+    try:
+        return 1/x[ind]
+    except ZeroDivisionError:
+        print(&quot;Cannot divide by zero!&quot;)
+    except IndexError:
+        print(&quot;Index out of range!&quot;)
+ 
+a = [5,6,0,7]
 
+# Works okay
+print(invert_at_index(a, 1))
+
+# Potential ZeroDivisionError
+print(invert_at_index(a, 2))
+
+# Potential IndexError
+print(invert_at_index(a, 5))
+</code></pre>
+<pre><code>0.16666666666666666
+Cannot divide by zero!
+None
+Index out of range!
+None
+</code></pre>
+<h3 id="custom-exception">Custom exception</h3>
+<p>Need to define an exception is a class inherited from the built-in <code>Exception</code> class or one of its subclasses.</p>
+<pre><code class="language-python">class SalaryError(ValueError): pass
+class BonusError(SalaryError): pass
+
+class Employee:
+  MIN_SALARY = 30000
+  MAX_BONUS = 5000
+
+  def __init__(self, name, salary = 30000):
+    self.name = name    
+    if salary &lt; Employee.MIN_SALARY:
+      raise SalaryError(&quot;Salary is too low!&quot;)      
+    self.salary = salary
+    
+  # Rewrite using exceptions  
+  def give_bonus(self, amount):
+    if amount &gt; Employee.MAX_BONUS:
+        raise BonusError(&quot;The bonus amount is too high!&quot;)  
+        
+    elif self.salary + amount &lt;  Employee.MIN_SALARY:
+        raise SalaryError(&quot;The salary after bonus is too low!&quot;)
+      
+    else:  
+      self.salary += amount
+</code></pre>
+<pre><code class="language-python">e = Employee('othmane',1000)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+SalaryError                               Traceback (most recent call last)
+
+&lt;ipython-input-16-96ecb849cf7a&gt; in &lt;module&gt;
+----&gt; 1 e = Employee('othmane',1000)
+
+
+&lt;ipython-input-14-1dd77ad984a7&gt; in __init__(self, name, salary)
+      9     self.name = name
+     10     if salary &lt; Employee.MIN_SALARY:
+---&gt; 11       raise SalaryError(&quot;Salary is too low!&quot;)
+     12     self.salary = salary
+     13 
+
+
+SalaryError: Salary is too low!
+</code></pre>
+<pre><code class="language-python">e = Employee('othmane',1000000)
+</code></pre>
+<pre><code class="language-python">e.give_bonus(500000)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+BonusError                                Traceback (most recent call last)
+
+&lt;ipython-input-18-0cfd0f4c6fd2&gt; in &lt;module&gt;
+----&gt; 1 e.give_bonus(500000)
+
+
+&lt;ipython-input-14-1dd77ad984a7&gt; in give_bonus(self, amount)
+     15   def give_bonus(self, amount):
+     16     if amount &gt; Employee.MAX_BONUS:
+---&gt; 17         raise BonusError(&quot;The bonus amount is too high!&quot;)
+     18 
+     19     elif self.salary + amount &lt;  Employee.MIN_SALARY:
+
+
+BonusError: The bonus amount is too high!
+</code></pre>
+<pre><code class="language-python">e.give_bonus(-980000)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+SalaryError                               Traceback (most recent call last)
+
+&lt;ipython-input-20-c41bdf5a7cec&gt; in &lt;module&gt;
+----&gt; 1 e.give_bonus(-980000)
+
+
+&lt;ipython-input-14-1dd77ad984a7&gt; in give_bonus(self, amount)
+     18 
+     19     elif self.salary + amount &lt;  Employee.MIN_SALARY:
+---&gt; 20         raise SalaryError(&quot;The salary after bonus is too low!&quot;)
+     21 
+     22     else:
+
+
+SalaryError: The salary after bonus is too low!
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

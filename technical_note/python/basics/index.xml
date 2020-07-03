@@ -811,6 +811,132 @@ print(ldf.created_at)
     </item>
     
     <item>
+      <title>Custom exception</title>
+      <link>http://othrif.github.io/technical_note/python/basics/custom_exception/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/custom_exception/</guid>
+      <description>&lt;h3 id=&#34;handling-exception&#34;&gt;Handling exception&lt;/h3&gt;
+&lt;p&gt;Built-in exceptions inherit from class &lt;code&gt;BaseException&lt;/code&gt; or &lt;code&gt;Exception&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# MODIFY the function to catch exceptions
+def invert_at_index(x, ind):
+    try:
+        return 1/x[ind]
+    except ZeroDivisionError:
+        print(&amp;quot;Cannot divide by zero!&amp;quot;)
+    except IndexError:
+        print(&amp;quot;Index out of range!&amp;quot;)
+ 
+a = [5,6,0,7]
+
+# Works okay
+print(invert_at_index(a, 1))
+
+# Potential ZeroDivisionError
+print(invert_at_index(a, 2))
+
+# Potential IndexError
+print(invert_at_index(a, 5))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.16666666666666666
+Cannot divide by zero!
+None
+Index out of range!
+None
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;custom-exception&#34;&gt;Custom exception&lt;/h3&gt;
+&lt;p&gt;Need to define an exception is a class inherited from the built-in &lt;code&gt;Exception&lt;/code&gt; class or one of its subclasses.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class SalaryError(ValueError): pass
+class BonusError(SalaryError): pass
+
+class Employee:
+  MIN_SALARY = 30000
+  MAX_BONUS = 5000
+
+  def __init__(self, name, salary = 30000):
+    self.name = name    
+    if salary &amp;lt; Employee.MIN_SALARY:
+      raise SalaryError(&amp;quot;Salary is too low!&amp;quot;)      
+    self.salary = salary
+    
+  # Rewrite using exceptions  
+  def give_bonus(self, amount):
+    if amount &amp;gt; Employee.MAX_BONUS:
+        raise BonusError(&amp;quot;The bonus amount is too high!&amp;quot;)  
+        
+    elif self.salary + amount &amp;lt;  Employee.MIN_SALARY:
+        raise SalaryError(&amp;quot;The salary after bonus is too low!&amp;quot;)
+      
+    else:  
+      self.salary += amount
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;e = Employee(&#39;othmane&#39;,1000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+SalaryError                               Traceback (most recent call last)
+
+&amp;lt;ipython-input-16-96ecb849cf7a&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 e = Employee(&#39;othmane&#39;,1000)
+
+
+&amp;lt;ipython-input-14-1dd77ad984a7&amp;gt; in __init__(self, name, salary)
+      9     self.name = name
+     10     if salary &amp;lt; Employee.MIN_SALARY:
+---&amp;gt; 11       raise SalaryError(&amp;quot;Salary is too low!&amp;quot;)
+     12     self.salary = salary
+     13 
+
+
+SalaryError: Salary is too low!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;e = Employee(&#39;othmane&#39;,1000000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;e.give_bonus(500000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+BonusError                                Traceback (most recent call last)
+
+&amp;lt;ipython-input-18-0cfd0f4c6fd2&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 e.give_bonus(500000)
+
+
+&amp;lt;ipython-input-14-1dd77ad984a7&amp;gt; in give_bonus(self, amount)
+     15   def give_bonus(self, amount):
+     16     if amount &amp;gt; Employee.MAX_BONUS:
+---&amp;gt; 17         raise BonusError(&amp;quot;The bonus amount is too high!&amp;quot;)
+     18 
+     19     elif self.salary + amount &amp;lt;  Employee.MIN_SALARY:
+
+
+BonusError: The bonus amount is too high!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;e.give_bonus(-980000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+SalaryError                               Traceback (most recent call last)
+
+&amp;lt;ipython-input-20-c41bdf5a7cec&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 e.give_bonus(-980000)
+
+
+&amp;lt;ipython-input-14-1dd77ad984a7&amp;gt; in give_bonus(self, amount)
+     18 
+     19     elif self.salary + amount &amp;lt;  Employee.MIN_SALARY:
+---&amp;gt; 20         raise SalaryError(&amp;quot;The salary after bonus is too low!&amp;quot;)
+     21 
+     22     else:
+
+
+SalaryError: The salary after bonus is too low!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Datetime</title>
       <link>http://othrif.github.io/technical_note/python/basics/datetime/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

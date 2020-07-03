@@ -593,6 +593,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/join/" >Join strings</a></h2>
+      <div class="article-style">
+        
+          Basic join Syntax: str.join(iterable)
+x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'First_Second_Third'  num = '12345' '-'.join(num)  '1-2-3-4-5'  let = 'abcdefg' '.'.join(let)  'a.b.c.d.e.f.g'  
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/lambda/" >Lambda functions and map(), filter(), reduce()</a></h2>
       <div class="article-style">
         
@@ -695,18 +708,6 @@ def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of stri
       <div class="article-style">
         
           String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
-      <div class="article-style">
-        
-          import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
         
       </div>
     </div>
