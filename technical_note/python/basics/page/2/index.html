@@ -593,6 +593,42 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/dictionary/" >Dictionaries</a></h2>
+      <div class="article-style">
+        
+          Basics # Definition of dictionary europe = {'spain':'madrid', 'france':'paris', 'germany':'berlin', 'norway':'oslo' } # Print out the keys in europe print(europe.keys()) # Print out value that belongs to key 'norway' print(europe['norway'])  dict_keys(['spain', 'france', 'germany', 'norway']) oslo  Add/Remove an element europe['italy'] = 'rome'  europe  {'spain': 'madrid', 'france': 'paris', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}  del(europe['france'])  europe  {'spain': 'madrid', 'germany': 'berlin', 'norway': 'oslo', 'italy': 'rome'}   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/enumerate/" >Enumerate a dictionary</a></h2>
+      <div class="article-style">
+        
+          Enumerate through both keys and values example_dict = {1:'a', 2:'b', 3:'c', 4:'d'} for i, (k, v) in enumerate(example_dict.items()): print(i, k, v)  0 1 a 1 2 b 2 3 c 3 4 d  
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/exception/" >Error and exception</a></h2>
+      <div class="article-style">
+        
+          Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word='' shout_words='' # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word+'!
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
       <div class="article-style">
         
@@ -671,43 +707,6 @@ x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'Fir
       <div class="article-style">
         
           Basic syntax lambda arguments : &lt;do something&gt;  myfunc = lambda a: a+'!!!' myfunc('hello')  'hello!!!'  Converting a function to lambda Compare the two functions and how lambda is much more concise
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
         
       </div>
     </div>

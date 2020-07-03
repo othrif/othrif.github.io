@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_att/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/class_att/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <meta property="og:title" content="Class-level attributes and alternative constructors | Othmane Rifki">
+  <meta property="og:description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Class-level attributes and alternative constructors | Othmane Rifki</title>
 
 </head>
 
@@ -552,180 +555,153 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Class-level attributes and alternative constructors</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/class_method/" >Method beloning to a class object</a></h2>
-      <div class="article-style">
-        
-          Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/nested/" >Nested functions, keyword nonlocal</a></h2>
-      <div class="article-style">
-        
-          Nested function To avoid writing out the same computations within functions repeatedly.
-def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with '!!!'.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/operators/" >Operators</a></h2>
-      <div class="article-style">
-        
-          Bitwise operation x=3  print(bin(x)) print(bin(~x)) ~x # = -(x+1)  0b11 -0b100 -4  print(bin(6)) print(bin(3)) print(bin(6 | 3)) 6 | 3  0b110 0b11 0b111 7  Bitwise XOR each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
-      <div class="article-style">
-        
-          import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/print/" >Print statements</a></h2>
-      <div class="article-style">
-        
-          Simple printing print('Printing example!')  Printing example!  f-string formatting: f ' &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... '  where &lt;optional !
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/macos_env/" >Python 3 in MacOS</a></h2>
-      <div class="article-style">
-        
-          Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage --upgrade  Upgrade package pip install SomePackage --upgrade  Main packages used pip install numpy pip install scipy pip install scikit-learn pip install matplotlib pip install pandas pip install jupyter notebook   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/classes/" >Python classes</a></h2>
-      <div class="article-style">
-        
-          Self in Python class class car(): # init method or constructor def __init__(self, model, color): self.model = model self.color = color def show(self): print(&quot;Model is&quot;, self.model ) print(&quot;color is&quot;, self.color ) # both objects have different self which # contain their attributes audi = car(&quot;audi a4&quot;, &quot;blue&quot;) ferrari = car(&quot;ferrari 488&quot;, &quot;green&quot;) audi.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
+  <p>Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the <code>ClassName</code> rather than <code>self</code> syntax</p>
+<h3 id="class-level-data">Class-level data</h3>
+<p>use <code>ClassName.ATTR_NAME</code> to accessthe class attribute value</p>
+<pre><code class="language-python">class Player:
+    MAX_POSITION = 10
+    MAX_SPEED = 3
     
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/2/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/4/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+    def __init__(self):
+        self.position = 0
 
+    # Add a move() method with steps parameter
+    def move(self, steps):
+        self.position += steps
+        if self.position &gt;= Player.MAX_POSITION:
+            self.position = Player.MAX_POSITION
+       
+    # This method provides a rudimentary visualization in the console    
+    def draw(self):
+        drawing = &quot;-&quot; * self.position + &quot;|&quot; +&quot;-&quot;*(Player.MAX_POSITION - self.position)
+        print(drawing)
+
+p = Player(); p.draw()
+p.move(4); p.draw()
+p.move(5); p.draw()
+p.move(3); p.draw()
+</code></pre>
+<pre><code>|----------
+----|------
+---------|-
+----------|
+</code></pre>
+<pre><code class="language-python">p1, p2 = Player(), Player()
+
+print(&quot;MAX_SPEED of p1 and p2 before assignment:&quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+# Modify class attribute
+Player.MAX_SPEED = 7
+
+print(&quot;MAX_SPEED of p1 and p2 after assignment of class attribute:&quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+print(&quot;MAX_SPEED of Player:&quot;)
+print(Player.MAX_SPEED)
+
+# Modify instance attribute
+p1.MAX_SPEED = 0
+
+print(&quot;MAX_SPEED of p1 and p2 after assignment of instance attribute:&quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+print(&quot;MAX_SPEED of Player:&quot;)
+print(Player.MAX_SPEED)
+
+
+</code></pre>
+<pre><code>MAX_SPEED of p1 and p2 before assignment:
+3
+3
+MAX_SPEED of p1 and p2 after assignment of class attribute:
+7
+7
+MAX_SPEED of Player:
+7
+MAX_SPEED of p1 and p2 after assignment of instance attribute:
+0
+7
+MAX_SPEED of Player:
+7
+</code></pre>
+<h3 id="alternative-constructors">Alternative constructors</h3>
+<p>Define class methods as well, using the <code>@classmethod</code> decorator and a special first argument cls. The main use of class methods is defining methods that return an instance of the class, but aren&rsquo;t using the same code as <code>__init__()</code>.</p>
+<pre><code class="language-python"># import datetime from datetime
+from datetime import datetime
+
+class BetterDate:
+    def __init__(self, year, month, day):
+      self.year, self.month, self.day = year, month, day
+      
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split(&quot;-&quot;))
+        return cls(year, month, day)
+        
+    # Define a class method from_datetime accepting a datetime object
+    @classmethod
+    def from_datetime(cls, datetime):
+        return cls(datetime.year, datetime.month, datetime.day)
+</code></pre>
+<pre><code class="language-python">bd_def = BetterDate(2020,7,3)   
+print(bd_def.year)
+print(bd_def.month)
+print(bd_def.day)
+</code></pre>
+<pre><code>2020
+7
+3
+</code></pre>
+<pre><code class="language-python">bd_str = BetterDate.from_str(&quot;2020-7-3&quot;)   
+print(bd_str.year)
+print(bd_str.month)
+print(bd_str.day)
+</code></pre>
+<pre><code>2020
+7
+3
+</code></pre>
+<pre><code class="language-python">today = datetime.today()     
+bd = BetterDate.from_datetime(today)   
+print(bd.year)
+print(bd.month)
+print(bd.day)
+</code></pre>
+<pre><code>2020
+7
+3
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

@@ -58,6 +58,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/interview/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/matplotlib/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -123,6 +128,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/interview/binarytree/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -169,6 +179,21 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/codingproblems/anagram/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/class_inheritance/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/class_object_instance/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/class_att/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -269,6 +294,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/ascii/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/importfiles/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

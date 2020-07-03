@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Working with Class and methods class vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=vehicle(&#39;black&#39;)  car.start()  Starting engine  car.showcolor()  I am black  ">
+  <meta name="description" content="Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle(&#39;black&#39;)  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_method/">
@@ -232,7 +232,7 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_method/">
   <meta property="og:title" content="Method beloning to a class object | Othmane Rifki">
-  <meta property="og:description" content="Working with Class and methods class vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=vehicle(&#39;black&#39;)  car.start()  Starting engine  car.showcolor()  I am black  "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle(&#39;black&#39;)  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -569,7 +569,7 @@
   <div class="content">
 
   <h1 id="working-with-class-and-methods">Working with Class and methods</h1>
-<pre><code class="language-python">class vehicle:
+<pre><code class="language-python">class Vehicle:
   def __init__(self,color):
     self.color=color
   def start(self):
@@ -577,7 +577,7 @@
   def showcolor(self):
     print(f&quot;I am {self.color}&quot;)
 </code></pre>
-<pre><code class="language-python">car=vehicle('black')
+<pre><code class="language-python">car=Vehicle('black')
 </code></pre>
 <pre><code class="language-python">car.start()
 </code></pre>
@@ -586,6 +586,34 @@
 <pre><code class="language-python">car.showcolor()
 </code></pre>
 <pre><code>I am black
+</code></pre>
+<pre><code class="language-python">class MyCounter:
+    &quot;&quot;&quot;Here is the doc string!&quot;&quot;&quot;
+    def __init__(self, n=10):
+        self.count = n
+        
+    def set_count(self,n):
+        print()
+
+me = MyCounter()
+me.set_count(10)
+print(me.count)
+</code></pre>
+<pre><code>10
+</code></pre>
+<pre><code class="language-python">Sqrt(4)
+</code></pre>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-4-25bc9fec10b4&gt; in &lt;module&gt;
+----&gt; 1 Sqrt(4)
+
+
+NameError: name 'Sqrt' is not defined
+</code></pre>
+<pre><code class="language-python">
 </code></pre>
 
 </div>

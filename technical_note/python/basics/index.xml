@@ -527,6 +527,181 @@ mystr.capitalize()
     </item>
     
     <item>
+      <title>Class inheritance</title>
+      <link>http://othrif.github.io/technical_note/python/basics/class_inheritance/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/class_inheritance/</guid>
+      <description>&lt;p&gt;Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the &lt;code&gt;ClassName&lt;/code&gt; rather than &lt;code&gt;self&lt;/code&gt; syntax&lt;/p&gt;
+&lt;h3 id=&#34;class-level-data&#34;&gt;Class-level data&lt;/h3&gt;
+&lt;p&gt;use &lt;code&gt;ClassName.ATTR_NAME&lt;/code&gt; to accessthe class attribute value&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Employee:
+  MIN_SALARY = 30000    
+
+  def __init__(self, name, salary=MIN_SALARY):
+      self.name = name
+      if salary &amp;gt;= Employee.MIN_SALARY:
+        self.salary = salary
+      else:
+        self.salary = Employee.MIN_SALARY
+  def give_raise(self, amount):
+    self.salary += amount      
+        
+# MODIFY Manager class and add a display method
+class Manager(Employee):
+  def display(self):
+      print(&amp;quot;Manager &amp;quot;+self.name)
+
+mng = Manager(&amp;quot;Debbie Lashko&amp;quot;, 86500)
+print(mng.name)
+
+# Call mng.display()
+mng.display()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Debbie Lashko
+Manager Debbie Lashko
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Class vs Object vs Instance</title>
+      <link>http://othrif.github.io/technical_note/python/basics/class_object_instance/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/class_object_instance/</guid>
+      <description>&lt;p&gt;An &lt;strong&gt;object&lt;/strong&gt; is a software bundle of related &lt;code&gt;state&lt;/code&gt; and &lt;code&gt;behavior&lt;/code&gt;. A &lt;strong&gt;class&lt;/strong&gt; is a blueprint or prototype from which &lt;code&gt;objects&lt;/code&gt; are created. An &lt;strong&gt;instance&lt;/strong&gt; is a single and unique unit of a class.&lt;/p&gt;
+&lt;p&gt;Example, we have a blueprint (class) represents student (object) with fields like name, age, course (class member). And we have 2 students here, Foo and Bob. So, Foo and Bob is 2 different instances of the class (Student class) that represent object (Student people).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Class-level attributes and alternative constructors</title>
+      <link>http://othrif.github.io/technical_note/python/basics/class_att/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/class_att/</guid>
+      <description>&lt;p&gt;Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the &lt;code&gt;ClassName&lt;/code&gt; rather than &lt;code&gt;self&lt;/code&gt; syntax&lt;/p&gt;
+&lt;h3 id=&#34;class-level-data&#34;&gt;Class-level data&lt;/h3&gt;
+&lt;p&gt;use &lt;code&gt;ClassName.ATTR_NAME&lt;/code&gt; to accessthe class attribute value&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Player:
+    MAX_POSITION = 10
+    MAX_SPEED = 3
+    
+    def __init__(self):
+        self.position = 0
+
+    # Add a move() method with steps parameter
+    def move(self, steps):
+        self.position += steps
+        if self.position &amp;gt;= Player.MAX_POSITION:
+            self.position = Player.MAX_POSITION
+       
+    # This method provides a rudimentary visualization in the console    
+    def draw(self):
+        drawing = &amp;quot;-&amp;quot; * self.position + &amp;quot;|&amp;quot; +&amp;quot;-&amp;quot;*(Player.MAX_POSITION - self.position)
+        print(drawing)
+
+p = Player(); p.draw()
+p.move(4); p.draw()
+p.move(5); p.draw()
+p.move(3); p.draw()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;|----------
+----|------
+---------|-
+----------|
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;p1, p2 = Player(), Player()
+
+print(&amp;quot;MAX_SPEED of p1 and p2 before assignment:&amp;quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+
+# Modify class attribute
+Player.MAX_SPEED = 7
+
+print(&amp;quot;MAX_SPEED of p1 and p2 after assignment of class attribute:&amp;quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+print(&amp;quot;MAX_SPEED of Player:&amp;quot;)
+print(Player.MAX_SPEED)
+
+# Modify instance attribute
+p1.MAX_SPEED = 0
+
+print(&amp;quot;MAX_SPEED of p1 and p2 after assignment of instance attribute:&amp;quot;)
+print(p1.MAX_SPEED)
+print(p2.MAX_SPEED)
+print(&amp;quot;MAX_SPEED of Player:&amp;quot;)
+print(Player.MAX_SPEED)
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;MAX_SPEED of p1 and p2 before assignment:
+3
+3
+MAX_SPEED of p1 and p2 after assignment of class attribute:
+7
+7
+MAX_SPEED of Player:
+7
+MAX_SPEED of p1 and p2 after assignment of instance attribute:
+0
+7
+MAX_SPEED of Player:
+7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;alternative-constructors&#34;&gt;Alternative constructors&lt;/h3&gt;
+&lt;p&gt;Define class methods as well, using the &lt;code&gt;@classmethod&lt;/code&gt; decorator and a special first argument cls. The main use of class methods is defining methods that return an instance of the class, but aren&amp;rsquo;t using the same code as &lt;code&gt;__init__()&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# import datetime from datetime
+from datetime import datetime
+
+class BetterDate:
+    def __init__(self, year, month, day):
+      self.year, self.month, self.day = year, month, day
+      
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split(&amp;quot;-&amp;quot;))
+        return cls(year, month, day)
+        
+    # Define a class method from_datetime accepting a datetime object
+    @classmethod
+    def from_datetime(cls, datetime):
+        return cls(datetime.year, datetime.month, datetime.day)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bd_def = BetterDate(2020,7,3)   
+print(bd_def.year)
+print(bd_def.month)
+print(bd_def.day)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020
+7
+3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bd_str = BetterDate.from_str(&amp;quot;2020-7-3&amp;quot;)   
+print(bd_str.year)
+print(bd_str.month)
+print(bd_str.day)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020
+7
+3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;today = datetime.today()     
+bd = BetterDate.from_datetime(today)   
+print(bd.year)
+print(bd.month)
+print(bd.day)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2020
+7
+3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Datetime</title>
       <link>http://othrif.github.io/technical_note/python/basics/datetime/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1543,7 +1718,7 @@ TypeError: &#39;str&#39; object does not support item assignment
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/class_method/</guid>
       <description>&lt;h1 id=&#34;working-with-class-and-methods&#34;&gt;Working with Class and methods&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class vehicle:
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehicle:
   def __init__(self,color):
     self.color=color
   def start(self):
@@ -1551,7 +1726,7 @@ TypeError: &#39;str&#39; object does not support item assignment
   def showcolor(self):
     print(f&amp;quot;I am {self.color}&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;car=vehicle(&#39;black&#39;)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;car=Vehicle(&#39;black&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;car.start()
 &lt;/code&gt;&lt;/pre&gt;
@@ -1560,6 +1735,34 @@ TypeError: &#39;str&#39; object does not support item assignment
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;car.showcolor()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;I am black
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class MyCounter:
+    &amp;quot;&amp;quot;&amp;quot;Here is the doc string!&amp;quot;&amp;quot;&amp;quot;
+    def __init__(self, n=10):
+        self.count = n
+        
+    def set_count(self,n):
+        print()
+
+me = MyCounter()
+me.set_count(10)
+print(me.count)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Sqrt(4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-4-25bc9fec10b4&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 Sqrt(4)
+
+
+NameError: name &#39;Sqrt&#39; is not defined
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
