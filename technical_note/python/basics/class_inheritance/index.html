@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax">
+  <meta name="description" content="Class inheritance Allows us to reuse and customize code without rewriting existing code. By calling methods of the parent class within the child class, we reuse all the code in those methods, making our code concise and manageable.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_inheritance/">
@@ -232,7 +232,7 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_inheritance/">
   <meta property="og:title" content="Class inheritance | Othmane Rifki">
-  <meta property="og:description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Class inheritance Allows us to reuse and customize code without rewriting existing code. By calling methods of the parent class within the child class, we reuse all the code in those methods, making our code concise and manageable."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -568,9 +568,10 @@
   </header>
   <div class="content">
 
-  <p>Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the <code>ClassName</code> rather than <code>self</code> syntax</p>
-<h3 id="class-level-data">Class-level data</h3>
-<p>use <code>ClassName.ATTR_NAME</code> to accessthe class attribute value</p>
+  <h3 id="class-inheritance">Class inheritance</h3>
+<p>Allows us to reuse and customize code without rewriting existing code. By calling methods of the parent class within the child class, we reuse all the code in those methods, making our code concise and manageable.</p>
+<p><code>Manager</code> employee &ldquo;is-a&rdquo; <code>Employee</code> = &lsquo;is-a&rsquo; Relationship.
+Example of customizing functionality via inheritance</p>
 <pre><code class="language-python">class Employee:
   MIN_SALARY = 30000    
 
@@ -583,19 +584,48 @@
   def give_raise(self, amount):
     self.salary += amount      
         
-# MODIFY Manager class and add a display method
+# Manager class inherits from Employee class and add a display method
 class Manager(Employee):
-  def display(self):
+    def display(self):
       print(&quot;Manager &quot;+self.name)
+
+    def __init__(self, name, salary=50000, project=None):
+        Employee.__init__(self, name, salary)
+        self.project = project
+
+    def give_raise(self,amount,bonus=1.05):
+        Employee.give_raise(self, amount*bonus)
 
 mng = Manager(&quot;Debbie Lashko&quot;, 86500)
 print(mng.name)
 
 # Call mng.display()
 mng.display()
+
+mngr = Manager(&quot;Ashta Dunbar&quot;, 78500)
+mngr.give_raise(1000)
+print(mngr.salary)
+mngr.give_raise(2000)
+print(mngr.salary)
 </code></pre>
 <pre><code>Debbie Lashko
 Manager Debbie Lashko
+79550.0
+81650.0
+</code></pre>
+<h3 id="inheritance-of-class-attributes">Inheritance of class attributes</h3>
+<pre><code class="language-python">class Boss(Employee):
+    MIN_SALARY = 300000
+ 
+
+e = Employee('employee')
+b = Boss('boss')
+
+print(&quot;e.MIN_SALARY = &quot;, e.MIN_SALARY)
+print(&quot;b.MIN_SALARY = &quot;, b.MIN_SALARY)
+</code></pre>
+<pre><code>e.MIN_SALARY =  30000
+b.MIN_SALARY =  300000
 </code></pre>
 
 </div>

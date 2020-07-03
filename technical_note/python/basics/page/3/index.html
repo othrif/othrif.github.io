@@ -593,6 +593,18 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/lambda/" >Lambda functions and map(), filter(), reduce()</a></h2>
+      <div class="article-style">
+        
+          Basic syntax lambda arguments : &lt;do something&gt;  myfunc = lambda a: a+'!!!' myfunc('hello')  'hello!!!'  Converting a function to lambda Compare the two functions and how lambda is much more concise
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
       <div class="article-style">
         
@@ -630,7 +642,7 @@ my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/class_method/" >Method beloning to a class object</a></h2>
+      <h2><a href="/technical_note/python/basics/class_method/" >Method belonging to a class object</a></h2>
       <div class="article-style">
         
           Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
@@ -667,46 +679,34 @@ def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of stri
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
+      <div class="article-style">
+        
+          Overloading equality When comparing two objects of a custom class using ==, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special __eq__() method, which accepts two arguments &ndash; the objects to be compared &ndash; and returns True or False.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/overload_repr/" >Overload comparison operators</a></h2>
+      <div class="article-style">
+        
+          String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
       <div class="article-style">
         
           import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/print/" >Print statements</a></h2>
-      <div class="article-style">
-        
-          Simple printing print('Printing example!')  Printing example!  f-string formatting: f ' &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... '  where &lt;optional !
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/macos_env/" >Python 3 in MacOS</a></h2>
-      <div class="article-style">
-        
-          Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage --upgrade  Upgrade package pip install SomePackage --upgrade  Main packages used pip install numpy pip install scipy pip install scikit-learn pip install matplotlib pip install pandas pip install jupyter notebook   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/classes/" >Python classes</a></h2>
-      <div class="article-style">
-        
-          Self in Python class class car(): # init method or constructor def __init__(self, model, color): self.model = model self.color = color def show(self): print(&quot;Model is&quot;, self.model ) print(&quot;color is&quot;, self.color ) # both objects have different self which # contain their attributes audi = car(&quot;audi a4&quot;, &quot;blue&quot;) ferrari = car(&quot;ferrari 488&quot;, &quot;green&quot;) audi.
         
       </div>
     </div>

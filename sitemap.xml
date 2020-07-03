@@ -198,6 +198,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/class_dataframe/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/linux/basics/commandline/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -419,6 +424,16 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/operators/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/overload_eq/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/overload_repr/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

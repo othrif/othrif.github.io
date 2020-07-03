@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax">
+  <meta name="description" content="String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/overload_repr/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/overload_repr/">
 
   
   
@@ -230,9 +230,9 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_att/">
-  <meta property="og:title" content="Class-level attributes, alternative constructors, and inheritance of class methods | Othmane Rifki">
-  <meta property="og:description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/overload_repr/">
+  <meta property="og:title" content="Overload comparison operators | Othmane Rifki">
+  <meta property="og:description" content="String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +257,7 @@
 
 
 
-  <title>Class-level attributes, alternative constructors, and inheritance of class methods | Othmane Rifki</title>
+  <title>Overload comparison operators | Othmane Rifki</title>
 
 </head>
 
@@ -561,151 +561,43 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Class-level attributes, alternative constructors, and inheritance of class methods</h1>
+    <h1 class="technical_note_title">Overload comparison operators</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <p>Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the <code>ClassName</code> rather than <code>self</code> syntax</p>
-<h3 id="class-level-data">Class-level data</h3>
-<p>use <code>ClassName.ATTR_NAME</code> to accessthe class attribute value</p>
-<pre><code class="language-python">class Player:
-    MAX_POSITION = 10
-    MAX_SPEED = 3
-    
-    def __init__(self):
-        self.position = 0
-
-    # Add a move() method with steps parameter
-    def move(self, steps):
-        self.position += steps
-        if self.position &gt;= Player.MAX_POSITION:
-            self.position = Player.MAX_POSITION
-       
-    # This method provides a rudimentary visualization in the console    
-    def draw(self):
-        drawing = &quot;-&quot; * self.position + &quot;|&quot; +&quot;-&quot;*(Player.MAX_POSITION - self.position)
-        print(drawing)
-
-p = Player(); p.draw()
-p.move(4); p.draw()
-p.move(5); p.draw()
-p.move(3); p.draw()
-</code></pre>
-<pre><code>|----------
-----|------
----------|-
-----------|
-</code></pre>
-<pre><code class="language-python">p1, p2 = Player(), Player()
-
-print(&quot;MAX_SPEED of p1 and p2 before assignment:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-
-# Modify class attribute
-Player.MAX_SPEED = 7
-
-print(&quot;MAX_SPEED of p1 and p2 after assignment of class attribute:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-print(&quot;MAX_SPEED of Player:&quot;)
-print(Player.MAX_SPEED)
-
-# Modify instance attribute
-p1.MAX_SPEED = 0
-
-print(&quot;MAX_SPEED of p1 and p2 after assignment of instance attribute:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-print(&quot;MAX_SPEED of Player:&quot;)
-print(Player.MAX_SPEED)
-
-
-</code></pre>
-<pre><code>MAX_SPEED of p1 and p2 before assignment:
-7
-7
-MAX_SPEED of p1 and p2 after assignment of class attribute:
-7
-7
-MAX_SPEED of Player:
-7
-MAX_SPEED of p1 and p2 after assignment of instance attribute:
-0
-7
-MAX_SPEED of Player:
-7
-</code></pre>
-<h3 id="alternative-constructors">Alternative constructors</h3>
-<p>Define class methods as well, using the <code>@classmethod</code> decorator and a special first argument cls. The main use of class methods is defining methods that return an instance of the class, but aren&rsquo;t using the same code as <code>__init__()</code>.</p>
-<pre><code class="language-python"># import datetime from datetime
-from datetime import datetime
-
-class BetterDate:
-    def __init__(self, year, month, day):
-      self.year, self.month, self.day = year, month, day
+  <h3 id="string-representation-of-objects">String representation of objects</h3>
+<p>There are two special methods in Python that return a string representation of an object. <code>__str__()</code> is called when you use print() or str() on an object, and <code>__repr__()</code> is called when you use <code>repr()</code> on an object, print the object in the console without calling print(), or instead of <code>__str__()</code> if <code>__str__()</code> is not defined.</p>
+<p><code>__str__()</code> is supposed to provide a &ldquo;user-friendly&rdquo; output describing an object, and <code>__repr__()</code> should return the expression that, when evaluated, will return the same object, ensuring the reproducibility of your code.</p>
+<pre><code class="language-python">class Employee:
+    def __init__(self, name, salary=30000):
+        self.name, self.salary = name, salary
       
-    @classmethod
-    def from_str(cls, datestr):
-        year, month, day = map(int, datestr.split(&quot;-&quot;))
-        return cls(year, month, day)
-        
-    # Define a class method from_datetime accepting a datetime object
-    @classmethod
-    def from_datetime(cls, datetime):
-        return cls(datetime.year, datetime.month, datetime.day)
+    def __str__(self):
+        s = &quot;Employee name: {name}\nEmployee salary: {salary}&quot;.format(name=self.name, salary=self.salary)      
+        return s
+      
+    # Add the __repr__method  
+    def __repr__(self):
+        emp_repr = f'Employee(&quot;{self.name}&quot;,{self.salary})'
+        return emp_repr
 </code></pre>
-<pre><code class="language-python">bd_def = BetterDate(2020,7,3)   
-print(bd_def.year)
-print(bd_def.month)
-print(bd_def.day)
+<pre><code>Employee name: Amar Howard
+Employee salary: 30000
+Employee(&quot;Carolyn Ramirez&quot;,35000)
 </code></pre>
-<pre><code>2020
-7
-3
+<pre><code class="language-python">emp1 = Employee(&quot;Amar Howard&quot;, 30000)
+print(emp1)
 </code></pre>
-<pre><code class="language-python">bd_str = BetterDate.from_str(&quot;2020-7-3&quot;)   
-print(bd_str.year)
-print(bd_str.month)
-print(bd_str.day)
+<pre><code>Employee name: Amar Howard
+Employee salary: 30000
 </code></pre>
-<pre><code>2020
-7
-3
+<pre><code class="language-python">emp2 = Employee(&quot;Carolyn Ramirez&quot;, 35000)
+print(repr(emp2))
 </code></pre>
-<pre><code class="language-python">today = datetime.today()     
-bd = BetterDate.from_datetime(today)   
-print(bd.year)
-print(bd.month)
-print(bd.day)
-</code></pre>
-<pre><code>2020
-7
-3
-</code></pre>
-<h3 id="inheritance-of-class-methods">Inheritance of class methods</h3>
-<p>To customize the parent&rsquo;s class method in a child class, start with a <code>@classmethod</code> decorator, and define a method with the same name in the child&rsquo;s class, just like you did with regular methods.</p>
-<p>The only difference is that to call the parent&rsquo;s class method within the child&rsquo;s method, you can use <code>ClassName.method_name(args...)</code> without passing <code>self</code> or <code>cls</code>.</p>
-<pre><code class="language-python"># Define an EvenBetterDate class and customize from_str
-class EvenBetterDate(BetterDate):
-    @classmethod
-    def from_str(self, datestr, format='YYYY-MM-DD'):
-        if format=='YYYY-MM-DD':
-            return BetterDate.from_str(datestr)
-        elif format == 'DD-MM-YYYY':
-            day,month,year = datestr.split('-')
-            return BetterDate.from_str(('-').join([year, month, day]))
-</code></pre>
-<pre><code class="language-python">ebd_str = EvenBetterDate.from_str('02-12-2019', format='DD-MM-YYYY')
-print(ebd_str.year)
-ebd_dt = EvenBetterDate.from_datetime(datetime.today())
-print(ebd_dt.year)
-</code></pre>
-<pre><code>2019
-2020
+<pre><code>Employee(&quot;Carolyn Ramirez&quot;,35000)
 </code></pre>
 
 </div>

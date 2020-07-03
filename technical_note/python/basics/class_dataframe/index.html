@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax">
+  <meta name="description" content="Customize the constructor of the DataFrame implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.
+# Import pandas as pd import pandas as pd # Define LoggedDF inherited from pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/class_dataframe/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/class_dataframe/">
 
   
   
@@ -230,9 +231,10 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_att/">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/class_dataframe/">
   <meta property="og:title" content="Class-level attributes, alternative constructors, and inheritance of class methods | Othmane Rifki">
-  <meta property="og:description" content="Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Customize the constructor of the DataFrame implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.
+# Import pandas as pd import pandas as pd # Define LoggedDF inherited from pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -568,144 +570,57 @@
   </header>
   <div class="content">
 
-  <p>Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the <code>ClassName</code> rather than <code>self</code> syntax</p>
-<h3 id="class-level-data">Class-level data</h3>
-<p>use <code>ClassName.ATTR_NAME</code> to accessthe class attribute value</p>
-<pre><code class="language-python">class Player:
-    MAX_POSITION = 10
-    MAX_SPEED = 3
+  <h3 id="customize-the-constructor-of-the-dataframe">Customize the constructor of the DataFrame</h3>
+<p>implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.</p>
+<pre><code class="language-python"># Import pandas as pd
+import pandas as pd
+
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
     
-    def __init__(self):
-        self.position = 0
+    
+ldf = LoggedDF({&quot;col1&quot;: [1,2], &quot;col2&quot;: [3,4]})
+print(ldf.values)
+print(ldf.created_at)
+</code></pre>
+<pre><code>[[1 3]
+ [2 4]]
+2020-07-03 14:14:13.578281
+</code></pre>
+<h3 id="customize-a-method-of-the-dataframe">Customize a method of the DataFrame</h3>
+<p>Using <code>*args</code> and <code>**kwargs</code> allows you to not worry about keeping the signature of your customized method compatible. Notice how in the very last line, you called the parent method and passed an object to it that isn&rsquo;t self. When you call parent methods in the class, they should accept some object as the first argument, and that object is usually <code>self</code>, but it doesn&rsquo;t have to be!</p>
+<pre><code class="language-python"># Import pandas as pd
+import pandas as pd
 
-    # Add a move() method with steps parameter
-    def move(self, steps):
-        self.position += steps
-        if self.position &gt;= Player.MAX_POSITION:
-            self.position = Player.MAX_POSITION
-       
-    # This method provides a rudimentary visualization in the console    
-    def draw(self):
-        drawing = &quot;-&quot; * self.position + &quot;|&quot; +&quot;-&quot;*(Player.MAX_POSITION - self.position)
-        print(drawing)
-
-p = Player(); p.draw()
-p.move(4); p.draw()
-p.move(5); p.draw()
-p.move(3); p.draw()
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
+    
+  def to_csv(self, *args, **kwargs):
+    # Copy self to a temporary DataFrame
+    temp = self.copy()
+    
+    # Create a new column filled with self.created at
+    temp[&quot;created_at&quot;] = self.created_at
+    
+    # Call pd.DataFrame.to_csv on temp with *args and **kwargs
+    pd.DataFrame.to_csv(temp, *args, **kwargs)
+    
 </code></pre>
-<pre><code>|----------
-----|------
----------|-
-----------|
+<pre><code class="language-python">ldf = LoggedDF({&quot;col1&quot;: [1,2], &quot;col2&quot;: [3,4]})
+print(ldf.values)
+print(ldf.created_at)
 </code></pre>
-<pre><code class="language-python">p1, p2 = Player(), Player()
-
-print(&quot;MAX_SPEED of p1 and p2 before assignment:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-
-# Modify class attribute
-Player.MAX_SPEED = 7
-
-print(&quot;MAX_SPEED of p1 and p2 after assignment of class attribute:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-print(&quot;MAX_SPEED of Player:&quot;)
-print(Player.MAX_SPEED)
-
-# Modify instance attribute
-p1.MAX_SPEED = 0
-
-print(&quot;MAX_SPEED of p1 and p2 after assignment of instance attribute:&quot;)
-print(p1.MAX_SPEED)
-print(p2.MAX_SPEED)
-print(&quot;MAX_SPEED of Player:&quot;)
-print(Player.MAX_SPEED)
-
-
-</code></pre>
-<pre><code>MAX_SPEED of p1 and p2 before assignment:
-7
-7
-MAX_SPEED of p1 and p2 after assignment of class attribute:
-7
-7
-MAX_SPEED of Player:
-7
-MAX_SPEED of p1 and p2 after assignment of instance attribute:
-0
-7
-MAX_SPEED of Player:
-7
-</code></pre>
-<h3 id="alternative-constructors">Alternative constructors</h3>
-<p>Define class methods as well, using the <code>@classmethod</code> decorator and a special first argument cls. The main use of class methods is defining methods that return an instance of the class, but aren&rsquo;t using the same code as <code>__init__()</code>.</p>
-<pre><code class="language-python"># import datetime from datetime
-from datetime import datetime
-
-class BetterDate:
-    def __init__(self, year, month, day):
-      self.year, self.month, self.day = year, month, day
-      
-    @classmethod
-    def from_str(cls, datestr):
-        year, month, day = map(int, datestr.split(&quot;-&quot;))
-        return cls(year, month, day)
-        
-    # Define a class method from_datetime accepting a datetime object
-    @classmethod
-    def from_datetime(cls, datetime):
-        return cls(datetime.year, datetime.month, datetime.day)
-</code></pre>
-<pre><code class="language-python">bd_def = BetterDate(2020,7,3)   
-print(bd_def.year)
-print(bd_def.month)
-print(bd_def.day)
-</code></pre>
-<pre><code>2020
-7
-3
-</code></pre>
-<pre><code class="language-python">bd_str = BetterDate.from_str(&quot;2020-7-3&quot;)   
-print(bd_str.year)
-print(bd_str.month)
-print(bd_str.day)
-</code></pre>
-<pre><code>2020
-7
-3
-</code></pre>
-<pre><code class="language-python">today = datetime.today()     
-bd = BetterDate.from_datetime(today)   
-print(bd.year)
-print(bd.month)
-print(bd.day)
-</code></pre>
-<pre><code>2020
-7
-3
-</code></pre>
-<h3 id="inheritance-of-class-methods">Inheritance of class methods</h3>
-<p>To customize the parent&rsquo;s class method in a child class, start with a <code>@classmethod</code> decorator, and define a method with the same name in the child&rsquo;s class, just like you did with regular methods.</p>
-<p>The only difference is that to call the parent&rsquo;s class method within the child&rsquo;s method, you can use <code>ClassName.method_name(args...)</code> without passing <code>self</code> or <code>cls</code>.</p>
-<pre><code class="language-python"># Define an EvenBetterDate class and customize from_str
-class EvenBetterDate(BetterDate):
-    @classmethod
-    def from_str(self, datestr, format='YYYY-MM-DD'):
-        if format=='YYYY-MM-DD':
-            return BetterDate.from_str(datestr)
-        elif format == 'DD-MM-YYYY':
-            day,month,year = datestr.split('-')
-            return BetterDate.from_str(('-').join([year, month, day]))
-</code></pre>
-<pre><code class="language-python">ebd_str = EvenBetterDate.from_str('02-12-2019', format='DD-MM-YYYY')
-print(ebd_str.year)
-ebd_dt = EvenBetterDate.from_datetime(datetime.today())
-print(ebd_dt.year)
-</code></pre>
-<pre><code>2019
-2020
+<pre><code>[[1 3]
+ [2 4]]
+2020-07-03 14:14:14.769906
 </code></pre>
 
 </div>

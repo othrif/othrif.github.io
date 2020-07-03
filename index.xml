@@ -1458,9 +1458,10 @@ word.anagram()
       <link>http://othrif.github.io/technical_note/python/basics/class_inheritance/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/class_inheritance/</guid>
-      <description>&lt;p&gt;Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the &lt;code&gt;ClassName&lt;/code&gt; rather than &lt;code&gt;self&lt;/code&gt; syntax&lt;/p&gt;
-&lt;h3 id=&#34;class-level-data&#34;&gt;Class-level data&lt;/h3&gt;
-&lt;p&gt;use &lt;code&gt;ClassName.ATTR_NAME&lt;/code&gt; to accessthe class attribute value&lt;/p&gt;
+      <description>&lt;h3 id=&#34;class-inheritance&#34;&gt;Class inheritance&lt;/h3&gt;
+&lt;p&gt;Allows us to reuse and customize code without rewriting existing code. By calling methods of the parent class within the child class, we reuse all the code in those methods, making our code concise and manageable.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Manager&lt;/code&gt; employee &amp;ldquo;is-a&amp;rdquo; &lt;code&gt;Employee&lt;/code&gt; = &amp;lsquo;is-a&amp;rsquo; Relationship.
+Example of customizing functionality via inheritance&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Employee:
   MIN_SALARY = 30000    
 
@@ -1473,19 +1474,48 @@ word.anagram()
   def give_raise(self, amount):
     self.salary += amount      
         
-# MODIFY Manager class and add a display method
+# Manager class inherits from Employee class and add a display method
 class Manager(Employee):
-  def display(self):
+    def display(self):
       print(&amp;quot;Manager &amp;quot;+self.name)
+
+    def __init__(self, name, salary=50000, project=None):
+        Employee.__init__(self, name, salary)
+        self.project = project
+
+    def give_raise(self,amount,bonus=1.05):
+        Employee.give_raise(self, amount*bonus)
 
 mng = Manager(&amp;quot;Debbie Lashko&amp;quot;, 86500)
 print(mng.name)
 
 # Call mng.display()
 mng.display()
+
+mngr = Manager(&amp;quot;Ashta Dunbar&amp;quot;, 78500)
+mngr.give_raise(1000)
+print(mngr.salary)
+mngr.give_raise(2000)
+print(mngr.salary)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;Debbie Lashko
 Manager Debbie Lashko
+79550.0
+81650.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;inheritance-of-class-attributes&#34;&gt;Inheritance of class attributes&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Boss(Employee):
+    MIN_SALARY = 300000
+ 
+
+e = Employee(&#39;employee&#39;)
+b = Boss(&#39;boss&#39;)
+
+print(&amp;quot;e.MIN_SALARY = &amp;quot;, e.MIN_SALARY)
+print(&amp;quot;b.MIN_SALARY = &amp;quot;, b.MIN_SALARY)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;e.MIN_SALARY =  30000
+b.MIN_SALARY =  300000
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -1501,7 +1531,7 @@ Manager Debbie Lashko
     </item>
     
     <item>
-      <title>Class-level attributes and alternative constructors</title>
+      <title>Class-level attributes, alternative constructors, and inheritance of class methods</title>
       <link>http://othrif.github.io/technical_note/python/basics/class_att/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/class_att/</guid>
@@ -1563,8 +1593,8 @@ print(Player.MAX_SPEED)
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;MAX_SPEED of p1 and p2 before assignment:
-3
-3
+7
+7
 MAX_SPEED of p1 and p2 after assignment of class attribute:
 7
 7
@@ -1623,7 +1653,86 @@ print(bd.day)
 7
 3
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;h3 id=&#34;inheritance-of-class-methods&#34;&gt;Inheritance of class methods&lt;/h3&gt;
+&lt;p&gt;To customize the parent&amp;rsquo;s class method in a child class, start with a &lt;code&gt;@classmethod&lt;/code&gt; decorator, and define a method with the same name in the child&amp;rsquo;s class, just like you did with regular methods.&lt;/p&gt;
+&lt;p&gt;The only difference is that to call the parent&amp;rsquo;s class method within the child&amp;rsquo;s method, you can use &lt;code&gt;ClassName.method_name(args...)&lt;/code&gt; without passing &lt;code&gt;self&lt;/code&gt; or &lt;code&gt;cls&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define an EvenBetterDate class and customize from_str
+class EvenBetterDate(BetterDate):
+    @classmethod
+    def from_str(self, datestr, format=&#39;YYYY-MM-DD&#39;):
+        if format==&#39;YYYY-MM-DD&#39;:
+            return BetterDate.from_str(datestr)
+        elif format == &#39;DD-MM-YYYY&#39;:
+            day,month,year = datestr.split(&#39;-&#39;)
+            return BetterDate.from_str((&#39;-&#39;).join([year, month, day]))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ebd_str = EvenBetterDate.from_str(&#39;02-12-2019&#39;, format=&#39;DD-MM-YYYY&#39;)
+print(ebd_str.year)
+ebd_dt = EvenBetterDate.from_datetime(datetime.today())
+print(ebd_dt.year)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;2019
+2020
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Class-level attributes, alternative constructors, and inheritance of class methods</title>
+      <link>http://othrif.github.io/technical_note/python/basics/class_dataframe/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/class_dataframe/</guid>
+      <description>&lt;h3 id=&#34;customize-the-constructor-of-the-dataframe&#34;&gt;Customize the constructor of the DataFrame&lt;/h3&gt;
+&lt;p&gt;implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas as pd
+import pandas as pd
+
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
+    
+    
+ldf = LoggedDF({&amp;quot;col1&amp;quot;: [1,2], &amp;quot;col2&amp;quot;: [3,4]})
+print(ldf.values)
+print(ldf.created_at)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[1 3]
+ [2 4]]
+2020-07-03 14:14:13.578281
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;customize-a-method-of-the-dataframe&#34;&gt;Customize a method of the DataFrame&lt;/h3&gt;
+&lt;p&gt;Using &lt;code&gt;*args&lt;/code&gt; and &lt;code&gt;**kwargs&lt;/code&gt; allows you to not worry about keeping the signature of your customized method compatible. Notice how in the very last line, you called the parent method and passed an object to it that isn&amp;rsquo;t self. When you call parent methods in the class, they should accept some object as the first argument, and that object is usually &lt;code&gt;self&lt;/code&gt;, but it doesn&amp;rsquo;t have to be!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas as pd
+import pandas as pd
+
+# Define LoggedDF inherited from pd.DataFrame and add the constructor
+class LoggedDF(pd.DataFrame):
+  
+  def __init__(self, *args, **kwargs):
+    pd.DataFrame.__init__(self, *args, **kwargs)
+    self.created_at = datetime.today()
+    
+  def to_csv(self, *args, **kwargs):
+    # Copy self to a temporary DataFrame
+    temp = self.copy()
+    
+    # Create a new column filled with self.created at
+    temp[&amp;quot;created_at&amp;quot;] = self.created_at
+    
+    # Call pd.DataFrame.to_csv on temp with *args and **kwargs
+    pd.DataFrame.to_csv(temp, *args, **kwargs)
+    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ldf = LoggedDF({&amp;quot;col1&amp;quot;: [1,2], &amp;quot;col2&amp;quot;: [3,4]})
+print(ldf.values)
+print(ldf.created_at)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[1 3]
+ [2 4]]
+2020-07-03 14:14:14.769906
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -7356,7 +7465,7 @@ plt.show()
     </item>
     
     <item>
-      <title>Method beloning to a class object</title>
+      <title>Method belonging to a class object</title>
       <link>http://othrif.github.io/technical_note/python/basics/class_method/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/class_method/</guid>
@@ -7392,20 +7501,6 @@ me.set_count(10)
 print(me.count)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;10
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Sqrt(4)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
-
-NameError                                 Traceback (most recent call last)
-
-&amp;lt;ipython-input-4-25bc9fec10b4&amp;gt; in &amp;lt;module&amp;gt;
-----&amp;gt; 1 Sqrt(4)
-
-
-NameError: name &#39;Sqrt&#39; is not defined
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -8019,6 +8114,81 @@ print(2 &amp;lt;&amp;lt; 3)
 16
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overload comparison operators</title>
+      <link>http://othrif.github.io/technical_note/python/basics/overload_eq/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/overload_eq/</guid>
+      <description>&lt;h3 id=&#34;overloading-equality&#34;&gt;Overloading equality&lt;/h3&gt;
+&lt;p&gt;When comparing two objects of a custom class using &lt;code&gt;==&lt;/code&gt;, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special &lt;code&gt;__eq__()&lt;/code&gt; method, which accepts two arguments &amp;ndash; the objects to be compared &amp;ndash; and returns True or False. This method will be implicitly called when two objects are compared.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class BankAccount:
+    def __init__(self, number, balance=0):
+        self.balance = balance
+        self.number = number
+      
+    def withdraw(self, amount):
+        self.balance -= amount 
+    
+    # Define __eq__ that returns True if the number attributes are equal 
+    def __eq__ (self, other):
+        if type(self) == type(other):
+            return (self.number == other.number)
+        else:
+            return False
+
+# Create accounts and compare them       
+acct1 = BankAccount(123, 1000)
+acct2 = BankAccount(123, 1000)
+acct3 = BankAccount(456, 1000)
+print(acct1 == acct2)
+print(acct1 == acct3)
+    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+False
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overload comparison operators</title>
+      <link>http://othrif.github.io/technical_note/python/basics/overload_repr/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/overload_repr/</guid>
+      <description>&lt;h3 id=&#34;string-representation-of-objects&#34;&gt;String representation of objects&lt;/h3&gt;
+&lt;p&gt;There are two special methods in Python that return a string representation of an object. &lt;code&gt;__str__()&lt;/code&gt; is called when you use print() or str() on an object, and &lt;code&gt;__repr__()&lt;/code&gt; is called when you use &lt;code&gt;repr()&lt;/code&gt; on an object, print the object in the console without calling print(), or instead of &lt;code&gt;__str__()&lt;/code&gt; if &lt;code&gt;__str__()&lt;/code&gt; is not defined.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;__str__()&lt;/code&gt; is supposed to provide a &amp;ldquo;user-friendly&amp;rdquo; output describing an object, and &lt;code&gt;__repr__()&lt;/code&gt; should return the expression that, when evaluated, will return the same object, ensuring the reproducibility of your code.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Employee:
+    def __init__(self, name, salary=30000):
+        self.name, self.salary = name, salary
+      
+    def __str__(self):
+        s = &amp;quot;Employee name: {name}\nEmployee salary: {salary}&amp;quot;.format(name=self.name, salary=self.salary)      
+        return s
+      
+    # Add the __repr__method  
+    def __repr__(self):
+        emp_repr = f&#39;Employee(&amp;quot;{self.name}&amp;quot;,{self.salary})&#39;
+        return emp_repr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Employee name: Amar Howard
+Employee salary: 30000
+Employee(&amp;quot;Carolyn Ramirez&amp;quot;,35000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;emp1 = Employee(&amp;quot;Amar Howard&amp;quot;, 30000)
+print(emp1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Employee name: Amar Howard
+Employee salary: 30000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;emp2 = Employee(&amp;quot;Carolyn Ramirez&amp;quot;, 35000)
+print(repr(emp2))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Employee(&amp;quot;Carolyn Ramirez&amp;quot;,35000)
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

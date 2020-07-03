@@ -672,7 +672,7 @@ import builtins  &lt;module 'builtins' (built-in)&gt;  print a list of all the n
       <h2><a href="/technical_note/python/basics/class_inheritance/" >Class inheritance</a></h2>
       <div class="article-style">
         
-          Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax
+          Class inheritance Allows us to reuse and customize code without rewriting existing code. By calling methods of the parent class within the child class, we reuse all the code in those methods, making our code concise and manageable.
         
       </div>
     </div>
@@ -693,7 +693,7 @@ import builtins  &lt;module 'builtins' (built-in)&gt;  print a list of all the n
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/class_att/" >Class-level attributes and alternative constructors</a></h2>
+      <h2><a href="/technical_note/python/basics/class_att/" >Class-level attributes, alternative constructors, and inheritance of class methods</a></h2>
       <div class="article-style">
         
           Class level attributes store data that is shared among all the class instances. They are assigned values in the class body and are refered to using the ClassName rather than self syntax
@@ -705,11 +705,11 @@ import builtins  &lt;module 'builtins' (built-in)&gt;  print a list of all the n
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/datetime/" >Datetime</a></h2>
+      <h2><a href="/technical_note/python/basics/class_dataframe/" >Class-level attributes, alternative constructors, and inheritance of class methods</a></h2>
       <div class="article-style">
         
-          Convert string to datetime datetime.strptime(date_string, format)
-from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strptime(date_string, '%m/%d/%Y %I:%M:%S %p')  datetime.datetime(2019, 3, 1, 0, 0)  Find last month import datetime today = datetime.
+          Customize the constructor of the DataFrame implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.
+# Import pandas as pd import pandas as pd # Define LoggedDF inherited from pd.
         
       </div>
     </div>
