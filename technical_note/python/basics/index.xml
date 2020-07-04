@@ -102,6 +102,55 @@ justice league
     </item>
     
     <item>
+      <title>Attribute naming conventions</title>
+      <link>http://othrif.github.io/technical_note/python/basics/naming_conventions/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/naming_conventions/</guid>
+      <description>&lt;h3 id=&#34;_name&#34;&gt;&lt;code&gt;_name&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A convention for internal details of implementation.
+A helper method that checks the validity of an attribute&amp;rsquo;s value but isn&amp;rsquo;t considered a part of class&amp;rsquo;s public interface.&lt;/p&gt;
+&lt;p&gt;if you see an attribute name with one leading underscore in someone&amp;rsquo;s class - don&amp;rsquo;t use it! The class developer trusts you with this responsibility.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# MODIFY to add class attributes for max number of days and months
+class BetterDate:
+  
+    _MAX_DAYS = 30
+    _MAX_MONTH = 12
+    
+    def __init__(self, year, month, day):
+      self.year, self.month, self.day = year, month, day
+      
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split(&amp;quot;-&amp;quot;))
+        return cls(year, month, day)
+    
+    # Add _is_valid() checking day and month values
+    def _is_valid(self):
+        if self.day &amp;lt;= BetterDate._MAX_DAYS and self.month &amp;lt;= BetterDate._MAX_MONTH:
+            return True
+        else:
+            return False
+         
+bd1 = BetterDate(2020, 4, 30)
+print(bd1._is_valid())
+
+bd2 = BetterDate(2020, 6, 45)
+print(bd2._is_valid())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+False
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;__name&#34;&gt;&lt;code&gt;__name&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Used for attributes that should not be inherited to aviod name clashes in child classes.
+A version attribute that stores the current version of the class and shoulnd&amp;rsquo;t be passed to child classes, who will have their own versions.&lt;/p&gt;
+&lt;h3 id=&#34;__name__&#34;&gt;&lt;code&gt;__name__&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Reserved for built-in methods. A method that is run whenever the object is printed, constructor called, etc&amp;hellip;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Binary, Octal, and Hexadecimal Integers</title>
       <link>http://othrif.github.io/technical_note/python/basics/bin_dec_hex/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -811,6 +860,63 @@ print(ldf.created_at)
     </item>
     
     <item>
+      <title>Control attribute acess using @property</title>
+      <link>http://othrif.github.io/technical_note/python/basics/properties/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/properties/</guid>
+      <description>&lt;h3 id=&#34;what-are-properties&#34;&gt;What are properties?&lt;/h3&gt;
+&lt;p&gt;You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you&amp;rsquo;d like to execute when assigning values to attributes.
+to a class user, they look just like regular attributes, but behind the scenes, they can have custom code executed when they are accessed.&lt;/p&gt;
+&lt;h3 id=&#34;create-and-set-properties&#34;&gt;Create and set properties&lt;/h3&gt;
+&lt;p&gt;There are two parts to defining a property:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define an &amp;ldquo;internal&amp;rdquo; attribute that will contain the data &lt;code&gt;_name&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Define a &lt;code&gt;@property&lt;/code&gt;-decorated method whose name is the property &lt;code&gt;name&lt;/code&gt;, and that returns the internal attribute storing the data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you&amp;rsquo;d also like to define a custom setter method, there&amp;rsquo;s an additional step:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Define another method whose name is exactly the property name (again), and decorate it with &lt;code&gt;@prop_name.setter&lt;/code&gt; where &lt;code&gt;prop_name&lt;/code&gt; is the name of the property. The method should take two arguments &amp;ndash; &lt;code&gt;self&lt;/code&gt; (as always), and the value that&amp;rsquo;s being assigned to the property.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal &amp;lt; 0:
+           raise ValueError(&amp;quot;Invalid balance!&amp;quot;)
+        self._balance = new_bal  
+
+    # Add a decorated balance() method returning _balance        
+    @property
+    def balance(self):
+        return self._balance
+
+    # Add a setter balance() method
+    @balance.setter
+    def balance(self, new_bal):
+        # Validate the parameter value
+        if new_bal &amp;lt; 0:
+           raise ValueError(&amp;quot;Invalid balance!&amp;quot;)
+        self._balance = new_bal
+        print(&amp;quot;Setter method called&amp;quot;)
+
+# Create a Customer        
+cust = Customer(&#39;Belinda Lutz&#39;, 2000)
+
+# Assign 3000 to the balance property
+cust.balance = 3000
+
+# Print the balance property
+print(cust.balance)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Setter method called
+3000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the user of your &lt;code&gt;Customer&lt;/code&gt; class won&amp;rsquo;t be able to assign arbitrary values to the customers&amp;rsquo; balance.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Custom exception</title>
       <link>http://othrif.github.io/technical_note/python/basics/custom_exception/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1103,6 +1209,14 @@ ValueError                                Traceback (most recent call last)
 
 
 ValueError: echo must be greater than or equal to 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;common-errors&#34;&gt;Common errors:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AttributeError&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ValueError&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TypeError&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -2249,6 +2363,57 @@ parser.add_argument(&#39;-v&#39;, &#39;--verbose&#39;, dest=&#39;verbose&#39;, a
 args = parser.parse_args()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Polymorphysm methods</title>
+      <link>http://othrif.github.io/technical_note/python/basics/polymorphism/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/polymorphism/</guid>
+      <description>&lt;h3 id=&#34;polymorphism-and-instances&#34;&gt;Polymorphism and instances&lt;/h3&gt;
+&lt;p&gt;Polymorphism ensures that the exact method called is determined dynamically based on the instance.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Parent:
+    def talk(self):
+        print(&amp;quot;Parent talking!&amp;quot;)     
+
+class Child(Parent):
+    def talk(self):
+        print(&amp;quot;Child talking!&amp;quot;)
+
+
+class TalkativeChild(Parent):
+    def talk(self):
+        print(&amp;quot;TalkativeChild talking!&amp;quot;)
+        Parent.talk(self)
+
+
+p, c, tc = Parent(), Child(), TalkativeChild()
+
+for obj in (p, c, tc):
+    obj.talk()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Parent talking!
+Parent talking!
+TalkativeChild talking!
+Parent talking!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;liskov-substitution-principal&#34;&gt;Liskov Substitution Principal&lt;/h3&gt;
+&lt;p&gt;the substitution principle requires the substitution to preserve the oversall state of the program.&lt;/p&gt;
+&lt;h4 id=&#34;violations-of-lsp-square-rectangle-problem&#34;&gt;Violations of LSP: Square-Rectangle problem&lt;/h4&gt;
+&lt;p&gt;it seems like you should be able to define a class Rectangle, with attributes h and w (for height and width), and then define a class Square that inherits from the Rectangle. After all, a square &amp;ldquo;is-a&amp;rdquo; rectangle!&lt;/p&gt;
+&lt;p&gt;Unfortunately, this intuition doesn&amp;rsquo;t apply to object-oriented design.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define a Rectangle class
+class Rectangle:
+    def __init__(self, h, w):
+      self.h, self.w = h, w
+
+# Define a Square class
+class Square(Rectangle):
+    def __init__(self, w):
+      self.h, self.w = w, w  
+
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

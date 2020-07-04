@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!">
+  <meta name="description" content="Polymorphism and instances Polymorphism ensures that the exact method called is determined dynamically based on the instance.
+class Parent: def talk(self): print(&quot;Parent talking!&quot;) class Child(Parent): def talk(self): print(&quot;Child talking!&quot;) class TalkativeChild(Parent): def talk(self): print(&quot;TalkativeChild talking!">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/exception/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/polymorphism/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/exception/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/polymorphism/">
 
   
   
@@ -230,9 +231,10 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/exception/">
-  <meta property="og:title" content="Error and exception | Othmane Rifki">
-  <meta property="og:description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/polymorphism/">
+  <meta property="og:title" content="Polymorphysm methods | Othmane Rifki">
+  <meta property="og:description" content="Polymorphism and instances Polymorphism ensures that the exact method called is determined dynamically based on the instance.
+class Parent: def talk(self): print(&quot;Parent talking!&quot;) class Child(Parent): def talk(self): print(&quot;Child talking!&quot;) class TalkativeChild(Parent): def talk(self): print(&quot;TalkativeChild talking!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +259,7 @@
 
 
 
-  <title>Error and exception | Othmane Rifki</title>
+  <title>Polymorphysm methods | Othmane Rifki</title>
 
 </head>
 
@@ -561,83 +563,55 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Error and exception</h1>
+    <h1 class="technical_note_title">Polymorphysm methods</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="error-handling-with-try-except">Error handling with try-except</h3>
-<pre><code class="language-python">def shout_echo(word1, echo=1):
-    &quot;&quot;&quot;Concatenate echo copies of word1 and three
-    exclamation marks at the end of the string.&quot;&quot;&quot;
+  <h3 id="polymorphism-and-instances">Polymorphism and instances</h3>
+<p>Polymorphism ensures that the exact method called is determined dynamically based on the instance.</p>
+<pre><code class="language-python">class Parent:
+    def talk(self):
+        print(&quot;Parent talking!&quot;)     
 
-    echo_word=''
-    shout_words=''
+class Child(Parent):
+    def talk(self):
+        print(&quot;Child talking!&quot;)
 
-    # Add exception handling with try-except
-    try:
-        echo_word = word1*echo
-        shout_words = echo_word+'!!!'
-    except:
-        print(&quot;word1 must be a string and echo must be an integer.&quot;)
-        
-    return shout_words
 
-shout_echo('particle', echo='accelerator')
+class TalkativeChild(Parent):
+    def talk(self):
+        print(&quot;TalkativeChild talking!&quot;)
+        Parent.talk(self)
+
+
+p, c, tc = Parent(), Child(), TalkativeChild()
+
+for obj in (p, c, tc):
+    obj.talk()
 </code></pre>
-<pre><code>word1 must be a string and echo must be an integer.
-
-
-
-
-
-''
+<pre><code>Parent talking!
+Parent talking!
+TalkativeChild talking!
+Parent talking!
 </code></pre>
-<h3 id="error-handling-by-raising-an-error">Error handling by raising an error</h3>
-<pre><code class="language-python">def shout_echo(word1, echo=1):
-    &quot;&quot;&quot;Concatenate echo copies of word1 and three
-    exclamation marks at the end of the string.&quot;&quot;&quot;
+<h3 id="liskov-substitution-principal">Liskov Substitution Principal</h3>
+<p>the substitution principle requires the substitution to preserve the oversall state of the program.</p>
+<h4 id="violations-of-lsp-square-rectangle-problem">Violations of LSP: Square-Rectangle problem</h4>
+<p>it seems like you should be able to define a class Rectangle, with attributes h and w (for height and width), and then define a class Square that inherits from the Rectangle. After all, a square &ldquo;is-a&rdquo; rectangle!</p>
+<p>Unfortunately, this intuition doesn&rsquo;t apply to object-oriented design.</p>
+<pre><code class="language-python"># Define a Rectangle class
+class Rectangle:
+    def __init__(self, h, w):
+      self.h, self.w = h, w
 
-    # Raise an error with raise
-    if echo&lt;0:
-        raise ValueError('echo must be greater than or equal to 0')
+# Define a Square class
+class Square(Rectangle):
+    def __init__(self, w):
+      self.h, self.w = w, w  
 
-    echo_word = word1*echo
-    shout_words = echo_word+'!!!'
-
-    return shout_word
-
-shout_echo(&quot;particle&quot;, echo=-5)
-</code></pre>
-<pre><code>---------------------------------------------------------------------------
-
-ValueError                                Traceback (most recent call last)
-
-&lt;ipython-input-13-85d647f11453&gt; in &lt;module&gt;
-     12     return shout_word
-     13 
----&gt; 14 shout_echo(&quot;particle&quot;, echo=-5)
-
-
-&lt;ipython-input-13-85d647f11453&gt; in shout_echo(word1, echo)
-      5     # Raise an error with raise
-      6     if echo&lt;0:
-----&gt; 7         raise ValueError('echo must be greater than or equal to 0')
-      8 
-      9     echo_word = word1*echo
-
-
-ValueError: echo must be greater than or equal to 0
-</code></pre>
-<h3 id="common-errors">Common errors:</h3>
-<ul>
-<li><code>AttributeError</code></li>
-<li><code>ValueError</code></li>
-<li><code>TypeError</code></li>
-</ul>
-<pre><code class="language-python">
 </code></pre>
 
 </div>

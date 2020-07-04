@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!">
+  <meta name="description" content="What are properties? You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you&rsquo;d like to execute when assigning values to attributes.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/exception/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/properties/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/exception/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/properties/">
 
   
   
@@ -230,9 +230,9 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/exception/">
-  <meta property="og:title" content="Error and exception | Othmane Rifki">
-  <meta property="og:description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/properties/">
+  <meta property="og:title" content="Control attribute acess using @property | Othmane Rifki">
+  <meta property="og:description" content="What are properties? You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you&rsquo;d like to execute when assigning values to attributes."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +257,7 @@
 
 
 
-  <title>Error and exception | Othmane Rifki</title>
+  <title>Control attribute acess using @property | Othmane Rifki</title>
 
 </head>
 
@@ -561,82 +561,60 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Error and exception</h1>
+    <h1 class="technical_note_title">Control attribute acess using @property</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="error-handling-with-try-except">Error handling with try-except</h3>
-<pre><code class="language-python">def shout_echo(word1, echo=1):
-    &quot;&quot;&quot;Concatenate echo copies of word1 and three
-    exclamation marks at the end of the string.&quot;&quot;&quot;
-
-    echo_word=''
-    shout_words=''
-
-    # Add exception handling with try-except
-    try:
-        echo_word = word1*echo
-        shout_words = echo_word+'!!!'
-    except:
-        print(&quot;word1 must be a string and echo must be an integer.&quot;)
-        
-    return shout_words
-
-shout_echo('particle', echo='accelerator')
-</code></pre>
-<pre><code>word1 must be a string and echo must be an integer.
-
-
-
-
-
-''
-</code></pre>
-<h3 id="error-handling-by-raising-an-error">Error handling by raising an error</h3>
-<pre><code class="language-python">def shout_echo(word1, echo=1):
-    &quot;&quot;&quot;Concatenate echo copies of word1 and three
-    exclamation marks at the end of the string.&quot;&quot;&quot;
-
-    # Raise an error with raise
-    if echo&lt;0:
-        raise ValueError('echo must be greater than or equal to 0')
-
-    echo_word = word1*echo
-    shout_words = echo_word+'!!!'
-
-    return shout_word
-
-shout_echo(&quot;particle&quot;, echo=-5)
-</code></pre>
-<pre><code>---------------------------------------------------------------------------
-
-ValueError                                Traceback (most recent call last)
-
-&lt;ipython-input-13-85d647f11453&gt; in &lt;module&gt;
-     12     return shout_word
-     13 
----&gt; 14 shout_echo(&quot;particle&quot;, echo=-5)
-
-
-&lt;ipython-input-13-85d647f11453&gt; in shout_echo(word1, echo)
-      5     # Raise an error with raise
-      6     if echo&lt;0:
-----&gt; 7         raise ValueError('echo must be greater than or equal to 0')
-      8 
-      9     echo_word = word1*echo
-
-
-ValueError: echo must be greater than or equal to 0
-</code></pre>
-<h3 id="common-errors">Common errors:</h3>
+  <h3 id="what-are-properties">What are properties?</h3>
+<p>You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you&rsquo;d like to execute when assigning values to attributes.
+to a class user, they look just like regular attributes, but behind the scenes, they can have custom code executed when they are accessed.</p>
+<h3 id="create-and-set-properties">Create and set properties</h3>
+<p>There are two parts to defining a property:</p>
 <ul>
-<li><code>AttributeError</code></li>
-<li><code>ValueError</code></li>
-<li><code>TypeError</code></li>
+<li>Define an &ldquo;internal&rdquo; attribute that will contain the data <code>_name</code></li>
+<li>Define a <code>@property</code>-decorated method whose name is the property <code>name</code>, and that returns the internal attribute storing the data</li>
 </ul>
+<p>If you&rsquo;d also like to define a custom setter method, there&rsquo;s an additional step:</p>
+<ul>
+<li>Define another method whose name is exactly the property name (again), and decorate it with <code>@prop_name.setter</code> where <code>prop_name</code> is the name of the property. The method should take two arguments &ndash; <code>self</code> (as always), and the value that&rsquo;s being assigned to the property.</li>
+</ul>
+<pre><code class="language-python">class Customer:
+    def __init__(self, name, new_bal):
+        self.name = name
+        if new_bal &lt; 0:
+           raise ValueError(&quot;Invalid balance!&quot;)
+        self._balance = new_bal  
+
+    # Add a decorated balance() method returning _balance        
+    @property
+    def balance(self):
+        return self._balance
+
+    # Add a setter balance() method
+    @balance.setter
+    def balance(self, new_bal):
+        # Validate the parameter value
+        if new_bal &lt; 0:
+           raise ValueError(&quot;Invalid balance!&quot;)
+        self._balance = new_bal
+        print(&quot;Setter method called&quot;)
+
+# Create a Customer        
+cust = Customer('Belinda Lutz', 2000)
+
+# Assign 3000 to the balance property
+cust.balance = 3000
+
+# Print the balance property
+print(cust.balance)
+</code></pre>
+<pre><code>Setter method called
+3000
+</code></pre>
+<p>the user of your <code>Customer</code> class won&rsquo;t be able to assign arbitrary values to the customers&rsquo; balance.</p>
 <pre><code class="language-python">
 </code></pre>
 

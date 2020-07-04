@@ -593,6 +593,31 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
+      <div class="article-style">
+        
+          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
+mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
+      <div class="article-style">
+        
+          Iterarble and iterator an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call next() on it
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/join/" >Join strings</a></h2>
       <div class="article-style">
         
@@ -684,30 +709,6 @@ def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of stri
       <div class="article-style">
         
           Bitwise operation x=3  print(bin(x)) print(bin(~x)) ~x # = -(x+1)  0b11 -0b100 -4  print(bin(6)) print(bin(3)) print(bin(6 | 3)) 6 | 3  0b110 0b11 0b111 7  Bitwise XOR each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          Overloading equality When comparing two objects of a custom class using ==, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special __eq__() method, which accepts two arguments &ndash; the objects to be compared &ndash; and returns True or False.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_repr/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
         
       </div>
     </div>

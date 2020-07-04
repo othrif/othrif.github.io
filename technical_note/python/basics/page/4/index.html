@@ -593,10 +593,47 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
+      <div class="article-style">
+        
+          Overloading equality When comparing two objects of a custom class using ==, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special __eq__() method, which accepts two arguments &ndash; the objects to be compared &ndash; and returns True or False.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/overload_repr/" >Overload comparison operators</a></h2>
+      <div class="article-style">
+        
+          String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
       <div class="article-style">
         
           import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/polymorphism/" >Polymorphysm methods</a></h2>
+      <div class="article-style">
+        
+          Polymorphism and instances Polymorphism ensures that the exact method called is determined dynamically based on the instance.
+class Parent: def talk(self): print(&quot;Parent talking!&quot;) class Child(Parent): def talk(self): print(&quot;Child talking!&quot;) class TalkativeChild(Parent): def talk(self): print(&quot;TalkativeChild talking!
         
       </div>
     </div>
@@ -673,18 +710,6 @@
       </div>
     </div>
   
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
 
   
 <nav>
@@ -692,6 +717,8 @@
     
     <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/3/">&laquo;</a></li>
     
+    
+    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&raquo;</a></li>
     
   </ul>
 </nav>

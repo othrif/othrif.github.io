@@ -593,6 +593,31 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/class_dataframe/" >Class-level attributes, alternative constructors, and inheritance of class methods</a></h2>
+      <div class="article-style">
+        
+          Customize the constructor of the DataFrame implement a small LoggedDF class that inherits from a regular pandas DataFrame but has a created_at attribute storing the timestamp.
+# Import pandas as pd import pandas as pd # Define LoggedDF inherited from pd.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/properties/" >Control attribute acess using @property</a></h2>
+      <div class="article-style">
+        
+          What are properties? You could think of properties as attributes with built-in access control. They are especially useful when there is some additional code you&rsquo;d like to execute when assigning values to attributes.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/custom_exception/" >Custom exception</a></h2>
       <div class="article-style">
         
@@ -683,31 +708,6 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
       <div class="article-style">
         
           Get the int value of the char ord('a')  97  Get the char value of the ascii int chr(97)  'a'  Manipulations chr(ord('a') + 3)  'd'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
-      <div class="article-style">
-        
-          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
-mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
-      <div class="article-style">
-        
-          Iterarble and iterator an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call next() on it
         
       </div>
     </div>
