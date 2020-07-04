@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Google style def count_letter(content, letter): &quot;&quot;&quot;Count the number of times `letter` appears in `content`. Args: content (str): The string to search. letter (str): The letter to search for. Returns: int # Add a section detailing what errors might be raised Raises: ValueError: If `letter` is not a one-character string.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/docstring_style/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/docstring_style/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/docstring_style/">
+  <meta property="og:title" content="Docstrings: google style and numpydoc | Othmane Rifki">
+  <meta property="og:description" content="Google style def count_letter(content, letter): &quot;&quot;&quot;Count the number of times `letter` appears in `content`. Args: content (str): The string to search. letter (str): The letter to search for. Returns: int # Add a section detailing what errors might be raised Raises: ValueError: If `letter` is not a one-character string."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Docstrings: google style and numpydoc | Othmane Rifki</title>
 
 </head>
 
@@ -552,116 +555,145 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Docstrings: google style and numpydoc</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <h3 id="google-style">Google style</h3>
+<pre><code class="language-python">def count_letter(content, letter):
+  &quot;&quot;&quot;Count the number of times `letter` appears in `content`.
 
+  Args:
+    content (str): The string to search.
+    letter (str): The letter to search for.
 
+  Returns:
+    int
 
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
+  # Add a section detailing what errors might be raised
+  Raises:
+    ValueError: If `letter` is not a one-character string.
+  &quot;&quot;&quot;
+  if (not isinstance(letter, str)) or len(letter) != 1:
+    raise ValueError('`letter` must be a single character string.')
+  return len([char for char in content if char == letter])
+</code></pre>
+<h3 id="numpydoc">Numpydoc</h3>
+<pre><code class="language-python">def function(arg_1, arg_2=42):
+    &quot;&quot;&quot;
+    Description of what the function does.
     
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+    Parameters
+    ----------
+    arg_1 : expected type of arg_1
+        Description of arg_1.
+    arg_2 : int, optional
+        Write optional when an argument has a default value.
+        Default=42.
+        
+    Returns
+    -------
+    The type of the return value
+        Can include a description of the return value.
+        Replace &quot;Returns&quot; with &quot;Yields&quot; if this function is a generator
+    &quot;&quot;&quot;
+    pass
+</code></pre>
+<h3 id="retriving-docstrings">Retriving docstrings</h3>
+<h4 id="help"><code>help()</code></h4>
+<pre><code class="language-python">help(count_letter)
+</code></pre>
+<pre><code>Help on function count_letter in module __main__:
 
-  
+count_letter(content, letter)
+    Count the number of times `letter` appears in `content`.
+    
+    Args:
+      content (str): The string to search.
+      letter (str): The letter to search for.
+    
+    Returns:
+      int
+    
+    # Add a section detailing what errors might be raised
+    Raises:
+      ValueError: If `letter` is not a one-character string.
+</code></pre>
+<h4 id="__doc__"><code>__doc__</code></h4>
+<pre><code class="language-python">docstring = count_letter.__doc__
 
+border = '#' * 100
+print('{}\n{}\n{}'.format(border, docstring, border))
+</code></pre>
+<pre><code>####################################################################################################
+Count the number of times `letter` appears in `content`.
+
+  Args:
+    content (str): The string to search.
+    letter (str): The letter to search for.
+
+  Returns:
+    int
+
+  # Add a section detailing what errors might be raised
+  Raises:
+    ValueError: If `letter` is not a one-character string.
   
+####################################################################################################
+</code></pre>
+<h4 id="module-inspectgetdoc">Module <code>inspect.getdoc()</code></h4>
+<p>Preferred way for visually pretty doc!</p>
+<pre><code class="language-python">import inspect
+
+# Get the docstring with a function from the inspect module
+docstring = inspect.getdoc(function)
+
+border = '#' * 100
+print('{}\n{}\n{}'.format(border, docstring, border))
+</code></pre>
+<pre><code>####################################################################################################
+Description of what the function does.
+
+Parameters
+----------
+arg_1 : expected type of arg_1
+    Description of arg_1.
+arg_2 : int, optional
+    Write optional when an argument has a default value.
+    Default=42.
+    
+Returns
+-------
+The type of the return value
+    Can include a description of the return value.
+    Replace &quot;Returns&quot; with &quot;Yields&quot; if this function is a generator
+####################################################################################################
+</code></pre>
+<h3 id="tools-to-generated-docs">Tools to generated docs:</h3>
+<p>There are some wonderful tools like <code>sphinx</code> and <code>pydoc</code> that will automatically generate online documentation for you based off of your docstrings.</p>
+
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/read_write_file/" >Read and write a file</a></h2>
-      <div class="article-style">
-        
-          Read a file # Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.read() print(text)  this is alice.txt counting how many CATS i have. yes i said cAts .
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/4/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
+    </div>
+</article>
 
 
-</div>
+
 
       
 

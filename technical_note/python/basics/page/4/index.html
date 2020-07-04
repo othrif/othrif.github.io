@@ -593,6 +593,43 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/class_method/" >Method belonging to a class object</a></h2>
+      <div class="article-style">
+        
+          Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/nested/" >Nested functions, keyword nonlocal</a></h2>
+      <div class="article-style">
+        
+          Nested function To avoid writing out the same computations within functions repeatedly.
+def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with '!!!'.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with '!
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/operators/" >Operators</a></h2>
+      <div class="article-style">
+        
+          Bitwise operation x=3  print(bin(x)) print(bin(~x)) ~x # = -(x+1)  0b11 -0b100 -4  print(bin(6)) print(bin(3)) print(bin(6 | 3)) 6 | 3  0b110 0b11 0b111 7  Bitwise XOR each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
       <div class="article-style">
         
@@ -670,42 +707,6 @@ class Parent: def talk(self): print(&quot;Parent talking!&quot;) class Child(Par
       <div class="article-style">
         
           Self in Python class class car(): # init method or constructor def __init__(self, model, color): self.model = model self.color = color def show(self): print(&quot;Model is&quot;, self.model ) print(&quot;color is&quot;, self.color ) # both objects have different self which # contain their attributes audi = car(&quot;audi a4&quot;, &quot;blue&quot;) ferrari = car(&quot;ferrari 488&quot;, &quot;green&quot;) audi.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
         
       </div>
     </div>

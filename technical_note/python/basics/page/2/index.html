@@ -606,6 +606,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/context_manager/" >Context manager: `with ... as ...`</a></h2>
+      <div class="article-style">
+        
+          with ... as ... as &lt;variable name&gt; is not needed if a context manager does not return a value.
+# Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/properties/" >Control attribute acess using @property</a></h2>
       <div class="article-style">
         
@@ -656,6 +669,18 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/docstring_style/" >Docstrings: google style and numpydoc</a></h2>
+      <div class="article-style">
+        
+          Google style def count_letter(content, letter): &quot;&quot;&quot;Count the number of times `letter` appears in `content`. Args: content (str): The string to search. letter (str): The letter to search for. Returns: int # Add a section detailing what errors might be raised Raises: ValueError: If `letter` is not a one-character string.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/enumerate/" >Enumerate a dictionary</a></h2>
       <div class="article-style">
         
@@ -671,7 +696,8 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
       <h2><a href="/technical_note/python/basics/exception/" >Error and exception</a></h2>
       <div class="article-style">
         
-          Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word='' shout_words='' # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word+'!
+          Error handling with try-except-finally Syntax:
+try: # code that might raise an error except: # do something about the error finally: # this code runs no matter what  def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.
         
       </div>
     </div>
@@ -684,30 +710,6 @@ from datetime import datetime date_string='03/01/2019 12:00:00 AM' datetime.strp
       <div class="article-style">
         
           Preliminary import os  Current location print(f'Current location is: {os.getcwd()!r}')  Current location is: '/Users/othmanerifki/projects/website/othrif.hugo/content/technical_note/python/basics'  Create dir if it does not exist path='/tmp/test' if not os.path.exists(path): os.mkdir(path)  Check by going to the newly created area and outputing path os.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/functions/" >Functions</a></h2>
-      <div class="article-style">
-        
-          Exit from function with conditions outer_condition=True condition_a=True condition_b=False def some_function(): if condition_a: # do something and return early print(f'condition a satisfied!') return if condition_b: # do something else and return early print(f'condition b satisfied!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/ascii/" >Get ASCII of a character</a></h2>
-      <div class="article-style">
-        
-          Get the int value of the char ord('a')  97  Get the char value of the ascii int chr(97)  'a'  Manipulations chr(ord('a') + 3)  'd'  
         
       </div>
     </div>

@@ -213,6 +213,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/context_manager/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/properties/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -273,6 +278,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/docstring_style/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/enumerate/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -314,6 +324,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/ascii/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/immutable_mutable/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -494,6 +509,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/rand/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/read_write_file/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

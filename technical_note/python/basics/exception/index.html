@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!">
+  <meta name="description" content="Error handling with try-except-finally Syntax:
+try: # code that might raise an error except: # do something about the error finally: # this code runs no matter what  def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/exception/">
@@ -232,7 +233,8 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/exception/">
   <meta property="og:title" content="Error and exception | Othmane Rifki">
-  <meta property="og:description" content="Error handling with try-except def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.&quot;&quot;&quot; echo_word=&#39;&#39; shout_words=&#39;&#39; # Add exception handling with try-except try: echo_word = word1*echo shout_words = echo_word&#43;&#39;!"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Error handling with try-except-finally Syntax:
+try: # code that might raise an error except: # do something about the error finally: # this code runs no matter what  def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -568,7 +570,15 @@
   </header>
   <div class="content">
 
-  <h3 id="error-handling-with-try-except">Error handling with try-except</h3>
+  <h3 id="error-handling-with-try-except-finally">Error handling with try-except-finally</h3>
+<p>Syntax:</p>
+<pre><code class="language-python">try: 
+    # code that might raise an error
+except:
+    # do something about the error
+finally:
+    # this code runs no matter what 
+</code></pre>
 <pre><code class="language-python">def shout_echo(word1, echo=1):
     &quot;&quot;&quot;Concatenate echo copies of word1 and three
     exclamation marks at the end of the string.&quot;&quot;&quot;

@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="with ... as ... as &lt;variable name&gt; is not needed if a context manager does not return a value.
+# Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open(&#39;alice.txt&#39;) as file: text = file.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/context_manager/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/context_manager/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/context_manager/">
+  <meta property="og:title" content="Context manager: `with ... as ...` | Othmane Rifki">
+  <meta property="og:description" content="with ... as ... as &lt;variable name&gt; is not needed if a context manager does not return a value.
+# Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open(&#39;alice.txt&#39;) as file: text = file."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Context manager: `with ... as ...` | Othmane Rifki</title>
 
 </head>
 
@@ -552,116 +557,180 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Context manager: `with ... as ...`</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <h3 id="with--as-"><code>with ... as ...</code></h3>
+<p><code>as &lt;variable name&gt;</code> is not needed if a context manager does not return a value.</p>
+<pre><code class="language-python"># Open &quot;alice.txt&quot; and assign the file to &quot;file&quot;
+with open('alice.txt') as file:
+  text = file.read()
 
+n = 0
+for word in text.split():
+    if word.lower() in ['cat', 'cats']:
+        n += 1
 
+print('Lewis Carroll uses the word &quot;cat&quot; {} times'.format(n))
+</code></pre>
+<pre><code>Lewis Carroll uses the word &quot;cat&quot; 4 times
+</code></pre>
+<h3 id="how-to-create-a-context-manager">How to create a context manager</h3>
+<p>Syntax:</p>
+<pre><code class="language-python">import contextlib
+@contextlib.contextmanager
+def my_context():
+    # Add any set up code you need
+    yield
+    # Add any tear down code you need (optional)
+</code></pre>
+<pre><code class="language-python">
+@contextlib.contextmanager
+def my_context():
+    print('start context')
+    yield 9999
+    print('good bye!')
 
-  
+</code></pre>
+<pre><code class="language-python">with my_context() as foo:
+    print('foo is {}'.format(foo))
+</code></pre>
+<pre><code>start context
+foo is 9999
+good bye!
+</code></pre>
+<p>Write <code>timer()</code> context manager to figure out which of their functions is running too slow. Notice that the three elements of a context manager are all here: a function definition, a yield statement, and the @contextlib.contextmanager decorator. It&rsquo;s also worth noticing that timer() is a context manager that does not return an explicit value, so yield is written by itself without specifying anything to return.</p>
+<pre><code class="language-python">import time
 
+@contextlib.contextmanager
+def timer():
+  &quot;&quot;&quot;Time the execution of a context block.
 
+  Yields:
+    None
+  &quot;&quot;&quot;
+  start = time.time()
+  # Send control back to the context block
+  yield
+  end = time.time()
+  print('Elapsed: {:.2f}s'.format(end - start))
+</code></pre>
+<pre><code class="language-python">with timer():
+  print('This should take approximately 0.25 seconds')
+  time.sleep(0.25)
+</code></pre>
+<pre><code>This should take approximately 0.25 seconds
+Elapsed: 0.25s
+</code></pre>
+<h3 id="a-read-only-open-context-manager">A read-only open() context manager</h3>
+<p>read-only version of the open() context manager to use in your project to not accidentally overwrite one of the files when trying to read it in.</p>
+<pre><code class="language-python">@contextlib.contextmanager
+def open_read_only(filename):
+  &quot;&quot;&quot;Open a file in read-only mode.
 
+  Args:
+    filename (str): The location of the file to read
 
+  Yields:
+    file object
+  &quot;&quot;&quot;
+  read_only_file = open(filename, mode='r')
+  # Yield read_only_file so it can be assigned to my_file
+  yield read_only_file
+  # Close read_only_file
+  read_only_file.close()
 
+with open_read_only('alice.txt') as my_file:
+  print(my_file.read())
+</code></pre>
+<pre><code>this is alice.txt counting how many CATS i have. yes i said cAts . Not just one cat , but many catS !
+</code></pre>
+<h3 id="changing-the-working-directory">Changing the working directory</h3>
+<p>change the current working directory back to what it was when they called in_dir(). This is important to do because your users might be relying on their working directory being what it was when they started the script. in_dir() is a great example of the CHANGE/RESET pattern that indicates you should use a context manager.</p>
+<pre><code class="language-python">def in_dir(directory):
+  &quot;&quot;&quot;Change current working directory to `directory`,
+  allow the user to run some code, and change back.
 
+  Args:
+    directory (str): The path to a directory to work in.
+  &quot;&quot;&quot;
+  current_dir = os.getcwd()
+  os.chdir(directory)
 
-  
+  # Add code that lets you handle errors
+  try:
+    yield
+  # Ensure the directory is reset,
+  # whether there was an error or not
+  finally:
+    os.chdir(current_dir)
+</code></pre>
+<h3 id="context-manager-patterns">Context manager patterns</h3>
+<p>Situation where using a context manager with exception handling <code>try-finally</code> that can be useful</p>
+<table>
+<thead>
+<tr>
+<th>Start</th>
+<th>Finish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open</td>
+<td>Close</td>
+</tr>
+<tr>
+<td>Lock</td>
+<td>Release</td>
+</tr>
+<tr>
+<td>Change</td>
+<td>Reset</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>Exit</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>Stop</td>
+</tr>
+<tr>
+<td>Setup</td>
+<td>Teardown</td>
+</tr>
+<tr>
+<td>Connect</td>
+<td>Disconnect</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">
+</code></pre>
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/read_write_file/" >Read and write a file</a></h2>
-      <div class="article-style">
-        
-          Read a file # Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.read() print(text)  this is alice.txt counting how many CATS i have. yes i said cAts .
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/4/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
+    </div>
+</article>
 
 
-</div>
+
 
       
 

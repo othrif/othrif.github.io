@@ -860,6 +860,161 @@ print(ldf.created_at)
     </item>
     
     <item>
+      <title>Context manager: `with ... as ...`</title>
+      <link>http://othrif.github.io/technical_note/python/basics/context_manager/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/context_manager/</guid>
+      <description>&lt;h3 id=&#34;with--as-&#34;&gt;&lt;code&gt;with ... as ...&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;as &amp;lt;variable name&amp;gt;&lt;/code&gt; is not needed if a context manager does not return a value.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Open &amp;quot;alice.txt&amp;quot; and assign the file to &amp;quot;file&amp;quot;
+with open(&#39;alice.txt&#39;) as file:
+  text = file.read()
+
+n = 0
+for word in text.split():
+    if word.lower() in [&#39;cat&#39;, &#39;cats&#39;]:
+        n += 1
+
+print(&#39;Lewis Carroll uses the word &amp;quot;cat&amp;quot; {} times&#39;.format(n))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Lewis Carroll uses the word &amp;quot;cat&amp;quot; 4 times
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;how-to-create-a-context-manager&#34;&gt;How to create a context manager&lt;/h3&gt;
+&lt;p&gt;Syntax:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import contextlib
+@contextlib.contextmanager
+def my_context():
+    # Add any set up code you need
+    yield
+    # Add any tear down code you need (optional)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+@contextlib.contextmanager
+def my_context():
+    print(&#39;start context&#39;)
+    yield 9999
+    print(&#39;good bye!&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with my_context() as foo:
+    print(&#39;foo is {}&#39;.format(foo))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;start context
+foo is 9999
+good bye!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Write &lt;code&gt;timer()&lt;/code&gt; context manager to figure out which of their functions is running too slow. Notice that the three elements of a context manager are all here: a function definition, a yield statement, and the @contextlib.contextmanager decorator. It&amp;rsquo;s also worth noticing that timer() is a context manager that does not return an explicit value, so yield is written by itself without specifying anything to return.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+
+@contextlib.contextmanager
+def timer():
+  &amp;quot;&amp;quot;&amp;quot;Time the execution of a context block.
+
+  Yields:
+    None
+  &amp;quot;&amp;quot;&amp;quot;
+  start = time.time()
+  # Send control back to the context block
+  yield
+  end = time.time()
+  print(&#39;Elapsed: {:.2f}s&#39;.format(end - start))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;with timer():
+  print(&#39;This should take approximately 0.25 seconds&#39;)
+  time.sleep(0.25)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;This should take approximately 0.25 seconds
+Elapsed: 0.25s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;a-read-only-open-context-manager&#34;&gt;A read-only open() context manager&lt;/h3&gt;
+&lt;p&gt;read-only version of the open() context manager to use in your project to not accidentally overwrite one of the files when trying to read it in.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@contextlib.contextmanager
+def open_read_only(filename):
+  &amp;quot;&amp;quot;&amp;quot;Open a file in read-only mode.
+
+  Args:
+    filename (str): The location of the file to read
+
+  Yields:
+    file object
+  &amp;quot;&amp;quot;&amp;quot;
+  read_only_file = open(filename, mode=&#39;r&#39;)
+  # Yield read_only_file so it can be assigned to my_file
+  yield read_only_file
+  # Close read_only_file
+  read_only_file.close()
+
+with open_read_only(&#39;alice.txt&#39;) as my_file:
+  print(my_file.read())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;this is alice.txt counting how many CATS i have. yes i said cAts . Not just one cat , but many catS !
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;changing-the-working-directory&#34;&gt;Changing the working directory&lt;/h3&gt;
+&lt;p&gt;change the current working directory back to what it was when they called in_dir(). This is important to do because your users might be relying on their working directory being what it was when they started the script. in_dir() is a great example of the CHANGE/RESET pattern that indicates you should use a context manager.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def in_dir(directory):
+  &amp;quot;&amp;quot;&amp;quot;Change current working directory to `directory`,
+  allow the user to run some code, and change back.
+
+  Args:
+    directory (str): The path to a directory to work in.
+  &amp;quot;&amp;quot;&amp;quot;
+  current_dir = os.getcwd()
+  os.chdir(directory)
+
+  # Add code that lets you handle errors
+  try:
+    yield
+  # Ensure the directory is reset,
+  # whether there was an error or not
+  finally:
+    os.chdir(current_dir)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;context-manager-patterns&#34;&gt;Context manager patterns&lt;/h3&gt;
+&lt;p&gt;Situation where using a context manager with exception handling &lt;code&gt;try-finally&lt;/code&gt; that can be useful&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Start&lt;/th&gt;
+&lt;th&gt;Finish&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Open&lt;/td&gt;
+&lt;td&gt;Close&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lock&lt;/td&gt;
+&lt;td&gt;Release&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Change&lt;/td&gt;
+&lt;td&gt;Reset&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enter&lt;/td&gt;
+&lt;td&gt;Exit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Start&lt;/td&gt;
+&lt;td&gt;Stop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Setup&lt;/td&gt;
+&lt;td&gt;Teardown&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Connect&lt;/td&gt;
+&lt;td&gt;Disconnect&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Control attribute acess using @property</title>
       <link>http://othrif.github.io/technical_note/python/basics/properties/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1125,6 +1280,126 @@ oslo
     </item>
     
     <item>
+      <title>Docstrings: google style and numpydoc</title>
+      <link>http://othrif.github.io/technical_note/python/basics/docstring_style/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/docstring_style/</guid>
+      <description>&lt;h3 id=&#34;google-style&#34;&gt;Google style&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def count_letter(content, letter):
+  &amp;quot;&amp;quot;&amp;quot;Count the number of times `letter` appears in `content`.
+
+  Args:
+    content (str): The string to search.
+    letter (str): The letter to search for.
+
+  Returns:
+    int
+
+  # Add a section detailing what errors might be raised
+  Raises:
+    ValueError: If `letter` is not a one-character string.
+  &amp;quot;&amp;quot;&amp;quot;
+  if (not isinstance(letter, str)) or len(letter) != 1:
+    raise ValueError(&#39;`letter` must be a single character string.&#39;)
+  return len([char for char in content if char == letter])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;numpydoc&#34;&gt;Numpydoc&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def function(arg_1, arg_2=42):
+    &amp;quot;&amp;quot;&amp;quot;
+    Description of what the function does.
+    
+    Parameters
+    ----------
+    arg_1 : expected type of arg_1
+        Description of arg_1.
+    arg_2 : int, optional
+        Write optional when an argument has a default value.
+        Default=42.
+        
+    Returns
+    -------
+    The type of the return value
+        Can include a description of the return value.
+        Replace &amp;quot;Returns&amp;quot; with &amp;quot;Yields&amp;quot; if this function is a generator
+    &amp;quot;&amp;quot;&amp;quot;
+    pass
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;retriving-docstrings&#34;&gt;Retriving docstrings&lt;/h3&gt;
+&lt;h4 id=&#34;help&#34;&gt;&lt;code&gt;help()&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(count_letter)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Help on function count_letter in module __main__:
+
+count_letter(content, letter)
+    Count the number of times `letter` appears in `content`.
+    
+    Args:
+      content (str): The string to search.
+      letter (str): The letter to search for.
+    
+    Returns:
+      int
+    
+    # Add a section detailing what errors might be raised
+    Raises:
+      ValueError: If `letter` is not a one-character string.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;__doc__&#34;&gt;&lt;code&gt;__doc__&lt;/code&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;docstring = count_letter.__doc__
+
+border = &#39;#&#39; * 100
+print(&#39;{}\n{}\n{}&#39;.format(border, docstring, border))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;####################################################################################################
+Count the number of times `letter` appears in `content`.
+
+  Args:
+    content (str): The string to search.
+    letter (str): The letter to search for.
+
+  Returns:
+    int
+
+  # Add a section detailing what errors might be raised
+  Raises:
+    ValueError: If `letter` is not a one-character string.
+  
+####################################################################################################
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;module-inspectgetdoc&#34;&gt;Module &lt;code&gt;inspect.getdoc()&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;Preferred way for visually pretty doc!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import inspect
+
+# Get the docstring with a function from the inspect module
+docstring = inspect.getdoc(function)
+
+border = &#39;#&#39; * 100
+print(&#39;{}\n{}\n{}&#39;.format(border, docstring, border))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;####################################################################################################
+Description of what the function does.
+
+Parameters
+----------
+arg_1 : expected type of arg_1
+    Description of arg_1.
+arg_2 : int, optional
+    Write optional when an argument has a default value.
+    Default=42.
+    
+Returns
+-------
+The type of the return value
+    Can include a description of the return value.
+    Replace &amp;quot;Returns&amp;quot; with &amp;quot;Yields&amp;quot; if this function is a generator
+####################################################################################################
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;tools-to-generated-docs&#34;&gt;Tools to generated docs:&lt;/h3&gt;
+&lt;p&gt;There are some wonderful tools like &lt;code&gt;sphinx&lt;/code&gt; and &lt;code&gt;pydoc&lt;/code&gt; that will automatically generate online documentation for you based off of your docstrings.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Enumerate a dictionary</title>
       <link>http://othrif.github.io/technical_note/python/basics/enumerate/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1147,7 +1422,15 @@ for i, (k, v) in enumerate(example_dict.items()):
       <link>http://othrif.github.io/technical_note/python/basics/exception/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/basics/exception/</guid>
-      <description>&lt;h3 id=&#34;error-handling-with-try-except&#34;&gt;Error handling with try-except&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;error-handling-with-try-except-finally&#34;&gt;Error handling with try-except-finally&lt;/h3&gt;
+&lt;p&gt;Syntax:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;try: 
+    # code that might raise an error
+except:
+    # do something about the error
+finally:
+    # this code runs no matter what 
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def shout_echo(word1, echo=1):
     &amp;quot;&amp;quot;&amp;quot;Concatenate echo copies of word1 and three
     exclamation marks at the end of the string.&amp;quot;&amp;quot;&amp;quot;
@@ -1335,6 +1618,88 @@ cherry
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;chr(ord(&#39;a&#39;) + 3)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&#39;d&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Immutable or mutable?</title>
+      <link>http://othrif.github.io/technical_note/python/basics/immutable_mutable/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/immutable_mutable/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Immutable&lt;/th&gt;
+&lt;th&gt;Mutable&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;int&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;float&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dict&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bool&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;set&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bytearray&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bytes&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;objects&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tuple&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;functions&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;frozenset&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;almost everything else&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;None&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;First Header&lt;/th&gt;
+&lt;th&gt;Second Header&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;td&gt;Content Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;best-practice-for-default-arguments&#34;&gt;Best practice for default arguments&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+# Use an immutable variable for the default argument 
+def better_add_column(values, df=None):
+  &amp;quot;&amp;quot;&amp;quot;Add a column of `values` to a DataFrame `df`.&amp;quot;&amp;quot;&amp;quot;
+  # Update the function to create a default DataFrame
+  if df is None:
+    df = pandas.DataFrame()
+  df[&#39;col_{}&#39;.format(len(df.columns))] = values
+  return df
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We cannot define the function as: &lt;code&gt;def better_add_column(values, df=pandas.DataFrame()):&lt;/code&gt; . It does not work since the code used a mutable variable as a default argument value which gives unexpected behavior&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -2581,6 +2946,25 @@ color is green
       <guid>http://othrif.github.io/technical_note/python/basics/conventions/</guid>
       <description>&lt;h3 id=&#34;import-packages-and-modules&#34;&gt;Import packages and modules&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Read and write a file</title>
+      <link>http://othrif.github.io/technical_note/python/basics/read_write_file/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/read_write_file/</guid>
+      <description>&lt;h3 id=&#34;read-a-file&#34;&gt;Read a file&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Open &amp;quot;alice.txt&amp;quot; and assign the file to &amp;quot;file&amp;quot;
+with open(&#39;alice.txt&#39;) as file:
+  text = file.read()
+
+print(text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;this is alice.txt counting how many CATS i have. yes i said cAts . Not just one cat , but many catS !
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
