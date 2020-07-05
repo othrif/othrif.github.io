@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.">
+  <meta name="description" content="Timer decorator Time your functions!
+from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/memoize_decorator/">
@@ -231,8 +232,9 @@
   
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/memoize_decorator/">
-  <meta property="og:title" content="Memoizing to store results of functions for fast lookup | Othmane Rifki">
-  <meta property="og:description" content="Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Useful decorators: Memoizing, timer, type check | Othmane Rifki">
+  <meta property="og:description" content="Timer decorator Time your functions!
+from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +259,7 @@
 
 
 
-  <title>Memoizing to store results of functions for fast lookup | Othmane Rifki</title>
+  <title>Useful decorators: Memoizing, timer, type check | Othmane Rifki</title>
 
 </head>
 
@@ -561,7 +563,7 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Memoizing to store results of functions for fast lookup</h1>
+    <h1 class="technical_note_title">Useful decorators: Memoizing, timer, type check</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
@@ -569,10 +571,13 @@
   <div class="content">
 
   <h3 id="timer-decorator">Timer decorator</h3>
-<pre><code class="language-python">import time
+<p>Time your functions!</p>
+<pre><code class="language-python">from functools import wraps
+import time
 def timer(func):
     &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot;
     # define the wrapper function to return 
+    @wraps(func)
     def wrapper(*args, **kwargs):
         # When wrapper() is called, get current time
         t_start = time.time()
@@ -586,12 +591,14 @@ def timer(func):
     return wrapper
 </code></pre>
 <h3 id="memoize">Memoize</h3>
-<p>Save results of input so that the function runs faster the second time a function is called with the same arguments.</p>
-<pre><code class="language-python">def memoize(func):
+<p>Store results of functions for fast lookup so that the function runs faster the second time a function is called with the same arguments.</p>
+<pre><code class="language-python">from functools import wraps
+def memoize(func):
     &quot;&quot;&quot;Store the results of the decorated function for fast lookup&quot;&quot;&quot;
     # Store results in a dict that maps arguments to results
     cache = {}
     # Define the wrapper function to return.
+    @wraps(func)
     def wrapper(*args,**kwargs):
         # If these arguments haven't been seen before,
         key = str(args) + str(kwargs)
@@ -628,6 +635,100 @@ multiply_slow(1,2)
 
 
 2
+</code></pre>
+<h3 id="check-type">Check type</h3>
+<p>Examine the results of your functions at runtime by checking the type returned.</p>
+<pre><code class="language-python">from functools import wraps
+def print_return_type(func):# Define wrapper(), the decorated function
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    # Call the function being decorated
+    result = func(*args, **kwargs)
+    print('{}() returned type {}'.format(
+      func.__name__, type(result)
+    ))
+    return result
+  # Return the decorated function
+  return wrapper
+  
+@print_return_type
+def foo(value):
+  return value
+  
+print(foo(42))
+print(foo([1, 2, 3]))
+print(foo({'a': 42}))
+</code></pre>
+<pre><code>foo() returned type &lt;class 'int'&gt;
+42
+foo() returned type &lt;class 'list'&gt;
+[1, 2, 3]
+foo() returned type &lt;class 'dict'&gt;
+{'a': 42}
+</code></pre>
+<h3 id="counter">Counter</h3>
+<p>decorator that adds a counter to each function that you decorate. decorate a bunch of functions with the counter() decorator, let your program run for a while, and then print out how many times each function was called.</p>
+<pre><code class="language-python">from functools import wraps
+def counter(func):
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    wrapper.count += 1
+    # Call the function being decorated and return the result
+    return func(*args, **kwargs)
+  wrapper.count = 0
+  # Return the new decorated function
+  return wrapper
+
+# Decorate foo() with the counter() decorator
+@counter
+def foo():
+  print('calling foo()')
+  
+foo()
+foo()
+
+print('foo() was called {} times.'.format(foo.count))
+</code></pre>
+<pre><code>calling foo()
+calling foo()
+foo() was called 2 times.
+</code></pre>
+<h3 id="measuring-decorator-overhead">Measuring decorator overhead</h3>
+<p>Access the original function using wraps attribute <code>__wrapped__</code></p>
+<pre><code class="language-python">import time
+from functools import wraps
+
+def check_everything(func):
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    time.sleep(2)
+    result = func(*args, **kwargs)
+    return result
+  return wrapper
+
+@check_everything
+def duplicate(my_list):
+  &quot;&quot;&quot;Return a new list that repeats the input twice&quot;&quot;&quot;
+  return my_list + my_list
+
+t_start = time.time()
+duplicated_list = duplicate(list(range(50)))
+t_end = time.time()
+decorated_time = t_end - t_start
+
+t_start = time.time()
+# Call the original function instead of the decorated one
+duplicated_list = duplicate.__wrapped__(list(range(50)))
+t_end = time.time()
+undecorated_time = t_end - t_start
+
+print('Decorated time: {:.5f}s'.format(decorated_time))
+print('Undecorated time: {:.5f}s'.format(undecorated_time))
+</code></pre>
+<pre><code>Decorated time: 2.00555s
+Undecorated time: 0.00025s
+</code></pre>
+<pre><code class="language-python">
 </code></pre>
 
 </div>

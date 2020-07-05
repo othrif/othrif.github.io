@@ -8269,75 +8269,6 @@ plt.show()
     </item>
     
     <item>
-      <title>Memoizing to store results of functions for fast lookup</title>
-      <link>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</guid>
-      <description>&lt;h3 id=&#34;timer-decorator&#34;&gt;Timer decorator&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
-def timer(func):
-    &amp;quot;&amp;quot;&amp;quot; A decorator that prints how long a function took to run&amp;quot;&amp;quot;&amp;quot;
-    # define the wrapper function to return 
-    def wrapper(*args, **kwargs):
-        # When wrapper() is called, get current time
-        t_start = time.time()
-        # Call the decorated function and store the result
-        result = func(*args, **kwargs)
-        # Get the total time it took to run, and print it
-        t_total = time.time() - t_start
-        print(f&#39;{func.__name__} took {t_total}s&#39;)
-        return result
-    
-    return wrapper
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;memoize&#34;&gt;Memoize&lt;/h3&gt;
-&lt;p&gt;Save results of input so that the function runs faster the second time a function is called with the same arguments.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def memoize(func):
-    &amp;quot;&amp;quot;&amp;quot;Store the results of the decorated function for fast lookup&amp;quot;&amp;quot;&amp;quot;
-    # Store results in a dict that maps arguments to results
-    cache = {}
-    # Define the wrapper function to return.
-    def wrapper(*args,**kwargs):
-        # If these arguments haven&#39;t been seen before,
-        key = str(args) + str(kwargs)
-        if key not in cache:
-            # Call func() and store the result.
-            cache[key] = func(*args,**kwargs)
-        return cache[key]
-    return wrapper
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timer
-@memoize
-def multiply_slow(a,b):
-    time.sleep(5)
-    return a*b
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the call runs slowly
-multiply_slow(1,2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;wrapper took 5.003448247909546s
-
-
-
-
-
-2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the calls runs much faster
-multiply_slow(1,2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;wrapper took 5.7220458984375e-06s
-
-
-
-
-
-2
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Method belonging to a class object</title>
       <link>http://othrif.github.io/technical_note/python/basics/class_method/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -9145,6 +9076,37 @@ parser.add_argument(&#39;-v&#39;, &#39;--verbose&#39;, dest=&#39;verbose&#39;, a
 args = parser.parse_args()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pass arguments to decorators </title>
+      <link>http://othrif.github.io/technical_note/python/basics/arguments_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/arguments_decorator/</guid>
+      <description>&lt;h3 id=&#34;pass-argument-to-decorator&#34;&gt;Pass argument to decorator&lt;/h3&gt;
+&lt;p&gt;You cannot pass arguments to decorator, since it is only supposed to take-in a function to be decorated as an argument. Instead, you created a function that returns a decorator. Then the &lt;code&gt;@&lt;/code&gt; is applied to the decorator returned by the function with an argument. See below for an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def run_n_times(n):
+  &amp;quot;&amp;quot;&amp;quot;Define and return a decorator&amp;quot;&amp;quot;&amp;quot;
+  def decorator(func):
+    def wrapper(*args, **kwargs):
+      for i in range(n):
+        func(*args, **kwargs)
+    return wrapper
+  return decorator
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@run_n_times(5)
+def multiply(a,b):
+    print(a*b)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;multiply(2,4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8
+8
+8
+8
+8
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -11253,6 +11215,106 @@ x+x
     </item>
     
     <item>
+      <title>Timeout decorator for a function that runs longer than expected</title>
+      <link>http://othrif.github.io/technical_note/python/basics/timeout_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/timeout_decorator/</guid>
+      <description>&lt;h3 id=&#34;pass-argument-to-decorator&#34;&gt;Pass argument to decorator&lt;/h3&gt;
+&lt;p&gt;Timeout decorator for a function that runs longer than expected&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import signal
+
+def raise_timeout(*args, **kwargs):
+    raise TimeoutError(&#39;This function has timed out!!!!!&#39;)
+
+# When an &amp;quot;alarm&amp;quot; signal goes off, call raise_timeout()
+signal.signal(signalnum=signal.SIGALRM, handler=raise_timeout)
+# Set off an alarm in 5 seconds
+signal.alarm(5)
+# Cancel the alarm
+signal.alarm(0)
+raise_timeout()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TimeoutError                              Traceback (most recent call last)
+
+&amp;lt;ipython-input-47-a751c17ccd28&amp;gt; in &amp;lt;module&amp;gt;
+     10 # Cancel the alarm
+     11 signal.alarm(0)
+---&amp;gt; 12 raise_timeout()
+
+
+&amp;lt;ipython-input-47-a751c17ccd28&amp;gt; in raise_timeout(*args, **kwargs)
+      2 
+      3 def raise_timeout(*args, **kwargs):
+----&amp;gt; 4     raise TimeoutError(&#39;This function has timed out!!!!!&#39;)
+      5 
+      6 # When an &amp;quot;alarm&amp;quot; signal goes off, call raise_timeout()
+
+
+TimeoutError: This function has timed out!!!!!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import wraps
+import time 
+def timeout(n_seconds):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # Set an alarm for n seconds
+            signal.alarm(n_seconds)
+            try:
+                # Call the decorated func
+                return func(*args,**kwargs)
+            finally:
+                # Cancel alarm
+                signal.alarm(0)
+        return wrapper
+    return decorator
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timeout(5)
+def foo():
+    time.sleep(10)
+    print(&#39;foo!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;foo()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+TimeoutError                              Traceback (most recent call last)
+
+&amp;lt;ipython-input-50-c19b6d9633cf&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 foo()
+
+
+&amp;lt;ipython-input-48-d1ae5af212c1&amp;gt; in wrapper(*args, **kwargs)
+      9             try:
+     10                 # Call the decorated func
+---&amp;gt; 11                 return func(*args,**kwargs)
+     12             finally:
+     13                 # Cancel alarm
+
+
+&amp;lt;ipython-input-49-b4a5c0804cd2&amp;gt; in foo()
+      1 @timeout(5)
+      2 def foo():
+----&amp;gt; 3     time.sleep(10)
+      4     print(&#39;foo!&#39;)
+
+
+&amp;lt;ipython-input-47-a751c17ccd28&amp;gt; in raise_timeout(*args, **kwargs)
+      2 
+      3 def raise_timeout(*args, **kwargs):
+----&amp;gt; 4     raise TimeoutError(&#39;This function has timed out!!!!!&#39;)
+      5 
+      6 # When an &amp;quot;alarm&amp;quot; signal goes off, call raise_timeout()
+
+
+TimeoutError: This function has timed out!!!!!
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Timer decorator for how long a function took to run</title>
       <link>http://othrif.github.io/technical_note/python/basics/timer_decorator/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -11300,6 +11362,174 @@ def sleep_n_seconds(n):
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sleep_n_seconds(10)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;sleep_n_seconds took 10.002737045288086s
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Useful decorators: Memoizing, timer, type check</title>
+      <link>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</guid>
+      <description>&lt;h3 id=&#34;timer-decorator&#34;&gt;Timer decorator&lt;/h3&gt;
+&lt;p&gt;Time your functions!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import wraps
+import time
+def timer(func):
+    &amp;quot;&amp;quot;&amp;quot; A decorator that prints how long a function took to run&amp;quot;&amp;quot;&amp;quot;
+    # define the wrapper function to return 
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        # When wrapper() is called, get current time
+        t_start = time.time()
+        # Call the decorated function and store the result
+        result = func(*args, **kwargs)
+        # Get the total time it took to run, and print it
+        t_total = time.time() - t_start
+        print(f&#39;{func.__name__} took {t_total}s&#39;)
+        return result
+    
+    return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;memoize&#34;&gt;Memoize&lt;/h3&gt;
+&lt;p&gt;Store results of functions for fast lookup so that the function runs faster the second time a function is called with the same arguments.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import wraps
+def memoize(func):
+    &amp;quot;&amp;quot;&amp;quot;Store the results of the decorated function for fast lookup&amp;quot;&amp;quot;&amp;quot;
+    # Store results in a dict that maps arguments to results
+    cache = {}
+    # Define the wrapper function to return.
+    @wraps(func)
+    def wrapper(*args,**kwargs):
+        # If these arguments haven&#39;t been seen before,
+        key = str(args) + str(kwargs)
+        if key not in cache:
+            # Call func() and store the result.
+            cache[key] = func(*args,**kwargs)
+        return cache[key]
+    return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timer
+@memoize
+def multiply_slow(a,b):
+    time.sleep(5)
+    return a*b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the call runs slowly
+multiply_slow(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;wrapper took 5.003448247909546s
+
+
+
+
+
+2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the calls runs much faster
+multiply_slow(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;wrapper took 5.7220458984375e-06s
+
+
+
+
+
+2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;check-type&#34;&gt;Check type&lt;/h3&gt;
+&lt;p&gt;Examine the results of your functions at runtime by checking the type returned.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import wraps
+def print_return_type(func):# Define wrapper(), the decorated function
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    # Call the function being decorated
+    result = func(*args, **kwargs)
+    print(&#39;{}() returned type {}&#39;.format(
+      func.__name__, type(result)
+    ))
+    return result
+  # Return the decorated function
+  return wrapper
+  
+@print_return_type
+def foo(value):
+  return value
+  
+print(foo(42))
+print(foo([1, 2, 3]))
+print(foo({&#39;a&#39;: 42}))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;foo() returned type &amp;lt;class &#39;int&#39;&amp;gt;
+42
+foo() returned type &amp;lt;class &#39;list&#39;&amp;gt;
+[1, 2, 3]
+foo() returned type &amp;lt;class &#39;dict&#39;&amp;gt;
+{&#39;a&#39;: 42}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;counter&#34;&gt;Counter&lt;/h3&gt;
+&lt;p&gt;decorator that adds a counter to each function that you decorate. decorate a bunch of functions with the counter() decorator, let your program run for a while, and then print out how many times each function was called.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from functools import wraps
+def counter(func):
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    wrapper.count += 1
+    # Call the function being decorated and return the result
+    return func(*args, **kwargs)
+  wrapper.count = 0
+  # Return the new decorated function
+  return wrapper
+
+# Decorate foo() with the counter() decorator
+@counter
+def foo():
+  print(&#39;calling foo()&#39;)
+  
+foo()
+foo()
+
+print(&#39;foo() was called {} times.&#39;.format(foo.count))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;calling foo()
+calling foo()
+foo() was called 2 times.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;measuring-decorator-overhead&#34;&gt;Measuring decorator overhead&lt;/h3&gt;
+&lt;p&gt;Access the original function using wraps attribute &lt;code&gt;__wrapped__&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+from functools import wraps
+
+def check_everything(func):
+  @wraps(func)
+  def wrapper(*args, **kwargs):
+    time.sleep(2)
+    result = func(*args, **kwargs)
+    return result
+  return wrapper
+
+@check_everything
+def duplicate(my_list):
+  &amp;quot;&amp;quot;&amp;quot;Return a new list that repeats the input twice&amp;quot;&amp;quot;&amp;quot;
+  return my_list + my_list
+
+t_start = time.time()
+duplicated_list = duplicate(list(range(50)))
+t_end = time.time()
+decorated_time = t_end - t_start
+
+t_start = time.time()
+# Call the original function instead of the decorated one
+duplicated_list = duplicate.__wrapped__(list(range(50)))
+t_end = time.time()
+undecorated_time = t_end - t_start
+
+print(&#39;Decorated time: {:.5f}s&#39;.format(decorated_time))
+print(&#39;Undecorated time: {:.5f}s&#39;.format(undecorated_time))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Decorated time: 2.00555s
+Undecorated time: 0.00025s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

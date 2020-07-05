@@ -593,10 +593,10 @@
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
+      <h2><a href="/technical_note/python/basics/arguments_decorator/" >Pass arguments to decorators </a></h2>
       <div class="article-style">
         
-          import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
+          Pass argument to decorator You cannot pass arguments to decorator, since it is only supposed to take-in a function to be decorated as an argument. Instead, you created a function that returns a decorator.
         
       </div>
     </div>

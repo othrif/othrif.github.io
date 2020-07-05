@@ -593,10 +593,36 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/timeout_decorator/" >Timeout decorator for a function that runs longer than expected</a></h2>
+      <div class="article-style">
+        
+          Pass argument to decorator Timeout decorator for a function that runs longer than expected
+import signal def raise_timeout(*args, **kwargs): raise TimeoutError('This function has timed out!!!!!') # When an &quot;alarm&quot; signal goes off, call raise_timeout() signal.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/timer_decorator/" >Timer decorator for how long a function took to run</a></h2>
       <div class="article-style">
         
           Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Useful decorators: Memoizing, timer, type check</a></h2>
+      <div class="article-style">
+        
+          Timer decorator Time your functions!
+from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
         
       </div>
     </div>
