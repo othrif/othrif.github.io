@@ -593,6 +593,43 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/exception/" >Error and exception</a></h2>
+      <div class="article-style">
+        
+          Error handling with try-except-finally Syntax:
+try: # code that might raise an error except: # do something about the error finally: # this code runs no matter what  def shout_echo(word1, echo=1): &quot;&quot;&quot;Concatenate echo copies of word1 and three exclamation marks at the end of the string.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/os_manip/" >File, dir handling with os module</a></h2>
+      <div class="article-style">
+        
+          Preliminary import os  Current location print(f'Current location is: {os.getcwd()!r}')  Current location is: '/Users/othmanerifki/projects/website/othrif.hugo/content/technical_note/python/basics'  Create dir if it does not exist path='/tmp/test' if not os.path.exists(path): os.mkdir(path)  Check by going to the newly created area and outputing path os.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/function_object/" >Function as an object, nested functions</a></h2>
+      <div class="article-style">
+        
+          Nested functions Notice how we assign the return value from create_math_function() to the add and subtract variables in the script. Since create_math_function() returns a function, we can then call those variables as functions.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/functions/" >Functions</a></h2>
       <div class="article-style">
         
@@ -671,43 +708,6 @@ x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'Fir
       <div class="article-style">
         
           Basic syntax lambda arguments : &lt;do something&gt;  myfunc = lambda a: a+'!!!' myfunc('hello')  'hello!!!'  Converting a function to lambda Compare the two functions and how lambda is much more concise
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
         
       </div>
     </div>

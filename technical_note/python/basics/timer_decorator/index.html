@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/timer_decorator/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/timer_decorator/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/timer_decorator/">
+  <meta property="og:title" content="Timer decorator for how long a function took to run | Othmane Rifki">
+  <meta property="og:description" content="Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Timer decorator for how long a function took to run | Othmane Rifki</title>
 
 </head>
 
@@ -552,180 +555,77 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Timer decorator for how long a function took to run</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Memoizing to store results of functions for fast lookup</a></h2>
-      <div class="article-style">
-        
-          Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/class_method/" >Method belonging to a class object</a></h2>
-      <div class="article-style">
-        
-          Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/function_scope/" >Modifying variables outside local scope: global, nonlocal</a></h2>
-      <div class="article-style">
-        
-          global Sometimes your functions will need to modify a variable that is outside of the local scope of that function. While it&rsquo;s generally not best practice to do so, it&rsquo;s still good to know-how in case you need to do it.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/nested/" >Nested functions, keyword nonlocal</a></h2>
-      <div class="article-style">
-        
-          Nested function To avoid writing out the same computations within functions repeatedly.
-def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with '!!!'.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/operators/" >Operators</a></h2>
-      <div class="article-style">
-        
-          Bitwise operation x=3  print(bin(x)) print(bin(~x)) ~x # = -(x+1)  0b11 -0b100 -4  print(bin(6)) print(bin(3)) print(bin(6 | 3)) 6 | 3  0b110 0b11 0b111 7  Bitwise XOR each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          Overloading equality When comparing two objects of a custom class using ==, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special __eq__() method, which accepts two arguments &ndash; the objects to be compared &ndash; and returns True or False.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_repr/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/3/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+  <h3 id="timer-decorator">Timer decorator</h3>
+<pre><code class="language-python">import time 
 
+def timer(func):
+    &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot;
+    # define the wrapper function to return 
+    def wrapper(*args, **kwargs):
+        # When wrapper() is called, get current time
+        t_start = time.time()
+        # Call the decorated function and store the result
+        result = func(*args, **kwargs)
+        # Get the total time it took to run, and print it
+        t_total = time.time() - t_start
+        print(f'{func.__name__} took {t_total}s')
+        return result
+    
+    return wrapper
+</code></pre>
+<pre><code class="language-python">@timer
+def multiply(a,b):
+    return a*b
+</code></pre>
+<pre><code class="language-python">multiply(1,2)
+</code></pre>
+<pre><code>multiply took 1.1920928955078125e-06s
+
+
+
+
+
+2
+</code></pre>
+<pre><code class="language-python">@timer
+def sleep_n_seconds(n):
+    time.sleep(n)
+</code></pre>
+<pre><code class="language-python">sleep_n_seconds(5)
+</code></pre>
+<pre><code>sleep_n_seconds took 5.004380941390991s
+</code></pre>
+<pre><code class="language-python">sleep_n_seconds(10)
+</code></pre>
+<pre><code>sleep_n_seconds took 10.002737045288086s
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

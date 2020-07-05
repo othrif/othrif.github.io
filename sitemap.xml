@@ -123,6 +123,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/function_closure/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/naming_conventions/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -263,6 +268,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/function_decorator/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/dictionary/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -314,6 +324,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/cpp/basics/func_args/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/function_object/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -428,12 +443,22 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/class_method/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/missingdata/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/function_scope/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -574,6 +599,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/template/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/timer_decorator/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

@@ -593,6 +593,67 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/parse_commandline/" >Parsing command line options</a></h2>
+      <div class="article-style">
+        
+          import argparse parser = argparse.ArgumentParser(description='Program to analyze something.') parser.add_argument(dest='filenames', metavar='filename', nargs='*') parser.add_argument('-i', '--input', metavar='input_file', required=False, dest='input_file', action='store', default='./input/dummy.csv', help='Input csv file') parser.add_argument('-o', '--output', metavar='output_file', required=False, dest='output_file', action='store', default='./output/out_dummy.csv', help='Output csv file with results') parser.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/polymorphism/" >Polymorphysm methods</a></h2>
+      <div class="article-style">
+        
+          Polymorphism and instances Polymorphism ensures that the exact method called is determined dynamically based on the instance.
+class Parent: def talk(self): print(&quot;Parent talking!&quot;) class Child(Parent): def talk(self): print(&quot;Child talking!&quot;) class TalkativeChild(Parent): def talk(self): print(&quot;TalkativeChild talking!
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/print/" >Print statements</a></h2>
+      <div class="article-style">
+        
+          Simple printing print('Printing example!')  Printing example!  f-string formatting: f ' &lt;text&gt; { &lt;expression&gt; &lt;optional !s, !r, or !a&gt; &lt;optional : format specifier&gt; } &lt;text&gt; ... '  where &lt;optional !
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/macos_env/" >Python 3 in MacOS</a></h2>
+      <div class="article-style">
+        
+          Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage --upgrade  Upgrade package pip install SomePackage --upgrade  Main packages used pip install numpy pip install scipy pip install scikit-learn pip install matplotlib pip install pandas pip install jupyter notebook   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/classes/" >Python classes</a></h2>
+      <div class="article-style">
+        
+          Self in Python class class car(): # init method or constructor def __init__(self, model, color): self.model = model self.color = color def show(self): print(&quot;Model is&quot;, self.model ) print(&quot;color is&quot;, self.color ) # both objects have different self which # contain their attributes audi = car(&quot;audi a4&quot;, &quot;blue&quot;) ferrari = car(&quot;ferrari 488&quot;, &quot;green&quot;) audi.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
       <div class="article-style">
         
@@ -656,6 +717,8 @@
     
     <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/4/">&laquo;</a></li>
     
+    
+    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/6/">&raquo;</a></li>
     
   </ul>
 </nav>

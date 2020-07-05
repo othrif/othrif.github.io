@@ -509,6 +509,101 @@ np.min(ary,axis=1) # find min along columns
     </item>
     
     <item>
+      <title>Attaching nonlocal variables to nested functions</title>
+      <link>http://othrif.github.io/technical_note/python/basics/function_closure/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/function_closure/</guid>
+      <description>&lt;h3 id=&#34;nested-function&#34;&gt;Nested function&lt;/h3&gt;
+&lt;p&gt;A function dened inside another function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# outer function
+def parent():
+    # nested function
+    def child():
+        pass
+    return child
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nonlocal-variables&#34;&gt;Nonlocal variables&lt;/h3&gt;
+&lt;p&gt;Variables dened in the parent function that are used by the child function&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def parent(arg_1, arg_2):
+    # From child()&#39;s point of view,
+    # `value` and `my_dict` are nonlocal variables,
+    # as are `arg_1` and `arg_2`.
+    value = 22
+    my_dict = {&#39;chocolate&#39;: &#39;yummy&#39;}
+    def child():
+        print(2 * value)
+        print(my_dict[&#39;chocolate&#39;])
+        print(arg_1 + arg_2)
+    return child
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;my_func = parent([1], [2,3,4])
+print(my_func)
+my_func()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;function parent.&amp;lt;locals&amp;gt;.child at 0x10c0cb048&amp;gt;
+44
+yummy
+[1, 2, 3, 4]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;closure&#34;&gt;Closure&lt;/h3&gt;
+&lt;p&gt;Nonlocal variables attached to a returned function&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;new_function = parent(3, 4)
+print([cell.cell_contents for cell in new_function.__closure__])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[3, 4, {&#39;chocolate&#39;: &#39;yummy&#39;}, 22]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;checking-for-closure&#34;&gt;Checking for closure&lt;/h3&gt;
+&lt;p&gt;Values passed to &lt;code&gt;return_a_func()&lt;/code&gt; are still accessible to the new function returned, even after the program has left the scope of &lt;code&gt;return_a_func()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Values get added to a function&amp;rsquo;s closure in the order they are defined in the enclosing function (in this case, &lt;code&gt;arg1&lt;/code&gt; and then &lt;code&gt;arg2&lt;/code&gt;), but only if they are used in the nested function. That is, if &lt;code&gt;return_a_func()&lt;/code&gt; took a third argument (e.g., &lt;code&gt;arg3&lt;/code&gt;) that wasn&amp;rsquo;t used by &lt;code&gt;new_func()&lt;/code&gt;, then it would not be captured in &lt;code&gt;new_func()&lt;/code&gt;&#39;s closure.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def return_a_func(arg1, arg2, arg3):
+  def new_func():
+    print(&#39;arg1 was {}&#39;.format(arg1))
+    print(&#39;arg2 was {}&#39;.format(arg2))
+  return new_func
+    
+my_func = return_a_func(2, 17, &#39;hello&#39;)
+
+print(my_func.__closure__ is not None)
+print(len(my_func.__closure__))
+
+# Get the values of the variables in the closure
+closure_values = [
+  my_func.__closure__[i].cell_contents for i in range(2)
+]
+print(closure_values)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+2
+[2, 17]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;closure-keep-your-values-safe&#34;&gt;Closure keep your values safe&lt;/h3&gt;
+&lt;p&gt;no matter what you do to &lt;code&gt;my_special_function()&lt;/code&gt; after passing it to &lt;code&gt;get_new_func()&lt;/code&gt;, the new function still mimics the behavior of the original &lt;code&gt;my_special_function()&lt;/code&gt; because it is in the new function&amp;rsquo;s closure.
+even if you delete &lt;code&gt;my_special_function()&lt;/code&gt;, you can still call &lt;code&gt;new_func()&lt;/code&gt; without any problems.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def my_special_function():
+  print(&#39;You are running my_special_function()&#39;)
+  
+def get_new_func(func):
+  def call_func():
+    func()
+  return call_func
+
+new_func = get_new_func(my_special_function)
+
+# Delete my_special_function()
+del(my_special_function)
+
+new_func()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;You are running my_special_function()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;be-aware&#34;&gt;Be aware!!!&lt;/h3&gt;
+&lt;p&gt;you could run into memory issues if you wound up adding a very large array or object to the closure, and has resolved to keep her eye out for that sort of problem.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Attribute naming conventions</title>
       <link>http://othrif.github.io/technical_note/python/basics/naming_conventions/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -3903,6 +3998,78 @@ print(num_months)
     </item>
     
     <item>
+      <title>Defining a decorator @decorator</title>
+      <link>http://othrif.github.io/technical_note/python/basics/function_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/function_decorator/</guid>
+      <description>&lt;h3 id=&#34;defining-a-decorator&#34;&gt;Defining a decorator&lt;/h3&gt;
+&lt;p&gt;The decorator is a function that takes another function as an argument and modifies its behavior. Add &lt;code&gt;@&lt;/code&gt; before the decorator function name without &lt;code&gt;()&lt;/code&gt;.
+The syntax&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@decorator
+def function():
+    pass
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;is equivalent to&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def function():
+    pass
+
+function = decorator(function)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def parent(func):
+    # nested function
+    def child(a,b):
+        return func(a*2,b*2)
+    return child
+
+def multiply(a,b):
+    return a*b
+
+multiply = parent(multiply)
+multiply(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def parent(func):
+    # nested function
+    def child(a,b):
+        return func(a*2,b*2)
+    return child
+
+@parent
+def multiply(a,b):
+    return a*b
+
+multiply(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;verifying-decorator&#34;&gt;Verifying decorator&lt;/h3&gt;
+&lt;p&gt;The decorator &lt;code&gt;print_before_and_after()&lt;/code&gt; defines a nested function &lt;code&gt;wrapper()&lt;/code&gt; that calls whatever function gets passed to &lt;code&gt;print_before_and_after()&lt;/code&gt;. &lt;code&gt;wrapper()&lt;/code&gt; adds a little something else to the function call by printing one message before the decorated function is called and another right afterwards. Since &lt;code&gt;print_before_and_after()&lt;/code&gt; returns the new &lt;code&gt;wrapper()&lt;/code&gt; function, we can use it as a decorator to decorate the &lt;code&gt;multiply()&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def print_before_and_after(func):
+  def wrapper(*args):
+    print(&#39;Before {}&#39;.format(func.__name__))
+    # Call the function being decorated with *args
+    func(*args)
+    print(&#39;After {}&#39;.format(func.__name__))
+  # Return the nested function
+  return wrapper
+
+@print_before_and_after
+def multiply(a, b):
+  print(a * b)
+
+multiply(5, 10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Before multiply
+50
+After multiply
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Dictionaries</title>
       <link>http://othrif.github.io/technical_note/python/basics/dictionary/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -5658,6 +5825,38 @@ val y: 3
 6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Function as an object, nested functions</title>
+      <link>http://othrif.github.io/technical_note/python/basics/function_object/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/function_object/</guid>
+      <description>&lt;h3 id=&#34;nested-functions&#34;&gt;Nested functions&lt;/h3&gt;
+&lt;p&gt;Notice how we assign the return value from &lt;code&gt;create_math_function()&lt;/code&gt; to the &lt;code&gt;add&lt;/code&gt; and &lt;code&gt;subtract&lt;/code&gt; variables in the script. Since &lt;code&gt;create_math_function()&lt;/code&gt; returns a function, we can then call those variables as functions.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def create_math_function(func_name):
+  if func_name == &#39;add&#39;:
+    def add(a, b):
+      return a + b
+    return add
+  elif func_name == &#39;subtract&#39;:
+    # Define the subtract() function
+    def subtract(a,b):
+        return a - b
+    return subtract
+  else:
+    print(&amp;quot;I don&#39;t know that one&amp;quot;)
+    
+add = create_math_function(&#39;add&#39;)
+print(&#39;5 + 2 = {}&#39;.format(add(5, 2)))
+
+subtract = create_math_function(&#39;subtract&#39;)
+print(&#39;5 - 2 = {}&#39;.format(subtract(5, 2)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;5 + 2 = 7
+5 - 2 = 3
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -8070,6 +8269,75 @@ plt.show()
     </item>
     
     <item>
+      <title>Memoizing to store results of functions for fast lookup</title>
+      <link>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/memoize_decorator/</guid>
+      <description>&lt;h3 id=&#34;timer-decorator&#34;&gt;Timer decorator&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time
+def timer(func):
+    &amp;quot;&amp;quot;&amp;quot; A decorator that prints how long a function took to run&amp;quot;&amp;quot;&amp;quot;
+    # define the wrapper function to return 
+    def wrapper(*args, **kwargs):
+        # When wrapper() is called, get current time
+        t_start = time.time()
+        # Call the decorated function and store the result
+        result = func(*args, **kwargs)
+        # Get the total time it took to run, and print it
+        t_total = time.time() - t_start
+        print(f&#39;{func.__name__} took {t_total}s&#39;)
+        return result
+    
+    return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;memoize&#34;&gt;Memoize&lt;/h3&gt;
+&lt;p&gt;Save results of input so that the function runs faster the second time a function is called with the same arguments.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def memoize(func):
+    &amp;quot;&amp;quot;&amp;quot;Store the results of the decorated function for fast lookup&amp;quot;&amp;quot;&amp;quot;
+    # Store results in a dict that maps arguments to results
+    cache = {}
+    # Define the wrapper function to return.
+    def wrapper(*args,**kwargs):
+        # If these arguments haven&#39;t been seen before,
+        key = str(args) + str(kwargs)
+        if key not in cache:
+            # Call func() and store the result.
+            cache[key] = func(*args,**kwargs)
+        return cache[key]
+    return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timer
+@memoize
+def multiply_slow(a,b):
+    time.sleep(5)
+    return a*b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the call runs slowly
+multiply_slow(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;wrapper took 5.003448247909546s
+
+
+
+
+
+2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# here the calls runs much faster
+multiply_slow(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;wrapper took 5.7220458984375e-06s
+
+
+
+
+
+2
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Method belonging to a class object</title>
       <link>http://othrif.github.io/technical_note/python/basics/class_method/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -8407,6 +8675,68 @@ plt.show()
 &lt;pre&gt;&lt;code&gt;(18249, 13)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modifying variables outside local scope: global, nonlocal</title>
+      <link>http://othrif.github.io/technical_note/python/basics/function_scope/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/function_scope/</guid>
+      <description>&lt;h3 id=&#34;global&#34;&gt;&lt;code&gt;global&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Sometimes your functions will need to modify a variable that is outside of the local scope of that function. While it&amp;rsquo;s generally not best practice to do so, it&amp;rsquo;s still good to know-how in case you need to do it. Update these functions so they can modify variables that would usually be outside of their scope.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;call_count = 0
+
+def my_function():
+  # Use a keyword that lets us update call_count 
+  global call_count
+  call_count += 1
+  
+  print(&amp;quot;You&#39;ve called my_function() {} times!&amp;quot;.format(
+    call_count
+  ))
+  
+for _ in range(20):
+  my_function()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;You&#39;ve called my_function() 1 times!
+You&#39;ve called my_function() 2 times!
+You&#39;ve called my_function() 3 times!
+You&#39;ve called my_function() 4 times!
+You&#39;ve called my_function() 5 times!
+You&#39;ve called my_function() 6 times!
+You&#39;ve called my_function() 7 times!
+You&#39;ve called my_function() 8 times!
+You&#39;ve called my_function() 9 times!
+You&#39;ve called my_function() 10 times!
+You&#39;ve called my_function() 11 times!
+You&#39;ve called my_function() 12 times!
+You&#39;ve called my_function() 13 times!
+You&#39;ve called my_function() 14 times!
+You&#39;ve called my_function() 15 times!
+You&#39;ve called my_function() 16 times!
+You&#39;ve called my_function() 17 times!
+You&#39;ve called my_function() 18 times!
+You&#39;ve called my_function() 19 times!
+You&#39;ve called my_function() 20 times!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;nonlocal&#34;&gt;&lt;code&gt;nonlocal&lt;/code&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def read_files():
+  file_contents = None
+  
+  def save_contents(filename):
+    # Add a keyword that lets us modify file_contents
+    nonlocal file_contents
+    if file_contents is None:
+      file_contents = []
+    with open(filename) as fin:
+      file_contents.append(fin.read())
+      
+  for filename in [&#39;1984.txt&#39;, &#39;MobyDick.txt&#39;, &#39;CatsEye.txt&#39;]:
+    save_contents(filename)
+    
+  return file_contents
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -10918,6 +11248,58 @@ x+x
       <guid>http://othrif.github.io/technical_note/python/basics/template/</guid>
       <description>&lt;h3 id=&#34;title&#34;&gt;Title&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Timer decorator for how long a function took to run</title>
+      <link>http://othrif.github.io/technical_note/python/basics/timer_decorator/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/timer_decorator/</guid>
+      <description>&lt;h3 id=&#34;timer-decorator&#34;&gt;Timer decorator&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import time 
+
+def timer(func):
+    &amp;quot;&amp;quot;&amp;quot; A decorator that prints how long a function took to run&amp;quot;&amp;quot;&amp;quot;
+    # define the wrapper function to return 
+    def wrapper(*args, **kwargs):
+        # When wrapper() is called, get current time
+        t_start = time.time()
+        # Call the decorated function and store the result
+        result = func(*args, **kwargs)
+        # Get the total time it took to run, and print it
+        t_total = time.time() - t_start
+        print(f&#39;{func.__name__} took {t_total}s&#39;)
+        return result
+    
+    return wrapper
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timer
+def multiply(a,b):
+    return a*b
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;multiply(1,2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;multiply took 1.1920928955078125e-06s
+
+
+
+
+
+2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@timer
+def sleep_n_seconds(n):
+    time.sleep(n)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sleep_n_seconds(5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sleep_n_seconds took 5.004380941390991s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sleep_n_seconds(10)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;sleep_n_seconds took 10.002737045288086s
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

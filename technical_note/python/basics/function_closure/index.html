@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Nested function A function dened inside another function.
+# outer function def parent(): # nested function def child(): pass return child  Nonlocal variables Variables dened in the parent function that are used by the child function">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/function_closure/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/function_closure/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/function_closure/">
+  <meta property="og:title" content="Attaching nonlocal variables to nested functions | Othmane Rifki">
+  <meta property="og:description" content="Nested function A function dened inside another function.
+# outer function def parent(): # nested function def child(): pass return child  Nonlocal variables Variables dened in the parent function that are used by the child function"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Attaching nonlocal variables to nested functions | Othmane Rifki</title>
 
 </head>
 
@@ -552,180 +557,120 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lists/" >Lists, Tuples</a></h2>
-      <div class="article-style">
-        
-          Lists Lists are mutable
-my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  my_list  ['Hello world!', 'banans', 'apples', 'add one more']  my_list.extend(['another','even more'])  my_list  ['Hello world!
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Attaching nonlocal variables to nested functions</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators_file/" >Load data in chunks</a></h2>
-      <div class="article-style">
-        
-          Loading data in chunks the data we have to process reaches a size that is too much for a computer&rsquo;s memory to handle. A solution to this is to process an entire data source chunk by chunk, instead of a single go all at once.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/strings/" >Manipulation, indexing, and slicing</a></h2>
-      <div class="article-style">
-        
-          Access elements txt = 'Hello world!'  txt[0]  'H'  txt[4]  'o'  Substrings txt[0:5]  'Hello'  Backwards txt[-1]  '!'  txt[-5]  'o'  Skip over txt[::2]  'Hlowrd'  Reverse txt[::-1]  '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Memoizing to store results of functions for fast lookup</a></h2>
-      <div class="article-style">
-        
-          Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/class_method/" >Method belonging to a class object</a></h2>
-      <div class="article-style">
-        
-          Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/function_scope/" >Modifying variables outside local scope: global, nonlocal</a></h2>
-      <div class="article-style">
-        
-          global Sometimes your functions will need to modify a variable that is outside of the local scope of that function. While it&rsquo;s generally not best practice to do so, it&rsquo;s still good to know-how in case you need to do it.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/nested/" >Nested functions, keyword nonlocal</a></h2>
-      <div class="article-style">
-        
-          Nested function To avoid writing out the same computations within functions repeatedly.
-def three_shouts(word1, word2, word3): &quot;&quot;&quot;Returns a tuple of strings concatenated with '!!!'.&quot;&quot;&quot; # Define inner def inner(word): &quot;&quot;&quot;Returns a string concatenated with '!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/operators/" >Operators</a></h2>
-      <div class="article-style">
-        
-          Bitwise operation x=3  print(bin(x)) print(bin(~x)) ~x # = -(x+1)  0b11 -0b100 -4  print(bin(6)) print(bin(3)) print(bin(6 | 3)) 6 | 3  0b110 0b11 0b111 7  Bitwise XOR each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_eq/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          Overloading equality When comparing two objects of a custom class using ==, Python by default compares just the object references, not the data contained in the objects. To override this behavior, the class can implement the special __eq__() method, which accepts two arguments &ndash; the objects to be compared &ndash; and returns True or False.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/overload_repr/" >Overload comparison operators</a></h2>
-      <div class="article-style">
-        
-          String representation of objects There are two special methods in Python that return a string representation of an object. __str__() is called when you use print() or str() on an object, and __repr__() is called when you use repr() on an object, print the object in the console without calling print(), or instead of __str__() if __str__() is not defined.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
+  <h3 id="nested-function">Nested function</h3>
+<p>A function dened inside another function.</p>
+<pre><code class="language-python"># outer function
+def parent():
+    # nested function
+    def child():
+        pass
+    return child
+</code></pre>
+<h3 id="nonlocal-variables">Nonlocal variables</h3>
+<p>Variables dened in the parent function that are used by the child function</p>
+<pre><code class="language-python">def parent(arg_1, arg_2):
+    # From child()'s point of view,
+    # `value` and `my_dict` are nonlocal variables,
+    # as are `arg_1` and `arg_2`.
+    value = 22
+    my_dict = {'chocolate': 'yummy'}
+    def child():
+        print(2 * value)
+        print(my_dict['chocolate'])
+        print(arg_1 + arg_2)
+    return child
+</code></pre>
+<pre><code class="language-python">my_func = parent([1], [2,3,4])
+print(my_func)
+my_func()
+</code></pre>
+<pre><code>&lt;function parent.&lt;locals&gt;.child at 0x10c0cb048&gt;
+44
+yummy
+[1, 2, 3, 4]
+</code></pre>
+<h3 id="closure">Closure</h3>
+<p>Nonlocal variables attached to a returned function</p>
+<pre><code class="language-python">new_function = parent(3, 4)
+print([cell.cell_contents for cell in new_function.__closure__])
+</code></pre>
+<pre><code>[3, 4, {'chocolate': 'yummy'}, 22]
+</code></pre>
+<h3 id="checking-for-closure">Checking for closure</h3>
+<p>Values passed to <code>return_a_func()</code> are still accessible to the new function returned, even after the program has left the scope of <code>return_a_func()</code>.</p>
+<p>Values get added to a function&rsquo;s closure in the order they are defined in the enclosing function (in this case, <code>arg1</code> and then <code>arg2</code>), but only if they are used in the nested function. That is, if <code>return_a_func()</code> took a third argument (e.g., <code>arg3</code>) that wasn&rsquo;t used by <code>new_func()</code>, then it would not be captured in <code>new_func()</code>'s closure.</p>
+<pre><code class="language-python">def return_a_func(arg1, arg2, arg3):
+  def new_func():
+    print('arg1 was {}'.format(arg1))
+    print('arg2 was {}'.format(arg2))
+  return new_func
     
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/3/">&laquo;</a></li>
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+my_func = return_a_func(2, 17, 'hello')
 
+print(my_func.__closure__ is not None)
+print(len(my_func.__closure__))
+
+# Get the values of the variables in the closure
+closure_values = [
+  my_func.__closure__[i].cell_contents for i in range(2)
+]
+print(closure_values)
+</code></pre>
+<pre><code>True
+2
+[2, 17]
+</code></pre>
+<h3 id="closure-keep-your-values-safe">Closure keep your values safe</h3>
+<p>no matter what you do to <code>my_special_function()</code> after passing it to <code>get_new_func()</code>, the new function still mimics the behavior of the original <code>my_special_function()</code> because it is in the new function&rsquo;s closure.
+even if you delete <code>my_special_function()</code>, you can still call <code>new_func()</code> without any problems.</p>
+<pre><code class="language-python">def my_special_function():
+  print('You are running my_special_function()')
+  
+def get_new_func(func):
+  def call_func():
+    func()
+  return call_func
+
+new_func = get_new_func(my_special_function)
+
+# Delete my_special_function()
+del(my_special_function)
+
+new_func()
+</code></pre>
+<pre><code>You are running my_special_function()
+</code></pre>
+<h3 id="be-aware">Be aware!!!</h3>
+<p>you could run into memory issues if you wound up adding a very large array or object to the closure, and has resolved to keep her eye out for that sort of problem.</p>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
