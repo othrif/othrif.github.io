@@ -358,6 +358,21 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/loadhdf5/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/loadmatlab/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/loadsas/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/indexselectingdata/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -419,6 +434,16 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/file_chunks/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/loadpickle/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/loadexcel/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

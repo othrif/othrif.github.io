@@ -6133,6 +6133,214 @@ FileNotFoundError: [Errno 2] File titanic.csv does not exist: &#39;titanic.csv&#
     </item>
     
     <item>
+      <title>Importing HDF5 files and LIGO data</title>
+      <link>http://othrif.github.io/technical_note/python/basics/loadhdf5/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/loadhdf5/</guid>
+      <description>&lt;h3 id=&#34;hdf5-files&#34;&gt;HDF5 files&lt;/h3&gt;
+&lt;p&gt;The most efficient way to store large files up to the exabyte scale.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import h5py
+filenmae = &#39;L-L1_LOSC_4_V1-1126259446-32.hdf5&#39;
+data = h5py.File(filenmae, &#39;r&#39;)
+print(type(data))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;h5py._hl.files.File&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for key in data.keys():
+    print(key)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;meta
+quality
+strain
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for key in data[&#39;meta&#39;].keys():
+    print(key)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Description
+DescriptionURL
+Detector
+Duration
+GPSstart
+Observatory
+Type
+UTCstart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(data[&#39;meta&#39;][&#39;Description&#39;][()],data[&#39;meta&#39;][&#39;Detector&#39;][()])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;b&#39;Strain data time series from LIGO&#39; b&#39;L1&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+# Get the HDF5 group: group
+group = data[&#39;strain&#39;]
+
+# Check out keys of group
+for key in group.keys():
+    print(key)
+
+# Set variable equal to time series data: strain
+strain = data[&#39;strain&#39;][&#39;Strain&#39;][()]
+
+# Set number of time points to sample: num_samples
+num_samples = 10000
+
+# Set time vector
+time = np.arange(0, 1, 1/num_samples)
+
+# Plot data
+plt.plot(time, strain[:num_samples])
+plt.xlabel(&#39;GPS Time (s)&#39;)
+plt.ylabel(&#39;strain&#39;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Strain
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;loadhdf5_6_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Importing MATLAB data</title>
+      <link>http://othrif.github.io/technical_note/python/basics/loadmatlab/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/loadmatlab/</guid>
+      <description>&lt;h3 id=&#34;matlab&#34;&gt;MATLAB&lt;/h3&gt;
+&lt;p&gt;for &amp;ldquo;Matrix Laboratory&amp;rdquo;  &lt;br&gt;
+&amp;lsquo;.mat&amp;rsquo; files&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import package
+import scipy.io
+
+# Load MATLAB file: mat
+mat = scipy.io.loadmat(&#39;ja_data2.mat&#39;)
+
+# Print the datatype type of mat
+print(type(mat))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;dict&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import numpy as np
+# Print the keys of the MATLAB dictionary
+print(mat.keys())
+
+# Print the type of the value corresponding to the key &#39;CYratioCyt&#39;
+print(mat[&#39;CYratioCyt&#39;])
+
+# Print the shape of the value corresponding to the key &#39;CYratioCyt&#39;
+print(np.shape(mat[&#39;CYratioCyt&#39;]))
+
+# Subset the array and plot it
+data = mat[&#39;CYratioCyt&#39;][25, 5:]
+fig = plt.figure()
+plt.plot(data)
+plt.xlabel(&#39;time (min.)&#39;)
+plt.ylabel(&#39;normalized fluorescence (measure of expression)&#39;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_keys([&#39;__header__&#39;, &#39;__version__&#39;, &#39;__globals__&#39;, &#39;rfpCyt&#39;, &#39;rfpNuc&#39;, &#39;cfpNuc&#39;, &#39;cfpCyt&#39;, &#39;yfpNuc&#39;, &#39;yfpCyt&#39;, &#39;CYratioCyt&#39;])
+[[0.         1.53071547 1.54297013 ... 1.34990123 1.35329984 1.34922173]
+ [0.         1.28605578 1.29385656 ... 1.31307311 1.30039694 1.30563938]
+ [0.         1.32731222 1.32884617 ... 1.24887565 1.24506205 1.25825831]
+ ...
+ [0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         1.44552606 1.42862357 ... 0.         0.         0.        ]
+ [0.         1.45794466 0.         ... 1.1229479  1.12224652 1.1486481 ]]
+(200, 137)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;loadmatlab_3_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Importing SAS and Stata files</title>
+      <link>http://othrif.github.io/technical_note/python/basics/loadsas/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/loadsas/</guid>
+      <description>&lt;h3 id=&#34;sas-files&#34;&gt;SAS files&lt;/h3&gt;
+&lt;p&gt;SAS: Statistical Analysis System&lt;br&gt;
+Used for business analytics and biostatistics&lt;br&gt;
+File extension: &lt;code&gt;.sasb7dat&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import matplotlib.pyplot as plt
+from sas7bdat import SAS7BDAT
+
+
+# Save file to a DataFrame: df_sas
+with SAS7BDAT(&#39;sales.sas7bdat&#39;) as file:
+    df_sas = file.to_data_frame()
+
+# Print head of DataFrame
+print(df_sas.head())
+
+# Plot histogram of DataFrame features (pandas and pyplot already imported)
+pd.DataFrame.hist(df_sas[[&#39;S&#39;,&#39;P&#39;]])
+plt.ylabel(&#39;count&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;     YEAR     P           S
+0  1950.0  12.9  181.899994
+1  1951.0  11.9  245.000000
+2  1952.0  10.7  250.199997
+3  1953.0  11.3  265.899994
+4  1954.0  11.2  248.500000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;loadsas_2_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;stata-files&#34;&gt;Stata files&lt;/h3&gt;
+&lt;p&gt;Stata: Statistical Analysis System&lt;br&gt;
+Used for
+File extension: &lt;code&gt;.dta&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Load Stata file into a pandas DataFrame: df
+df = pd.read_stata(&#39;disarea.dta&#39;)
+
+# Print the head of the DataFrame df
+print(df.head())
+
+# Plot histogram of one column of the DataFrame
+pd.DataFrame.hist(df[[&#39;disa10&#39;]])
+plt.xlabel(&#39;Extent of disease&#39;)
+plt.ylabel(&#39;Number of countries&#39;)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  wbcode               country  disa1  disa2  disa3  disa4  disa5  disa6  \
+0    AFG           Afghanistan   0.00   0.00   0.76   0.73    0.0   0.00   
+1    AGO                Angola   0.32   0.02   0.56   0.00    0.0   0.00   
+2    ALB               Albania   0.00   0.00   0.02   0.00    0.0   0.00   
+3    ARE  United Arab Emirates   0.00   0.00   0.00   0.00    0.0   0.00   
+4    ARG             Argentina   0.00   0.24   0.24   0.00    0.0   0.23   
+
+   disa7  disa8  ...  disa16  disa17  disa18  disa19  disa20  disa21  disa22  \
+0   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+1   0.56    0.0  ...     0.0     0.4     0.0    0.61    0.00     0.0    0.99   
+2   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+3   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+4   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.05     0.0    0.00   
+
+   disa23  disa24  disa25  
+0    0.02    0.00    0.00  
+1    0.98    0.61    0.00  
+2    0.00    0.00    0.16  
+3    0.00    0.00    0.00  
+4    0.01    0.00    0.11  
+
+[5 rows x 27 columns]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;loadsas_4_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Indexing and selecting DataFrames</title>
       <link>http://othrif.github.io/technical_note/python/pandas/indexselectingdata/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -7547,6 +7755,118 @@ def count_entries(csv_file, c_size, colname):
 print(result_counts)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;{&#39;en&#39;: 97, &#39;et&#39;: 1, &#39;und&#39;: 2}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Loading a pickled file</title>
+      <link>http://othrif.github.io/technical_note/python/basics/loadpickle/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/loadpickle/</guid>
+      <description>&lt;h3 id=&#34;concept&#34;&gt;Concept&lt;/h3&gt;
+&lt;p&gt;if you merely want to be able to import them into Python, you can serialize them. All this means is converting the object into a sequence of bytes, or a bytestream.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pickle package
+import pickle
+
+# Open pickle file and load data: d
+with open(&#39;data.pkl&#39;, &#39;rb&#39;) as file:
+    d = pickle.load(file)
+
+# Print d
+print(d)
+
+# Print datatype of d
+print(type(d))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+FileNotFoundError                         Traceback (most recent call last)
+
+&amp;lt;ipython-input-1-7b211b6854e7&amp;gt; in &amp;lt;module&amp;gt;
+      3 
+      4 # Open pickle file and load data: d
+----&amp;gt; 5 with open(&#39;data.pkl&#39;, &#39;rb&#39;) as file:
+      6     d = pickle.load(file)
+      7 
+
+
+FileNotFoundError: [Errno 2] No such file or directory: &#39;data.pkl&#39;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Loading an excel file</title>
+      <link>http://othrif.github.io/technical_note/python/basics/loadexcel/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/basics/loadexcel/</guid>
+      <description>&lt;h3 id=&#34;concept&#34;&gt;Concept&lt;/h3&gt;
+&lt;p&gt;use pandas to import Excel spreadsheets and how to list the names of the sheets in any loaded .xlsx file.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Assign spreadsheet filename: file
+file = &#39;battledeath.xlsx&#39;
+
+# Load spreadsheet: xls
+xls = pd.ExcelFile(file)
+
+# Print sheet names
+print(xls.sheet_names)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;2002&#39;, &#39;2004&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Load a sheet into a DataFrame by name: df1
+df1 = xls.parse(&#39;2004&#39;)
+print(df1.head())
+
+# Load a sheet into a DataFrame by index: df2
+df2 = xls.parse(0)
+print(df2.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;  War(country)      2004
+0  Afghanistan  9.451028
+1      Albania  0.130354
+2      Algeria  3.407277
+3      Andorra  0.000000
+4       Angola  2.597931
+  War, age-adjusted mortality due to       2002
+0                        Afghanistan  36.083990
+1                            Albania   0.128908
+2                            Algeria  18.314120
+3                            Andorra   0.000000
+4                             Angola  18.964560
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;customize-the-spreadsheet-import&#34;&gt;Customize the spreadsheet import&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Parse the first sheet and rename the columns: df1, skip first row and rename columns
+df1 = xls.parse(0, skiprows=[0], names=[&#39;Country&#39;,&#39;AAM due to War (2002)&#39;])
+
+# Print the head of the DataFrame df1
+print(df1.head())
+
+# Parse the first column of the second sheet and rename the column: df2
+df2 = xls.parse(1, usecols=[0], skiprows=[0], names=[&#39;Country&#39;])
+
+# Print the head of the DataFrame df2
+print(df2.head())
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;               Country  AAM due to War (2002)
+0              Albania               0.128908
+1              Algeria              18.314120
+2              Andorra               0.000000
+3               Angola              18.964560
+4  Antigua and Barbuda               0.000000
+               Country
+0              Albania
+1              Algeria
+2              Andorra
+3               Angola
+4  Antigua and Barbuda
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

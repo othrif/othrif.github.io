@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="MATLAB for &ldquo;Matrix Laboratory&rdquo; &lsquo;.mat&rsquo; files
+# Import package import scipy.io # Load MATLAB file: mat mat = scipy.io.loadmat(&#39;ja_data2.mat&#39;) # Print the datatype type of mat print(type(mat))  &lt;class &#39;dict&#39;&gt;  import matplotlib.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/loadmatlab/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/loadmatlab/">
 
   
   
@@ -232,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/loadmatlab/">
+  <meta property="og:title" content="Importing MATLAB data | Othmane Rifki">
+  <meta property="og:description" content="MATLAB for &ldquo;Matrix Laboratory&rdquo; &lsquo;.mat&rsquo; files
+# Import package import scipy.io # Load MATLAB file: mat mat = scipy.io.loadmat(&#39;ja_data2.mat&#39;) # Print the datatype type of mat print(type(mat))  &lt;class &#39;dict&#39;&gt;  import matplotlib."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Importing MATLAB data | Othmane Rifki</title>
 
 </head>
 
@@ -552,154 +557,81 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Importing MATLAB data</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/read_write_file/" >Read and write a file</a></h2>
-      <div class="article-style">
-        
-          Read a file # Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.read() print(text)  this is alice.txt counting how many CATS i have. yes i said cAts .
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timeout_decorator/" >Timeout decorator for a function that runs longer than expected</a></h2>
-      <div class="article-style">
-        
-          Pass argument to decorator Timeout decorator for a function that runs longer than expected
-import signal def raise_timeout(*args, **kwargs): raise TimeoutError('This function has timed out!!!!!') # When an &quot;alarm&quot; signal goes off, call raise_timeout() signal.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timer_decorator/" >Timer decorator for how long a function took to run</a></h2>
-      <div class="article-style">
-        
-          Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Useful decorators: Memoizing, timer, type check</a></h2>
-      <div class="article-style">
-        
-          Timer decorator Time your functions!
-from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
+  <h3 id="matlab">MATLAB</h3>
+<p>for &ldquo;Matrix Laboratory&rdquo;  <br>
+&lsquo;.mat&rsquo; files</p>
+<pre><code class="language-python"># Import package
+import scipy.io
 
+# Load MATLAB file: mat
+mat = scipy.io.loadmat('ja_data2.mat')
+
+# Print the datatype type of mat
+print(type(mat))
+
+</code></pre>
+<pre><code>&lt;class 'dict'&gt;
+</code></pre>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+# Print the keys of the MATLAB dictionary
+print(mat.keys())
+
+# Print the type of the value corresponding to the key 'CYratioCyt'
+print(mat['CYratioCyt'])
+
+# Print the shape of the value corresponding to the key 'CYratioCyt'
+print(np.shape(mat['CYratioCyt']))
+
+# Subset the array and plot it
+data = mat['CYratioCyt'][25, 5:]
+fig = plt.figure()
+plt.plot(data)
+plt.xlabel('time (min.)')
+plt.ylabel('normalized fluorescence (measure of expression)')
+plt.show()
+
+</code></pre>
+<pre><code>dict_keys(['__header__', '__version__', '__globals__', 'rfpCyt', 'rfpNuc', 'cfpNuc', 'cfpCyt', 'yfpNuc', 'yfpCyt', 'CYratioCyt'])
+[[0.         1.53071547 1.54297013 ... 1.34990123 1.35329984 1.34922173]
+ [0.         1.28605578 1.29385656 ... 1.31307311 1.30039694 1.30563938]
+ [0.         1.32731222 1.32884617 ... 1.24887565 1.24506205 1.25825831]
+ ...
+ [0.         0.         0.         ... 0.         0.         0.        ]
+ [0.         1.44552606 1.42862357 ... 0.         0.         0.        ]
+ [0.         1.45794466 0.         ... 1.1229479  1.12224652 1.1486481 ]]
+(200, 137)
+</code></pre>
+<p><img src="loadmatlab_3_1.png" alt="png"></p>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

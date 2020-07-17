@@ -28,10 +28,13 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="SAS files SAS: Statistical Analysis System
+Used for business analytics and biostatistics
+File extension: .sasb7dat
+import pandas as pd import matplotlib.pyplot as plt from sas7bdat import SAS7BDAT # Save file to a DataFrame: df_sas with SAS7BDAT(&#39;sales.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/loadsas/">
 
   
 
@@ -211,14 +214,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/loadsas/">
 
   
   
@@ -232,29 +233,37 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/loadsas/">
+  <meta property="og:title" content="Importing SAS and Stata files | Othmane Rifki">
+  <meta property="og:description" content="SAS files SAS: Statistical Analysis System
+Used for business analytics and biostatistics
+File extension: .sasb7dat
+import pandas as pd import matplotlib.pyplot as plt from sas7bdat import SAS7BDAT # Save file to a DataFrame: df_sas with SAS7BDAT(&#39;sales."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Importing SAS and Stata files | Othmane Rifki</title>
 
 </head>
 
@@ -552,154 +561,108 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Importing SAS and Stata files</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/read_write_file/" >Read and write a file</a></h2>
-      <div class="article-style">
-        
-          Read a file # Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.read() print(text)  this is alice.txt counting how many CATS i have. yes i said cAts .
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timeout_decorator/" >Timeout decorator for a function that runs longer than expected</a></h2>
-      <div class="article-style">
-        
-          Pass argument to decorator Timeout decorator for a function that runs longer than expected
-import signal def raise_timeout(*args, **kwargs): raise TimeoutError('This function has timed out!!!!!') # When an &quot;alarm&quot; signal goes off, call raise_timeout() signal.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timer_decorator/" >Timer decorator for how long a function took to run</a></h2>
-      <div class="article-style">
-        
-          Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Useful decorators: Memoizing, timer, type check</a></h2>
-      <div class="article-style">
-        
-          Timer decorator Time your functions!
-from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
+  <h3 id="sas-files">SAS files</h3>
+<p>SAS: Statistical Analysis System<br>
+Used for business analytics and biostatistics<br>
+File extension: <code>.sasb7dat</code></p>
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+from sas7bdat import SAS7BDAT
 
+
+# Save file to a DataFrame: df_sas
+with SAS7BDAT('sales.sas7bdat') as file:
+    df_sas = file.to_data_frame()
+
+# Print head of DataFrame
+print(df_sas.head())
+
+# Plot histogram of DataFrame features (pandas and pyplot already imported)
+pd.DataFrame.hist(df_sas[['S','P']])
+plt.ylabel('count')
+plt.show()
+</code></pre>
+<pre><code>     YEAR     P           S
+0  1950.0  12.9  181.899994
+1  1951.0  11.9  245.000000
+2  1952.0  10.7  250.199997
+3  1953.0  11.3  265.899994
+4  1954.0  11.2  248.500000
+</code></pre>
+<p><img src="loadsas_2_1.png" alt="png"></p>
+<h3 id="stata-files">Stata files</h3>
+<p>Stata: Statistical Analysis System<br>
+Used for
+File extension: <code>.dta</code></p>
+<pre><code class="language-python"># Import pandas
+import pandas as pd
+
+# Load Stata file into a pandas DataFrame: df
+df = pd.read_stata('disarea.dta')
+
+# Print the head of the DataFrame df
+print(df.head())
+
+# Plot histogram of one column of the DataFrame
+pd.DataFrame.hist(df[['disa10']])
+plt.xlabel('Extent of disease')
+plt.ylabel('Number of countries')
+plt.show()
+
+</code></pre>
+<pre><code>  wbcode               country  disa1  disa2  disa3  disa4  disa5  disa6  \
+0    AFG           Afghanistan   0.00   0.00   0.76   0.73    0.0   0.00   
+1    AGO                Angola   0.32   0.02   0.56   0.00    0.0   0.00   
+2    ALB               Albania   0.00   0.00   0.02   0.00    0.0   0.00   
+3    ARE  United Arab Emirates   0.00   0.00   0.00   0.00    0.0   0.00   
+4    ARG             Argentina   0.00   0.24   0.24   0.00    0.0   0.23   
+
+   disa7  disa8  ...  disa16  disa17  disa18  disa19  disa20  disa21  disa22  \
+0   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+1   0.56    0.0  ...     0.0     0.4     0.0    0.61    0.00     0.0    0.99   
+2   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+3   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.00     0.0    0.00   
+4   0.00    0.0  ...     0.0     0.0     0.0    0.00    0.05     0.0    0.00   
+
+   disa23  disa24  disa25  
+0    0.02    0.00    0.00  
+1    0.98    0.61    0.00  
+2    0.00    0.00    0.16  
+3    0.00    0.00    0.00  
+4    0.01    0.00    0.11  
+
+[5 rows x 27 columns]
+</code></pre>
+<p><img src="loadsas_4_1.png" alt="png"></p>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

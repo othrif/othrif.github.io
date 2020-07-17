@@ -666,48 +666,52 @@ try: # code that might raise an error except: # do something about the error fin
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/loadhdf5/" >Importing HDF5 files and LIGO data</a></h2>
+      <div class="article-style">
+        
+          HDF5 files The most efficient way to store large files up to the exabyte scale.
+import h5py filenmae = 'L-L1_LOSC_4_V1-1126259446-32.hdf5' data = h5py.File(filenmae, 'r') print(type(data))  &lt;class 'h5py._hl.files.File'&gt;  for key in data.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/loadmatlab/" >Importing MATLAB data</a></h2>
+      <div class="article-style">
+        
+          MATLAB for &ldquo;Matrix Laboratory&rdquo; &lsquo;.mat&rsquo; files
+# Import package import scipy.io # Load MATLAB file: mat mat = scipy.io.loadmat('ja_data2.mat') # Print the datatype type of mat print(type(mat))  &lt;class 'dict'&gt;  import matplotlib.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/python/basics/loadsas/" >Importing SAS and Stata files</a></h2>
+      <div class="article-style">
+        
+          SAS files SAS: Statistical Analysis System
+Used for business analytics and biostatistics
+File extension: .sasb7dat
+import pandas as pd import matplotlib.pyplot as plt from sas7bdat import SAS7BDAT # Save file to a DataFrame: df_sas with SAS7BDAT('sales.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
       <div class="article-style">
         
           Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
 mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
-      <div class="article-style">
-        
-          Iterarble and iterator an iterable is an object that can return an iterator, while an iterator is an object that keeps state and produces the next value when you call next() on it
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/join/" >Join strings</a></h2>
-      <div class="article-style">
-        
-          Basic join Syntax: str.join(iterable)
-x = [&quot;First&quot;, &quot;Second&quot;, &quot;Third&quot;] '_'.join(x)  'First_Second_Third'  num = '12345' '-'.join(num)  '1-2-3-4-5'  let = 'abcdefg' '.'.join(let)  'a.b.c.d.e.f.g'  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/lambda/" >Lambda functions and map(), filter(), reduce()</a></h2>
-      <div class="article-style">
-        
-          Basic syntax lambda arguments : &lt;do something&gt;  myfunc = lambda a: a+'!!!' myfunc('hello')  'hello!!!'  Converting a function to lambda Compare the two functions and how lambda is much more concise
         
       </div>
     </div>
