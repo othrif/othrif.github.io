@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Relational database 101  Import packages and functions Create the database engine Connect to the engine Query the database Save query results to a DataFrame Close the connection  Queries  SELECT WHERE JOIN ORDER BY  # Import packages from sqlalchemy import create_engine import pandas as pd # Create engine: engine engine = create_engine(&#39;sqlite:///Chinook.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/sql_engine/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/basics/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/sql_engine/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/sql_engine/">
+  <meta property="og:title" content="Querying relational databases in Python | Othmane Rifki">
+  <meta property="og:description" content="Relational database 101  Import packages and functions Create the database engine Connect to the engine Query the database Save query results to a DataFrame Close the connection  Queries  SELECT WHERE JOIN ORDER BY  # Import packages from sqlalchemy import create_engine import pandas as pd # Create engine: engine engine = create_engine(&#39;sqlite:///Chinook."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Querying relational databases in Python | Othmane Rifki</title>
 
 </head>
 
@@ -552,166 +555,246 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Querying relational databases in Python</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <h3 id="relational-database-101">Relational database 101</h3>
+<ul>
+<li>Import packages and functions</li>
+<li>Create the database engine</li>
+<li>Connect to the engine</li>
+<li>Query the database</li>
+<li>Save query results to a DataFrame</li>
+<li>Close the connection</li>
+</ul>
+<h3 id="queries">Queries</h3>
+<ul>
+<li>SELECT</li>
+<li>WHERE</li>
+<li>JOIN</li>
+<li>ORDER BY</li>
+</ul>
+<pre><code class="language-python"># Import packages
+from sqlalchemy import create_engine
+import pandas as pd
 
+# Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
 
+# Execute query and store records in DataFrame: df
+df = pd.read_sql_query('SELECT * FROM PlaylistTrack INNER JOIN Track on PlaylistTrack.TrackId = Track.TrackId WHERE Milliseconds &lt; 250000', engine)
 
-  
+# Print head of DataFrame
+print(df.head())
+</code></pre>
+<pre><code>   PlaylistId  TrackId  TrackId              Name  AlbumId  MediaTypeId  \
+0           1     3390     3390  One and the Same      271            2   
+1           1     3392     3392     Until We Fall      271            2   
+2           1     3393     3393     Original Fire      271            2   
+3           1     3394     3394       Broken City      271            2   
+4           1     3395     3395          Somedays      271            2   
 
+   GenreId Composer  Milliseconds    Bytes  UnitPrice  
+0       23     None        217732  3559040       0.99  
+1       23     None        230758  3766605       0.99  
+2       23     None        218916  3577821       0.99  
+3       23     None        228366  3728955       0.99  
+4       23     None        213831  3497176       0.99  
+</code></pre>
+<pre><code class="language-python"># Open engine in context manager
+# Perform query and save results to DataFrame: df
+with engine.connect() as con:
+    rs = con.execute('SELECT Title, Name FROM Album INNER JOIN Artist ON Album.ArtistID = Artist.ArtistID')
+    df = pd.DataFrame(rs.fetchall())
+    df.columns = rs.keys()
 
+# Print head of DataFrame df
+print(df.head())
 
+</code></pre>
+<pre><code>                                   Title       Name
+0  For Those About To Rock We Salute You      AC/DC
+1                      Balls to the Wall     Accept
+2                      Restless and Wild     Accept
+3                      Let There Be Rock      AC/DC
+4                               Big Ones  Aerosmith
+</code></pre>
+<p>Note 4 lines of code from context manager can be condensed to one line of code from <code>Pandas</code></p>
+<h1 id="educational-intro-below">Educational intro below</h1>
+<h3 id="import-packages">Import packages</h3>
+<pre><code class="language-python"># import necessary module
+from sqlalchemy import create_engine
+import pandas as pd
+</code></pre>
+<h3 id="create-a-database-engine">Create a database engine</h3>
+<p>Creating the first SQL engine. You&rsquo;ll create an engine to connect to the SQLite database <code>Chinook.sqlite</code></p>
+<p><code>'sqlite:///Northwind.sqlite'</code> is called the connection string to the SQLite database <code>Chinook.sqlite</code></p>
+<pre><code class="language-python"># Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+</code></pre>
+<h3 id="what-are-the-tables-in-the-database">What are the tables in the database?</h3>
+<pre><code class="language-python"># Save the table names to a list: table_names
+table_names = engine.table_names()
 
+# Print the table names to the shell
+print(table_names)
 
+</code></pre>
+<pre><code>['Album', 'Artist', 'Customer', 'Employee', 'Genre', 'Invoice', 'InvoiceLine', 'MediaType', 'Playlist', 'PlaylistTrack', 'Track']
+</code></pre>
+<h3 id="query-database-and-close-engine-connection">Query database and close engine connection</h3>
+<p>The Hello World of SQL queries, <code>SELECT</code>, in order to retrieve all columns of the table <code>Album</code> in the Chinook database. The query <code>SELECT *</code> selects all columns.</p>
+<pre><code class="language-python"># Open engine connection: con
+con = engine.connect()
 
+# Perform query: rs
+rs = con.execute('SELECT * FROM Album')
 
-  
+# Save results of the query to DataFrame: df
+df = pd.DataFrame(rs.fetchall())
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+# Set the proper names of the columns
+df.columns = rs.keys()
 
-  
+# Close connection
+con.close()
 
-  
+# Print head of DataFrame df
+print(df.head())
+</code></pre>
+<pre><code>   AlbumId                                  Title  ArtistId
+0        1  For Those About To Rock We Salute You         1
+1        2                      Balls to the Wall         2
+2        3                      Restless and Wild         2
+3        4                      Let There Be Rock         1
+4        5                               Big Ones         3
+</code></pre>
+<h3 id="customize-the-query-and-use-context-manager">Customize the query and use context manager</h3>
+<p>Customize your query in order to:</p>
+<ul>
+<li>Select specified columns from a table</li>
+<li>Select a specified number of rows</li>
+<li>Import column names from the database table</li>
+</ul>
+<pre><code class="language-python"># Open engine in context manager
+# Perform query and save results to DataFrame: df
+with engine.connect() as con:
+    rs = con.execute('SELECT LastName, Title FROM Employee')
+    df = pd.DataFrame(rs.fetchmany(3))
+    df.columns = rs.keys()
+
+# Print the length of the DataFrame df
+print(len(df))
+
+# Print the head of the DataFrame df
+print(df.head())
+</code></pre>
+<pre><code>3
+  LastName                Title
+0    Adams      General Manager
+1  Edwards        Sales Manager
+2  Peacock  Sales Support Agent
+</code></pre>
+<h3 id="filtering-your-database-records-using-sqls-where">Filtering your database records using SQL&rsquo;s WHERE</h3>
+<pre><code class="language-python"># Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine in context manager
+# Perform query and save results to DataFrame: df
+with engine.connect() as con:
+    rs = con.execute('SELECT * FROM Employee WHERE EmployeeId &gt;= 6')
+    df = pd.DataFrame(rs.fetchall())
+    df.columns = rs.keys()
+
+# Print the head of the DataFrame df
+print(df.head())
+</code></pre>
+<pre><code>   EmployeeId  LastName FirstName       Title  ReportsTo            BirthDate  \
+0           6  Mitchell   Michael  IT Manager          1  1973-07-01 00:00:00   
+1           7      King    Robert    IT Staff          6  1970-05-29 00:00:00   
+2           8  Callahan     Laura    IT Staff          6  1968-01-09 00:00:00   
+
+              HireDate                      Address        City State Country  \
+0  2003-10-17 00:00:00         5827 Bowness Road NW     Calgary    AB  Canada   
+1  2004-01-02 00:00:00  590 Columbia Boulevard West  Lethbridge    AB  Canada   
+2  2004-03-04 00:00:00                  923 7 ST NW  Lethbridge    AB  Canada   
+
+  PostalCode              Phone                Fax                    Email  
+0    T3B 0C5  +1 (403) 246-9887  +1 (403) 246-9899  michael@chinookcorp.com  
+1    T1K 5N8  +1 (403) 456-9986  +1 (403) 456-8485   robert@chinookcorp.com  
+2    T1H 1Y8  +1 (403) 467-3351  +1 (403) 467-8772    laura@chinookcorp.com  
+</code></pre>
+<h3 id="ordering-your-sql-records-with-order-by">Ordering your SQL records with ORDER BY</h3>
+<pre><code class="language-python"># Create engine: engine
+engine = create_engine('sqlite:///Chinook.sqlite')
+
+# Open engine in context manager
+with engine.connect() as con:
+    rs = con.execute('SELECT * FROM Employee ORDER BY BirthDate')
+    df = pd.DataFrame(rs.fetchall())
+
+    # Set the DataFrame's column names
+    df.columns = rs.keys()
+
+# Print head of DataFrame
+print(df.head())
+
+</code></pre>
+<pre><code>   EmployeeId  LastName FirstName                Title  ReportsTo  \
+0           4      Park  Margaret  Sales Support Agent        2.0   
+1           2   Edwards     Nancy        Sales Manager        1.0   
+2           1     Adams    Andrew      General Manager        NaN   
+3           5   Johnson     Steve  Sales Support Agent        2.0   
+4           8  Callahan     Laura             IT Staff        6.0   
+
+             BirthDate             HireDate              Address        City  \
+0  1947-09-19 00:00:00  2003-05-03 00:00:00     683 10 Street SW     Calgary   
+1  1958-12-08 00:00:00  2002-05-01 00:00:00         825 8 Ave SW     Calgary   
+2  1962-02-18 00:00:00  2002-08-14 00:00:00  11120 Jasper Ave NW    Edmonton   
+3  1965-03-03 00:00:00  2003-10-17 00:00:00         7727B 41 Ave     Calgary   
+4  1968-01-09 00:00:00  2004-03-04 00:00:00          923 7 ST NW  Lethbridge   
+
+  State Country PostalCode              Phone                Fax  \
+0    AB  Canada    T2P 5G3  +1 (403) 263-4423  +1 (403) 263-4289   
+1    AB  Canada    T2P 2T3  +1 (403) 262-3443  +1 (403) 262-3322   
+2    AB  Canada    T5K 2N1  +1 (780) 428-9482  +1 (780) 428-3457   
+3    AB  Canada    T3B 1Y7   1 (780) 836-9987   1 (780) 836-9543   
+4    AB  Canada    T1H 1Y8  +1 (403) 467-3351  +1 (403) 467-8772   
+
+                      Email  
+0  margaret@chinookcorp.com  
+1     nancy@chinookcorp.com  
+2    andrew@chinookcorp.com  
+3     steve@chinookcorp.com  
+4     laura@chinookcorp.com  
+</code></pre>
+<h3 id="pandas-for-sql-queries">Pandas for SQL Queries</h3>
+<pre><code class="language-python">
+</code></pre>
+
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
 
 
 
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/conventions/" >Python conventions</a></h2>
-      <div class="article-style">
-        
-          Import packages and modules import numpy as np   
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/sql_engine/" >Querying relational databases in Python</a></h2>
-      <div class="article-style">
-        
-          Relational database 101  Import packages and functions Create the database engine Connect to the engine Query the database Save query results to a DataFrame Close the connection  Queries  SELECT WHERE JOIN ORDER BY  # Import packages from sqlalchemy import create_engine import pandas as pd # Create engine: engine engine = create_engine('sqlite:///Chinook.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/read_write_file/" >Read and write a file</a></h2>
-      <div class="article-style">
-        
-          Read a file # Open &quot;alice.txt&quot; and assign the file to &quot;file&quot; with open('alice.txt') as file: text = file.read() print(text)  this is alice.txt counting how many CATS i have. yes i said cAts .
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/samelinecommand/" >Same line commands</a></h2>
-      <div class="article-style">
-        
-          Print in same line with ; # Same line command1; command2 # Separate lines command1 command2  print('hello'); print('again')  hello again  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/splitting/" >Splitting strings</a></h2>
-      <div class="article-style">
-        
-          Basic splitting str = &quot;I am playing with;##9Strings () while testing \n how these randome ## chE@sracters worK;\nhere\\right ## there&quot;  split(seperator,maxsplit=positions) str.split()  ['I', 'am', 'playing', 'with;##9Strings', '()', 'while', 'testing', 'how', 'these', 'randome', '##', 'chE@sracters', 'worK;here\\right', '##', 'there']  str.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/template/" >Template</a></h2>
-      <div class="article-style">
-        
-          Title  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timeout_decorator/" >Timeout decorator for a function that runs longer than expected</a></h2>
-      <div class="article-style">
-        
-          Pass argument to decorator Timeout decorator for a function that runs longer than expected
-import signal def raise_timeout(*args, **kwargs): raise TimeoutError('This function has timed out!!!!!') # When an &quot;alarm&quot; signal goes off, call raise_timeout() signal.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/timer_decorator/" >Timer decorator for how long a function took to run</a></h2>
-      <div class="article-style">
-        
-          Timer decorator import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/memoize_decorator/" >Useful decorators: Memoizing, timer, type check</a></h2>
-      <div class="article-style">
-        
-          Timer decorator Time your functions!
-from functools import wraps import time def timer(func): &quot;&quot;&quot; A decorator that prints how long a function took to run&quot;&quot;&quot; # define the wrapper function to return @wraps(func) def wrapper(*args, **kwargs): # When wrapper() is called, get current time t_start = time.
-        
-      </div>
-    </div>
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/basics/page/5/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
-
-</div>
 
       
 
