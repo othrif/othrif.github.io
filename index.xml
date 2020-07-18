@@ -202,6 +202,151 @@ justice league
     </item>
     
     <item>
+      <title>Arithmetic with Series &amp; DataFrames</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/arithmeticwithpandas/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/arithmeticwithpandas/</guid>
+      <description>&lt;h3 id=&#34;broadcasting-in-arithmetic-formulas&#34;&gt;Broadcasting in arithmetic formulas&lt;/h3&gt;
+&lt;p&gt;In only three lines of code, you converted the units of 365 data points (over three columns) from degrees Fahrenheit to degrees Celsius.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+weather = pd.read_csv(&#39;pittsburgh2013.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(365, 23)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Extract selected columns from weather as new DataFrame: temps_f
+temps_f = weather.loc[:,[&#39;Min TemperatureF&#39;,&#39;Mean TemperatureF&#39;, &#39;Max TemperatureF&#39;]]
+
+# Convert temps_f to celsius: temps_c
+temps_c = (temps_f-32) * 5/9
+
+# Rename &#39;F&#39; in column names with &#39;C&#39;: temps_c.columns
+temps_c.columns = temps_c.columns.str.replace(&#39;F&#39;,&#39;C&#39;)
+
+# Print first 5 rows of temps_c
+print(temps_c.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   Min TemperatureC  Mean TemperatureC  Max TemperatureC
+0         -6.111111          -2.222222          0.000000
+1         -8.333333          -6.111111         -3.888889
+2         -8.888889          -4.444444          0.000000
+3         -2.777778          -2.222222         -1.111111
+4         -3.888889          -1.111111          1.111111
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;computing-percentage-growth-of-gdp&#34;&gt;Computing percentage growth of GDP&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+# Read &#39;GDP.csv&#39; into a DataFrame: gdp
+gdp = pd.read_csv(&#39;GDP/gdp_usa.csv&#39;, index_col=&#39;DATE&#39;, parse_dates=True)
+
+# Slice all the gdp data from 2008 onward: post2008
+post2008 = gdp.loc[&#39;2008-01-01&#39;:,:]
+
+# Print the last 8 rows of post2008
+print(post2008.tail(8))
+print(post2008.head(8))
+
+# Resample post2008 by year, keeping last(): yearly
+# using the alias &#39;A&#39; for annual frequency
+# use the aggregation method .last() to select the last element when resampling.
+yearly = post2008.resample(&#39;A&#39;).last() 
+
+# Print yearly
+print(yearly)
+
+# Compute percentage growth of yearly: yearly[&#39;growth&#39;]
+yearly[&#39;growth&#39;] = yearly.pct_change()*100
+
+# Print yearly again
+print(yearly)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;              VALUE
+DATE               
+2014-07-01  17569.4
+2014-10-01  17692.2
+2015-01-01  17783.6
+2015-04-01  17998.3
+2015-07-01  18141.9
+2015-10-01  18222.8
+2016-01-01  18281.6
+2016-04-01  18436.5
+              VALUE
+DATE               
+2008-01-01  14668.4
+2008-04-01  14813.0
+2008-07-01  14843.0
+2008-10-01  14549.9
+2009-01-01  14383.9
+2009-04-01  14340.4
+2009-07-01  14384.1
+2009-10-01  14566.5
+              VALUE
+DATE               
+2008-12-31  14549.9
+2009-12-31  14566.5
+2010-12-31  15230.2
+2011-12-31  15785.3
+2012-12-31  16297.3
+2013-12-31  16999.9
+2014-12-31  17692.2
+2015-12-31  18222.8
+2016-12-31  18436.5
+              VALUE    growth
+DATE                         
+2008-12-31  14549.9       NaN
+2009-12-31  14566.5  0.114090
+2010-12-31  15230.2  4.556345
+2011-12-31  15785.3  3.644732
+2012-12-31  16297.3  3.243524
+2013-12-31  16999.9  4.311144
+2014-12-31  17692.2  4.072377
+2015-12-31  18222.8  2.999062
+2016-12-31  18436.5  1.172707
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;converting-currency-of-stocks&#34;&gt;Converting currency of stocks&lt;/h3&gt;
+&lt;p&gt;Stock prices in US Dollars for the S&amp;amp;P 500 in 2015 have been obtained from Yahoo Finance. The files &lt;code&gt;sp500.csv&lt;/code&gt; for sp500 and &lt;code&gt;exchange.csv&lt;/code&gt; for the exchange rates are both provided.&lt;/p&gt;
+&lt;p&gt;Using the daily exchange rate to Pounds Sterling, your task is to convert both the Open and Close column prices.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Read &#39;sp500.csv&#39; into a DataFrame: sp500
+sp500 = pd.read_csv(&#39;sp500.csv&#39;, parse_dates=True, index_col=&#39;Date&#39;)
+
+# Read &#39;exchange.csv&#39; into a DataFrame: exchange
+exchange = pd.read_csv(&#39;exchange.csv&#39;, parse_dates=True, index_col=&#39;Date&#39;)
+
+# Subset &#39;Open&#39; &amp;amp; &#39;Close&#39; columns from sp500: dollars
+dollars = sp500.loc[:,[&#39;Open&#39;,&#39;Close&#39;]]
+
+# Print the head of dollars
+print(dollars.head())
+
+# Convert dollars to pounds: pounds
+pounds = dollars.multiply(exchange[&#39;GBP/USD&#39;], axis=&#39;rows&#39;)
+
+# Print the head of pounds
+print(pounds.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                   Open        Close
+Date                                
+2015-01-02  2058.899902  2058.199951
+2015-01-05  2054.439941  2020.579956
+2015-01-06  2022.150024  2002.609985
+2015-01-07  2005.550049  2025.900024
+2015-01-08  2030.609985  2062.139893
+                   Open        Close
+Date                                
+2015-01-02  1340.364425  1339.908750
+2015-01-05  1348.616555  1326.389506
+2015-01-06  1332.515980  1319.639876
+2015-01-07  1330.562125  1344.063112
+2015-01-08  1343.268811  1364.126161
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Array construction routines</title>
       <link>http://othrif.github.io/technical_note/python/numpy/array/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -10046,6 +10191,75 @@ print(cars)
     </item>
     
     <item>
+      <title>Reindexing DataFrame from a list</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/reindexfromlist/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/reindexfromlist/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;months = [&#39;Apr&#39;, &#39;Jul&#39;, &#39;Jan&#39;, &#39;Oct&#39;]
+temp = [61.956044, 68.934783, 32.133333, 43.434783]
+mytemp = {&#39;Mean TemperatureF&#39;: temp}
+weather1 = pd.DataFrame(mytemp)
+weather1.index=months
+print(weather1)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;     Mean TemperatureF
+Apr          61.956044
+Jul          68.934783
+Jan          32.133333
+Oct          43.434783
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;year = [&#39;Jan&#39;,&#39;Feb&#39;,&#39;Mar&#39;,&#39;Apr&#39;,&#39;May&#39;,&#39;Jun&#39;,&#39;Jul&#39;,&#39;Aug&#39;,&#39;Sep&#39;,&#39;Oct&#39;,&#39;Nov&#39;,&#39;Dec&#39;]
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Reindex weather1 using the list year: weather2
+weather2 = weather1.reindex(year)
+
+# Print weather2
+print(weather2)
+
+# Reindex weather1 using the list year with forward-fill: weather3
+weather3 = weather1.reindex(year).ffill()
+
+# Print weather3
+print(weather3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;     Mean TemperatureF
+Jan          32.133333
+Feb                NaN
+Mar                NaN
+Apr          61.956044
+May                NaN
+Jun                NaN
+Jul          68.934783
+Aug                NaN
+Sep                NaN
+Oct          43.434783
+Nov                NaN
+Dec                NaN
+     Mean TemperatureF
+Jan          32.133333
+Feb          32.133333
+Mar          32.133333
+Apr          61.956044
+May          61.956044
+Jun          61.956044
+Jul          68.934783
+Aug          68.934783
+Sep          68.934783
+Oct          43.434783
+Nov          43.434783
+Dec          43.434783
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Same line commands</title>
       <link>http://othrif.github.io/technical_note/python/basics/samelinecommand/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -11552,6 +11766,61 @@ using namespace std;
 cout &amp;lt;&amp;lt; c_str &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;abcdefgh
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sorting DataFrame with Index &amp; columns</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/sortindexcolumns/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/sortindexcolumns/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;months = [&#39;Apr&#39;, &#39;Jul&#39;, &#39;Jan&#39;, &#39;Oct&#39;]
+temp = [61.956044, 68.934783, 32.133333, 43.434783]
+mytemp = {&#39;Mean TemperatureF&#39;: temp}
+weather1 = pd.DataFrame(mytemp)
+weather1.index=months
+print(weather1)
+
+# Sort the index of weather1 in alphabetical order: weather2
+weather2 = weather1.sort_index()
+
+# Print the head of weather2
+print(weather2.head())
+
+# Sort the index of weather1 in reverse alphabetical order: weather3
+weather3 = weather1.sort_index(ascending=False)
+
+# Print the head of weather3
+print(weather3.head())
+
+
+# Sort weather1 numerically using the values of &#39;Max TemperatureF&#39;: weather4
+weather4 = weather1.sort_values(&#39;Mean TemperatureF&#39;)
+
+# Print the head of weather4
+print(weather4.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;     Mean TemperatureF
+Apr          61.956044
+Jul          68.934783
+Jan          32.133333
+Oct          43.434783
+     Mean TemperatureF
+Apr          61.956044
+Jan          32.133333
+Jul          68.934783
+Oct          43.434783
+     Mean TemperatureF
+Oct          43.434783
+Jul          68.934783
+Jan          32.133333
+Apr          61.956044
+     Mean TemperatureF
+Jan          32.133333
+Oct          43.434783
+Apr          61.956044
+Jul          68.934783
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>

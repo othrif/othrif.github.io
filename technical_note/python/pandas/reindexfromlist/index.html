@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="months = [&#39;Apr&#39;, &#39;Jul&#39;, &#39;Jan&#39;, &#39;Oct&#39;] temp = [61.956044, 68.934783, 32.133333, 43.434783] mytemp = {&#39;Mean TemperatureF&#39;: temp} weather1 = pd.DataFrame(mytemp) weather1.index=months print(weather1)   Mean TemperatureF Apr 61.956044 Jul 68.934783 Jan 32.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/reindexfromlist/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/reindexfromlist/">
 
   
   
@@ -230,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/reindexfromlist/">
+  <meta property="og:title" content="Reindexing DataFrame from a list | Othmane Rifki">
+  <meta property="og:description" content="months = [&#39;Apr&#39;, &#39;Jul&#39;, &#39;Jan&#39;, &#39;Oct&#39;] temp = [61.956044, 68.934783, 32.133333, 43.434783] mytemp = {&#39;Mean TemperatureF&#39;: temp} weather1 = pd.DataFrame(mytemp) weather1.index=months print(weather1)   Mean TemperatureF Apr 61.956044 Jul 68.934783 Jan 32."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Reindexing DataFrame from a list | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +465,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +555,94 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Reindexing DataFrame from a list</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">months = ['Apr', 'Jul', 'Jan', 'Oct']
+temp = [61.956044, 68.934783, 32.133333, 43.434783]
+mytemp = {'Mean TemperatureF': temp}
+weather1 = pd.DataFrame(mytemp)
+weather1.index=months
+print(weather1)
 
-  <p>Perhaps you were looking for one of these?</p>
+</code></pre>
+<pre><code>     Mean TemperatureF
+Apr          61.956044
+Jul          68.934783
+Jan          32.133333
+Oct          43.434783
+</code></pre>
+<pre><code class="language-python">year = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
-    
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/basics/global/">Alter variable defined in global scope</a></li>
-    
-      <li><a href="/technical_note/python/pandas/arithmeticwithpandas/">Arithmetic with Series &amp; DataFrames</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/numpy/indexing/">Array indexing</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array_math/">Array math and universal functions</a></li>
-    
-      <li><a href="/technical_note/linux/basics/ascii_unicode/">ASCII vs Unicode</a></li>
-    
-      <li><a href="/technical_note/python/basics/function_closure/">Attaching nonlocal variables to nested functions</a></li>
-    
-  </ul>
-  
+</code></pre>
+<pre><code class="language-python"># Import pandas
+import pandas as pd
+
+# Reindex weather1 using the list year: weather2
+weather2 = weather1.reindex(year)
+
+# Print weather2
+print(weather2)
+
+# Reindex weather1 using the list year with forward-fill: weather3
+weather3 = weather1.reindex(year).ffill()
+
+# Print weather3
+print(weather3)
+</code></pre>
+<pre><code>     Mean TemperatureF
+Jan          32.133333
+Feb                NaN
+Mar                NaN
+Apr          61.956044
+May                NaN
+Jun                NaN
+Jul          68.934783
+Aug                NaN
+Sep                NaN
+Oct          43.434783
+Nov                NaN
+Dec                NaN
+     Mean TemperatureF
+Jan          32.133333
+Feb          32.133333
+Mar          32.133333
+Apr          61.956044
+May          61.956044
+Jun          61.956044
+Jul          68.934783
+Aug          68.934783
+Sep          68.934783
+Oct          43.434783
+Nov          43.434783
+Dec          43.434783
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
