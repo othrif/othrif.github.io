@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -93,6 +98,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/2dnumpy/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/2dnumpy/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -108,12 +118,27 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/array/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/array/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/indexing/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/indexing/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/array_math/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -138,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/matplotlib/basicsplot/</loc>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/basicsplot/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -158,12 +183,22 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/boolean_manip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/boolean_manip/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/boolean_manip/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/broadcasting/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -458,6 +493,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/loop/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/loop/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -503,7 +543,17 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/stat/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/stat/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/syntax/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -578,6 +628,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/rand/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/rand/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -648,6 +703,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/subsetting/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/numpy/subsetting/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -658,7 +718,7 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/matplotlib/basicplot/</loc>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
