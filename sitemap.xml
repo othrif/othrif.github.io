@@ -138,7 +138,7 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/matplotlib/basics/</loc>
+    <loc>http://othrif.github.io/technical_note/python/matplotlib/basicsplot/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -379,6 +379,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/indexselectingdata/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/basics/bigo/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

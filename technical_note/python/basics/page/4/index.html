@@ -593,6 +593,19 @@
     
     
     <div>
+      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
+      <div class="article-style">
+        
+          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
+mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
       <h2><a href="/technical_note/python/basics/iterators/" >Iterables with itr() and next()</a></h2>
       <div class="article-style">
         
@@ -696,18 +709,6 @@ my_list = ['Hello world!', 'banans', 'apples']  my_list.append('add one more')  
       <div class="article-style">
         
           Working with Class and methods class Vehicle: def __init__(self,color): self.color=color def start(self): print(&quot;Starting engine&quot;) def showcolor(self): print(f&quot;I am {self.color}&quot;)  car=Vehicle('black')  car.start()  Starting engine  car.showcolor()  I am black  class MyCounter: &quot;&quot;&quot;Here is the doc string!
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/basics/function_scope/" >Modifying variables outside local scope: global, nonlocal</a></h2>
-      <div class="article-style">
-        
-          global Sometimes your functions will need to modify a variable that is outside of the local scope of that function. While it&rsquo;s generally not best practice to do so, it&rsquo;s still good to know-how in case you need to do it.
         
       </div>
     </div>

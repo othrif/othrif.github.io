@@ -707,11 +707,11 @@ import pandas as pd import matplotlib.pyplot as plt from sas7bdat import SAS7BDA
     
     
     <div>
-      <h2><a href="/technical_note/python/basics/iterators_enum_zip/" >Iterables with enumerate() and zip()</a></h2>
+      <h2><a href="/technical_note/python/basics/bigo/" >Iterables with enumerate() and zip()</a></h2>
       <div class="article-style">
         
-          Using enumerate() enumerate() returns an enumerate object that produces a sequence of tuples, and each of the tuples is an index-value pair.
-mutants = ['charles xavier', 'bobby drake', 'kurt wagner', 'max eisenhardt', 'kitty pryde'] # Create a list of tuples mutant_list = list(enumerate(mutants)) print(mutant_list) # Unpack and print the tuple pairs for index1,value1 in enumerate(mutants): print(index1, value1) # Change the start index for index2,value2 in enumerate(mutants, start=1): print(index2, value2)  [(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')] 0 charles xavier 1 bobby drake 2 kurt wagner 3 max eisenhardt 4 kitty pryde 1 charles xavier 2 bobby drake 3 kurt wagner 4 max eisenhardt 5 kitty pryde  Using zip() takes any number of iterables and returns a zip object that is an iterator of tuples.
+          Big O notation Say we have a certain algorithm. We run it on a modest number of fifty elements.
+ O(1): One operation. O(log n): Four operations. O(n): Fifty operations. O(n log n): One hundred ninety-five operations.
         
       </div>
     </div>
