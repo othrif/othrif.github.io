@@ -32,7 +32,20 @@ plt.yticks([0,5,10,15,20,25,30,40],
 
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;basicsplot_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&amp;lt;ipython-input-2-cb2c01bc2d6f&amp;gt; in &amp;lt;module&amp;gt;
+      1 x = [1, 2, 3, 4,10]
+      2 y = [10, 15, 17, 20,30]
+----&amp;gt; 3 plt.plot(x,y)
+      4 
+      5 plt.xlabel(&#39;x-label&#39;)
+
+
+NameError: name &#39;plt&#39; is not defined
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;scatter-plot&#34;&gt;Scatter plot&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.clf()
 plt.scatter(x,y)
@@ -94,6 +107,33 @@ plt.show()
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;basicsplot_18_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Test plotting</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlib/basicplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlib/basicplot/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import matplotlib.pyplot as plt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;line-plot&#34;&gt;Line plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [1, 2, 3, 4,10]
+y = [10, 15, 17, 20,30]
+plt.plot(x,y)
+
+plt.xlabel(&#39;x-label&#39;)
+plt.ylabel(&#39;y-label&#39;)
+plt.title(&#39;My Title&#39;)
+plt.yticks([0,5,10,15,20,25,30,40],
+          [&#39;zero&#39;, &#39;five&#39;, &#39;ten&#39;, &#39;fifteen&#39;, &#39;twenty&#39;, &#39;twenty five&#39;, &#39;thirty&#39;, &#39;fourty&#39;])
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basicplot_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>

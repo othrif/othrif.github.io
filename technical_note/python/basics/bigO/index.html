@@ -597,9 +597,7 @@ def O_n_2(n): return n * n
 def O_2_n(n): return 2 ** n
 def O_n_factorial(n): return math.factorial(n)
 
-functions = [ 
-    O_log_n, O_n, O_n_log_n, O_n_2, O_2_n, O_n_factorial
-]
+functions = [O_log_n, O_n, O_n_log_n, O_n_2, O_2_n, O_n_factorial]
 scores = computeBigO(functions, range(1, 51))
 for n,fn in enumerate(functions):
     print('%s:%s' % (fn, int(scores[n][-1])))
@@ -613,12 +611,13 @@ for n,fn in enumerate(functions):
 </code></pre>
 <pre><code class="language-python">import matplotlib.pyplot as plt
 
-for s in scores:
-    plt.plot(s)
+col = ['yellow', 'orange', 'red', 'blue', 'violet', 'green']
+for n,s in enumerate(scores):
+    plt.plot(s,c=col[n])
+    plt.ylim(0,500)
+    plt.legend(['O($\log(n)$)','O($n$)','O($n\log(n)$)','O($n^2$)','O($2^n$)','O($n!$)'])
 </code></pre>
 <p><img src="bigO_3_0.png" alt="png"></p>
-<pre><code class="language-python">
-</code></pre>
 
 </div>
   <aside>

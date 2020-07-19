@@ -583,7 +583,20 @@ plt.yticks([0,5,10,15,20,25,30,40],
 
 plt.show()
 </code></pre>
-<p><img src="basicsplot_3_0.png" alt="png"></p>
+<pre><code>---------------------------------------------------------------------------
+
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-2-cb2c01bc2d6f&gt; in &lt;module&gt;
+      1 x = [1, 2, 3, 4,10]
+      2 y = [10, 15, 17, 20,30]
+----&gt; 3 plt.plot(x,y)
+      4 
+      5 plt.xlabel('x-label')
+
+
+NameError: name 'plt' is not defined
+</code></pre>
 <h3 id="scatter-plot">Scatter plot</h3>
 <pre><code class="language-python">plt.clf()
 plt.scatter(x,y)
