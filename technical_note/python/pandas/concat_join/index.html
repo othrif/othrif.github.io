@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Joins Joining tables: Combining rows of multiple tables
+Outer join  Missing fields filled with NaN Union of index sets (all labels, no repetition)  Inner join  Intersection of index sets (only common labels)  import pandas as pd bronze = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/concat_join/">
 
   
 
@@ -216,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/concat_join/">
 
   
   
@@ -230,29 +231,35 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/concat_join/">
+  <meta property="og:title" content="Outer and inner joins | Othmane Rifki">
+  <meta property="og:description" content="Joins Joining tables: Combining rows of multiple tables
+Outer join  Missing fields filled with NaN Union of index sets (all labels, no repetition)  Inner join  Intersection of index sets (only common labels)  import pandas as pd bronze = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Outer and inner joins | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +467,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +557,128 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Outer and inner joins</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
+  <h3 id="joins">Joins</h3>
+<p>Joining tables: Combining rows of multiple tables</p>
+<h4 id="outer-join">Outer join</h4>
+<ul>
+<li>Missing fields filled with NaN</li>
+<li>Union of index sets (all labels, no repetition)</li>
+</ul>
+<h4 id="inner-join">Inner join</h4>
+<ul>
+<li>Intersection of index sets (only common labels)</li>
+</ul>
+<pre><code class="language-python">import pandas as pd
 
-  <p>Perhaps you were looking for one of these?</p>
+bronze = pd.read_csv('SummerOlypmic/bronze_top5.csv')
+silver = pd.read_csv('SummerOlypmic/silver_top5.csv')
+gold = pd.read_csv('SummerOlypmic/gold_top5.csv')
+</code></pre>
+<h3 id="inner-join-1">Inner join</h3>
+<pre><code class="language-python"># Create the list of DataFrames: medal_list
+medal_list = [bronze, silver, gold]
 
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/basics/global/">Alter variable defined in global scope</a></li>
-    
-      <li><a href="/technical_note/python/pandas/appendseries/">Appending pandas Series</a></li>
-    
-      <li><a href="/technical_note/python/pandas/arithmeticwithpandas/">Arithmetic with Series &amp; DataFrames</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/indexing/">Array indexing</a></li>
-    
-  </ul>
-  
+# Concatenate medal_list horizontally using an inner join: medals
+medals = pd.concat(medal_list, axis=1, keys=['bronze','silver', 'gold'], join='inner')
+
+# Print medals
+print(medals)
+</code></pre>
+<pre><code>           bronze                  silver                    gold        
+          Country   Total         Country   Total         Country   Total
+0   United States  1052.0   United States  1195.0   United States  2088.0
+1    Soviet Union   584.0    Soviet Union   627.0    Soviet Union   838.0
+2  United Kingdom   505.0  United Kingdom   591.0  United Kingdom   498.0
+3          France   475.0          France   461.0           Italy   460.0
+4         Germany   454.0           Italy   394.0         Germany   407.0
+</code></pre>
+<h3 id="outer-join-1">Outer join</h3>
+<pre><code class="language-python"># Create the list of DataFrames: medal_list
+medal_list = [bronze, silver, gold]
+
+# Concatenate medal_list horizontally using an inner join: medals
+medals = pd.concat(medal_list, axis=1, keys=['bronze','silver', 'gold'], join='outer')
+
+# Print medals
+print(medals)
+</code></pre>
+<pre><code>           bronze                  silver                    gold        
+          Country   Total         Country   Total         Country   Total
+0   United States  1052.0   United States  1195.0   United States  2088.0
+1    Soviet Union   584.0    Soviet Union   627.0    Soviet Union   838.0
+2  United Kingdom   505.0  United Kingdom   591.0  United Kingdom   498.0
+3          France   475.0          France   461.0           Italy   460.0
+4         Germany   454.0           Italy   394.0         Germany   407.0
+</code></pre>
+<h3 id="more-advanced-resampling--concatenating">More advanced resampling &amp; concatenating</h3>
+<pre><code class="language-python">china = pd.read_csv('GDP/gdp_china.csv', parse_dates=True, index_col=0, )
+us = pd.read_csv('GDP/gdp_usa.csv', parse_dates=True, index_col=0)
+print(china.head()) # need to change GDP &gt; China 
+print(us.head()) # need to change VALUE &gt; US
+</code></pre>
+<pre><code>                  GDP
+Year                 
+1960-01-01  59.184116
+1961-01-01  49.557050
+1962-01-01  46.685179
+1963-01-01  50.097303
+1964-01-01  59.062255
+            VALUE
+DATE             
+1947-01-01  243.1
+1947-04-01  246.3
+1947-07-01  250.1
+1947-10-01  260.3
+1948-01-01  266.2
+</code></pre>
+<pre><code class="language-python"># Resample and tidy china: china_annual
+china_annual = china.resample('A').last().pct_change(10).dropna()
+
+# Resample and tidy us: us_annual
+us_annual = us.resample('A').last().pct_change(10).dropna()
+
+# Concatenate china_annual and us_annual: gdp
+gdp = pd.concat([china_annual, us_annual], join='inner', axis=1)
+
+# Resample gdp and print
+print(gdp.resample('10A').last())
+</code></pre>
+<pre><code>                 GDP     VALUE
+Year                          
+1970-12-31  0.546128  1.017187
+1980-12-31  1.072537  1.742556
+1990-12-31  0.892820  1.012126
+2000-12-31  2.357522  0.738632
+2010-12-31  4.011081  0.454332
+2020-12-31  3.789936  0.361780
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

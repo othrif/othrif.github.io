@@ -266,6 +266,94 @@ justice league
     </item>
     
     <item>
+      <title>Appending pandas Series</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/appendseries/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/appendseries/</guid>
+      <description>&lt;h3 id=&#34;basics&#34;&gt;Basics&lt;/h3&gt;
+&lt;p&gt;Load sales data from the months January, February, and March into DataFrames. Then, extract Series with the &amp;lsquo;Units&amp;rsquo; column from each and append them together with method chaining using .append().&lt;/p&gt;
+&lt;p&gt;To check that the stacking worked, you&amp;rsquo;ll print slices from these Series, and finally, you&amp;rsquo;ll add the result to figure out the total units sold in the first quarter.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Load &#39;sales-jan-2015.csv&#39; into a DataFrame: jan
+jan = pd.read_csv(&#39;Sales/sales-jan-2015.csv&#39;, parse_dates=True,index_col=&#39;Date&#39;)
+
+# Load &#39;sales-feb-2015.csv&#39; into a DataFrame: feb
+feb = pd.read_csv(&#39;Sales/sales-feb-2015.csv&#39;, parse_dates=True,index_col=&#39;Date&#39;)
+
+# Load &#39;sales-mar-2015.csv&#39; into a DataFrame: mar
+mar = pd.read_csv(&#39;Sales/sales-mar-2015.csv&#39;, parse_dates=True,index_col=&#39;Date&#39;)
+
+# Extract the &#39;Units&#39; column from jan: jan_units
+jan_units = jan[&#39;Units&#39;]
+
+# Extract the &#39;Units&#39; column from feb: feb_units
+feb_units = feb[&#39;Units&#39;]
+
+# Extract the &#39;Units&#39; column from mar: mar_units
+mar_units = mar[&#39;Units&#39;]
+
+# Append feb_units and then mar_units to jan_units: quarter1
+quarter1 = jan_units.append(feb_units).append(mar_units)
+
+# Print the first slice from quarter1
+print(quarter1.loc[&#39;jan 27, 2015&#39;:&#39;feb 2, 2015&#39;])
+
+# Print the second slice from quarter1
+print(quarter1.loc[&#39;feb 26, 2015&#39;:&#39;mar 7, 2015&#39;])
+
+# Compute &amp;amp; print total sales in quarter1
+print(quarter1.sum())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Date
+2015-01-27 07:11:55    18
+2015-02-02 08:33:01     3
+2015-02-02 20:54:49     9
+Name: Units, dtype: int64
+Date
+2015-02-26 08:57:45     4
+2015-02-26 08:58:51     1
+2015-03-06 10:11:45    17
+2015-03-06 02:03:56    17
+Name: Units, dtype: int64
+642
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concatenating-pandas-series-along-row-axis&#34;&gt;Concatenating pandas Series along row axis&lt;/h3&gt;
+&lt;p&gt;achieve the same result as above by concatenating Series instead&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Initialize empty list: units
+units = []
+
+# Build the list of Series
+for month in [jan, feb, mar]:
+    units.append(month[&#39;Units&#39;])
+
+# Concatenate the list: quarter1
+quarter1 = pd.concat(units, axis=&#39;rows&#39;)
+
+# Print slices from quarter1
+print(quarter1.loc[&#39;jan 27, 2015&#39;:&#39;feb 2, 2015&#39;])
+print(quarter1.loc[&#39;feb 26, 2015&#39;:&#39;mar 7, 2015&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Date
+2015-01-27 07:11:55    18
+2015-02-02 08:33:01     3
+2015-02-02 20:54:49     9
+Name: Units, dtype: int64
+Date
+2015-02-26 08:57:45     4
+2015-02-26 08:58:51     1
+2015-03-06 10:11:45    17
+2015-03-06 02:03:56    17
+Name: Units, dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;heading&#34;&gt;&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Arithmetic with Series &amp; DataFrames</title>
       <link>http://othrif.github.io/technical_note/python/pandas/arithmeticwithpandas/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -2715,6 +2803,285 @@ print(cust.balance)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;the user of your &lt;code&gt;Customer&lt;/code&gt; class won&amp;rsquo;t be able to assign arbitrary values to the customers&amp;rsquo; balance.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Create DataFrame with multiindexes and concatenate with keys</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/concat_multiindex/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/concat_multiindex/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+bronze = {&#39;Country&#39;:{&#39;United States&#39;:  1052.0,
+       &#39;Soviet Union&#39;:   584.0,
+       &#39;United Kingdom&#39;:   505.0,
+       &#39;France&#39;:   475.0,
+       &#39;Germany&#39;:   454.0}}
+silver ={&#39;Country&#39;:{
+       &#39;United States&#39;:  1195.0,
+       &#39;Soviet Union&#39;:   627.0,
+       &#39;United Kingdom&#39;:   591.0,
+       &#39;France&#39;:   461.0,
+       &#39;Italy&#39;:   394.0}}
+gold   = {&#39;Country&#39;:{
+       &#39;United States&#39;:  2088.0,
+       &#39;Soviet Union&#39;:   838.0,
+       &#39;United Kingdom&#39;:   498.0,
+       &#39;Italy&#39;:   460.0,
+       &#39;Germany&#39;:   407.0}}
+
+medal_types = [&#39;bronze&#39;,&#39;silver&#39;,&#39;gold&#39;]
+medals_all = [ pd.DataFrame(i) for i in [bronze,silver,gold]]
+medals = pd.concat(medals_all, keys=medal_types)
+medals
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;5&#34; valign=&#34;top&#34;&gt;bronze&lt;/th&gt;
+      &lt;th&gt;France&lt;/th&gt;
+      &lt;td&gt;475.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Germany&lt;/th&gt;
+      &lt;td&gt;454.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Soviet Union&lt;/th&gt;
+      &lt;td&gt;584.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United Kingdom&lt;/th&gt;
+      &lt;td&gt;505.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United States&lt;/th&gt;
+      &lt;td&gt;1052.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;5&#34; valign=&#34;top&#34;&gt;silver&lt;/th&gt;
+      &lt;th&gt;France&lt;/th&gt;
+      &lt;td&gt;461.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Italy&lt;/th&gt;
+      &lt;td&gt;394.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Soviet Union&lt;/th&gt;
+      &lt;td&gt;627.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United Kingdom&lt;/th&gt;
+      &lt;td&gt;591.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United States&lt;/th&gt;
+      &lt;td&gt;1195.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;5&#34; valign=&#34;top&#34;&gt;gold&lt;/th&gt;
+      &lt;th&gt;Germany&lt;/th&gt;
+      &lt;td&gt;407.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Italy&lt;/th&gt;
+      &lt;td&gt;460.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Soviet Union&lt;/th&gt;
+      &lt;td&gt;838.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United Kingdom&lt;/th&gt;
+      &lt;td&gt;498.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;United States&lt;/th&gt;
+      &lt;td&gt;2088.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;concatenating-vertically-to-get-multiindexed-rows&#34;&gt;Concatenating vertically to get MultiIndexed rows&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Sort the entries of medals: medals_sorted
+medals_sorted = medals.sort_index(level=0)
+
+# Print the number of Bronze medals won by Germany
+print(medals_sorted.loc[(&#39;bronze&#39;,&#39;Germany&#39;)])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Country    454.0
+Name: (bronze, Germany), dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print data about silver medals
+print(medals_sorted.loc[&#39;silver&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                Country
+France            461.0
+Italy             394.0
+Soviet Union      627.0
+United Kingdom    591.0
+United States    1195.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+# Create alias for pd.IndexSlice: idx
+idx = pd.IndexSlice
+
+# Print all the data on medals won by the United Kingdom
+print(medals_sorted.loc[idx[:,&#39;United Kingdom&#39;],:])
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                       Country
+bronze United Kingdom    505.0
+gold   United Kingdom    498.0
+silver United Kingdom    591.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;concatenating-horizontally-to-get-multiindexed-columns&#34;&gt;Concatenating horizontally to get MultiIndexed columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+names = [&#39;Hardware&#39;, &#39;Software&#39;, &#39;Service&#39;]
+
+dataframes=[]
+for name in names:
+    filename = &#39;Sales/feb-sales-%s.csv&#39; % name
+    dataframe=pd.read_csv(filename, index_col=0, parse_dates=True)
+    dataframes.append(dataframe)
+print(dataframes)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[                             Company   Product  Units
+Date                                                 
+2015-02-04 21:52:45  Acme Coporation  Hardware     14
+2015-02-07 22:58:10  Acme Coporation  Hardware      1
+2015-02-19 10:59:33        Mediacore  Hardware     16
+2015-02-02 20:54:49        Mediacore  Hardware      9
+2015-02-21 20:41:47            Hooli  Hardware      3,                              Company   Product  Units
+Date                                                 
+2015-02-16 12:09:19            Hooli  Software     10
+2015-02-03 14:14:18          Initech  Software     13
+2015-02-02 08:33:01            Hooli  Software      3
+2015-02-05 01:53:06  Acme Coporation  Software     19
+2015-02-11 20:03:08          Initech  Software      7
+2015-02-09 13:09:55        Mediacore  Software      7
+2015-02-11 22:50:44            Hooli  Software      4
+2015-02-04 15:36:29        Streeplex  Software     13
+2015-02-21 05:01:26        Mediacore  Software      3,                        Company  Product  Units
+Date                                          
+2015-02-26 08:57:45  Streeplex  Service      4
+2015-02-25 00:29:00    Initech  Service     10
+2015-02-09 08:57:30  Streeplex  Service     19
+2015-02-26 08:58:51  Streeplex  Service      1
+2015-02-05 22:05:03      Hooli  Service     10
+2015-02-19 16:02:58  Mediacore  Service     10]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Concatenate dataframes: february
+february = pd.concat(dataframes, axis=1, keys=[&#39;Hardware&#39;, &#39;Software&#39;, &#39;Service&#39;])
+
+# Print february.info()
+print(february.info())
+
+# Assign pd.IndexSlice: idx
+idx = pd.IndexSlice
+
+# Create the slice: slice_2_8
+slice_2_8 = february.loc[&#39;Feb. 2, 2015&#39;:&#39; Feb. 8, 2015&#39;, idx[:, &#39;Company&#39;]]
+
+# Print slice_2_8
+print(slice_2_8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;class &#39;pandas.core.frame.DataFrame&#39;&amp;gt;
+DatetimeIndex: 20 entries, 2015-02-02 08:33:01 to 2015-02-26 08:58:51
+Data columns (total 9 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   (Hardware, Company)  5 non-null      object 
+ 1   (Hardware, Product)  5 non-null      object 
+ 2   (Hardware, Units)    5 non-null      float64
+ 3   (Software, Company)  9 non-null      object 
+ 4   (Software, Product)  9 non-null      object 
+ 5   (Software, Units)    9 non-null      float64
+ 6   (Service, Company)   6 non-null      object 
+ 7   (Service, Product)   6 non-null      object 
+ 8   (Service, Units)     6 non-null      float64
+dtypes: float64(3), object(6)
+memory usage: 1.6+ KB
+None
+                            Hardware         Software Service
+                             Company          Company Company
+Date                                                         
+2015-02-02 08:33:01              NaN            Hooli     NaN
+2015-02-02 20:54:49        Mediacore              NaN     NaN
+2015-02-03 14:14:18              NaN          Initech     NaN
+2015-02-04 15:36:29              NaN        Streeplex     NaN
+2015-02-04 21:52:45  Acme Coporation              NaN     NaN
+2015-02-05 01:53:06              NaN  Acme Coporation     NaN
+2015-02-05 22:05:03              NaN              NaN   Hooli
+2015-02-07 22:58:10  Acme Coporation              NaN     NaN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Make the list of tuples: month_list
+month_list = [(&#39;january&#39;, jan), (&#39;february&#39;, feb), (&#39;march&#39;, mar)]
+
+# Create an empty dictionary: month_dict
+month_dict = {}
+
+for month_name, month_data in month_list:
+
+    # Group month_data: month_dict[month_name]
+    month_dict[month_name] = month_data.groupby(&#39;Company&#39;).sum()
+
+# Concatenate data in month_dict: sales
+sales = pd.concat(month_dict)
+
+# Print sales
+print(sales)
+
+# Print all sales by Mediacore
+idx = pd.IndexSlice
+print(sales.loc[idx[:, &#39;Mediacore&#39;], :])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                          Units
+         Company               
+january  Acme Coporation     76
+         Hooli               70
+         Initech             37
+         Mediacore           15
+         Streeplex           50
+february Acme Coporation     34
+         Hooli               30
+         Initech             30
+         Mediacore           45
+         Streeplex           37
+march    Acme Coporation      5
+         Hooli               37
+         Initech             68
+         Mediacore           68
+         Streeplex           40
+                    Units
+         Company         
+january  Mediacore     15
+february Mediacore     45
+march    Mediacore     68
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -9319,6 +9686,855 @@ plt.show()
     </item>
     
     <item>
+      <title>Merging DataFrames with merge() and join()</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/mergingdf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/mergingdf/</guid>
+      <description>&lt;h3 id=&#34;merging-with-specific-columns&#34;&gt;Merging with specific columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+gold = pd.read_csv(&#39;SummerOlympic/Gold.csv&#39;)
+bronze = pd.read_csv(&#39;SummerOlympic/Bronze.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gold.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;NOC&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;2088.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;838.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;498.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;FRA&lt;/td&gt;
+      &lt;td&gt;France&lt;/td&gt;
+      &lt;td&gt;378.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;407.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bronze.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;NOC&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;1052.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;584.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;505.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;FRA&lt;/td&gt;
+      &lt;td&gt;France&lt;/td&gt;
+      &lt;td&gt;475.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;454.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(gold, bronze, on=[&#39;NOC&#39;,&#39;Country&#39;], suffixes=[&#39;_gold&#39;,&#39;_bronze&#39;])
+print(combine)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;     NOC               Country  Total_gold  Total_bronze
+0    USA         United States      2088.0        1052.0
+1    URS          Soviet Union       838.0         584.0
+2    GBR        United Kingdom       498.0         505.0
+3    FRA                France       378.0         475.0
+4    GER               Germany       407.0         454.0
+..   ...                   ...         ...           ...
+133  SEN               Senegal         NaN           NaN
+134  SUD                 Sudan         NaN           NaN
+135  TGA                 Tonga         NaN           NaN
+136  BDI               Burundi         1.0           NaN
+137  UAE  United Arab Emirates         1.0           NaN
+
+[138 rows x 4 columns]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;merging-on-columns-with-non-matching-labelsspecifying-columns-to-merge&#34;&gt;Merging on columns with non-matching labelsSpecifying columns to merge&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;revenue = pd.read_csv(&#39;Sales/revenue.csv&#39;, delim_whitespace=True)
+managers = pd.read_csv(&#39;Sales/managers.csv&#39;, delim_whitespace=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;revenue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;city&lt;/th&gt;
+      &lt;th&gt;branch_id&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;revenue&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;83&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;managers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;branch&lt;/th&gt;
+      &lt;th&gt;branch_id&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;manager&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;Charlers&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;Joel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;Brett&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;MO&lt;/td&gt;
+      &lt;td&gt;Sally&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(revenue, managers, left_on=&#39;city&#39;, right_on=&#39;branch&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;city&lt;/th&gt;
+      &lt;th&gt;branch_id_x&lt;/th&gt;
+      &lt;th&gt;state_x&lt;/th&gt;
+      &lt;th&gt;revenue&lt;/th&gt;
+      &lt;th&gt;branch&lt;/th&gt;
+      &lt;th&gt;branch_id_y&lt;/th&gt;
+      &lt;th&gt;state_y&lt;/th&gt;
+      &lt;th&gt;manager&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;Charlers&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;83&lt;/td&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;Joel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;MO&lt;/td&gt;
+      &lt;td&gt;Sally&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;Brett&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;merging-with-innerouter-join&#34;&gt;Merging with inner/outer join&lt;/h3&gt;
+&lt;p&gt;inner join is the default behavior.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gold = gold.sort_values(&#39;Total&#39;,ascending=False).iloc[:5]
+bronze = bronze.sort_values(&#39;Total&#39;,ascending=False).iloc[:5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(gold, bronze, on=[&#39;NOC&#39;,&#39;Country&#39;], suffixes=[&#39;_gold&#39;,&#39;_bronze&#39;], how=&#39;inner&#39;)
+print(combine.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   NOC         Country  Total_gold  Total_bronze
+0  USA   United States      2088.0        1052.0
+1  URS    Soviet Union       838.0         584.0
+2  GBR  United Kingdom       498.0         505.0
+3  GER         Germany       407.0         454.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(gold, bronze, on=[&#39;NOC&#39;,&#39;Country&#39;], suffixes=[&#39;_gold&#39;,&#39;_bronze&#39;], how=&#39;outer&#39;)
+print(combine.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   NOC         Country  Total_gold  Total_bronze
+0  USA   United States      2088.0        1052.0
+1  URS    Soviet Union       838.0         584.0
+2  GBR  United Kingdom       498.0         505.0
+3  ITA           Italy       460.0           NaN
+4  GER         Germany       407.0         454.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;merging-with-leftright-join-default&#34;&gt;Merging with left/right join (Default)&lt;/h3&gt;
+&lt;p&gt;Notice that Italy was picked up from &lt;code&gt;gold&lt;/code&gt; but since it does not appear in &lt;code&gt;bronze&lt;/code&gt;, it gets a Not a Number (NaN) value.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(gold, bronze, on=[&#39;NOC&#39;,&#39;Country&#39;], suffixes=[&#39;_gold&#39;,&#39;_bronze&#39;], how=&#39;left&#39;)
+print(combine.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   NOC         Country  Total_gold  Total_bronze
+0  USA   United States      2088.0        1052.0
+1  URS    Soviet Union       838.0         584.0
+2  GBR  United Kingdom       498.0         505.0
+3  ITA           Italy       460.0           NaN
+4  GER         Germany       407.0         454.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;combine = pd.merge(gold, bronze, on=[&#39;NOC&#39;,&#39;Country&#39;], suffixes=[&#39;_gold&#39;,&#39;_bronze&#39;], how=&#39;right&#39;)
+print(combine.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;   NOC         Country  Total_gold  Total_bronze
+0  USA   United States      2088.0        1052.0
+1  URS    Soviet Union       838.0         584.0
+2  GBR  United Kingdom       498.0         505.0
+3  GER         Germany       407.0         454.0
+4  FRA          France         NaN         475.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;using-join&#34;&gt;Using .join()&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gold
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;NOC&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;2088.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;838.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;498.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;ITA&lt;/td&gt;
+      &lt;td&gt;Italy&lt;/td&gt;
+      &lt;td&gt;460.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;407.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bronze
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;NOC&lt;/th&gt;
+      &lt;th&gt;Country&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;1052.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;584.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;505.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;FRA&lt;/td&gt;
+      &lt;td&gt;France&lt;/td&gt;
+      &lt;td&gt;475.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;454.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;gold.join(bronze, lsuffix=&#39;_gold&#39;, rsuffix=&#39;_bronze&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;NOC_gold&lt;/th&gt;
+      &lt;th&gt;Country_gold&lt;/th&gt;
+      &lt;th&gt;Total_gold&lt;/th&gt;
+      &lt;th&gt;NOC_bronze&lt;/th&gt;
+      &lt;th&gt;Country_bronze&lt;/th&gt;
+      &lt;th&gt;Total_bronze&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;2088.0&lt;/td&gt;
+      &lt;td&gt;USA&lt;/td&gt;
+      &lt;td&gt;United States&lt;/td&gt;
+      &lt;td&gt;1052.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;838.0&lt;/td&gt;
+      &lt;td&gt;URS&lt;/td&gt;
+      &lt;td&gt;Soviet Union&lt;/td&gt;
+      &lt;td&gt;584.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;498.0&lt;/td&gt;
+      &lt;td&gt;GBR&lt;/td&gt;
+      &lt;td&gt;United Kingdom&lt;/td&gt;
+      &lt;td&gt;505.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;ITA&lt;/td&gt;
+      &lt;td&gt;Italy&lt;/td&gt;
+      &lt;td&gt;460.0&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;407.0&lt;/td&gt;
+      &lt;td&gt;GER&lt;/td&gt;
+      &lt;td&gt;Germany&lt;/td&gt;
+      &lt;td&gt;454.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h4 id=&#34;left--right-merging-on-multiple-columns&#34;&gt;Left &amp;amp; right merging on multiple columns&lt;/h4&gt;
+&lt;p&gt;In addition to the revenue and managers DataFrames from prior exercises, you have a DataFrame sales that summarizes units sold from specific branches (identified by city and state but not branch_id).&lt;/p&gt;
+&lt;p&gt;Once again, the managers DataFrame uses the label branch in place of city as in the other two DataFrames. Your task here is to employ left and right merges to preserve data and identify where data is missing.&lt;/p&gt;
+&lt;p&gt;By merging revenue and sales with a right merge, you can identify the missing revenue values. Here, you don&amp;rsquo;t need to specify left_on or right_on because the columns to merge on have matching labels.&lt;/p&gt;
+&lt;p&gt;By merging sales and managers with a left merge, you can identify the missing manager. Here, the columns to merge on have conflicting labels, so you must specify left_on and right_on. In both cases, you&amp;rsquo;re looking to figure out how to connect the fields in rows containing Springfield.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+revenue = pd.read_csv(&#39;Sales/revenue.csv&#39;, delim_whitespace=True)
+managers = pd.read_csv(&#39;Sales/managers.csv&#39;, delim_whitespace=True)
+sales = pd.read_csv(&#39;Sales/sales.csv&#39;, delim_whitespace=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;revenue.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;city&lt;/th&gt;
+      &lt;th&gt;branch_id&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;revenue&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;83&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;200&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;managers.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;branch&lt;/th&gt;
+      &lt;th&gt;branch_id&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;manager&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;Charlers&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;Joel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;47&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;Brett&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;MO&lt;/td&gt;
+      &lt;td&gt;Sally&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sales.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;city&lt;/th&gt;
+      &lt;th&gt;state&lt;/th&gt;
+      &lt;th&gt;units&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;Mendocino&lt;/td&gt;
+      &lt;td&gt;CA&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Denver&lt;/td&gt;
+      &lt;td&gt;CO&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Austin&lt;/td&gt;
+      &lt;td&gt;TX&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;MO&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Springfield&lt;/td&gt;
+      &lt;td&gt;IL&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Merge revenue and sales: revenue_and_sales
+revenue_and_sales = pd.merge(revenue,sales, how=&#39;right&#39;, on=[&#39;city&#39;,&#39;state&#39;])
+
+# Print revenue_and_sales
+print(revenue_and_sales)
+
+# Merge sales and managers: sales_and_managers
+sales_and_managers = pd.merge(sales, managers, how=&#39;left&#39;, left_on=[&#39;city&#39;,&#39;state&#39;], right_on=[&#39;branch&#39;,&#39;state&#39;])
+
+# Print sales_and_managers
+print(sales_and_managers)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;          city  branch_id state  revenue  units
+0       Austin       10.0    TX    100.0      2
+1       Denver       20.0    CO     83.0      4
+2  Springfield       30.0    IL      4.0      1
+3    Mendocino       47.0    CA    200.0      1
+4  Springfield        NaN    MO      NaN      5
+          city state  units       branch  branch_id   manager
+0    Mendocino    CA      1    Mendocino       47.0     Brett
+1       Denver    CO      4       Denver       20.0      Joel
+2       Austin    TX      2       Austin       10.0  Charlers
+3  Springfield    MO      5  Springfield       31.0     Sally
+4  Springfield    IL      1          NaN        NaN       NaN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;special-care-needed-with-innerouter-join&#34;&gt;Special care needed with inner/outer join&lt;/h3&gt;
+&lt;p&gt;Notice how the default merge drops the Springfield rows, while the default outer merge includes them twice.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the first merge: merge_default
+merge_default = pd.merge(sales_and_managers, revenue_and_sales)
+
+# Print merge_default
+print(merge_default)
+
+# Perform the second merge: merge_outer
+merge_outer = pd.merge(sales_and_managers, revenue_and_sales, how=&#39;outer&#39;)
+
+# Print merge_outer
+print(merge_outer)
+
+# Perform the third merge: merge_outer_on
+merge_outer_on = pd.merge(sales_and_managers, revenue_and_sales, how=&#39;outer&#39;, on=[&#39;city&#39;,&#39;state&#39;])
+
+# Print merge_outer_on
+print(merge_outer_on)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;        city state  units     branch  branch_id   manager  revenue
+0  Mendocino    CA      1  Mendocino       47.0     Brett    200.0
+1     Denver    CO      4     Denver       20.0      Joel     83.0
+2     Austin    TX      2     Austin       10.0  Charlers    100.0
+          city state  units       branch  branch_id   manager  revenue
+0    Mendocino    CA      1    Mendocino       47.0     Brett    200.0
+1       Denver    CO      4       Denver       20.0      Joel     83.0
+2       Austin    TX      2       Austin       10.0  Charlers    100.0
+3  Springfield    MO      5  Springfield       31.0     Sally      NaN
+4  Springfield    IL      1          NaN        NaN       NaN      NaN
+5  Springfield    IL      1          NaN       30.0       NaN      4.0
+6  Springfield    MO      5          NaN        NaN       NaN      NaN
+          city state  units_x       branch  branch_id_x   manager  \
+0    Mendocino    CA        1    Mendocino         47.0     Brett   
+1       Denver    CO        4       Denver         20.0      Joel   
+2       Austin    TX        2       Austin         10.0  Charlers   
+3  Springfield    MO        5  Springfield         31.0     Sally   
+4  Springfield    IL        1          NaN          NaN       NaN   
+
+   branch_id_y  revenue  units_y  
+0         47.0    200.0        1  
+1         20.0     83.0        4  
+2         10.0    100.0        2  
+3          NaN      NaN        5  
+4         30.0      4.0        1  
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Method belonging to a class object</title>
       <link>http://othrif.github.io/technical_note/python/basics/class_method/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -10173,6 +11389,109 @@ print(2 &amp;lt;&amp;lt; 3)
 16
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Outer and inner joins</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/concat_join/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/concat_join/</guid>
+      <description>&lt;h3 id=&#34;joins&#34;&gt;Joins&lt;/h3&gt;
+&lt;p&gt;Joining tables: Combining rows of multiple tables&lt;/p&gt;
+&lt;h4 id=&#34;outer-join&#34;&gt;Outer join&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Missing fields filled with NaN&lt;/li&gt;
+&lt;li&gt;Union of index sets (all labels, no repetition)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;inner-join&#34;&gt;Inner join&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Intersection of index sets (only common labels)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+bronze = pd.read_csv(&#39;SummerOlypmic/bronze_top5.csv&#39;)
+silver = pd.read_csv(&#39;SummerOlypmic/silver_top5.csv&#39;)
+gold = pd.read_csv(&#39;SummerOlypmic/gold_top5.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;inner-join-1&#34;&gt;Inner join&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create the list of DataFrames: medal_list
+medal_list = [bronze, silver, gold]
+
+# Concatenate medal_list horizontally using an inner join: medals
+medals = pd.concat(medal_list, axis=1, keys=[&#39;bronze&#39;,&#39;silver&#39;, &#39;gold&#39;], join=&#39;inner&#39;)
+
+# Print medals
+print(medals)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           bronze                  silver                    gold        
+          Country   Total         Country   Total         Country   Total
+0   United States  1052.0   United States  1195.0   United States  2088.0
+1    Soviet Union   584.0    Soviet Union   627.0    Soviet Union   838.0
+2  United Kingdom   505.0  United Kingdom   591.0  United Kingdom   498.0
+3          France   475.0          France   461.0           Italy   460.0
+4         Germany   454.0           Italy   394.0         Germany   407.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;outer-join-1&#34;&gt;Outer join&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create the list of DataFrames: medal_list
+medal_list = [bronze, silver, gold]
+
+# Concatenate medal_list horizontally using an inner join: medals
+medals = pd.concat(medal_list, axis=1, keys=[&#39;bronze&#39;,&#39;silver&#39;, &#39;gold&#39;], join=&#39;outer&#39;)
+
+# Print medals
+print(medals)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           bronze                  silver                    gold        
+          Country   Total         Country   Total         Country   Total
+0   United States  1052.0   United States  1195.0   United States  2088.0
+1    Soviet Union   584.0    Soviet Union   627.0    Soviet Union   838.0
+2  United Kingdom   505.0  United Kingdom   591.0  United Kingdom   498.0
+3          France   475.0          France   461.0           Italy   460.0
+4         Germany   454.0           Italy   394.0         Germany   407.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;more-advanced-resampling--concatenating&#34;&gt;More advanced resampling &amp;amp; concatenating&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;china = pd.read_csv(&#39;GDP/gdp_china.csv&#39;, parse_dates=True, index_col=0, )
+us = pd.read_csv(&#39;GDP/gdp_usa.csv&#39;, parse_dates=True, index_col=0)
+print(china.head()) # need to change GDP &amp;gt; China 
+print(us.head()) # need to change VALUE &amp;gt; US
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                  GDP
+Year                 
+1960-01-01  59.184116
+1961-01-01  49.557050
+1962-01-01  46.685179
+1963-01-01  50.097303
+1964-01-01  59.062255
+            VALUE
+DATE             
+1947-01-01  243.1
+1947-04-01  246.3
+1947-07-01  250.1
+1947-10-01  260.3
+1948-01-01  266.2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Resample and tidy china: china_annual
+china_annual = china.resample(&#39;A&#39;).last().pct_change(10).dropna()
+
+# Resample and tidy us: us_annual
+us_annual = us.resample(&#39;A&#39;).last().pct_change(10).dropna()
+
+# Concatenate china_annual and us_annual: gdp
+gdp = pd.concat([china_annual, us_annual], join=&#39;inner&#39;, axis=1)
+
+# Resample gdp and print
+print(gdp.resample(&#39;10A&#39;).last())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;                 GDP     VALUE
+Year                          
+1970-12-31  0.546128  1.017187
+1980-12-31  1.072537  1.742556
+1990-12-31  0.892820  1.012126
+2000-12-31  2.357522  0.738632
+2010-12-31  4.011081  0.454332
+2020-12-31  3.789936  0.361780
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -13178,6 +14497,622 @@ Undecorated time: 0.00025s
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using merge_ordered() and merge_asof() to merge DataFrames</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/mergeordered/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/mergeordered/</guid>
+      <description>&lt;h3 id=&#34;merge_ordered&#34;&gt;merge_ordered()&lt;/h3&gt;
+&lt;p&gt;default = outer merge&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+austin = pd.read_csv(&#39;austin.csv&#39;, delim_whitespace=True)
+houston = pd.read_csv(&#39;houston.csv&#39;, delim_whitespace=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the first ordered merge: tx_weather
+tx_weather = pd.merge_ordered(austin,houston)
+tx_weather
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ratings&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2016-01-01&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2016-01-04&lt;/td&gt;
+      &lt;td&gt;Rainy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2016-01-17&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2016-02-08&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2016-03-01&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;All information about the city is lost&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the second ordered merge: tx_weather_suff
+tx_weather_suff = pd.merge_ordered(austin,houston, on =&#39;date&#39;, suffixes=[&#39;_aus&#39;, &#39;_hus&#39;])
+tx_weather_suff
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ratings_aus&lt;/th&gt;
+      &lt;th&gt;ratings_hus&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2016-01-01&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2016-01-04&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;Rainy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2016-01-17&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2016-02-08&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2016-03-01&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the third ordered merge: tx_weather_ffill
+tx_weather_ffill = pd.merge_ordered(austin,houston, on=&#39;date&#39;, suffixes=[&#39;_aus&#39;, &#39;_hus&#39;], fill_method=&#39;ffill&#39;)
+tx_weather_ffill
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;date&lt;/th&gt;
+      &lt;th&gt;ratings_aus&lt;/th&gt;
+      &lt;th&gt;ratings_hus&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;2016-01-01&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;2016-01-04&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;Rainy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;2016-01-17&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+      &lt;td&gt;Rainy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2016-02-08&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;Rainy&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;2016-03-01&lt;/td&gt;
+      &lt;td&gt;Cloudy&lt;/td&gt;
+      &lt;td&gt;Sunny&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;merge_asof&#34;&gt;merge_asof()&lt;/h3&gt;
+&lt;p&gt;Similar to &lt;code&gt;pd.merge_ordered()&lt;/code&gt;, the &lt;code&gt;pd.merge_asof()&lt;/code&gt; function will also merge values in order using the on column, but for each row in the left DataFrame, &lt;strong&gt;only rows from the right DataFrame whose &amp;lsquo;on&amp;rsquo; column values are less than the left value will be kept&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+auto = pd.read_csv(&#39;automobiles.csv&#39;, parse_dates=[&#39;yr&#39;])
+oil = pd.read_csv(&#39;oil_price.csv&#39;, parse_dates=[&#39;Date&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;auto.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;mpg&lt;/th&gt;
+      &lt;th&gt;cyl&lt;/th&gt;
+      &lt;th&gt;displ&lt;/th&gt;
+      &lt;th&gt;hp&lt;/th&gt;
+      &lt;th&gt;weight&lt;/th&gt;
+      &lt;th&gt;accel&lt;/th&gt;
+      &lt;th&gt;yr&lt;/th&gt;
+      &lt;th&gt;origin&lt;/th&gt;
+      &lt;th&gt;name&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;307.0&lt;/td&gt;
+      &lt;td&gt;130&lt;/td&gt;
+      &lt;td&gt;3504&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;chevrolet chevelle malibu&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;350.0&lt;/td&gt;
+      &lt;td&gt;165&lt;/td&gt;
+      &lt;td&gt;3693&lt;/td&gt;
+      &lt;td&gt;11.5&lt;/td&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;buick skylark 320&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;318.0&lt;/td&gt;
+      &lt;td&gt;150&lt;/td&gt;
+      &lt;td&gt;3436&lt;/td&gt;
+      &lt;td&gt;11.0&lt;/td&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;plymouth satellite&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;16.0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;304.0&lt;/td&gt;
+      &lt;td&gt;150&lt;/td&gt;
+      &lt;td&gt;3433&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;amc rebel sst&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;17.0&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;302.0&lt;/td&gt;
+      &lt;td&gt;140&lt;/td&gt;
+      &lt;td&gt;3449&lt;/td&gt;
+      &lt;td&gt;10.5&lt;/td&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;ford torino&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;oil.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1970-01-01&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1970-02-01&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1970-03-01&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1970-04-01&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1970-05-01&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Merge auto and oil: merged
+merged = pd.merge_asof(auto, oil, left_on=&#39;yr&#39;, right_on=&#39;Date&#39;)
+merged.tail()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;mpg&lt;/th&gt;
+      &lt;th&gt;cyl&lt;/th&gt;
+      &lt;th&gt;displ&lt;/th&gt;
+      &lt;th&gt;hp&lt;/th&gt;
+      &lt;th&gt;weight&lt;/th&gt;
+      &lt;th&gt;accel&lt;/th&gt;
+      &lt;th&gt;yr&lt;/th&gt;
+      &lt;th&gt;origin&lt;/th&gt;
+      &lt;th&gt;name&lt;/th&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;387&lt;/th&gt;
+      &lt;td&gt;27.0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;140.0&lt;/td&gt;
+      &lt;td&gt;86&lt;/td&gt;
+      &lt;td&gt;2790&lt;/td&gt;
+      &lt;td&gt;15.6&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;ford mustang gl&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;388&lt;/th&gt;
+      &lt;td&gt;44.0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;97.0&lt;/td&gt;
+      &lt;td&gt;52&lt;/td&gt;
+      &lt;td&gt;2130&lt;/td&gt;
+      &lt;td&gt;24.6&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;Europe&lt;/td&gt;
+      &lt;td&gt;vw pickup&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;389&lt;/th&gt;
+      &lt;td&gt;32.0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;135.0&lt;/td&gt;
+      &lt;td&gt;84&lt;/td&gt;
+      &lt;td&gt;2295&lt;/td&gt;
+      &lt;td&gt;11.6&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;dodge rampage&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;390&lt;/th&gt;
+      &lt;td&gt;28.0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;120.0&lt;/td&gt;
+      &lt;td&gt;79&lt;/td&gt;
+      &lt;td&gt;2625&lt;/td&gt;
+      &lt;td&gt;18.6&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;ford ranger&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;391&lt;/th&gt;
+      &lt;td&gt;31.0&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;119.0&lt;/td&gt;
+      &lt;td&gt;82&lt;/td&gt;
+      &lt;td&gt;2720&lt;/td&gt;
+      &lt;td&gt;19.4&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;US&lt;/td&gt;
+      &lt;td&gt;chevy s-10&lt;/td&gt;
+      &lt;td&gt;1982-01-01&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Resample merged: yearly
+yearly = merged.resample(&#39;A&#39;, on=&#39;Date&#39;)[[&#39;mpg&#39;,&#39;Price&#39;]].mean()
+yearly
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;mpg&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Date&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1970-12-31&lt;/th&gt;
+      &lt;td&gt;17.689655&lt;/td&gt;
+      &lt;td&gt;3.35&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1971-12-31&lt;/th&gt;
+      &lt;td&gt;21.111111&lt;/td&gt;
+      &lt;td&gt;3.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1972-12-31&lt;/th&gt;
+      &lt;td&gt;18.714286&lt;/td&gt;
+      &lt;td&gt;3.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1973-12-31&lt;/th&gt;
+      &lt;td&gt;17.100000&lt;/td&gt;
+      &lt;td&gt;3.56&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1974-12-31&lt;/th&gt;
+      &lt;td&gt;22.769231&lt;/td&gt;
+      &lt;td&gt;10.11&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1975-12-31&lt;/th&gt;
+      &lt;td&gt;20.266667&lt;/td&gt;
+      &lt;td&gt;11.16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1976-12-31&lt;/th&gt;
+      &lt;td&gt;21.573529&lt;/td&gt;
+      &lt;td&gt;11.16&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1977-12-31&lt;/th&gt;
+      &lt;td&gt;23.375000&lt;/td&gt;
+      &lt;td&gt;13.90&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1978-12-31&lt;/th&gt;
+      &lt;td&gt;24.061111&lt;/td&gt;
+      &lt;td&gt;14.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1979-12-31&lt;/th&gt;
+      &lt;td&gt;25.093103&lt;/td&gt;
+      &lt;td&gt;14.85&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1980-12-31&lt;/th&gt;
+      &lt;td&gt;33.803704&lt;/td&gt;
+      &lt;td&gt;32.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1981-12-31&lt;/th&gt;
+      &lt;td&gt;30.185714&lt;/td&gt;
+      &lt;td&gt;38.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1982-12-31&lt;/th&gt;
+      &lt;td&gt;32.000000&lt;/td&gt;
+      &lt;td&gt;33.85&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Pearson correlation between the resampled &#39;Price&#39; and &#39;mpg&#39;
+yearly.corr()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;mpg&lt;/th&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;mpg&lt;/th&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+      &lt;td&gt;0.948677&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Price&lt;/th&gt;
+      &lt;td&gt;0.948677&lt;/td&gt;
+      &lt;td&gt;1.000000&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;It looks like there is a strong correlation between miles per gallon and the price of oil!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Which DataFrames merging should I use: append, concat, merge() and join()?</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/whichmerge/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/whichmerge/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;df1.append(df2)&lt;/code&gt;: stacking vertically&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pd.concat([df1, df2])&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;stacking many horizontally or vertically&lt;/li&gt;
+&lt;li&gt;simple inner/outer joins on Indexes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;df1.join(df2)&lt;/code&gt;: inner/outer/left/right joins on Indexes&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pd.merge([df1, df2])&lt;/code&gt;: many joins on multiple columns&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

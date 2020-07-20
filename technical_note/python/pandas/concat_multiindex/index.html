@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import pandas as pd bronze = {&#39;Country&#39;:{&#39;United States&#39;: 1052.0, &#39;Soviet Union&#39;: 584.0, &#39;United Kingdom&#39;: 505.0, &#39;France&#39;: 475.0, &#39;Germany&#39;: 454.0}} silver ={&#39;Country&#39;:{ &#39;United States&#39;: 1195.0, &#39;Soviet Union&#39;: 627.0, &#39;United Kingdom&#39;: 591.0, &#39;France&#39;: 461.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/404.html">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/pandas/concat_multiindex/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/404.html">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/pandas/concat_multiindex/">
 
   
   
@@ -230,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/404.html">
-  <meta property="og:title" content="404 Page not found | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/pandas/concat_multiindex/">
+  <meta property="og:title" content="Create DataFrame with multiindexes and concatenate with keys | Othmane Rifki">
+  <meta property="og:description" content="import pandas as pd bronze = {&#39;Country&#39;:{&#39;United States&#39;: 1052.0, &#39;Soviet Union&#39;: 584.0, &#39;United Kingdom&#39;: 505.0, &#39;France&#39;: 475.0, &#39;Germany&#39;: 454.0}} silver ={&#39;Country&#39;:{ &#39;United States&#39;: 1195.0, &#39;Soviet Union&#39;: 627.0, &#39;United Kingdom&#39;: 591.0, &#39;France&#39;: 461."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title>404 Page not found | Othmane Rifki</title>
+
+
+  <title>Create DataFrame with multiindexes and concatenate with keys | Othmane Rifki</title>
 
 </head>
 
@@ -460,7 +465,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/technical_note"><span>Technical Notes</span></a>
+          <a class="nav-link  active" href="/technical_note"><span>Technical Notes</span></a>
         </li>
 
         
@@ -550,51 +555,304 @@
 </nav>
 
 
-  <div class="universal-wrapper pt-3">
+   
 
-  <h1>Page not found</h1>
 
-  
-  
-  <form class="d-flex align-items-center mb-3">
-    <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  </form>
-  
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Create DataFrame with multiindexes and concatenate with keys</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">import pandas as pd
+bronze = {'Country':{'United States':  1052.0,
+       'Soviet Union':   584.0,
+       'United Kingdom':   505.0,
+       'France':   475.0,
+       'Germany':   454.0}}
+silver ={'Country':{
+       'United States':  1195.0,
+       'Soviet Union':   627.0,
+       'United Kingdom':   591.0,
+       'France':   461.0,
+       'Italy':   394.0}}
+gold   = {'Country':{
+       'United States':  2088.0,
+       'Soviet Union':   838.0,
+       'United Kingdom':   498.0,
+       'Italy':   460.0,
+       'Germany':   407.0}}
 
-  <p>Perhaps you were looking for one of these?</p>
+medal_types = ['bronze','silver','gold']
+medals_all = [ pd.DataFrame(i) for i in [bronze,silver,gold]]
+medals = pd.concat(medals_all, keys=medal_types)
+medals
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-  
-  
-  
-  <h2>Latest</h2>
-  <ul>
-    
-      <li><a href="/technical_note/python/basics/argskwargs/">*args, **kwargs</a></li>
-    
-      <li><a href="/technical_note/cpp/basics/ptr_deref/">&#43;&#43;*ptr vs. *ptr&#43;&#43;</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/numpy/2dnumpy/">2D Numpy arrays</a></li>
-    
-      <li><a href="/technical_note/python/basics/global/">Alter variable defined in global scope</a></li>
-    
-      <li><a href="/technical_note/python/pandas/appendseries/">Appending pandas Series</a></li>
-    
-      <li><a href="/technical_note/python/pandas/arithmeticwithpandas/">Arithmetic with Series &amp; DataFrames</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/numpy/array/">Array construction routines</a></li>
-    
-      <li><a href="/technical_note/python/matplotlib/indexing/">Array indexing</a></li>
-    
-  </ul>
-  
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">bronze</th>
+      <th>France</th>
+      <td>475.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>454.0</td>
+    </tr>
+    <tr>
+      <th>Soviet Union</th>
+      <td>584.0</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>505.0</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>1052.0</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">silver</th>
+      <th>France</th>
+      <td>461.0</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>394.0</td>
+    </tr>
+    <tr>
+      <th>Soviet Union</th>
+      <td>627.0</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>591.0</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>1195.0</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">gold</th>
+      <th>Germany</th>
+      <td>407.0</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>460.0</td>
+    </tr>
+    <tr>
+      <th>Soviet Union</th>
+      <td>838.0</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>498.0</td>
+    </tr>
+    <tr>
+      <th>United States</th>
+      <td>2088.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="concatenating-vertically-to-get-multiindexed-rows">Concatenating vertically to get MultiIndexed rows</h3>
+<pre><code class="language-python"># Sort the entries of medals: medals_sorted
+medals_sorted = medals.sort_index(level=0)
+
+# Print the number of Bronze medals won by Germany
+print(medals_sorted.loc[('bronze','Germany')])
+</code></pre>
+<pre><code>Country    454.0
+Name: (bronze, Germany), dtype: float64
+</code></pre>
+<pre><code class="language-python"># Print data about silver medals
+print(medals_sorted.loc['silver'])
+</code></pre>
+<pre><code>                Country
+France            461.0
+Italy             394.0
+Soviet Union      627.0
+United Kingdom    591.0
+United States    1195.0
+</code></pre>
+<pre><code class="language-python">
+# Create alias for pd.IndexSlice: idx
+idx = pd.IndexSlice
+
+# Print all the data on medals won by the United Kingdom
+print(medals_sorted.loc[idx[:,'United Kingdom'],:])
+
+</code></pre>
+<pre><code>                       Country
+bronze United Kingdom    505.0
+gold   United Kingdom    498.0
+silver United Kingdom    591.0
+</code></pre>
+<h3 id="concatenating-horizontally-to-get-multiindexed-columns">Concatenating horizontally to get MultiIndexed columns</h3>
+<pre><code class="language-python">import pandas as pd
+
+names = ['Hardware', 'Software', 'Service']
+
+dataframes=[]
+for name in names:
+    filename = 'Sales/feb-sales-%s.csv' % name
+    dataframe=pd.read_csv(filename, index_col=0, parse_dates=True)
+    dataframes.append(dataframe)
+print(dataframes)
+</code></pre>
+<pre><code>[                             Company   Product  Units
+Date                                                 
+2015-02-04 21:52:45  Acme Coporation  Hardware     14
+2015-02-07 22:58:10  Acme Coporation  Hardware      1
+2015-02-19 10:59:33        Mediacore  Hardware     16
+2015-02-02 20:54:49        Mediacore  Hardware      9
+2015-02-21 20:41:47            Hooli  Hardware      3,                              Company   Product  Units
+Date                                                 
+2015-02-16 12:09:19            Hooli  Software     10
+2015-02-03 14:14:18          Initech  Software     13
+2015-02-02 08:33:01            Hooli  Software      3
+2015-02-05 01:53:06  Acme Coporation  Software     19
+2015-02-11 20:03:08          Initech  Software      7
+2015-02-09 13:09:55        Mediacore  Software      7
+2015-02-11 22:50:44            Hooli  Software      4
+2015-02-04 15:36:29        Streeplex  Software     13
+2015-02-21 05:01:26        Mediacore  Software      3,                        Company  Product  Units
+Date                                          
+2015-02-26 08:57:45  Streeplex  Service      4
+2015-02-25 00:29:00    Initech  Service     10
+2015-02-09 08:57:30  Streeplex  Service     19
+2015-02-26 08:58:51  Streeplex  Service      1
+2015-02-05 22:05:03      Hooli  Service     10
+2015-02-19 16:02:58  Mediacore  Service     10]
+</code></pre>
+<pre><code class="language-python"># Concatenate dataframes: february
+february = pd.concat(dataframes, axis=1, keys=['Hardware', 'Software', 'Service'])
+
+# Print february.info()
+print(february.info())
+
+# Assign pd.IndexSlice: idx
+idx = pd.IndexSlice
+
+# Create the slice: slice_2_8
+slice_2_8 = february.loc['Feb. 2, 2015':' Feb. 8, 2015', idx[:, 'Company']]
+
+# Print slice_2_8
+print(slice_2_8)
+</code></pre>
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+DatetimeIndex: 20 entries, 2015-02-02 08:33:01 to 2015-02-26 08:58:51
+Data columns (total 9 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   (Hardware, Company)  5 non-null      object 
+ 1   (Hardware, Product)  5 non-null      object 
+ 2   (Hardware, Units)    5 non-null      float64
+ 3   (Software, Company)  9 non-null      object 
+ 4   (Software, Product)  9 non-null      object 
+ 5   (Software, Units)    9 non-null      float64
+ 6   (Service, Company)   6 non-null      object 
+ 7   (Service, Product)   6 non-null      object 
+ 8   (Service, Units)     6 non-null      float64
+dtypes: float64(3), object(6)
+memory usage: 1.6+ KB
+None
+                            Hardware         Software Service
+                             Company          Company Company
+Date                                                         
+2015-02-02 08:33:01              NaN            Hooli     NaN
+2015-02-02 20:54:49        Mediacore              NaN     NaN
+2015-02-03 14:14:18              NaN          Initech     NaN
+2015-02-04 15:36:29              NaN        Streeplex     NaN
+2015-02-04 21:52:45  Acme Coporation              NaN     NaN
+2015-02-05 01:53:06              NaN  Acme Coporation     NaN
+2015-02-05 22:05:03              NaN              NaN   Hooli
+2015-02-07 22:58:10  Acme Coporation              NaN     NaN
+</code></pre>
+<pre><code class="language-python"># Make the list of tuples: month_list
+month_list = [('january', jan), ('february', feb), ('march', mar)]
+
+# Create an empty dictionary: month_dict
+month_dict = {}
+
+for month_name, month_data in month_list:
+
+    # Group month_data: month_dict[month_name]
+    month_dict[month_name] = month_data.groupby('Company').sum()
+
+# Concatenate data in month_dict: sales
+sales = pd.concat(month_dict)
+
+# Print sales
+print(sales)
+
+# Print all sales by Mediacore
+idx = pd.IndexSlice
+print(sales.loc[idx[:, 'Mediacore'], :])
+</code></pre>
+<pre><code>                          Units
+         Company               
+january  Acme Coporation     76
+         Hooli               70
+         Initech             37
+         Mediacore           15
+         Streeplex           50
+february Acme Coporation     34
+         Hooli               30
+         Initech             30
+         Mediacore           45
+         Streeplex           37
+march    Acme Coporation      5
+         Hooli               37
+         Initech             68
+         Mediacore           68
+         Streeplex           40
+                    Units
+         Company         
+january  Mediacore     15
+february Mediacore     45
+march    Mediacore     68
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
