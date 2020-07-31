@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="from scipy.stats import sem, t data = [1, 2, 3, 4, 5] confidence = 0.95 z_score = 2.7764451051977987 sample_mean = 3.0 # Compute the standard error and margin of error std_err = sem(data) margin_error = std_err * z_score # Compute and print the lower threshold lower = sample_mean - margin_error print(lower) # Compute and print the upper threshold upper = sample_mean &#43; margin_error print(upper)  1.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/math/stats/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/math/stats/cl/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/math/stats/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/math/stats/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/math/stats/cl/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/math/stats/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/math/stats/cl/">
+  <meta property="og:title" content="Confidence Interval | Othmane Rifki">
+  <meta property="og:description" content="from scipy.stats import sem, t data = [1, 2, 3, 4, 5] confidence = 0.95 z_score = 2.7764451051977987 sample_mean = 3.0 # Compute the standard error and margin of error std_err = sem(data) margin_error = std_err * z_score # Compute and print the lower threshold lower = sample_mean - margin_error print(lower) # Compute and print the upper threshold upper = sample_mean &#43; margin_error print(upper)  1."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Confidence Interval | Othmane Rifki</title>
 
 </head>
 
@@ -552,84 +555,87 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/math/stats/descriptive/" >Centrality, variability, modality</a></h2>
-      <div class="article-style">
-        
-          Centrality  Mean Median Mode  Variability  Variance ($\sigma^2$): Measurement of the spread between numbers in a data set Standard deviation ($\sigma$): square root of the variance  True population variance: $ \sigma^2 = \frac{\sum{\left(x-\mu\right)^2}}{N} $ Unbiased sample variance: $ \sigma^2 = \frac{\sum{\left(x-\bar{x}\right)^2}}{n-1} $ Biased sample variance: $ \sigma^2 = \frac{\sum{\left(x-\bar{x}\right)^2}}{n} $
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Confidence Interval</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/math/stats/cl/" >Confidence Interval</a></h2>
-      <div class="article-style">
-        
-          from scipy.stats import sem, t data = [1, 2, 3, 4, 5] confidence = 0.95 z_score = 2.7764451051977987 sample_mean = 3.0 # Compute the standard error and margin of error std_err = sem(data) margin_error = std_err * z_score # Compute and print the lower threshold lower = sample_mean - margin_error print(lower) # Compute and print the upper threshold upper = sample_mean + margin_error print(upper)  1.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/math/stats/encoding/" >Encoding techniques</a></h2>
-      <div class="article-style">
-        
-          Centrality label encoding and one-hot encoding.
-import pandas as pd  laptops = pd.read_csv('laptops.csv' , encoding='latin-1', index_col=0) # added encoding because of errors laptops = laptops.loc[laptops['Company'].isin(['Apple', 'Dell', 'Lenovo'])]  laptops.head()   .
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">from scipy.stats import sem, t
+data = [1, 2, 3, 4, 5]
+confidence = 0.95
+z_score = 2.7764451051977987
+sample_mean = 3.0
+
+# Compute the standard error and margin of error
+std_err = sem(data)
+margin_error = std_err * z_score
+
+# Compute and print the lower threshold
+lower = sample_mean - margin_error
+print(lower)
+
+# Compute and print the upper threshold
+upper = sample_mean + margin_error
+print(upper)
+</code></pre>
+<pre><code>1.036756838522439
+4.9632431614775605
+</code></pre>
+<pre><code class="language-python">from statsmodels.stats.proportion import proportion_confint
+# Compute and print the 99% confidence interval
+heads = 27
+confidence_int = proportion_confint(heads, 50, 0.01)
+print(confidence_int)
+</code></pre>
+<pre><code>(0.35844514241179504, 0.721554857588205)
+</code></pre>
+<pre><code class="language-python"># Compute and print the 90% confidence interval
+confidence_int = proportion_confint(heads, 50, 0.1)
+print(confidence_int)
+</code></pre>
+<pre><code>(0.42406406993539053, 0.6559359300646095)
+</code></pre>
+<pre><code class="language-python">from scipy.stats import binom
+# Repeat this process 10 times 
+heads = binom.rvs(50, 0.5, size=10)
+for val in heads:
+    confidence_interval = proportion_confint(val, 50, .10)
+    print(confidence_interval)
+</code></pre>
+<pre><code>(0.3836912846323326, 0.6163087153676674)
+(0.42406406993539053, 0.6559359300646095)
+(0.2860411978842442, 0.5139588021157558)
+(0.36378436885322046, 0.5962156311467796)
+(0.3440640699353905, 0.5759359300646095)
+(0.42406406993539053, 0.6559359300646095)
+(0.2860411978842442, 0.5139588021157558)
+(0.2860411978842442, 0.5139588021157558)
+(0.5498070827050113, 0.7701929172949887)
+(0.46518968814451866, 0.6948103118554813)
+</code></pre>
+<p>Examine your confidence interval results from the last step. You might see at least one confidence interval that does not contain 0.5, the true population proportion for a fair coin flip. You could decrease the likelihood of this happening by increasing your confidence level or lowering the alpha value.</p>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
