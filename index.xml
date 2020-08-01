@@ -7305,6 +7305,155 @@ cherry
     </item>
     
     <item>
+      <title>Handling missing data and outliers</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/null/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/null/</guid>
+      <description>&lt;h3 id=&#34;identify-rows-with-null-in-any-column&#34;&gt;Identify rows with null in any column&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+weather_org = pd.read_csv(&#39;pittsburgh2013.csv&#39;)
+weather_org = weather_org.loc[:,[&#39;Date&#39;,&#39;Mean TemperatureF&#39;, &#39;Max Gust SpeedMPH&#39;, &#39;Events&#39;]]
+weather_org.columns = [&#39;date&#39;,&#39;temp&#39;,&#39;speed&#39;,&#39;events&#39;]
+# Identify and print the the rows with null values
+nulls = weather_org[weather_org.isnull().any(axis=1)]
+print(nulls.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       date  temp  speed events
+0  2013-1-1    28    NaN   Snow
+1  2013-1-2    21    NaN    NaN
+2  2013-1-3    24   26.0    NaN
+3  2013-1-4    28   32.0    NaN
+4  2013-1-5    30   23.0    NaN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;emputation&#34;&gt;Emputation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Impute constant value 0 and print the head
+weather.fillna(0, inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       Date  Mean TemperatureF  Max Gust SpeedMPH Events
+0  2013-1-1                 28                NaN   Snow
+1  2013-1-2                 21                NaN    NaN
+2  2013-1-3                 24               26.0    NaN
+3  2013-1-4                 28               32.0    NaN
+4  2013-1-5                 30               23.0    NaN
+       Date  Mean TemperatureF  Max Gust SpeedMPH Events
+0  2013-1-1                 28                0.0   Snow
+1  2013-1-2                 21                0.0      0
+2  2013-1-3                 24               26.0      0
+3  2013-1-4                 28               32.0      0
+4  2013-1-5                 30               23.0      0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Impute median price and print the head
+weather.fillna(weather[&#39;speed&#39;].median(), inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       date  temp  speed events
+0  2013-1-1    28   24.0   Snow
+1  2013-1-2    21   24.0     24
+2  2013-1-3    24   26.0     24
+3  2013-1-4    28   32.0     24
+4  2013-1-5    30   23.0     24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;drop-null-values&#34;&gt;Drop null values&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Drop each row with a null value and print the head
+weather.dropna(inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         date  temp  speed    events
+5    2013-1-6    34   22.0      Snow
+8    2013-1-9    36   25.0      Rain
+11  2013-1-12    55   18.0  Fog-Rain
+12  2013-1-13    62   26.0      Rain
+13  2013-1-14    44   32.0      Rain
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;drop-outliers&#34;&gt;Drop outliers&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+# Visualize the relationship with price
+weather.boxplot(&#39;speed&#39;, rot=0)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;null_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Calculate the mean and std
+mean, std = weather[&#39;speed&#39;].mean(), weather[&#39;speed&#39;].std()
+
+# Compute and print the upper and lower threshold
+cut_off = 3 * std
+lower, upper = mean - cut_off, mean + cut_off
+print(lower, &#39;to&#39;, upper)
+
+# Identify and print rows with outliers
+outliers = weather[(weather[&#39;speed&#39;] &amp;gt; upper) | 
+                   (weather[&#39;speed&#39;] &amp;lt; lower)]
+print(outliers)
+
+# Drop the rows from the dataset
+weather = weather[(weather[&#39;speed&#39;] &amp;lt;= upper) | 
+                  (weather[&#39;speed&#39;] &amp;gt;= lower)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1.8220504190012328 to 51.599333228797505
+          date  temp  speed                 events
+105  2013-4-16    66   53.0  Fog-Rain-Thunderstorm
+190  2013-7-10    76   55.0  Fog-Rain-Thunderstorm
+304  2013-11-1    60   61.0                   Rain
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to determine a sample size</title>
+      <link>http://othrif.github.io/technical_note/math/stats/power_sample/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/power_sample/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s finish up our dive into statistical tests by performing power analysis to generate needed sample size. Power analysis involves four moving parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sample size&lt;/li&gt;
+&lt;li&gt;Effect size&lt;/li&gt;
+&lt;li&gt;Minimum effect&lt;/li&gt;
+&lt;li&gt;significance level = P(Type I error) = probability of finding an effect that is not there&lt;/li&gt;
+&lt;li&gt;power = 1 - P(Type II error) = probability of finding an effect that is there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;exercise&#34;&gt;Exercise&lt;/h3&gt;
+&lt;p&gt;In this exercise, you&amp;rsquo;re working with a website and want to test for a difference in conversion rate. Before you begin the experiment, you must decide how many samples you&amp;rsquo;ll need per variant using 5% significance and 95% power.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Standardize the effect size
+from statsmodels.stats.proportion import proportion_effectsize
+std_effect = proportion_effectsize(.20, .25)
+
+# Assign and print the needed sample size
+from statsmodels.stats.power import  zt_ind_solve_power
+sample_size = zt_ind_solve_power(effect_size=std_effect, nobs1=None, alpha=0.05, power=0.95)
+print(sample_size)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1807.7621477153323
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign and print the needed sample size
+from statsmodels.stats.power import  zt_ind_solve_power
+sample_size = zt_ind_solve_power(effect_size=std_effect, nobs1=None, alpha=.05, power=0.8)
+print(sample_size)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1091.8961587171991
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice how lowering the power allowed you fewer observations in your sample, yet increased your chance of a Type II error.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sample_sizes = np.array(range(5, 100))
+effect_sizes = np.array([0.2, 0.5, 0.8])
+
+# Create results object for t-test analysis
+from statsmodels.stats.power import TTestIndPower
+results = TTestIndPower()
+
+#Plot the power analysis
+import matplotlib.pyplot as plt
+results.plot_power(dep_var=&#39;nobs&#39;, nobs=sample_sizes, effect_size=effect_sizes)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;power_sample_6_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Notice that not only does an increase in power result in a larger sample size, but this increase grows exponentially as the minimum effect size is increased.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Immutable or mutable?</title>
       <link>http://othrif.github.io/technical_note/python/basics/immutable_mutable/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -9299,6 +9448,58 @@ print(df2.head())
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Look-elsewhere effect</title>
+      <link>http://othrif.github.io/technical_note/math/stats/look_elsewhere/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/look_elsewhere/</guid>
+      <description>&lt;p&gt;The probability of encountering an error is still extremely high. This is where the Bonferroni correction comes in. While a bit conservative, it controls the family-wise error rate for circumstances like these to avoid the high probability of a Type I error.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 60 tests with 5% significance
+error_rate = 1 - (.95**(60))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.953930201013048
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 30 tests with 5% significance
+error_rate = 1 - (.95**(30))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.7853612360570628
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 10 tests with 5% significance
+error_rate = 1 - (.95**(10))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.4012630607616213
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;bonferroni-correction&#34;&gt;Bonferroni correction&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s implement multiple hypothesis tests using the Bonferroni correction approach that we discussed in the slides. You&amp;rsquo;ll use the imported &lt;code&gt;multipletests()&lt;/code&gt; function in order to achieve this.&lt;/p&gt;
+&lt;p&gt;Use a single-test significance level of .05 and observe how the Bonferroni correction affects our sample list of p-values already created.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.sandbox.stats.multicomp import multipletests
+pvals = [.01, .05, .10, .50, .99]
+
+# Create a list of the adjusted p-values
+p_adjusted = multipletests(pvals, alpha=0.05, method=&#39;bonferroni&#39;)
+
+# Print the resulting conclusions
+print(p_adjusted[0])
+
+# Print the adjusted p-values themselves 
+print(p_adjusted[1])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[ True False False False False]
+[0.05 0.25 0.5  1.   1.  ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see, the Bonferroni correction did it&amp;rsquo;s job and corrected the family-wise error rate for our 5 hypothesis test results. In the end, only one of the tests remained signficant. There are other methods to do tjhis test:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sidak correction&lt;/li&gt;
+&lt;li&gt;Step-based procedures&lt;/li&gt;
+&lt;li&gt;Tukey’s procedure&lt;/li&gt;
+&lt;li&gt;Dunnet’s correction&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -12058,6 +12259,101 @@ def multiply(a,b):
     </item>
     
     <item>
+      <title>Perform a t-test</title>
+      <link>http://othrif.github.io/technical_note/math/stats/ttest/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/ttest/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+laptops = pd.read_csv(&#39;laptops.csv&#39; , encoding=&#39;latin-1&#39;, index_col=0) # added encoding because of errors
+laptops = laptops.loc[laptops[&#39;Company&#39;].isin([&#39;Asus&#39;, &#39;Toshiba&#39;])]
+laptops = laptops[[&#39;Company&#39;,&#39;Price_euros&#39;]]
+laptops.columns = [&#39;Company&#39;, &#39;Price&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Display the mean price for each group
+prices = laptops.groupby(&#39;Company&#39;).mean()
+print(prices)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;               Price
+Company             
+Asus     1104.169367
+Toshiba  1267.812500
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign the prices of each group
+asus = laptops[laptops[&#39;Company&#39;] == &#39;Asus&#39;][&#39;Price&#39;]
+toshiba = laptops[laptops[&#39;Company&#39;] == &#39;Toshiba&#39;][&#39;Price&#39;]
+
+# Run the t-test
+from scipy.stats import ttest_ind
+tstat, pval = ttest_ind(asus, toshiba)
+print(&#39;{0:0.3f}&#39;.format(pval))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.133
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With a p-value of .133, we cannot reject the null hypothesis! There&amp;rsquo;s not enough evidence here to conclude that Toshiba laptops are significantly more expensive than Asus. With that being said, .133 is fairly close to reasonable significance so we may want to run another test or examine this further.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perform a z-test</title>
+      <link>http://othrif.github.io/technical_note/math/stats/ztest/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/ztest/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.stats.proportion import proportions_ztest
+count = 5
+nobs = 83
+value = .05
+stat, pval = proportions_ztest(count, nobs, value)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.695, sig=0.392 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+count = np.array([5, 12])
+nobs = np.array([83, 99])
+stat, pval = proportions_ztest(count, nobs)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.159, sig=-1.408 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+results = pd.read_csv(&#39;ab_data.csv&#39; , encoding=&#39;latin-1&#39;, index_col=0) # added encoding because of errors
+results = results[[&#39;group&#39;,&#39;converted&#39;]]
+results.columns = [&#39;Group&#39;,&#39;Converted&#39;]
+# Assign and print the conversion rate for each group
+conv_rates = results.groupby(&#39;Group&#39;).mean()
+print(conv_rates)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           Converted
+Group               
+control     0.120399
+treatment   0.118920
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign the number of conversions and total trials
+num_control = results[results[&#39;Group&#39;] == &#39;control&#39;][&#39;Converted&#39;].sum()
+total_control = len(results[results[&#39;Group&#39;] == &#39;control&#39;])
+
+# Assign the number of conversions and total trials
+num_treat = results[results[&#39;Group&#39;] == &#39;treatment&#39;][&#39;Converted&#39;].sum()
+total_treat = len(results[results[&#39;Group&#39;] == &#39;treatment&#39;])
+
+import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+count = np.array([num_treat, num_control]) 
+nobs = np.array([total_treat, total_control])
+
+# Run the z-test and print the result 
+stat, pval = proportions_ztest(count, nobs, alternative=&amp;quot;larger&amp;quot;)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.892, sig=-1.237 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;p-value &amp;gt; 0.05, cannot reject the null hypothesis&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Polymorphysm methods</title>
       <link>http://othrif.github.io/technical_note/python/basics/polymorphism/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -12664,6 +12960,170 @@ print(cars)
 5        Morocco          True            70        280
 6          Egypt          True            45        180
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Regression and classification in Scikit-Learn</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/regression/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/regression/</guid>
+      <description>&lt;h3 id=&#34;linear-regression&#34;&gt;Linear regression&lt;/h3&gt;
+&lt;p&gt;make predictions, visualize the model fit, and analyze the formula used to generate your fit.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import matplotlib.pyplot as plt
+weather = pd.read_csv(&#39;weatherAUS.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;prepare-your-data&#34;&gt;Prepare your data&lt;/h4&gt;
+&lt;p&gt;Do I have any null values in my dataset&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;any(weather.isnull())
+# For numpy
+# np.any(np.isnan(mat))
+# np.all(np.isfinite(mat))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#weather = weather.fillna(method=&#39;ffill&#39;) # inpute missing values
+weather.dropna(inplace=True) # drop raws with null values, can loose important information
+weather_train = weather.sample(n=100) 
+weather_test = weather.sample(n=1000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_train
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression 
+X = np.array(weather[&#39;Humidity9am&#39;]).reshape(-1,1)
+y = weather[&#39;Humidity3pm&#39;]
+
+
+# Create and fit your linear regression model
+lm = LinearRegression()
+lm.fit(X, y)
+
+# Assign and print predictions
+preds = lm.predict(X)
+
+# Plot your fit to visualize your model
+plt.scatter(X, y)
+plt.plot(X, preds, color=&#39;red&#39;)
+plt.show()
+
+# Assign and print coefficient 
+coef = lm.coef_
+print(f&#39;Coefficient: {np.round(coef,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;regression_6_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Coefficient: [0.72]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This means that for every 1 unit of humidity in the morning, we can expect about 0.71 units of humidity in the afternoon. More practically, this information tells us that humidity drops about 29% from morning to afternoon!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# R-squared score
+r2 = lm.score(X,y)
+print(f&#39;R-squared score: {r2:.2f}&#39;)
+
+# Mean squared error
+from sklearn.metrics import mean_squared_error
+preds = lm.predict(X)
+mse = mean_squared_error(y, preds)
+print(f&#39;Mean squared error: {mse:.2f}&#39;)
+
+# Mean absolute error
+from sklearn.metrics import mean_absolute_error
+preds = lm.predict(X)
+mae = mean_absolute_error(y, preds)
+print(f&#39;Mean absolute error: {mae:.2f}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;R-squared score: 0.43
+Mean squared error: 210.46
+Mean absolute error: 11.54
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that our R-squared value tells us the percentage of the variance of y that X is responsible for. Which error metric would you recommend for this dataset? If you remember from when you plotted your model fit, there aren&amp;rsquo;t too many outliers, so mean squared error would be a good choice to go with!&lt;/p&gt;
+&lt;h5 id=&#34;bias-variance-tradeoff&#34;&gt;Bias-Variance tradeoff&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import operator
+from sklearn.preprocessing import PolynomialFeatures
+polynomial_features= PolynomialFeatures(degree=10)
+
+x_poly = polynomial_features.fit_transform(X)
+
+lm2 = LinearRegression()
+lm2.fit(x_poly, y)
+preds2 = lm2.predict(x_poly)
+
+
+plt.scatter(X, y)
+# sort the values of x before line plot
+sort_axis = operator.itemgetter(0)
+sorted_zip = sorted(zip(X,preds2), key=sort_axis)
+x, y_poly_pred = zip(*sorted_zip)
+plt.plot(x, y_poly_pred, color=&#39;m&#39;)
+plt.show()
+
+
+# R-squared score
+r2 = lm2.score(x_poly, preds2)
+print(f&#39;R-squared score: {r2:.2f}&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;regression_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;R-squared score: 1.00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic regression&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from sklearn import preprocessing 
+def scaleX(df):
+    x = df.values #returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    return pd.DataFrame(x_scaled)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X_train = np.array(scaleX(weather_train.loc[:,[&#39;Humidity9am&#39;,&#39;Humidity3pm&#39;]])).reshape(-1,2)
+y_train = np.array(weather_train[&#39;RainTomorrow&#39;])
+y_train = (y_train==&#39;Yes&#39;).astype(int)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X_test = np.array(scaleX(weather_test.loc[:,[&#39;Humidity9am&#39;,&#39;Humidity3pm&#39;]])).reshape(-1,2)
+y_test = np.array(weather_test[&#39;RainTomorrow&#39;])
+y_test = (y_test==&#39;Yes&#39;).astype(int)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.linear_model import LogisticRegression
+# Create and fit your model
+clf = LogisticRegression()
+clf.fit(X_train, y_train)
+
+# Compute and print the accuracy
+acc = clf.score(X_test, y_test)
+print(f&#39;Accuracy: {np.round(acc,2)}&#39;)
+
+# Assign and print the coefficents
+coefs = clf.coef_
+print(f&#39;Coefficient: {np.round(coefs,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy: 0.83
+Coefficient: [[0.05 6.81]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since our features were normalized beforehand, we can look at the magnitude of our coefficients to tell us the importance of each independent variable. Here you can see the the second variable, Humidity3pm was much more important to our outcome than humidity from that morning. This is intuitive since we are trying to predict the rain for tomorrow!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Generate and output the confusion matrix
+from sklearn.metrics import confusion_matrix
+preds = clf.predict(X_test)
+matrix = confusion_matrix(y_test, preds)
+print(f&#39;Confusion matrix: {np.round(matrix,2)}&#39;)
+
+# Compute and print the precision
+from sklearn.metrics import precision_score
+preds = clf.predict(X_test)
+precision = precision_score(y_test, preds)
+print(f&#39;Precision: {np.round(precision,2)}&#39;)
+
+# Compute and print the recall
+from sklearn.metrics import recall_score
+preds = clf.predict(X_test)
+recall = recall_score(y_test, preds)
+print(f&#39;Recall: {np.round(recall,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Confusion matrix: [[7508  262]
+ [1440  790]]
+Precision: 0.75
+Recall: 0.35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see here that the precision of our rain prediction model is higher, meaning that we didn&amp;rsquo;t make too many Type I errors. However, there were plenty of Type II errors shown in the bottom-left quadrant of the confusion matrix. This is indicated further by the low recall score, meaning that there were plenty of rainy days that we missed out on.&lt;/p&gt;
 </description>
     </item>
     

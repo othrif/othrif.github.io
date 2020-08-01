@@ -3619,6 +3619,104 @@ df_ind.loc[rows_to_keep]
     </item>
     
     <item>
+      <title>Handling missing data and outliers</title>
+      <link>http://othrif.github.io/technical_note/python/pandas/null/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/pandas/null/</guid>
+      <description>&lt;h3 id=&#34;identify-rows-with-null-in-any-column&#34;&gt;Identify rows with null in any column&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+weather_org = pd.read_csv(&#39;pittsburgh2013.csv&#39;)
+weather_org = weather_org.loc[:,[&#39;Date&#39;,&#39;Mean TemperatureF&#39;, &#39;Max Gust SpeedMPH&#39;, &#39;Events&#39;]]
+weather_org.columns = [&#39;date&#39;,&#39;temp&#39;,&#39;speed&#39;,&#39;events&#39;]
+# Identify and print the the rows with null values
+nulls = weather_org[weather_org.isnull().any(axis=1)]
+print(nulls.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       date  temp  speed events
+0  2013-1-1    28    NaN   Snow
+1  2013-1-2    21    NaN    NaN
+2  2013-1-3    24   26.0    NaN
+3  2013-1-4    28   32.0    NaN
+4  2013-1-5    30   23.0    NaN
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;emputation&#34;&gt;Emputation&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Impute constant value 0 and print the head
+weather.fillna(0, inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       Date  Mean TemperatureF  Max Gust SpeedMPH Events
+0  2013-1-1                 28                NaN   Snow
+1  2013-1-2                 21                NaN    NaN
+2  2013-1-3                 24               26.0    NaN
+3  2013-1-4                 28               32.0    NaN
+4  2013-1-5                 30               23.0    NaN
+       Date  Mean TemperatureF  Max Gust SpeedMPH Events
+0  2013-1-1                 28                0.0   Snow
+1  2013-1-2                 21                0.0      0
+2  2013-1-3                 24               26.0      0
+3  2013-1-4                 28               32.0      0
+4  2013-1-5                 30               23.0      0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Impute median price and print the head
+weather.fillna(weather[&#39;speed&#39;].median(), inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;       date  temp  speed events
+0  2013-1-1    28   24.0   Snow
+1  2013-1-2    21   24.0     24
+2  2013-1-3    24   26.0     24
+3  2013-1-4    28   32.0     24
+4  2013-1-5    30   23.0     24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;drop-null-values&#34;&gt;Drop null values&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_org.copy()
+# Drop each row with a null value and print the head
+weather.dropna(inplace=True)
+print(weather.head())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;         date  temp  speed    events
+5    2013-1-6    34   22.0      Snow
+8    2013-1-9    36   25.0      Rain
+11  2013-1-12    55   18.0  Fog-Rain
+12  2013-1-13    62   26.0      Rain
+13  2013-1-14    44   32.0      Rain
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;drop-outliers&#34;&gt;Drop outliers&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+# Visualize the relationship with price
+weather.boxplot(&#39;speed&#39;, rot=0)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;null_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Calculate the mean and std
+mean, std = weather[&#39;speed&#39;].mean(), weather[&#39;speed&#39;].std()
+
+# Compute and print the upper and lower threshold
+cut_off = 3 * std
+lower, upper = mean - cut_off, mean + cut_off
+print(lower, &#39;to&#39;, upper)
+
+# Identify and print rows with outliers
+outliers = weather[(weather[&#39;speed&#39;] &amp;gt; upper) | 
+                   (weather[&#39;speed&#39;] &amp;lt; lower)]
+print(outliers)
+
+# Drop the rows from the dataset
+weather = weather[(weather[&#39;speed&#39;] &amp;lt;= upper) | 
+                  (weather[&#39;speed&#39;] &amp;gt;= lower)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1.8220504190012328 to 51.599333228797505
+          date  temp  speed                 events
+105  2013-4-16    66   53.0  Fog-Rain-Thunderstorm
+190  2013-7-10    76   55.0  Fog-Rain-Thunderstorm
+304  2013-11-1    60   61.0                   Rain
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Import flat file</title>
       <link>http://othrif.github.io/technical_note/python/pandas/importflatfilecsv/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

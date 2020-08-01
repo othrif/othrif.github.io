@@ -418,6 +418,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/pandas/null/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/math/stats/power_sample/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/immutable_mutable/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -528,6 +538,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/math/stats/look_elsewhere/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/matplotlib/loop/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -633,6 +648,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/math/stats/ttest/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/math/stats/ztest/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/polymorphism/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -689,6 +714,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/pandas/handlecsv/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/regression/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

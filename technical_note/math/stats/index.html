@@ -626,6 +626,55 @@ import pandas as pd  laptops = pd.read_csv('laptops.csv' , encoding='latin-1', i
       </div>
     </div>
   
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/math/stats/power_sample/" >How to determine a sample size</a></h2>
+      <div class="article-style">
+        
+          Let&rsquo;s finish up our dive into statistical tests by performing power analysis to generate needed sample size. Power analysis involves four moving parts:
+ Sample size Effect size Minimum effect significance level = P(Type I error) = probability of finding an effect that is not there power = 1 - P(Type II error) = probability of finding an effect that is there  Exercise In this exercise, you&rsquo;re working with a website and want to test for a difference in conversion rate.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/math/stats/look_elsewhere/" >Look-elsewhere effect</a></h2>
+      <div class="article-style">
+        
+          The probability of encountering an error is still extremely high. This is where the Bonferroni correction comes in. While a bit conservative, it controls the family-wise error rate for circumstances like these to avoid the high probability of a Type I error.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/math/stats/ttest/" >Perform a t-test</a></h2>
+      <div class="article-style">
+        
+          import pandas as pd laptops = pd.read_csv('laptops.csv' , encoding='latin-1', index_col=0) # added encoding because of errors laptops = laptops.loc[laptops['Company'].isin(['Asus', 'Toshiba'])] laptops = laptops[['Company','Price_euros']] laptops.columns = ['Company', 'Price']  # Display the mean price for each group prices = laptops.
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div>
+      <h2><a href="/technical_note/math/stats/ztest/" >Perform a z-test</a></h2>
+      <div class="article-style">
+        
+          from statsmodels.stats.proportion import proportions_ztest count = 5 nobs = 83 value = .05 stat, pval = proportions_ztest(count, nobs, value) print(f'p-value={pval:0.3f}, sig={stat:0.3f} sigma')  p-value=0.695, sig=0.392 sigma  import numpy as np from statsmodels.
+        
+      </div>
+    </div>
+  
 
   
 

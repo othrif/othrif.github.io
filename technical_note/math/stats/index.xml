@@ -446,5 +446,203 @@ laptops2.head()
 </description>
     </item>
     
+    <item>
+      <title>How to determine a sample size</title>
+      <link>http://othrif.github.io/technical_note/math/stats/power_sample/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/power_sample/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s finish up our dive into statistical tests by performing power analysis to generate needed sample size. Power analysis involves four moving parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sample size&lt;/li&gt;
+&lt;li&gt;Effect size&lt;/li&gt;
+&lt;li&gt;Minimum effect&lt;/li&gt;
+&lt;li&gt;significance level = P(Type I error) = probability of finding an effect that is not there&lt;/li&gt;
+&lt;li&gt;power = 1 - P(Type II error) = probability of finding an effect that is there&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;exercise&#34;&gt;Exercise&lt;/h3&gt;
+&lt;p&gt;In this exercise, you&amp;rsquo;re working with a website and want to test for a difference in conversion rate. Before you begin the experiment, you must decide how many samples you&amp;rsquo;ll need per variant using 5% significance and 95% power.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Standardize the effect size
+from statsmodels.stats.proportion import proportion_effectsize
+std_effect = proportion_effectsize(.20, .25)
+
+# Assign and print the needed sample size
+from statsmodels.stats.power import  zt_ind_solve_power
+sample_size = zt_ind_solve_power(effect_size=std_effect, nobs1=None, alpha=0.05, power=0.95)
+print(sample_size)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1807.7621477153323
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign and print the needed sample size
+from statsmodels.stats.power import  zt_ind_solve_power
+sample_size = zt_ind_solve_power(effect_size=std_effect, nobs1=None, alpha=.05, power=0.8)
+print(sample_size)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;1091.8961587171991
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice how lowering the power allowed you fewer observations in your sample, yet increased your chance of a Type II error.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sample_sizes = np.array(range(5, 100))
+effect_sizes = np.array([0.2, 0.5, 0.8])
+
+# Create results object for t-test analysis
+from statsmodels.stats.power import TTestIndPower
+results = TTestIndPower()
+
+#Plot the power analysis
+import matplotlib.pyplot as plt
+results.plot_power(dep_var=&#39;nobs&#39;, nobs=sample_sizes, effect_size=effect_sizes)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;power_sample_6_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Notice that not only does an increase in power result in a larger sample size, but this increase grows exponentially as the minimum effect size is increased.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Look-elsewhere effect</title>
+      <link>http://othrif.github.io/technical_note/math/stats/look_elsewhere/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/look_elsewhere/</guid>
+      <description>&lt;p&gt;The probability of encountering an error is still extremely high. This is where the Bonferroni correction comes in. While a bit conservative, it controls the family-wise error rate for circumstances like these to avoid the high probability of a Type I error.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 60 tests with 5% significance
+error_rate = 1 - (.95**(60))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.953930201013048
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 30 tests with 5% significance
+error_rate = 1 - (.95**(30))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.7853612360570628
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Print error rate for 10 tests with 5% significance
+error_rate = 1 - (.95**(10))
+print(error_rate)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.4012630607616213
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;bonferroni-correction&#34;&gt;Bonferroni correction&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s implement multiple hypothesis tests using the Bonferroni correction approach that we discussed in the slides. You&amp;rsquo;ll use the imported &lt;code&gt;multipletests()&lt;/code&gt; function in order to achieve this.&lt;/p&gt;
+&lt;p&gt;Use a single-test significance level of .05 and observe how the Bonferroni correction affects our sample list of p-values already created.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.sandbox.stats.multicomp import multipletests
+pvals = [.01, .05, .10, .50, .99]
+
+# Create a list of the adjusted p-values
+p_adjusted = multipletests(pvals, alpha=0.05, method=&#39;bonferroni&#39;)
+
+# Print the resulting conclusions
+print(p_adjusted[0])
+
+# Print the adjusted p-values themselves 
+print(p_adjusted[1])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[ True False False False False]
+[0.05 0.25 0.5  1.   1.  ]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see, the Bonferroni correction did it&amp;rsquo;s job and corrected the family-wise error rate for our 5 hypothesis test results. In the end, only one of the tests remained signficant. There are other methods to do tjhis test:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sidak correction&lt;/li&gt;
+&lt;li&gt;Step-based procedures&lt;/li&gt;
+&lt;li&gt;Tukey’s procedure&lt;/li&gt;
+&lt;li&gt;Dunnet’s correction&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perform a t-test</title>
+      <link>http://othrif.github.io/technical_note/math/stats/ttest/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/ttest/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+laptops = pd.read_csv(&#39;laptops.csv&#39; , encoding=&#39;latin-1&#39;, index_col=0) # added encoding because of errors
+laptops = laptops.loc[laptops[&#39;Company&#39;].isin([&#39;Asus&#39;, &#39;Toshiba&#39;])]
+laptops = laptops[[&#39;Company&#39;,&#39;Price_euros&#39;]]
+laptops.columns = [&#39;Company&#39;, &#39;Price&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Display the mean price for each group
+prices = laptops.groupby(&#39;Company&#39;).mean()
+print(prices)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;               Price
+Company             
+Asus     1104.169367
+Toshiba  1267.812500
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign the prices of each group
+asus = laptops[laptops[&#39;Company&#39;] == &#39;Asus&#39;][&#39;Price&#39;]
+toshiba = laptops[laptops[&#39;Company&#39;] == &#39;Toshiba&#39;][&#39;Price&#39;]
+
+# Run the t-test
+from scipy.stats import ttest_ind
+tstat, pval = ttest_ind(asus, toshiba)
+print(&#39;{0:0.3f}&#39;.format(pval))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0.133
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With a p-value of .133, we cannot reject the null hypothesis! There&amp;rsquo;s not enough evidence here to conclude that Toshiba laptops are significantly more expensive than Asus. With that being said, .133 is fairly close to reasonable significance so we may want to run another test or examine this further.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perform a z-test</title>
+      <link>http://othrif.github.io/technical_note/math/stats/ztest/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/math/stats/ztest/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from statsmodels.stats.proportion import proportions_ztest
+count = 5
+nobs = 83
+value = .05
+stat, pval = proportions_ztest(count, nobs, value)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.695, sig=0.392 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+count = np.array([5, 12])
+nobs = np.array([83, 99])
+stat, pval = proportions_ztest(count, nobs)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.159, sig=-1.408 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+results = pd.read_csv(&#39;ab_data.csv&#39; , encoding=&#39;latin-1&#39;, index_col=0) # added encoding because of errors
+results = results[[&#39;group&#39;,&#39;converted&#39;]]
+results.columns = [&#39;Group&#39;,&#39;Converted&#39;]
+# Assign and print the conversion rate for each group
+conv_rates = results.groupby(&#39;Group&#39;).mean()
+print(conv_rates)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;           Converted
+Group               
+control     0.120399
+treatment   0.118920
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Assign the number of conversions and total trials
+num_control = results[results[&#39;Group&#39;] == &#39;control&#39;][&#39;Converted&#39;].sum()
+total_control = len(results[results[&#39;Group&#39;] == &#39;control&#39;])
+
+# Assign the number of conversions and total trials
+num_treat = results[results[&#39;Group&#39;] == &#39;treatment&#39;][&#39;Converted&#39;].sum()
+total_treat = len(results[results[&#39;Group&#39;] == &#39;treatment&#39;])
+
+import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+count = np.array([num_treat, num_control]) 
+nobs = np.array([total_treat, total_control])
+
+# Run the z-test and print the result 
+stat, pval = proportions_ztest(count, nobs, alternative=&amp;quot;larger&amp;quot;)
+print(f&#39;p-value={pval:0.3f}, sig={stat:0.3f} sigma&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;p-value=0.892, sig=-1.237 sigma
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;p-value &amp;gt; 0.05, cannot reject the null hypothesis&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

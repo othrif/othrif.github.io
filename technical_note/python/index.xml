@@ -12,5 +12,169 @@
       <link>http://othrif.github.io/technical_note/python/</link>
     </image>
     
+    <item>
+      <title>Regression and classification in Scikit-Learn</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/regression/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/regression/</guid>
+      <description>&lt;h3 id=&#34;linear-regression&#34;&gt;Linear regression&lt;/h3&gt;
+&lt;p&gt;make predictions, visualize the model fit, and analyze the formula used to generate your fit.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import matplotlib.pyplot as plt
+weather = pd.read_csv(&#39;weatherAUS.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;prepare-your-data&#34;&gt;Prepare your data&lt;/h4&gt;
+&lt;p&gt;Do I have any null values in my dataset&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;any(weather.isnull())
+# For numpy
+# np.any(np.isnan(mat))
+# np.all(np.isfinite(mat))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#weather = weather.fillna(method=&#39;ffill&#39;) # inpute missing values
+weather.dropna(inplace=True) # drop raws with null values, can loose important information
+weather_train = weather.sample(n=100) 
+weather_test = weather.sample(n=1000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;weather = weather_train
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression 
+X = np.array(weather[&#39;Humidity9am&#39;]).reshape(-1,1)
+y = weather[&#39;Humidity3pm&#39;]
+
+
+# Create and fit your linear regression model
+lm = LinearRegression()
+lm.fit(X, y)
+
+# Assign and print predictions
+preds = lm.predict(X)
+
+# Plot your fit to visualize your model
+plt.scatter(X, y)
+plt.plot(X, preds, color=&#39;red&#39;)
+plt.show()
+
+# Assign and print coefficient 
+coef = lm.coef_
+print(f&#39;Coefficient: {np.round(coef,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;regression_6_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Coefficient: [0.72]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This means that for every 1 unit of humidity in the morning, we can expect about 0.71 units of humidity in the afternoon. More practically, this information tells us that humidity drops about 29% from morning to afternoon!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# R-squared score
+r2 = lm.score(X,y)
+print(f&#39;R-squared score: {r2:.2f}&#39;)
+
+# Mean squared error
+from sklearn.metrics import mean_squared_error
+preds = lm.predict(X)
+mse = mean_squared_error(y, preds)
+print(f&#39;Mean squared error: {mse:.2f}&#39;)
+
+# Mean absolute error
+from sklearn.metrics import mean_absolute_error
+preds = lm.predict(X)
+mae = mean_absolute_error(y, preds)
+print(f&#39;Mean absolute error: {mae:.2f}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;R-squared score: 0.43
+Mean squared error: 210.46
+Mean absolute error: 11.54
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that our R-squared value tells us the percentage of the variance of y that X is responsible for. Which error metric would you recommend for this dataset? If you remember from when you plotted your model fit, there aren&amp;rsquo;t too many outliers, so mean squared error would be a good choice to go with!&lt;/p&gt;
+&lt;h5 id=&#34;bias-variance-tradeoff&#34;&gt;Bias-Variance tradeoff&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import operator
+from sklearn.preprocessing import PolynomialFeatures
+polynomial_features= PolynomialFeatures(degree=10)
+
+x_poly = polynomial_features.fit_transform(X)
+
+lm2 = LinearRegression()
+lm2.fit(x_poly, y)
+preds2 = lm2.predict(x_poly)
+
+
+plt.scatter(X, y)
+# sort the values of x before line plot
+sort_axis = operator.itemgetter(0)
+sorted_zip = sorted(zip(X,preds2), key=sort_axis)
+x, y_poly_pred = zip(*sorted_zip)
+plt.plot(x, y_poly_pred, color=&#39;m&#39;)
+plt.show()
+
+
+# R-squared score
+r2 = lm2.score(x_poly, preds2)
+print(f&#39;R-squared score: {r2:.2f}&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;regression_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;R-squared score: 1.00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;logistic-regression&#34;&gt;Logistic regression&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from sklearn import preprocessing 
+def scaleX(df):
+    x = df.values #returns a numpy array
+    min_max_scaler = preprocessing.MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(x)
+    return pd.DataFrame(x_scaled)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X_train = np.array(scaleX(weather_train.loc[:,[&#39;Humidity9am&#39;,&#39;Humidity3pm&#39;]])).reshape(-1,2)
+y_train = np.array(weather_train[&#39;RainTomorrow&#39;])
+y_train = (y_train==&#39;Yes&#39;).astype(int)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X_test = np.array(scaleX(weather_test.loc[:,[&#39;Humidity9am&#39;,&#39;Humidity3pm&#39;]])).reshape(-1,2)
+y_test = np.array(weather_test[&#39;RainTomorrow&#39;])
+y_test = (y_test==&#39;Yes&#39;).astype(int)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.linear_model import LogisticRegression
+# Create and fit your model
+clf = LogisticRegression()
+clf.fit(X_train, y_train)
+
+# Compute and print the accuracy
+acc = clf.score(X_test, y_test)
+print(f&#39;Accuracy: {np.round(acc,2)}&#39;)
+
+# Assign and print the coefficents
+coefs = clf.coef_
+print(f&#39;Coefficient: {np.round(coefs,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Accuracy: 0.83
+Coefficient: [[0.05 6.81]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Since our features were normalized beforehand, we can look at the magnitude of our coefficients to tell us the importance of each independent variable. Here you can see the the second variable, Humidity3pm was much more important to our outcome than humidity from that morning. This is intuitive since we are trying to predict the rain for tomorrow!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Generate and output the confusion matrix
+from sklearn.metrics import confusion_matrix
+preds = clf.predict(X_test)
+matrix = confusion_matrix(y_test, preds)
+print(f&#39;Confusion matrix: {np.round(matrix,2)}&#39;)
+
+# Compute and print the precision
+from sklearn.metrics import precision_score
+preds = clf.predict(X_test)
+precision = precision_score(y_test, preds)
+print(f&#39;Precision: {np.round(precision,2)}&#39;)
+
+# Compute and print the recall
+from sklearn.metrics import recall_score
+preds = clf.predict(X_test)
+recall = recall_score(y_test, preds)
+print(f&#39;Recall: {np.round(recall,2)}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Confusion matrix: [[7508  262]
+ [1440  790]]
+Precision: 0.75
+Recall: 0.35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see here that the precision of our rain prediction model is higher, meaning that we didn&amp;rsquo;t make too many Type I errors. However, there were plenty of Type II errors shown in the bottom-left quadrant of the confusion matrix. This is indicated further by the low recall score, meaning that there were plenty of rainy days that we missed out on.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
