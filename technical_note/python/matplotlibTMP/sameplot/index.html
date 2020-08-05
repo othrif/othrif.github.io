@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Annotations: https://matplotlib.org/3.3.0/tutorials/text/annotations.html  import matplotlib.pyplot as plt import pandas as pd climate_change = pd.read_csv(&#39;climate_change.csv&#39;, parse_dates=[&#39;date&#39;], index_col=&#39;date&#39;) seventies = climate_change[&#39;1970-01-01&#39;:&#39;1979-12-31&#39;]  # Define a function called plot_timeseries def plot_timeseries(axes, x, y, color, xlabel, ylabel): # Plot the inputs x,y in the provided color axes.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/sameplot/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/matplotlibtmp/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/sameplot/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/sameplot/">
+  <meta property="og:title" content="Two differnt y-axes in same plot | Othmane Rifki">
+  <meta property="og:description" content="Annotations: https://matplotlib.org/3.3.0/tutorials/text/annotations.html  import matplotlib.pyplot as plt import pandas as pd climate_change = pd.read_csv(&#39;climate_change.csv&#39;, parse_dates=[&#39;date&#39;], index_col=&#39;date&#39;) seventies = climate_change[&#39;1970-01-01&#39;:&#39;1979-12-31&#39;]  # Define a function called plot_timeseries def plot_timeseries(axes, x, y, color, xlabel, ylabel): # Plot the inputs x,y in the provided color axes."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Two differnt y-axes in same plot | Othmane Rifki</title>
 
 </head>
 
@@ -552,95 +555,74 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicsplot/" >Basics of plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Two differnt y-axes in same plot</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/ax_fig/" >Customize plots with ax and fig</a></h2>
-      <div class="article-style">
-        
-          Matplotlib markers: https://matplotlib.org/api/markers_api.html Matplotlib linestyles: https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html  import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3) austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)  # Create a figure and an array of axes: 2 rows, 1 column with shared y axis fig, ax = plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicplot/" >Test plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np import matplotlib.pyplot as plt  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/sameplot/" >Two differnt y-axes in same plot</a></h2>
-      <div class="article-style">
-        
-          Annotations: https://matplotlib.org/3.3.0/tutorials/text/annotations.html  import matplotlib.pyplot as plt import pandas as pd climate_change = pd.read_csv('climate_change.csv', parse_dates=['date'], index_col='date') seventies = climate_change['1970-01-01':'1979-12-31']  # Define a function called plot_timeseries def plot_timeseries(axes, x, y, color, xlabel, ylabel): # Plot the inputs x,y in the provided color axes.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
+  <ul>
+<li>Annotations: <a href="https://matplotlib.org/3.3.0/tutorials/text/annotations.html">https://matplotlib.org/3.3.0/tutorials/text/annotations.html</a></li>
+</ul>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import pandas as pd
+
+climate_change = pd.read_csv('climate_change.csv', parse_dates=['date'], index_col='date')
+seventies = climate_change['1970-01-01':'1979-12-31']
+</code></pre>
+<pre><code class="language-python"># Define a function called plot_timeseries
+def plot_timeseries(axes, x, y, color, xlabel, ylabel):
+
+  # Plot the inputs x,y in the provided color
+  axes.plot(x, y, color=color)
+
+  # Set the x-axis label
+  axes.set_xlabel(xlabel)
+
+  # Set the y-axis label
+  axes.set_ylabel(ylabel, color=color)
+
+  # Set the colors tick params for y-axis
+  axes.tick_params('y', colors=color)
+</code></pre>
+<pre><code class="language-python">fig, ax = plt.subplots()
+
+# Plot the CO2 levels time-series in blue
+plot_timeseries(ax, climate_change.index, climate_change['co2'], &quot;blue&quot;, 'Time (years)', 'CO2 levels')
+
+# Create a twin Axes object that shares the x-axis
+ax2 = ax.twinx()
+
+# Plot the relative temperature data in red
+plot_timeseries(ax2, climate_change.index, climate_change['relative_temp'], &quot;red&quot;, 'Time (years)', 'Relative temperature (Celsius)')
+
+# Annotate point with relative temperature &gt;1 degree
+ax2.annotate('&gt;1 degree', xy=(pd.Timestamp('2015-10-06'), 1), xytext=(pd.Timestamp('2008-10-06'), -0.2), arrowprops={&quot;arrowstyle&quot;:&quot;-&gt;&quot;, &quot;color&quot;:&quot;gray&quot;})
+
+plt.show()
+</code></pre>
+<p><img src="sameplot_4_0.png" alt="png"></p>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

@@ -181,5 +181,54 @@ plt.show()
 </description>
     </item>
     
+    <item>
+      <title>Two differnt y-axes in same plot</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/sameplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/sameplot/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Annotations: &lt;a href=&#34;https://matplotlib.org/3.3.0/tutorials/text/annotations.html&#34;&gt;https://matplotlib.org/3.3.0/tutorials/text/annotations.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+climate_change = pd.read_csv(&#39;climate_change.csv&#39;, parse_dates=[&#39;date&#39;], index_col=&#39;date&#39;)
+seventies = climate_change[&#39;1970-01-01&#39;:&#39;1979-12-31&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define a function called plot_timeseries
+def plot_timeseries(axes, x, y, color, xlabel, ylabel):
+
+  # Plot the inputs x,y in the provided color
+  axes.plot(x, y, color=color)
+
+  # Set the x-axis label
+  axes.set_xlabel(xlabel)
+
+  # Set the y-axis label
+  axes.set_ylabel(ylabel, color=color)
+
+  # Set the colors tick params for y-axis
+  axes.tick_params(&#39;y&#39;, colors=color)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, ax = plt.subplots()
+
+# Plot the CO2 levels time-series in blue
+plot_timeseries(ax, climate_change.index, climate_change[&#39;co2&#39;], &amp;quot;blue&amp;quot;, &#39;Time (years)&#39;, &#39;CO2 levels&#39;)
+
+# Create a twin Axes object that shares the x-axis
+ax2 = ax.twinx()
+
+# Plot the relative temperature data in red
+plot_timeseries(ax2, climate_change.index, climate_change[&#39;relative_temp&#39;], &amp;quot;red&amp;quot;, &#39;Time (years)&#39;, &#39;Relative temperature (Celsius)&#39;)
+
+# Annotate point with relative temperature &amp;gt;1 degree
+ax2.annotate(&#39;&amp;gt;1 degree&#39;, xy=(pd.Timestamp(&#39;2015-10-06&#39;), 1), xytext=(pd.Timestamp(&#39;2008-10-06&#39;), -0.2), arrowprops={&amp;quot;arrowstyle&amp;quot;:&amp;quot;-&amp;gt;&amp;quot;, &amp;quot;color&amp;quot;:&amp;quot;gray&amp;quot;})
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;sameplot_4_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
