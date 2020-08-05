@@ -3527,6 +3527,48 @@ SalaryError: The salary after bonus is too low!
     </item>
     
     <item>
+      <title>Customize plots with ax and fig</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/ax_fig/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/ax_fig/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Matplotlib markers: &lt;a href=&#34;https://matplotlib.org/api/markers_api.html&#34;&gt;https://matplotlib.org/api/markers_api.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Matplotlib linestyles: &lt;a href=&#34;https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html&#34;&gt;https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11]
+austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;)
+seattle_weather[&#39;MONTH&#39;] = pd.to_datetime(seattle_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+austin_weather[&#39;MONTH&#39;] = pd.to_datetime(austin_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+# Create a figure and an array of axes: 2 rows, 1 column with shared y axis
+fig, ax = plt.subplots(2, 1, sharey=True)
+
+# Plot Seattle precipitation data in the top axes
+ax[0].plot(seattle_weather[&#39;MONTH&#39;], seattle_weather[&#39;MLY-PRCP-NORMAL&#39;], marker = &#39;o&#39;, color = &#39;b&#39;)
+ax[0].plot(seattle_weather[&#39;MONTH&#39;], seattle_weather[&#39;MLY-PRCP-25PCTL&#39;], marker = None, color = &#39;b&#39;, linestyle = &#39;--&#39;)
+ax[0].plot(seattle_weather[&#39;MONTH&#39;], seattle_weather[&#39;MLY-PRCP-75PCTL&#39;], marker = None, color = &#39;b&#39;, linestyle = &#39;--&#39;)
+
+# Plot Austin precipitation data in the bottom axes
+ax[1].plot(austin_weather[&#39;MONTH&#39;], austin_weather[&#39;MLY-PRCP-NORMAL&#39;], marker = &#39;v&#39;, color = &#39;r&#39;)
+ax[1].plot(austin_weather[&#39;MONTH&#39;], austin_weather[&#39;MLY-PRCP-25PCTL&#39;], marker = None, color = &#39;r&#39;, linestyle = &#39;--&#39;)
+ax[1].plot(austin_weather[&#39;MONTH&#39;], austin_weather[&#39;MLY-PRCP-75PCTL&#39;], marker = None, color = &#39;r&#39;, linestyle = &#39;--&#39;)
+
+ax[0].set_title(&#39;Weather patterns in Austin and Seattle&#39;)
+ax[0].set_ylabel(&#39;Precipitation (inches)&#39;)
+ax[1].set_ylabel(&#39;Precipitation (inches)&#39;)
+ax[1].set_xlabel(&#39;Time (months)&#39;)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;ax_fig_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Data types</title>
       <link>http://othrif.github.io/technical_note/cpp/basics/datatypes/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
