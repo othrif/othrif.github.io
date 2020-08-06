@@ -13541,6 +13541,34 @@ plt.show()
     </item>
     
     <item>
+      <title>Show errors in bar, plot, and boxplot</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/scatterplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/scatterplot/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+climate_change = pd.read_csv(&#39;climate_change.csv&#39;, parse_dates=[&#39;date&#39;], index_col=&#39;date&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;adding-error-bars-to-a-bar-chart&#34;&gt;Adding error-bars to a bar chart&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, ax = plt.subplots()
+
+# Add data: &amp;quot;co2&amp;quot;, &amp;quot;relative_temp&amp;quot; as x-y, index as color
+ax.scatter(climate_change[&#39;co2&#39;], climate_change[&#39;relative_temp&#39;], c=climate_change.index)
+
+# Set the x-axis label to &amp;quot;CO2 (ppm)&amp;quot;
+ax.set_xlabel(&#39;CO2 (ppm)&#39;)
+
+# Set the y-axis label to &amp;quot;Relative temperature (C)&amp;quot;
+ax.set_ylabel(&#39;Relative temperature (C)&#39;)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;scatterplot_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Slicing and subsetting with .loc and .iloc</title>
       <link>http://othrif.github.io/technical_note/python/pandas/indexlociloc/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
