@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv(&#39;summer2016.csv&#39;, index_col=0) mens_rowing = summer2016[summer2016[&#39;Sport&#39;] == &#39;Rowing&#39;] mens_gymnastics = summer2016[summer2016[&#39;Sport&#39;] == &#39;Gymnastics&#39;] seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11] austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;) seattle_weather[&#39;MONTH&#39;] = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/errorsplot/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/matplotlibtmp/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/errorsplot/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/errorsplot/">
+  <meta property="og:title" content="Show errors in bar, plot, and boxplot | Othmane Rifki">
+  <meta property="og:description" content="import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv(&#39;summer2016.csv&#39;, index_col=0) mens_rowing = summer2016[summer2016[&#39;Sport&#39;] == &#39;Rowing&#39;] mens_gymnastics = summer2016[summer2016[&#39;Sport&#39;] == &#39;Gymnastics&#39;] seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11] austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;) seattle_weather[&#39;MONTH&#39;] = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Show errors in bar, plot, and boxplot | Othmane Rifki</title>
 
 </head>
 
@@ -552,131 +555,100 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicsplot/" >Basics of plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Show errors in bar, plot, and boxplot</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/ax_fig/" >Customize plots with ax and fig</a></h2>
-      <div class="article-style">
-        
-          Matplotlib markers: https://matplotlib.org/api/markers_api.html Matplotlib linestyles: https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html  import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3) austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)  # Create a figure and an array of axes: 2 rows, 1 column with shared y axis fig, ax = plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/histplot/" >Make comnparison histograms</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv('summer2016.csv', index_col=0) mens_rowing = summer2016[summer2016['Sport'] == 'Rowing'] mens_gymnastics = summer2016[summer2016['Sport'] == 'Gymnastics']  fig, ax = plt.subplots() # Plot a histogram of &quot;Weight&quot; for mens_rowing ax.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/stackplot/" >Make stacked bar plot</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd medals = pd.read_csv('medals_by_country_2016.csv', index_col=0)  fig, ax = plt.subplots() # Add bars for &quot;Gold&quot; with the label &quot;Gold&quot; ax.bar(medals.index, medals['Gold'], label='Gold') # Stack bars for &quot;Silver&quot; on top with label &quot;Silver&quot; ax.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/errorsplot/" >Show errors in bar, plot, and boxplot</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv('summer2016.csv', index_col=0) mens_rowing = summer2016[summer2016['Sport'] == 'Rowing'] mens_gymnastics = summer2016[summer2016['Sport'] == 'Gymnastics'] seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicplot/" >Test plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np import matplotlib.pyplot as plt  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/sameplot/" >Two differnt y-axes in same plot</a></h2>
-      <div class="article-style">
-        
-          Annotations: https://matplotlib.org/3.3.0/tutorials/text/annotations.html  import matplotlib.pyplot as plt import pandas as pd climate_change = pd.read_csv('climate_change.csv', parse_dates=['date'], index_col='date') seventies = climate_change['1970-01-01':'1979-12-31']  # Define a function called plot_timeseries def plot_timeseries(axes, x, y, color, xlabel, ylabel): # Plot the inputs x,y in the provided color axes.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
+  <pre><code class="language-python">import matplotlib.pyplot as plt
+import pandas as pd
+
+summer2016 = pd.read_csv('summer2016.csv', index_col=0)
+mens_rowing = summer2016[summer2016['Sport'] == 'Rowing']
+mens_gymnastics = summer2016[summer2016['Sport'] == 'Gymnastics']
+
+
+seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11]
+austin_weather = pd.read_csv('austin_weather.csv')
+seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)
+austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)
+</code></pre>
+<h3 id="adding-error-bars-to-a-bar-chart">Adding error-bars to a bar chart</h3>
+<pre><code class="language-python">fig, ax = plt.subplots()
+
+# Add a bar for the rowing &quot;Height&quot; column mean/std
+ax.bar(&quot;Rowing&quot;, mens_rowing['Height'].mean(), yerr=mens_rowing['Height'].std())
+
+# Add a bar for the gymnastics &quot;Height&quot; column mean/std
+ax.bar(&quot;Gymnastics&quot;, mens_gymnastics['Height'].mean(), yerr=mens_gymnastics['Height'].std())
+
+
+# Label the y-axis
+ax.set_ylabel(&quot;Height (cm)&quot;)
+
+plt.show()
+</code></pre>
+<p><img src="errorsplot_3_0.png" alt="png"></p>
+<h3 id="adding-error-bars-to-a-plot">Adding error-bars to a plot</h3>
+<pre><code class="language-python">fig, ax = plt.subplots()
+
+# Add Seattle temperature data in each month with error bars
+ax.errorbar(seattle_weather['MONTH'], seattle_weather['MLY-TAVG-NORMAL'], yerr=seattle_weather['MLY-TAVG-STDDEV'])
+
+# Add Austin temperature data in each month with error bars
+ax.errorbar(austin_weather['MONTH'], austin_weather['MLY-TAVG-NORMAL'], yerr=austin_weather['MLY-TAVG-STDDEV']) 
+
+# Set the y-axis label
+ax.set_ylabel('Temperature (Fahrenheit)')
+
+plt.show()
+</code></pre>
+<p><img src="errorsplot_5_0.png" alt="png"></p>
+<h3 id="creating-boxplots">Creating boxplots</h3>
+<p>Tell us what the median of the distribution is, what the inter-quartile range is and also what the expected range of approximately 99% of the data should be. Outliers beyond this range are particularly highlighted.</p>
+<pre><code class="language-python">fig, ax = plt.subplots()
+
+# Add a boxplot for the &quot;Height&quot; column in the DataFrames
+ax.boxplot([mens_rowing['Height'], mens_gymnastics['Height']])
+
+# Add x-axis tick labels:
+ax.set_xticklabels(['Rowing', 'Gymnastics'])
+
+# Add a y-axis label
+ax.set_ylabel('Height (cm)')
+
+plt.show()
+</code></pre>
+<p><img src="errorsplot_7_0.png" alt="png"></p>
+<pre><code class="language-python">fig, ax = plt.subplots()
+ax.hist(mens_rowing['Height'], histtype='step', label='Rowing')
+ax.hist(mens_gymnastics['Height'], histtype='step', label='Gymnastics')
+ax.legend()
+plt.show()
+</code></pre>
+<p><img src="errorsplot_8_0.png" alt="png"></p>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 
