@@ -9901,6 +9901,39 @@ EG           Egypt          True            45          EGYPT       5
     </item>
     
     <item>
+      <title>Make stacked bar plot</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/stackplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/stackplot/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+medals = pd.read_csv(&#39;medals_by_country_2016.csv&#39;, index_col=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, ax = plt.subplots()
+
+# Add bars for &amp;quot;Gold&amp;quot; with the label &amp;quot;Gold&amp;quot;
+ax.bar(medals.index, medals[&#39;Gold&#39;], label=&#39;Gold&#39;)
+
+# Stack bars for &amp;quot;Silver&amp;quot; on top with label &amp;quot;Silver&amp;quot;
+ax.bar(medals.index, medals[&#39;Silver&#39;], bottom=medals[&#39;Gold&#39;], label=&#39;Silver&#39;)
+
+# Stack bars for &amp;quot;Bronze&amp;quot; on top of that with label &amp;quot;Bronze&amp;quot;
+ax.bar(medals.index, medals[&#39;Bronze&#39;], bottom=medals[&#39;Gold&#39;]+medals[&#39;Silver&#39;], label=&#39;Bronze&#39;)
+
+# Set the x-axis tick labels to the country names
+ax.set_xticklabels(medals.index, rotation=90)
+
+# Display the legend
+ax.legend()
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;stackplot_2_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Manipulation, indexing, and slicing</title>
       <link>http://othrif.github.io/technical_note/python/basics/strings/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
