@@ -118,6 +118,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/tf-idf/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/sklearn/clustering_hierarchy/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -394,6 +399,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/sklearn/pca_tranf/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/nmf/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -3363,6 +3373,10 @@
   
   <url>
     <loc>http://othrif.github.io/post/my-post/firstjupyter/</loc>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/</loc>
   </url>
   
   <url>

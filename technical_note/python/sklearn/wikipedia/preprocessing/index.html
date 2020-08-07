@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
+import pandas as pd from scipy.sparse import csr_matrix df = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/">
 
   
 
@@ -211,14 +212,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/">
 
   
   
@@ -232,17 +231,21 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/">
   <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
+import pandas as pd from scipy.sparse import csr_matrix df = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    
   
 
   
 
 
+
+  
 
 
   
@@ -552,142 +555,42 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_kmeans/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          from sklearn import datasets iris = datasets.load_iris() data = iris['data'] features = iris['feature_names'] target = iris['target'] target_names = iris['target_names'] # map target labels to species names =&gt; Ground Truth species = target_names[target] print(species)  # Import KMeans from sklearn.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title"></h1>
+    <div class="technical_note_date">
+      <time datetime=" 0001-01-01T00:00:00Z ">Jan 1, 0001</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_tsne/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          t-SNE = “t-distributed stochastic neighbor embedding” Maps samples to 2D space (or 3D) only has fit_transform method, have to repeat everytime Try learning_rate between 50 and 200  Iris dataset from sklearn import datasets iris = datasets.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/pca_tranf/" >Dimension reduction with PCA transformation</a></h2>
-      <div class="article-style">
-        
-          PCA: Principle Component Analysis: step1 &gt; decorrelation, step2 &gt; reduce dimension
-1- Decorrelation:
- Rotates data samples to be aligned with axes mean ~ 0  Decorrelation import pandas as pd import numpy as np df = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/nmf/" >Dimensionality reduction with NMF and recommender system</a></h2>
-      <div class="article-style">
-        
-          NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/regression/" >Regression and classification in Scikit-Learn</a></h2>
-      <div class="article-style">
-        
-          Linear regression make predictions, visualize the model fit, and analyze the formula used to generate your fit.
-import pandas as pd import matplotlib.pyplot as plt weather = pd.read_csv('weatherAUS.csv')  Prepare your data Do I have any null values in my dataset
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/wikipedia/preprocessing/" ></a></h2>
-      <div class="article-style">
-        
-          To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
-import pandas as pd from scipy.sparse import csr_matrix df = pd.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
+  <p>To preprocess <code>wikipedia-vectors.csv</code> into the format in which you used it in the exercises, you have to take its transpose:</p>
+<pre><code class="language-{python}">import pandas as pd
+from scipy.sparse import csr_matrix
 
+df = pd.read_csv('wikipedia-vectors.csv', index_col=0)
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+</code></pre>
+<p>The reason for taking this transpose is that without it, there would be 13,000 columns (corresponding to the 13,000 words in the file), which is a lot of columns for a CSV to have.</p>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

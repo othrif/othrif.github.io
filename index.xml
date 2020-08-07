@@ -242,6 +242,144 @@ np_mat * 2
     </item>
     
     <item>
+      <title>A tf-idf word-frequency array and mining Wikipedia</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/tf-idf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/tf-idf/</guid>
+      <description>&lt;p&gt;tf–idf or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.&lt;/p&gt;
+&lt;h3 id=&#34;tfidfvectorizer&#34;&gt;TfidfVectorizer&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;TfidfVectorizer&lt;/code&gt; from sklearn. It transforms a list of documents into a word frequency array, which it outputs as a csr_matrix. It has fit() and transform() methods like other sklearn objects.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;documents = [&#39;cats say meow&#39;, &#39;dogs say woof&#39;, &#39;dogs chase cats&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+# Create a TfidfVectorizer: tfidf
+tfidf = TfidfVectorizer() 
+
+# Apply fit_transform to document: csr_mat
+csr_mat = tfidf.fit_transform(documents)
+
+# Print result of toarray() method
+print(csr_mat.toarray())
+
+# Get the words: words
+words = tfidf.get_feature_names()
+
+# Print words
+print(words)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[[0.51785612 0.         0.         0.68091856 0.51785612 0.        ]
+ [0.         0.         0.51785612 0.         0.51785612 0.68091856]
+ [0.51785612 0.68091856 0.51785612 0.         0.         0.        ]]
+[&#39;cats&#39;, &#39;chase&#39;, &#39;dogs&#39;, &#39;meow&#39;, &#39;say&#39;, &#39;woof&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;mining-wikipedia&#34;&gt;Mining Wikipedia&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from scipy.sparse import csr_matrix
+
+df = pd.read_csv(&#39;wikipedia/wikipedia-vectors.csv&#39;, index_col=0)
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.decomposition import TruncatedSVD
+from sklearn.cluster import KMeans
+from sklearn.pipeline import make_pipeline
+
+# Create a TruncatedSVD instance: svd
+svd = TruncatedSVD(n_components=50)
+
+# Create a KMeans instance: kmeans
+kmeans = KMeans(n_clusters=6)
+
+# Create a pipeline: pipeline
+pipeline = make_pipeline(svd, kmeans)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Fit the pipeline to articles
+pipeline.fit(articles)
+
+# Calculate the cluster labels: labels
+labels = pipeline.predict(articles)
+
+# Create a DataFrame aligning labels and titles: df
+df = pd.DataFrame({&#39;label&#39;: labels, &#39;article&#39;: titles})
+
+# Display df sorted by cluster label
+print(df.sort_values(&#39;label&#39;))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;    label                                        article
+59      0                                    Adam Levine
+50      0                                   Chad Kroeger
+51      0                                     Nate Ruess
+52      0                                     The Wanted
+53      0                                   Stevie Nicks
+58      0                                         Sepsis
+55      0                                  Black Sabbath
+56      0                                       Skrillex
+57      0                          Red Hot Chili Peppers
+54      0                                 Arctic Monkeys
+21      1                             Michael Fassbender
+28      1                                  Anne Hathaway
+27      1                                 Dakota Fanning
+26      1                                     Mila Kunis
+25      1                                  Russell Crowe
+24      1                                   Jessica Biel
+23      1                           Catherine Zeta-Jones
+22      1                              Denzel Washington
+20      1                                 Angelina Jolie
+29      1                               Jennifer Aniston
+0       2                                       HTTP 404
+1       2                                 Alexa Internet
+2       2                              Internet Explorer
+3       2                                    HTTP cookie
+4       2                                  Google Search
+5       2                                         Tumblr
+6       2                    Hypertext Transfer Protocol
+7       2                                  Social search
+8       2                                        Firefox
+9       2                                       LinkedIn
+38      3                                         Neymar
+37      3                                       Football
+36      3              2014 FIFA World Cup qualification
+35      3                Colombia national football team
+39      3                                  Franck Ribéry
+33      3                                 Radamel Falcao
+32      3                                   Arsenal F.C.
+31      3                              Cristiano Ronaldo
+30      3                  France national football team
+34      3                             Zlatan Ibrahimović
+49      4                                       Lymphoma
+48      4                                     Gabapentin
+46      4                                     Prednisone
+45      4                                    Hepatitis C
+47      4                                          Fever
+43      4                                       Leukemia
+42      4                                    Doxycycline
+41      4                                    Hepatitis B
+40      4                                    Tonsillitis
+44      4                                           Gout
+19      5  2007 United Nations Climate Change Conference
+10      5                                 Global warming
+11      5       Nationally Appropriate Mitigation Action
+12      5                                   Nigel Lawson
+13      5                               Connie Hedegaard
+14      5                                 Climate change
+15      5                                 Kyoto Protocol
+16      5                                        350.org
+17      5  Greenhouse gas emissions by the United States
+18      5  2010 United Nations Climate Change Conference
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Agglomerative Hiearchial clustering with scipy</title>
       <link>http://othrif.github.io/technical_note/python/sklearn/clustering_hierarchy/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -5943,13 +6081,12 @@ print(new_fellowship)
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/sklearn/pca_tranf/</guid>
       <description>&lt;p&gt;PCA: Principle Component Analysis: step1 &amp;gt; decorrelation, step2 &amp;gt; reduce dimension&lt;/p&gt;
-&lt;p&gt;Principle component: direction in which the sample varies the most&lt;/p&gt;
 &lt;p&gt;1- Decorrelation:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Rotates data samples to be aligned with axes&lt;/li&gt;
 &lt;li&gt;mean ~ 0&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;iris-dataset&#34;&gt;Iris dataset&lt;/h3&gt;
+&lt;h3 id=&#34;decorrelation&#34;&gt;Decorrelation&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import numpy as np
 df = pd.read_csv(&#39;Grains/seeds-width-vs-length.csv&#39;, header=None)
@@ -6008,6 +6145,272 @@ print(f&#39;Pearson Correlation after-PCA: {correlation}&#39;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;pca_tranf_5_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Pearson Correlation after-PCA: 2.5478751053409354e-17
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;principal-component-visualized&#34;&gt;Principal component visualized&lt;/h3&gt;
+&lt;p&gt;Principle component: direction in which the sample varies the most&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Make a scatter plot of the untransformed points
+plt.scatter(grains[:,0], grains[:,1])
+
+# Create a PCA instance: model
+model = PCA()
+
+# Fit model to points
+model.fit(grains)
+
+# Get the mean of the grain samples: mean
+mean = model.mean_
+
+# Get the first principal component: first_pc
+first_pc = model.components_[0,:]
+
+# Plot first_pc as an arrow, starting at mean
+plt.arrow(mean[0], mean[1], first_pc[0], first_pc[1], color=&#39;red&#39;, width=0.02)
+
+# Keep axes on same scale
+plt.axis(&#39;equal&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;pca_tranf_7_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;intrinsic-dimension&#34;&gt;Intrinsic dimension&lt;/h3&gt;
+&lt;p&gt;Intrinsic dimension = number of PCA features with significant variance&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;fish.csv&#39;, header=None) # prevent first row from becoming header
+samples = df.iloc[:,1:].to_numpy()
+species = df.iloc[:,0].to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+import matplotlib.pyplot as plt
+
+# Create scaler: scaler
+scaler = StandardScaler()
+
+# Create a PCA instance: pca
+pca = PCA()
+
+# Create pipeline: pipeline
+pipeline = make_pipeline(scaler, pca)
+
+# Fit the pipeline to &#39;samples&#39;
+pipeline.fit(samples)
+
+# Plot the explained variances
+features = range(pca.n_components_)
+plt.bar(features, pca.explained_variance_)
+plt.xlabel(&#39;PCA feature&#39;)
+plt.ylabel(&#39;variance&#39;)
+plt.xticks(features)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;pca_tranf_10_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Since PCA features 0 and 1 have significant variance, the intrinsic dimension of this dataset appears to be 2.&lt;/p&gt;
+&lt;h3 id=&#34;dimension-reduction&#34;&gt;Dimension reduction&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+scaler.fit(samples)
+scaled_samples = scaler.transform(samples)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(f&#39;Shape of data pre-pca: {scaled_samples.shape}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Shape of data (85, 6)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import PCA
+from sklearn.decomposition import PCA
+
+# Create a PCA model with 2 components: pca
+pca = PCA(n_components=2)
+
+# Fit the PCA instance to the scaled samples
+pca.fit(scaled_samples)
+
+# Transform the scaled samples: pca_features
+pca_features = pca.transform(scaled_samples)
+
+# Print the shape of pca_features
+print(f&#39;Shape of data  post-pca:{pca_features.shape}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Shape of data  post-pca:(85, 2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.scatter(pca_features[:,0], pca_features[:,1])
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;pca_tranf_16_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dimensionality reduction with NMF and recommender system</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/nmf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/nmf/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;NMF = &amp;ldquo;non-negative matrix factorization&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Dimension reduction technique&lt;/li&gt;
+&lt;li&gt;NMF models are interpretable (unlike PCA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;nmf-applied-to-wikipedia-articles&#34;&gt;NMF applied to Wikipedia articles&lt;/h3&gt;
+&lt;p&gt;apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix &lt;code&gt;articles&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from scipy.sparse import csr_matrix
+
+df = pd.read_csv(&#39;wikipedia/wikipedia-vectors.csv&#39;, index_col=0)
+words = [x.strip(&#39;\n&#39;).split(&#39; &#39;)[0] for x in open(&#39;wikipedia/wikipedia-vocabulary-utf8.txt&#39;).readlines()]
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import NMF
+from sklearn.decomposition import NMF
+
+# Create an NMF instance: model
+model = NMF(n_components=6)
+
+# Fit the model to articles
+model.fit(articles)
+
+# Transform the articles: nmf_features
+nmf_features = model.transform(articles)
+
+# Print the NMF features
+print(articles.shape)
+print(nmf_features.shape)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(60, 13125)
+(60, 6)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Create a pandas DataFrame: df
+df = pd.DataFrame(nmf_features, index=titles)
+
+# Print the row for &#39;Anne Hathaway&#39;
+print(df.loc[&#39;Anne Hathaway&#39;])
+
+# Print the row for &#39;Denzel Washington&#39;
+print(df.loc[&#39;Denzel Washington&#39;])
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;0    0.003846
+1    0.000000
+2    0.000000
+3    0.575663
+4    0.000000
+5    0.000000
+Name: Anne Hathaway, dtype: float64
+0    0.000000
+1    0.005601
+2    0.000000
+3    0.422345
+4    0.000000
+5    0.000000
+Name: Denzel Washington, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The NMF feature 3 has by far the highest value. This means that both articles are reconstructed using mainly the 3rd NMF component.&lt;/p&gt;
+&lt;h4 id=&#34;nmf-learns-topics-of-documents&#34;&gt;NMF learns topics of documents&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Create a DataFrame: components_df
+components_df = pd.DataFrame(model.components_, columns=words)
+
+# Print the shape of the DataFrame
+print(components_df.shape)
+
+# Select row 3: component
+component = components_df.iloc[3,:]
+
+# Print result of nlargest
+print(component.nlargest())
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(6, 13125)
+film       0.627908
+award      0.253144
+starred    0.245297
+role       0.211462
+actress    0.186407
+Name: 3, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Take a moment to recognise the topics that the articles about Anne Hathaway and Denzel Washington have in common!&lt;/p&gt;
+&lt;h3 id=&#34;recommender-system-which-articles-are-similar-to-cristiano-ronaldo&#34;&gt;Recommender system: which articles are similar to &amp;lsquo;Cristiano Ronaldo&amp;rsquo;?&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+import pandas as pd
+from sklearn.preprocessing import normalize
+
+# Normalize the NMF features: norm_features
+norm_features = normalize(nmf_features)
+
+# Create a DataFrame: df
+df = pd.DataFrame(norm_features, index=titles)
+
+# Select the row corresponding to &#39;Cristiano Ronaldo&#39;: article
+article = df.loc[&#39;Cristiano Ronaldo&#39;]
+
+# Compute the dot products: similarities
+similarities = df.dot(article)
+
+# Display those with the largest cosine similarity
+print(similarities.nlargest())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Cristiano Ronaldo                1.000000
+Franck Ribéry                    0.999972
+Radamel Falcao                   0.999942
+Zlatan Ibrahimović               0.999942
+France national football team    0.999923
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;led-digits-dataset&#34;&gt;LED digits dataset&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from matplotlib import pyplot as plt
+
+samples = pd.read_csv(&#39;lcd-digits.csv&#39;, header=None ).to_numpy()
+
+def show_as_image(sample):
+    bitmap = sample.reshape((13, 8))
+    plt.figure()
+    plt.imshow(bitmap, cmap=&#39;gray&#39;, interpolation=&#39;nearest&#39;)
+    plt.colorbar()
+    plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;digit = samples[0,:]
+show_as_image(digit)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_14_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nmf-learns-the-parts-of-images&#34;&gt;NMF learns the parts of images&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import NMF
+from sklearn.decomposition import NMF
+
+# Create an NMF model: model
+model = NMF(n_components = 7) #7 is the number of cells in an LED display
+
+# Apply fit_transform to samples: features
+features = model.fit_transform(samples)
+
+# Call show_as_image on each component
+for component in model.components_:
+    show_as_image(component)
+
+# Assign the 0th row of features: digit_features
+digit_features = features[0,:]
+
+# Print digit_features
+print(digit_features)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_2.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_3.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_4.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_5.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;nmf_16_6.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[4.76823559e-01 0.00000000e+00 0.00000000e+00 5.90605054e-01
+ 4.81559442e-01 0.00000000e+00 7.37557191e-16]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Take a moment to look through the plots and notice how NMF has expressed the digit as a sum of the components!
+7 = 0.47 * feature1 + 0.59 * feature4 + 0.48 * feature5&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -20928,6 +21331,23 @@ zero_to_1
       <guid>http://othrif.github.io/post/my-post/firstjupyter/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&#39;First Jupyter notebook!&#39;)
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/wikipedia/preprocessing/</guid>
+      <description>&lt;p&gt;To preprocess &lt;code&gt;wikipedia-vectors.csv&lt;/code&gt; into the format in which you used it in the exercises, you have to take its transpose:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{python}&#34;&gt;import pandas as pd
+from scipy.sparse import csr_matrix
+
+df = pd.read_csv(&#39;wikipedia-vectors.csv&#39;, index_col=0)
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The reason for taking this transpose is that without it, there would be 13,000 columns (corresponding to the 13,000 words in the file), which is a lot of columns for a CSV to have.&lt;/p&gt;
 </description>
     </item>
     

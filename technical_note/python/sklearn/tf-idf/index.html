@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="tf–idf or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/tf-idf/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/tf-idf/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/tf-idf/">
+  <meta property="og:title" content="A tf-idf word-frequency array and mining Wikipedia | Othmane Rifki">
+  <meta property="og:description" content="tf–idf or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>A tf-idf word-frequency array and mining Wikipedia | Othmane Rifki</title>
 
 </head>
 
@@ -552,142 +555,163 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">A tf-idf word-frequency array and mining Wikipedia</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <p>tf–idf or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus.</p>
+<h3 id="tfidfvectorizer">TfidfVectorizer</h3>
+<p><code>TfidfVectorizer</code> from sklearn. It transforms a list of documents into a word frequency array, which it outputs as a csr_matrix. It has fit() and transform() methods like other sklearn objects.</p>
+<pre><code class="language-python">documents = ['cats say meow', 'dogs say woof', 'dogs chase cats']
+</code></pre>
+<pre><code class="language-python"># Import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 
+# Create a TfidfVectorizer: tfidf
+tfidf = TfidfVectorizer() 
 
+# Apply fit_transform to document: csr_mat
+csr_mat = tfidf.fit_transform(documents)
 
-  
+# Print result of toarray() method
+print(csr_mat.toarray())
 
+# Get the words: words
+words = tfidf.get_feature_names()
 
+# Print words
+print(words)
 
+</code></pre>
+<pre><code>[[0.51785612 0.         0.         0.68091856 0.51785612 0.        ]
+ [0.         0.         0.51785612 0.         0.51785612 0.68091856]
+ [0.51785612 0.68091856 0.51785612 0.         0.         0.        ]]
+['cats', 'chase', 'dogs', 'meow', 'say', 'woof']
+</code></pre>
+<h3 id="mining-wikipedia">Mining Wikipedia</h3>
+<pre><code class="language-python">import pandas as pd
+from scipy.sparse import csr_matrix
 
+df = pd.read_csv('wikipedia/wikipedia-vectors.csv', index_col=0)
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+</code></pre>
+<pre><code class="language-python"># Perform the necessary imports
+from sklearn.decomposition import TruncatedSVD
+from sklearn.cluster import KMeans
+from sklearn.pipeline import make_pipeline
 
+# Create a TruncatedSVD instance: svd
+svd = TruncatedSVD(n_components=50)
 
+# Create a KMeans instance: kmeans
+kmeans = KMeans(n_clusters=6)
 
-  
+# Create a pipeline: pipeline
+pipeline = make_pipeline(svd, kmeans)
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+</code></pre>
+<pre><code class="language-python"># Import pandas
+import pandas as pd
 
-  
+# Fit the pipeline to articles
+pipeline.fit(articles)
 
-  
+# Calculate the cluster labels: labels
+labels = pipeline.predict(articles)
+
+# Create a DataFrame aligning labels and titles: df
+df = pd.DataFrame({'label': labels, 'article': titles})
+
+# Display df sorted by cluster label
+print(df.sort_values('label'))
+
+</code></pre>
+<pre><code>    label                                        article
+59      0                                    Adam Levine
+50      0                                   Chad Kroeger
+51      0                                     Nate Ruess
+52      0                                     The Wanted
+53      0                                   Stevie Nicks
+58      0                                         Sepsis
+55      0                                  Black Sabbath
+56      0                                       Skrillex
+57      0                          Red Hot Chili Peppers
+54      0                                 Arctic Monkeys
+21      1                             Michael Fassbender
+28      1                                  Anne Hathaway
+27      1                                 Dakota Fanning
+26      1                                     Mila Kunis
+25      1                                  Russell Crowe
+24      1                                   Jessica Biel
+23      1                           Catherine Zeta-Jones
+22      1                              Denzel Washington
+20      1                                 Angelina Jolie
+29      1                               Jennifer Aniston
+0       2                                       HTTP 404
+1       2                                 Alexa Internet
+2       2                              Internet Explorer
+3       2                                    HTTP cookie
+4       2                                  Google Search
+5       2                                         Tumblr
+6       2                    Hypertext Transfer Protocol
+7       2                                  Social search
+8       2                                        Firefox
+9       2                                       LinkedIn
+38      3                                         Neymar
+37      3                                       Football
+36      3              2014 FIFA World Cup qualification
+35      3                Colombia national football team
+39      3                                  Franck Ribéry
+33      3                                 Radamel Falcao
+32      3                                   Arsenal F.C.
+31      3                              Cristiano Ronaldo
+30      3                  France national football team
+34      3                             Zlatan Ibrahimović
+49      4                                       Lymphoma
+48      4                                     Gabapentin
+46      4                                     Prednisone
+45      4                                    Hepatitis C
+47      4                                          Fever
+43      4                                       Leukemia
+42      4                                    Doxycycline
+41      4                                    Hepatitis B
+40      4                                    Tonsillitis
+44      4                                           Gout
+19      5  2007 United Nations Climate Change Conference
+10      5                                 Global warming
+11      5       Nationally Appropriate Mitigation Action
+12      5                                   Nigel Lawson
+13      5                               Connie Hedegaard
+14      5                                 Climate change
+15      5                                 Kyoto Protocol
+16      5                                        350.org
+17      5  Greenhouse gas emissions by the United States
+18      5  2010 United Nations Climate Change Conference
+</code></pre>
+
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
 
 
 
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_kmeans/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          from sklearn import datasets iris = datasets.load_iris() data = iris['data'] features = iris['feature_names'] target = iris['target'] target_names = iris['target_names'] # map target labels to species names =&gt; Ground Truth species = target_names[target] print(species)  # Import KMeans from sklearn.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_tsne/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          t-SNE = “t-distributed stochastic neighbor embedding” Maps samples to 2D space (or 3D) only has fit_transform method, have to repeat everytime Try learning_rate between 50 and 200  Iris dataset from sklearn import datasets iris = datasets.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/pca_tranf/" >Dimension reduction with PCA transformation</a></h2>
-      <div class="article-style">
-        
-          PCA: Principle Component Analysis: step1 &gt; decorrelation, step2 &gt; reduce dimension
-1- Decorrelation:
- Rotates data samples to be aligned with axes mean ~ 0  Decorrelation import pandas as pd import numpy as np df = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/nmf/" >Dimensionality reduction with NMF and recommender system</a></h2>
-      <div class="article-style">
-        
-          NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/regression/" >Regression and classification in Scikit-Learn</a></h2>
-      <div class="article-style">
-        
-          Linear regression make predictions, visualize the model fit, and analyze the formula used to generate your fit.
-import pandas as pd import matplotlib.pyplot as plt weather = pd.read_csv('weatherAUS.csv')  Prepare your data Do I have any null values in my dataset
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/wikipedia/preprocessing/" ></a></h2>
-      <div class="article-style">
-        
-          To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
-import pandas as pd from scipy.sparse import csr_matrix df = pd.
-        
-      </div>
-    </div>
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
-
-</div>
 
       
 

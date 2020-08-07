@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/nmf/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/nmf/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/nmf/">
+  <meta property="og:title" content="Dimensionality reduction with NMF and recommender system | Othmane Rifki">
+  <meta property="og:description" content="NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Dimensionality reduction with NMF and recommender system | Othmane Rifki</title>
 
 </head>
 
@@ -552,142 +555,200 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Dimensionality reduction with NMF and recommender system</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <ul>
+<li>NMF = &ldquo;non-negative matrix factorization&rdquo;</li>
+<li>Dimension reduction technique</li>
+<li>NMF models are interpretable (unlike PCA)</li>
+</ul>
+<h3 id="nmf-applied-to-wikipedia-articles">NMF applied to Wikipedia articles</h3>
+<p>apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix <code>articles</code></p>
+<pre><code class="language-python">import pandas as pd
+from scipy.sparse import csr_matrix
 
+df = pd.read_csv('wikipedia/wikipedia-vectors.csv', index_col=0)
+words = [x.strip('\n').split(' ')[0] for x in open('wikipedia/wikipedia-vocabulary-utf8.txt').readlines()]
+articles = csr_matrix(df.transpose())
+titles = list(df.columns)
+</code></pre>
+<pre><code class="language-python"># Import NMF
+from sklearn.decomposition import NMF
 
+# Create an NMF instance: model
+model = NMF(n_components=6)
 
-  
+# Fit the model to articles
+model.fit(articles)
 
+# Transform the articles: nmf_features
+nmf_features = model.transform(articles)
 
+# Print the NMF features
+print(articles.shape)
+print(nmf_features.shape)
+</code></pre>
+<pre><code>(60, 13125)
+(60, 6)
+</code></pre>
+<pre><code class="language-python"># Import pandas
+import pandas as pd
 
+# Create a pandas DataFrame: df
+df = pd.DataFrame(nmf_features, index=titles)
 
+# Print the row for 'Anne Hathaway'
+print(df.loc['Anne Hathaway'])
 
+# Print the row for 'Denzel Washington'
+print(df.loc['Denzel Washington'])
 
+</code></pre>
+<pre><code>0    0.003846
+1    0.000000
+2    0.000000
+3    0.575663
+4    0.000000
+5    0.000000
+Name: Anne Hathaway, dtype: float64
+0    0.000000
+1    0.005601
+2    0.000000
+3    0.422345
+4    0.000000
+5    0.000000
+Name: Denzel Washington, dtype: float64
+</code></pre>
+<p>The NMF feature 3 has by far the highest value. This means that both articles are reconstructed using mainly the 3rd NMF component.</p>
+<h4 id="nmf-learns-topics-of-documents">NMF learns topics of documents</h4>
+<pre><code class="language-python"># Import pandas
+import pandas as pd
 
-  
+# Create a DataFrame: components_df
+components_df = pd.DataFrame(model.components_, columns=words)
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+# Print the shape of the DataFrame
+print(components_df.shape)
 
-  
+# Select row 3: component
+component = components_df.iloc[3,:]
 
-  
+# Print result of nlargest
+print(component.nlargest())
+
+</code></pre>
+<pre><code>(6, 13125)
+film       0.627908
+award      0.253144
+starred    0.245297
+role       0.211462
+actress    0.186407
+Name: 3, dtype: float64
+</code></pre>
+<p>Take a moment to recognise the topics that the articles about Anne Hathaway and Denzel Washington have in common!</p>
+<h3 id="recommender-system-which-articles-are-similar-to-cristiano-ronaldo">Recommender system: which articles are similar to &lsquo;Cristiano Ronaldo&rsquo;?</h3>
+<pre><code class="language-python"># Perform the necessary imports
+import pandas as pd
+from sklearn.preprocessing import normalize
+
+# Normalize the NMF features: norm_features
+norm_features = normalize(nmf_features)
+
+# Create a DataFrame: df
+df = pd.DataFrame(norm_features, index=titles)
+
+# Select the row corresponding to 'Cristiano Ronaldo': article
+article = df.loc['Cristiano Ronaldo']
+
+# Compute the dot products: similarities
+similarities = df.dot(article)
+
+# Display those with the largest cosine similarity
+print(similarities.nlargest())
+</code></pre>
+<pre><code>Cristiano Ronaldo                1.000000
+Franck Ribéry                    0.999972
+Radamel Falcao                   0.999942
+Zlatan Ibrahimović               0.999942
+France national football team    0.999923
+dtype: float64
+</code></pre>
+<h3 id="led-digits-dataset">LED digits dataset</h3>
+<pre><code class="language-python">import pandas as pd
+from matplotlib import pyplot as plt
+
+samples = pd.read_csv('lcd-digits.csv', header=None ).to_numpy()
+
+def show_as_image(sample):
+    bitmap = sample.reshape((13, 8))
+    plt.figure()
+    plt.imshow(bitmap, cmap='gray', interpolation='nearest')
+    plt.colorbar()
+    plt.show()
+</code></pre>
+<pre><code class="language-python">digit = samples[0,:]
+show_as_image(digit)
+</code></pre>
+<p><img src="nmf_14_0.png" alt="png"></p>
+<h3 id="nmf-learns-the-parts-of-images">NMF learns the parts of images</h3>
+<pre><code class="language-python"># Import NMF
+from sklearn.decomposition import NMF
+
+# Create an NMF model: model
+model = NMF(n_components = 7) #7 is the number of cells in an LED display
+
+# Apply fit_transform to samples: features
+features = model.fit_transform(samples)
+
+# Call show_as_image on each component
+for component in model.components_:
+    show_as_image(component)
+
+# Assign the 0th row of features: digit_features
+digit_features = features[0,:]
+
+# Print digit_features
+print(digit_features)
+</code></pre>
+<p><img src="nmf_16_0.png" alt="png"></p>
+<p><img src="nmf_16_1.png" alt="png"></p>
+<p><img src="nmf_16_2.png" alt="png"></p>
+<p><img src="nmf_16_3.png" alt="png"></p>
+<p><img src="nmf_16_4.png" alt="png"></p>
+<p><img src="nmf_16_5.png" alt="png"></p>
+<p><img src="nmf_16_6.png" alt="png"></p>
+<pre><code>[4.76823559e-01 0.00000000e+00 0.00000000e+00 5.90605054e-01
+ 4.81559442e-01 0.00000000e+00 7.37557191e-16]
+</code></pre>
+<p>Take a moment to look through the plots and notice how NMF has expressed the digit as a sum of the components!
+7 = 0.47 * feature1 + 0.59 * feature4 + 0.48 * feature5</p>
+<pre><code class="language-python">
+</code></pre>
+
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
 
 
 
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_kmeans/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          from sklearn import datasets iris = datasets.load_iris() data = iris['data'] features = iris['feature_names'] target = iris['target'] target_names = iris['target_names'] # map target labels to species names =&gt; Ground Truth species = target_names[target] print(species)  # Import KMeans from sklearn.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_tsne/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          t-SNE = “t-distributed stochastic neighbor embedding” Maps samples to 2D space (or 3D) only has fit_transform method, have to repeat everytime Try learning_rate between 50 and 200  Iris dataset from sklearn import datasets iris = datasets.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/pca_tranf/" >Dimension reduction with PCA transformation</a></h2>
-      <div class="article-style">
-        
-          PCA: Principle Component Analysis: step1 &gt; decorrelation, step2 &gt; reduce dimension
-1- Decorrelation:
- Rotates data samples to be aligned with axes mean ~ 0  Decorrelation import pandas as pd import numpy as np df = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/nmf/" >Dimensionality reduction with NMF and recommender system</a></h2>
-      <div class="article-style">
-        
-          NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/regression/" >Regression and classification in Scikit-Learn</a></h2>
-      <div class="article-style">
-        
-          Linear regression make predictions, visualize the model fit, and analyze the formula used to generate your fit.
-import pandas as pd import matplotlib.pyplot as plt weather = pd.read_csv('weatherAUS.csv')  Prepare your data Do I have any null values in my dataset
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/wikipedia/preprocessing/" ></a></h2>
-      <div class="article-style">
-        
-          To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
-import pandas as pd from scipy.sparse import csr_matrix df = pd.
-        
-      </div>
-    </div>
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
-
-</div>
 
       
 
