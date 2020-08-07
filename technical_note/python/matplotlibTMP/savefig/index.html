@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11] austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;) seattle_weather[&#39;MONTH&#39;] = pd.to_datetime(seattle_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3) austin_weather[&#39;MONTH&#39;] = pd.to_datetime(austin_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)  plt.style.use(&#39;ggplot&#39;) fig, ax = plt.subplots() # Add Seattle temperature data in each month with error bars ax.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/matplotlibtmp/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/">
+  <meta property="og:title" content="Save figure | Othmane Rifki">
+  <meta property="og:description" content="import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11] austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;) seattle_weather[&#39;MONTH&#39;] = pd.to_datetime(seattle_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3) austin_weather[&#39;MONTH&#39;] = pd.to_datetime(austin_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)  plt.style.use(&#39;ggplot&#39;) fig, ax = plt.subplots() # Add Seattle temperature data in each month with error bars ax."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Save figure | Othmane Rifki</title>
 
 </head>
 
@@ -552,176 +555,75 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/automateplot/" >Automate visuzliation with unique()</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd summer_2016_medals = pd.read_csv('summer2016.csv', index_col=0)  Unique values of a column # Extract the &quot;Sport&quot; column sports_column = summer_2016_medals['Sport'] # Find the unique values of the &quot;Sport&quot; column sports = sports_column.
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Save figure</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicplot/" >Basic plotting</a></h2>
-      <div class="article-style">
-        
-          Useful links:  Gallery of example plots: https://matplotlib.org/3.1.1/gallery/index.html visualizing images: https://matplotlib.org/3.1.1/tutorials/introductory/images.html Animations: https://matplotlib.org/3.1.1/api/animation_api.html Geospatial data: https://scitools.org.uk/cartopy/docs/v0.15/matplotlib/intro.html Statistical visualization (Pandas + Matplotlib): https://seaborn.pydata.org/examples/index.html  import numpy as np import matplotlib.pyplot as plt  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/basicsplot/" >Basics of plotting</a></h2>
-      <div class="article-style">
-        
-          import numpy as np  Line plot x = [1, 2, 3, 4,10] y = [10, 15, 17, 20,30] plt.plot(x,y) plt.xlabel('x-label') plt.ylabel('y-label') plt.title('My Title') plt.yticks([0,5,10,15,20,25,30,40], ['zero', 'five', 'ten', 'fifteen', 'twenty', 'twenty five', 'thirty', 'fourty']) plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/plotstyle/" >Choosing a style</a></h2>
-      <div class="article-style">
-        
-          Available styles: https://matplotlib.org/gallery/style_sheets/style_sheets_reference.html  import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3) austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)  def plot_style(style='default'): plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/ax_fig/" >Customize plots with ax and fig</a></h2>
-      <div class="article-style">
-        
-          Matplotlib markers: https://matplotlib.org/api/markers_api.html Matplotlib linestyles: https://matplotlib.org/3.1.0/gallery/lines_bars_and_markers/linestyles.html  import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3) austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)  # Create a figure and an array of axes: 2 rows, 1 column with shared y axis fig, ax = plt.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/histplot/" >Make comnparison histograms</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv('summer2016.csv', index_col=0) mens_rowing = summer2016[summer2016['Sport'] == 'Rowing'] mens_gymnastics = summer2016[summer2016['Sport'] == 'Gymnastics']  fig, ax = plt.subplots() # Plot a histogram of &quot;Weight&quot; for mens_rowing ax.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/stackplot/" >Make stacked bar plot</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd medals = pd.read_csv('medals_by_country_2016.csv', index_col=0)  fig, ax = plt.subplots() # Add bars for &quot;Gold&quot; with the label &quot;Gold&quot; ax.bar(medals.index, medals['Gold'], label='Gold') # Stack bars for &quot;Silver&quot; on top with label &quot;Silver&quot; ax.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/savefig/" >Save figure</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3) austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)  plt.style.use('ggplot') fig, ax = plt.subplots() # Add Seattle temperature data in each month with error bars ax.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/errorsplot/" >Show errors in bar, plot, and boxplot</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd summer2016 = pd.read_csv('summer2016.csv', index_col=0) mens_rowing = summer2016[summer2016['Sport'] == 'Rowing'] mens_gymnastics = summer2016[summer2016['Sport'] == 'Gymnastics'] seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11] austin_weather = pd.read_csv('austin_weather.csv') seattle_weather['MONTH'] = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/matplotlibtmp/scatterplot/" >Show errors in bar, plot, and boxplot</a></h2>
-      <div class="article-style">
-        
-          import matplotlib.pyplot as plt import pandas as pd climate_change = pd.read_csv('climate_change.csv', parse_dates=['date'], index_col='date')  Adding error-bars to a bar chart fig, ax = plt.subplots() # Add data: &quot;co2&quot;, &quot;relative_temp&quot; as x-y, index as color ax.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/matplotlibtmp/page/2/">&raquo;</a></li>
-    
-  </ul>
-</nav>
+  <pre><code class="language-python">import matplotlib.pyplot as plt
+import pandas as pd
 
+seattle_weather = pd.read_csv('seattle_weather.csv').loc[:11]
+austin_weather = pd.read_csv('austin_weather.csv')
+seattle_weather['MONTH'] = pd.to_datetime(seattle_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)
+austin_weather['MONTH'] = pd.to_datetime(austin_weather['DATE'], format='%m').dt.month_name().str.slice(stop=3)
+</code></pre>
+<pre><code class="language-python">plt.style.use('ggplot')
+fig, ax = plt.subplots()
+
+# Add Seattle temperature data in each month with error bars
+ax.errorbar(seattle_weather['MONTH'], seattle_weather['MLY-TAVG-NORMAL'], yerr=seattle_weather['MLY-TAVG-STDDEV'])
+# Add Austin temperature data in each month with error bars
+ax.errorbar(austin_weather['MONTH'], austin_weather['MLY-TAVG-NORMAL'], yerr=austin_weather['MLY-TAVG-STDDEV']) 
+
+# Set the y-axis label
+ax.set_ylabel('Temperature (Fahrenheit)')
+
+# Save to file
+fig.savefig('temp_timeserie.jpg')
+</code></pre>
+<p><img src="savefig_2_0.png" alt="png"></p>
+<pre><code class="language-python">!ls temp_timeserie.jpg
+</code></pre>
+<pre><code>temp_timeserie.jpg
+</code></pre>
+<h3 id="different-file-formats">Different file formats</h3>
+<pre><code class="language-python">fig.savefig('temp_timeserie.jpg', quality=50) # For website, lossy compression, less space and less BW, control quality
+fig.savefig('temp_timeserie.png') # Loss-less compression, high quality, large amount of disk space and large BW
+fig.savefig('temp_timeserie.svg') # vector's graphics card, gib or adobe can edit the figure after being produced
+fig.savefig('temp_timeserie.png', dpi=300) # dots per inch, higher better resolution, larger file size
+</code></pre>
+<pre><code class="language-python">!ls temp_timeserie.*
+</code></pre>
+<pre><code>temp_timeserie.jpg temp_timeserie.png temp_timeserie.svg
+</code></pre>
+<h3 id="control-size">control size</h3>
+<pre><code class="language-python">fig.set_size_inches([5,3]) # [width, height]
+</code></pre>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

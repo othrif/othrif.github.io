@@ -178,6 +178,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/automateplot/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/basicsplot/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -249,6 +259,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/codingproblems/anagram/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/plotstyle/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -753,6 +768,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/computational/secant/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -819,11 +839,6 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/template/</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

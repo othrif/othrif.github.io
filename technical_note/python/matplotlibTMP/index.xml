@@ -13,6 +13,89 @@
     </image>
     
     <item>
+      <title>Automate visuzliation with unique()</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/automateplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/automateplot/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+summer_2016_medals = pd.read_csv(&#39;summer2016.csv&#39;, index_col=0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;unique-values-of-a-column&#34;&gt;Unique values of a column&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Extract the &amp;quot;Sport&amp;quot; column
+sports_column = summer_2016_medals[&#39;Sport&#39;]
+
+# Find the unique values of the &amp;quot;Sport&amp;quot; column
+sports = sports_column.unique()
+
+# Print out the unique sports values
+print(sports)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;Rowing&#39; &#39;Taekwondo&#39; &#39;Handball&#39; &#39;Wrestling&#39; &#39;Gymnastics&#39; &#39;Swimming&#39;
+ &#39;Basketball&#39; &#39;Boxing&#39; &#39;Volleyball&#39; &#39;Athletics&#39; &#39;Rugby Sevens&#39; &#39;Judo&#39;
+ &#39;Rhythmic Gymnastics&#39; &#39;Weightlifting&#39; &#39;Equestrianism&#39; &#39;Badminton&#39;
+ &#39;Water Polo&#39; &#39;Football&#39; &#39;Fencing&#39; &#39;Shooting&#39; &#39;Sailing&#39; &#39;Beach Volleyball&#39;
+ &#39;Canoeing&#39; &#39;Hockey&#39; &#39;Cycling&#39; &#39;Tennis&#39; &#39;Diving&#39; &#39;Table Tennis&#39;
+ &#39;Triathlon&#39; &#39;Archery&#39; &#39;Synchronized Swimming&#39; &#39;Modern Pentathlon&#39;
+ &#39;Trampolining&#39; &#39;Golf&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;automate-plotting&#34;&gt;Automate plotting&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig, ax = plt.subplots()
+
+# Loop over the different sports branches
+for sport in sports:
+  # Extract the rows only for this sport
+  sport_df = summer_2016_medals[summer_2016_medals[&#39;Sport&#39;] == sport]
+  # Add a bar for the &amp;quot;Weight&amp;quot; mean with std y error bar
+  ax.bar(sport, sport_df[&#39;Weight&#39;].mean(), yerr=sport_df[&#39;Weight&#39;].std())
+
+ax.set_ylabel(&amp;quot;Weight&amp;quot;)
+ax.set_xticklabels(sports, rotation=90)
+
+# Save the figure to file
+fig.savefig(&#39;sports_weights.png&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;automateplot_5_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Basic plotting</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</guid>
+      <description>&lt;h3 id=&#34;useful-links&#34;&gt;Useful links:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Gallery of example plots: &lt;a href=&#34;https://matplotlib.org/3.1.1/gallery/index.html&#34;&gt;https://matplotlib.org/3.1.1/gallery/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;visualizing images: &lt;a href=&#34;https://matplotlib.org/3.1.1/tutorials/introductory/images.html&#34;&gt;https://matplotlib.org/3.1.1/tutorials/introductory/images.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Animations: &lt;a href=&#34;https://matplotlib.org/3.1.1/api/animation_api.html&#34;&gt;https://matplotlib.org/3.1.1/api/animation_api.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Geospatial data: &lt;a href=&#34;https://scitools.org.uk/cartopy/docs/v0.15/matplotlib/intro.html&#34;&gt;https://scitools.org.uk/cartopy/docs/v0.15/matplotlib/intro.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Statistical visualization (Pandas + Matplotlib): &lt;a href=&#34;https://seaborn.pydata.org/examples/index.html&#34;&gt;https://seaborn.pydata.org/examples/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import matplotlib.pyplot as plt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;line-plot&#34;&gt;Line plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [1, 2, 3, 4,10]
+y = [10, 15, 17, 20,30]
+plt.plot(x,y)
+
+plt.xlabel(&#39;x-label&#39;)
+plt.ylabel(&#39;y-label&#39;)
+plt.title(&#39;My Title&#39;)
+plt.yticks([0,5,10,15,20,25,30,40],
+          [&#39;zero&#39;, &#39;five&#39;, &#39;ten&#39;, &#39;fifteen&#39;, &#39;twenty&#39;, &#39;twenty five&#39;, &#39;thirty&#39;, &#39;fourty&#39;])
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basicplot_4_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Basics of plotting</title>
       <link>http://othrif.github.io/technical_note/python/matplotlibtmp/basicsplot/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -109,6 +192,64 @@ plt.show()
 &lt;p&gt;&lt;img src=&#34;basicsplot_18_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Choosing a style</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/plotstyle/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/plotstyle/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Available styles: &lt;a href=&#34;https://matplotlib.org/gallery/style_sheets/style_sheets_reference.html&#34;&gt;https://matplotlib.org/gallery/style_sheets/style_sheets_reference.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11]
+austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;)
+seattle_weather[&#39;MONTH&#39;] = pd.to_datetime(seattle_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+austin_weather[&#39;MONTH&#39;] = pd.to_datetime(austin_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def plot_style(style=&#39;default&#39;):
+    plt.style.use(style)
+    fig, ax = plt.subplots()
+
+    # Add Seattle temperature data in each month with error bars
+    ax.errorbar(seattle_weather[&#39;MONTH&#39;], seattle_weather[&#39;MLY-TAVG-NORMAL&#39;], yerr=seattle_weather[&#39;MLY-TAVG-STDDEV&#39;])
+
+    # Add Austin temperature data in each month with error bars
+    ax.errorbar(austin_weather[&#39;MONTH&#39;], austin_weather[&#39;MLY-TAVG-NORMAL&#39;], yerr=austin_weather[&#39;MLY-TAVG-STDDEV&#39;]) 
+    
+    # Set the y-axis label
+    ax.set_ylabel(&#39;Temperature (Fahrenheit)&#39;)
+
+    plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;default&#34;&gt;default&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;default&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_5_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ggplot-r-style&#34;&gt;ggplot R style&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;ggplot&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_7_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;style-bmh&#34;&gt;style: bmh&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;bmh&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;seaborn-colorblind&#34;&gt;seaborn colorblind&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;seaborn-colorblind&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;tableau-colorblind&#34;&gt;tableau colorblind&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;tableau-colorblind10&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_13_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;black-and-white&#34;&gt;black and white&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plot_style(&#39;grayscale&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;plotstyle_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -220,6 +361,56 @@ plt.show()
     </item>
     
     <item>
+      <title>Save figure</title>
+      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+import pandas as pd
+
+seattle_weather = pd.read_csv(&#39;seattle_weather.csv&#39;).loc[:11]
+austin_weather = pd.read_csv(&#39;austin_weather.csv&#39;)
+seattle_weather[&#39;MONTH&#39;] = pd.to_datetime(seattle_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+austin_weather[&#39;MONTH&#39;] = pd.to_datetime(austin_weather[&#39;DATE&#39;], format=&#39;%m&#39;).dt.month_name().str.slice(stop=3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;plt.style.use(&#39;ggplot&#39;)
+fig, ax = plt.subplots()
+
+# Add Seattle temperature data in each month with error bars
+ax.errorbar(seattle_weather[&#39;MONTH&#39;], seattle_weather[&#39;MLY-TAVG-NORMAL&#39;], yerr=seattle_weather[&#39;MLY-TAVG-STDDEV&#39;])
+# Add Austin temperature data in each month with error bars
+ax.errorbar(austin_weather[&#39;MONTH&#39;], austin_weather[&#39;MLY-TAVG-NORMAL&#39;], yerr=austin_weather[&#39;MLY-TAVG-STDDEV&#39;]) 
+
+# Set the y-axis label
+ax.set_ylabel(&#39;Temperature (Fahrenheit)&#39;)
+
+# Save to file
+fig.savefig(&#39;temp_timeserie.jpg&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;savefig_2_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;!ls temp_timeserie.jpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;temp_timeserie.jpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;different-file-formats&#34;&gt;Different file formats&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig.savefig(&#39;temp_timeserie.jpg&#39;, quality=50) # For website, lossy compression, less space and less BW, control quality
+fig.savefig(&#39;temp_timeserie.png&#39;) # Loss-less compression, high quality, large amount of disk space and large BW
+fig.savefig(&#39;temp_timeserie.svg&#39;) # vector&#39;s graphics card, gib or adobe can edit the figure after being produced
+fig.savefig(&#39;temp_timeserie.png&#39;, dpi=300) # dots per inch, higher better resolution, larger file size
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;!ls temp_timeserie.*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;temp_timeserie.jpg temp_timeserie.png temp_timeserie.svg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;control-size&#34;&gt;control size&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig.set_size_inches([5,3]) # [width, height]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Show errors in bar, plot, and boxplot</title>
       <link>http://othrif.github.io/technical_note/python/matplotlibtmp/errorsplot/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -319,33 +510,6 @@ ax.set_ylabel(&#39;Relative temperature (C)&#39;)
 plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;scatterplot_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Test plotting</title>
-      <link>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/matplotlibtmp/basicplot/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
-import matplotlib.pyplot as plt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;line-plot&#34;&gt;Line plot&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = [1, 2, 3, 4,10]
-y = [10, 15, 17, 20,30]
-plt.plot(x,y)
-
-plt.xlabel(&#39;x-label&#39;)
-plt.ylabel(&#39;y-label&#39;)
-plt.title(&#39;My Title&#39;)
-plt.yticks([0,5,10,15,20,25,30,40],
-          [&#39;zero&#39;, &#39;five&#39;, &#39;ten&#39;, &#39;fifteen&#39;, &#39;twenty&#39;, &#39;twenty five&#39;, &#39;thirty&#39;, &#39;fourty&#39;])
-
-plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;basicplot_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
