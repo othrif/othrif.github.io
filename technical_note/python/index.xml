@@ -13,6 +13,87 @@
     </image>
     
     <item>
+      <title>Agglomerative Hiearchial clustering with scipy</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/clustering_hierarchy/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/clustering_hierarchy/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Begin with a seperate cluster, at each step merge the the two closest clusters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+df = pd.read_csv(&#39;Grains/seeds.csv&#39;, header=None)
+df = df.sample(n=50)
+samples = df.iloc[:,:-1].to_numpy()
+labels = df.iloc[:,-1].to_numpy()-1
+label_names = np.array([&#39;Kama wheat&#39;, &#39;Rosa wheat&#39;, &#39;Canadian wheat&#39;])
+varieties = label_names[labels]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from scipy.cluster.hierarchy import linkage, dendrogram
+import matplotlib.pyplot as plt
+
+# Calculate the linkage: mergings
+mergings = linkage(samples, method=&#39;complete&#39;)
+
+# Plot the dendrogram, using varieties as labels
+fig, ax = plt.subplots(figsize=(20,5))
+dendrogram(mergings,
+           labels=varieties,
+           leaf_rotation=90,
+           leaf_font_size=12,
+)
+fig
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_hierarchy_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;hierarchical-clustering&#34;&gt;Hierarchical clustering&lt;/h3&gt;
+&lt;p&gt;Several methods of clustering:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;complete&lt;/code&gt;: farthest elements of each cluster&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;single&lt;/code&gt;: closest elements of each cluster&lt;/li&gt;
+&lt;li&gt;Note height of dendrogram is the distance between clusters, the merging point is the distance between them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+import pandas as pd
+from scipy.cluster.hierarchy import fcluster
+
+# Use fcluster to extract labels: labels
+labels = fcluster(mergings, 7, criterion=&#39;distance&#39;)
+
+# Create a DataFrame with labels and varieties as columns: df
+df = pd.DataFrame({&#39;labels&#39;: labels, &#39;varieties&#39;: varieties})
+
+# Create crosstab: ct
+ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;varieties&#39;])
+
+# Display ct
+print(ct)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[2 1 3 3 1 2 3 3 3 3 1 3 3 3 3 2 2 2 2 1 3 3 3 3 1 2 3 1 3 3 1 3 1 3 3 2 3
+ 3 3 3 3 1 2 2 3 2 2 1 3 3]
+[&#39;Canadian wheat&#39; &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Rosa wheat&#39;
+ &#39;Canadian wheat&#39; &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Canadian wheat&#39;
+ &#39;Canadian wheat&#39; &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39;
+ &#39;Kama wheat&#39; &#39;Canadian wheat&#39; &#39;Canadian wheat&#39; &#39;Canadian wheat&#39;
+ &#39;Canadian wheat&#39; &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39;
+ &#39;Kama wheat&#39; &#39;Rosa wheat&#39; &#39;Canadian wheat&#39; &#39;Kama wheat&#39; &#39;Rosa wheat&#39;
+ &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Rosa wheat&#39;
+ &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Canadian wheat&#39; &#39;Kama wheat&#39; &#39;Kama wheat&#39;
+ &#39;Kama wheat&#39; &#39;Kama wheat&#39; &#39;Rosa wheat&#39; &#39;Rosa wheat&#39; &#39;Canadian wheat&#39;
+ &#39;Canadian wheat&#39; &#39;Kama wheat&#39; &#39;Canadian wheat&#39; &#39;Canadian wheat&#39;
+ &#39;Rosa wheat&#39; &#39;Kama wheat&#39; &#39;Canadian wheat&#39;]
+varieties  Canadian wheat  Kama wheat  Rosa wheat
+labels                                           
+1                       0           0          10
+2                      12           0           0
+3                       3          23           2
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Classification in Scikit-Learn with Iris</title>
       <link>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -321,66 +402,66 @@ print(df.sort_values(&#39;labels&#39;))
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;    labels                           companies
-18       0                       Goldman Sachs
-55       0                         Wells Fargo
-3        0                    American express
-5        0                     Bank of America
-26       0                      JPMorgan Chase
-16       0                   General Electrics
-15       0                                Ford
-48       1                              Toyota
-45       1                                Sony
-7        1                               Canon
-21       1                               Honda
-34       1                          Mitsubishi
-22       1                                  HP
-28       2                           Coca Cola
-41       2                       Philip Morris
+42       0                   Royal Dutch Shell
+52       0                            Unilever
+53       0                       Valero Energy
+23       0                                 IBM
+49       0                               Total
+47       0                            Symantec
+13       0                   DuPont de Nemours
+12       0                             Chevron
+46       0                      Sanofi-Aventis
+19       0                     GlaxoSmithKline
+10       0                      ConocoPhillips
+8        0                         Caterpillar
+35       0                            Navistar
+6        0            British American Tobacco
+37       0                            Novartis
+44       0                        Schlumberger
+57       0                               Exxon
+39       0                              Pfizer
+32       0                                  3M
+43       0                                 SAP
+36       1                    Northrop Grumman
+29       1                     Lookheed Martin
+4        1                              Boeing
 9        2                   Colgate-Palmolive
-25       2                   Johnson &amp;amp; Johnson
-38       2                               Pepsi
-27       2                      Kimberly-Clark
 40       2                      Procter Gamble
-49       3                               Total
-52       3                            Unilever
-43       3                                 SAP
-42       3                   Royal Dutch Shell
-37       3                            Novartis
-6        3            British American Tobacco
-39       3                              Pfizer
-19       3                     GlaxoSmithKline
-46       3                      Sanofi-Aventis
-36       4                    Northrop Grumman
-29       4                     Lookheed Martin
+25       2                   Johnson &amp;amp; Johnson
+27       2                      Kimberly-Clark
+1        3                                 AIG
+3        3                    American express
+5        3                     Bank of America
+55       3                         Wells Fargo
+18       3                       Goldman Sachs
+58       3                               Xerox
+26       3                      JPMorgan Chase
+15       3                                Ford
+16       3                   General Electrics
+20       4                          Home Depot
+45       4                                Sony
+34       4                          Mitsubishi
+7        4                               Canon
+48       4                              Toyota
 54       4                            Walgreen
-4        4                              Boeing
-44       5                        Schlumberger
-53       5                       Valero Energy
-12       5                             Chevron
-35       5                            Navistar
-10       5                      ConocoPhillips
-8        5                         Caterpillar
-57       5                               Exxon
-51       6                   Texas instruments
-50       6  Taiwan Semiconductor Manufacturing
-0        6                               Apple
-11       6                               Cisco
+21       4                               Honda
+0        5                               Apple
+33       5                           Microsoft
+22       5                                  HP
+14       5                                Dell
+11       5                               Cisco
 24       6                               Intel
-33       6                           Microsoft
-32       7                                  3M
-2        7                              Amazon
-13       7                   DuPont de Nemours
-14       7                                Dell
-17       7                     Google/Alphabet
-23       7                                 IBM
-47       7                            Symantec
-58       7                               Xerox
-30       7                          MasterCard
+50       6  Taiwan Semiconductor Manufacturing
+51       6                   Texas instruments
+38       7                               Pepsi
 31       7                           McDonalds
-20       7                          Home Depot
-59       7                               Yahoo
-56       8                            Wal-Mart
-1        9                                 AIG
+28       7                           Coca Cola
+56       7                            Wal-Mart
+41       7                       Philip Morris
+17       8                     Google/Alphabet
+2        8                              Amazon
+59       8                               Yahoo
+30       9                          MasterCard
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -390,256 +471,151 @@ print(df.sort_values(&#39;labels&#39;))
       <link>http://othrif.github.io/technical_note/python/sklearn/clustering_tsne/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/sklearn/clustering_tsne/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
+      <description>&lt;ul&gt;
+&lt;li&gt;t-SNE = “t-distributed stochastic neighbor embedding”&lt;/li&gt;
+&lt;li&gt;Maps samples to 2D space (or 3D)&lt;/li&gt;
+&lt;li&gt;only has &lt;code&gt;fit_transform&lt;/code&gt; method, have to repeat everytime&lt;/li&gt;
+&lt;li&gt;Try &lt;code&gt;learning_rate&lt;/code&gt; between 50 and 200&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;iris-dataset&#34;&gt;Iris dataset&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
 iris = datasets.load_iris()
-data = iris[&#39;data&#39;]
+samples = iris[&#39;data&#39;]
 features = iris[&#39;feature_names&#39;]
-target = iris[&#39;target&#39;]
+species = iris[&#39;target&#39;]
 target_names = iris[&#39;target_names&#39;]
 
 # map target labels to species names =&amp;gt; Ground Truth
-species = target_names[target]
-print(species)
+#species = target_names[species]
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import KMeans
-from sklearn.cluster import KMeans
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import matplotlib.pyplot as plt
+from sklearn.manifold import TSNE
 
-# Create a KMeans instance with 3 clusters: model
-model = KMeans(n_clusters=3)
+model = TSNE(learning_rate=100)
 
-# Fit model to points
-model.fit(data)
-
-# Determine the cluster labels of iris data: labels =&amp;gt; Prediction
-labels = model.predict(data)
-
-# can also use: labels = model.fit_predict(data)
-
-# Calculate inertia: Measures how spread out the clusters are (lower is be!er) 
-print(model.inertia_)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;78.85144142614601
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pyplot
-import matplotlib.pyplot as plt
-
-# Assign the columns of new_points: xs and ys
-xs = data[:,0]
-ys = data[:,2]
-
-fig, ax = plt.subplots()
-# Make a scatter plot of xs and ys, using labels to define the colors
-ax.scatter(xs, ys, c=labels, alpha=0.3)
-
-# Assign the cluster centers: centroids
-centroids = model.cluster_centers_
-
-# Assign the columns of centroids: centroids_x, centroids_y
-centroids_x = centroids[:,0]
-centroids_y = centroids[:,2]
-
-# Make a scatter plot of centroids_x and centroids_y
-ax.scatter(centroids_x, centroids_y, marker=&#39;D&#39;, s=100, color=&#39;r&#39;)
-ax.set_title(&#39;K-means clustering of Iris dataset&#39;)
-ax.set_xlabel(features[0])
-ax.set_ylabel(features[2])
+transformed = model.fit_transform(samples)
+xs=transformed[:,0]
+ys=transformed[:,1]
+plt.scatter(xs, ys, c=species)
 plt.show()
-
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;clustering_tsne_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;compare-ground-truth-to-prediction&#34;&gt;Compare ground truth to prediction&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-df = pd.DataFrame({&#39;labels&#39;: labels, &#39;species&#39;: species})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
-print(ct)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;species  setosa  versicolor  virginica
-labels                                
-0             0          48         14
-1            50           0          0
-2             0           2         36
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;what-is-the-best-clusters-to-choose&#34;&gt;What is the best clusters to choose?&lt;/h3&gt;
-&lt;p&gt;The elbow rule, the point where the decrease slows down&lt;br&gt;
-See below, &lt;strong&gt;3 is a good choice&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ks = range(1, 10)
-inertias = []
-
-for k in ks:
-    # Create a KMeans instance with k clusters: model
-    model = KMeans(n_clusters=k)
-    
-    # Fit model to samples
-    model.fit(data)
-    
-    # Append the inertia to the list of inertias
-    inertias.append(model.inertia_)
-    
-# Plot ks vs inertias
-plt.plot(ks, inertias, &#39;-o&#39;)
-plt.xlabel(&#39;number of clusters, k&#39;)
-plt.ylabel(&#39;inertia&#39;)
-plt.xticks(ks)
-plt.show()
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;clustering_tsne_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;pipelines-with-kmeans-and-standardscaller&#34;&gt;Pipelines with Kmeans and StandardScaller&lt;/h2&gt;
-&lt;h3 id=&#34;standard-scaller&#34;&gt;Standard scaller&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;in kmeans: feature variance = feature influence&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;StandardScaller&lt;/code&gt; transforms each feature to have mean 0 and variance 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
-df = pd.read_csv(&#39;fish.csv&#39;, header=None) # prevent first row from becoming header
-samples = df.iloc[:,1:].to_numpy()
-species = df.iloc[:,0].to_numpy()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
-
-# Create scaler: scaler
-scaler = StandardScaler()
-
-# Create KMeans instance: kmeans
-kmeans = KMeans(n_clusters=4)
-
-# Create pipeline: pipeline
-pipeline = make_pipeline(scaler, kmeans)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit the pipeline to samples
-pipeline.fit(samples)
-
-# Calculate the cluster labels: labels
-labels = pipeline.predict(samples)
-
-# Create a DataFrame with labels and species as columns: df
-df = pd.DataFrame({&#39;labels&#39;:labels, &#39;species&#39;:species})
-
-# Create crosstab: ct
-ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
-
-# Display ct
-print(ct)
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;species  Bream  Pike  Roach  Smelt
-labels                            
-0           33     0      1      0
-1            1     0     19      1
-2            0    17      0      0
-3            0     0      0     13
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;full-pipeline-with-stocks&#34;&gt;Full pipeline with stocks&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_tsne_4_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;stock-price&#34;&gt;Stock price&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 df = pd.read_csv(&#39;stock.csv&#39;)
 df.head()
 movements = df.iloc[:,1:].to_numpy()
 companies = df.iloc[:,0].to_numpy()
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;normalize-data-using-a-transform&#34;&gt;Normalize data using a transform&lt;/h4&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
-from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import Normalizer
-from sklearn.cluster import KMeans
 
 # Create a normalizer: normalizer
 normalizer = Normalizer()
 
-# Create a KMeans model with 10 clusters: kmeans
-kmeans = KMeans(n_clusters=10)
-
-# Make a pipeline chaining normalizer and kmeans: pipeline
-pipeline = make_pipeline(normalizer, kmeans)
-
-# Fit pipeline to the daily price movements
-pipeline.fit(movements)
+normalized_movements = normalizer.transform(movements)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Pipeline(memory=None,
-         steps=[(&#39;normalizer&#39;, Normalizer(copy=True, norm=&#39;l2&#39;)),
-                (&#39;kmeans&#39;,
-                 KMeans(algorithm=&#39;auto&#39;, copy_x=True, init=&#39;k-means++&#39;,
-                        max_iter=300, n_clusters=10, n_init=10, n_jobs=None,
-                        precompute_distances=&#39;auto&#39;, random_state=None,
-                        tol=0.0001, verbose=0))],
-         verbose=False)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
-import pandas as pd
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import TSNE
+from sklearn.manifold import TSNE
 
-# Predict the cluster labels: labels
-labels = pipeline.predict(movements)
+# Create a TSNE instance: model
+model = TSNE(learning_rate=50)
 
-# Create a DataFrame aligning labels and companies: df
-df = pd.DataFrame({&#39;labels&#39;: labels, &#39;companies&#39;: companies})
+# Apply fit_transform to normalized_movements: tsne_features
+tsne_features = model.fit_transform(normalized_movements)
 
-# Display df sorted by cluster label
-print(df.sort_values(&#39;labels&#39;))
+# Select the 0th feature: xs
+xs = tsne_features[:,0]
+
+# Select the 1th feature: ys
+ys = tsne_features[:,1]
+
+# Scatter plot
+fig, ax = plt.subplots(figsize=(20,20))
+ax.scatter(xs, ys, alpha=0.5)
+
+# Annotate the points
+for x, y, company in zip(xs, ys, companies):
+    ax.annotate(company, (x, y), fontsize=10, alpha=0.75)
+plt.show()
 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;    labels                           companies
-18       0                       Goldman Sachs
-55       0                         Wells Fargo
-3        0                    American express
-5        0                     Bank of America
-26       0                      JPMorgan Chase
-16       0                   General Electrics
-15       0                                Ford
-48       1                              Toyota
-45       1                                Sony
-7        1                               Canon
-21       1                               Honda
-34       1                          Mitsubishi
-22       1                                  HP
-28       2                           Coca Cola
-41       2                       Philip Morris
-9        2                   Colgate-Palmolive
-25       2                   Johnson &amp;amp; Johnson
-38       2                               Pepsi
-27       2                      Kimberly-Clark
-40       2                      Procter Gamble
-49       3                               Total
-52       3                            Unilever
-43       3                                 SAP
-42       3                   Royal Dutch Shell
-37       3                            Novartis
-6        3            British American Tobacco
-39       3                              Pfizer
-19       3                     GlaxoSmithKline
-46       3                      Sanofi-Aventis
-36       4                    Northrop Grumman
-29       4                     Lookheed Martin
-54       4                            Walgreen
-4        4                              Boeing
-44       5                        Schlumberger
-53       5                       Valero Energy
-12       5                             Chevron
-35       5                            Navistar
-10       5                      ConocoPhillips
-8        5                         Caterpillar
-57       5                               Exxon
-51       6                   Texas instruments
-50       6  Taiwan Semiconductor Manufacturing
-0        6                               Apple
-11       6                               Cisco
-24       6                               Intel
-33       6                           Microsoft
-32       7                                  3M
-2        7                              Amazon
-13       7                   DuPont de Nemours
-14       7                                Dell
-17       7                     Google/Alphabet
-23       7                                 IBM
-47       7                            Symantec
-58       7                               Xerox
-30       7                          MasterCard
-31       7                           McDonalds
-20       7                          Home Depot
-59       7                               Yahoo
-56       8                            Wal-Mart
-1        9                                 AIG
+&lt;p&gt;&lt;img src=&#34;clustering_tsne_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dimension reduction with PCA transformation</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/pca_tranf/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/pca_tranf/</guid>
+      <description>&lt;p&gt;PCA: Principle Component Analysis: step1 &amp;gt; decorrelation, step2 &amp;gt; reduce dimension&lt;/p&gt;
+&lt;p&gt;Principle component: direction in which the sample varies the most&lt;/p&gt;
+&lt;p&gt;1- Decorrelation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rotates data samples to be aligned with axes&lt;/li&gt;
+&lt;li&gt;mean ~ 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;iris-dataset&#34;&gt;Iris dataset&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import numpy as np
+df = pd.read_csv(&#39;Grains/seeds-width-vs-length.csv&#39;, header=None)
+grains = df.to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+import matplotlib.pyplot as plt
+from scipy.stats import pearsonr
+
+# Assign the 0th column of grains: width
+width = grains[:, 0]
+
+# Assign the 1st column of grains: length
+length = grains[:, 1]
+
+# Scatter plot width vs length
+plt.scatter(width, length)
+plt.axis(&#39;equal&#39;)
+plt.show()
+
+# Calculate the Pearson correlation
+correlation, pvalue = pearsonr(width, length)
+
+# Display the correlation
+print(f&#39;Pearson Correlation before-PCA: {correlation}&#39;)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;pca_tranf_4_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Pearson Correlation before-PCA: 0.8604149377143466
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import PCA
+from sklearn.decomposition import PCA
+
+# Create PCA instance: model
+model = PCA()
+
+# Apply the fit_transform method of model to grains: pca_features
+pca_features = model.fit_transform(grains)
+
+# Assign 0th column of pca_features: xs
+xs = pca_features[:,0]
+
+# Assign 1st column of pca_features: ys
+ys = pca_features[:,1]
+
+# Scatter plot xs vs ys
+plt.scatter(xs, ys)
+plt.axis(&#39;equal&#39;)
+plt.show()
+
+# Calculate the Pearson correlation of xs and ys
+correlation, pvalue = pearsonr(xs, ys)
+
+# Display the correlation
+print(f&#39;Pearson Correlation after-PCA: {correlation}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;pca_tranf_5_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Pearson Correlation after-PCA: 2.5478751053409354e-17
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
