@@ -127,6 +127,524 @@ df = pd.DataFrame(X, columns=iris.feature_names)
     </item>
     
     <item>
+      <title>Clustering with k-means</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/clustering_kmeans/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/clustering_kmeans/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
+iris = datasets.load_iris()
+data = iris[&#39;data&#39;]
+features = iris[&#39;feature_names&#39;]
+target = iris[&#39;target&#39;]
+target_names = iris[&#39;target_names&#39;]
+
+# map target labels to species names =&amp;gt; Ground Truth
+species = target_names[target]
+print(species)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import KMeans
+from sklearn.cluster import KMeans
+
+# Create a KMeans instance with 3 clusters: model
+model = KMeans(n_clusters=3)
+
+# Fit model to points
+model.fit(data)
+
+# Determine the cluster labels of iris data: labels =&amp;gt; Prediction
+labels = model.predict(data)
+
+# can also use: labels = model.fit_predict(data)
+
+# Calculate inertia: Measures how spread out the clusters are (lower is be!er) 
+print(model.inertia_)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;78.85144142614601
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pyplot
+import matplotlib.pyplot as plt
+
+# Assign the columns of new_points: xs and ys
+xs = data[:,0]
+ys = data[:,2]
+
+fig, ax = plt.subplots()
+# Make a scatter plot of xs and ys, using labels to define the colors
+ax.scatter(xs, ys, c=labels, alpha=0.3)
+
+# Assign the cluster centers: centroids
+centroids = model.cluster_centers_
+
+# Assign the columns of centroids: centroids_x, centroids_y
+centroids_x = centroids[:,0]
+centroids_y = centroids[:,2]
+
+# Make a scatter plot of centroids_x and centroids_y
+ax.scatter(centroids_x, centroids_y, marker=&#39;D&#39;, s=100, color=&#39;r&#39;)
+ax.set_title(&#39;K-means clustering of Iris dataset&#39;)
+ax.set_xlabel(features[0])
+ax.set_ylabel(features[2])
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_kmeans_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;compare-ground-truth-to-prediction&#34;&gt;Compare ground truth to prediction&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.DataFrame({&#39;labels&#39;: labels, &#39;species&#39;: species})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
+print(ct)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;species  setosa  versicolor  virginica
+labels                                
+0             0          48         14
+1            50           0          0
+2             0           2         36
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;what-is-the-best-clusters-to-choose&#34;&gt;What is the best clusters to choose?&lt;/h3&gt;
+&lt;p&gt;The elbow rule, the point where the decrease slows down&lt;br&gt;
+See below, &lt;strong&gt;3 is a good choice&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ks = range(1, 10)
+inertias = []
+
+for k in ks:
+    # Create a KMeans instance with k clusters: model
+    model = KMeans(n_clusters=k)
+    
+    # Fit model to samples
+    model.fit(data)
+    
+    # Append the inertia to the list of inertias
+    inertias.append(model.inertia_)
+    
+# Plot ks vs inertias
+plt.plot(ks, inertias, &#39;-o&#39;)
+plt.xlabel(&#39;number of clusters, k&#39;)
+plt.ylabel(&#39;inertia&#39;)
+plt.xticks(ks)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_kmeans_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pipelines-with-kmeans-and-standardscaller&#34;&gt;Pipelines with Kmeans and StandardScaller&lt;/h2&gt;
+&lt;h3 id=&#34;standard-scaller&#34;&gt;Standard scaller&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in kmeans: feature variance = feature influence&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StandardScaller&lt;/code&gt; transforms each feature to have mean 0 and variance 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;fish.csv&#39;, header=None) # prevent first row from becoming header
+samples = df.iloc[:,1:].to_numpy()
+species = df.iloc[:,0].to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+
+# Create scaler: scaler
+scaler = StandardScaler()
+
+# Create KMeans instance: kmeans
+kmeans = KMeans(n_clusters=4)
+
+# Create pipeline: pipeline
+pipeline = make_pipeline(scaler, kmeans)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit the pipeline to samples
+pipeline.fit(samples)
+
+# Calculate the cluster labels: labels
+labels = pipeline.predict(samples)
+
+# Create a DataFrame with labels and species as columns: df
+df = pd.DataFrame({&#39;labels&#39;:labels, &#39;species&#39;:species})
+
+# Create crosstab: ct
+ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
+
+# Display ct
+print(ct)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;species  Bream  Pike  Roach  Smelt
+labels                            
+0           33     0      1      0
+1            1     0     19      1
+2            0    17      0      0
+3            0     0      0     13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;full-pipeline-with-stocks&#34;&gt;Full pipeline with stocks&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;stock.csv&#39;)
+df.head()
+movements = df.iloc[:,1:].to_numpy()
+companies = df.iloc[:,0].to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import Normalizer
+from sklearn.cluster import KMeans
+
+# Create a normalizer: normalizer
+normalizer = Normalizer()
+
+# Create a KMeans model with 10 clusters: kmeans
+kmeans = KMeans(n_clusters=10)
+
+# Make a pipeline chaining normalizer and kmeans: pipeline
+pipeline = make_pipeline(normalizer, kmeans)
+
+# Fit pipeline to the daily price movements
+pipeline.fit(movements)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Pipeline(memory=None,
+         steps=[(&#39;normalizer&#39;, Normalizer(copy=True, norm=&#39;l2&#39;)),
+                (&#39;kmeans&#39;,
+                 KMeans(algorithm=&#39;auto&#39;, copy_x=True, init=&#39;k-means++&#39;,
+                        max_iter=300, n_clusters=10, n_init=10, n_jobs=None,
+                        precompute_distances=&#39;auto&#39;, random_state=None,
+                        tol=0.0001, verbose=0))],
+         verbose=False)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Predict the cluster labels: labels
+labels = pipeline.predict(movements)
+
+# Create a DataFrame aligning labels and companies: df
+df = pd.DataFrame({&#39;labels&#39;: labels, &#39;companies&#39;: companies})
+
+# Display df sorted by cluster label
+print(df.sort_values(&#39;labels&#39;))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;    labels                           companies
+18       0                       Goldman Sachs
+55       0                         Wells Fargo
+3        0                    American express
+5        0                     Bank of America
+26       0                      JPMorgan Chase
+16       0                   General Electrics
+15       0                                Ford
+48       1                              Toyota
+45       1                                Sony
+7        1                               Canon
+21       1                               Honda
+34       1                          Mitsubishi
+22       1                                  HP
+28       2                           Coca Cola
+41       2                       Philip Morris
+9        2                   Colgate-Palmolive
+25       2                   Johnson &amp;amp; Johnson
+38       2                               Pepsi
+27       2                      Kimberly-Clark
+40       2                      Procter Gamble
+49       3                               Total
+52       3                            Unilever
+43       3                                 SAP
+42       3                   Royal Dutch Shell
+37       3                            Novartis
+6        3            British American Tobacco
+39       3                              Pfizer
+19       3                     GlaxoSmithKline
+46       3                      Sanofi-Aventis
+36       4                    Northrop Grumman
+29       4                     Lookheed Martin
+54       4                            Walgreen
+4        4                              Boeing
+44       5                        Schlumberger
+53       5                       Valero Energy
+12       5                             Chevron
+35       5                            Navistar
+10       5                      ConocoPhillips
+8        5                         Caterpillar
+57       5                               Exxon
+51       6                   Texas instruments
+50       6  Taiwan Semiconductor Manufacturing
+0        6                               Apple
+11       6                               Cisco
+24       6                               Intel
+33       6                           Microsoft
+32       7                                  3M
+2        7                              Amazon
+13       7                   DuPont de Nemours
+14       7                                Dell
+17       7                     Google/Alphabet
+23       7                                 IBM
+47       7                            Symantec
+58       7                               Xerox
+30       7                          MasterCard
+31       7                           McDonalds
+20       7                          Home Depot
+59       7                               Yahoo
+56       8                            Wal-Mart
+1        9                                 AIG
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Clustering with k-means</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/clustering_tsne/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/clustering_tsne/</guid>
+      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
+iris = datasets.load_iris()
+data = iris[&#39;data&#39;]
+features = iris[&#39;feature_names&#39;]
+target = iris[&#39;target&#39;]
+target_names = iris[&#39;target_names&#39;]
+
+# map target labels to species names =&amp;gt; Ground Truth
+species = target_names[target]
+print(species)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import KMeans
+from sklearn.cluster import KMeans
+
+# Create a KMeans instance with 3 clusters: model
+model = KMeans(n_clusters=3)
+
+# Fit model to points
+model.fit(data)
+
+# Determine the cluster labels of iris data: labels =&amp;gt; Prediction
+labels = model.predict(data)
+
+# can also use: labels = model.fit_predict(data)
+
+# Calculate inertia: Measures how spread out the clusters are (lower is be!er) 
+print(model.inertia_)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;78.85144142614601
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pyplot
+import matplotlib.pyplot as plt
+
+# Assign the columns of new_points: xs and ys
+xs = data[:,0]
+ys = data[:,2]
+
+fig, ax = plt.subplots()
+# Make a scatter plot of xs and ys, using labels to define the colors
+ax.scatter(xs, ys, c=labels, alpha=0.3)
+
+# Assign the cluster centers: centroids
+centroids = model.cluster_centers_
+
+# Assign the columns of centroids: centroids_x, centroids_y
+centroids_x = centroids[:,0]
+centroids_y = centroids[:,2]
+
+# Make a scatter plot of centroids_x and centroids_y
+ax.scatter(centroids_x, centroids_y, marker=&#39;D&#39;, s=100, color=&#39;r&#39;)
+ax.set_title(&#39;K-means clustering of Iris dataset&#39;)
+ax.set_xlabel(features[0])
+ax.set_ylabel(features[2])
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_tsne_3_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;compare-ground-truth-to-prediction&#34;&gt;Compare ground truth to prediction&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.DataFrame({&#39;labels&#39;: labels, &#39;species&#39;: species})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
+print(ct)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;species  setosa  versicolor  virginica
+labels                                
+0             0          48         14
+1            50           0          0
+2             0           2         36
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;what-is-the-best-clusters-to-choose&#34;&gt;What is the best clusters to choose?&lt;/h3&gt;
+&lt;p&gt;The elbow rule, the point where the decrease slows down&lt;br&gt;
+See below, &lt;strong&gt;3 is a good choice&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ks = range(1, 10)
+inertias = []
+
+for k in ks:
+    # Create a KMeans instance with k clusters: model
+    model = KMeans(n_clusters=k)
+    
+    # Fit model to samples
+    model.fit(data)
+    
+    # Append the inertia to the list of inertias
+    inertias.append(model.inertia_)
+    
+# Plot ks vs inertias
+plt.plot(ks, inertias, &#39;-o&#39;)
+plt.xlabel(&#39;number of clusters, k&#39;)
+plt.ylabel(&#39;inertia&#39;)
+plt.xticks(ks)
+plt.show()
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;clustering_tsne_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pipelines-with-kmeans-and-standardscaller&#34;&gt;Pipelines with Kmeans and StandardScaller&lt;/h2&gt;
+&lt;h3 id=&#34;standard-scaller&#34;&gt;Standard scaller&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;in kmeans: feature variance = feature influence&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StandardScaller&lt;/code&gt; transforms each feature to have mean 0 and variance 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;fish.csv&#39;, header=None) # prevent first row from becoming header
+samples = df.iloc[:,1:].to_numpy()
+species = df.iloc[:,0].to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+
+# Create scaler: scaler
+scaler = StandardScaler()
+
+# Create KMeans instance: kmeans
+kmeans = KMeans(n_clusters=4)
+
+# Create pipeline: pipeline
+pipeline = make_pipeline(scaler, kmeans)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit the pipeline to samples
+pipeline.fit(samples)
+
+# Calculate the cluster labels: labels
+labels = pipeline.predict(samples)
+
+# Create a DataFrame with labels and species as columns: df
+df = pd.DataFrame({&#39;labels&#39;:labels, &#39;species&#39;:species})
+
+# Create crosstab: ct
+ct = pd.crosstab(df[&#39;labels&#39;], df[&#39;species&#39;])
+
+# Display ct
+print(ct)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;species  Bream  Pike  Roach  Smelt
+labels                            
+0           33     0      1      0
+1            1     0     19      1
+2            0    17      0      0
+3            0     0      0     13
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;full-pipeline-with-stocks&#34;&gt;Full pipeline with stocks&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+df = pd.read_csv(&#39;stock.csv&#39;)
+df.head()
+movements = df.iloc[:,1:].to_numpy()
+companies = df.iloc[:,0].to_numpy()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Perform the necessary imports
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import Normalizer
+from sklearn.cluster import KMeans
+
+# Create a normalizer: normalizer
+normalizer = Normalizer()
+
+# Create a KMeans model with 10 clusters: kmeans
+kmeans = KMeans(n_clusters=10)
+
+# Make a pipeline chaining normalizer and kmeans: pipeline
+pipeline = make_pipeline(normalizer, kmeans)
+
+# Fit pipeline to the daily price movements
+pipeline.fit(movements)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Pipeline(memory=None,
+         steps=[(&#39;normalizer&#39;, Normalizer(copy=True, norm=&#39;l2&#39;)),
+                (&#39;kmeans&#39;,
+                 KMeans(algorithm=&#39;auto&#39;, copy_x=True, init=&#39;k-means++&#39;,
+                        max_iter=300, n_clusters=10, n_init=10, n_jobs=None,
+                        precompute_distances=&#39;auto&#39;, random_state=None,
+                        tol=0.0001, verbose=0))],
+         verbose=False)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import pandas
+import pandas as pd
+
+# Predict the cluster labels: labels
+labels = pipeline.predict(movements)
+
+# Create a DataFrame aligning labels and companies: df
+df = pd.DataFrame({&#39;labels&#39;: labels, &#39;companies&#39;: companies})
+
+# Display df sorted by cluster label
+print(df.sort_values(&#39;labels&#39;))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;    labels                           companies
+18       0                       Goldman Sachs
+55       0                         Wells Fargo
+3        0                    American express
+5        0                     Bank of America
+26       0                      JPMorgan Chase
+16       0                   General Electrics
+15       0                                Ford
+48       1                              Toyota
+45       1                                Sony
+7        1                               Canon
+21       1                               Honda
+34       1                          Mitsubishi
+22       1                                  HP
+28       2                           Coca Cola
+41       2                       Philip Morris
+9        2                   Colgate-Palmolive
+25       2                   Johnson &amp;amp; Johnson
+38       2                               Pepsi
+27       2                      Kimberly-Clark
+40       2                      Procter Gamble
+49       3                               Total
+52       3                            Unilever
+43       3                                 SAP
+42       3                   Royal Dutch Shell
+37       3                            Novartis
+6        3            British American Tobacco
+39       3                              Pfizer
+19       3                     GlaxoSmithKline
+46       3                      Sanofi-Aventis
+36       4                    Northrop Grumman
+29       4                     Lookheed Martin
+54       4                            Walgreen
+4        4                              Boeing
+44       5                        Schlumberger
+53       5                       Valero Energy
+12       5                             Chevron
+35       5                            Navistar
+10       5                      ConocoPhillips
+8        5                         Caterpillar
+57       5                               Exxon
+51       6                   Texas instruments
+50       6  Taiwan Semiconductor Manufacturing
+0        6                               Apple
+11       6                               Cisco
+24       6                               Intel
+33       6                           Microsoft
+32       7                                  3M
+2        7                              Amazon
+13       7                   DuPont de Nemours
+14       7                                Dell
+17       7                     Google/Alphabet
+23       7                                 IBM
+47       7                            Symantec
+58       7                               Xerox
+30       7                          MasterCard
+31       7                           McDonalds
+20       7                          Home Depot
+59       7                               Yahoo
+56       8                            Wal-Mart
+1        9                                 AIG
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Regression and classification in Scikit-Learn</title>
       <link>http://othrif.github.io/technical_note/python/sklearn/regression/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
