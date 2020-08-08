@@ -3552,7 +3552,12 @@ ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python -V
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;install-package&#34;&gt;Install package&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage --upgrade
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage            # latest version
+pip install SomePackage==1.0.4     # specific version
+pip install &#39;SomePackage&amp;gt;=1.0.4&#39;     # minimum version
+pip install SomePackage&amp;gt;=2.0.0,&amp;lt;3.0.0 # Install the latest 2.x release 
+pip install SomePackage[extras] # Install package and extras
+pip install SomeProject@git+https://git.repo/some_pkg.git@1.3.1 # from version control system
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;upgrade-package&#34;&gt;Upgrade package&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage --upgrade
@@ -3565,7 +3570,33 @@ pip install matplotlib
 pip install pandas
 pip install jupyter notebook
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;h3 id=&#34;upgrade-pip&#34;&gt;Upgrade pip&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python -m pip --version # check version
+python -m pip install --user --upgrade pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;working-with-virtual-environment-with-venv&#34;&gt;Working with virtual environment with &lt;code&gt;venv&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;It is recommended to work in virtual environment to not have comflicts between different packages. This can be done using &lt;code&gt;venv&lt;/code&gt;. The second argument &lt;code&gt;env&lt;/code&gt; is the location to create the virtual environment in that folder. Generally, you can just create this in your project and call it env. Make sure to add it to &lt;code&gt;.gitignore&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python3 -m venv env
+source env/bin/activate
+which python # should point to the virtual environment env/bin/python
+deactivate # leave virtual environment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Installing packages in &lt;code&gt;venv&lt;/code&gt; is similar to the above:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;More importantly it allows you to specify which version to install:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install SomePackage
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using requirements file &lt;code&gt;requirements.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;requests==2.18.4
+google-auth==1.1.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install -r requirements.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Freeze dependencies after completing all installation of packages (a way to get the requirement file):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip freeze
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
