@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="Bias vs Variance Model complexity  ">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/variance_bias/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/variance_bias/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/variance_bias/">
+  <meta property="og:title" content="Bias vs Variance trade-off | Othmane Rifki">
+  <meta property="og:description" content="Bias vs Variance Model complexity  "><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Bias vs Variance trade-off | Othmane Rifki</title>
 
 </head>
 
@@ -552,104 +555,39 @@
 </nav>
 
 
-  
+   
 
 
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/regression/" >Regression and classification in Scikit-Learn</a></h2>
-      <div class="article-style">
-        
-          Linear regression make predictions, visualize the model fit, and analyze the formula used to generate your fit.
-import pandas as pd import matplotlib.pyplot as plt weather = pd.read_csv('weatherAUS.csv')  Prepare your data Do I have any null values in my dataset
-        
-      </div>
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Bias vs Variance trade-off</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/classification_sklearn/" >Scatter matrix EDA</a></h2>
-      <div class="article-style">
-        
-          Exploratory data analysis (EDA) from sklearn import datasets import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.style.use('ggplot')  iris = datasets.load_iris()  iris.keys()  dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])  type(iris.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/wikipedia/preprocessing/" ></a></h2>
-      <div class="article-style">
-        
-          To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
-import pandas as pd from scipy.sparse import csr_matrix df = pd.
-        
-      </div>
-    </div>
-  
+  </header>
+  <div class="content">
 
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/page/2/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
+  <h3 id="bias-vs-variance">Bias vs Variance</h3>
+<p><img src="biasvar.png" alt=""></p>
+<h3 id="model-complexity">Model complexity</h3>
+<p><img src="modelcomplex.png" alt=""></p>
+<pre><code class="language-python">
+</code></pre>
 
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
 
       
 

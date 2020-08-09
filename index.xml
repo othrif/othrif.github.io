@@ -1893,6 +1893,20 @@ plt.show()
     </item>
     
     <item>
+      <title>Bias vs Variance trade-off</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/variance_bias/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/variance_bias/</guid>
+      <description>&lt;h3 id=&#34;bias-vs-variance&#34;&gt;Bias vs Variance&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;biasvar.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;model-complexity&#34;&gt;Model complexity&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;modelcomplex.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Binary Tree</title>
       <link>http://othrif.github.io/technical_note/python/interview/binarytree/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
