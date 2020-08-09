@@ -203,7 +203,12 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/seaborn/basic_plotting/</loc>
+    <loc>http://othrif.github.io/technical_note/python/seaborn/categorical_plot/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/seaborn/relational_plots/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -873,6 +878,11 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/seaborn/stylistic/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/matplotlib/subsetting/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -894,6 +904,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/basics/timer_decorator/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/seaborn/title_label/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

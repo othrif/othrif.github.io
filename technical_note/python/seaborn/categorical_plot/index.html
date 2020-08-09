@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/categorical_plot/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/seaborn/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/seaborn/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/seaborn/categorical_plot/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/categorical_plot/">
+  <meta property="og:title" content="Basic plotting of categorical plots | Othmane Rifki">
+  <meta property="og:description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Basic plotting of categorical plots | Othmane Rifki</title>
 
 </head>
 
@@ -552,96 +555,169 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Basic plotting of categorical plots</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <ul>
+<li><code>relplot</code> for relational plots</li>
+<li><code>catplot</code> for categorical plots</li>
+</ul>
+<h3 id="necessary-includes">Necessary includes</h3>
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+</code></pre>
+<h3 id="load-data">Load data</h3>
+<pre><code class="language-python">student_data = pd.read_csv('student.csv')
+mpg = pd.read_csv('mpg.csv')
+survey_data = pd.read_csv('survey.csv')
+</code></pre>
+<h1 id="plot-with-catplot">Plot with <code>catplot</code></h1>
+<h3 id="count-plot-histogram">Count plot (histogram)</h3>
+<pre><code class="language-python">survey_data['Mathematics'].unique()
+survey_data['Interested in Math'] = survey_data['Mathematics']&gt;3
+</code></pre>
+<pre><code class="language-python"># Create column subplots based on age category
+sns.catplot(y=&quot;Internet usage&quot;, data=survey_data,
+            kind=&quot;count&quot;,
+            col='Loneliness')
 
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_9_0.png" alt="png"></p>
+<h3 id="bar-plot">Bar plot</h3>
+<pre><code class="language-python"># Create a bar plot of interest in math, separated by gender
+sns.catplot(x='Gender', y='Interested in Math', data=survey_data, kind='bar')
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_11_0.png" alt="png"></p>
+<pre><code class="language-python"># Create bar plot of average final grade in each study category
+sns.catplot(x='study_time', y='G3', data=student_data, kind='bar',
+           order=['&lt;2 hours', '2 to 5 hours', '5 to 10 hours', '&gt;10 hours'],
+           ci=None)
 
-  
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_12_0.png" alt="png"></p>
+<h3 id="box-plot">Box plot</h3>
+<pre><code class="language-python"># Plot the data that we want to convert to a box plot.
+sns.catplot(x='study_time', y='G3', data=student_data)
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_14_0.png" alt="png"></p>
+<pre><code class="language-python"># Specify the category ordering
+study_time_order = [&quot;&lt;2 hours&quot;, &quot;2 to 5 hours&quot;, 
+                    &quot;5 to 10 hours&quot;, &quot;&gt;10 hours&quot;]
 
+# Create a box plot and set the order of the categories
+sns.catplot(x='study_time', y='G3', data=student_data, kind='box', order=study_time_order)
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_15_0.png" alt="png"></p>
+<pre><code class="language-python"># Create a box plot with subgroups and omit the outliers
+sns.catplot(x='internet', y='G3', data=student_data, hue='location', kind='box', sym='')
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_16_0.png" alt="png"></p>
+<pre><code class="language-python"># Set the whiskers to 0.5 * IQR
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;, whis=0.5)
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_17_0.png" alt="png"></p>
+<pre><code class="language-python"># Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;,
+            whis=[5,95])
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_18_0.png" alt="png"></p>
+<pre><code class="language-python"># Set the whiskers at the min and max values
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;,
+            whis=[0, 100])
 
-  
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_19_0.png" alt="png"></p>
+<h3 id="point-plot">Point plot</h3>
+<pre><code class="language-python"># Remove the lines joining the points
+sns.catplot(x=&quot;famrel&quot;, y=&quot;absences&quot;,
+            data=student_data,
+            kind=&quot;point&quot;,
+            capsize=0.2,
+            join=False)
+            
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_21_0.png" alt="png"></p>
+<pre><code class="language-python"># Import median function from numpy
+import numpy as np
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+# Plot the median number of absences instead of the mean
+sns.catplot(x=&quot;romantic&quot;, y=&quot;absences&quot;,
+            data=student_data,
+            kind=&quot;point&quot;,
+            hue=&quot;school&quot;,
+            ci=None,
+            estimator=np.median)
 
-  
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_22_0.png" alt="png"></p>
+<p>It looks like students in romantic relationships have a higher average and median number of absences in the GP school, but this association does not hold for the MS school.</p>
+<h1 id="other-formats">Other formats</h1>
+<pre><code class="language-python"># Create a dictionary mapping subgroup values to colors
+palette_colors = {'Rural': &quot;green&quot;, 'Urban': &quot;blue&quot;}
 
-  
+# Create a count plot of school with location subgroups
+sns.countplot(x='school', data=student_data, hue='location', palette=palette_colors)
+
+plt.show()
+</code></pre>
+<p><img src="categorical_plot_25_0.png" alt="png"></p>
+
 </div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/seaborn/categorical_plot/" >Basic plotting of categorical plots</a></h2>
-      <div class="article-style">
-        
-          relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv('student.csv') mpg = pd.
-        
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
       </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/seaborn/relational_plots/" >Basic plotting of relational plots</a></h2>
-      <div class="article-style">
-        
-          relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv('student.csv') mpg = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/seaborn/stylistic/" >Styles, palette, and scales</a></h2>
-      <div class="article-style">
-        
-          Change style and palette  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo; Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo; context: &lsquo;paper&rsquo;, &lsquo;notebook&rsquo;, &lsquo;talk&rsquo;, &lsquo;poster&rsquo;  Ref:
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/seaborn/title_label/" >Titles and labels</a></h2>
-      <div class="article-style">
-        
-          Seaborn plots create two different types of objects:
- FacetGrid: Can create subplots -&gt; relplot(), catplot() AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.  Necessary includes import pandas as pd import matplotlib.
-        
-      </div>
-    </div>
-  
+      </aside>
 
-  
+    </div>
+</article>
 
-</div>
+
+
 
       
 
