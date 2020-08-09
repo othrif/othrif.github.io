@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Postdoctoral Fellow">
+  <meta name="description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/basic_plotting/">
 
   
 
@@ -211,14 +211,12 @@
 
 
   
-  <link rel="alternate" href="/technical_note/python/index.xml" type="application/rss+xml" title="Othmane Rifki">
-  
 
   <link rel="manifest" href="/index.webmanifest">
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/seaborn/basic_plotting/">
 
   
   
@@ -232,29 +230,34 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/">
-  <meta property="og:title" content=" | Othmane Rifki">
-  <meta property="og:description" content="Postdoctoral Fellow"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/basic_plotting/">
+  <meta property="og:title" content="Basic plotting of relational and categorical plots | Othmane Rifki">
+  <meta property="og:description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
+    
+    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
 
 
 
-
   
 
 
   
 
 
+  
 
 
 
-  <title> | Othmane Rifki</title>
+
+
+  <title>Basic plotting of relational and categorical plots | Othmane Rifki</title>
 
 </head>
 
@@ -552,167 +555,239 @@
 </nav>
 
 
-  
+   
 
 
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Basic plotting of relational and categorical plots</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+    </div>
+  </header>
+  <div class="content">
 
+  <ul>
+<li><code>relplot</code> for relational plots</li>
+<li><code>catplot</code> for categorical plots</li>
+</ul>
+<h3 id="necessary-includes">Necessary includes</h3>
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+</code></pre>
+<h3 id="load-data">Load data</h3>
+<pre><code class="language-python">student_data = pd.read_csv('student.csv')
+mpg = pd.read_csv('mpg.csv')
+survey_data = pd.read_csv('survey.csv')
+</code></pre>
+<h1 id="relational-plots">Relational plots</h1>
+<h3 id="scatter-plot">Scatter plot</h3>
+<pre><code class="language-python">sns.relplot(x=&quot;absences&quot;, y=&quot;G3&quot;, 
+                data=student_data, 
+                kind='scatter',
+                hue=&quot;location&quot;, 
+                hue_order=['Rural', 'Urban'])
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_8_0.png" alt="png"></p>
+<h3 id="subplots-in-rows-and-columns">Subplots in rows and columns</h3>
+<pre><code class="language-python">sns.relplot(x=&quot;absences&quot;, y=&quot;G3&quot;, 
+                data=student_data, 
+                kind='scatter',
+                col='location',
+                col_order=['Rural','Urban'],
+                row='sex',
+                row_order=['M','F'],
+                size='age',
+                hue='age',
+                style='age', # change the style per additional cateogry
+                alpha=0.4    # transparency
+           )
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_10_0.png" alt="png"></p>
+<h1 id="line-plot">Line plot</h1>
+<pre><code class="language-python">sns.relplot(x='model_year', y='mpg', data=mpg, kind='scatter')
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_12_0.png" alt="png"></p>
+<pre><code class="language-python"># Make the shaded area show the 95% CL 
+sns.relplot(x='model_year', y='mpg', data=mpg, kind='line')
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_13_0.png" alt="png"></p>
+<pre><code class="language-python"># Make the shaded area show the standard deviation
+sns.relplot(x=&quot;model_year&quot;, y=&quot;mpg&quot;,data=mpg, kind=&quot;line&quot;, ci='sd')
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_14_0.png" alt="png"></p>
+<pre><code class="language-python"># Turn off the confidence interval 
+sns.relplot(x=&quot;model_year&quot;, y=&quot;mpg&quot;,data=mpg, kind=&quot;line&quot;, ci=None)
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_15_0.png" alt="png"></p>
+<pre><code class="language-python"># Add markers and make each line have the same style
+sns.relplot(x=&quot;model_year&quot;, y=&quot;horsepower&quot;, 
+            data=mpg, kind=&quot;line&quot;, 
+            ci=None, style=&quot;origin&quot;, 
+            hue=&quot;origin&quot;, 
+            markers=True,
+            dashes=False)
 
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_16_0.png" alt="png"></p>
+<h1 id="categorical-plots">Categorical plots</h1>
+<h3 id="count-plot-histogram">Count plot (histogram)</h3>
+<pre><code class="language-python">survey_data['Mathematics'].unique()
+survey_data['Interested in Math'] = survey_data['Mathematics']&gt;3
+</code></pre>
+<pre><code class="language-python"># Create column subplots based on age category
+sns.catplot(y=&quot;Internet usage&quot;, data=survey_data,
+            kind=&quot;count&quot;,
+            col='Loneliness')
 
-  
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_20_0.png" alt="png"></p>
+<h3 id="bar-plot">Bar plot</h3>
+<pre><code class="language-python"># Create a bar plot of interest in math, separated by gender
+sns.catplot(x='Gender', y='Interested in Math', data=survey_data, kind='bar')
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_22_0.png" alt="png"></p>
+<pre><code class="language-python"># Create bar plot of average final grade in each study category
+sns.catplot(x='study_time', y='G3', data=student_data, kind='bar',
+           order=['&lt;2 hours', '2 to 5 hours', '5 to 10 hours', '&gt;10 hours'],
+           ci=None)
 
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_23_0.png" alt="png"></p>
+<h3 id="box-plot">Box plot</h3>
+<pre><code class="language-python"># Plot the data that we want to convert to a box plot.
+sns.catplot(x='study_time', y='G3', data=student_data)
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_25_0.png" alt="png"></p>
+<pre><code class="language-python"># Specify the category ordering
+study_time_order = [&quot;&lt;2 hours&quot;, &quot;2 to 5 hours&quot;, 
+                    &quot;5 to 10 hours&quot;, &quot;&gt;10 hours&quot;]
 
+# Create a box plot and set the order of the categories
+sns.catplot(x='study_time', y='G3', data=student_data, kind='box', order=study_time_order)
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_26_0.png" alt="png"></p>
+<pre><code class="language-python"># Create a box plot with subgroups and omit the outliers
+sns.catplot(x='internet', y='G3', data=student_data, hue='location', kind='box', sym='')
 
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_27_0.png" alt="png"></p>
+<pre><code class="language-python"># Set the whiskers to 0.5 * IQR
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;, whis=0.5)
 
-  
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_28_0.png" alt="png"></p>
+<pre><code class="language-python"># Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;,
+            whis=[5,95])
 
-  
-  
-  
-    
-  
-<div class="universal-wrapper pt-3">
-  <h1></h1>
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_29_0.png" alt="png"></p>
+<pre><code class="language-python"># Set the whiskers at the min and max values
+sns.catplot(x=&quot;romantic&quot;, y=&quot;G3&quot;,
+            data=student_data,
+            kind=&quot;box&quot;,
+            whis=[0, 100])
 
-  
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_30_0.png" alt="png"></p>
+<h3 id="point-plot">Point plot</h3>
+<pre><code class="language-python"># Remove the lines joining the points
+sns.catplot(x=&quot;famrel&quot;, y=&quot;absences&quot;,
+            data=student_data,
+            kind=&quot;point&quot;,
+            capsize=0.2,
+            join=False)
+            
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_32_0.png" alt="png"></p>
+<pre><code class="language-python"># Import median function from numpy
+import numpy as np
 
-  
+# Plot the median number of absences instead of the mean
+sns.catplot(x=&quot;romantic&quot;, y=&quot;absences&quot;,
+            data=student_data,
+            kind=&quot;point&quot;,
+            hue=&quot;school&quot;,
+            ci=None,
+            estimator=np.median)
+
+# Show plot
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_33_0.png" alt="png"></p>
+<p>It looks like students in romantic relationships have a higher average and median number of absences in the GP school, but this association does not hold for the MS school.</p>
+<h1 id="other-formats">Other formats</h1>
+<h3 id="scatter-plot-1">Scatter plot</h3>
+<pre><code class="language-python"># Change the legend order in the scatter plot
+sns.scatterplot(x=&quot;absences&quot;, y=&quot;G3&quot;, 
+                data=student_data, 
+                hue=&quot;location&quot;, 
+                hue_order=['Rural', 'Urban'])
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_37_0.png" alt="png"></p>
+<h1 id="count-plot">Count plot</h1>
+<p>This is essentially a histogram.</p>
+<pre><code class="language-python"># Create a dictionary mapping subgroup values to colors
+palette_colors = {'Rural': &quot;green&quot;, 'Urban': &quot;blue&quot;}
+
+# Create a count plot of school with location subgroups
+sns.countplot(x='school', data=student_data, hue='location', palette=palette_colors)
+
+plt.show()
+</code></pre>
+<p><img src="basic_plotting_39_0.png" alt="png"></p>
+
 </div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
 
 
 
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/classification_sklearn/" >Classification in Scikit-Learn with Iris</a></h2>
-      <div class="article-style">
-        
-          Exploratory data analysis (EDA) from sklearn import datasets import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.style.use('ggplot')  iris = datasets.load_iris()  iris.keys()  dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])  type(iris.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_kmeans/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          from sklearn import datasets iris = datasets.load_iris() data = iris['data'] features = iris['feature_names'] target = iris['target'] target_names = iris['target_names'] # map target labels to species names =&gt; Ground Truth species = target_names[target] print(species)  # Import KMeans from sklearn.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/clustering_tsne/" >Clustering with k-means</a></h2>
-      <div class="article-style">
-        
-          t-SNE = “t-distributed stochastic neighbor embedding” Maps samples to 2D space (or 3D) only has fit_transform method, have to repeat everytime Try learning_rate between 50 and 200  Iris dataset from sklearn import datasets iris = datasets.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/pca_tranf/" >Dimension reduction with PCA transformation</a></h2>
-      <div class="article-style">
-        
-          PCA: Principle Component Analysis: step1 &gt; decorrelation, step2 &gt; reduce dimension
-1- Decorrelation:
- Rotates data samples to be aligned with axes mean ~ 0  Decorrelation import pandas as pd import numpy as np df = pd.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/nmf/" >Dimensionality reduction with NMF and recommender system</a></h2>
-      <div class="article-style">
-        
-          NMF = &ldquo;non-negative matrix factorization&rdquo; Dimension reduction technique NMF models are interpretable (unlike PCA)  NMF applied to Wikipedia articles apply NMF, this time using the tf-idf word-frequency array of Wikipedia articles, given as a csr matrix articles
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/recommender/" >Music recommender system with full pipeline</a></h2>
-      <div class="article-style">
-        
-          import pandas as pd from scipy.sparse import csr_matrix df = pd.read_csv('artists/scrobbler-small-sample.csv', index_col=0) artists = csr_matrix(df.transpose()) artist_names = [x.strip('\n').split(' ')[0] for x in open('artists/artists.csv').readlines()]  computed the normalized NMF features:
-# Perform the necessary imports from sklearn.
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/regression/" >Regression and classification in Scikit-Learn</a></h2>
-      <div class="article-style">
-        
-          Linear regression make predictions, visualize the model fit, and analyze the formula used to generate your fit.
-import pandas as pd import matplotlib.pyplot as plt weather = pd.read_csv('weatherAUS.csv')  Prepare your data Do I have any null values in my dataset
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/pandas/" >Technical notes</a></h2>
-      <div class="article-style">
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div>
-      <h2><a href="/technical_note/python/sklearn/wikipedia/preprocessing/" ></a></h2>
-      <div class="article-style">
-        
-          To preprocess wikipedia-vectors.csv into the format in which you used it in the exercises, you have to take its transpose:
-import pandas as pd from scipy.sparse import csr_matrix df = pd.
-        
-      </div>
-    </div>
-  
-
-  
-<nav>
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/technical_note/python/">&laquo;</a></li>
-    
-    
-  </ul>
-</nav>
-
-
-</div>
 
       
 

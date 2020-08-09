@@ -1537,6 +1537,220 @@ plt.show()
     </item>
     
     <item>
+      <title>Basic plotting of relational and categorical plots</title>
+      <link>http://othrif.github.io/technical_note/python/seaborn/basic_plotting/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/seaborn/basic_plotting/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;relplot&lt;/code&gt; for relational plots&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;catplot&lt;/code&gt; for categorical plots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;necessary-includes&#34;&gt;Necessary includes&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;student_data = pd.read_csv(&#39;student.csv&#39;)
+mpg = pd.read_csv(&#39;mpg.csv&#39;)
+survey_data = pd.read_csv(&#39;survey.csv&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;relational-plots&#34;&gt;Relational plots&lt;/h1&gt;
+&lt;h3 id=&#34;scatter-plot&#34;&gt;Scatter plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.relplot(x=&amp;quot;absences&amp;quot;, y=&amp;quot;G3&amp;quot;, 
+                data=student_data, 
+                kind=&#39;scatter&#39;,
+                hue=&amp;quot;location&amp;quot;, 
+                hue_order=[&#39;Rural&#39;, &#39;Urban&#39;])
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;subplots-in-rows-and-columns&#34;&gt;Subplots in rows and columns&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.relplot(x=&amp;quot;absences&amp;quot;, y=&amp;quot;G3&amp;quot;, 
+                data=student_data, 
+                kind=&#39;scatter&#39;,
+                col=&#39;location&#39;,
+                col_order=[&#39;Rural&#39;,&#39;Urban&#39;],
+                row=&#39;sex&#39;,
+                row_order=[&#39;M&#39;,&#39;F&#39;],
+                size=&#39;age&#39;,
+                hue=&#39;age&#39;,
+                style=&#39;age&#39;, # change the style per additional cateogry
+                alpha=0.4    # transparency
+           )
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_10_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;line-plot&#34;&gt;Line plot&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.relplot(x=&#39;model_year&#39;, y=&#39;mpg&#39;, data=mpg, kind=&#39;scatter&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_12_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Make the shaded area show the 95% CL 
+sns.relplot(x=&#39;model_year&#39;, y=&#39;mpg&#39;, data=mpg, kind=&#39;line&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_13_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Make the shaded area show the standard deviation
+sns.relplot(x=&amp;quot;model_year&amp;quot;, y=&amp;quot;mpg&amp;quot;,data=mpg, kind=&amp;quot;line&amp;quot;, ci=&#39;sd&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_14_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Turn off the confidence interval 
+sns.relplot(x=&amp;quot;model_year&amp;quot;, y=&amp;quot;mpg&amp;quot;,data=mpg, kind=&amp;quot;line&amp;quot;, ci=None)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Add markers and make each line have the same style
+sns.relplot(x=&amp;quot;model_year&amp;quot;, y=&amp;quot;horsepower&amp;quot;, 
+            data=mpg, kind=&amp;quot;line&amp;quot;, 
+            ci=None, style=&amp;quot;origin&amp;quot;, 
+            hue=&amp;quot;origin&amp;quot;, 
+            markers=True,
+            dashes=False)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_16_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;categorical-plots&#34;&gt;Categorical plots&lt;/h1&gt;
+&lt;h3 id=&#34;count-plot-histogram&#34;&gt;Count plot (histogram)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;survey_data[&#39;Mathematics&#39;].unique()
+survey_data[&#39;Interested in Math&#39;] = survey_data[&#39;Mathematics&#39;]&amp;gt;3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create column subplots based on age category
+sns.catplot(y=&amp;quot;Internet usage&amp;quot;, data=survey_data,
+            kind=&amp;quot;count&amp;quot;,
+            col=&#39;Loneliness&#39;)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_20_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bar-plot&#34;&gt;Bar plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a bar plot of interest in math, separated by gender
+sns.catplot(x=&#39;Gender&#39;, y=&#39;Interested in Math&#39;, data=survey_data, kind=&#39;bar&#39;)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_22_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create bar plot of average final grade in each study category
+sns.catplot(x=&#39;study_time&#39;, y=&#39;G3&#39;, data=student_data, kind=&#39;bar&#39;,
+           order=[&#39;&amp;lt;2 hours&#39;, &#39;2 to 5 hours&#39;, &#39;5 to 10 hours&#39;, &#39;&amp;gt;10 hours&#39;],
+           ci=None)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_23_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;box-plot&#34;&gt;Box plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Plot the data that we want to convert to a box plot.
+sns.catplot(x=&#39;study_time&#39;, y=&#39;G3&#39;, data=student_data)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_25_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Specify the category ordering
+study_time_order = [&amp;quot;&amp;lt;2 hours&amp;quot;, &amp;quot;2 to 5 hours&amp;quot;, 
+                    &amp;quot;5 to 10 hours&amp;quot;, &amp;quot;&amp;gt;10 hours&amp;quot;]
+
+# Create a box plot and set the order of the categories
+sns.catplot(x=&#39;study_time&#39;, y=&#39;G3&#39;, data=student_data, kind=&#39;box&#39;, order=study_time_order)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_26_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a box plot with subgroups and omit the outliers
+sns.catplot(x=&#39;internet&#39;, y=&#39;G3&#39;, data=student_data, hue=&#39;location&#39;, kind=&#39;box&#39;, sym=&#39;&#39;)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_27_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set the whiskers to 0.5 * IQR
+sns.catplot(x=&amp;quot;romantic&amp;quot;, y=&amp;quot;G3&amp;quot;,
+            data=student_data,
+            kind=&amp;quot;box&amp;quot;, whis=0.5)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_28_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x=&amp;quot;romantic&amp;quot;, y=&amp;quot;G3&amp;quot;,
+            data=student_data,
+            kind=&amp;quot;box&amp;quot;,
+            whis=[5,95])
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_29_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set the whiskers at the min and max values
+sns.catplot(x=&amp;quot;romantic&amp;quot;, y=&amp;quot;G3&amp;quot;,
+            data=student_data,
+            kind=&amp;quot;box&amp;quot;,
+            whis=[0, 100])
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_30_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;point-plot&#34;&gt;Point plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Remove the lines joining the points
+sns.catplot(x=&amp;quot;famrel&amp;quot;, y=&amp;quot;absences&amp;quot;,
+            data=student_data,
+            kind=&amp;quot;point&amp;quot;,
+            capsize=0.2,
+            join=False)
+            
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_32_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Import median function from numpy
+import numpy as np
+
+# Plot the median number of absences instead of the mean
+sns.catplot(x=&amp;quot;romantic&amp;quot;, y=&amp;quot;absences&amp;quot;,
+            data=student_data,
+            kind=&amp;quot;point&amp;quot;,
+            hue=&amp;quot;school&amp;quot;,
+            ci=None,
+            estimator=np.median)
+
+# Show plot
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_33_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;It looks like students in romantic relationships have a higher average and median number of absences in the GP school, but this association does not hold for the MS school.&lt;/p&gt;
+&lt;h1 id=&#34;other-formats&#34;&gt;Other formats&lt;/h1&gt;
+&lt;h3 id=&#34;scatter-plot-1&#34;&gt;Scatter plot&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Change the legend order in the scatter plot
+sns.scatterplot(x=&amp;quot;absences&amp;quot;, y=&amp;quot;G3&amp;quot;, 
+                data=student_data, 
+                hue=&amp;quot;location&amp;quot;, 
+                hue_order=[&#39;Rural&#39;, &#39;Urban&#39;])
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_37_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;count-plot&#34;&gt;Count plot&lt;/h1&gt;
+&lt;p&gt;This is essentially a histogram.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a dictionary mapping subgroup values to colors
+palette_colors = {&#39;Rural&#39;: &amp;quot;green&amp;quot;, &#39;Urban&#39;: &amp;quot;blue&amp;quot;}
+
+# Create a count plot of school with location subgroups
+sns.countplot(x=&#39;school&#39;, data=student_data, hue=&#39;location&#39;, palette=palette_colors)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;basic_plotting_39_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Basics of plotting</title>
       <link>http://othrif.github.io/technical_note/python/matplotlibtmp/basicsplot/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
