@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Exploratory data analysis (EDA) from sklearn import datasets import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.style.use(&#39;ggplot&#39;)  iris = datasets.load_iris()  iris.keys()  dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;])  type(iris.">
+  <meta name="description" content="Train different models on the same dataset Let each model make its predictions Meta-model: aggregates predictions of individual models Final prediction: more robust and less prone to errors Best results: models are skillful in different ways.">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/sklearn/ensemble/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/python/sklearn/ensemble/">
 
   
   
@@ -230,9 +230,9 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/">
-  <meta property="og:title" content="Scatter matrix EDA | Othmane Rifki">
-  <meta property="og:description" content="Exploratory data analysis (EDA) from sklearn import datasets import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.style.use(&#39;ggplot&#39;)  iris = datasets.load_iris()  iris.keys()  dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;])  type(iris."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/python/sklearn/ensemble/">
+  <meta property="og:title" content="Ensemble learning with Voting Classifier | Othmane Rifki">
+  <meta property="og:description" content="Train different models on the same dataset Let each model make its predictions Meta-model: aggregates predictions of individual models Final prediction: more robust and less prone to errors Best results: models are skillful in different ways."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -257,7 +257,7 @@
 
 
 
-  <title>Scatter matrix EDA | Othmane Rifki</title>
+  <title>Ensemble learning with Voting Classifier | Othmane Rifki</title>
 
 </head>
 
@@ -561,117 +561,105 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Scatter matrix EDA</h1>
+    <h1 class="technical_note_title">Ensemble learning with Voting Classifier</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="exploratory-data-analysis-eda">Exploratory data analysis (EDA)</h3>
-<pre><code class="language-python">from sklearn import datasets
-import pandas as pd
+  <ul>
+<li>Train different models on the same dataset</li>
+<li>Let each model make its predictions</li>
+<li>Meta-model: aggregates predictions of individual models</li>
+<li>Final prediction: more robust and less prone to errors</li>
+<li>Best results: models are skillful in different ways.</li>
+</ul>
+<h3 id="import-modules">Import modules</h3>
+<pre><code class="language-python"># Manipulation
 import numpy as np
+import pandas as pd
+# Manipulation
+import seaborn as sns
 import matplotlib.pyplot as plt
-plt.style.use('ggplot')
+# Selection
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+# Metrics
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error as MSE
+# Models
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier as KNN
+# Ensemble
+from sklearn.ensemble import VotingClassifier
 </code></pre>
-<pre><code class="language-python">iris = datasets.load_iris()
-</code></pre>
-<pre><code class="language-python">iris.keys()
-</code></pre>
-<pre><code>dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])
-</code></pre>
-<pre><code class="language-python">type(iris.data), type(iris.target)
-</code></pre>
-<pre><code>(numpy.ndarray, numpy.ndarray)
-</code></pre>
-<pre><code class="language-python">iris.data.shape
-</code></pre>
-<pre><code>(150, 4)
-</code></pre>
-<pre><code class="language-python">iris.target_names
-</code></pre>
-<pre><code>array(['setosa', 'versicolor', 'virginica'], dtype='&lt;U10')
-</code></pre>
-<pre><code class="language-python">iris.feature_names
-</code></pre>
-<pre><code>['sepal length (cm)',
- 'sepal width (cm)',
- 'petal length (cm)',
- 'petal width (cm)']
-</code></pre>
-<pre><code class="language-python">X = iris.data
-y = iris.target
-df = pd.DataFrame(X, columns=iris.feature_names)
-</code></pre>
-<pre><code class="language-python">df.head()
-</code></pre>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
+<h3 id="load-data">Load data</h3>
+<pre><code class="language-python"># read csv into df
+wbc = pd.read_csv('wbc.csv')
 
-.dataframe thead th {
-    text-align: right;
-}
+# Get features of interest and target labels
+X = wbc.loc[:,['radius_mean','concave points_mean']]
+y = (wbc.loc[:, 'diagnosis']=='M').astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=1)
 </code></pre>
-<p></style></p>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sepal length (cm)</th>
-      <th>sepal width (cm)</th>
-      <th>petal length (cm)</th>
-      <th>petal width (cm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<pre><code class="language-python">_ = pd.plotting.scatter_matrix(df, c = y, figsize = [8,8], s = 150, marker = 'D')
+<h3 id="define-the-ensemble">Define the ensemble</h3>
+<pre><code class="language-python"># Set seed for reproducibility
+SEED=1
+
+# Instantiate lr
+lr = LogisticRegression(random_state=SEED)
+
+# Instantiate knn
+knn = KNN(n_neighbors=27)
+
+# Instantiate dt
+dt = DecisionTreeClassifier(min_samples_leaf=0.13, random_state=SEED)
+
+# Define the list classifiers
+classifiers = [('Logistic Regression', lr), ('K Nearest Neighbours', knn), ('Classification Tree', dt)]
 </code></pre>
-<p><img src="classification_sklearn_11_0.png" alt="png"></p>
+<h3 id="evaluate-individual-classifiers">Evaluate individual classifiers</h3>
+<pre><code class="language-python"># Iterate over the pre-defined list of classifiers
+for clf_name, clf in classifiers:    
+ 
+    # Fit clf to the training set
+    clf.fit(X_train, y_train)    
+   
+    # Predict y_pred
+    y_pred = clf.predict(X_test)
+    
+    # Calculate accuracy
+    accuracy = accuracy_score(y_test, y_pred) 
+   
+    # Evaluate clf's accuracy on the test set
+    print('{:s} : {:.3f}'.format(clf_name, accuracy))
+</code></pre>
+<pre><code>Logistic Regression : 0.886
+K Nearest Neighbours : 0.912
+Classification Tree : 0.904
+</code></pre>
+<pre><code class="language-python"># Instantiate a VotingClassifier vc
+vc = VotingClassifier(estimators=classifiers)     
+
+# Fit vc to the training set
+vc.fit(X_train, y_train)   
+
+# Evaluate the test set predictions
+y_pred = vc.predict(X_test)
+
+# Calculate accuracy score
+accuracy = accuracy_score(y_test, y_pred)
+print('Voting Classifier: {:.3f}'.format(accuracy))
+</code></pre>
+<pre><code>Voting Classifier: 0.912
+</code></pre>
 
 </div>
   <aside>

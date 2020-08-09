@@ -18,9 +18,20 @@
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/seaborn/categorical_plot/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;relplot&lt;/code&gt; for relational plots&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;catplot&lt;/code&gt; for categorical plots&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;catplot&lt;/code&gt; for categorical plots with &lt;code&gt;bar&lt;/code&gt;, &lt;code&gt;count&lt;/code&gt;, &lt;code&gt;box&lt;/code&gt;, &lt;code&gt;point&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add 3rd dimension to our plot with:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hue&lt;/code&gt; with different color&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;row&lt;/code&gt; and &lt;code&gt;col&lt;/code&gt; to create subplots&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Syntax:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.catplot(x=&#39;x_variable_name&#39;,
+            y=&#39;y_variable_name&#39;,
+            data=pandas_df, 
+            kind=&#39;bar&#39;)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;necessary-includes&#34;&gt;Necessary includes&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import matplotlib.pyplot as plt
@@ -162,9 +173,20 @@ plt.show()
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/seaborn/relational_plots/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;relplot&lt;/code&gt; for relational plots&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;catplot&lt;/code&gt; for categorical plots&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;relplot&lt;/code&gt; for relational plots with &lt;code&gt;scatter&lt;/code&gt;, &lt;code&gt;line&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add 3rd dimension to our plot with:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hue&lt;/code&gt; with different color&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;row&lt;/code&gt; and &lt;code&gt;col&lt;/code&gt; to create subplots&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Syntax:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sns.relplot(x=&#39;x_variable_name&#39;,
+            y=&#39;y_variable_name&#39;,
+            data=pandas_df, 
+            kind=&#39;scatter&#39;)
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;necessary-includes&#34;&gt;Necessary includes&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 import matplotlib.pyplot as plt
@@ -251,12 +273,25 @@ plt.show()
       <link>http://othrif.github.io/technical_note/python/seaborn/stylistic/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       <guid>http://othrif.github.io/technical_note/python/seaborn/stylistic/</guid>
-      <description>&lt;h3 id=&#34;change-style-and-palette&#34;&gt;Change style and palette&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;customization&#34;&gt;Customization&lt;/h3&gt;
+&lt;p&gt;Basics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change background: &lt;code&gt;sns.set_style()&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;styles: &amp;lsquo;white&amp;rsquo;, &amp;lsquo;dark&amp;rsquo;, &amp;lsquo;whitegrid&amp;rsquo;, &amp;lsquo;darkgrid&amp;rsquo;, &amp;lsquo;ticks&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Change colors: &lt;code&gt;sns.set_palette()&lt;/code&gt;
+&lt;ul&gt;
 &lt;li&gt;Sequential palette: &amp;lsquo;Greys&amp;rsquo;, &amp;lsquo;Blues&amp;rsquo;, &amp;lsquo;PuRd&amp;rsquo;, &amp;lsquo;GnBu&amp;rsquo;&lt;/li&gt;
 &lt;li&gt;Diverging palettes: &amp;lsquo;RdBu&amp;rsquo;, &amp;lsquo;PRGn&amp;rsquo;, &amp;lsquo;RdBu_r&amp;rsquo;, &amp;lsquo;PRGn_r&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Change scale: &lt;code&gt;sns.set_context()&lt;/code&gt;
+&lt;ul&gt;
 &lt;li&gt;context: &amp;lsquo;paper&amp;rsquo;, &amp;lsquo;notebook&amp;rsquo;, &amp;lsquo;talk&amp;rsquo;, &amp;lsquo;poster&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Ref:&lt;/p&gt;
 &lt;ul&gt;
@@ -334,8 +369,25 @@ plt.show()
       <guid>http://othrif.github.io/technical_note/python/seaborn/title_label/</guid>
       <description>&lt;p&gt;Seaborn plots create two different types of objects:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;FacetGrid&lt;/code&gt;: Can create subplots -&amp;gt; &lt;code&gt;relplot()&lt;/code&gt;, &lt;code&gt;catplot()&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;AxesSubplot&lt;/code&gt;: Only creates single plot -&amp;gt; &lt;code&gt;scatterplot()&lt;/code&gt;, &lt;code&gt;countplot()&lt;/code&gt;, etc.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;FacetGrid&lt;/code&gt;: Can create subplots -&amp;gt; &lt;code&gt;relplot()&lt;/code&gt;, &lt;code&gt;catplot()&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;AxesSubplot&lt;/code&gt;: Only creates single plot -&amp;gt; &lt;code&gt;scatterplot()&lt;/code&gt;, &lt;code&gt;countplot()&lt;/code&gt;, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set title:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;FacetGrid&lt;/code&gt;: &lt;code&gt;g.fig.suptitle()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;AxesSubplot&lt;/code&gt;: &lt;code&gt;g.set_title()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Set x- and y- labels: &lt;code&gt;g.set(xlabel=&#39;new x-axis label&#39;, ylabel=&#39;new y-axis label&#39;)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Rotate x-ticks labels: &lt;code&gt;plt.xticks(rotation=90)&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;necessary-includes&#34;&gt;Necessary includes&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd

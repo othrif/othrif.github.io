@@ -232,120 +232,6 @@ labels
     </item>
     
     <item>
-      <title>Classification in Scikit-Learn with Iris</title>
-      <link>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      <guid>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</guid>
-      <description>&lt;h3 id=&#34;exploratory-data-analysis-eda&#34;&gt;Exploratory data analysis (EDA)&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-plt.style.use(&#39;ggplot&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris = datasets.load_iris()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.keys()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(iris.data), type(iris.target)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;(numpy.ndarray, numpy.ndarray)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.data.shape
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;(150, 4)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.target_names
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;array([&#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;], dtype=&#39;&amp;lt;U10&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.feature_names
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;[&#39;sepal length (cm)&#39;,
- &#39;sepal width (cm)&#39;,
- &#39;petal length (cm)&#39;,
- &#39;petal width (cm)&#39;]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = iris.data
-y = iris.target
-df = pd.DataFrame(X, columns=iris.feature_names)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;div&gt;
-&lt;style scoped&gt;
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
-    vertical-align: top;
-}
-
-.dataframe thead th {
-    text-align: right;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
-&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
-  &lt;thead&gt;
-    &lt;tr style=&#34;text-align: right;&#34;&gt;
-      &lt;th&gt;&lt;/th&gt;
-      &lt;th&gt;sepal length (cm)&lt;/th&gt;
-      &lt;th&gt;sepal width (cm)&lt;/th&gt;
-      &lt;th&gt;petal length (cm)&lt;/th&gt;
-      &lt;th&gt;petal width (cm)&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;0&lt;/th&gt;
-      &lt;td&gt;5.1&lt;/td&gt;
-      &lt;td&gt;3.5&lt;/td&gt;
-      &lt;td&gt;1.4&lt;/td&gt;
-      &lt;td&gt;0.2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;4.9&lt;/td&gt;
-      &lt;td&gt;3.0&lt;/td&gt;
-      &lt;td&gt;1.4&lt;/td&gt;
-      &lt;td&gt;0.2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;4.7&lt;/td&gt;
-      &lt;td&gt;3.2&lt;/td&gt;
-      &lt;td&gt;1.3&lt;/td&gt;
-      &lt;td&gt;0.2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;3&lt;/th&gt;
-      &lt;td&gt;4.6&lt;/td&gt;
-      &lt;td&gt;3.1&lt;/td&gt;
-      &lt;td&gt;1.5&lt;/td&gt;
-      &lt;td&gt;0.2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;4&lt;/th&gt;
-      &lt;td&gt;5.0&lt;/td&gt;
-      &lt;td&gt;3.6&lt;/td&gt;
-      &lt;td&gt;1.4&lt;/td&gt;
-      &lt;td&gt;0.2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;_ = pd.plotting.scatter_matrix(df, c = y, figsize = [8,8], s = 150, marker = &#39;D&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;classification_sklearn_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Clustering with k-means</title>
       <link>http://othrif.github.io/technical_note/python/sklearn/clustering_kmeans/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -680,6 +566,114 @@ plt.show()
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;clustering_tsne_9_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Decision tree with classification</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/decision_tree_classification/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/decision_tree_classification/</guid>
+      <description>&lt;p&gt;predict whether a tumor is malignant or benign based on two features: the mean radius of the tumor (radius_mean) and its mean number of concave points (concave points_mean)&lt;/p&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier # classification
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error as MSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+wbc = pd.read_csv(&#39;wbc.csv&#39;)
+
+# Get features of interest and target labels
+X = wbc.loc[:,[&#39;radius_mean&#39;,&#39;concave points_mean&#39;]]
+y = (wbc.loc[:, &#39;diagnosis&#39;]==&#39;M&#39;).astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate a DecisionTreeClassifier &#39;dt&#39; with a maximum depth of 6
+dt = DecisionTreeClassifier(max_depth=10, random_state=1)
+
+# Fit dt to the training set
+dt.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = dt.predict(X_test)
+print(y_pred[0:5])
+
+# Compute test set accuracy  
+acc = accuracy_score(y_test, y_pred)
+print(&amp;quot;Test set accuracy: {:.2f}&amp;quot;.format(acc))
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[1 0 0 1 0]
+Test set accuracy: 0.92
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Decision tree with Regression</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/decision_tree_regression/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/decision_tree_regression/</guid>
+      <description>&lt;p&gt;predict whether a tumor is malignant or benign based on two features: the mean radius of the tumor (radius_mean) and its mean number of concave points (concave points_mean)&lt;/p&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeRegressor # regression
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error as MSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+wbc = pd.read_csv(&#39;auto.csv&#39;)
+wbc_data = pd.get_dummies(wbc, columns=[&amp;quot;origin&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+wbc = pd.read_csv(&#39;auto.csv&#39;)
+wbc_data = pd.get_dummies(wbc, columns=[&amp;quot;origin&amp;quot;])
+
+# Get features of interest and target labels
+X = wbc_data.iloc[:,1:]
+y = wbc_data.iloc[:, 0]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2,
+                                                  random_state=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;decision-tree-regressor&#34;&gt;Decision Tree regressor&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate a DecisionTreeRegressor &#39;dt&#39; with a maximum depth of 8
+dt = DecisionTreeRegressor(max_depth=8,
+                           min_samples_leaf=0.13)
+
+# Fit dt to the training set
+dt.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = dt.predict(X_test)
+
+# Compute mse_dt
+mse_dt = MSE(y_test, y_pred)
+
+# Compute rmse_dt
+rmse_dt = mse_dt**(1/2)
+
+# Print rmse_dt
+print(&amp;quot;Test set RMSE of dt: {:.2f}&amp;quot;.format(rmse_dt))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set RMSE of dt: 4.27
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -1024,6 +1018,175 @@ print(digit_features)
     </item>
     
     <item>
+      <title>Ensemble learning with Voting Classifier</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/ensemble/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/ensemble/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Train different models on the same dataset&lt;/li&gt;
+&lt;li&gt;Let each model make its predictions&lt;/li&gt;
+&lt;li&gt;Meta-model: aggregates predictions of individual models&lt;/li&gt;
+&lt;li&gt;Final prediction: more robust and less prone to errors&lt;/li&gt;
+&lt;li&gt;Best results: models are skillful in different ways.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Manipulation
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+# Metrics
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error as MSE
+# Models
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier as KNN
+# Ensemble
+from sklearn.ensemble import VotingClassifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+wbc = pd.read_csv(&#39;wbc.csv&#39;)
+
+# Get features of interest and target labels
+X = wbc.loc[:,[&#39;radius_mean&#39;,&#39;concave points_mean&#39;]]
+y = (wbc.loc[:, &#39;diagnosis&#39;]==&#39;M&#39;).astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-the-ensemble&#34;&gt;Define the ensemble&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# Instantiate lr
+lr = LogisticRegression(random_state=SEED)
+
+# Instantiate knn
+knn = KNN(n_neighbors=27)
+
+# Instantiate dt
+dt = DecisionTreeClassifier(min_samples_leaf=0.13, random_state=SEED)
+
+# Define the list classifiers
+classifiers = [(&#39;Logistic Regression&#39;, lr), (&#39;K Nearest Neighbours&#39;, knn), (&#39;Classification Tree&#39;, dt)]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-individual-classifiers&#34;&gt;Evaluate individual classifiers&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Iterate over the pre-defined list of classifiers
+for clf_name, clf in classifiers:    
+ 
+    # Fit clf to the training set
+    clf.fit(X_train, y_train)    
+   
+    # Predict y_pred
+    y_pred = clf.predict(X_test)
+    
+    # Calculate accuracy
+    accuracy = accuracy_score(y_test, y_pred) 
+   
+    # Evaluate clf&#39;s accuracy on the test set
+    print(&#39;{:s} : {:.3f}&#39;.format(clf_name, accuracy))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Logistic Regression : 0.886
+K Nearest Neighbours : 0.912
+Classification Tree : 0.904
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate a VotingClassifier vc
+vc = VotingClassifier(estimators=classifiers)     
+
+# Fit vc to the training set
+vc.fit(X_train, y_train)   
+
+# Evaluate the test set predictions
+y_pred = vc.predict(X_test)
+
+# Calculate accuracy score
+accuracy = accuracy_score(y_test, y_pred)
+print(&#39;Voting Classifier: {:.3f}&#39;.format(accuracy))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Voting Classifier: 0.912
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>k-Fold Cross Validation</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/kfold_cv/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/kfold_cv/</guid>
+      <description>&lt;p&gt;predict whether a tumor is malignant or benign based on two features: the mean radius of the tumor (radius_mean) and its mean number of concave points (concave points_mean)&lt;/p&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.tree import DecisionTreeRegressor # regression
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error as MSE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+wbc = pd.read_csv(&#39;auto.csv&#39;)
+wbc_data = pd.get_dummies(wbc, columns=[&amp;quot;origin&amp;quot;])
+
+# Get features of interest and target labels
+X = wbc_data.iloc[:,1:]
+y = wbc_data.iloc[:, 0]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2,
+                                                  random_state=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-10-fold-cv-error&#34;&gt;Evaluate the 10-fold CV error&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set SEED for reproducibility
+SEED = 1
+
+# Instantiate a DecisionTreeRegressor dt
+dt = DecisionTreeRegressor(max_depth=4, min_samples_leaf=0.26, random_state=SEED)
+
+# Fit dt to the training set
+dt.fit(X_train, y_train)
+
+# Compute the array containing the 10-folds CV MSEs
+MSE_CV_scores = - cross_val_score(dt, X_train, y_train, cv=10, 
+                       scoring=&#39;neg_mean_squared_error&#39;,
+                       n_jobs=-1)
+
+# Compute the 10-folds CV RMSE
+RMSE_CV = (MSE_CV_scores.mean())**(1/2)
+
+# Print RMSE_CV
+print(&#39;CV RMSE: {:.2f}&#39;.format(RMSE_CV))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;CV RMSE: 5.04
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Predict the labels of the training set
+y_pred_train = dt.predict(X_train)
+
+# Evaluate the training set RMSE of dt
+RMSE_train = (MSE(y_train, y_pred_train))**(1/2)
+
+# Print RMSE_train
+print(&#39;Train RMSE: {:.2f}&#39;.format(RMSE_train))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Train RMSE: 5.11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Good!
+Notice how the training error is roughly equal to the 10-folds CV error you obtained.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Music recommender system with full pipeline</title>
       <link>http://othrif.github.io/technical_note/python/sklearn/recommender/</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -1325,6 +1488,118 @@ Precision: 0.75
 Recall: 0.35
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can see here that the precision of our rain prediction model is higher, meaning that we didn&amp;rsquo;t make too many Type I errors. However, there were plenty of Type II errors shown in the bottom-left quadrant of the confusion matrix. This is indicated further by the low recall score, meaning that there were plenty of rainy days that we missed out on.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Scatter matrix EDA</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</guid>
+      <description>&lt;h3 id=&#34;exploratory-data-analysis-eda&#34;&gt;Exploratory data analysis (EDA)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+plt.style.use(&#39;ggplot&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris = datasets.load_iris()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.keys()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;target_names&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;filename&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(iris.data), type(iris.target)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(numpy.ndarray, numpy.ndarray)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.data.shape
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;(150, 4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.target_names
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;array([&#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;], dtype=&#39;&amp;lt;U10&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;iris.feature_names
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;[&#39;sepal length (cm)&#39;,
+ &#39;sepal width (cm)&#39;,
+ &#39;petal length (cm)&#39;,
+ &#39;petal width (cm)&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;X = iris.data
+y = iris.target
+df = pd.DataFrame(X, columns=iris.feature_names)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+&lt;pre&gt;&lt;code&gt;.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;/style&gt;&lt;/p&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;sepal length (cm)&lt;/th&gt;
+      &lt;th&gt;sepal width (cm)&lt;/th&gt;
+      &lt;th&gt;petal length (cm)&lt;/th&gt;
+      &lt;th&gt;petal width (cm)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;5.1&lt;/td&gt;
+      &lt;td&gt;3.5&lt;/td&gt;
+      &lt;td&gt;1.4&lt;/td&gt;
+      &lt;td&gt;0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;4.9&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;1.4&lt;/td&gt;
+      &lt;td&gt;0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;4.7&lt;/td&gt;
+      &lt;td&gt;3.2&lt;/td&gt;
+      &lt;td&gt;1.3&lt;/td&gt;
+      &lt;td&gt;0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;4.6&lt;/td&gt;
+      &lt;td&gt;3.1&lt;/td&gt;
+      &lt;td&gt;1.5&lt;/td&gt;
+      &lt;td&gt;0.2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;3.6&lt;/td&gt;
+      &lt;td&gt;1.4&lt;/td&gt;
+      &lt;td&gt;0.2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;_ = pd.plotting.scatter_matrix(df, c = y, figsize = [8,8], s = 150, marker = &#39;D&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;classification_sklearn_11_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

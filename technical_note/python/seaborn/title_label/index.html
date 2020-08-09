@@ -29,7 +29,9 @@
     
   
   <meta name="description" content="Seaborn plots create two different types of objects:
- FacetGrid: Can create subplots -&gt; relplot(), catplot() AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.  Necessary includes import pandas as pd import matplotlib.">
+  FacetGrid: Can create subplots -&gt; relplot(), catplot()
+  AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.
+  Set title:">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/title_label/">
@@ -234,7 +236,9 @@
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/title_label/">
   <meta property="og:title" content="Titles and labels | Othmane Rifki">
   <meta property="og:description" content="Seaborn plots create two different types of objects:
- FacetGrid: Can create subplots -&gt; relplot(), catplot() AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.  Necessary includes import pandas as pd import matplotlib."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  FacetGrid: Can create subplots -&gt; relplot(), catplot()
+  AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.
+  Set title:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -572,8 +576,25 @@
 
   <p>Seaborn plots create two different types of objects:</p>
 <ul>
-<li><code>FacetGrid</code>: Can create subplots -&gt; <code>relplot()</code>, <code>catplot()</code></li>
-<li><code>AxesSubplot</code>: Only creates single plot -&gt; <code>scatterplot()</code>, <code>countplot()</code>, etc.</li>
+<li>
+<p><code>FacetGrid</code>: Can create subplots -&gt; <code>relplot()</code>, <code>catplot()</code></p>
+</li>
+<li>
+<p><code>AxesSubplot</code>: Only creates single plot -&gt; <code>scatterplot()</code>, <code>countplot()</code>, etc.</p>
+</li>
+<li>
+<p>Set title:</p>
+<ul>
+<li><code>FacetGrid</code>: <code>g.fig.suptitle()</code></li>
+<li><code>AxesSubplot</code>: <code>g.set_title()</code></li>
+</ul>
+</li>
+<li>
+<p>Set x- and y- labels: <code>g.set(xlabel='new x-axis label', ylabel='new y-axis label')</code></p>
+</li>
+<li>
+<p>Rotate x-ticks labels: <code>plt.xticks(rotation=90)</code></p>
+</li>
 </ul>
 <h3 id="necessary-includes">Necessary includes</h3>
 <pre><code class="language-python">import pandas as pd

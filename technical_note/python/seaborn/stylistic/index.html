@@ -28,7 +28,8 @@
   
     
   
-  <meta name="description" content="Change style and palette  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo; Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo; context: &lsquo;paper&rsquo;, &lsquo;notebook&rsquo;, &lsquo;talk&rsquo;, &lsquo;poster&rsquo;  Ref:">
+  <meta name="description" content="Customization Basics:
+ Change background: sns.set_style()  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo;   Change colors: sns.set_palette()  Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo;   Change scale: sns.">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/stylistic/">
@@ -232,7 +233,8 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/stylistic/">
   <meta property="og:title" content="Styles, palette, and scales | Othmane Rifki">
-  <meta property="og:description" content="Change style and palette  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo; Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo; context: &lsquo;paper&rsquo;, &lsquo;notebook&rsquo;, &lsquo;talk&rsquo;, &lsquo;poster&rsquo;  Ref:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="Customization Basics:
+ Change background: sns.set_style()  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo;   Change colors: sns.set_palette()  Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo;   Change scale: sns."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -568,12 +570,25 @@
   </header>
   <div class="content">
 
-  <h3 id="change-style-and-palette">Change style and palette</h3>
+  <h3 id="customization">Customization</h3>
+<p>Basics:</p>
+<ul>
+<li>Change background: <code>sns.set_style()</code>
 <ul>
 <li>styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo;</li>
+</ul>
+</li>
+<li>Change colors: <code>sns.set_palette()</code>
+<ul>
 <li>Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo;</li>
 <li>Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo;</li>
+</ul>
+</li>
+<li>Change scale: <code>sns.set_context()</code>
+<ul>
 <li>context: &lsquo;paper&rsquo;, &lsquo;notebook&rsquo;, &lsquo;talk&rsquo;, &lsquo;poster&rsquo;</li>
+</ul>
+</li>
 </ul>
 <p>Ref:</p>
 <ul>

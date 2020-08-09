@@ -313,11 +313,6 @@
   </url>
   
   <url>
-    <loc>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://othrif.github.io/technical_note/python/sklearn/clustering_kmeans/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -398,6 +393,16 @@
   </url>
   
   <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/decision_tree_classification/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/decision_tree_regression/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://othrif.github.io/technical_note/python/basics/function_decorator/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -434,6 +439,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/math/stats/encoding/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/ensemble/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -559,6 +569,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/scripting/jupyter/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/kfold_cv/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -819,6 +834,11 @@
   
   <url>
     <loc>http://othrif.github.io/technical_note/python/matplotlibtmp/savefig/</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://othrif.github.io/technical_note/python/sklearn/classification_sklearn/</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

@@ -596,7 +596,7 @@
       <h2><a href="/technical_note/python/seaborn/categorical_plot/" >Basic plotting of categorical plots</a></h2>
       <div class="article-style">
         
-          relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv('student.csv') mpg = pd.
+          catplot for categorical plots with bar, count, box, point Add 3rd dimension to our plot with:  hue with different color row and col to create subplots    Syntax:
         
       </div>
     </div>
@@ -608,7 +608,7 @@
       <h2><a href="/technical_note/python/seaborn/relational_plots/" >Basic plotting of relational plots</a></h2>
       <div class="article-style">
         
-          relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv('student.csv') mpg = pd.
+          relplot for relational plots with scatter, line Add 3rd dimension to our plot with:  hue with different color row and col to create subplots    Syntax:
         
       </div>
     </div>
@@ -620,7 +620,8 @@
       <h2><a href="/technical_note/python/seaborn/stylistic/" >Styles, palette, and scales</a></h2>
       <div class="article-style">
         
-          Change style and palette  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo; Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo; context: &lsquo;paper&rsquo;, &lsquo;notebook&rsquo;, &lsquo;talk&rsquo;, &lsquo;poster&rsquo;  Ref:
+          Customization Basics:
+ Change background: sns.set_style()  styles: &lsquo;white&rsquo;, &lsquo;dark&rsquo;, &lsquo;whitegrid&rsquo;, &lsquo;darkgrid&rsquo;, &lsquo;ticks&rsquo;   Change colors: sns.set_palette()  Sequential palette: &lsquo;Greys&rsquo;, &lsquo;Blues&rsquo;, &lsquo;PuRd&rsquo;, &lsquo;GnBu&rsquo; Diverging palettes: &lsquo;RdBu&rsquo;, &lsquo;PRGn&rsquo;, &lsquo;RdBu_r&rsquo;, &lsquo;PRGn_r&rsquo;   Change scale: sns.
         
       </div>
     </div>
@@ -633,7 +634,9 @@
       <div class="article-style">
         
           Seaborn plots create two different types of objects:
- FacetGrid: Can create subplots -&gt; relplot(), catplot() AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.  Necessary includes import pandas as pd import matplotlib.
+  FacetGrid: Can create subplots -&gt; relplot(), catplot()
+  AxesSubplot: Only creates single plot -&gt; scatterplot(), countplot(), etc.
+  Set title:
         
       </div>
     </div>

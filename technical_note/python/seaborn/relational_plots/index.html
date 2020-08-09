@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd.">
+  <meta name="description" content="relplot for relational plots with scatter, line Add 3rd dimension to our plot with:  hue with different color row and col to create subplots    Syntax:">
 
   
   <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/seaborn/relational_plots/">
@@ -232,7 +232,7 @@
   <meta property="og:site_name" content="Othmane Rifki">
   <meta property="og:url" content="http://othrif.github.io/technical_note/python/seaborn/relational_plots/">
   <meta property="og:title" content="Basic plotting of relational plots | Othmane Rifki">
-  <meta property="og:description" content="relplot for relational plots catplot for categorical plots  Necessary includes import pandas as pd import matplotlib.pyplot as plt import seaborn as sns  Load data student_data = pd.read_csv(&#39;student.csv&#39;) mpg = pd."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:description" content="relplot for relational plots with scatter, line Add 3rd dimension to our plot with:  hue with different color row and col to create subplots    Syntax:"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -569,9 +569,20 @@
   <div class="content">
 
   <ul>
-<li><code>relplot</code> for relational plots</li>
-<li><code>catplot</code> for categorical plots</li>
+<li><code>relplot</code> for relational plots with <code>scatter</code>, <code>line</code></li>
+<li>Add 3rd dimension to our plot with:
+<ul>
+<li><code>hue</code> with different color</li>
+<li><code>row</code> and <code>col</code> to create subplots</li>
 </ul>
+</li>
+</ul>
+<p>Syntax:</p>
+<pre><code class="language-python">sns.relplot(x='x_variable_name',
+            y='y_variable_name',
+            data=pandas_df, 
+            kind='scatter')
+</code></pre>
 <h3 id="necessary-includes">Necessary includes</h3>
 <pre><code class="language-python">import pandas as pd
 import matplotlib.pyplot as plt
