@@ -6168,10 +6168,6 @@ from sklearn.metrics import mean_squared_error as MSE
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
 wbc = pd.read_csv(&#39;auto.csv&#39;)
 wbc_data = pd.get_dummies(wbc, columns=[&amp;quot;origin&amp;quot;])
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
-wbc = pd.read_csv(&#39;auto.csv&#39;)
-wbc_data = pd.get_dummies(wbc, columns=[&amp;quot;origin&amp;quot;])
 
 # Get features of interest and target labels
 X = wbc_data.iloc[:,1:]
@@ -7121,6 +7117,475 @@ laptops2.head()
 &lt;/table&gt;
 &lt;/div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble learning with AdaBoost</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/boost/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/boost/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Boosting: Ensemble method combining several weak learners to form a strong learner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Weak learner: Model doing slightly better than random guessing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Example of weak learner: Decision stump (CART whose maximum depth is 1).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Train an ensemble of predictors sequentially.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each predictor tries to correct its predecessor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AdaBoost: Stands for Adaptive Boosting.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each predictor pays more attention to the instances wrongly predicted by its predecessor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Achieved by changing the weights of training instances.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Each predictor is assigned a coefcient α.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;α depends on the predictor&amp;rsquo;s training error.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+# Metrics
+from sklearn.metrics import roc_auc_score
+# Models
+from sklearn.tree import DecisionTreeClassifier
+# Ensemble
+from sklearn.ensemble import AdaBoostClassifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;liver/indian_liver_patient_preprocessed.csv&#39;)
+
+# Get features of interest and target labels
+X = df.iloc[:,:-1]
+y = (df.iloc[:,-1]).astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-the-adaboost-classifier&#34;&gt;Define the AdaBoost classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate dt
+dt = DecisionTreeClassifier(max_depth=2, random_state=1)
+
+# Instantiate ada
+ada = AdaBoostClassifier(base_estimator=dt, n_estimators=180, random_state=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;train-the-adaboost-classifier&#34;&gt;Train the AdaBoost classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit ada to the training set
+ada.fit(X_train, y_train)
+
+# Compute the probabilities of obtaining the positive class
+y_pred_proba = ada.predict_proba(X_test)[:,1]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-adaboost-classifier&#34;&gt;Evaluate the AdaBoost classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Evaluate test-set roc_auc_score
+ada_roc_auc = roc_auc_score(y_test, y_pred_proba)
+
+# Print roc_auc_score
+print(&#39;ROC AUC score: {:.2f}&#39;.format(ada_roc_auc))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;ROC AUC score: 0.65
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble learning with Bagging</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/bagging/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/bagging/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Bagging: Bootstrap Aggregation
+&lt;ul&gt;
+&lt;li&gt;one algorithm&lt;/li&gt;
+&lt;li&gt;Different subsets of the training set&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Uses a technique known as the bootstrap&lt;/li&gt;
+&lt;li&gt;Reduces variance of individual models in the ensemble&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+# Metrics
+from sklearn.metrics import accuracy_score
+# Models
+from sklearn.tree import DecisionTreeClassifier
+# Ensemble
+from sklearn.ensemble import BaggingClassifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;liver/indian_liver_patient_preprocessed.csv&#39;)
+
+# Get features of interest and target labels
+X = df.iloc[:,:-1]
+y = (df.iloc[:,-1]).astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-the-bagging-classifier&#34;&gt;Define the bagging classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate dt
+dt = DecisionTreeClassifier(random_state=SEED)
+
+# Instantiate bc
+bc = BaggingClassifier(base_estimator=dt, n_estimators=50, random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-bagging-performance&#34;&gt;Evaluate bagging performance&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit bc to the training set
+bc.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = bc.predict(X_test)
+
+# Evaluate acc_test
+acc_test = accuracy_score(y_test, y_pred)
+print(&#39;Test set accuracy of bc: {:.2f}&#39;.format(acc_test)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set accuracy of bc: 0.71
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit single tree to the training set
+dt.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred_singleTree = dt.predict(X_test)
+
+# Evaluate acc_test
+acc_test_singleTree = accuracy_score(y_test, y_pred)
+print(&#39;Test set accuracy of single tree: {:.2f}&#39;.format(acc_test)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set accuracy of single tree: 0.63
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A single tree achieved 8% lower accuracy than bagging!&lt;/p&gt;
+&lt;h4 id=&#34;evaluate-out-of-box-oob-accuracy&#34;&gt;Evaluate Out of Box (OOB) accuracy&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;On average, for each model, 63% of the training instances are sampled when bootstrapping&lt;/li&gt;
+&lt;li&gt;The remaining 37% constitute the OOB instances.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate dt
+dt = DecisionTreeClassifier(min_samples_leaf=8, random_state=1)
+
+# Instantiate bc
+bc = BaggingClassifier(base_estimator=dt, 
+            n_estimators=50,
+            oob_score=True,
+            random_state=1)
+
+# Fit bc to the training set 
+bc.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = bc.predict(X_test)
+
+# Evaluate test set accuracy
+acc_test = accuracy_score(y_test, y_pred)
+
+# Evaluate OOB accuracy
+acc_oob = bc.oob_score_
+
+# Print acc_test and acc_oob
+print(&#39;Test set accuracy: {:.3f}, OOB accuracy: {:.3f}&#39;.format(acc_test, acc_oob))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set accuracy: 0.690, OOB accuracy: 0.708
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The test set accuracy and the OOB accuracy of bc are both roughly equal to 70%!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble learning with Gradient Boosting</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/gradientboost/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/gradientboost/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Sequential correction of predecessor&amp;rsquo;s errors.&lt;/li&gt;
+&lt;li&gt;Does not tweak the weights of training instances, unlike AdaBoost&lt;/li&gt;
+&lt;li&gt;Fit each predictor is trained using its predecessor&amp;rsquo;s residual errors as labels.&lt;/li&gt;
+&lt;li&gt;Gradient Boosted Trees: a decision tree is used as a base learner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+# Metrics
+from sklearn.metrics import mean_squared_error as MSE
+# Models
+from sklearn.tree import DecisionTreeClassifier
+# Ensemble
+from sklearn.ensemble import GradientBoostingRegressor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;bikes.csv&#39;)
+
+# Get features of interest and target labels
+X = df.drop(&#39;cnt&#39;,axis=1)
+y = df[&#39;cnt&#39;]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-the-gradient-boosting-regressor&#34;&gt;Define the Gradient Boosting regressor&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate gb
+gb = GradientBoostingRegressor(n_estimators=200, 
+            max_depth=4,
+            random_state=2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;train-the-gb-classifier&#34;&gt;Train the GB classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit gb to the training set
+gb.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = gb.predict(X_test)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-gb-classifier&#34;&gt;Evaluate the GB classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Compute MSE
+mse_test = MSE(y_test, y_pred)
+
+# Compute RMSE
+rmse_test = mse_test ** (1/2)
+
+# Print RMSE
+print(&#39;Test set RMSE of gb: {:.3f}&#39;.format(rmse_test))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set RMSE of gb: 43.113
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble learning with Random Forest</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/randomforest/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/randomforest/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Bagging: Bootstrap Aggregation
+&lt;ul&gt;
+&lt;li&gt;one algorithm&lt;/li&gt;
+&lt;li&gt;Different subsets of the training set&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Uses a technique known as the bootstrap&lt;/li&gt;
+&lt;li&gt;Reduces variance of individual models in the ensemble&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+# Metrics
+from sklearn.metrics import mean_squared_error as MSE
+# Models
+from sklearn.tree import DecisionTreeRegressor
+# Ensemble
+from sklearn.ensemble import RandomForestRegressor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;auto.csv&#39;)
+df = pd.get_dummies(df, columns=[&amp;quot;origin&amp;quot;])
+
+# Get features of interest and target labels
+X = df.iloc[:,1:]
+y = df.iloc[:, 0]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;train-random-forest-regressor&#34;&gt;Train Random Forest regressor&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate rf
+rf = RandomForestRegressor(n_estimators=25,
+            random_state=SEED)
+            
+# Fit rf to the training set    
+rf.fit(X_train, y_train) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;RandomForestRegressor(bootstrap=True, ccp_alpha=0.0, criterion=&#39;mse&#39;,
+                      max_depth=None, max_features=&#39;auto&#39;, max_leaf_nodes=None,
+                      max_samples=None, min_impurity_decrease=0.0,
+                      min_impurity_split=None, min_samples_leaf=1,
+                      min_samples_split=2, min_weight_fraction_leaf=0.0,
+                      n_estimators=25, n_jobs=None, oob_score=False,
+                      random_state=2, verbose=0, warm_start=False)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-random-forest-regressor&#34;&gt;Evaluate Random Forest regressor&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Predict the test set labels
+y_pred = rf.predict(X_test)
+
+# Evaluate the test set RMSE
+rmse_test = MSE(y_test, y_pred)**(1/2)
+
+# Print rmse_test
+print(&#39;Test set RMSE of rf: {:.2f}&#39;.format(rmse_test))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set RMSE of rf: 3.98
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Test result with a single decision tree
+dt = DecisionTreeRegressor(random_state=SEED)
+dt.fit(X_train, y_train)
+y_pred = dt.predict(X_test)
+rmse_test_dt = MSE(y_test, y_pred)**(1/2)
+print(&#39;Test set RMSE of single decision tree: {:.2f}&#39;.format(rmse_test_dt))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set RMSE of single decision tree: 4.61
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The test set RMSE achieved by rf is significantly smaller than that achieved by a single tree!&lt;/p&gt;
+&lt;h3 id=&#34;visualizing-features-importances&#34;&gt;Visualizing features importances&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Create a pd.Series of features importances
+importances = pd.Series(data=rf.feature_importances_,
+                        index= X_train.columns)
+
+# Sort importances
+importances_sorted = importances.sort_values()
+
+# Draw a horizontal barplot of importances_sorted
+importances_sorted.plot(kind=&#39;barh&#39;, color=&#39;lightgreen&#39;)
+plt.title(&#39;Features Importances&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;randomforest_13_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensemble learning with Stochastic Gradient Boosting</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/stochasticgradientboost/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/stochasticgradientboost/</guid>
+      <description>&lt;p&gt;Motivation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GB involves an exhaustive search procedure.&lt;/li&gt;
+&lt;li&gt;Each CART is trained to find the best split points and features.&lt;/li&gt;
+&lt;li&gt;May lead to CARTs using the same split points and maybe the same features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Procedure:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each tree is trained on a random subset of rows of the training data.&lt;/li&gt;
+&lt;li&gt;The sampled instances (40%-80% of the training set) are sampled without replacement.&lt;/li&gt;
+&lt;li&gt;Features are sampled (without replacement) when choosing split points.&lt;/li&gt;
+&lt;li&gt;Result: further ensemble diversity.&lt;/li&gt;
+&lt;li&gt;Effect: adding further variance to the ensemble of trees.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+# Metrics
+from sklearn.metrics import mean_squared_error as MSE
+# Models
+from sklearn.tree import DecisionTreeClassifier
+# Ensemble
+from sklearn.ensemble import GradientBoostingRegressor
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;bikes.csv&#39;)
+
+# Get features of interest and target labels
+X = df.drop(&#39;cnt&#39;,axis=1)
+y = df[&#39;cnt&#39;]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-the-stochastic-gradient-boosting-regressor&#34;&gt;Define the Stochastic Gradient Boosting regressor&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate sgbr
+sgbr = GradientBoostingRegressor(max_depth=4, 
+            subsample=0.9,
+            max_features=0.75,
+            n_estimators=200,                                
+            random_state=2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;train-the-sgb-classifier&#34;&gt;Train the SGB classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit sgbr to the training set
+sgbr.fit(X_train, y_train)
+
+# Predict test set labels
+y_pred = sgbr.predict(X_test)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-sgb-classifier&#34;&gt;Evaluate the SGB classifier&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Compute MSE
+mse_test = MSE(y_test, y_pred)
+
+# Compute RMSE
+rmse_test = mse_test ** (1/2)
+
+# Print RMSE
+print(&#39;Test set RMSE of sgb: {:.3f}&#39;.format(rmse_test))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set RMSE of sgb: 45.143
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
@@ -9008,6 +9473,256 @@ plt.show()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;power_sample_6_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Notice that not only does an increase in power result in a larger sample size, but this increase grows exponentially as the minimum effect size is increased.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hyperparameter tunning for trees with GridSearch for Random Forest</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/randomforest_hyperparameters/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/randomforest_hyperparameters/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Hyperparameter tuning:
+&lt;ul&gt;
+&lt;li&gt;computationally expensive,&lt;/li&gt;
+&lt;li&gt;sometimes leads to very slight improvement,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Weight the impact of tuning on the whole project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+# Metrics
+from sklearn.metrics import mean_squared_error as MSE
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import roc_auc_score
+
+# Models
+from sklearn.ensemble import RandomForestRegressor
+
+# Set seed for reproducibility
+SEED=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# read csv into df
+df = pd.read_csv(&#39;bikes.csv&#39;)
+
+# Get features of interest and target labels
+X = df.drop(&#39;cnt&#39;,axis=1)
+y = df[&#39;cnt&#39;]
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-all-hyperparameters-of-dt&#34;&gt;Get all hyperparameters of dt&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate dt
+rf = RandomForestRegressor(random_state=SEED)
+print(dt.get_params())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;ccp_alpha&#39;: 0.0, &#39;class_weight&#39;: None, &#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: None, &#39;max_leaf_nodes&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_impurity_split&#39;: None, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;presort&#39;: &#39;deprecated&#39;, &#39;random_state&#39;: 1, &#39;splitter&#39;: &#39;best&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-search-grid&#34;&gt;Define search grid&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define the dictionary &#39;params_rf&#39;
+params_rf = {&#39;n_estimators&#39;: [100,350,500],
+    &#39;max_features&#39;: [&#39;log2&#39;, &#39;auto&#39;, &#39;sqrt&#39;],
+    &#39;min_samples_leaf&#39;: [2,10,30]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;search-for-optimical-forest&#34;&gt;Search for optimical forest&lt;/h3&gt;
+&lt;p&gt;grid search is an exhaustive search process, it may take a lot time to train the model&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate grid_rf
+grid_rf = GridSearchCV(estimator=rf,
+                       param_grid=params_rf,
+                       scoring=&#39;neg_mean_squared_error&#39;,
+                       cv=3,
+                       verbose=1,
+                       n_jobs=-1)
+
+# Fit &#39;grid_dt&#39; to the training data
+grid_rf.fit(X_train, y_train)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Fitting 3 folds for each of 27 candidates, totalling 81 fits
+
+
+[Parallel(n_jobs=-1)]: Using backend LokyBackend with 4 concurrent workers.
+[Parallel(n_jobs=-1)]: Done  42 tasks      | elapsed:   12.2s
+[Parallel(n_jobs=-1)]: Done  81 out of  81 | elapsed:   19.8s finished
+
+
+
+
+
+GridSearchCV(cv=3, error_score=nan,
+             estimator=RandomForestRegressor(bootstrap=True, ccp_alpha=0.0,
+                                             criterion=&#39;mse&#39;, max_depth=None,
+                                             max_features=&#39;auto&#39;,
+                                             max_leaf_nodes=None,
+                                             max_samples=None,
+                                             min_impurity_decrease=0.0,
+                                             min_impurity_split=None,
+                                             min_samples_leaf=1,
+                                             min_samples_split=2,
+                                             min_weight_fraction_leaf=0.0,
+                                             n_estimators=100, n_jobs=None,
+                                             oob_score=False, random_state=1,
+                                             verbose=0, warm_start=False),
+             iid=&#39;deprecated&#39;, n_jobs=-1,
+             param_grid={&#39;max_features&#39;: [&#39;log2&#39;, &#39;auto&#39;, &#39;sqrt&#39;],
+                         &#39;min_samples_leaf&#39;: [2, 10, 30],
+                         &#39;n_estimators&#39;: [100, 350, 500]},
+             pre_dispatch=&#39;2*n_jobs&#39;, refit=True, return_train_score=False,
+             scoring=&#39;neg_mean_squared_error&#39;, verbose=1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-optimical-forest&#34;&gt;Evaluate the optimical forest&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Extract best hyperparameters from &#39;grid_rf&#39;
+best_hyperparams = grid_rf.best_params_
+print(&#39;Best hyerparameters:\n&#39;, best_hyperparams)
+
+# Extract the best estimator
+best_model = grid_rf.best_estimator_
+
+# Predict test set labels
+y_pred = best_model.predict(X_test)
+
+# Compute rmse_test
+rmse_test = (MSE(y_test, y_pred))**(1/2)
+
+# Print rmse_test
+print(&#39;Test RMSE of best model: {:.3f}&#39;.format(rmse_test)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Best hyerparameters:
+ {&#39;max_features&#39;: &#39;auto&#39;, &#39;min_samples_leaf&#39;: 2, &#39;n_estimators&#39;: 100}
+Test RMSE of best model: 51.779
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hyperparameter tunning for trees with GridSearch for Tree</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/tree_hyperparameters/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/tree_hyperparameters/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Problem: search for a set of optimal hyperparameters for a learning algorithm.&lt;/li&gt;
+&lt;li&gt;Solution: find a set of optimal hyperparameters that results in an optimal model.&lt;/li&gt;
+&lt;li&gt;Optimal model: yields an optimal score.&lt;/li&gt;
+&lt;li&gt;Score: in sklearn defaults to accuracy (classication) and $R^2$ (regression).&lt;/li&gt;
+&lt;li&gt;Cross validation is used to estimate the generalization performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;import-modules&#34;&gt;Import modules&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Manipulation
+import numpy as np
+import pandas as pd
+# Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Selection
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+# Metrics
+from sklearn.metrics import mean_squared_error as MSE
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import roc_auc_score
+
+# Models
+from sklearn.tree import DecisionTreeClassifier
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;load-data&#34;&gt;Load data&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Set seed for reproducibility
+SEED=1
+
+# read csv into df
+df = pd.read_csv(&#39;liver/indian_liver_patient_preprocessed.csv&#39;)
+
+# Get features of interest and target labels
+X = df.iloc[:,:-1]
+y = (df.iloc[:,-1]).astype(int)
+
+# Split dataset into 80% train, 20% test
+X_train, X_test, y_train, y_test= train_test_split(X, y, 
+                                                   test_size=0.2, 
+                                                   stratify=y, 
+                                                   random_state=SEED)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-performance-of-an-untuned-dt&#34;&gt;Evaluate performance of an untuned dt&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dt = DecisionTreeClassifier(random_state=SEED)
+dt.fit(X_train, y_train)
+y_pred_proba = dt.predict_proba(X_test)[:,1]
+test_roc_auc = roc_auc_score(y_test, y_pred_proba)
+print(&#39;Test set ROC AUC score: {:.3f}&#39;.format(test_roc_auc))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set ROC AUC score: 0.540
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;get-all-hyperparameters-of-dt&#34;&gt;Get all hyperparameters of dt&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate dt
+dt = DecisionTreeClassifier(random_state=SEED)
+print(dt.get_params())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;{&#39;ccp_alpha&#39;: 0.0, &#39;class_weight&#39;: None, &#39;criterion&#39;: &#39;gini&#39;, &#39;max_depth&#39;: None, &#39;max_features&#39;: None, &#39;max_leaf_nodes&#39;: None, &#39;min_impurity_decrease&#39;: 0.0, &#39;min_impurity_split&#39;: None, &#39;min_samples_leaf&#39;: 1, &#39;min_samples_split&#39;: 2, &#39;min_weight_fraction_leaf&#39;: 0.0, &#39;presort&#39;: &#39;deprecated&#39;, &#39;random_state&#39;: 1, &#39;splitter&#39;: &#39;best&#39;}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;define-search-grid&#34;&gt;Define search grid&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Define params_dt
+params_dt = {&#39;max_depth&#39;: [2,3,4],
+    &#39;min_samples_leaf&#39;: [0.12,0.14,0.16,0.18]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;search-for-optimical-tree&#34;&gt;Search for optimical tree&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;GridSearchCV&lt;/code&gt; with the &lt;code&gt;estimator&lt;/code&gt; option becomes the new classifer, as if I have instantiated the estimator with the correct set of hyperparameters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Instantiate grid_dt
+grid_dt = GridSearchCV(estimator=dt,
+                       param_grid=params_dt,
+                       scoring=&#39;roc_auc&#39;,
+                       cv=5,
+                       n_jobs=-1)
+
+# Fit &#39;grid_dt&#39; to the training data
+grid_dt.fit(X_train, y_train)
+
+# Extract best hyperparameters from &#39;grid_dt&#39;
+best_hyperparams = grid_dt.best_params_
+print(&#39;Best hyerparameters:\n&#39;, best_hyperparams)
+
+# Extract best CV score from &#39;grid_dt&#39;
+best_CV_score = grid_dt.best_score_
+print(&#39;Best CV accuracy: {:.3f}&#39;.format(best_CV_score))
+
+# Extract the best estimator
+best_model = grid_dt.best_estimator_
+
+# Predict the test set probabilities of the positive class
+y_pred_proba = grid_dt.predict_proba(X_test)[:,1]
+
+# Compute test_roc_auc
+test_roc_auc = roc_auc_score(y_test, y_pred_proba)
+
+# Print test_roc_auc
+print(&#39;Test set ROC AUC score: {:.3f}&#39;.format(test_roc_auc))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Best hyerparameters:
+ {&#39;max_depth&#39;: 3, &#39;min_samples_leaf&#39;: 0.12}
+Best CV accuracy: 0.729
+Test set ROC AUC score: 0.610
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;evaluate-the-optimical-tree&#34;&gt;Evaluate the optimical tree&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dt = DecisionTreeClassifier(max_depth=3, min_samples_leaf=0.12, random_state=SEED)
+dt.fit(X_train, y_train)
+y_pred_proba = dt.predict_proba(X_test)[:,1]
+test_roc_auc = roc_auc_score(y_test, y_pred_proba)
+print(&#39;Test set ROC AUC score: {:.3f}&#39;.format(test_roc_auc))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;Test set ROC AUC score: 0.610
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Good improvement upon an untuned classification-tree would achieve a ROC AUC score of 0.54&lt;/p&gt;
 </description>
     </item>
     
@@ -14036,6 +14751,55 @@ print(repr(emp2))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;Employee(&amp;quot;Carolyn Ramirez&amp;quot;,35000)
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Overview of Tree-based Models</title>
+      <link>http://othrif.github.io/technical_note/python/sklearn/treemodels_overview/</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <guid>http://othrif.github.io/technical_note/python/sklearn/treemodels_overview/</guid>
+      <description>&lt;h1 id=&#34;decision-tree-or-cart-classification-and-regression-tree&#34;&gt;Decision-Tree or CART (Classification And Regression Tree)&lt;/h1&gt;
+&lt;h3 id=&#34;decision-tree&#34;&gt;Decision tree&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;decisiontree.png&#34; alt=&#34;Decision Tree&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;information-gain&#34;&gt;Information gain&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;informationgain.png&#34; alt=&#34;Information Gain&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;k-fold-cv&#34;&gt;k-Fold CV&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;figs/kfoldcv.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CV error = $\frac{E_1 + E_2 + \cdots + E_10}{10}$&lt;/p&gt;
+&lt;h1 id=&#34;ensemble-learning&#34;&gt;Ensemble learning&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;figs/ensemblelearning.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;meta-model--hard-voting&#34;&gt;Meta-model = hard voting&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/hardvoting.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;bagging&#34;&gt;Bagging&lt;/h1&gt;
+&lt;h3 id=&#34;bootstrap&#34;&gt;Bootstrap&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/bootstrap.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bagging-training&#34;&gt;Bagging training&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/baggingtraining.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bagging-prediction&#34;&gt;Bagging prediction&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Classification: Aggregates predictions by majority voting&lt;/li&gt;
+&lt;li&gt;Regression: Aggregates predictions through averaging.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;figs/baggingprediction.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;out-of-bag-evaluation&#34;&gt;Out of Bag evaluation&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/oob.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;random-forests&#34;&gt;Random Forests&lt;/h1&gt;
+&lt;h3 id=&#34;training&#34;&gt;Training&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/rftrain.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;prediction&#34;&gt;Prediction&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;figs/rfpredict.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;boosting&#34;&gt;Boosting&lt;/h1&gt;
+&lt;h2 id=&#34;adaboost&#34;&gt;AdaBoost&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;figs/adaboost.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;With learning rate $\alpha$:
+&lt;img src=&#34;figs/adaboostalpha.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;gradient-boost&#34;&gt;Gradient Boost&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;figs/gradboost.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;With shrinkage: $y_{pred} = y_1 + \eta*r_1 + \cdots + \eta*r_N$
+&lt;img src=&#34;figs/gradboosteta.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;stochastic-gradient-boosting&#34;&gt;Stochastic Gradient Boosting&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;figs/stochasticgradboost.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     

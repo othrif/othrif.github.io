@@ -681,10 +681,12 @@ Import modules import pandas as pd import seaborn as sns import matplotlib.
     
     
     <div>
-      <h2><a href="/technical_note/python/sklearn/ensemble/" >Ensemble learning with Voting Classifier</a></h2>
+      <h2><a href="/technical_note/python/sklearn/boost/" >Ensemble learning with AdaBoost</a></h2>
       <div class="article-style">
         
-          Train different models on the same dataset Let each model make its predictions Meta-model: aggregates predictions of individual models Final prediction: more robust and less prone to errors Best results: models are skillful in different ways.
+          Boosting: Ensemble method combining several weak learners to form a strong learner.
+  Weak learner: Model doing slightly better than random guessing.
+  Example of weak learner: Decision stump (CART whose maximum depth is 1).
         
       </div>
     </div>
@@ -693,11 +695,10 @@ Import modules import pandas as pd import seaborn as sns import matplotlib.
     
     
     <div>
-      <h2><a href="/technical_note/python/sklearn/kfold_cv/" >k-Fold Cross Validation</a></h2>
+      <h2><a href="/technical_note/python/sklearn/bagging/" >Ensemble learning with Bagging</a></h2>
       <div class="article-style">
         
-          predict whether a tumor is malignant or benign based on two features: the mean radius of the tumor (radius_mean) and its mean number of concave points (concave points_mean)
-Import modules import pandas as pd import seaborn as sns import matplotlib.
+          Bagging: Bootstrap Aggregation  one algorithm Different subsets of the training set   Uses a technique known as the bootstrap Reduces variance of individual models in the ensemble  Import modules # Manipulation import numpy as np import pandas as pd # Visualization import seaborn as sns import matplotlib.
         
       </div>
     </div>
@@ -706,11 +707,10 @@ Import modules import pandas as pd import seaborn as sns import matplotlib.
     
     
     <div>
-      <h2><a href="/technical_note/python/sklearn/recommender/" >Music recommender system with full pipeline</a></h2>
+      <h2><a href="/technical_note/python/sklearn/gradientboost/" >Ensemble learning with Gradient Boosting</a></h2>
       <div class="article-style">
         
-          import pandas as pd from scipy.sparse import csr_matrix df = pd.read_csv('artists/scrobbler-small-sample.csv', index_col=0) artists = csr_matrix(df.transpose()) artist_names = [x.strip('\n').split(' ')[0] for x in open('artists/artists.csv').readlines()]  computed the normalized NMF features:
-# Perform the necessary imports from sklearn.
+          Sequential correction of predecessor&rsquo;s errors. Does not tweak the weights of training instances, unlike AdaBoost Fit each predictor is trained using its predecessor&rsquo;s residual errors as labels. Gradient Boosted Trees: a decision tree is used as a base learner.
         
       </div>
     </div>
