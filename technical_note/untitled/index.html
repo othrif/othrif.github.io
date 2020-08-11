@@ -28,10 +28,10 @@
   
     
   
-  <meta name="description" content="Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage # latest version pip install SomePackage==1.">
+  <meta name="description" content="">
 
   
-  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/python/basics/macos_env/">
+  <link rel="alternate" hreflang="en-us" href="http://othrif.github.io/technical_note/untitled/">
 
   
 
@@ -216,7 +216,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="http://othrif.github.io/technical_note/python/basics/macos_env/">
+  <link rel="canonical" href="http://othrif.github.io/technical_note/untitled/">
 
   
   
@@ -230,15 +230,13 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Othmane Rifki">
-  <meta property="og:url" content="http://othrif.github.io/technical_note/python/basics/macos_env/">
-  <meta property="og:title" content="Python 3 in MacOS | Othmane Rifki">
-  <meta property="og:description" content="Change python to point to python3 by default ls -l /usr/local/bin/python* ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python  Which Python version python -V  Install package pip install SomePackage # latest version pip install SomePackage==1."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:url" content="http://othrif.github.io/technical_note/untitled/">
+  <meta property="og:title" content=" | Othmane Rifki">
+  <meta property="og:description" content=""><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-04-12T14:41:32&#43;02:00">
     
-    <meta property="article:modified_time" content="2020-04-12T14:41:32&#43;02:00">
   
 
   
@@ -257,7 +255,7 @@
 
 
 
-  <title>Python 3 in MacOS | Othmane Rifki</title>
+  <title> | Othmane Rifki</title>
 
 </head>
 
@@ -561,83 +559,14 @@
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Python 3 in MacOS</h1>
+    <h1 class="technical_note_title"></h1>
     <div class="technical_note_date">
-      <time datetime=" 2020-04-12T14:41:32&#43;02:00 ">Apr 12, 2020</time>
+      <time datetime=" 0001-01-01T00:00:00Z ">Jan 1, 0001</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="change-python-to-point-to-python3-by-default">Change python to point to python3 by default</h3>
-<pre><code class="language-bash">ls -l /usr/local/bin/python*
-ln -s -f /usr/local/bin/python3.7 /usr/local/bin/python
-</code></pre>
-<h3 id="which-python-version">Which Python version</h3>
-<pre><code class="language-bash">python -V
-</code></pre>
-<h3 id="install-package">Install package</h3>
-<pre><code class="language-bash">pip install SomePackage            # latest version
-pip install SomePackage==1.0.4     # specific version
-pip install 'SomePackage&gt;=1.0.4'     # minimum version
-pip install SomePackage&gt;=2.0.0,&lt;3.0.0 # Install the latest 2.x release 
-pip install SomePackage[extras] # Install package and extras
-pip install SomeProject@git+https://git.repo/some_pkg.git@1.3.1 # from version control system
-</code></pre>
-<h3 id="upgrade-package">Upgrade package</h3>
-<pre><code class="language-bash">pip install SomePackage --upgrade
-</code></pre>
-<h3 id="main-packages-used">Main packages used</h3>
-<pre><code class="language-bash">pip install numpy
-pip install scipy
-pip install scikit-learn
-pip install matplotlib
-pip install pandas
-pip install jupyter notebook
-</code></pre>
-<h3 id="upgrade-pip">Upgrade pip</h3>
-<pre><code class="language-bash">python -m pip --version # check version
-python -m pip install --user --upgrade pip
-</code></pre>
-<h3 id="working-with-virtual-environment-with-venv">Working with virtual environment with <code>venv</code></h3>
-<p>It is recommended to work in virtual environment to not have comflicts between different packages. This can be done using <code>venv</code>. The second argument <code>env</code> is the location to create the virtual environment in that folder. Generally, you can just create this in your project and call it env. Make sure to add it to <code>.gitignore</code>.</p>
-<pre><code class="language-bash">python3 -m venv env
-source env/bin/activate
-which python # should point to the virtual environment env/bin/python
-deactivate # leave virtual environment
-</code></pre>
-<p>Installing packages in <code>venv</code> is similar to the above:</p>
-<pre><code class="language-bash">pip install SomePackage 
-</code></pre>
-<p>More importantly it allows you to specify which version to install:</p>
-<pre><code class="language-bash">pip install SomePackage
-
-</code></pre>
-<p>Using requirements file <code>requirements.txt</code>:</p>
-<pre><code class="language-python">requests==2.18.4
-google-auth==1.1.0
-</code></pre>
-<p>Install with:</p>
-<pre><code class="language-bash">pip install -r requirements.txt
-</code></pre>
-<p>Freeze dependencies after completing all installation of packages (a way to get the requirement file):</p>
-<pre><code class="language-bash">pip freeze
-</code></pre>
-<h3 id="installing-kite-for-auto-completion-in-jupyter">Installing kite for auto-completion in Jupyter</h3>
-<pre><code class="language-bash">pip install jupyter-kite
-jupyter labextension install &quot;@kiteco/jupyterlab-kite&quot;
-</code></pre>
-<p>If you get the error</p>
-<blockquote>
-<p>Exception: Jupyter command <code>jupyter-lab</code> not found.</p>
-</blockquote>
-<p>then:</p>
-<pre><code class="language-bash">pip uninstall -y jupyterlab
-pip install jupyterlab
-export PATH=$PATH:/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/bin
-pip install jupyter-kite
-jupyter labextension install &quot;@kiteco/jupyterlab-kite&quot;
-</code></pre>
-
+  
 </div>
   <aside>
       <div class="bug_reporting">

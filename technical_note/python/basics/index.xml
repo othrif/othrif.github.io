@@ -3598,6 +3598,21 @@ google-auth==1.1.0
 &lt;p&gt;Freeze dependencies after completing all installation of packages (a way to get the requirement file):&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip freeze
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;installing-kite-for-auto-completion-in-jupyter&#34;&gt;Installing kite for auto-completion in Jupyter&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip install jupyter-kite
+jupyter labextension install &amp;quot;@kiteco/jupyterlab-kite&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you get the error&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Exception: Jupyter command &lt;code&gt;jupyter-lab&lt;/code&gt; not found.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;then:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip uninstall -y jupyterlab
+pip install jupyterlab
+export PATH=$PATH:/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/bin
+pip install jupyter-kite
+jupyter labextension install &amp;quot;@kiteco/jupyterlab-kite&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
