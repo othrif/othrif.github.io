@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Manipulation of directories and files" />
+<meta property="og:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os.rename(&#39;mytext.txt&#39;, &#34;mytest_rename.txt&#34;) print(f&#39;Renamed file:{os.listdir(path)}&#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/dir_manip.html" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Manipulation of directories and files"/>
+<meta name="twitter:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os.rename(&#39;mytext.txt&#39;, &#34;mytest_rename.txt&#34;) print(f&#39;Renamed file:{os.listdir(path)}&#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os."/>
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Manipulation of directories and files",
+  "url": "https:\/\/othrif.github.io\/python\/basics\/dir_manip.html",
+  "wordCount": "80",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Manipulation of directories and files</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.iocss/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.iocss/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.ioabout/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Manipulation of directories and files</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="create-dir-if-it-does-not-exist">Create dir if it does not exist</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">path</span><span class="o">=</span><span class="s1">&#39;/tmp/test&#39;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div><h3 id="change-directory">Change directory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;New location is: {os.getcwd()!r}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>New location is: '/private/tmp/test'
+</code></pre>
+<h3 id="create-file-in-directory-and-list">Create file in directory and list</h3>
+<p>Options available: <code>os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;mytext.txt&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">O_RDONLY</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">O_CREAT</span><span class="p">)</span> <span class="c1"># open file</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Intial file: {os.listdir(path)}&#39;</span><span class="p">)</span> <span class="c1"># list content of directory</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;mytext.txt&#39;</span><span class="p">,</span> <span class="s2">&#34;mytest_rename.txt&#34;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Renamed file:{os.listdir(path)}&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span> <span class="c1"># close</span>
+</code></pre></div><pre><code>Intial file: ['mytext.txt']
+Renamed file:['mytest_rename.txt']
+</code></pre>
+<h3 id="remove-directory-and-all-its-content">Remove directory and all its content</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">shutil</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 7 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

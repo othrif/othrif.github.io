@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python - Othmane Rifki</title>
+    <link>https://othrif.github.io/python/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/python/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manipulation of directories and files</title>
+      <link>https://othrif.github.io/python/basics/dir_manip.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/dir_manip.html</guid>
+      <description>Create dir if it does not exist import os path=&amp;#39;/tmp/test&amp;#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&amp;#39;New location is: {os.getcwd()!r}&amp;#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&amp;#39;Intial file: {os.listdir(path)}&amp;#39;) # list content of directory os.rename(&amp;#39;mytext.txt&amp;#39;, &amp;#34;mytest_rename.txt&amp;#34;) print(f&amp;#39;Renamed file:{os.listdir(path)}&amp;#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os.</description>
+    </item>
+    
+    <item>
+      <title>Print statements</title>
+      <link>https://othrif.github.io/python/basics/print.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/print.html</guid>
+      <description>f-string formatting: f &amp;#39; &amp;lt;text&amp;gt; { &amp;lt;expression&amp;gt; &amp;lt;optional !s, !r, or !a&amp;gt; &amp;lt;optional : format specifier&amp;gt; } &amp;lt;text&amp;gt; ... &amp;#39; where &amp;lt;optional !s, !r, or !a&amp;gt; mean !s (str), !r (repr), and !a (ascii)
+import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime.date(1989, 2, 6) print(f&amp;#39;My name is {name.lower()}, my age next year is {age+1}, my anniversary is {anniversary:%A, %B %d, %Y}.&amp;#39;) print(f&amp;#39;He said his name is {name!r}.&amp;#39;) # !</description>
+    </item>
+    
+  </channel>
+</rss>

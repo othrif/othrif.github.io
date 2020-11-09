@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Standard includes</title>
+      <link>https://othrif.github.io/machine_learning/basics/includes.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/includes.html</guid>
+      <description>Basic includes for TensorFlow import os import pathlib import matplotlib.pyplot as plt import numpy as np import seaborn as sns import tensorflow as tf from tensorflow.keras.layers.experimental import preprocessing from tensorflow.keras import layers from tensorflow.keras import models from IPython import display # Set seed for experiment reproducibility seed = 42 tf.random.set_seed(seed) np.random.seed(seed) </description>
+    </item>
+    
+  </channel>
+</rss>

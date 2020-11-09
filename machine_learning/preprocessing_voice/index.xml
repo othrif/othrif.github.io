@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/preprocessing_voice/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/preprocessing_voice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Record my voice</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html</guid>
+      <description># record or readvoice import math import numpy as np import librosa import librosa.display import sounddevice as sd from scipy.io import wavfile import IPython.display as ipd import matplotlib.pyplot as plt def record_voice (filename, seconds=1, sr=22050, nchannels=1): myrecording = sd.rec(int(seconds * sr), samplerate=sr, channels=nchannels) sd.wait() # Wait until recording is finished wavfile.write(filename, sr, myrecording) # Save as WAV file  wav, sr = librosa.load(filename) return wav, sr wav, sr = record_voice(&amp;#39;test.wav&amp;#39;) display(ipd.</description>
+    </item>
+    
+  </channel>
+</rss>

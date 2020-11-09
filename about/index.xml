@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about - Othmane Rifki</title>
+    <link>https://othrif.github.io/about/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Dec 2017 11:53:49 -0700</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Othmane Rifki</title>
+      <link>https://othrif.github.io/about/othmane_rifki.html</link>
+      <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
+      
+      <guid>https://othrif.github.io/about/othmane_rifki.html</guid>
+      <description>I am a former particle physicist turned machine learning scientist. This is my journey!
+ Email: othrif@gmail.com Twitter: @OthmaneRifki  Selected Experience  Principal Applied Scientist, Spectrum Labs, Oct 2020 - Present Postdoctoral Fellow, DESY, Oct 2017 - Sep 2020  Selected Projects  Website Notes, othrif.github.io, April 2020 - Present  Education  PhD., Particle Physics, University of Oklahoma, Norman, OK. 2017  Thesis: Search for supersymmetry with the ATLAS detector at the LHC arXiv:1712.</description>
+    </item>
+    
+  </channel>
+</rss>
