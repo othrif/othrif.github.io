@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Zip And Unzip Files" />
-<meta property="og:description" content="How to zip and unzip files using the Linux command line." />
+<meta property="og:title" content="Copy from / to / between aws" />
+<meta property="og:description" content="Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &#34;*.jpg&#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &#34;another/*&#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.txt test2.txt --profile prototype Copying a local file to S3 aws s3 cp test." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/zip_and_unzip_files.html" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/aws/aws_basics.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Zip And Unzip Files"/>
-<meta name="twitter:description" content="How to zip and unzip files using the Linux command line."/>
+<meta name="twitter:title" content="Copy from / to / between aws"/>
+<meta name="twitter:description" content="Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &#34;*.jpg&#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &#34;another/*&#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.txt test2.txt --profile prototype Copying a local file to S3 aws s3 cp test."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +33,19 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Zip And Unzip Files",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/zip_and_unzip_files.html",
-  "wordCount": "112",
+  "headline": "Copy from \/ to \/ between aws",
+  "url": "https:\/\/othrif.github.io\/machine_learning\/aws\/aws_basics.html",
+  "wordCount": "91",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
-  },
-  "description": "How to zip and unzip files using the Linux command line."
+  }
 }
 </script> 
 
-    <title>Zip And Unzip Files</title>
+    <title>Copy from / to / between aws</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -136,34 +135,26 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Zip And Unzip Files</h1>
+    <h1 class="technical_note_title">Copy from / to / between aws</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h2 id="make-files">Make Files</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">echo &#34;The number of soldiers in the regiment is 24.&#34; &gt; regiment.txt
-echo &#34;The regiment has seen five battles.&#34; &gt; battles.txt</code></pre></div>
-<h2 id="zip-files">Zip Files</h2>
-<p>The <code>-v</code> argument is optional, prints an output with the details of the operation.</p>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">gzip regiment.txt battles.txt -v</code></pre></div>
-<pre><code>regiment.txt:	 -2.2% -- replaced with regiment.txt.gz
-battles.txt:	 -5.6% -- replaced with battles.txt.gz
-</code></pre><h2 id="view-contents-of-directory">View Contents Of Directory</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">ls -l</code></pre></div>
-<pre><code>total 8
--rw-rw-r-- 1 othrif othrif 68 Jul 31 13:15 battles.txt.gz
--rw-rw-r-- 1 othrif othrif 78 Jul 31 13:15 regiment.txt.gz
-</code></pre><h2 id="unzip-files">Unzip Files</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">gunzip regiment.txt battles.txt</code></pre></div>
-<h2 id="view-contents-of-directory-1">View Contents Of Directory</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">ls -l</code></pre></div>
-<pre><code>total 8
--rw-rw-r-- 1 othrif othrif 36 Jul 31 13:17 battles.txt
--rw-rw-r-- 1 othrif othrif 46 Jul 31 13:17 regiment.txt
-</code></pre>
+  <h3 id="recursively-copying-s3-objects-to-a-local-directory">Recursively copying S3 objects to a local directory</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp s3://mybucket . --recursive --profile prototype
+</code></pre></div><h3 id="recursively-copying-local-files-to-s3">Recursively copying local files to S3</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp myDir s3://mybucket/ --recursive --exclude <span class="s2">&#34;*.jpg&#34;</span> --profile prototype
+</code></pre></div><h3 id="recursively-copying-s3-objects-to-another-bucket">Recursively copying S3 objects to another bucket</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude <span class="s2">&#34;another/*&#34;</span> --profile prototype
+</code></pre></div><h3 id="copying-an-s3-object-to-a-local-file">Copying an S3 object to a local file</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp s3://mybucket/test.txt test2.txt --profile prototype
+</code></pre></div><h3 id="copying-a-local-file-to-s3">Copying a local file to S3</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp test.txt s3://mybucket/test2.txt --profile prototype
+</code></pre></div><h3 id="copying-a-file-from-s3-to-s3">Copying a file from S3 to S3</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws s3 cp s3://mybucket/test.txt s3://mybucket/test2.txt --profile prototype
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">

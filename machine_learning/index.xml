@@ -12,10 +12,28 @@
     
     <item>
       <title></title>
+      <link>https://othrif.github.io/machine_learning/aws/index.xml</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/aws/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://othrif.github.io/machine_learning/basics/index.xml</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/basics/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_text/index.xml</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_text/index.xml</guid>
       <description></description>
     </item>
     

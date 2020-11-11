@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/aws/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Copy from / to / between aws</title>
+      <link>https://othrif.github.io/machine_learning/aws/aws_basics.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/aws/aws_basics.html</guid>
+      <description>Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &amp;#34;*.jpg&amp;#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &amp;#34;another/*&amp;#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.txt test2.txt --profile prototype Copying a local file to S3 aws s3 cp test.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Calculate softmax</title>
+      <link>https://othrif.github.io/machine_learning/basics/softmax_calc.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/softmax_calc.html</guid>
+      <description>Calculate softmax $\sigma(\vec{z})i = \frac{e^{z_i}}{\sum{j=1}^{K}e^{z_j}}$
+from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np.exp(z)),2) array([0.96, 0.02, 0.02])  </description>
+    </item>
+    
+    <item>
       <title>Standard includes</title>
       <link>https://othrif.github.io/machine_learning/basics/includes.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

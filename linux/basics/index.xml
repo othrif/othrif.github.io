@@ -20,6 +20,17 @@
     </item>
     
     <item>
+      <title>ssh keys in remote servers</title>
+      <link>https://othrif.github.io/linux/basics/sshkeys.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/sshkeys.html</guid>
+      <description>SSH keys provide an easy, yet extremely secure way of logging into your server. You can following these steps to generate a new SSH key and add it to the ssh-agent:
+Run the following command in your terminal: ssh-keygen -b 2048 -t rsa For maximum security, you want to generate a 2048 bit RSA key.
+You will be prompted to enter a passphrase. It is highly recommended! ~/.ssh/id_rsa.pub is your public key and ~/.</description>
+    </item>
+    
+    <item>
       <title>Zip And Unzip Files</title>
       <link>https://othrif.github.io/linux/basics/zip_and_unzip_files.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
