@@ -17,8 +17,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Manipulation of directories and files" />
-<meta property="og:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
-fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os.rename(&#39;mytext.txt&#39;, &#34;mytest_rename.txt&#34;) print(f&#39;Renamed file:{os.listdir(path)}&#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os." />
+<meta property="og:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Do something if dir exists (alternative) import pathlib data_dir = pathlib.Path(&#39;data/&#39;) if not data_dir.exists(): print(&#39;do something&#39;) do something  Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/python/basics/dir_manip.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -26,8 +26,8 @@ fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manipulation of directories and files"/>
-<meta name="twitter:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
-fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os.rename(&#39;mytext.txt&#39;, &#34;mytest_rename.txt&#34;) print(f&#39;Renamed file:{os.listdir(path)}&#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os."/>
+<meta name="twitter:description" content="Create dir if it does not exist import os path=&#39;/tmp/test&#39; if not os.path.exists(path): os.mkdir(path) Do something if dir exists (alternative) import pathlib data_dir = pathlib.Path(&#39;data/&#39;) if not data_dir.exists(): print(&#39;do something&#39;) do something  Change directory os.chdir(path) print(f&#39;New location is: {os.getcwd()!r}&#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&#39;Intial file: {os.listdir(path)}&#39;) # list content of directory os."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -37,7 +37,7 @@ fd = os.open(&#39;mytext.txt&#39;, os.O_RDONLY | os.O_CREAT) # open file print(f
   "@type": "BlogPosting",
   "headline": "Manipulation of directories and files",
   "url": "https:\/\/othrif.github.io\/python\/basics\/dir_manip.html",
-  "wordCount": "80",
+  "wordCount": "98",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -106,6 +106,7 @@ MathJax.Hub.Config({
                             <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
                             <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
                             <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
                         </div>
                     </li>
                     
@@ -150,7 +151,14 @@ MathJax.Hub.Config({
 <span class="n">path</span><span class="o">=</span><span class="s1">&#39;/tmp/test&#39;</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</code></pre></div><h3 id="change-directory">Change directory</h3>
+</code></pre></div><h3 id="do-something-if-dir-exists-alternative">Do something if dir exists (alternative)</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data/&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">data_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;do something&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>do something
+</code></pre>
+<h3 id="change-directory">Change directory</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;New location is: {os.getcwd()!r}&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>New location is: '/private/tmp/test'
@@ -193,7 +201,7 @@ Renamed file:['mytest_rename.txt']
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 11 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 14 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

@@ -1,0 +1,43 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scripting - Othmane Rifki</title>
+    <link>https://othrif.github.io/scripting/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/scripting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jupyter shortcuts and installation</title>
+      <link>https://othrif.github.io/scripting/jupyter.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/jupyter.html</guid>
+      <description>Jupyter shortcuts    Symbol Action     y cell format -&amp;gt; code   m cell format -&amp;gt; Markdown   a Add cell above   b Add cell below   c copy cell   v paste cell   x cut cell   d d delete cell   z undo   shift+z redo   &amp;lt;space&amp;gt;&amp;lt;space&amp;gt; new line   --- horizontal line     Jupyter kernels in MacOS Jupyter kernels are located in: ~/Library/Jupyter/kernels</description>
+    </item>
+    
+    <item>
+      <title>Markdown Cheatsheet</title>
+      <link>https://othrif.github.io/scripting/markdown.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/markdown.html</guid>
+      <description>Markdown Cheatsheet  Headings size Heading 1 Markup : # Heading 1  Heading 2 Markup : ## Heading 2  Heading 3 Markup : ### Heading 3  Heading 4 Markup : #### Heading 4  Heading 5 Markup : ##### Heading 5  Heading 6 Markup : ###### Heading 6   Text formatting Common text
+Markup : Common text  Emphasized text
+Markup : _Emphasized text_ or *Emphasized text*  Strikethrough text</description>
+    </item>
+    
+    <item>
+      <title>Working with git</title>
+      <link>https://othrif.github.io/scripting/git.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/git.html</guid>
+      <description>Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &amp;lt;feature-branch&amp;gt; git merge master git push origin &amp;lt;feature-branch&amp;gt; Create a new branch and check out an old commit git checkout -b &amp;lt;new branch&amp;gt; &amp;lt;SHA-1&amp;gt; git add . git commit -m &amp;#34;added a new branch from old commit&amp;#34; git push --set-upstream origin &amp;lt;new branch&amp;gt; Remove submodule To remove a submodule from a git repository you need to:</description>
+    </item>
+    
+  </channel>
+</rss>

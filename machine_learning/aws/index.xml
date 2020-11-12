@@ -16,7 +16,7 @@
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/aws/aws_basics.html</guid>
-      <description>Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &amp;#34;*.jpg&amp;#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &amp;#34;another/*&amp;#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.txt test2.txt --profile prototype Copying a local file to S3 aws s3 cp test.</description>
+      <description>Copying directory to s3 with structure intact aws s3 sync myDir s3://mybucket --profile dev Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &amp;#34;*.jpg&amp;#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &amp;#34;another/*&amp;#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.</description>
     </item>
     
   </channel>

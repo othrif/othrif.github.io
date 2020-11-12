@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Record my voice" />
-<meta property="og:description" content="# record or readvoice import math import numpy as np import librosa import librosa.display import sounddevice as sd from scipy.io import wavfile import IPython.display as ipd import matplotlib.pyplot as plt def record_voice (filename, seconds=1, sr=22050, nchannels=1): myrecording = sd.rec(int(seconds * sr), samplerate=sr, channels=nchannels) sd.wait() # Wait until recording is finished wavfile.write(filename, sr, myrecording) # Save as WAV file  wav, sr = librosa.load(filename) return wav, sr wav, sr = record_voice(&#39;test.wav&#39;) display(ipd." />
+<meta property="og:title" content="Working with git" />
+<meta property="og:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Remove submodule To remove a submodule from a git repository you need to:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html" />
+<meta property="og:url" content="https://othrif.github.io/scripting/git.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Record my voice"/>
-<meta name="twitter:description" content="# record or readvoice import math import numpy as np import librosa import librosa.display import sounddevice as sd from scipy.io import wavfile import IPython.display as ipd import matplotlib.pyplot as plt def record_voice (filename, seconds=1, sr=22050, nchannels=1): myrecording = sd.rec(int(seconds * sr), samplerate=sr, channels=nchannels) sd.wait() # Wait until recording is finished wavfile.write(filename, sr, myrecording) # Save as WAV file  wav, sr = librosa.load(filename) return wav, sr wav, sr = record_voice(&#39;test.wav&#39;) display(ipd."/>
+<meta name="twitter:title" content="Working with git"/>
+<meta name="twitter:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Remove submodule To remove a submodule from a git repository you need to:"/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,9 +33,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Record my voice",
-  "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/record_me.html",
-  "wordCount": "95",
+  "headline": "Working with git",
+  "url": "https:\/\/othrif.github.io\/scripting\/git.html",
+  "wordCount": "139",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -45,7 +45,7 @@
 }
 </script> 
 
-    <title>Record my voice</title>
+    <title>Working with git</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -137,47 +137,39 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Record my voice</h1>
+    <h1 class="technical_note_title">Working with git</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># record or readvoice</span>
-
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">librosa</span>
-<span class="kn">import</span> <span class="nn">librosa.display</span>
-<span class="kn">import</span> <span class="nn">sounddevice</span> <span class="kn">as</span> <span class="nn">sd</span>
-<span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">wavfile</span>
-<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="kn">as</span> <span class="nn">ipd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-
-
-<span class="k">def</span> <span class="nf">record_voice</span> <span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sr</span><span class="o">=</span><span class="mi">22050</span><span class="p">,</span> <span class="n">nchannels</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">myrecording</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">rec</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">seconds</span> <span class="o">*</span> <span class="n">sr</span><span class="p">),</span> <span class="n">samplerate</span><span class="o">=</span><span class="n">sr</span><span class="p">,</span> <span class="n">channels</span><span class="o">=</span><span class="n">nchannels</span><span class="p">)</span>
-    <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>  <span class="c1"># Wait until recording is finished</span>
-    <span class="n">wavfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">sr</span><span class="p">,</span> <span class="n">myrecording</span><span class="p">)</span>  <span class="c1"># Save as WAV file </span>
-    <span class="n">wav</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">librosa</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">wav</span><span class="p">,</span> <span class="n">sr</span>
-
-
-
-<span class="n">wav</span><span class="p">,</span> <span class="n">sr</span> <span class="o">=</span> <span class="n">record_voice</span><span class="p">(</span><span class="s1">&#39;test.wav&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">wav</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">sr</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wav</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div><pre><code>/Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/IPython/lib/display.py:172: RuntimeWarning: invalid value encountered in true_divide
-  scaled = data / normalization_factor * 32767
-</code></pre>
-<p><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-Your browser does not support the audio element.
-<!-- raw HTML omitted --></p>
-<p><img src="record_me_1_2.png" alt="png"></p>
-
+  <h3 id="bring-your-branch-up-to-date-with-master">Bring your branch up-to-date with master</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout master
+git fetch -p origin
+git merge origin/master
+git checkout &lt;feature-branch&gt;
+git merge master
+git push origin &lt;feature-branch&gt;
+</code></pre></div><h3 id="create-a-new-branch-and-check-out-an-old--commit">Create a new branch and check out an old  commit</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout -b &lt;new branch&gt; &lt;SHA-1&gt;
+git add .
+git commit -m <span class="s2">&#34;added a new branch from old commit&#34;</span>
+git push --set-upstream origin &lt;new branch&gt;
+</code></pre></div><h3 id="remove-submodule">Remove submodule</h3>
+<p>To remove a submodule from a git repository you need to:</p>
+<p>Delete the relevant section from the <code>.gitmodules</code> file<br>
+Stage the <code>.gitmodules</code> changes: <code>git add .gitmodules</code><br>
+Delete the relevant section from <code>.git/config</code><br>
+Run <code>git rm --cached path_to_submodule</code> (no trailing slash) <br>
+Run <code>rm -rf .git/modules/path_to_submodule</code> (no trailing slash)<br>
+Commit <code>git commit -m &quot;Removed submodule&quot;</code> <br>
+Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></p>
+<h3 id="transfer-from-github-to-gitlab">Transfer from <code>github</code> to <code>gitlab</code></h3>
+<pre><code>git remote add github https://github.com/othrif/vbfmet-recast.git
+git push --mirror github
+</code></pre><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">

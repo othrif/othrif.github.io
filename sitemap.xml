@@ -33,6 +33,12 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/scripting/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/basics/softmax_calc.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -48,6 +54,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/scripting/jupyter.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/linux/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -59,6 +70,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/basics/dir_manip.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/scripting/markdown.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -94,6 +110,11 @@
   
   <url>
     <loc>https://othrif.github.io/machine_learning/basics/includes.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/scripting/git.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

@@ -16,8 +16,8 @@
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/python/basics/dir_manip.html</guid>
-      <description>Create dir if it does not exist import os path=&amp;#39;/tmp/test&amp;#39; if not os.path.exists(path): os.mkdir(path) Change directory os.chdir(path) print(f&amp;#39;New location is: {os.getcwd()!r}&amp;#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
-fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&amp;#39;Intial file: {os.listdir(path)}&amp;#39;) # list content of directory os.rename(&amp;#39;mytext.txt&amp;#39;, &amp;#34;mytest_rename.txt&amp;#34;) print(f&amp;#39;Renamed file:{os.listdir(path)}&amp;#39;) os.close(fd) # close Intial file: [&#39;mytext.txt&#39;] Renamed file:[&#39;mytest_rename.txt&#39;]  Remove directory and all its content import shutil if os.</description>
+      <description>Create dir if it does not exist import os path=&amp;#39;/tmp/test&amp;#39; if not os.path.exists(path): os.mkdir(path) Do something if dir exists (alternative) import pathlib data_dir = pathlib.Path(&amp;#39;data/&amp;#39;) if not data_dir.exists(): print(&amp;#39;do something&amp;#39;) do something  Change directory os.chdir(path) print(f&amp;#39;New location is: {os.getcwd()!r}&amp;#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
+fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&amp;#39;Intial file: {os.listdir(path)}&amp;#39;) # list content of directory os.</description>
     </item>
     
     <item>
