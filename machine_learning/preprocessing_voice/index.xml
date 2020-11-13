@@ -11,12 +11,45 @@
     
     
     <item>
-      <title>Record my voice</title>
-      <link>https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html</link>
+      <title>Convert between audio formats</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
-      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html</guid>
-      <description># record or readvoice import math import numpy as np import librosa import librosa.display import sounddevice as sd from scipy.io import wavfile import IPython.display as ipd import matplotlib.pyplot as plt def record_voice (filename, seconds=1, sr=22050, nchannels=1): myrecording = sd.rec(int(seconds * sr), samplerate=sr, channels=nchannels) sd.wait() # Wait until recording is finished wavfile.write(filename, sr, myrecording) # Save as WAV file  wav, sr = librosa.load(filename) return wav, sr wav, sr = record_voice(&amp;#39;test.wav&amp;#39;) display(ipd.</description>
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</guid>
+      <description>Convert in CLI sox new.wav new.mp3 Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
+Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np.linspace(0, seconds, seconds * fs, False) note = np.</description>
+    </item>
+    
+    <item>
+      <title>Play sound in jupyter and other libraries</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</guid>
+      <description>See resources here: https://realpython.com/playing-and-recording-sound-python/
+filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; Play in CLI From sox:
+play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play sound with pydub Some useful details here
+from pydub import AudioSegment from pydub.playback import play sound = AudioSegment.from_file(filename, &amp;#39;wav&amp;#39;) play(sound) from pydub import AudioSegment from pydub.playback import play # Play wav sound = AudioSegment.from_wav(filename) play(sound) # Play mp3 sound = AudioSegment.</description>
+    </item>
+    
+    <item>
+      <title>Record my voice</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</guid>
+      <description>See resources here: https://realpython.com/playing-and-recording-sound-python/
+Record in CLI From sox:
+rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&amp;#39;output.wav&amp;#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd.Audio(&amp;#39;output.wav&amp;#39;) plt.plot(myrecording) [&amp;lt;matplotlib.lines.Line2D at 0x12bdb8700&amp;gt;]  </description>
+    </item>
+    
+    <item>
+      <title>Sound file properties</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/soundfile_prop.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/soundfile_prop.html</guid>
+      <description>filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  Convert file to a specified bit and sample rates sox &amp;lt;input&amp;gt; -b 16 -r 16000 &amp;lt;output&amp;gt; soxi &amp;lt;input&amp;gt; </description>
     </item>
     
   </channel>

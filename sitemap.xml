@@ -44,6 +44,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/aws/aws_basics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -84,6 +89,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/python/basics/print.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -99,7 +109,12 @@
   </url>
   
   <url>
-    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/record_me.html</loc>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/soundfile_prop.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
