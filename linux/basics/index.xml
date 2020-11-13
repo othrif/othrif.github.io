@@ -20,11 +20,20 @@
     </item>
     
     <item>
-      <title>ssh keys in remote servers</title>
-      <link>https://othrif.github.io/linux/basics/sshkeys.html</link>
+      <title>Search for a substring inside all files</title>
+      <link>https://othrif.github.io/linux/basics/search_string.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
-      <guid>https://othrif.github.io/linux/basics/sshkeys.html</guid>
+      <guid>https://othrif.github.io/linux/basics/search_string.html</guid>
+      <description>Search recurisvely grep -r &amp;#34;substring&amp;#34; . ignore case distinctions: grep -ri &amp;#34;substring&amp;#34; . to only display filenames grep -r -l &amp;#34;othrif&amp;#34; . </description>
+    </item>
+    
+    <item>
+      <title>ssh keys in remote servers</title>
+      <link>https://othrif.github.io/linux/basics/ssh_keys.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/ssh_keys.html</guid>
       <description>SSH keys provide an easy, yet extremely secure way of logging into your server. You can following these steps to generate a new SSH key and add it to the ssh-agent:
 Run the following command in your terminal: ssh-keygen -b 2048 -t rsa For maximum security, you want to generate a 2048 bit RSA key.
 You will be prompted to enter a passphrase. It is highly recommended! ~/.ssh/id_rsa.pub is your public key and ~/.</description>
