@@ -28,8 +28,7 @@ Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Ou
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</guid>
       <description>See resources here: https://realpython.com/playing-and-recording-sound-python/
 filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; Play in CLI From sox:
-play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play sound with pydub Some useful details here
-from pydub import AudioSegment from pydub.playback import play sound = AudioSegment.from_file(filename, &amp;#39;wav&amp;#39;) play(sound) from pydub import AudioSegment from pydub.playback import play # Play wav sound = AudioSegment.from_wav(filename) play(sound) # Play mp3 sound = AudioSegment.</description>
+play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&amp;#39;ignore&amp;#39;) newfile=&amp;#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&amp;#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element. Play sound with pydub Some useful details here</description>
     </item>
     
     <item>
