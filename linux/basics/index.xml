@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Copy random file from subfolder to new subfolders</title>
+      <link>https://othrif.github.io/linux/basics/copy_rand_file.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/copy_rand_file.html</guid>
+      <description>To be used when i want to copy one file from many subfolders in a source folder to local subfolders for i in $(ls /source/of/folders); do pat=&amp;#34;/source/of/folders/$i/&amp;#34;; cp $pat/$(ls $pat | shuf -n 1) $i/.; done </description>
+    </item>
+    
+    <item>
       <title>Find Files</title>
       <link>https://othrif.github.io/linux/basics/find_files.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

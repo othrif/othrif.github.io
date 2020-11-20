@@ -39,7 +39,7 @@ play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.A
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</guid>
       <description>See resources here: https://realpython.com/playing-and-recording-sound-python/
 Record in CLI From sox:
-rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&amp;#39;output.wav&amp;#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd.Audio(&amp;#39;output.wav&amp;#39;) plt.plot(myrecording) [&amp;lt;matplotlib.lines.Line2D at 0x12bdb8700&amp;gt;]  </description>
+rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&amp;#39;output.wav&amp;#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd.</description>
     </item>
     
     <item>

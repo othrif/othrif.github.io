@@ -19,7 +19,7 @@
 <meta property="og:title" content="Record my voice" />
 <meta property="og:description" content="See resources here: https://realpython.com/playing-and-recording-sound-python/
 Record in CLI From sox:
-rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd.Audio(&#39;output.wav&#39;) plt.plot(myrecording) [&lt;matplotlib.lines.Line2D at 0x12bdb8700&gt;]  " />
+rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -29,7 +29,7 @@ rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.
 <meta name="twitter:title" content="Record my voice"/>
 <meta name="twitter:description" content="See resources here: https://realpython.com/playing-and-recording-sound-python/
 Record in CLI From sox:
-rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd.Audio(&#39;output.wav&#39;) plt.plot(myrecording) [&lt;matplotlib.lines.Line2D at 0x12bdb8700&gt;]  "/>
+rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -39,7 +39,7 @@ rec new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.
   "@type": "BlogPosting",
   "headline": "Record my voice",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/record_sound.html",
-  "wordCount": "70",
+  "wordCount": "76",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -152,6 +152,8 @@ MathJax.Hub.Config({
 <h1 id="record-in-cli">Record in CLI</h1>
 <p>From <code>sox</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">rec new-file.wav
+
+rec -b <span class="m">16</span> -r <span class="m">16000</span> new-file.wav
 </code></pre></div><h1 id="record-with-sounddevice">Record with <code>sounddevice</code></h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sounddevice</span> <span class="kn">as</span> <span class="nn">sd</span>
 <span class="kn">from</span> <span class="nn">scipy.io.wavfile</span> <span class="kn">import</span> <span class="n">write</span>
@@ -194,7 +196,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 18 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 19 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
