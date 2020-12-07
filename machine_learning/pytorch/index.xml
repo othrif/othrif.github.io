@@ -1,0 +1,41 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/pytorch/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basics of building a MLP</title>
+      <link>https://othrif.github.io/machine_learning/pytorch/pynn.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/pytorch/pynn.html</guid>
+      <description>import torch import torch.nn as nn # Performs the operation 𝐴𝑥+𝑏 , where 𝐴 and 𝑏 are initialized randomly linear = nn.Linear(10, 2) # nn.Linear(input dim=10, output dim=2) will take in a 𝑛×10 matrix and return an 𝑛×2 matrix  example_input = torch.randn(3, 10) example_output = linear(example_input) example_output tensor([[ 0.5458, 0.1715], [ 0.0310, -0.2061], [ 1.3804, -0.1380]], grad_fn=&amp;lt;AddmmBackward&amp;gt;)  # ReLU non-linearity sets all negative numbers in a tensor to zero relu = nn.</description>
+    </item>
+    
+    <item>
+      <title>Class NN</title>
+      <link>https://othrif.github.io/machine_learning/pytorch/class_nn.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/pytorch/class_nn.html</guid>
+      <description>import torch import torch.nn as nn class ExampleModule(nn.Module): def __init__(self, input_dims, output_dims): super(ExampleModule, self).__init__() self.linear = nn.Linear(input_dims, output_dims) self.exponent = nn.Parameter(torch.tensor(1.)) def forward(self, x): x = self.linear(x) # This is the notation for element-wise exponentiation,  # which matches python in general x = x ** self.exponent return x example_model = ExampleModule(10, 2) list(example_model.parameters()) [Parameter containing: tensor(1., requires_grad=True), Parameter containing: tensor([[-0.3077, 0.0289, 0.1660, -0.2750, -0.2928, -0.1247, 0.1898, 0.1587, -0.1698, -0.0203], [ 0.</description>
+    </item>
+    
+    <item>
+      <title>Handling tensors</title>
+      <link>https://othrif.github.io/machine_learning/pytorch/tensors.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/pytorch/tensors.html</guid>
+      <description>import torch Tensor properties Create tensor from a list or an array example_tensor = torch.Tensor( [ [[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 0], [1, 2]] ] ) Initialize tensors # with ones with same shape as example tensor torch.ones_like(example_tensor) tensor([[[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]]])  # with zeros with same shape as example tensor torch.zeros_like(example_tensor) tensor([[[0., 0.], [0., 0.]], [[0., 0.</description>
+    </item>
+    
+  </channel>
+</rss>

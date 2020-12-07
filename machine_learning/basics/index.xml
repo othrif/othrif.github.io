@@ -21,6 +21,25 @@ from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np
     </item>
     
     <item>
+      <title>Check package versions</title>
+      <link>https://othrif.github.io/machine_learning/basics/versions.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/versions.html</guid>
+      <description>Check deep learning library versions !python -c &amp;#34;import tensorflow as tf; print(&amp;#39;Tensorflow:&amp;#39;, tf.__version__)&amp;#34; !python -c &amp;#34;import torch; print(&amp;#39;Pytorch:&amp;#39;, torch.__version__)&amp;#34; Tensorflow: 2.3.1 Pytorch: 1.7.0  </description>
+    </item>
+    
+    <item>
+      <title>Setting up machine learning libraries with GPU</title>
+      <link>https://othrif.github.io/machine_learning/basics/dl_server.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/dl_server.html</guid>
+      <description>Switch between gcc8 and gcc9 For tensorflow and pytorch, you need gcc8 to compile code which is not the system default. Do the following to use gcc8:
+sudo apt -y install build-essential sudo apt -y install gcc-8 g++-8 gcc-9 g++-9 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 8 --slave /usr/bin/g++ g++ /usr/bin/g++-8 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9 --slave /usr/bin/g++ g++ /usr/bin/g++-9 # Every time you want to make a selection, run: sudo update-alternatives --config gcc # press number corresponding to your choice </description>
+    </item>
+    
+    <item>
       <title>Standard includes</title>
       <link>https://othrif.github.io/machine_learning/basics/includes.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
