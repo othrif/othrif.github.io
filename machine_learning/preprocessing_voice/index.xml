@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Audio i/o devices</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</guid>
+      <description>import sounddevice as sd sd.query_devices()  0 LG ULTRAWIDE, Core Audio (0 in, 2 out) 1 Jabra Link 370, Core Audio (0 in, 2 out) 2 Jabra Link 370, Core Audio (1 in, 0 out) &amp;gt; 3 MacBook Pro Microphone, Core Audio (1 in, 0 out) &amp;lt; 4 MacBook Pro Speakers, Core Audio (0 in, 2 out)  </description>
+    </item>
+    
+    <item>
       <title>Convert between audio formats</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

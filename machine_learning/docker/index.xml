@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/docker/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manipulate a docker image and launch a notebook</title>
+      <link>https://othrif.github.io/machine_learning/docker/docker_case.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/docker/docker_case.html</guid>
+      <description>Basics Docker build docker build --tag hello-world:1.0 . Run image docker run -p 8080:80 --name hello -d hello-world:1.0 Tag image docker tag hello-world user/hello-world Push image to docker hub docker push &amp;lt;Your Docker ID&amp;gt;/hello-world Pull image to docker hub docker pull user/hello-world See existing images docker images See what is running docker ps docker ps -a # show images, even ones stopped Start docker process docker start &amp;lt;container NAME&amp;gt; # from `docker ps -a` Stop and remove image # Stop docker container from running docker stop &amp;lt;container NAME&amp;gt; # removes from both `docker ps` and `docker ps -a` docker rm &amp;lt;container NAME&amp;gt; # Replace above with docker rm -f &amp;lt;container NAME&amp;gt; Docker logs docker logs -f &amp;lt;container NAME&amp;gt; # -f to follow and listen Advanced Clean your environment # running processes docker ps -a docker stop &amp;lt;CONTAINER ID&amp;gt; docker rm &amp;lt;CONTAINER ID&amp;gt; # Clean open images docker images docker rmi &amp;lt;IMAGE ID or REPOSITORY&amp;gt; # Prune system to close all communication docker system prune -f Show the history of a docker image docker images # get &amp;lt;IMAGE ID&amp;gt; docker history --no-trunc &amp;lt;IMAGE ID&amp;gt; # without runcation Build docker image docker build -f Dockerfile -t othrif:mytest .</description>
+    </item>
+    
+  </channel>
+</rss>

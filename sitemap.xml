@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/docker/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -41,6 +46,11 @@
     <loc>https://othrif.github.io/scripting/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
@@ -100,6 +110,11 @@
   
   <url>
     <loc>https://othrif.github.io/machine_learning/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/docker/docker_case.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
