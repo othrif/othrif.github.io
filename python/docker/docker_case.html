@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Manipulate a docker image and launch a notebook" />
+<meta property="og:description" content="Basics Docker build docker build -t hello-world:1.0 . Run image docker run -p 8080:80 --name hello -d hello-world:1.0 Tag image docker tag hello-world user/hello-world Push image to docker hub docker push &lt;Your Docker ID&gt;/hello-world Pull image to docker hub docker pull user/hello-world See existing images docker images See what is running docker ps docker ps -a # show images, even ones stopped Start docker process docker start &lt;container NAME&gt; # from `docker ps -a` Stop and remove image # Stop docker container from running docker stop &lt;container NAME&gt; # removes from both `docker ps` and `docker ps -a` docker rm &lt;container NAME&gt; # Replace above with docker rm -f &lt;container NAME&gt; Docker logs docker logs -f &lt;container NAME&gt; # -f to follow and listen Advanced Clean your environment # running processes docker ps -a docker stop &lt;CONTAINER ID&gt; docker rm &lt;CONTAINER ID&gt; # Clean open images docker images docker rmi &lt;IMAGE ID or REPOSITORY&gt; # Prune system to close all communication docker system prune -f Show the history of a docker image docker images # get &lt;IMAGE ID&gt; docker history --no-trunc &lt;IMAGE ID&gt; # without runcation Build docker image docker build -f Dockerfile -t othrif:mytest ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/python/docker/docker_case.html" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Manipulate a docker image and launch a notebook"/>
+<meta name="twitter:description" content="Basics Docker build docker build -t hello-world:1.0 . Run image docker run -p 8080:80 --name hello -d hello-world:1.0 Tag image docker tag hello-world user/hello-world Push image to docker hub docker push &lt;Your Docker ID&gt;/hello-world Pull image to docker hub docker pull user/hello-world See existing images docker images See what is running docker ps docker ps -a # show images, even ones stopped Start docker process docker start &lt;container NAME&gt; # from `docker ps -a` Stop and remove image # Stop docker container from running docker stop &lt;container NAME&gt; # removes from both `docker ps` and `docker ps -a` docker rm &lt;container NAME&gt; # Replace above with docker rm -f &lt;container NAME&gt; Docker logs docker logs -f &lt;container NAME&gt; # -f to follow and listen Advanced Clean your environment # running processes docker ps -a docker stop &lt;CONTAINER ID&gt; docker rm &lt;CONTAINER ID&gt; # Clean open images docker images docker rmi &lt;IMAGE ID or REPOSITORY&gt; # Prune system to close all communication docker system prune -f Show the history of a docker image docker images # get &lt;IMAGE ID&gt; docker history --no-trunc &lt;IMAGE ID&gt; # without runcation Build docker image docker build -f Dockerfile -t othrif:mytest ."/>
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Manipulate a docker image and launch a notebook",
+  "url": "https:\/\/othrif.github.io\/python\/docker\/docker_case.html",
+  "wordCount": "299",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Manipulate a docker image and launch a notebook</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Manipulate a docker image and launch a notebook</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h1 id="basics">Basics</h1>
+<h3 id="docker-build">Docker build</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t hello-world:1.0 .
+</code></pre></div><h3 id="run-image">Run image</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run -p 8080:80 --name hello -d hello-world:1.0
+</code></pre></div><h3 id="tag-image">Tag image</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker tag hello-world user/hello-world
+</code></pre></div><h3 id="push-image-to-docker-hub">Push image to docker hub</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker push &lt;Your Docker ID&gt;/hello-world
+</code></pre></div><h3 id="pull-image-to-docker-hub">Pull image to docker hub</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker pull user/hello-world
+</code></pre></div><h3 id="see-existing-images">See existing images</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker images
+</code></pre></div><h3 id="see-what-is-running">See what is running</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker ps
+docker ps -a <span class="c1"># show images, even ones stopped</span>
+</code></pre></div><h3 id="start-docker-process">Start docker process</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker start &lt;container NAME&gt; <span class="c1"># from `docker ps -a`</span>
+</code></pre></div><h3 id="stop-and-remove-image">Stop and remove image</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Stop docker container from running</span>
+docker stop &lt;container NAME&gt;
+<span class="c1"># removes from both `docker ps` and `docker ps -a`</span>
+docker rm &lt;container NAME&gt;
+
+<span class="c1"># Replace above with</span>
+docker rm -f &lt;container NAME&gt;
+</code></pre></div><h3 id="docker-logs">Docker logs</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker logs -f &lt;container NAME&gt; <span class="c1"># -f to follow and listen</span>
+</code></pre></div><h1 id="advanced">Advanced</h1>
+<h3 id="clean-your-environment">Clean your environment</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># running processes</span>
+docker ps -a
+docker stop &lt;CONTAINER ID&gt;
+docker rm &lt;CONTAINER ID&gt;
+
+<span class="c1"># Clean open images</span>
+docker images
+docker rmi &lt;IMAGE ID or REPOSITORY&gt;
+
+<span class="c1"># Prune system to close all communication</span>
+docker system prune -f
+</code></pre></div><h3 id="show-the-history-of-a-docker-image">Show the history of a docker image</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker images <span class="c1"># get &lt;IMAGE ID&gt;</span>
+docker <span class="nb">history</span> --no-trunc &lt;IMAGE ID&gt; <span class="c1"># without runcation</span>
+</code></pre></div><h3 id="build-docker-image">Build docker image</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build -f Dockerfile -t othrif:mytest .
+docker run -p 5000:5000 othrif:mytest 
+<span class="c1"># Let your local host recognize the server</span>
+sudo emacs /private/etc/hosts
+<span class="c1"># add the notebok address from running the line &#34;The Jupyter Notebook is running at:http://XXXXXX:5000/&#34;</span>
+<span class="c1"># by adding `XXXXXX` to `127.0.0.1	localhost XXXXXX`</span>
+</code></pre></div><h3 id="run-interactively">Run interactively</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker ps -a <span class="c1"># get &lt;IMAGE&gt; and &lt;CONTAINER ID&gt;</span>
+docker run -d -it -p 8000:8080 &lt;IMAGE&gt; /usr/bin/top <span class="c1"># &lt;IMAGE&gt;=othrif:mytest</span>
+docker <span class="nb">exec</span> -it &lt;CONTAINER ID&gt; /bin/bash
+
+</code></pre></div><h3 id="start-docker-deamon">Start Docker deamon</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker-machine start
+docker-machine env
+<span class="nb">eval</span> <span class="k">$(</span>docker-machine env<span class="k">)</span>
+</code></pre></div><h1 id="docker-compose">Docker compose</h1>
+<h3 id="build-and-run-app">Build and run app</h3>
+<pre><code>docker-compose up -d
+</code></pre><h3 id="stop-app">Stop app</h3>
+<pre><code>docker-compose down
+</code></pre><h3 id="docker-composeyml">docker-compose.yml</h3>
+<p>Examples</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">version</span><span class="p">:</span> <span class="s2">&#34;3.8&#34;</span>
+<span class="n">services</span><span class="p">:</span>
+  <span class="n">web</span><span class="p">:</span>
+    <span class="n">build</span><span class="p">:</span> <span class="o">.</span>
+    <span class="n">ports</span><span class="p">:</span>
+      <span class="o">-</span> <span class="s2">&#34;5000:5000&#34;</span>
+  <span class="n">redis</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">:</span> <span class="s2">&#34;redis:alpine&#34;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 26 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

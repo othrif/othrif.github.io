@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>https://othrif.github.io/machine_learning/docker/index.xml</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -39,6 +34,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/basics/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/docker/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -114,7 +114,7 @@
   </url>
   
   <url>
-    <loc>https://othrif.github.io/machine_learning/docker/docker_case.html</loc>
+    <loc>https://othrif.github.io/python/docker/docker_case.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
