@@ -30,5 +30,14 @@ fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file
 import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime.date(1989, 2, 6) print(f&amp;#39;My name is {name.lower()}, my age next year is {age+1}, my anniversary is {anniversary:%A, %B %d, %Y}.&amp;#39;) print(f&amp;#39;He said his name is {name!r}.&amp;#39;) # !</description>
     </item>
     
+    <item>
+      <title>Using pipenv and saving python environment</title>
+      <link>https://othrif.github.io/python/basics/pipenv.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/pipenv.html</guid>
+      <description>Save python environment pipenv install &amp;lt;all packages i need&amp;gt; pipenv lock --requirements &amp;gt; requirements.txt </description>
+    </item>
+    
   </channel>
 </rss>

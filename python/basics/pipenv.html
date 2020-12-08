@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Search for a substring inside all files" />
-<meta property="og:description" content="How to find files using the Linux command line." />
+<meta property="og:title" content="Using pipenv and saving python environment" />
+<meta property="og:description" content="Save python environment pipenv install &lt;all packages i need&gt; pipenv lock --requirements &gt; requirements.txt " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/search_string.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/pipenv.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search for a substring inside all files"/>
-<meta name="twitter:description" content="How to find files using the Linux command line."/>
+<meta name="twitter:title" content="Using pipenv and saving python environment"/>
+<meta name="twitter:description" content="Save python environment pipenv install &lt;all packages i need&gt; pipenv lock --requirements &gt; requirements.txt "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +33,19 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Search for a substring inside all files",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/search_string.html",
-  "wordCount": "22",
+  "headline": "Using pipenv and saving python environment",
+  "url": "https:\/\/othrif.github.io\/python\/basics\/pipenv.html",
+  "wordCount": "14",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
-  },
-  "description": "How to find files using the Linux command line."
+  }
 }
 </script> 
 
-    <title>Search for a substring inside all files</title>
+    <title>Using pipenv and saving python environment</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,19 +137,16 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Search for a substring inside all files</h1>
+    <h1 class="technical_note_title">Using pipenv and saving python environment</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="search-recurisvely">Search recurisvely</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">grep -r <span class="s2">&#34;substring&#34;</span> .
-</code></pre></div><h3 id="ignore-case-distinctions">ignore case distinctions:</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">grep -ri <span class="s2">&#34;substring&#34;</span> .
-</code></pre></div><h3 id="to-only-display-filenames">to only display filenames</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">grep -r -l <span class="s2">&#34;othrif&#34;</span> .
+  <h3 id="save-python-environment">Save python environment</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pipenv install &lt;all packages i need&gt;
+pipenv lock --requirements &gt; requirements.txt
 </code></pre></div>
 </div>
   <aside>
