@@ -36,7 +36,12 @@ import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/python/basics/pipenv.html</guid>
-      <description>Save python environment pipenv install &amp;lt;all packages i need&amp;gt; pipenv lock --requirements &amp;gt; requirements.txt </description>
+      <description>Pipenv workflow If the Pipfile exists, run
+pipenv install To run,
+pipenv run &amp;lt;command&amp;gt; To enter a shell within the environment
+pipenv shell To add a package to your new project
+pipenv install &amp;lt;package&amp;gt; or edit the Pipfile directly, here added package requests
+[[source]] url = &amp;#34;https://pypi.python.org/simple&amp;#34; verify_ssl = true name = &amp;#34;pypi&amp;#34; [packages] requests = &amp;#34;*&amp;#34; [dev-packages] Save python environment pipenv install &amp;lt;all packages i need&amp;gt; pipenv lock --requirements &amp;gt; requirements.</description>
     </item>
     
   </channel>

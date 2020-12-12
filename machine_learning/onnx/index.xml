@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/onnx/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/onnx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install ONNX and ONNX Runtime</title>
+      <link>https://othrif.github.io/machine_learning/onnx/install_onnx.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/onnx/install_onnx.html</guid>
+      <description>In MacOS: brew install libomp pip install onnx onnxruntime In Linux apt-get install libgomp1 pip install onnx onnxruntime </description>
+    </item>
+    
+  </channel>
+</rss>
