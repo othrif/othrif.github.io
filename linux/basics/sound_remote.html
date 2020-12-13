@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Copy random file from subfolder to new subfolders" />
-<meta property="og:description" content="How to find files using the Linux command line." />
+<meta property="og:title" content="Playing sound from linux server in client MacOS" />
+<meta property="og:description" content="How to setup working locally with remote files" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/copy_rand_file.html" />
+<meta property="og:url" content="https://othrif.github.io/linux/basics/sound_remote.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Copy random file from subfolder to new subfolders"/>
-<meta name="twitter:description" content="How to find files using the Linux command line."/>
+<meta name="twitter:title" content="Playing sound from linux server in client MacOS"/>
+<meta name="twitter:description" content="How to setup working locally with remote files"/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +33,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Copy random file from subfolder to new subfolders",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/copy_rand_file.html",
-  "wordCount": "36",
+  "headline": "Playing sound from linux server in client MacOS",
+  "url": "https:\/\/othrif.github.io\/linux\/basics\/sound_remote.html",
+  "wordCount": "141",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
   },
-  "description": "How to find files using the Linux command line."
+  "description": "How to setup working locally with remote files"
 }
 </script> 
 
-    <title>Copy random file from subfolder to new subfolders</title>
+    <title>Playing sound from linux server in client MacOS</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,16 +138,44 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Copy random file from subfolder to new subfolders</h1>
+    <h1 class="technical_note_title">Playing sound from linux server in client MacOS</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="to-be-used-when-i-want-to-copy-one-file-from-many-subfolders-in-a-source-folder-to-local-subfolders">To be used when i want to copy one file from many subfolders in a source folder to local subfolders</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="k">$(</span>ls /source/of/folders<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nv">pat</span><span class="o">=</span><span class="s2">&#34;/source/of/folders/</span><span class="nv">$i</span><span class="s2">/&#34;</span><span class="p">;</span> cp <span class="nv">$pat</span>/<span class="k">$(</span>ls <span class="nv">$pat</span> <span class="p">|</span> shuf -n 1<span class="k">)</span> <span class="nv">$i</span>/.<span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
+  <p>There are two configurations that needs to setup:</p>
+<h3 id="client-side---macos">Client side - MacOS</h3>
+<ul>
+<li>Install PulseAudio with brew: <code>brew install pulseaudio</code></li>
+<li>Configure a listening daemon to receive the audio from the remote machine:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pulseaudio --load<span class="o">=</span>module-native-protocol-tcp --exit-idle-time<span class="o">=</span>-1 --daemon
+<span class="c1"># alias: pulse</span>
+</code></pre></div><ul>
+<li>PulseAudio will listen on port 4713, double check with <code>lsof -i -P | grep -i &quot;listen&quot;</code></li>
+<li>Connect to server with Reverst Port Tunnel: <code>ssh -pXX -R 24713:localhost:4713 server</code>, where 24713 is arbitrary</li>
+<li>Copy the PulseAudio cookie to the server:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">scp ~/.config/pulse/cookie server:~/.config/pulse/cookie
+</code></pre></div><p>** Alternatively, add a default configuration to authenticate based on IP: <code>load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;clien/port</code> in <code>/etc/pulse/default.pa</code></p>
+<h4 id="diagnose-what-devices-available">Diagnose what devices available</h4>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pulseaudio --load<span class="o">=</span>module-native-protocol-tcp --exit-idle-time<span class="o">=</span>-1 --daemon
+pacmd list-sources
+</code></pre></div><h3 id="server-side---linux">Server side - Linux</h3>
+<ul>
+<li>Install PulseAudio: <code>apt-get install pulseaudio</code></li>
+<li>PusleAudio send to the chosen port: <code>export PULSE_SERVER=&quot;tcp:localhost:24713&quot;</code></li>
+<li>Check that your client is listening: <code>pactl info</code></li>
+<li>Test audio is working: <code>play file.wav</code></li>
+</ul>
+<h3 id="more-help">More help</h3>
+<ul>
+<li><a href="https://medium.com/@cristianduguet/play-remote-audio-over-an-ssh-connection-with-a-mac-client-9b7135dfe129">https://medium.com/@cristianduguet/play-remote-audio-over-an-ssh-connection-with-a-mac-client-9b7135dfe129</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/PulseAudio/Examples">https://wiki.archlinux.org/index.php/PulseAudio/Examples</a></li>
+</ul>
+
 </div>
   <aside>
       <div class="bug_reporting">

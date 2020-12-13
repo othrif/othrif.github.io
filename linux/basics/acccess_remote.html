@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Copy random file from subfolder to new subfolders" />
-<meta property="og:description" content="How to find files using the Linux command line." />
+<meta property="og:title" content="Working with remote files via ssh" />
+<meta property="og:description" content="How to setup working locally with remote files" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/copy_rand_file.html" />
+<meta property="og:url" content="https://othrif.github.io/linux/basics/acccess_remote.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Copy random file from subfolder to new subfolders"/>
-<meta name="twitter:description" content="How to find files using the Linux command line."/>
+<meta name="twitter:title" content="Working with remote files via ssh"/>
+<meta name="twitter:description" content="How to setup working locally with remote files"/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +33,20 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Copy random file from subfolder to new subfolders",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/copy_rand_file.html",
-  "wordCount": "36",
+  "headline": "Working with remote files via ssh",
+  "url": "https:\/\/othrif.github.io\/linux\/basics\/acccess_remote.html",
+  "wordCount": "154",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
   },
-  "description": "How to find files using the Linux command line."
+  "description": "How to setup working locally with remote files"
 }
 </script> 
 
-    <title>Copy random file from subfolder to new subfolders</title>
+    <title>Working with remote files via ssh</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,15 +138,40 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Copy random file from subfolder to new subfolders</h1>
+    <h1 class="technical_note_title">Working with remote files via ssh</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="to-be-used-when-i-want-to-copy-one-file-from-many-subfolders-in-a-source-folder-to-local-subfolders">To be used when i want to copy one file from many subfolders in a source folder to local subfolders</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="k">$(</span>ls /source/of/folders<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nv">pat</span><span class="o">=</span><span class="s2">&#34;/source/of/folders/</span><span class="nv">$i</span><span class="s2">/&#34;</span><span class="p">;</span> cp <span class="nv">$pat</span>/<span class="k">$(</span>ls <span class="nv">$pat</span> <span class="p">|</span> shuf -n 1<span class="k">)</span> <span class="nv">$i</span>/.<span class="p">;</span> <span class="k">done</span>
+  <p>This describes the way I can arrange my work to edit files in my laptop and update them remotely to my server.
+There are two ways to edit files:</p>
+<h1 id="using-pycharm">Using PyCharm:</h1>
+<p>Open <code>PyCharm Professional</code>, <code>New project&gt;Pure python&gt;Previously configured interpreter &gt; Interpreter: Remote python &gt; create</code>
+Change configuration: <code>Tools &gt; Deployment &gt; Mappings &gt; Deployment path</code></p>
+<h1 id="using-sublime-text">Using Sublime Text</h1>
+<h3 id="edit-file-on-a-remote-server-locally">Edit file on a remote server locally</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># setup sublime cli </span>
+sudo ln -s /Applications/Sublime<span class="se">\ </span>Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+<span class="c1"># ssh into your machine with</span>
+ssh -R 52698:localhost:52698 &lt;username&gt;@&lt;remotehost&gt;
+</code></pre></div><p>Can also add it to <code>~/.ssh/config</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">host</span> <span class="n">gangsterT</span>
+<span class="n">HostName</span> <span class="o">&lt;</span><span class="n">XX</span><span class="o">.</span><span class="n">YY</span><span class="o">.</span><span class="n">ZZ</span><span class="o">.</span><span class="n">UU</span><span class="o">&gt;</span>
+<span class="n">User</span> <span class="o">&lt;</span><span class="n">username</span><span class="o">&gt;</span>
+<span class="n">RemoteForward</span> <span class="mi">52698</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">52698</span>
+<span class="n">Port</span> <span class="o">&lt;</span><span class="n">XX</span><span class="o">&gt;</span>
+</code></pre></div><p>In the server, install <code>rmate</code> in the remote machine by executing these commands:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo wget -O /usr/local/bin/rmate https://raw.github.com/aurora/rmate/master/rmate
+sudo chmod a+x /usr/local/bin/rmate
+</code></pre></div><p>Now, everytime you want to edit a file in your remote server, you just run
+<code>rmate &lt;file&gt;</code></p>
+<h3 id="sublime-cli">Sublime cli</h3>
+<p>Open a whole project:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">subl &lt;path/to/folder&gt;
+</code></pre></div><p>Open a file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">subl &lt;path/to/file&gt;
 </code></pre></div>
 </div>
   <aside>

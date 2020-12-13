@@ -29,6 +29,16 @@
     </item>
     
     <item>
+      <title>Playing sound from linux server in client MacOS</title>
+      <link>https://othrif.github.io/linux/basics/sound_remote.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/sound_remote.html</guid>
+      <description>There are two configurations that needs to setup:
+Client side - MacOS  Install PulseAudio with brew: brew install pulseaudio Configure a listening daemon to receive the audio from the remote machine:  pulseaudio --load=module-native-protocol-tcp --exit-idle-time=-1 --daemon # alias: pulse  PulseAudio will listen on port 4713, double check with lsof -i -P | grep -i &amp;quot;listen&amp;quot; Connect to server with Reverst Port Tunnel: ssh -pXX -R 24713:localhost:4713 server, where 24713 is arbitrary Copy the PulseAudio cookie to the server:  scp ~/.</description>
+    </item>
+    
+    <item>
       <title>Search for a substring inside all files</title>
       <link>https://othrif.github.io/linux/basics/search_string.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -46,6 +56,17 @@
       <description>SSH keys provide an easy, yet extremely secure way of logging into your server. You can following these steps to generate a new SSH key and add it to the ssh-agent:
 Run the following command in your terminal: ssh-keygen -b 2048 -t rsa For maximum security, you want to generate a 2048 bit RSA key.
 You will be prompted to enter a passphrase. It is highly recommended! ~/.ssh/id_rsa.pub is your public key and ~/.</description>
+    </item>
+    
+    <item>
+      <title>Working with remote files via ssh</title>
+      <link>https://othrif.github.io/linux/basics/acccess_remote.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/acccess_remote.html</guid>
+      <description>This describes the way I can arrange my work to edit files in my laptop and update them remotely to my server. There are two ways to edit files:
+Using PyCharm: Open PyCharm Professional, New project&amp;gt;Pure python&amp;gt;Previously configured interpreter &amp;gt; Interpreter: Remote python &amp;gt; create Change configuration: Tools &amp;gt; Deployment &amp;gt; Mappings &amp;gt; Deployment path
+Using Sublime Text Edit file on a remote server locally # setup sublime cli  sudo ln -s /Applications/Sublime\ Text.</description>
     </item>
     
     <item>

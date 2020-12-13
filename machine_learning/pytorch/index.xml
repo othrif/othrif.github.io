@@ -37,5 +37,14 @@
       <description>import torch Tensor properties Create tensor from a list or an array example_tensor = torch.Tensor( [ [[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 0], [1, 2]] ] ) Initialize tensors # with ones with same shape as example tensor torch.ones_like(example_tensor) tensor([[[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]]])  # with zeros with same shape as example tensor torch.zeros_like(example_tensor) tensor([[[0., 0.], [0., 0.]], [[0., 0.</description>
     </item>
     
+    <item>
+      <title>Torch tensor dimensionality</title>
+      <link>https://othrif.github.io/machine_learning/pytorch/tensor_dim.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/pytorch/tensor_dim.html</guid>
+      <description>import torch x = torch.randn(10,1000) x.shape torch.Size([10, 1000])  Mean of each row at the time in tensor form y = x.mean(1)[:, None] y.shape torch.Size([10, 1])  Mean each row at the time in vector form z = x.mean(1) z.shape torch.Size([10])  </description>
+    </item>
+    
   </channel>
 </rss>
