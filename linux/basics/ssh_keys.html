@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "ssh keys in remote servers",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/ssh_keys.html",
-  "wordCount": "185",
+  "wordCount": "227",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -159,6 +159,12 @@ Modify your <code>~/.ssh/config</code> file to automatically load keys into the 
 </code></pre><p>Add your SSH private key to the ssh-agent and store your passphrase in the keychain</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -K ~/.ssh/id_rsa
 </code></pre></div><p>Now you should be able to ssh to your server securely!</p>
+<h3 id="access-server-without-ssh-keys">Access server without ssh keys</h3>
+<p>If you encounter the error: <code>Permission denied (publickey).</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo emacs /etc/ssh/sshd_config
+<span class="c1"># Change to: PasswordAuthentication yes</span>
+sudo service sshd reload
+</code></pre></div><p>Now if you ssh from a new server, you can access the target server with a password</p>
 
 </div>
   <aside>
