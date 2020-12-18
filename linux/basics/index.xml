@@ -29,13 +29,13 @@
     </item>
     
     <item>
-      <title>Linux hardeware system info</title>
+      <title>Linux system info</title>
       <link>https://othrif.github.io/linux/basics/system_info.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/linux/basics/system_info.html</guid>
       <description>To find hadrware information about your linux system, few commmands report useful infromation. If several options are given, they perform similar functions.
-Linux/kernel information cat /proc/version CPU and processing units lscpu cat /proc/cpuinfo Disk space of file systems pydf # pretty df -H Check RAM free -m List all hardware hwinfo --short sudo lshw -short List pci buses and devices connected to them lspci </description>
+Linux/kernel information cat /proc/version Linux version cat /etc/issue CPU and processing units lscpu cat /proc/cpuinfo Disk space of file systems pydf # pretty df -H Check RAM free -m List all hardware hwinfo --short sudo lshw -short List pci buses and devices connected to them lspci </description>
     </item>
     
     <item>

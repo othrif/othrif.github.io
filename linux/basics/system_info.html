@@ -16,7 +16,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Linux hardeware system info" />
+<meta property="og:title" content="Linux system info" />
 <meta property="og:description" content="How to setup working locally with remote files" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/linux/basics/system_info.html" />
@@ -24,7 +24,7 @@
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux hardeware system info"/>
+<meta name="twitter:title" content="Linux system info"/>
 <meta name="twitter:description" content="How to setup working locally with remote files"/>
 <meta name="generator" content="Hugo 0.77.0" />
 
@@ -33,9 +33,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Linux hardeware system info",
+  "headline": "Linux system info",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/system_info.html",
-  "wordCount": "64",
+  "wordCount": "68",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -46,7 +46,7 @@
 }
 </script> 
 
-    <title>Linux hardeware system info</title>
+    <title>Linux system info</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,7 +138,7 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Linux hardeware system info</h1>
+    <h1 class="technical_note_title">Linux system info</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
@@ -148,6 +148,8 @@ MathJax.Hub.Config({
   <p>To find hadrware information about your linux system, few commmands report useful infromation. If several options are given, they perform similar functions.</p>
 <h3 id="linuxkernel-information">Linux/kernel information</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat /proc/version
+</code></pre></div><h3 id="linux-version">Linux version</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat /etc/issue
 </code></pre></div><h3 id="cpu-and-processing-units">CPU and processing units</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">lscpu
 cat /proc/cpuinfo
