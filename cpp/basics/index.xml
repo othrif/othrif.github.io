@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cpp - Othmane Rifki</title>
+    <link>https://othrif.github.io/cpp/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/cpp/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basic manipulations of data types</title>
+      <link>https://othrif.github.io/cpp/basics/dir_manip.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/cpp/basics/dir_manip.html</guid>
+      <description>Strings Check if string is empty needle.empty() Find position index of matching string std::size_t pos = haystack.find(needle); # &amp;#39;find needle in a haystack&amp;#39; &amp;gt; pos=5 </description>
+    </item>
+    
+  </channel>
+</rss>
