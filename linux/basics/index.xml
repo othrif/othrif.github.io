@@ -29,6 +29,15 @@
     </item>
     
     <item>
+      <title>How many files in the folder?</title>
+      <link>https://othrif.github.io/linux/basics/files_in_folder.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/files_in_folder.html</guid>
+      <description>Number of files in each folder for i in `ls -d */`; do num=`ls $i | wc -l`; echo &amp;#34;$i: $num&amp;#34;; done </description>
+    </item>
+    
+    <item>
       <title>Linux system info</title>
       <link>https://othrif.github.io/linux/basics/system_info.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

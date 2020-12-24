@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Working with git",
   "url": "https:\/\/othrif.github.io\/scripting\/git.html",
-  "wordCount": "139",
+  "wordCount": "176",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -168,7 +168,13 @@ Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></
 <h3 id="transfer-from-github-to-gitlab">Transfer from <code>github</code> to <code>gitlab</code></h3>
 <pre><code>git remote add github https://github.com/othrif/vbfmet-recast.git
 git push --mirror github
-</code></pre><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre><h3 id="push-a-newly-created-repo-to-git">Push a newly created repo to git</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+git add .
+git commit -m <span class="s2">&#34;Initial commit with the basic code structure&#34;</span>
+git branch -m master main
+git remote add origin https://github.com/&lt;repo&gt;
+git push -u origin main
 </code></pre></div>
 </div>
   <aside>
@@ -193,7 +199,7 @@ git push --mirror github
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 35 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 36 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
