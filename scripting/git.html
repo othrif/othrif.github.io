@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Working with git",
   "url": "https:\/\/othrif.github.io\/scripting\/git.html",
-  "wordCount": "176",
+  "wordCount": "237",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -175,6 +175,18 @@ git commit -m <span class="s2">&#34;Initial commit with the basic code structure
 git branch -m master main
 git remote add origin https://github.com/&lt;repo&gt;
 git push -u origin main
+</code></pre></div><h3 id="number-of-lines-of-code">Number of lines of code</h3>
+<p>Add the following to <code>cloc-git</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash
+</span><span class="cp"></span>git clone --depth <span class="m">1</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> temp-linecount-repo <span class="o">&amp;&amp;</span>
+  <span class="nb">printf</span> <span class="s2">&#34;(&#39;temp-linecount-repo&#39; will be deleted automatically)\n\n\n&#34;</span> <span class="o">&amp;&amp;</span>
+  cloc temp-linecount-repo <span class="o">&amp;&amp;</span>
+  rm -rf temp-linecount-repo%
+</code></pre></div><p>Then add it to a folder in your path such as <code>/usr/local/bin/</code> and set the proper permission with</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">chmod a+x cloc-git
+</code></pre></div><p>Find the number of lines with:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cloc-git https://github.com/othrif/repo.git
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
 </code></pre></div>
 </div>
   <aside>
