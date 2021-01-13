@@ -30,6 +30,17 @@ Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Ou
     </item>
     
     <item>
+      <title>Convert video</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_video.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_video.html</guid>
+      <description>Convert video Convert video from one format to another:
+ffmpeg -i input.mov -vcodec h264 -acodec mp2 output.mp4 Run diagnosis Run the following diagnosis for either audio or video:
+ffmpeg -i output.mp4 ffprobe ouptut.mp4 </description>
+    </item>
+    
+    <item>
       <title>Play sound in jupyter and other libraries</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
