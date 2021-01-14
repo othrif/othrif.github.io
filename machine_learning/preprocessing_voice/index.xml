@@ -25,8 +25,9 @@
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</guid>
-      <description>Convert in CLI sox new.wav new.mp3 Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
-Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np.linspace(0, seconds, seconds * fs, False) note = np.</description>
+      <description>Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
+ffmpeg -sample_fmts Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
+Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np.</description>
     </item>
     
     <item>
