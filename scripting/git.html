@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Working with git",
   "url": "https:\/\/othrif.github.io\/scripting\/git.html",
-  "wordCount": "237",
+  "wordCount": "299",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -186,8 +186,12 @@ git push -u origin main
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">chmod a+x cloc-git
 </code></pre></div><p>Find the number of lines with:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cloc-git https://github.com/othrif/repo.git
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
-</code></pre></div>
+</code></pre></div><h3 id="avoid-needing-git-token-each-time">Avoid needing git token each time</h3>
+<p>When you want to pull/push from git, you will need your username and token. <em>Note this is different than your github password</em>.</p>
+<p>To avoid needing to enter your credentials everytime, enable local caching of your credentials:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config credential.helper store
+</code></pre></div><p>You can also use a public ssh key: copy the contents of <code>~/.ssh/id_rsa.pub</code> to <a href="https://github.com/settings/keys">github settings</a></p>
+
 </div>
   <aside>
       <div class="bug_reporting">
@@ -211,7 +215,7 @@ git push -u origin main
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 39 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 40 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
