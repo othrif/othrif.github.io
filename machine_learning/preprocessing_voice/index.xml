@@ -31,6 +31,17 @@ Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Ou
     </item>
     
     <item>
+      <title>Convert mov to gif</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_mov_gif.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_mov_gif.html</guid>
+      <description>Convert video .mov to .gif first, install gifsicle:
+brew install gifsicle Convert video recorded with quicktime to gif:
+ffmpeg -i screen-recording.mov -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 &amp;gt; coolest.gif </description>
+    </item>
+    
+    <item>
       <title>Convert video</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_video.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
