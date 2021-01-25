@@ -30,6 +30,16 @@ from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np
     </item>
     
     <item>
+      <title>Profiling GPU with Nvidia tools</title>
+      <link>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</guid>
+      <description>Using Nsight systems To install Nsight systems:
+ Download from Nvidia Make executable with chmod a+x NsightSystems-linux-public-2020.5.1.85-5ee086b.run install with ./NsightSystems-linux-public-2020.5.1.85-5ee086b.run Add to path export PATH=&amp;quot;/home/othrif/setup/nsight-systems-2020.5.1/target-linux-x64:$PATH&amp;quot; Run profiling tool with: nsys profile ./program  Using nvida-smi nvidia-smi -l 1 &amp;gt;&amp;gt; gpu-stats.out </description>
+    </item>
+    
+    <item>
       <title>Setting up machine learning libraries with GPU</title>
       <link>https://othrif.github.io/machine_learning/basics/dl_server.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

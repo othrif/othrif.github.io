@@ -16,7 +16,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Zip And Unzip Files" />
+<meta property="og:title" content="Zip Files and send over ssh" />
 <meta property="og:description" content="How to zip and unzip files using the Linux command line." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/linux/basics/zip_and_unzip_files.html" />
@@ -24,7 +24,7 @@
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Zip And Unzip Files"/>
+<meta name="twitter:title" content="Zip Files and send over ssh"/>
 <meta name="twitter:description" content="How to zip and unzip files using the Linux command line."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
@@ -33,9 +33,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Zip And Unzip Files",
+  "headline": "Zip Files and send over ssh",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/zip_and_unzip_files.html",
-  "wordCount": "112",
+  "wordCount": "59",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -46,7 +46,7 @@
 }
 </script> 
 
-    <title>Zip And Unzip Files</title>
+    <title>Zip Files and send over ssh</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,34 +138,24 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Zip And Unzip Files</h1>
+    <h1 class="technical_note_title">Zip Files and send over ssh</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h2 id="make-files">Make Files</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">echo &#34;The number of soldiers in the regiment is 24.&#34; &gt; regiment.txt
-echo &#34;The regiment has seen five battles.&#34; &gt; battles.txt</code></pre></div>
-<h2 id="zip-files">Zip Files</h2>
+  <h2 id="remote-synch-a-directory">Remote synch a directory</h2>
+<p>Compress, copy with ssh, and uncompress:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">rsync -arvz -e <span class="s1">&#39;ssh -p &lt;your_port&gt;&#39;</span> --progress &lt;Source DIR&gt; &lt;username&gt;@&lt;your ip&gt;:&lt;Dest DIR&gt;
+</code></pre></div><h2 id="zip-files">Zip Files</h2>
 <p>The <code>-v</code> argument is optional, prints an output with the details of the operation.</p>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">gzip regiment.txt battles.txt -v</code></pre></div>
 <pre><code>regiment.txt:	 -2.2% -- replaced with regiment.txt.gz
 battles.txt:	 -5.6% -- replaced with battles.txt.gz
-</code></pre><h2 id="view-contents-of-directory">View Contents Of Directory</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">ls -l</code></pre></div>
-<pre><code>total 8
--rw-rw-r-- 1 othrif othrif 68 Jul 31 13:15 battles.txt.gz
--rw-rw-r-- 1 othrif othrif 78 Jul 31 13:15 regiment.txt.gz
 </code></pre><h2 id="unzip-files">Unzip Files</h2>
 <div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">gunzip regiment.txt battles.txt</code></pre></div>
-<h2 id="view-contents-of-directory-1">View Contents Of Directory</h2>
-<div class="highlight"><pre class="chroma"><code class="language-markdown" data-lang="markdown">ls -l</code></pre></div>
-<pre><code>total 8
--rw-rw-r-- 1 othrif othrif 36 Jul 31 13:17 battles.txt
--rw-rw-r-- 1 othrif othrif 46 Jul 31 13:17 regiment.txt
-</code></pre>
+
 </div>
   <aside>
       <div class="bug_reporting">
@@ -189,7 +179,7 @@ battles.txt:	 -5.6% -- replaced with battles.txt.gz
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 41 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 42 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
