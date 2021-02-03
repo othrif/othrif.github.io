@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>MacOS tricks</title>
+      <link>https://othrif.github.io/scripting/mac_tricks.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/mac_tricks.html</guid>
+      <description>Convert HEIC images to jpg or other formats # install imagemagick brew install imagemagick # convert a single image magick convert foo.HEIC foo.jpg # bulk convert multiple images magick mogrify -monitor -format jpg *.HEIC </description>
+    </item>
+    
+    <item>
       <title>Markdown Cheatsheet</title>
       <link>https://othrif.github.io/scripting/markdown.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

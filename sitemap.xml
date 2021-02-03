@@ -94,6 +94,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/linux/basics/rand_files.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/pytorch/class_nn.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -139,6 +144,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/tensorflow/tensor_to_string.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/pytorch/tensors.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -174,7 +184,17 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/scripting/mac_tricks.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/python/docker/docker_case.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/map_manip.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Get string out of a tensor string</title>
+      <link>https://othrif.github.io/machine_learning/tensorflow/tensor_to_string.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/tensorflow/tensor_to_string.html</guid>
+      <description>How to pass arguments to a map function import tensorflow as tf tf.constant(&amp;#39;hello&amp;#39;) &amp;lt;tf.Tensor: shape=(), dtype=string, numpy=b&#39;hello&#39;&amp;gt;  tf.constant(&amp;#39;hello&amp;#39;).numpy() b&#39;hello&#39;  tf.constant(&amp;#39;hello&amp;#39;).numpy().decode(&amp;#39;utf-8&amp;#39;) &#39;hello&#39;  </description>
+    </item>
+    
+    <item>
       <title>Pass arguments to TF map using lambda</title>
       <link>https://othrif.github.io/machine_learning/tensorflow/tf_map_lambda.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

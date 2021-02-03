@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Copy random file from subfolder to new subfolders",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/copy_rand_file.html",
-  "wordCount": "36",
+  "wordCount": "70",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -147,6 +147,8 @@ MathJax.Hub.Config({
 
   <h3 id="to-be-used-when-i-want-to-copy-one-file-from-many-subfolders-in-a-source-folder-to-local-subfolders">To be used when i want to copy one file from many subfolders in a source folder to local subfolders</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="k">$(</span>ls /source/of/folders<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="nv">pat</span><span class="o">=</span><span class="s2">&#34;/source/of/folders/</span><span class="nv">$i</span><span class="s2">/&#34;</span><span class="p">;</span> cp <span class="nv">$pat</span>/<span class="k">$(</span>ls <span class="nv">$pat</span> <span class="p">|</span> shuf -n 1<span class="k">)</span> <span class="nv">$i</span>/.<span class="p">;</span> <span class="k">done</span>
+</code></pre></div><h3 id="if-i-want-to-copy-the-n-first-files-from-one-subdirectory-to-another">If I want to copy the n first files from one subdirectory to another</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">find &lt;source&gt; -maxdepth <span class="m">1</span> -type f <span class="p">|</span> head -n &lt;number of files to copy&gt; <span class="p">|</span> xargs -I<span class="o">{}</span> cp <span class="s2">&#34;{}&#34;</span> &lt;destination&gt;
 </code></pre></div>
 </div>
   <aside>
@@ -171,7 +173,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 42 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 46 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
