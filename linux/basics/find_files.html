@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Find Files",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/find_files.html",
-  "wordCount": "105",
+  "wordCount": "117",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -166,6 +166,8 @@ drwxrwxr-x 2 othrif othrif 4096 Jul 29 21:21 sales
 /home/othrif/example_directory/marketing.txt,
 </code></pre><h2 id="only-list-dirrectories">Only list dirrectories</h2>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ls -d path/to/folders/*/
+</code></pre></div><h2 id="find-directories-ignoring-permission-denied">Find directories ignoring <code>Permission denied</code></h2>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">find / -type d -name NAMEofDirectory 2&gt;/dev/null
 </code></pre></div>
 </div>
   <aside>

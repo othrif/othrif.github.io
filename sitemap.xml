@@ -4,22 +4,22 @@
   
   <url>
     <loc>https://othrif.github.io/coding/python/index.xml</loc>
-    <lastmod>2021-02-04T14:41:32+02:00</lastmod>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/coding/index.xml</loc>
-    <lastmod>2021-02-04T14:41:32+02:00</lastmod>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/</loc>
-    <lastmod>2021-02-04T14:41:32+02:00</lastmod>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/coding/python/python.html</loc>
-    <lastmod>2021-02-04T14:41:32+02:00</lastmod>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -194,7 +194,7 @@
   </url>
   
   <url>
-    <loc>https://othrif.github.io/linux/basics/system_info.html</loc>
+    <loc>https://othrif.github.io/linux/basics/system_info-copy1.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -294,6 +294,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/linux/basics/setup_server.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/linux/basics/ip_address.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -351,14 +356,6 @@
   <url>
     <loc>https://othrif.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://othrif.github.io/basics/python.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://othrif.github.io/basics/index.xml</loc>
   </url>
   
 </urlset>

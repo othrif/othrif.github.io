@@ -48,12 +48,12 @@
     
     <item>
       <title>Linux system info</title>
-      <link>https://othrif.github.io/linux/basics/system_info.html</link>
+      <link>https://othrif.github.io/linux/basics/system_info-copy1.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
-      <guid>https://othrif.github.io/linux/basics/system_info.html</guid>
+      <guid>https://othrif.github.io/linux/basics/system_info-copy1.html</guid>
       <description>To find hadrware information about your linux system, few commmands report useful infromation. If several options are given, they perform similar functions.
-Linux/kernel information cat /proc/version Linux version cat /etc/issue # or lsb_release -a CPU and processing units lscpu cat /proc/cpuinfo Disk space of file systems pydf # pretty df -H Check RAM free -m List all hardware hwinfo --short sudo lshw -short List pci buses and devices connected to them lspci </description>
+Pretty display of main things! sudo apt install inxi inxi Linux/kernel information cat /proc/version Linux version cat /etc/issue # or lsb_release -a CPU and processing units lscpu cat /proc/cpuinfo Disk space of file systems pydf # pretty df -H Check RAM free -m List all hardware hwinfo --short sudo lshw -short List pci buses and devices connected to them lspci </description>
     </item>
     
     <item>
@@ -73,6 +73,15 @@ Client side - MacOS  Install PulseAudio with brew: brew install pulseaudio Confi
       
       <guid>https://othrif.github.io/linux/basics/search_string.html</guid>
       <description>Search recurisvely grep -r &amp;#34;substring&amp;#34; . ignore case distinctions: grep -ri &amp;#34;substring&amp;#34; . to only display filenames grep -r -l &amp;#34;othrif&amp;#34; . </description>
+    </item>
+    
+    <item>
+      <title>Setup a Deep Learning Server</title>
+      <link>https://othrif.github.io/linux/basics/setup_server.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/setup_server.html</guid>
+      <description>Basic of python installation curl https://pyenv.run | bash pyenv install --list pyenv install 3.8.7 pyenv global 3.8.7 Preliminaries sudo apt-get update sudo apt-get install build-essential sudo apt-get install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev git SDK &amp;amp; Java curl -s &amp;#34;https://get.sdkman.io&amp;#34; | bash source &amp;#34;/home/othrif/.sdkman/bin/sdkman-init.sh&amp;#34; sdk install java source &amp;#34;$HOME/.sdkman/bin/sdkman-init.sh&amp;#34; sdk install sbt curl --proto &amp;#39;=https&amp;#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh source $HOME/.</description>
     </item>
     
     <item>
