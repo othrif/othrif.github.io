@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="ssh keys in remote servers" />
-<meta property="og:description" content="How to find files using the Linux command line." />
+<meta property="og:title" content="Python Libraries Documentation" />
+<meta property="og:description" content="Machine learning frameworks  PyTorch documentation TensorFlow documentation  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/ssh_keys.html" />
+<meta property="og:url" content="https://othrif.github.io/coding/references/py_library.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ssh keys in remote servers"/>
-<meta name="twitter:description" content="How to find files using the Linux command line."/>
+<meta name="twitter:title" content="Python Libraries Documentation"/>
+<meta name="twitter:description" content="Machine learning frameworks  PyTorch documentation TensorFlow documentation  "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +33,19 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "ssh keys in remote servers",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/ssh_keys.html",
-  "wordCount": "227",
+  "headline": "Python Libraries Documentation",
+  "url": "https:\/\/othrif.github.io\/coding\/references\/py_library.html",
+  "wordCount": "7",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
-  },
-  "description": "How to find files using the Linux command line."
+  }
 }
 </script> 
 
-    <title>ssh keys in remote servers</title>
+    <title>Python Libraries Documentation</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,33 +137,18 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">ssh keys in remote servers</h1>
+    <h1 class="technical_note_title">Python Libraries Documentation</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <p>SSH keys provide an easy, yet extremely secure way of logging into your server. You can following these steps to generate a new SSH key and add it to the ssh-agent:</p>
-<p>Run the following command in your terminal: <code>ssh-keygen -b 2048 -t rsa</code> For maximum security, you want to generate a 2048 bit RSA key.</p>
-<p>You will be prompted to enter a passphrase. It is highly recommended! <code>~/.ssh/id_rsa.pub</code> is your public key and <code>~/.ssh/id_rsa</code> is your private key. Never share your private key with anyone!</p>
-<p>Next, you will need to upload your ssh public key to your server. Run <code>cat ~/.ssh/id_rsa.pub | ssh username@remote_host &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys”</code> where you should replace your <code>username</code> and <code>remote_host</code> accordingly.</p>
-<p>Start the ssh-agent in the background by running</p>
-<p><code>eval “$(ssh-agent -s)”</code>
-Modify your <code>~/.ssh/config</code> file to automatically load keys into the ssh-agent and store passphrases in your keychain</p>
-<pre><code>Host *
-  AddKeysToAgent yes
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-</code></pre><p>Add your SSH private key to the ssh-agent and store your passphrase in the keychain</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh-add -K ~/.ssh/id_rsa
-</code></pre></div><p>Now you should be able to ssh to your server securely!</p>
-<h3 id="access-server-without-ssh-keys">Access server without ssh keys</h3>
-<p>If you encounter the error: <code>Permission denied (publickey).</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo emacs /etc/ssh/sshd_config
-<span class="c1"># Change to: PasswordAuthentication yes</span>
-sudo service sshd reload
-</code></pre></div><p>Now if you ssh from a new server, you can access the target server with a password</p>
+  <h1 id="machine-learning-frameworks">Machine learning frameworks</h1>
+<ul>
+<li><a href="https://pytorch.org/docs/stable/index.html">PyTorch documentation</a></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/">TensorFlow documentation</a></li>
+</ul>
 
 </div>
   <aside>

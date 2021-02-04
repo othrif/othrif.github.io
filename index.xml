@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Codings</title>
+      <link>https://othrif.github.io/coding/index.xml</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/coding/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cpps</title>
       <link>https://othrif.github.io/cpp/index.xml</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -61,6 +70,15 @@
       <pubDate>Wed, 20 Dec 2017 11:53:49 -0700</pubDate>
       
       <guid>https://othrif.github.io/about/index.xml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Basics</title>
+      <link>https://othrif.github.io/basics/index.xml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/basics/index.xml</guid>
       <description></description>
     </item>
     

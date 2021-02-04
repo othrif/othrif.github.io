@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://othrif.github.io/coding/python/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/coding/references/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/cpp/basics/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -100,6 +110,11 @@
   
   <url>
     <loc>https://othrif.github.io/machine_learning/pytorch/class_nn.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/coding/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -229,12 +244,22 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/coding/python/python.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/python/basics/print.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/coding/references/py_library.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -326,6 +351,14 @@
   <url>
     <loc>https://othrif.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/basics/python.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/basics/index.xml</loc>
   </url>
   
 </urlset>

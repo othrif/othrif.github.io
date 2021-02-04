@@ -1,0 +1,22 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>basics - Othmane Rifki</title>
+    <link>https://othrif.github.io/basics/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+        <atom:link href="https://othrif.github.io/basics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://othrif.github.io/basics/python.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/basics/python.html</guid>
+      <description>Python Basics Primitive types Python has four primitive types: integers, floats, booleans and strings. Everything in Python is an object</description>
+    </item>
+    
+  </channel>
+</rss>
