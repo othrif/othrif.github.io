@@ -5,7 +5,7 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 04 Feb 2021 14:41:32 +0200</lastBuildDate>
     
         <atom:link href="https://othrif.github.io/coding/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Primitive types</title>
       <link>https://othrif.github.io/coding/python/python.html</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      <pubDate>Thu, 04 Feb 2021 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/coding/python/python.html</guid>
       <description>Python has four primitive types: integers, floats, booleans and strings. Everything in Python is an object</description>
