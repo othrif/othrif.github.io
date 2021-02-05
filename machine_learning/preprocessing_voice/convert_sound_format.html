@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Convert between audio formats" />
-<meta property="og:description" content="Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
+<meta property="og:description" content="Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ac 1 -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
 ffmpeg -sample_fmts Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
 Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np." />
 <meta property="og:type" content="article" />
@@ -27,7 +27,7 @@ Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Ou
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Convert between audio formats"/>
-<meta name="twitter:description" content="Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
+<meta name="twitter:description" content="Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ac 1 -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
 ffmpeg -sample_fmts Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
 Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np."/>
 <meta name="generator" content="Hugo 0.77.0" />
@@ -39,7 +39,7 @@ Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Ou
   "@type": "BlogPosting",
   "headline": "Convert between audio formats",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/convert_sound_format.html",
-  "wordCount": "214",
+  "wordCount": "216",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -152,7 +152,7 @@ MathJax.Hub.Config({
   <h1 id="convert-in-cli">Convert in CLI</h1>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sox new.wav new.mp3
 </code></pre></div><h3 id="convert-to-a-different-bit-depth-and-sampling-rate">Convert to a different bit depth and sampling rate</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i  input.wav -ar <span class="m">16000</span> -sample_fmt s16 output.wav
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -i  input.wav -ac <span class="m">1</span> -ar <span class="m">16000</span> -sample_fmt s16 output.wav
 </code></pre></div><p>Available bit depth optons:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ffmpeg -sample_fmts
 </code></pre></div><h1 id="convert-numpy-to-wav-with-wavio">Convert Numpy to WAV with <code>wavio</code></h1>

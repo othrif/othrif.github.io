@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Primitive types" />
+<meta property="og:description" content="Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.
+Maximum of numerics # max integer is a function of the memory size import sys maxInt = sys.maxsize print(maxInt, sys.maxsize==2**63-1) # 64-bit machine 9223372036854775807 True  # Bounds on ints import sys print(sys.int_info) sys.int_info(bits_per_digit=30, sizeof_digit=4)  # Bounds on floats print(sys.float_info) sys.float_info.max sys.float_info(max=1.7976931348623157e&#43;308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/coding/python/primitives.html" />
+<meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-04T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Primitive types"/>
+<meta name="twitter:description" content="Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.
+Maximum of numerics # max integer is a function of the memory size import sys maxInt = sys.maxsize print(maxInt, sys.maxsize==2**63-1) # 64-bit machine 9223372036854775807 True  # Bounds on ints import sys print(sys.int_info) sys.int_info(bits_per_digit=30, sizeof_digit=4)  # Bounds on floats print(sys.float_info) sys.float_info.max sys.float_info(max=1.7976931348623157e&#43;308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2."/>
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Primitive types",
+  "url": "https:\/\/othrif.github.io\/coding\/python\/primitives.html",
+  "wordCount": "497",
+  "datePublished": "2021-02-04T00:00:00\u002b00:00",
+  "dateModified": "2021-02-04T00:00:00\u002b00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Primitive types</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Primitive types</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2021-02-04T00:00:00Z "> 04 Feb 2021</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="definition">Definition</h3>
+<p>Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.</p>
+<h3 id="maximum-of-numerics">Maximum of numerics</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># max integer is a function of the memory size</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">maxInt</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span>
+<span class="k">print</span><span class="p">(</span><span class="n">maxInt</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span><span class="o">==</span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 64-bit machine</span>
+</code></pre></div><pre><code>9223372036854775807 True
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bounds on ints</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">int_info</span><span class="p">)</span>
+</code></pre></div><pre><code>sys.int_info(bits_per_digit=30, sizeof_digit=4)
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bounds on floats</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">max</span>
+</code></pre></div><pre><code>sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
+
+
+
+
+
+1.7976931348623157e+308
+</code></pre>
+<h3 id="unicode-numbering-systems">Unicode, numbering systems</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># bin representation</span>
+<span class="mb">0b11</span>
+</code></pre></div><pre><code>3
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Octal representation</span>
+<span class="mi">0</span><span class="n">o11</span>
+</code></pre></div><pre><code>9
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Hex representation</span>
+<span class="mi">0</span><span class="n">o11</span>
+</code></pre></div><pre><code>9
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To binary</span>
+<span class="p">[</span><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span> 
+</code></pre></div><pre><code>['0b1', '0b10', '0b100', '0b1000', '0b10000']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># From binary</span>
+<span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;0b1&#39;</span><span class="p">,</span> <span class="s1">&#39;0b10&#39;</span><span class="p">,</span> <span class="s1">&#39;0b100&#39;</span><span class="p">,</span> <span class="s1">&#39;0b1000&#39;</span><span class="p">,</span> <span class="s1">&#39;0b10000&#39;</span><span class="p">]]</span> 
+</code></pre></div><pre><code>[1, 2, 4, 8, 16]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To hex</span>
+<span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span>
+</code></pre></div><pre><code>['0x1', '0x2', '0x4', '0x8', '0x10']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To ordinal value</span>
+<span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>97
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># From ordinal value</span>
+<span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
+</code></pre></div><pre><code>'a'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># to bytes (b&#39;&#39; is for bytes)</span>
+<span class="nb">bytes</span><span class="p">((</span><span class="mi">104</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</code></pre></div><pre><code>b'hello world'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># encode using UTF-8</span>
+<span class="s2">&#34;résumé&#34;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>b'r\xc3\xa9sum\xc3\xa9'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># decode using UTF-8</span>
+<span class="sa">b</span><span class="s1">&#39;r</span><span class="se">\xc3\xa9</span><span class="s1">sum</span><span class="se">\xc3\xa9</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>'résumé'
+</code></pre>
+<h3 id="bitwise-operations">Bitwise operations</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise OR</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mb">0b10101</span> <span class="o">|</span> <span class="mb">0b01010</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b11111'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise AND</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mb">0b10101</span> <span class="o">&amp;</span> <span class="mb">0b11010</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b10000'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise NOT (caution with negative sign in python)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="o">~</span><span class="mb">0b10011100</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b1100011'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise XOR (a_i + b_i mod 2)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mb">0b10101</span> <span class="o">^</span> <span class="mb">0b01110</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b11011'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Logical XOR (do not have equivalent similar to: &amp; =&gt; and)</span>
+<span class="k">def</span> <span class="nf">xor</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="ow">not</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">xor</span><span class="p">(</span><span class="mi">2</span><span class="o">&gt;</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div><pre><code>True
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Left shift (a &lt;&lt; n = a x 2^n)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mb">0b100111</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b1001110'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{0b100111 &lt;&lt; 1} is 2x {0b100111}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>78 is 2x 39
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># restrict to 8 bytes = 2^8-1</span>
+<span class="mi">39</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">255</span>
+</code></pre></div><pre><code>56
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Right shift(a &gt;&gt; n = a // 2^n, // =&gt; floor division)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="mb">0b100111</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b10011'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div><pre><code>2 2 2.5
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Sign bit</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">),</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">42</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2"> &#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>-0b101010
+ 0b101010
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mask</span> <span class="o">=</span> <span class="mb">0b11111111</span>  <span class="c1"># Same as 0xff or 255</span>
+<span class="nb">bin</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span> <span class="o">&amp;</span> <span class="n">mask</span><span class="p">)</span>
+</code></pre></div><pre><code>'0b11010110'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0b11010110&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 214 in unsigned same as -42 in signed</span>
+</code></pre></div><pre><code>214
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitmask: getting a bit</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># suppress all bitss except desired one: 2 ^ bit index</span>
+<span class="k">def</span> <span class="nf">get_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
+<span class="n">get_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div><pre><code>32
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># yes or no answer</span>
+<span class="k">def</span> <span class="nf">get_normalized_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;&gt;</span> <span class="n">bit_index</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+<span class="n">get_normalized_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div><pre><code>1
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># setting a bit</span>
+<span class="k">def</span> <span class="nf">set_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">|</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
+<span class="n">set_bit</span><span class="p">(</span><span class="mb">0b10000000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div><pre><code>160
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># unsetting bit</span>
+<span class="k">def</span> <span class="nf">clear_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">&amp;</span> <span class="o">~</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
+<span class="nb">bin</span><span class="p">(</span><span class="n">clear_bit</span><span class="p">(</span><span class="mb">0b11111111</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div><pre><code>'0b11011111'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># toggle bit on/off</span>
+<span class="k">def</span> <span class="nf">toggle_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mb">0b10100000</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">toggle_bit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div><pre><code>0b100000
+0b10100000
+0b100000
+0b10100000
+0b100000
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># bitwise operator overloading</span>
+<span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;apple&#34;</span><span class="p">,</span> <span class="s2">&#34;banana&#34;</span><span class="p">,</span> <span class="s2">&#34;tomato&#34;</span><span class="p">}</span>
+<span class="n">veggies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;eggplant&#34;</span><span class="p">,</span> <span class="s2">&#34;tomato&#34;</span><span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fruits</span> <span class="o">|</span> <span class="n">veggies</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fruits</span> <span class="o">&amp;</span> <span class="n">veggies</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fruits</span> <span class="o">^</span> <span class="n">veggies</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fruits</span> <span class="o">-</span> <span class="n">veggies</span><span class="p">)</span>
+</code></pre></div><pre><code>{'tomato', 'banana', 'apple', 'eggplant'}
+{'tomato'}
+{'eggplant', 'apple', 'banana'}
+{'apple', 'banana'}
+</code></pre>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 49 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
