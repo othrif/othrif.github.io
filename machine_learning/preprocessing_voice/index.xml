@@ -83,5 +83,14 @@ rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import 
       <description>filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  Convert file to a specified bit and sample rates sox &amp;lt;input&amp;gt; -b 16 -r 16000 &amp;lt;output&amp;gt; soxi &amp;lt;input&amp;gt; </description>
     </item>
     
+    <item>
+      <title>Transcribe audio: speech to text</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</guid>
+      <description>filename = &amp;#39;/Users/othrif/github/dataInsights/courses/datacamp/spoken_language/stereo_phone_call.wav&amp;#39; Using speech_recognition import speech_recognition as sr recognizer = sr.Recognizer() recognizer.energy_threshold = 300 tmg_file = sr.AudioFile(filename) with tmg_file as source: tmg_audio = recognizer.record(source, duration=None, offset=None) text = recognizer.recognize_google(audio_data=tmg_audio, language=&amp;#39;en-US&amp;#39;) print(text) hello this is Daniel from Acme Studios how can I best help you I was just wondering if I could get some support yeah sure thing what&#39;s your name and what&#39;s wrong with your device and not one of large some of my my my farts okay nice to meet you Josh what&#39;s the serial number of your device so I can track it down the serial number is 176-4588  </description>
+    </item>
+    
   </channel>
 </rss>

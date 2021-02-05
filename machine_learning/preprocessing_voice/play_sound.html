@@ -39,7 +39,7 @@ play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.A
   "@type": "BlogPosting",
   "headline": "Play sound in jupyter and other libraries",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/play_sound.html",
-  "wordCount": "160",
+  "wordCount": "255",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -202,7 +202,44 @@ Interesting examples here: <a href="https://python-sounddevice.readthedocs.io/en
 <span class="n">data</span><span class="p">,</span> <span class="n">fs</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>  
 <span class="n">sd</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
 <span class="n">status</span> <span class="o">=</span> <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>  <span class="c1"># Wait until file is done playing</span>
-</code></pre></div>
+</code></pre></div><h1 id="play-and-plot-sound-using-wave">Play and plot sound using <code>wave</code></h1>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">wave</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">IPython.display</span> <span class="kn">as</span> <span class="nn">ipd</span>
+
+<span class="n">wav_file</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">audio_signal</span> <span class="o">=</span> <span class="n">wav_file</span><span class="o">.</span><span class="n">readframes</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">soundwave</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">audio_signal</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+
+<span class="n">nchannels</span><span class="o">=</span><span class="n">wav_file</span><span class="o">.</span><span class="n">getnchannels</span><span class="p">()</span>
+<span class="n">framerate</span><span class="o">=</span><span class="n">wav_file</span><span class="o">.</span><span class="n">getframerate</span><span class="p">()</span>
+<span class="n">width</span><span class="o">=</span><span class="n">wav_file</span><span class="o">.</span><span class="n">getsampwidth</span><span class="p">()</span>
+<span class="n">nframes</span><span class="o">=</span><span class="n">wav_file</span><span class="o">.</span><span class="n">getnframes</span><span class="p">()</span>
+
+<span class="c1"># Audio parameters</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Number of channels: {nchannels}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Frame rate: {framerate} Hz&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Sample width: {width} * 8 bits&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Length: {nframes/framerate} s&#39;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">soundwave</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="n">framerate</span><span class="p">))</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">soundwave</span><span class="p">)</span><span class="o">/</span><span class="n">framerate</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">soundwave</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (seconds)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">soundwave</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><pre><code>Number of channels: 1
+Frame rate: 8000 Hz
+Sample width: 2 * 8 bits
+Length: 0.333875 s
+</code></pre>
+<p><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+Your browser does not support the audio element.
+<!-- raw HTML omitted --></p>
+<p><img src="play_sound_14_2.png" alt="png"></p>
+
 </div>
   <aside>
       <div class="bug_reporting">
@@ -226,7 +263,7 @@ Interesting examples here: <a href="https://python-sounddevice.readthedocs.io/en
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 49 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 50 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
