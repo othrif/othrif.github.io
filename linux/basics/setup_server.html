@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Setup a Deep Learning Server",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/setup_server.html",
-  "wordCount": "236",
+  "wordCount": "316",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -205,7 +205,16 @@ python -c <span class="s2">&#34;import tensorflow as tf; tf.config.list_physical
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/tensorflow/benchmarks
 python benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py --num_gpus<span class="o">=</span><span class="m">1</span> --model resnet50 --batch_size <span class="m">64</span>
 </code></pre></div><p>compare with <a href="https://www.leadergpu.com/tensorflow_resnet50_benchmark">https://www.leadergpu.com/tensorflow_resnet50_benchmark</a></p>
-
+<h3 id="suppress-warnings-with-rtx-3090">Suppress warnings With RTX 3090</h3>
+<p>In order to suppress the warning: <code>2021-02-04 08:52:12.943009: W tensorflow/stream_executor/gpu/asm_compiler.cc:235] Your CUDA software stack is old. We fallback to the NVIDIA driver for some compilation. Update your CUDA version to get the best performance. The ptxas error was: ptxas fatal   : Value 'sm_86' is not defined for option 'gpu-name'</code>
+Do:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TF_CPP_MIN_LOG_LEVEL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+</code></pre></div><p>and the warning: <code>2021-02-05 04:15:51.619418: I tensorflow/compiler/jit/xla_cpu_device.cc:41] Not creating XLA devices, tf_xla_enable_xla_devices not set</code>
+Do:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TF_XLA_FLAGS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;--tf_xla_enable_xla_devices&#39;</span>
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">
