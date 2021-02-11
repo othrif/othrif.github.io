@@ -18,7 +18,7 @@
 
 <meta property="og:title" content="Primitive types" />
 <meta property="og:description" content="Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.
-Maximum of numerics # max integer is a function of the memory size import sys maxInt = sys.maxsize print(maxInt, sys.maxsize==2**63-1) # 64-bit machine 9223372036854775807 True  # Bounds on ints import sys print(sys.int_info) sys.int_info(bits_per_digit=30, sizeof_digit=4)  # Bounds on floats print(sys.float_info) sys.float_info.max sys.float_info(max=1.7976931348623157e&#43;308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2." />
+Key methods for numeric import math print(f&#39;Absolutve value: {abs(-34.5)}&#39;) print(f&#39;Round up: {math.ceil(34.5)}&#39;) print(f&#39;Round down: {math.floor(34.5)}&#39;) print(f&#39;Max value: {max(34.5, 1000)}&#39;) print(f&#39;Power: {pow(34.5,2)} OR {34.5**2}&#39;) print(f&#39;Square root: {math.sqrt(34.5)}&#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&#39;42&#39;) 42  str(87." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/coding/python/primitives.html" />
 <meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
@@ -27,7 +27,7 @@ Maximum of numerics # max integer is a function of the memory size import sys ma
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Primitive types"/>
 <meta name="twitter:description" content="Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.
-Maximum of numerics # max integer is a function of the memory size import sys maxInt = sys.maxsize print(maxInt, sys.maxsize==2**63-1) # 64-bit machine 9223372036854775807 True  # Bounds on ints import sys print(sys.int_info) sys.int_info(bits_per_digit=30, sizeof_digit=4)  # Bounds on floats print(sys.float_info) sys.float_info.max sys.float_info(max=1.7976931348623157e&#43;308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2."/>
+Key methods for numeric import math print(f&#39;Absolutve value: {abs(-34.5)}&#39;) print(f&#39;Round up: {math.ceil(34.5)}&#39;) print(f&#39;Round down: {math.floor(34.5)}&#39;) print(f&#39;Max value: {max(34.5, 1000)}&#39;) print(f&#39;Power: {pow(34.5,2)} OR {34.5**2}&#39;) print(f&#39;Square root: {math.sqrt(34.5)}&#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&#39;42&#39;) 42  str(87."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -37,7 +37,7 @@ Maximum of numerics # max integer is a function of the memory size import sys ma
   "@type": "BlogPosting",
   "headline": "Primitive types",
   "url": "https:\/\/othrif.github.io\/coding\/python\/primitives.html",
-  "wordCount": "497",
+  "wordCount": "754",
   "datePublished": "2021-02-04T00:00:00\u002b00:00",
   "dateModified": "2021-02-04T00:00:00\u002b00:00",
   "author": {
@@ -149,6 +149,34 @@ MathJax.Hub.Config({
 
   <h3 id="definition">Definition</h3>
 <p>Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&hellip;), mappings (dict), classes, instances, and exceptions.</p>
+<h3 id="key-methods-for-numeric">Key methods for numeric</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Absolutve value: {abs(-34.5)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Round up: {math.ceil(34.5)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Round down: {math.floor(34.5)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Max value: {max(34.5, 1000)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Power: {pow(34.5,2)} OR {34.5**2}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Square root: {math.sqrt(34.5)}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Absolutve value: 34.5
+Round up: 35
+Round down: 34
+Max value: 1000
+Power: 1190.25 OR 1190.25
+Square root: 5.873670062235365
+</code></pre>
+<h3 id="interconvert-numbers-and-strings">Interconvert numbers and strings</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div><pre><code>'42'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;42&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>42
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span><span class="p">(</span><span class="mf">87.3</span><span class="p">)</span>
+</code></pre></div><pre><code>'87.3'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;87.3&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>87.3
+</code></pre>
 <h3 id="maximum-of-numerics">Maximum of numerics</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># max integer is a function of the memory size</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -156,21 +184,43 @@ MathJax.Hub.Config({
 <span class="k">print</span><span class="p">(</span><span class="n">maxInt</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span><span class="o">==</span><span class="mi">2</span><span class="o">**</span><span class="mi">63</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 64-bit machine</span>
 </code></pre></div><pre><code>9223372036854775807 True
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bounds on ints</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">int_info</span><span class="p">)</span>
-</code></pre></div><pre><code>sys.int_info(bits_per_digit=30, sizeof_digit=4)
-</code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bounds on floats</span>
-<span class="k">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">max</span>
-</code></pre></div><pre><code>sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.220446049250313e-16, radix=2, rounds=1)
-
-
-
-
-
-1.7976931348623157e+308
+</code></pre></div><pre><code>1.7976931348623157e+308
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Pseudo max-float / min-float</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Max float:{float(&#34;inf&#34;)}, Min float:{float(&#34;-inf&#34;)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Inf is larger than max int: {float(&#34;inf&#34;) &gt; sys.maxsize}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Max float:inf, Min float:-inf
+Inf is larger than max int: True
+</code></pre>
+<h3 id="best-of-random">Best of random</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="c1"># randrange([start], stop[, step])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;randrange(start): {random.randrange(100)}&#39;</span><span class="p">)</span> <span class="c1"># 0 to 99 [0,100)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;randrange(start, stop, step): {random.randrange(0, 100, 2)}&#39;</span><span class="p">)</span> <span class="c1"># 0 to 99 [0,100) with setps of 2</span>
+<span class="c1"># randint(a, b) = randrange(a,b+1)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;randint(start, stop): {random.randint(0,100)}&#39;</span><span class="p">)</span> <span class="c1"># 0 to 100 [0,100]</span>
+</code></pre></div><pre><code>randrange(start): 49
+randrange(start, stop, step): 58
+randint(start, stop): 27
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Random float:  0.0 &lt;= x &lt; 1.0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;random(): {random.random()}&#39;</span><span class="p">)</span>
+<span class="c1"># Random float:  2.5 &lt;= x &lt; 10.0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;uniform(): {random.uniform(2.5, 10.0)}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>random(): 0.09094037940054844
+uniform(): 5.191762349159088
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Randomly shuffle a lit</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">A</span>
+</code></pre></div><pre><code>[3, 4, 2, 1, 5]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Single random element from a sequence</span>
+<span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;win&#39;</span><span class="p">,</span> <span class="s1">&#39;lose&#39;</span><span class="p">,</span> <span class="s1">&#39;draw&#39;</span><span class="p">])</span>
+</code></pre></div><pre><code>'lose'
 </code></pre>
 <h3 id="unicode-numbering-systems">Unicode, numbering systems</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># bin representation</span>
@@ -182,8 +232,8 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>9
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Hex representation</span>
-<span class="mi">0</span><span class="n">o11</span>
-</code></pre></div><pre><code>9
+<span class="mh">0x11</span>
+</code></pre></div><pre><code>17
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To binary</span>
 <span class="p">[</span><span class="nb">bin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span> 
@@ -197,7 +247,7 @@ MathJax.Hub.Config({
 <span class="p">[</span><span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">]]</span>
 </code></pre></div><pre><code>['0x1', '0x2', '0x4', '0x8', '0x10']
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To ordinal value</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># To ordinal value (index of character in utf-8 or ascii)</span>
 <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>97
 </code></pre>
@@ -227,8 +277,25 @@ MathJax.Hub.Config({
 </code></pre></div><pre><code>'0b10000'
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise NOT (caution with negative sign in python)</span>
+<span class="c1"># 255 = 2^8 -1</span>
 <span class="nb">bin</span><span class="p">(</span><span class="o">~</span><span class="mb">0b10011100</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">)</span>
 </code></pre></div><pre><code>'0b1100011'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Function to perform bitwise not operation</span>
+<span class="k">def</span> <span class="nf">bit_not</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">numbits</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">~</span><span class="n">n</span> <span class="o">&amp;</span> <span class="p">((</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">numbits</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">bit_not</span><span class="p">(</span><span class="mb">0b10011100</span><span class="p">)))</span>
+
+<span class="c1"># Alternative formulation:</span>
+<span class="k">def</span> <span class="nf">bit_not</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">numbits</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">numbits</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">n</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">bit_not</span><span class="p">(</span><span class="mb">0b10011100</span><span class="p">)))</span>
+</code></pre></div><pre><code>0b1100011
+0b1100011
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># ~x = -x-1</span>
+<span class="o">~</span><span class="mi">0</span>
+</code></pre></div><pre><code>-1
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitwise XOR (a_i + b_i mod 2)</span>
 <span class="nb">bin</span><span class="p">(</span><span class="mb">0b10101</span> <span class="o">^</span> <span class="mb">0b01110</span><span class="p">)</span>
@@ -247,7 +314,7 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{0b100111 &lt;&lt; 1} is 2x {0b100111}&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>78 is 2x 39
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># restrict to 8 bytes = 2^8-1</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># restrict to 8 bits = 2^8-1</span>
 <span class="mi">39</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">&amp;</span> <span class="mi">255</span>
 </code></pre></div><pre><code>56
 </code></pre>
@@ -270,18 +337,25 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0b11010110&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 214 in unsigned same as -42 in signed</span>
 </code></pre></div><pre><code>214
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitmask: getting a bit</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># suppress all bitss except desired one: 2 ^ bit index</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Bitmask operations: </span>
+<span class="c1"># value OP (1 &lt;&lt; bit_index)</span>
+<span class="c1"># getting a bit =&gt; &amp;</span>
+<span class="c1"># setting a bit =&gt; |</span>
+<span class="c1"># unsetting a bit =&gt; | ~</span>
+<span class="c1"># toggling a bit =&gt; ^</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># getting a bit</span>
+
+<span class="c1"># suppress all bits except desired one (2 ^ bit index)</span>
 <span class="k">def</span> <span class="nf">get_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
-<span class="n">get_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div><pre><code>32
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># yes or no answer</span>
+<span class="k">print</span><span class="p">(</span><span class="n">get_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># yes or no answer</span>
 <span class="k">def</span> <span class="nf">get_normalized_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">value</span> <span class="o">&gt;&gt;</span> <span class="n">bit_index</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
-<span class="n">get_normalized_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div><pre><code>1
+<span class="k">print</span><span class="p">(</span><span class="n">get_normalized_bit</span><span class="p">(</span><span class="mb">0b10100000</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div><pre><code>32
+1
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># setting a bit</span>
 <span class="k">def</span> <span class="nf">set_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
@@ -295,7 +369,7 @@ MathJax.Hub.Config({
 <span class="nb">bin</span><span class="p">(</span><span class="n">clear_bit</span><span class="p">(</span><span class="mb">0b11111111</span><span class="p">,</span> <span class="n">bit_index</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div><pre><code>'0b11011111'
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># toggle bit on/off</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># toggle a bit on/off</span>
 <span class="k">def</span> <span class="nf">toggle_bit</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">bit_index</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">^</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bit_index</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mb">0b10100000</span>

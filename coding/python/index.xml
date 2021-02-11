@@ -17,7 +17,7 @@
       
       <guid>https://othrif.github.io/coding/python/primitives.html</guid>
       <description>Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&amp;hellip;), mappings (dict), classes, instances, and exceptions.
-Maximum of numerics # max integer is a function of the memory size import sys maxInt = sys.maxsize print(maxInt, sys.maxsize==2**63-1) # 64-bit machine 9223372036854775807 True  # Bounds on ints import sys print(sys.int_info) sys.int_info(bits_per_digit=30, sizeof_digit=4)  # Bounds on floats print(sys.float_info) sys.float_info.max sys.float_info(max=1.7976931348623157e+308, max_exp=1024, max_10_exp=308, min=2.2250738585072014e-308, min_exp=-1021, min_10_exp=-307, dig=15, mant_dig=53, epsilon=2.</description>
+Key methods for numeric import math print(f&amp;#39;Absolutve value: {abs(-34.5)}&amp;#39;) print(f&amp;#39;Round up: {math.ceil(34.5)}&amp;#39;) print(f&amp;#39;Round down: {math.floor(34.5)}&amp;#39;) print(f&amp;#39;Max value: {max(34.5, 1000)}&amp;#39;) print(f&amp;#39;Power: {pow(34.5,2)} OR {34.5**2}&amp;#39;) print(f&amp;#39;Square root: {math.sqrt(34.5)}&amp;#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&amp;#39;42&amp;#39;) 42  str(87.</description>
     </item>
     
   </channel>
