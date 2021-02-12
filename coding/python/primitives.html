@@ -37,7 +37,7 @@ Key methods for numeric import math print(f&#39;Absolutve value: {abs(-34.5)}&#3
   "@type": "BlogPosting",
   "headline": "Primitive types",
   "url": "https:\/\/othrif.github.io\/coding\/python\/primitives.html",
-  "wordCount": "765",
+  "wordCount": "801",
   "datePublished": "2021-02-04T00:00:00\u002b00:00",
   "dateModified": "2021-02-04T00:00:00\u002b00:00",
   "author": {
@@ -396,6 +396,23 @@ uniform(): 5.191762349159088
 </code></pre>
 <h3 id="important-notations">Important notations</h3>
 <p><code>a &gt;&gt;= b</code> means <code>a = a &gt;&gt; b</code></p>
+<h3 id="important-tricks">Important tricks</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x &amp; (x-1): erase the lowest set bit</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1833</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1832</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1833</span> <span class="o">&amp;</span> <span class="mi">1832</span><span class="p">))</span>
+</code></pre></div><pre><code>0b11100101001
+0b11100101000
+0b11100101000
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># x &amp; ~(x-1): isolates the lowest set bit</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1833</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1832</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">1833</span> <span class="o">&amp;</span> <span class="o">~</span><span class="mi">1832</span><span class="p">))</span>
+</code></pre></div><pre><code>0b11100101001
+0b11100101000
+0b1
+</code></pre>
 
 </div>
   <aside>
