@@ -167,7 +167,7 @@ insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]
 <p>3 types:</p>
 <ul>
 <li>assignment copy(<strong>=</strong>): makes the two variables point to the one list in memory</li>
-<li>shallow copy (<strong>[:]</strong> OR <strong>copy.copy()</strong>): constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original</li>
+<li>shallow copy ([:] OR <strong>copy.copy()</strong>): constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original</li>
 <li>deep copy (<strong>copy.deepcopy()</strong>): constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original. <strong>Slower but changes will NOT be reflected on the original list</strong></li>
 </ul>
 <p><em>Difference between shallow and deep copying is only relevant for compound objects (e.g. a list of lists, or class instances).</em> <br>
