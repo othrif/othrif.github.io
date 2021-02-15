@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Arrays" />
+<meta property="og:description" content="Definition Arrays in python are of list type that is dynamically resized. The tuple is similar but immutable.
+Basic operations A = list(range(10)) print(f&#39;len() of A: {len(A)}&#39;) A.append(5) print(f&#39;append() to A: {A}&#39;) A.remove(5) print(f&#39;remove() first occurence from A: {A}&#39;) A.insert(1, 999) print(f&#39;insert() first occurence from A: {A}&#39;) len() of A: 10 append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5] remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]  Copy 3 types:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/coding/python/arrays.html" />
+<meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-04T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arrays"/>
+<meta name="twitter:description" content="Definition Arrays in python are of list type that is dynamically resized. The tuple is similar but immutable.
+Basic operations A = list(range(10)) print(f&#39;len() of A: {len(A)}&#39;) A.append(5) print(f&#39;append() to A: {A}&#39;) A.remove(5) print(f&#39;remove() first occurence from A: {A}&#39;) A.insert(1, 999) print(f&#39;insert() first occurence from A: {A}&#39;) len() of A: 10 append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5] remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]  Copy 3 types:"/>
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Arrays",
+  "url": "https:\/\/othrif.github.io\/coding\/python\/arrays.html",
+  "wordCount": "372",
+  "datePublished": "2021-02-04T00:00:00\u002b00:00",
+  "dateModified": "2021-02-04T00:00:00\u002b00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Arrays</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Arrays</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2021-02-04T00:00:00Z "> 04 Feb 2021</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="definition">Definition</h3>
+<p>Arrays in python are of <code>list</code> type that is dynamically resized. The <code>tuple</code> is similar but immutable.</p>
+<h3 id="basic-operations">Basic operations</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">A</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;len() of A: {len(A)}&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;append() to A: {A}&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;remove() first occurence from A: {A}&#39;</span><span class="p">)</span>
+<span class="n">A</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;insert() first occurence from A: {A}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>len() of A: 10
+append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5]
+remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5]
+insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]
+</code></pre>
+<h3 id="copy">Copy</h3>
+<p>3 types:</p>
+<ul>
+<li>assignment copy(<strong>=</strong>): makes the two variables point to the one list in memory</li>
+<li>shallow copy (<strong>[:]</strong> OR <strong>copy.copy()</strong>): constructs a new compound object and then (to the extent possible) inserts references into it to the objects found in the original</li>
+<li>deep copy (<strong>copy.deepcopy()</strong>): constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original. <strong>Slower but changes will NOT be reflected on the original list</strong></li>
+</ul>
+<p><em>Difference between shallow and deep copying is only relevant for compound objects (e.g. a list of lists, or class instances).</em> <br>
+Reference: <a href="https://medium.com/@thawsitt/assignment-vs-shallow-copy-vs-deep-copy-in-python-f70c2f0ebd86">https://medium.com/@thawsitt/assignment-vs-shallow-copy-vs-deep-copy-in-python-f70c2f0ebd86</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Assignment copy</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">colors</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Copied/modified list: {b}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original list ALSO modified: {colors}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Copied/modified list: ['red', 'blue', 'green', 'white']
+Original list ALSO modified: ['red', 'blue', 'green', 'white']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Shallow copy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span> <span class="c1">## shallow copy</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Copied/modified list: {b}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original list NOT modified: {a}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Copied/modified list: [[1, 2], [2, 4], [3, 6]]
+Original list NOT modified: [[1, 2], [2, 4]]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Shallow copy compound object =&gt; referenced to the original elements</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span> <span class="c1">#shallow copy</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Copied/modified list: {b}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original list ALSO modified: {a}&#39;</span><span class="p">)</span>
+<span class="c1"># List b has its own pointer, but its elements do not</span>
+</code></pre></div><pre><code>Copied/modified list: [[1, 2, 3], [2, 4]]
+Original list ALSO modified: [[1, 2, 3], [2, 4]]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Deep copy, need copy module</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">## deep copy</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Copied/modified list: {b}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Original list NOT modified: {a}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Copied/modified list: [[1, 2, 3], [2, 4]]
+Original list NOT modified: [[1, 2], [2, 4]]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 51 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

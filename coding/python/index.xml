@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Arrays</title>
+      <link>https://othrif.github.io/coding/python/arrays.html</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/coding/python/arrays.html</guid>
+      <description>Definition Arrays in python are of list type that is dynamically resized. The tuple is similar but immutable.
+Basic operations A = list(range(10)) print(f&amp;#39;len() of A: {len(A)}&amp;#39;) A.append(5) print(f&amp;#39;append() to A: {A}&amp;#39;) A.remove(5) print(f&amp;#39;remove() first occurence from A: {A}&amp;#39;) A.insert(1, 999) print(f&amp;#39;insert() first occurence from A: {A}&amp;#39;) len() of A: 10 append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5] remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]  Copy 3 types:</description>
+    </item>
+    
+    <item>
       <title>Primitive types</title>
       <link>https://othrif.github.io/coding/python/primitives.html</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
