@@ -17,7 +17,7 @@
       
       <guid>https://othrif.github.io/coding/python/arrays.html</guid>
       <description>Definition Arrays in python are of list type that is dynamically resized. The tuple is similar but immutable.
-Basic operations A = list(range(10)) print(f&amp;#39;len() of A: {len(A)}&amp;#39;) A.append(5) print(f&amp;#39;append() to A: {A}&amp;#39;) A.remove(5) print(f&amp;#39;remove() first occurence from A: {A}&amp;#39;) A.insert(1, 999) print(f&amp;#39;insert() first occurence from A: {A}&amp;#39;) len() of A: 10 append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5] remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5]  Copy 3 types:</description>
+Basic operations # Manipulate list A = list(range(10)) print(f&amp;#39;len() of A: {len(A)}&amp;#39;) A.append(5) print(f&amp;#39;append() to A: {A}&amp;#39;) A.remove(5) print(f&amp;#39;remove() first occurence from A: {A}&amp;#39;) A.insert(1, 999) print(f&amp;#39;insert() first occurence from A: {A}&amp;#39;) print(f&amp;#39;min() of A: {min(A)}&amp;#39;) print(f&amp;#39;max() of A: {max(A)}&amp;#39;) del A[1] print(f&amp;#39;del element with index i of A: {A}&amp;#39;) del A[:4] print(f&amp;#39;del a range of elements of A: {A}&amp;#39;) len() of A: 10 append() to A: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 5] remove() first occurence from A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] insert() first occurence from A: [0, 999, 1, 2, 3, 4, 6, 7, 8, 9, 5] min() of A: 0 max() of A: 999 del element with index i of A: [0, 1, 2, 3, 4, 6, 7, 8, 9, 5] del a range of elements of A: [4, 6, 7, 8, 9, 5]  Copy 3 types:</description>
     </item>
     
     <item>
