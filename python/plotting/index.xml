@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python - Othmane Rifki</title>
+    <link>https://othrif.github.io/python/plotting/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/python/plotting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Color grid with pcolormesh</title>
+      <link>https://othrif.github.io/python/plotting/pcolormesh.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/plotting/pcolormesh.html</guid>
+      <description>Using pcolormesh Docs: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh
+import numpy as np import matplotlib.pyplot as plt np.random.seed(19680801) Z = np.random.rand(6, 10) # 6 x 10 x = np.arange(-0.5, 10, 1) # len = 11 =&amp;gt; 10 values y = np.arange(4.5, 11, 1) # len = 7 =&amp;gt; 6 values fig, ax = plt.subplots() psm = ax.pcolormesh(x, y, Z,cmap=&amp;#39;hot&amp;#39;) fig.colorbar(psm, ax=ax) plt.show() </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -37,7 +37,7 @@ Basic operations # Manipulate list A = list(range(10)) print(f&#39;len() of A: {
   "@type": "BlogPosting",
   "headline": "Arrays",
   "url": "https:\/\/othrif.github.io\/coding\/python\/arrays.html",
-  "wordCount": "787",
+  "wordCount": "906",
   "datePublished": "2021-02-04T00:00:00\u002b00:00",
   "dateModified": "2021-02-04T00:00:00\u002b00:00",
   "author": {
@@ -324,6 +324,49 @@ Original list NOT modified: [[1, 2], [2, 4]]
 <span class="p">[[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">M</span><span class="p">]</span>
 </code></pre></div><pre><code>[[1, 4, 9], [16, 25, 36]]
 </code></pre>
+<h3 id="useful-tips">Useful tips</h3>
+<ul>
+<li>Use of <code>next(iterator[, default])</code></li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># remove the leading zeros</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">res</span><span class="p">[</span><span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="p">)):]</span>
+</code></pre></div><pre><code>[1, 2, 3, 4]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># what if they are all zeros</span>
+<span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">res</span><span class="p">[</span><span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)):]</span>
+</code></pre></div><pre><code>[]
+</code></pre>
+<ul>
+<li><code>for-else</code> statement: search through a list and process each item until a flag item is found and then stop processing</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Loop until something is found</span>
+<span class="n">mylist</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;List argument missing terminal flag.&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>1
+2
+3
+
+
+
+---------------------------------------------------------------------------
+
+ValueError                                Traceback (most recent call last)
+
+&lt;ipython-input-8-9dbebae898f3&gt; in &lt;module&gt;
+      6     print(i)
+      7 else:
+----&gt; 8     raise ValueError(&quot;List argument missing terminal flag.&quot;)
+
+
+ValueError: List argument missing terminal flag.
+</code></pre>
 
 </div>
   <aside>
@@ -348,7 +391,7 @@ Original list NOT modified: [[1, 2], [2, 4]]
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 51 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 52 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

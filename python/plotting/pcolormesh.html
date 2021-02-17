@@ -16,16 +16,18 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="How many files in the folder?" />
-<meta property="og:description" content="How to setup working locally with remote files" />
+<meta property="og:title" content="Color grid with pcolormesh" />
+<meta property="og:description" content="Using pcolormesh Docs: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh
+import numpy as np import matplotlib.pyplot as plt np.random.seed(19680801) Z = np.random.rand(6, 10) # 6 x 10 x = np.arange(-0.5, 10, 1) # len = 11 =&gt; 10 values y = np.arange(4.5, 11, 1) # len = 7 =&gt; 6 values fig, ax = plt.subplots() psm = ax.pcolormesh(x, y, Z,cmap=&#39;hot&#39;) fig.colorbar(psm, ax=ax) plt.show() " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/files_in_folder.html" />
+<meta property="og:url" content="https://othrif.github.io/python/plotting/pcolormesh.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How many files in the folder?"/>
-<meta name="twitter:description" content="How to setup working locally with remote files"/>
+<meta name="twitter:title" content="Color grid with pcolormesh"/>
+<meta name="twitter:description" content="Using pcolormesh Docs: https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh
+import numpy as np import matplotlib.pyplot as plt np.random.seed(19680801) Z = np.random.rand(6, 10) # 6 x 10 x = np.arange(-0.5, 10, 1) # len = 11 =&gt; 10 values y = np.arange(4.5, 11, 1) # len = 7 =&gt; 6 values fig, ax = plt.subplots() psm = ax.pcolormesh(x, y, Z,cmap=&#39;hot&#39;) fig.colorbar(psm, ax=ax) plt.show() "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,20 +35,19 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "How many files in the folder?",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/files_in_folder.html",
-  "wordCount": "22",
+  "headline": "Color grid with pcolormesh",
+  "url": "https:\/\/othrif.github.io\/python\/plotting\/pcolormesh.html",
+  "wordCount": "57",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
-  },
-  "description": "How to setup working locally with remote files"
+  }
 }
 </script> 
 
-    <title>How many files in the folder?</title>
+    <title>Color grid with pcolormesh</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -139,16 +140,29 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">How many files in the folder?</h1>
+    <h1 class="technical_note_title">Color grid with pcolormesh</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="number-of-files-in-each-folder">Number of files in each folder</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="sb">`</span>ls -d */<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nv">num</span><span class="o">=</span><span class="sb">`</span>ls <span class="nv">$i</span> <span class="p">|</span> wc -l<span class="sb">`</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">: </span><span class="nv">$num</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
+  <h3 id="using-pcolormesh">Using <code>pcolormesh</code></h3>
+<p>Docs: <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>   <span class="c1"># 6 x 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># len = 11 =&gt; 10 values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># len = 7 =&gt; 6 values</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">psm</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">psm</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="pcolormesh_2_0.png" alt="png"></p>
+
 </div>
   <aside>
       <div class="bug_reporting">
