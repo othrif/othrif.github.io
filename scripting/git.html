@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Working with git",
   "url": "https:\/\/othrif.github.io\/scripting\/git.html",
-  "wordCount": "299",
+  "wordCount": "321",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -192,7 +192,11 @@ git push -u origin main
 <p>To avoid needing to enter your credentials everytime, enable local caching of your credentials:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config credential.helper store
 </code></pre></div><p>You can also use a public ssh key: copy the contents of <code>~/.ssh/id_rsa.pub</code> to <a href="https://github.com/settings/keys">github settings</a></p>
-
+<h3 id="hard-reset-to-a-remote-repository">Hard reset to a remote repository</h3>
+<p>If you do something wrong and want to reset:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git fetch origin
+git reset --hard origin/main
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">
@@ -216,7 +220,7 @@ git push -u origin main
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 52 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 53 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Manipulate a docker image and launch a notebook",
   "url": "https:\/\/othrif.github.io\/python\/docker\/docker_case.html",
-  "wordCount": "299",
+  "wordCount": "313",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -201,6 +201,8 @@ sudo emacs /private/etc/hosts
 docker run -d -it -p 8000:8080 &lt;IMAGE&gt; /usr/bin/top <span class="c1"># &lt;IMAGE&gt;=othrif:mytest</span>
 docker <span class="nb">exec</span> -it &lt;CONTAINER ID&gt; /bin/bash
 
+</code></pre></div><p>Alternatively run interactively and remove image after exit</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker run --rm -it &lt;IMAGE&gt; /bin/bash
 </code></pre></div><h3 id="start-docker-deamon">Start Docker deamon</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker-machine start
 docker-machine env
@@ -245,7 +247,7 @@ docker-machine env
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 52 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 53 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
