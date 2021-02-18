@@ -19,5 +19,16 @@
       <description>import numpy as np words = [] vectors = [] with open(&amp;#39;wiki-words.emb&amp;#39;, &amp;#39;r&amp;#39;) as f: print(f) for line in f: print(line) fields = line.split() word = fields[0].decode(&amp;#39;utf-8&amp;#39;) vector = np.fromiter((float(x) for x in fields[1:]), dtype=np.float) words.append(word) vectors.append(vector) # Matrix of embeddings matrix = np.array(vectors) # Vocabulary file text = &amp;#39;\n&amp;#39;.join(words) vocab = text.encode(&amp;#39;utf-8&amp;#39;) &amp;lt;_io.TextIOWrapper name=&#39;wiki-words.emb&#39; mode=&#39;r&#39; encoding=&#39;UTF-8&#39;&amp;gt;  </description>
     </item>
     
+    <item>
+      <title>Split text by punctuation</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_text/load_embedding-copy1.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_text/load_embedding-copy1.html</guid>
+      <description>Using nltk Download nltk models with the one-time setup and get the punkt model for sentence parsing (also called sentence tokenizing):
+import nltk nltk.download() NLTK Downloader --------------------------------------------------------------------------- d) Download l) List u) Update c) Config h) Help q) Quit --------------------------------------------------------------------------- Downloader&amp;gt; q True  then use it as:
+import nltk.data tokenizer = nltk.data.load(&amp;#39;tokenizers/punkt/english.pickle&amp;#39;) s = &amp;#34;hello, world! It&amp;#39;s me, X! Testing this tool.&amp;#34; tokenizer.tokenize(str(s)) [&#39;hello, world!&#39;, &amp;quot;It&#39;s me, X!&amp;quot;, &#39;Testing this tool.</description>
+    </item>
+    
   </channel>
 </rss>
