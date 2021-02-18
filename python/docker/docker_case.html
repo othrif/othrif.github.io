@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Manipulate a docker image and launch a notebook" />
-<meta property="og:description" content="Basics Docker build docker build -t hello-world:1.0 . Run image docker run -p 8080:80 --name hello -d hello-world:1.0 Tag image docker tag hello-world user/hello-world Push image to docker hub docker push &lt;Your Docker ID&gt;/hello-world Pull image to docker hub docker pull user/hello-world See existing images docker images See what is running docker ps docker ps -a # show images, even ones stopped Start docker process docker start &lt;container NAME&gt; # from `docker ps -a` Stop and remove image # Stop docker container from running docker stop &lt;container NAME&gt; # removes from both `docker ps` and `docker ps -a` docker rm &lt;container NAME&gt; # Replace above with docker rm -f &lt;container NAME&gt; Docker logs docker logs -f &lt;container NAME&gt; # -f to follow and listen Advanced Clean your environment # running processes docker ps -a docker stop &lt;CONTAINER ID&gt; docker rm &lt;CONTAINER ID&gt; # Clean open images docker images docker rmi &lt;IMAGE ID or REPOSITORY&gt; # Prune system to close all communication docker system prune -f Show the history of a docker image docker images # get &lt;IMAGE ID&gt; docker history --no-trunc &lt;IMAGE ID&gt; # without runcation Build docker image docker build -f Dockerfile -t othrif:mytest ." />
+<meta property="og:description" content="Basics In a nutshell: docker build -t imagename:local -f Dockerfile ./ docker run --rm -it imagename:local /bin/bash docker push dockerhubname VERSION=`git tag -l |sort -V | tail -1 | sed &#39;s/v//&#39;` docker tag dockerhubname dockerhubname:$(VERSION) docker push dockerhubname:$(VERSION) Checkout docker image from repo to test it $ docker build -t imagename:local ./ $ docker run --rm -it imagename:local /bin/bash  root@6efdfbae85a8:/# Then in another terminal: docker cp $HOME/path/to/project 6efdfbae85a8:/root/project to get the project inside for testing." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/python/docker/docker_case.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manipulate a docker image and launch a notebook"/>
-<meta name="twitter:description" content="Basics Docker build docker build -t hello-world:1.0 . Run image docker run -p 8080:80 --name hello -d hello-world:1.0 Tag image docker tag hello-world user/hello-world Push image to docker hub docker push &lt;Your Docker ID&gt;/hello-world Pull image to docker hub docker pull user/hello-world See existing images docker images See what is running docker ps docker ps -a # show images, even ones stopped Start docker process docker start &lt;container NAME&gt; # from `docker ps -a` Stop and remove image # Stop docker container from running docker stop &lt;container NAME&gt; # removes from both `docker ps` and `docker ps -a` docker rm &lt;container NAME&gt; # Replace above with docker rm -f &lt;container NAME&gt; Docker logs docker logs -f &lt;container NAME&gt; # -f to follow and listen Advanced Clean your environment # running processes docker ps -a docker stop &lt;CONTAINER ID&gt; docker rm &lt;CONTAINER ID&gt; # Clean open images docker images docker rmi &lt;IMAGE ID or REPOSITORY&gt; # Prune system to close all communication docker system prune -f Show the history of a docker image docker images # get &lt;IMAGE ID&gt; docker history --no-trunc &lt;IMAGE ID&gt; # without runcation Build docker image docker build -f Dockerfile -t othrif:mytest ."/>
+<meta name="twitter:description" content="Basics In a nutshell: docker build -t imagename:local -f Dockerfile ./ docker run --rm -it imagename:local /bin/bash docker push dockerhubname VERSION=`git tag -l |sort -V | tail -1 | sed &#39;s/v//&#39;` docker tag dockerhubname dockerhubname:$(VERSION) docker push dockerhubname:$(VERSION) Checkout docker image from repo to test it $ docker build -t imagename:local ./ $ docker run --rm -it imagename:local /bin/bash  root@6efdfbae85a8:/# Then in another terminal: docker cp $HOME/path/to/project 6efdfbae85a8:/root/project to get the project inside for testing."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Manipulate a docker image and launch a notebook",
   "url": "https:\/\/othrif.github.io\/python\/docker\/docker_case.html",
-  "wordCount": "313",
+  "wordCount": "387",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -146,6 +146,20 @@ MathJax.Hub.Config({
   <div class="content">
 
   <h1 id="basics">Basics</h1>
+<h3 id="in-a-nutshell">In a nutshell:</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t imagename:local -f Dockerfile ./
+docker run --rm -it imagename:local /bin/bash
+docker push dockerhubname
+<span class="nv">VERSION</span><span class="o">=</span><span class="sb">`</span>git tag -l <span class="p">|</span>sort -V <span class="p">|</span> tail -1 <span class="p">|</span> sed <span class="s1">&#39;s/v//&#39;</span><span class="sb">`</span>
+docker tag dockerhubname dockerhubname:<span class="k">$(</span>VERSION<span class="k">)</span>
+docker push dockerhubname:<span class="k">$(</span>VERSION<span class="k">)</span>
+</code></pre></div><h3 id="checkout-docker-image-from-repo-to-test-it">Checkout docker image from repo to test it</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ docker build -t imagename:local ./
+$ docker run --rm -it imagename:local  /bin/bash
+</code></pre></div><blockquote>
+<p><code>root@6efdfbae85a8:/#</code>
+Then in another terminal: <code>docker cp $HOME/path/to/project 6efdfbae85a8:/root/project</code> to get the project inside for testing.</p>
+</blockquote>
 <h3 id="docker-build">Docker build</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker build -t hello-world:1.0 .
 </code></pre></div><h3 id="run-image">Run image</h3>
