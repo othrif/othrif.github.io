@@ -84,6 +84,16 @@ rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import 
     </item>
     
     <item>
+      <title>total time of audio</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/convert_mov_gif-copy1.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_mov_gif-copy1.html</guid>
+      <description>Calculate the total time of all audio files at a location.
+EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `soxi * | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; </description>
+    </item>
+    
+    <item>
       <title>Transcribe audio: speech to text</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
