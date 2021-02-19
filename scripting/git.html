@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Working with git" />
-<meta property="og:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Remove submodule To remove a submodule from a git repository you need to:" />
+<meta property="og:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Tag code version git checkout main git pull git tag -a v0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/scripting/git.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Working with git"/>
-<meta name="twitter:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Remove submodule To remove a submodule from a git repository you need to:"/>
+<meta name="twitter:description" content="Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &lt;feature-branch&gt; git merge master git push origin &lt;feature-branch&gt; Create a new branch and check out an old commit git checkout -b &lt;new branch&gt; &lt;SHA-1&gt; git add . git commit -m &#34;added a new branch from old commit&#34; git push --set-upstream origin &lt;new branch&gt; Tag code version git checkout main git pull git tag -a v0."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Working with git",
   "url": "https:\/\/othrif.github.io\/scripting\/git.html",
-  "wordCount": "321",
+  "wordCount": "352",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -157,6 +157,23 @@ git push origin &lt;feature-branch&gt;
 git add .
 git commit -m <span class="s2">&#34;added a new branch from old commit&#34;</span>
 git push --set-upstream origin &lt;new branch&gt;
+</code></pre></div><h3 id="tag-code-version">Tag code version</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git checkout main
+git pull
+git tag -a v0.1.2 -m <span class="s2">&#34;tag message&#34;</span>
+git push origin v0.1.2 <span class="c1"># single tag</span>
+<span class="c1"># git push origin &lt;tag&gt; # push all tags</span>
+</code></pre></div><h3 id="hard-reset-to-a-remote-repository">Hard reset to a remote repository</h3>
+<p>If you do something wrong and want to reset:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git fetch origin
+git reset --hard origin/main
+</code></pre></div><h3 id="push-a-newly-created-repo-to-git">Push a newly created repo to git</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
+git add .
+git commit -m <span class="s2">&#34;Initial commit with the basic code structure&#34;</span>
+git branch -m master main
+git remote add origin https://github.com/&lt;repo&gt;
+git push -u origin main
 </code></pre></div><h3 id="remove-submodule">Remove submodule</h3>
 <p>To remove a submodule from a git repository you need to:</p>
 <p>Delete the relevant section from the <code>.gitmodules</code> file<br>
@@ -169,14 +186,7 @@ Delete the now untracked submodule files <code>rm -rf path_to_submodule</code></
 <h3 id="transfer-from-github-to-gitlab">Transfer from <code>github</code> to <code>gitlab</code></h3>
 <pre><code>git remote add github https://github.com/othrif/vbfmet-recast.git
 git push --mirror github
-</code></pre><h3 id="push-a-newly-created-repo-to-git">Push a newly created repo to git</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git init
-git add .
-git commit -m <span class="s2">&#34;Initial commit with the basic code structure&#34;</span>
-git branch -m master main
-git remote add origin https://github.com/&lt;repo&gt;
-git push -u origin main
-</code></pre></div><h3 id="number-of-lines-of-code">Number of lines of code</h3>
+</code></pre><h3 id="number-of-lines-of-code">Number of lines of code</h3>
 <p>Add the following to <code>cloc-git</code></p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash
 </span><span class="cp"></span>git clone --depth <span class="m">1</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> temp-linecount-repo <span class="o">&amp;&amp;</span>
@@ -192,11 +202,7 @@ git push -u origin main
 <p>To avoid needing to enter your credentials everytime, enable local caching of your credentials:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git config credential.helper store
 </code></pre></div><p>You can also use a public ssh key: copy the contents of <code>~/.ssh/id_rsa.pub</code> to <a href="https://github.com/settings/keys">github settings</a></p>
-<h3 id="hard-reset-to-a-remote-repository">Hard reset to a remote repository</h3>
-<p>If you do something wrong and want to reset:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git fetch origin
-git reset --hard origin/main
-</code></pre></div>
+
 </div>
   <aside>
       <div class="bug_reporting">
@@ -220,7 +226,7 @@ git reset --hard origin/main
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 55 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 58 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

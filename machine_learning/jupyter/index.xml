@@ -1,0 +1,24 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/jupyter/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/jupyter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up machine learning libraries with GPU</title>
+      <link>https://othrif.github.io/machine_learning/jupyter/close_jupyter_server.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/jupyter/close_jupyter_server.html</guid>
+      <description>Switch between gcc8 and gcc9 For tensorflow and pytorch, you need gcc8 to compile code which is not the system default. Do the following to use gcc8:
+sudo apt -y install build-essential sudo apt -y install gcc-8 g++-8 gcc-9 g++-9 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 8 --slave /usr/bin/g++ g++ /usr/bin/g++-8 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9 --slave /usr/bin/g++ g++ /usr/bin/g++-9 # Every time you want to make a selection, run: sudo update-alternatives --config gcc # press number corresponding to your choice </description>
+    </item>
+    
+  </channel>
+</rss>

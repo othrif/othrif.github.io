@@ -45,7 +45,7 @@ Markup : _Emphasized text_ or *Emphasized text*  Strikethrough text</description
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/scripting/git.html</guid>
-      <description>Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &amp;lt;feature-branch&amp;gt; git merge master git push origin &amp;lt;feature-branch&amp;gt; Create a new branch and check out an old commit git checkout -b &amp;lt;new branch&amp;gt; &amp;lt;SHA-1&amp;gt; git add . git commit -m &amp;#34;added a new branch from old commit&amp;#34; git push --set-upstream origin &amp;lt;new branch&amp;gt; Remove submodule To remove a submodule from a git repository you need to:</description>
+      <description>Bring your branch up-to-date with master git checkout master git fetch -p origin git merge origin/master git checkout &amp;lt;feature-branch&amp;gt; git merge master git push origin &amp;lt;feature-branch&amp;gt; Create a new branch and check out an old commit git checkout -b &amp;lt;new branch&amp;gt; &amp;lt;SHA-1&amp;gt; git add . git commit -m &amp;#34;added a new branch from old commit&amp;#34; git push --set-upstream origin &amp;lt;new branch&amp;gt; Tag code version git checkout main git pull git tag -a v0.</description>
     </item>
     
   </channel>

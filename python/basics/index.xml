@@ -52,6 +52,24 @@ import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime
     </item>
     
     <item>
+      <title>Remove everything after a character in a string</title>
+      <link>https://othrif.github.io/python/basics/remove_after_string.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/remove_after_string.html</guid>
+      <description>Using str.split(sep, maxsplit) # maxsplit=1 to split at first occurence a_string = &amp;#34;ab-cd&amp;#34; split_string = a_string.split(&amp;#34;-&amp;#34;, 1) substring = split_string[0] print(substring) ab  </description>
+    </item>
+    
+    <item>
+      <title>Substring key match in a dictionary</title>
+      <link>https://othrif.github.io/python/basics/substring_key_match.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/substring_key_match.html</guid>
+      <description>Using items() + list comprehension test_dict = {&amp;#39;All&amp;#39; : 1, &amp;#39;have&amp;#39; : 2, &amp;#39;good&amp;#39; : 3, &amp;#39;food&amp;#39; : 4} search_key = &amp;#39;ood&amp;#39; res = [val for key, val in test_dict.items() if search_key in key] res [3, 4]  </description>
+    </item>
+    
+    <item>
       <title>tqdm cool progress meter</title>
       <link>https://othrif.github.io/python/basics/tqdm.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
