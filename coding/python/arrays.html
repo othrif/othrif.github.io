@@ -37,7 +37,7 @@ Basic operations # Manipulate list A = list(range(10)) print(f&#39;len() of A: {
   "@type": "BlogPosting",
   "headline": "Arrays",
   "url": "https:\/\/othrif.github.io\/coding\/python\/arrays.html",
-  "wordCount": "906",
+  "wordCount": "943",
   "datePublished": "2021-02-04T00:00:00\u002b00:00",
   "dateModified": "2021-02-04T00:00:00\u002b00:00",
   "author": {
@@ -359,13 +359,26 @@ Original list NOT modified: [[1, 2], [2, 4]]
 
 ValueError                                Traceback (most recent call last)
 
-&lt;ipython-input-8-9dbebae898f3&gt; in &lt;module&gt;
+&lt;ipython-input-1-9dbebae898f3&gt; in &lt;module&gt;
       6     print(i)
       7 else:
 ----&gt; 8     raise ValueError(&quot;List argument missing terminal flag.&quot;)
 
 
 ValueError: List argument missing terminal flag.
+</code></pre>
+<h3 id="get-dict"><code>get() dict</code></h3>
+<p><code>dictionary.get(keyname, value)</code> returns the value of the item with the specified key and value if key does not exist</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">car</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&#34;brand&#34;</span><span class="p">:</span> <span class="s2">&#34;Ford&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;Mustang&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;year&#34;</span><span class="p">:</span> <span class="mi">1964</span>
+<span class="p">}</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">car</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;price&#34;</span><span class="p">,</span> <span class="mi">15000</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div><pre><code>15000
 </code></pre>
 
 </div>
