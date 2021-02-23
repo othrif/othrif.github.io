@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Sound file properties" />
-<meta property="og:description" content="filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  Convert file to a specified bit and sample rates sox &lt;input&gt; -b 16 -r 16000 &lt;output&gt; soxi &lt;input&gt; " />
+<meta property="og:description" content="filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  !" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/soundfile_prop.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sound file properties"/>
-<meta name="twitter:description" content="filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  Convert file to a specified bit and sample rates sox &lt;input&gt; -b 16 -r 16000 &lt;output&gt; soxi &lt;input&gt; "/>
+<meta name="twitter:description" content="filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; In python import sox sox.file_info.info(filename) {&#39;channels&#39;: 1, &#39;sample_rate&#39;: 8000.0, &#39;bitdepth&#39;: 16, &#39;bitrate&#39;: 129000.0, &#39;duration&#39;: 0.333875, &#39;num_samples&#39;: 2671, &#39;encoding&#39;: &#39;Signed Integer PCM&#39;, &#39;silent&#39;: False}  In CLI !soxi /Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav Input File : &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Channels : 1 Sample Rate : 8000 Precision : 16-bit Duration : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors File Size : 5.39k Bit Rate : 129k Sample Encoding: 16-bit Signed Integer PCM  !"/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "Sound file properties",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/soundfile_prop.html",
-  "wordCount": "86",
+  "wordCount": "232",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -168,6 +168,23 @@ Duration       : 00:00:00.33 = 2671 samples ~ 25.0406 CDDA sectors
 File Size      : 5.39k
 Bit Rate       : 129k
 Sample Encoding: 16-bit Signed Integer PCM
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">!</span><span class="n">ffprobe</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">othrif</span><span class="o">/</span><span class="n">spectrum</span><span class="o">/</span><span class="n">voice</span><span class="o">/</span><span class="n">datasets</span><span class="o">/</span><span class="n">free</span><span class="o">-</span><span class="n">spoken</span><span class="o">-</span><span class="n">digit</span><span class="o">-</span><span class="n">dataset</span><span class="o">/</span><span class="n">recordings</span><span class="o">/</span><span class="mi">4</span><span class="n">_yweweler_5</span><span class="o">.</span><span class="n">wav</span>
+</code></pre></div><pre><code>ffprobe version 4.3.1 Copyright (c) 2007-2020 the FFmpeg developers
+  built with Apple clang version 12.0.0 (clang-1200.0.32.28)
+  configuration: --prefix=/usr/local/Cellar/ffmpeg/4.3.1_8 --enable-shared --enable-pthreads --enable-version3 --enable-avresample --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libbluray --enable-libdav1d --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librtmp --enable-libspeex --enable-libsoxr --enable-videotoolbox --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack
+  libavutil      56. 51.100 / 56. 51.100
+  libavcodec     58. 91.100 / 58. 91.100
+  libavformat    58. 45.100 / 58. 45.100
+  libavdevice    58. 10.100 / 58. 10.100
+  libavfilter     7. 85.100 /  7. 85.100
+  libavresample   4.  0.  0 /  4.  0.  0
+  libswscale      5.  7.100 /  5.  7.100
+  libswresample   3.  7.100 /  3.  7.100
+  libpostproc    55.  7.100 / 55.  7.100
+Input #0, wav, from '/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav':
+  Duration: 00:00:00.33, bitrate: 129 kb/s
+    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 8000 Hz, 1 channels, s16, 128 kb/s
 </code></pre>
 <h1 id="convert-file-to-a-specified-bit-and-sample-rates">Convert file to a specified bit and sample rates</h1>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sox &lt;input&gt; -b <span class="m">16</span> -r <span class="m">16000</span> &lt;output&gt;
