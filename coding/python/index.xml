@@ -30,5 +30,15 @@ Basic operations # Manipulate list A = list(range(10)) print(f&amp;#39;len() of 
 Key methods for numeric import math print(f&amp;#39;Absolutve value: {abs(-34.5)}&amp;#39;) print(f&amp;#39;Round up: {math.ceil(34.5)}&amp;#39;) print(f&amp;#39;Round down: {math.floor(34.5)}&amp;#39;) print(f&amp;#39;Max value: {max(34.5, 1000)}&amp;#39;) print(f&amp;#39;Power: {pow(34.5,2)} OR {34.5**2}&amp;#39;) print(f&amp;#39;Square root: {math.sqrt(34.5)}&amp;#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&amp;#39;42&amp;#39;) 42  str(87.</description>
     </item>
     
+    <item>
+      <title>Strings</title>
+      <link>https://othrif.github.io/coding/python/strings.html</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/coding/python/strings.html</guid>
+      <description>Definition String type is immutable. Need to allocate new strings when slicing or concatenating. Try to write values from the back, instead of front. Reduce space complexity by using the string itself instead of brute force O(n) solutions.
+Basic operations t = &amp;#39;My first string&amp;#39; s = &amp;#39; first &amp;#39; print(f&amp;#39;in: {s in t}&amp;#39;) print(f&amp;#39;strip(): |{s}| -&amp;gt; |{s.strip()}|&amp;#39;) print(f&amp;#39;startswith(): {t.startswith(&amp;#34;M&amp;#34;)}&amp;#39;) print(f&amp;#39;endswith(): {t.endswith(&amp;#34;ing&amp;#34;)}&amp;#39;) print(f&amp;#39;STR.split(SEP): {t.split(&amp;#34; &amp;#34;)}&amp;#39;) print(f&amp;#39;SEP.join(LIST): {&amp;#34;/&amp;#34;.join([&amp;#34;hey&amp;#34;, &amp;#34;ho&amp;#34;, &amp;#34;O&amp;#34;])}&amp;#39;) print(f&amp;#39;STR.lower(): {t.</description>
+    </item>
+    
   </channel>
 </rss>

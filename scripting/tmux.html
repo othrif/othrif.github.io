@@ -16,16 +16,18 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="tqdm cool progress meter" />
-<meta property="og:description" content="In shell # Number of bytes per second !seq 9999999 | tqdm --bytes | wc -l 109MB [00:02, 47.8MB/s] 9999999  # Number of lines per second !seq 9999999 | tqdm | wc -l 9999999it [00:03, 2633163.40it/s] 9999999  # Number of lines per second !seq 9999999 | tqdm --bytes --total 99999999 | wc -l  59%|██████████████████████▍ | 56.3M/95.4M [00:01&lt;00:00, 46.9MB/s]^C 66%|████████████████████████▉ | 62.6M/95.4M [00:01&lt;00:00, 45.7MB/s] Traceback (most recent call last): File &quot;/Users/othrif/." />
+<meta property="og:title" content="Working with tmux" />
+<meta property="og:description" content="Basics See: https://tmuxcheatsheet.com/
+tmux new -s MySession tmux ls tmux attach -t MySession Shortcuts  Ctrl &#43; b &#43; d: detach  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/tqdm.html" />
+<meta property="og:url" content="https://othrif.github.io/scripting/tmux.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="tqdm cool progress meter"/>
-<meta name="twitter:description" content="In shell # Number of bytes per second !seq 9999999 | tqdm --bytes | wc -l 109MB [00:02, 47.8MB/s] 9999999  # Number of lines per second !seq 9999999 | tqdm | wc -l 9999999it [00:03, 2633163.40it/s] 9999999  # Number of lines per second !seq 9999999 | tqdm --bytes --total 99999999 | wc -l  59%|██████████████████████▍ | 56.3M/95.4M [00:01&lt;00:00, 46.9MB/s]^C 66%|████████████████████████▉ | 62.6M/95.4M [00:01&lt;00:00, 45.7MB/s] Traceback (most recent call last): File &quot;/Users/othrif/."/>
+<meta name="twitter:title" content="Working with tmux"/>
+<meta name="twitter:description" content="Basics See: https://tmuxcheatsheet.com/
+tmux new -s MySession tmux ls tmux attach -t MySession Shortcuts  Ctrl &#43; b &#43; d: detach  "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,9 +35,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "tqdm cool progress meter",
-  "url": "https:\/\/othrif.github.io\/python\/basics\/tqdm.html",
-  "wordCount": "93",
+  "headline": "Working with tmux",
+  "url": "https:\/\/othrif.github.io\/scripting\/tmux.html",
+  "wordCount": "20",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -45,7 +47,7 @@
 }
 </script> 
 
-    <title>tqdm cool progress meter</title>
+    <title>Working with tmux</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,39 +140,22 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">tqdm cool progress meter</h1>
+    <h1 class="technical_note_title">Working with tmux</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="in-shell">In shell</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Number of bytes per second</span>
-<span class="err">!</span><span class="n">seq</span> <span class="mi">9999999</span> <span class="o">|</span> <span class="n">tqdm</span> <span class="o">--</span><span class="nb">bytes</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
-</code></pre></div><pre><code>109MB [00:02, 47.8MB/s] 
- 9999999
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Number of lines per second</span>
-<span class="err">!</span><span class="n">seq</span> <span class="mi">9999999</span> <span class="o">|</span> <span class="n">tqdm</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
-</code></pre></div><pre><code>9999999it [00:03, 2633163.40it/s]
- 9999999
-</code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Number of lines per second</span>
-<span class="err">!</span><span class="n">seq</span> <span class="mi">9999999</span> <span class="o">|</span> <span class="n">tqdm</span> <span class="o">--</span><span class="nb">bytes</span> <span class="o">--</span><span class="n">total</span> <span class="mi">99999999</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
-</code></pre></div><pre><code> 59%|██████████████████████▍               | 56.3M/95.4M [00:01&lt;00:00, 46.9MB/s]^C
- 66%|████████████████████████▉             | 62.6M/95.4M [00:01&lt;00:00, 45.7MB/s]
-Traceback (most recent call last):
-  File &quot;/Users/othrif/.pyenv/versions/3.8.5/bin/tqdm&quot;, line 8, in &lt;module&gt;
-</code></pre>
-<h3 id="in-python">In python</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)):</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-</code></pre></div><pre><code>100%|██████████| 100/100 [00:01&lt;00:00, 86.17it/s]
-</code></pre>
+  <h3 id="basics">Basics</h3>
+<p>See: <a href="https://tmuxcheatsheet.com/">https://tmuxcheatsheet.com/</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tmux new -s MySession
+tmux ls
+tmux attach -t MySession
+</code></pre></div><h3 id="shortcuts">Shortcuts</h3>
+<ul>
+<li>Ctrl + b + d: detach</li>
+</ul>
 
 </div>
   <aside>
