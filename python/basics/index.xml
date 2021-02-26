@@ -23,6 +23,18 @@ python main.py --config myconfig.txt </description>
     </item>
     
     <item>
+      <title>Functools:reduce()</title>
+      <link>https://othrif.github.io/python/basics/functools.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/functools.html</guid>
+      <description>reduce() Function call: functools.reduce(function, iterable[, initializer])
+You’re doing a fold or reduction when you reduce a list of items to a single cumulative value: 1-Apply a function (or callable) to the first two items in an iterable and generate a partial result.
+2-Use that partial result, together with the third item in the iterable, to generate another partial result.
+3-Repeat the process until the iterable is exhausted and then return a single cumulative value.</description>
+    </item>
+    
+    <item>
       <title>Manipulate maps</title>
       <link>https://othrif.github.io/python/basics/map_manip.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

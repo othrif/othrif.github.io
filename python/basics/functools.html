@@ -16,22 +16,22 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Config file using click" />
-<meta property="og:description" content="Using click with config file Using the module click_config_file we can load the parameter file similar to this:
-import click import click_config_file @click.command() @click.option(&#39;--name&#39;, default=&#39;World&#39;, help=&#39;Who to greet.&#39;) @click_config_file.configuration_option() def hello(name): click.echo(&#39;Hello {}!&#39;.format(name)) hello() the parameter file should read:
-name=&#39;Othmane&#39; The command to use the config file is:
-python main.py --config myconfig.txt " />
+<meta property="og:title" content="Functools:reduce()" />
+<meta property="og:description" content="reduce() Function call: functools.reduce(function, iterable[, initializer])
+You’re doing a fold or reduction when you reduce a list of items to a single cumulative value: 1-Apply a function (or callable) to the first two items in an iterable and generate a partial result.
+2-Use that partial result, together with the third item in the iterable, to generate another partial result.
+3-Repeat the process until the iterable is exhausted and then return a single cumulative value." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/config_file.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/functools.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Config file using click"/>
-<meta name="twitter:description" content="Using click with config file Using the module click_config_file we can load the parameter file similar to this:
-import click import click_config_file @click.command() @click.option(&#39;--name&#39;, default=&#39;World&#39;, help=&#39;Who to greet.&#39;) @click_config_file.configuration_option() def hello(name): click.echo(&#39;Hello {}!&#39;.format(name)) hello() the parameter file should read:
-name=&#39;Othmane&#39; The command to use the config file is:
-python main.py --config myconfig.txt "/>
+<meta name="twitter:title" content="Functools:reduce()"/>
+<meta name="twitter:description" content="reduce() Function call: functools.reduce(function, iterable[, initializer])
+You’re doing a fold or reduction when you reduce a list of items to a single cumulative value: 1-Apply a function (or callable) to the first two items in an iterable and generate a partial result.
+2-Use that partial result, together with the third item in the iterable, to generate another partial result.
+3-Repeat the process until the iterable is exhausted and then return a single cumulative value."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -39,9 +39,9 @@ python main.py --config myconfig.txt "/>
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Config file using click",
-  "url": "https:\/\/othrif.github.io\/python\/basics\/config_file.html",
-  "wordCount": "52",
+  "headline": "Functools:reduce()",
+  "url": "https:\/\/othrif.github.io\/python\/basics\/functools.html",
+  "wordCount": "307",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -51,7 +51,7 @@ python main.py --config myconfig.txt "/>
 }
 </script> 
 
-    <title>Config file using click</title>
+    <title>Functools:reduce()</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -144,30 +144,76 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Config file using click</h1>
+    <h1 class="technical_note_title">Functools:reduce()</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="using-click-with-config-file">Using click with config file</h3>
-<p>Using the module <code>click_config_file</code> we can load the parameter file similar to this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">click</span>
-<span class="kn">import</span> <span class="nn">click_config_file</span>
+  <h3 id="reduce"><code>reduce()</code></h3>
+<p>Function call: <code>functools.reduce(function, iterable[, initializer])</code></p>
+<p>You’re doing a fold or reduction when you reduce a list of items to a single cumulative value: <br>
+1-<strong>Apply</strong> a function (or callable) to the first two items in an iterable and generate a partial result.<br>
+2-<strong>Use</strong> that partial result, together with the third item in the iterable, to generate another partial result.<br>
+3-<strong>Repeat</strong> the process until the iterable is exhausted and then return a single cumulative value.</p>
+<h4 id="vanilla-version">Vanilla version</h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 
-<span class="nd">@click.command</span><span class="p">()</span>
-<span class="nd">@click.option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Who to greet.&#39;</span><span class="p">)</span>
-<span class="nd">@click_config_file.configuration_option</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">my_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;{a} + {b} = {result}&#34;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;Hello {}!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 
-<span class="n">hello</span><span class="p">()</span>
-</code></pre></div><p>the parameter file should read:</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Othmane&#39;</span>
-</code></pre></div><p>The command to use the config file is:</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">python main.py --config myconfig.txt 
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Start by adding first two elments&#39;</span><span class="p">)</span>
+<span class="nb">reduce</span><span class="p">(</span><span class="n">my_add</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Start by adding initializer with first element&#39;</span><span class="p">)</span>
+<span class="nb">reduce</span><span class="p">(</span><span class="n">my_add</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div><pre><code>Start by adding first two elments
+0 + 1 = 1
+1 + 2 = 3
+3 + 3 = 6
+6 + 4 = 10
+
+Start by adding initializer with first element
+100 + 0 = 100
+100 + 1 = 101
+101 + 2 = 103
+103 + 3 = 106
+106 + 4 = 110
+
+
+
+
+
+110
+</code></pre>
+<h4 id="using-lambda">using <code>lambda</code></h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">numbers</span><span class="o">=</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Input: {numbers}&#39;</span><span class="p">)</span>
+<span class="c1"># addition</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Addition: {reduce(lambda a, b: a + b, numbers)}&#39;</span><span class="p">)</span>
+<span class="c1"># multiplication</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Multiplication: {reduce(lambda a, b: a * b, numbers)}&#39;</span><span class="p">)</span>
+<span class="c1"># Finding minimum</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Minimum: {reduce(lambda a, b: a if a &lt; b else b, numbers)}&#39;</span><span class="p">)</span>
+<span class="c1"># Finding maximum</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Maximum: {reduce(lambda a, b: a if a &gt; b else b, numbers)}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Checking if all values are true: {reduce(lambda a, b: bool(a and b), [1, 0, 1, 1, 1])}&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Checking if any values are true: {reduce(lambda a, b: bool(a or b), [0, 0, 1, 1, 0])}&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>Input: [1, 1, 9, 7, 2, 4, 7, 3, 7, 4]
+Addition: 45
+Multiplication: 296352
+Minimum: 1
+Maximum: 9
+Checking if all values are true: False
+Checking if any values are true: True
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
 </code></pre></div>
 </div>
   <aside>
