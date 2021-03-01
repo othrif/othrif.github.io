@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Bash scripting</title>
+      <link>https://othrif.github.io/scripting/bash.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/bash.html</guid>
+      <description>Multi-line comments : &amp;#39; This is a very neat comment in bash &amp;#39; </description>
+    </item>
+    
+    <item>
       <title>Jupyter shortcuts and installation</title>
       <link>https://othrif.github.io/scripting/jupyter.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
