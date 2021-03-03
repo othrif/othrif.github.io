@@ -37,7 +37,7 @@ Basic operations t = &#39;My first string&#39; s = &#39; first &#39; print(f&#39
   "@type": "BlogPosting",
   "headline": "Strings",
   "url": "https:\/\/othrif.github.io\/coding\/python\/strings.html",
-  "wordCount": "191",
+  "wordCount": "226",
   "datePublished": "2021-02-04T00:00:00\u002b00:00",
   "dateModified": "2021-02-04T00:00:00\u002b00:00",
   "author": {
@@ -251,8 +251,16 @@ Testing this string: My first string
  'upper',
  'zfill']
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
-</code></pre></div>
+<h2 id="useful-tips">Useful tips</h2>
+<h3 id="convert-string-to-number-in-a-given-base">convert string to number in a given base</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">hexdigits</span>
+<span class="k">def</span> <span class="nf">num_to_int</span> <span class="p">(</span><span class="n">num_as_string</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">base</span> <span class="o">+</span> <span class="n">hexdigits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()),</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">num_to_int</span><span class="p">(</span><span class="s1">&#39;613&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</code></pre></div><pre><code>304
+</code></pre>
+
 </div>
   <aside>
       <div class="bug_reporting">

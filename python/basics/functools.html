@@ -41,7 +41,7 @@ You’re doing a fold or reduction when you reduce a list of items to a single c
   "@type": "BlogPosting",
   "headline": "Functools:reduce()",
   "url": "https:\/\/othrif.github.io\/python\/basics\/functools.html",
-  "wordCount": "307",
+  "wordCount": "371",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -213,8 +213,29 @@ Maximum: 9
 Checking if all values are true: False
 Checking if any values are true: True
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
-</code></pre></div>
+<h3 id="more-advanced">more advanced</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">hexdigits</span>
+
+<span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">hexdigits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()),</span> <span class="p">[</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div><pre><code>304
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">7</span> <span class="o">+</span> <span class="n">hexdigits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{x} * 7 + dec({c}) = {result}&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+<span class="nb">reduce</span><span class="p">(</span><span class="n">my_func</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;6&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div><pre><code>0 * 7 + dec(6) = 6
+6 * 7 + dec(1) = 43
+43 * 7 + dec(3) = 304
+
+
+
+
+
+304
+</code></pre>
+
 </div>
   <aside>
       <div class="bug_reporting">
