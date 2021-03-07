@@ -35,6 +35,17 @@ You’re doing a fold or reduction when you reduce a list of items to a single c
     </item>
     
     <item>
+      <title>Itertools:groupby()</title>
+      <link>https://othrif.github.io/python/basics/itertools.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/itertools.html</guid>
+      <description>groupby() Function call: functools.groupby(iterable[, key])
+Make an iterator that returns consecutive keys and groups from the iterable. Similar to the uniq filter in Unix.
+Count number of occurences import itertools for key, group in itertools.groupby(&amp;#39;1122111100&amp;#39;): print(key, &amp;#39;count:&amp;#39;, len(list(group))) 1 count: 2 2 count: 2 1 count: 4 0 count: 2  Use a cutom key function import itertools l = [(&amp;#34;a&amp;#34;, 1), (&amp;#34;a&amp;#34;, 2), (&amp;#34;b&amp;#34;, 3), (&amp;#34;b&amp;#34;, 4)] key_f = lambda x: x[0] for key, group in itertools.</description>
+    </item>
+    
+    <item>
       <title>Manipulate maps</title>
       <link>https://othrif.github.io/python/basics/map_manip.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

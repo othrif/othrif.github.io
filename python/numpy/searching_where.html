@@ -16,16 +16,20 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Substring key match in a dictionary" />
-<meta property="og:description" content="Using items() &#43; list comprehension test_dict = {&#39;All&#39; : 1, &#39;have&#39; : 2, &#39;good&#39; : 3, &#39;food&#39; : 4} search_key = &#39;ood&#39; res = [val for key, val in test_dict.items() if search_key in key] res [3, 4]  " />
+<meta property="og:title" content="Searching" />
+<meta property="og:description" content="Using where Function call: where(condition, [x, y])
+Return elements chosen from x or y depending on condition. Used with multidimensions
+import numpy as np np.where([[True, False], [True, True]], [[1, 2], [3, 4]], [[9, 8], [7, 6]]) array([[1, 8], [3, 4]])  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/substring_key_match.html" />
+<meta property="og:url" content="https://othrif.github.io/python/numpy/searching_where.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Substring key match in a dictionary"/>
-<meta name="twitter:description" content="Using items() &#43; list comprehension test_dict = {&#39;All&#39; : 1, &#39;have&#39; : 2, &#39;good&#39; : 3, &#39;food&#39; : 4} search_key = &#39;ood&#39; res = [val for key, val in test_dict.items() if search_key in key] res [3, 4]  "/>
+<meta name="twitter:title" content="Searching"/>
+<meta name="twitter:description" content="Using where Function call: where(condition, [x, y])
+Return elements chosen from x or y depending on condition. Used with multidimensions
+import numpy as np np.where([[True, False], [True, True]], [[1, 2], [3, 4]], [[9, 8], [7, 6]]) array([[1, 8], [3, 4]])  "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,9 +37,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Substring key match in a dictionary",
-  "url": "https:\/\/othrif.github.io\/python\/basics\/substring_key_match.html",
-  "wordCount": "37",
+  "headline": "Searching",
+  "url": "https:\/\/othrif.github.io\/python\/numpy\/searching_where.html",
+  "wordCount": "40",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -45,7 +49,7 @@
 }
 </script> 
 
-    <title>Substring key match in a dictionary</title>
+    <title>Searching</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,19 +142,23 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Substring key match in a dictionary</h1>
+    <h1 class="technical_note_title">Searching</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="using-items--list-comprehension">Using <code>items()</code> + list comprehension</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">test_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;All&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;have&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;good&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;food&#39;</span> <span class="p">:</span> <span class="mi">4</span><span class="p">}</span> 
-<span class="n">search_key</span> <span class="o">=</span> <span class="s1">&#39;ood&#39;</span>
-<span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">test_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">search_key</span> <span class="ow">in</span> <span class="n">key</span><span class="p">]</span> 
-<span class="n">res</span>
-</code></pre></div><pre><code>[3, 4]
+  <h3 id="using-where">Using <code>where</code></h3>
+<p>Function call: <code>where(condition, [x, y])</code></p>
+<p>Return elements chosen from x or y depending on condition. Used with multidimensions</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">([[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">],</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">]],</span> 
+         <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span>
+         <span class="p">[[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</code></pre></div><pre><code>array([[1, 8],
+       [3, 4]])
 </code></pre>
 
 </div>

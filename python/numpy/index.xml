@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python - Othmane Rifki</title>
+    <link>https://othrif.github.io/python/numpy/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/python/numpy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Calculating cosine between two vectors</title>
+      <link>https://othrif.github.io/python/numpy/angle.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/angle.html</guid>
+      <description>Using inverse cosine and norm from numpy: v1 = np.array([1, 2, 3]) v2 = 0.5 * v1 np.arccos(v1.dot(v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))) 0.0  </description>
+    </item>
+    
+    <item>
+      <title>Searching</title>
+      <link>https://othrif.github.io/python/numpy/searching_where.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/searching_where.html</guid>
+      <description>Using where Function call: where(condition, [x, y])
+Return elements chosen from x or y depending on condition. Used with multidimensions
+import numpy as np np.where([[True, False], [True, True]], [[1, 2], [3, 4]], [[9, 8], [7, 6]]) array([[1, 8], [3, 4]])  </description>
+    </item>
+    
+  </channel>
+</rss>
