@@ -20,5 +20,25 @@
 import numpy as np import matplotlib.pyplot as plt np.random.seed(19680801) Z = np.random.rand(6, 10) # 6 x 10 x = np.arange(-0.5, 10, 1) # len = 11 =&amp;gt; 10 values y = np.arange(4.5, 11, 1) # len = 7 =&amp;gt; 6 values fig, ax = plt.subplots() psm = ax.pcolormesh(x, y, Z,cmap=&amp;#39;hot&amp;#39;) fig.colorbar(psm, ax=ax) plt.show() </description>
     </item>
     
+    <item>
+      <title>Evaluate function on a grid using meshgrid</title>
+      <link>https://othrif.github.io/python/plotting/meshgrid.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/plotting/meshgrid.html</guid>
+      <description>Plot pretty functions meshgrid is very useful to evaluate functions on a grid.
+import numpy as np import matplotlib.pyplot as plt x = np.arange(-5, 5, 0.1) y = np.arange(-5, 5, 0.1) xx, yy = np.meshgrid(x, y, sparse=True) z = np.sin(xx**2 + yy**2) / (xx**2 + yy**2) h = plt.contourf(x,y,z) plt.show() Univariate gaussian distribution The univariate gaussian distribution has the form
+$$ p(x \mid \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp{ \left( -\frac{(x - \mu)^2}{2\sigma^2}\right)} $$</description>
+    </item>
+    
+    <item>
+      <title>Load, plot different classes</title>
+      <link>https://othrif.github.io/python/plotting/plot_iri.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/plotting/plot_iri.html</guid>
+      <description>Plot different classes import numpy as np import pandas as pd import matplotlib.pyplot as plt # Read data s = &amp;#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&amp;#39; df = pd.read_csv(s,header=None,encoding=&amp;#39;utf-8&amp;#39;) # Select X, y X = df.iloc[:100, [0,2]].values y = np.where(df.iloc[:100, 4].values == &amp;#39;Iris-setosa&amp;#39;, -1, 1) # plot data plt.scatter(X[:50, 0], X[:50, 1], color=&amp;#39;red&amp;#39;, marker=&amp;#39;o&amp;#39;, label=&amp;#39;setosa&amp;#39;) plt.scatter(X[50:100, 0], X[50:100, 1], color=&amp;#39;blue&amp;#39;, marker=&amp;#39;x&amp;#39;, label=&amp;#39;versicolor&amp;#39;) plt.xlabel(&amp;#39;sepal length [cm]&amp;#39;) plt.ylabel(&amp;#39;petal length [cm]&amp;#39;) plt.legend(loc=&amp;#39;upper left&amp;#39;) plt.savefig(&amp;#39;02_06.png&amp;#39;, dpi=300) plt.show() </description>
+    </item>
+    
   </channel>
 </rss>
