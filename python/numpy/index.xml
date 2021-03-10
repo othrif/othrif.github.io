@@ -30,5 +30,14 @@ Return elements chosen from x or y depending on condition. Used with multidimens
 import numpy as np np.where([[True, False], [True, True]], [[1, 2], [3, 4]], [[9, 8], [7, 6]]) array([[1, 8], [3, 4]])  </description>
     </item>
     
+    <item>
+      <title>Select array entries with another array</title>
+      <link>https://othrif.github.io/python/numpy/array_manip.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/array_manip.html</guid>
+      <description>Using where() and take() import numpy as np y_pred = np.array([1,0,0,1,1,0,0]) y_true = np.array([1,0,1,1,1,1,0]) test_files = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;g&amp;#39;] np.where(y_pred != y_true) (array([2, 5]),)  np.take(test_files,np.where(y_pred != y_true)[0]) array([&#39;c&#39;, &#39;f&#39;], dtype=&#39;&amp;lt;U1&#39;)  </description>
+    </item>
+    
   </channel>
 </rss>

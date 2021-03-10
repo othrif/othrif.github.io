@@ -35,6 +35,16 @@ You’re doing a fold or reduction when you reduce a list of items to a single c
     </item>
     
     <item>
+      <title>id() of an object</title>
+      <link>https://othrif.github.io/python/basics/id_object.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/id_object.html</guid>
+      <description>Everything in python is an object. id(object) function returns the identity of the object. This is an integer that is unique for the given object and remains constant during its lifetime.
+print(&amp;#39;id of 5 =&amp;#39;,id(5)) a = 5 print(&amp;#39;id of a =&amp;#39;,id(a)) b = a print(&amp;#39;id of b =&amp;#39;,id(b)) c = 5.0 print(&amp;#39;id of c =&amp;#39;,id(c)) id of 5 = 4483840576 id of a = 4483840576 id of b = 4483840576 id of c = 4518905328  </description>
+    </item>
+    
+    <item>
       <title>Itertools:groupby()</title>
       <link>https://othrif.github.io/python/basics/itertools.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
