@@ -11,15 +11,14 @@
     
     
     <item>
-      <title>Config file using click</title>
+      <title>CLI arguments and config with click</title>
       <link>https://othrif.github.io/python/basics/config_file.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/python/basics/config_file.html</guid>
-      <description>Using click with config file Using the module click_config_file we can load the parameter file similar to this:
-import click import click_config_file @click.command() @click.option(&amp;#39;--name&amp;#39;, default=&amp;#39;World&amp;#39;, help=&amp;#39;Who to greet.&amp;#39;) @click_config_file.configuration_option() def hello(name): click.echo(&amp;#39;Hello {}!&amp;#39;.format(name)) hello() the parameter file should read:
-name=&amp;#39;Othmane&amp;#39; The command to use the config file is:
-python main.py --config myconfig.txt </description>
+      <description>Basic usage of click Command line arguments get passed to a function that you then call later on.
+import click @click.command() @click.option(&amp;#39;-f&amp;#39;, &amp;#39;--first&amp;#39;, default=&amp;#39;first&amp;#39;) @click.option(&amp;#39;-s&amp;#39;, &amp;#39;--second&amp;#39;, default=10) def test(first, second): print(&amp;#39;First&amp;#39;, first) print(&amp;#39;Second&amp;#39;, second) test() Using click with config file Using the module click_config_file we can load the parameter file similar to this:
+import click import click_config_file @click.command() @click.option(&amp;#39;--name&amp;#39;, default=&amp;#39;World&amp;#39;, help=&amp;#39;Who to greet.&amp;#39;) @click_config_file.configuration_option() def hello(name): click.echo(&amp;#39;Hello {}!&amp;#39;.format(name)) hello() the parameter file should read:</description>
     </item>
     
     <item>
