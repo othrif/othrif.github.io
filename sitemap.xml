@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://othrif.github.io/algorithms/advanced/index.xml</loc>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/coding/python/index.xml</loc>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/algorithms/index.xml</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -29,6 +39,11 @@
   
   <url>
     <loc>https://othrif.github.io/coding/python/strings.html</loc>
+    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/algorithms/advanced/viterbi.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
   </url>
   

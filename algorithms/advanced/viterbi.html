@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Viterbi algorithm" />
+<meta property="og:description" content="Definition The Viterbi algorithm is a dynamic programming algorithm for finding the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM).
+https://en.wikipedia.org/wiki/Viterbi_algorithm
+Problem Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/algorithms/advanced/viterbi.html" />
+<meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-04T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Viterbi algorithm"/>
+<meta name="twitter:description" content="Definition The Viterbi algorithm is a dynamic programming algorithm for finding the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM).
+https://en.wikipedia.org/wiki/Viterbi_algorithm
+Problem Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel."/>
+<meta name="generator" content="Hugo 0.77.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Viterbi algorithm",
+  "url": "https:\/\/othrif.github.io\/algorithms\/advanced\/viterbi.html",
+  "wordCount": "507",
+  "datePublished": "2021-02-04T00:00:00\u002b00:00",
+  "dateModified": "2021-02-04T00:00:00\u002b00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Viterbi algorithm</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Viterbi algorithm</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2021-02-04T00:00:00Z "> 04 Feb 2021</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="definition">Definition</h3>
+<p>The <strong>Viterbi algorithm</strong> is a dynamic programming algorithm for finding the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM).</p>
+<p><a href="https://en.wikipedia.org/wiki/Viterbi_algorithm">https://en.wikipedia.org/wiki/Viterbi_algorithm</a></p>
+<h3 id="problem">Problem</h3>
+<p>Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel. The villagers may only answer that they feel normal, dizzy, or cold.</p>
+<p>There are two states, &ldquo;Healthy&rdquo; and &ldquo;Fever&rdquo;, but the doctor cannot observe them directly; they are hidden from him. On each day, there is a certain chance that the patient will tell the doctor he is &ldquo;normal&rdquo;, &ldquo;cold&rdquo;, or &ldquo;dizzy&rdquo;, depending on their health condition.</p>
+<p>The observations (normal, cold, dizzy) along with a hidden state (healthy, fever) form a hidden Markov model (HMM).</p>
+<p>The patient visits three days in a row and the doctor discovers that on the first day he feels normal, on the second day he feels cold, on the third day he feels dizzy. The doctor has a question: <strong>what is the most likely sequence of health conditions of the patient that would explain these observations?</strong></p>
+<p><img src="An_example_of_HMM.png" alt="An_example_of_HMM.png"></p>
+<h3 id="code">Code</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">obs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;normal&#34;</span><span class="p">,</span> <span class="s2">&#34;cold&#34;</span><span class="p">,</span> <span class="s2">&#34;dizzy&#34;</span><span class="p">)</span>
+<span class="n">states</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;Healthy&#34;</span><span class="p">,</span> <span class="s2">&#34;Fever&#34;</span><span class="p">)</span>
+<span class="n">start_p</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;Healthy&#34;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span> <span class="s2">&#34;Fever&#34;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">}</span>
+<span class="n">trans_p</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;Healthy&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;Healthy&#34;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span> <span class="s2">&#34;Fever&#34;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">},</span>
+    <span class="s2">&#34;Fever&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;Healthy&#34;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s2">&#34;Fever&#34;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="n">emit_p</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;Healthy&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;normal&#34;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&#34;cold&#34;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span> <span class="s2">&#34;dizzy&#34;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+    <span class="s2">&#34;Fever&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;normal&#34;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&#34;cold&#34;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&#34;dizzy&#34;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">viterbi</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">start_p</span><span class="p">,</span> <span class="n">trans_p</span><span class="p">,</span> <span class="n">emit_p</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="p">[{}]</span>
+    <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+        <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">st</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;prob&#34;</span><span class="p">:</span> <span class="n">start_p</span><span class="p">[</span><span class="n">st</span><span class="p">]</span> <span class="o">*</span> <span class="n">emit_p</span><span class="p">[</span><span class="n">st</span><span class="p">][</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s2">&#34;prev&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+    <span class="c1"># Run Viterbi when t &gt; 0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">obs</span><span class="p">)):</span>
+        <span class="n">V</span><span class="o">.</span><span class="n">append</span><span class="p">({})</span>
+        <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
+            <span class="n">max_tr_prob</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">states</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s2">&#34;prob&#34;</span><span class="p">]</span> <span class="o">*</span> <span class="n">trans_p</span><span class="p">[</span><span class="n">states</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">st</span><span class="p">]</span>
+            <span class="n">prev_st_selected</span> <span class="o">=</span> <span class="n">states</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">prev_st</span> <span class="ow">in</span> <span class="n">states</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">tr_prob</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">prev_st</span><span class="p">][</span><span class="s2">&#34;prob&#34;</span><span class="p">]</span> <span class="o">*</span> <span class="n">trans_p</span><span class="p">[</span><span class="n">prev_st</span><span class="p">][</span><span class="n">st</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">tr_prob</span> <span class="o">&gt;</span> <span class="n">max_tr_prob</span><span class="p">:</span>
+                    <span class="n">max_tr_prob</span> <span class="o">=</span> <span class="n">tr_prob</span>
+                    <span class="n">prev_st_selected</span> <span class="o">=</span> <span class="n">prev_st</span>
+
+            <span class="n">max_prob</span> <span class="o">=</span> <span class="n">max_tr_prob</span> <span class="o">*</span> <span class="n">emit_p</span><span class="p">[</span><span class="n">st</span><span class="p">][</span><span class="n">obs</span><span class="p">[</span><span class="n">t</span><span class="p">]]</span>
+            <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">st</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;prob&#34;</span><span class="p">:</span> <span class="n">max_prob</span><span class="p">,</span> <span class="s2">&#34;prev&#34;</span><span class="p">:</span> <span class="n">prev_st_selected</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">dptable</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+    <span class="n">opt</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">max_prob</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">best_st</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="c1"># Get most probable state and its backtrack</span>
+    <span class="k">for</span> <span class="n">st</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">V</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;prob&#34;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_prob</span><span class="p">:</span>
+            <span class="n">max_prob</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;prob&#34;</span><span class="p">]</span>
+            <span class="n">best_st</span> <span class="o">=</span> <span class="n">st</span>
+    <span class="n">opt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">best_st</span><span class="p">)</span>
+    <span class="n">previous</span> <span class="o">=</span> <span class="n">best_st</span>
+
+    <span class="c1"># Follow the backtrack till the first observation</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">V</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">opt</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">previous</span><span class="p">][</span><span class="s2">&#34;prev&#34;</span><span class="p">])</span>
+        <span class="n">previous</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">previous</span><span class="p">][</span><span class="s2">&#34;prev&#34;</span><span class="p">]</span>
+
+    <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;The steps of states are &#34;</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; with highest probability of </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">max_prob</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">dptable</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+    <span class="c1"># Print a table of steps from dictionary</span>
+    <span class="k">yield</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s2">&#34;</span><span class="si">%12d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">V</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">yield</span> <span class="s2">&#34;</span><span class="si">%.7s</span><span class="s2">: &#34;</span> <span class="o">%</span> <span class="n">state</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.7s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&#34;</span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">v</span><span class="p">[</span><span class="n">state</span><span class="p">][</span><span class="s2">&#34;prob&#34;</span><span class="p">])</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">V</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">viterbi</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span>
+        <span class="n">states</span><span class="p">,</span>
+        <span class="n">start_p</span><span class="p">,</span>
+        <span class="n">trans_p</span><span class="p">,</span>
+        <span class="n">emit_p</span><span class="p">)</span>
+</code></pre></div><pre><code>           0            1            2
+Healthy: 0.30000 0.08400 0.00588
+Fever: 0.04000 0.02700 0.01512
+The steps of states are Healthy Healthy Fever with highest probability of 0.01512
+</code></pre>
+<p>This reveals that the observations [&lsquo;normal&rsquo;, &lsquo;cold&rsquo;, &lsquo;dizzy&rsquo;] were most likely generated by states [&lsquo;Healthy&rsquo;, &lsquo;Healthy&rsquo;, &lsquo;Fever&rsquo;].</p>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 70 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

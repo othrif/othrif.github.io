@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithms - Othmane Rifki</title>
+    <link>https://othrif.github.io/algorithms/advanced/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/algorithms/advanced/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Viterbi algorithm</title>
+      <link>https://othrif.github.io/algorithms/advanced/viterbi.html</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/algorithms/advanced/viterbi.html</guid>
+      <description>Definition The Viterbi algorithm is a dynamic programming algorithm for finding the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM).
+https://en.wikipedia.org/wiki/Viterbi_algorithm
+Problem Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel.</description>
+    </item>
+    
+  </channel>
+</rss>
