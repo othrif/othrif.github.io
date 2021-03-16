@@ -139,6 +139,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/aws/transcribe.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/scripting/bash.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -219,6 +224,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/numpy/copy.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/cpp/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -230,6 +240,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/plotting/meshgrid.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/pyenv.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -320,6 +335,11 @@
   
   <url>
     <loc>https://othrif.github.io/scripting/markdown.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/membership.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

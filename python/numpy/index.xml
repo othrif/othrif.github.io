@@ -20,6 +20,17 @@
     </item>
     
     <item>
+      <title>Copy, shallow copy, deep copy in Numpy</title>
+      <link>https://othrif.github.io/python/numpy/copy.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/copy.html</guid>
+      <description>import numpy as np Shallow copy x = np.array([1, 2, 3]) y = x z = np.copy(x) x[0] = 10 print(&amp;#39;y=&amp;#39;, y) print(&amp;#39;z=&amp;#39;, z) y= [10 2 3] z= [1 2 3]  Deep copy Shallow copy does not copy object elements within arrays
+a = np.array([1, &amp;#39;m&amp;#39;, [2, 3, 4]], dtype=object) b = np.copy(a) b[2][0] = 10 a array([1, &#39;m&#39;, list([10, 3, 4])], dtype=object)  Use copy.deepcopy()
+import copy a = np.</description>
+    </item>
+    
+    <item>
       <title>Searching</title>
       <link>https://othrif.github.io/python/numpy/searching_where.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

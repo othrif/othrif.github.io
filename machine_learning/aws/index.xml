@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>AWS transcribe service</title>
+      <link>https://othrif.github.io/machine_learning/aws/transcribe.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/aws/transcribe.html</guid>
+      <description>Check the status of jobs aws transcribe list-transcription-jobs --profile prod aws transcribe list-transcription-jobs --status IN_PROGRESS --profile prod aws transcribe list-transcription-jobs --status QUEUED --profile prod aws transcribe list-transcription-jobs --status COMPLETED --profile prod aws transcribe list-transcription-jobs --status FAILED --profile prod </description>
+    </item>
+    
+    <item>
       <title>Copy from / to / between aws</title>
       <link>https://othrif.github.io/machine_learning/aws/aws_basics.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

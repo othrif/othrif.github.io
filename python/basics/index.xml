@@ -22,6 +22,16 @@ import click import click_config_file @click.command() @click.option(&amp;#39;--
     </item>
     
     <item>
+      <title>Everything python</title>
+      <link>https://othrif.github.io/python/basics/pyenv.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/pyenv.html</guid>
+      <description>Update pyenv To pick up the latest python versions for example to get 3.9.2
+cd /home/`whoami`/.pyenv/plugins/python-build/../.. &amp;amp;&amp;amp; git pull &amp;amp;&amp;amp; cd - pyenv install 3.9.2 </description>
+    </item>
+    
+    <item>
       <title>Functools:reduce()</title>
       <link>https://othrif.github.io/python/basics/functools.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -71,6 +81,15 @@ Count number of occurences import itertools for key, group in itertools.groupby(
       <guid>https://othrif.github.io/python/basics/dir_manip.html</guid>
       <description>Create dir if it does not exist import os path=&amp;#39;/tmp/test&amp;#39; if not os.path.exists(path): os.mkdir(path) Do something if dir exists (alternative) import pathlib data_dir = pathlib.Path(&amp;#39;data/&amp;#39;) if not data_dir.exists(): print(&amp;#39;do something&amp;#39;) do something  Change directory os.chdir(path) print(f&amp;#39;New location is: {os.getcwd()!r}&amp;#39;) New location is: &#39;/private/tmp/test&#39;  Create file in directory and list Options available: os.O_RDONLY, os.O_WRONLY, os.O_RDWR, os.O_CREAT, os.O_APPEND
 fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file print(f&amp;#39;Intial file: {os.listdir(path)}&amp;#39;) # list content of directory os.</description>
+    </item>
+    
+    <item>
+      <title>Membership test</title>
+      <link>https://othrif.github.io/python/basics/membership.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/membership.html</guid>
+      <description>Pythonic way of checking def contains(haystack, needle): if needle not in haystack: raise ValueError(&amp;#39;Needle not found&amp;#39;) contains([23, 42, 0xbadc0ffee], &amp;#39;needle&amp;#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &amp;lt;ipython-input-4-c0a79d64f7a4&amp;gt; in &amp;lt;module&amp;gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 ----&amp;gt; 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &amp;lt;ipython-input-4-c0a79d64f7a4&amp;gt; in contains(haystack, needle) 1 def contains(haystack, needle): 2 if needle not in haystack: ----&amp;gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  With a loop def contains(haystack, needle): for item in haystack: if item == needle: return raise ValueError(&amp;#39;Needle not found&amp;#39;) contains([23, 42, 0xbadc0ffee], &amp;#39;needle&amp;#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &amp;lt;ipython-input-6-c605d648b237&amp;gt; in &amp;lt;module&amp;gt; 4 return 5 raise ValueError(&#39;Needle not found&#39;) ----&amp;gt; 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &amp;lt;ipython-input-6-c605d648b237&amp;gt; in contains(haystack, needle) 3 if item == needle: 4 return ----&amp;gt; 5 raise ValueError(&#39;Needle not found&#39;) 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  Use for loop with else branch Little bit confusing though, so avoid</description>
     </item>
     
     <item>
