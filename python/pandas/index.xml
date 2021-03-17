@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python - Othmane Rifki</title>
+    <link>https://othrif.github.io/python/pandas/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/python/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Increase display size</title>
+      <link>https://othrif.github.io/python/pandas/display.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/pandas/display.html</guid>
+      <description>For columns and rows import pandas as pd pd.set_option(&amp;#39;display.max_colwidth&amp;#39;, 9999) pd.set_option(&amp;#39;display.max_rows&amp;#39;, 9999) </description>
+    </item>
+    
+  </channel>
+</rss>

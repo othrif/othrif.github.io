@@ -118,6 +118,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/pandas/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/python/plotting/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -269,12 +274,22 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/basics/hashing.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/linux/basics/files_in_folder.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/python/basics/id_object.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/pandas/display.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

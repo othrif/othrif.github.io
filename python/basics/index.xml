@@ -44,6 +44,17 @@ You’re doing a fold or reduction when you reduce a list of items to a single c
     </item>
     
     <item>
+      <title>Hashing strings</title>
+      <link>https://othrif.github.io/python/basics/hashing.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/hashing.html</guid>
+      <description>Hashing strings A hash function is a function that takes input of a variable length sequence of bytes and converts it to a fixed length sequence.
+You will need to pass byte encoding or encode string.
+Used to encode unique filenames import hashlib import uuid for _ in range(3): filename = hashlib.sha1(&amp;#39;myfile&amp;#39;.encode(&amp;#39;utf-8&amp;#39;)).hexdigest()[:8]+&amp;#39;_&amp;#39;+str(uuid.uuid4().hex) print(filename) b3580ab4_2aa33c2df5bc4f569d83d6924d04541c b3580ab4_7c170be56bd0466cac020e18189b842d b3580ab4_8e518d7fdffb4eb0bde3cfc0d7cec3dc  Available algorithms import hashlib print(hashlib.algorithms_available) # lists all the algorithms available in the system, print(hashlib.</description>
+    </item>
+    
+    <item>
       <title>id() of an object</title>
       <link>https://othrif.github.io/python/basics/id_object.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
