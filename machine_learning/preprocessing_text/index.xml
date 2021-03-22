@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Get characters from words</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_text/split_word.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_text/split_word.html</guid>
+      <description>list(set(&amp;#39;hello&amp;#39;)) [&#39;h&#39;, &#39;o&#39;, &#39;l&#39;, &#39;e&#39;]  </description>
+    </item>
+    
+    <item>
       <title>Reading embedding file</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_text/load_embedding.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

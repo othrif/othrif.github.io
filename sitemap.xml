@@ -174,6 +174,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/pytorch/cuda_check.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/basics/dl_server.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -254,12 +259,22 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/numpy/unique.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/linux/basics/find_files.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/python/basics/functools.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/preprocessing_text/split_word.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -380,6 +395,11 @@
   
   <url>
     <loc>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/keywords.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

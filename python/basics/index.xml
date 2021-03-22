@@ -114,6 +114,16 @@ import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime
     </item>
     
     <item>
+      <title>Python built-in keywords</title>
+      <link>https://othrif.github.io/python/basics/keywords.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/keywords.html</guid>
+      <description>Check keywords import keyword print(keyword.kwlist) [&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;async&#39;, &#39;await&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]  Use keywords as variable Add a trailing underscore
+global var global_ = 2 </description>
+    </item>
+    
+    <item>
       <title>Remove everything after a character in a string</title>
       <link>https://othrif.github.io/python/basics/remove_after_string.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

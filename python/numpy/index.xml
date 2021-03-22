@@ -31,6 +31,15 @@ import copy a = np.</description>
     </item>
     
     <item>
+      <title>Find and count unique elements in array</title>
+      <link>https://othrif.github.io/python/numpy/unique.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/unique.html</guid>
+      <description>Find unique element in array import numpy as np v = [1,0, 1, 2, 1, 1, 1, 2, 0, 0, 2] np.unique(v) array([0, 1, 2])  Count how many occurences np.bincount(v) array([3, 5, 3])  </description>
+    </item>
+    
+    <item>
       <title>Searching</title>
       <link>https://othrif.github.io/python/numpy/searching_where.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
