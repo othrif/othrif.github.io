@@ -151,6 +151,16 @@ global var global_ = 2 </description>
     </item>
     
     <item>
+      <title>Tuple and namedtuple</title>
+      <link>https://othrif.github.io/python/basics/namedtuple.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/namedtuple.html</guid>
+      <description>Tuple The standard tuple uses numerical indexes to access its members.
+bob = (&amp;#39;Bob&amp;#39;, 30, &amp;#39;male&amp;#39;) print(f&amp;#39;Representation:{bob}&amp;#39;) jane = (&amp;#39;Jane&amp;#39;, 29, &amp;#39;female&amp;#39;) print(f&amp;#39;\nField by index: {jane[0]}&amp;#39;) print(&amp;#39;\nFields by index:&amp;#39;) for p in [ bob, jane ]: print(&amp;#39;%sis a %dyear old %s&amp;#39; % p) Representation:(&#39;Bob&#39;, 30, &#39;male&#39;) Field by index: Jane Fields by index: Bob is a 30 year old male Jane is a 29 year old female  Namedtuple remembering which index should be used for each value can lead to errors.</description>
+    </item>
+    
+    <item>
       <title>Using pipenv and saving python environment</title>
       <link>https://othrif.github.io/python/basics/pipenv.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

@@ -31,12 +31,30 @@ import copy a = np.</description>
     </item>
     
     <item>
+      <title>Dot product</title>
+      <link>https://othrif.github.io/python/numpy/dot_product.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/dot_product.html</guid>
+      <description>Calculate dot product import numpy as np X = np.array([[1,2],[3,4],[5,6],[7,8],[9,10]]) Y = np.array([1,2,3,4,5]) np.dot(X.T,Y) array([ 95, 110])  X.T.dot(Y) array([ 95, 110])  </description>
+    </item>
+    
+    <item>
       <title>Find and count unique elements in array</title>
       <link>https://othrif.github.io/python/numpy/unique.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/python/numpy/unique.html</guid>
       <description>Find unique element in array import numpy as np v = [1,0, 1, 2, 1, 1, 1, 2, 0, 0, 2] np.unique(v) array([0, 1, 2])  Count how many occurences np.bincount(v) array([3, 5, 3])  </description>
+    </item>
+    
+    <item>
+      <title>Find index of elment with where</title>
+      <link>https://othrif.github.io/python/numpy/where.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/where.html</guid>
+      <description>import numpy as np v = np.array([1,0, 1, 2, 1, 1, 1, 2, 0, 0, 2]) np.where(v &amp;gt;= 2, 1, 0) array([0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1])  </description>
     </item>
     
     <item>

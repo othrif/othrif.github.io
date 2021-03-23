@@ -16,16 +16,16 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Torch tensor dimensionality" />
-<meta property="og:description" content="import torch x = torch.randn(10,1000) x.shape torch.Size([10, 1000])  Mean of each row at the time in tensor form y = x.mean(1)[:, None] y.shape torch.Size([10, 1])  Mean each row at the time in vector form z = x.mean(1) z.shape torch.Size([10])  Re-arange matrix dimensions torch.arange(0,6).view(2,3) tensor([[0, 1, 2], [3, 4, 5]])  " />
+<meta property="og:title" content="Find index of elment with where" />
+<meta property="og:description" content="import numpy as np v = np.array([1,0, 1, 2, 1, 1, 1, 2, 0, 0, 2]) np.where(v &gt;= 2, 1, 0) array([0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1])  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/pytorch/tensor_dim.html" />
+<meta property="og:url" content="https://othrif.github.io/python/numpy/where.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Torch tensor dimensionality"/>
-<meta name="twitter:description" content="import torch x = torch.randn(10,1000) x.shape torch.Size([10, 1000])  Mean of each row at the time in tensor form y = x.mean(1)[:, None] y.shape torch.Size([10, 1])  Mean each row at the time in vector form z = x.mean(1) z.shape torch.Size([10])  Re-arange matrix dimensions torch.arange(0,6).view(2,3) tensor([[0, 1, 2], [3, 4, 5]])  "/>
+<meta name="twitter:title" content="Find index of elment with where"/>
+<meta name="twitter:description" content="import numpy as np v = np.array([1,0, 1, 2, 1, 1, 1, 2, 0, 0, 2]) np.where(v &gt;= 2, 1, 0) array([0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1])  "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -33,9 +33,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Torch tensor dimensionality",
-  "url": "https:\/\/othrif.github.io\/machine_learning\/pytorch\/tensor_dim.html",
-  "wordCount": "49",
+  "headline": "Find index of elment with where",
+  "url": "https:\/\/othrif.github.io\/python\/numpy\/where.html",
+  "wordCount": "32",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -45,7 +45,7 @@
 }
 </script> 
 
-    <title>Torch tensor dimensionality</title>
+    <title>Find index of elment with where</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -138,32 +138,17 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Torch tensor dimensionality</h1>
+    <h1 class="technical_note_title">Find index of elment with where</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">x</span><span class="o">.</span><span class="n">shape</span>
-</code></pre></div><pre><code>torch.Size([10, 1000])
-</code></pre>
-<h3 id="mean-of-each-row-at-the-time-in-tensor-form">Mean of each row at the time in tensor form</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)[:,</span> <span class="bp">None</span><span class="p">]</span>
-<span class="n">y</span><span class="o">.</span><span class="n">shape</span>
-</code></pre></div><pre><code>torch.Size([10, 1])
-</code></pre>
-<h3 id="mean-each-row-at-the-time-in-vector-form">Mean each row at the time in vector form</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">z</span><span class="o">.</span><span class="n">shape</span>
-</code></pre></div><pre><code>torch.Size([10])
-</code></pre>
-<h3 id="re-arange-matrix-dimensions">Re-arange matrix dimensions</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></div><pre><code>tensor([[0, 1, 2],
-        [3, 4, 5]])
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div><pre><code>array([0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1])
 </code></pre>
 
 </div>
