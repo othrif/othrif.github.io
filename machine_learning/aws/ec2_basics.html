@@ -17,7 +17,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="EC2 basics" />
-<meta property="og:description" content="Describe instances aws ec2 describe-instances --profile personal ssh to an EC2 instance ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt; Run aws configure to put in your credentials to have access to s3." />
+<meta property="og:description" content="Describe instances aws ec2 describe-instances --profile personal ssh to an EC2 instance chmod 600 &lt;/path/my-key-pair.pem&gt; ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt; Run aws configure to put in your credentials to have access to s3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/aws/ec2_basics.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -25,7 +25,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="EC2 basics"/>
-<meta name="twitter:description" content="Describe instances aws ec2 describe-instances --profile personal ssh to an EC2 instance ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt; Run aws configure to put in your credentials to have access to s3."/>
+<meta name="twitter:description" content="Describe instances aws ec2 describe-instances --profile personal ssh to an EC2 instance chmod 600 &lt;/path/my-key-pair.pem&gt; ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt; Run aws configure to put in your credentials to have access to s3."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -35,7 +35,7 @@
   "@type": "BlogPosting",
   "headline": "EC2 basics",
   "url": "https:\/\/othrif.github.io\/machine_learning\/aws\/ec2_basics.html",
-  "wordCount": "31",
+  "wordCount": "34",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -148,7 +148,8 @@ MathJax.Hub.Config({
   <h3 id="describe-instances">Describe instances</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">aws ec2 describe-instances --profile personal
 </code></pre></div><h3 id="ssh-to-an-ec2-instance">ssh to an EC2 instance</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt;
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">chmod <span class="m">600</span> &lt;/path/my-key-pair.pem&gt;
+ssh -i &lt;/path/my-key-pair.pem&gt; ec2-user@&lt;Public IPv4 DNS&gt;
 </code></pre></div><p>Run <code>aws configure</code> to put in your credentials to have access to s3.</p>
 
 </div>
