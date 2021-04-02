@@ -31,6 +31,18 @@ Key methods for numeric import math print(f&amp;#39;Absolutve value: {abs(-34.5)
     </item>
     
     <item>
+      <title>Queues</title>
+      <link>https://othrif.github.io/coding/python/queues.html</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/coding/python/queues.html</guid>
+      <description>Deque Deques are a generalization of stacks and queues (the name is pronounced “deck” and is short for “double-ended queue”). Deques support thread-safe, memory efficient appends and pops from either side of the deque with approximately the same O(1) performance in either direction.
+Call: class collections.deque([iterable[, maxlen]])
+if maxlen is specifified, deque is bounded to the specified maximum length.
+Basic operations from collections import deque d = deque(&amp;#39;ghi&amp;#39;) for elem in d: print(elem.</description>
+    </item>
+    
+    <item>
       <title>Strings</title>
       <link>https://othrif.github.io/coding/python/strings.html</link>
       <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>

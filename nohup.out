@@ -1,0 +1,82 @@
+[I 2021-04-01 10:00:56.688 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-01 10:00:57.055 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-01 10:00:57.055 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-01 10:00:57.055 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-04-01 10:00:57.117 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-01 10:00:57.118 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-01 10:00:57.119 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-01 10:00:57.123 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-01 10:00:57.130 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-01 10:00:57.130 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-01 10:00:57.130 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-01 10:00:57.130 ServerApp] http://localhost:8888/lab?token=8b3e85fb2e8b14e40699b64e602c2599f82a553f3da75486
+[I 2021-04-01 10:00:57.130 ServerApp]  or http://127.0.0.1:8888/lab?token=8b3e85fb2e8b14e40699b64e602c2599f82a553f3da75486
+[I 2021-04-01 10:00:57.130 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-01 10:00:57.149 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-33300-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=8b3e85fb2e8b14e40699b64e602c2599f82a553f3da75486
+     or http://127.0.0.1:8888/lab?token=8b3e85fb2e8b14e40699b64e602c2599f82a553f3da75486
+[I 2021-04-01 10:01:01.913 LabApp] Build is up to date
+[W 2021-04-01 10:01:02.811 ServerApp] 404 GET /api/contents/ch03.ipynb?content=0&1617285662803 (::1): No such file or directory: ch03.ipynb
+[W 2021-04-01 10:01:02.812 ServerApp] No such file or directory: ch03.ipynb
+[W 2021-04-01 10:01:02.813 ServerApp] 404 GET /api/contents/ch03.ipynb?content=0&1617285662803 (::1) 3.19ms referer=http://localhost:8888/lab
+-\|/-\|/-\|/-[I 2021-04-01 10:01:24.218 ServerApp] Copying linux/basics/sftp_download.md to /linux/basics
+[I 2021-04-01 10:02:28.580 ServerApp] Saving file at /linux/basics/sftp_download.md
+[I 2021-04-02 10:19:52.355 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-02 10:19:52.760 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-02 10:19:52.760 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-02 10:19:52.760 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-04-02 10:19:52.823 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-02 10:19:52.824 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-02 10:19:52.824 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-02 10:19:52.828 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-02 10:19:52.834 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-02 10:19:52.835 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-02 10:19:52.835 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-02 10:19:52.835 ServerApp] http://localhost:8888/lab?token=48ae35c6ba37bded2a46294ad40564c69b26c8600faab4d9
+[I 2021-04-02 10:19:52.835 ServerApp]  or http://127.0.0.1:8888/lab?token=48ae35c6ba37bded2a46294ad40564c69b26c8600faab4d9
+[I 2021-04-02 10:19:52.835 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-02 10:19:52.857 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-12330-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=48ae35c6ba37bded2a46294ad40564c69b26c8600faab4d9
+     or http://127.0.0.1:8888/lab?token=48ae35c6ba37bded2a46294ad40564c69b26c8600faab4d9
+[I 2021-04-02 10:19:57.580 LabApp] Build is up to date
+[W 2021-04-02 10:19:58.996 ServerApp] 404 GET /api/contents/022221/prep?1617373198991 (::1): No such file or directory: 022221/prep
+[W 2021-04-02 10:19:58.996 ServerApp] No such file or directory: 022221/prep
+[W 2021-04-02 10:19:58.997 ServerApp] 404 GET /api/contents/022221/prep?1617373198991 (::1) 2.06ms referer=http://localhost:8888/lab
+-\|/-\|/-\|/-\[I 2021-04-02 10:20:07.010 ServerApp] Kernel started: 15ba3ac0-4938-4be5-9090-585678ce5762
+[W 2021-04-02 10:20:10.551 ServerApp] Got events for closed stream None
+[I 2021-04-02 10:20:12.965 ServerApp] Copying machine_learning/aws/aws_basics.ipynb to /machine_learning/aws
+[I 2021-04-02 10:20:48.017 ServerApp] Kernel started: 7322373e-643e-4d09-807d-7e20fbc05f7d
+[W 2021-04-02 10:21:16.006 ServerApp] delete /machine_learning/aws/aws_basics.md
+[I 2021-04-02 10:21:18.191 ServerApp] Saving file at /machine_learning/aws/s3_basics.ipynb
+[I 2021-04-02 10:21:20.161 ServerApp] Saving file at /machine_learning/aws/ec2_basics.ipynb
+[I 2021-04-02 10:21:31.839 ServerApp] Saving file at /machine_learning/aws/s3_basics.ipynb
+[I 2021-04-02 10:21:32.943 ServerApp] Starting buffering for 7322373e-643e-4d09-807d-7e20fbc05f7d:d9682d3a-1758-4504-ab98-e163a36a4ded
+[I 2021-04-02 10:21:37.785 ServerApp] Saving file at /machine_learning/aws/ec2_basics.ipynb
+[I 2021-04-02 10:21:39.753 ServerApp] Kernel started: 971b0591-76e5-4f97-88a3-c2af77c7d401
+[I 2021-04-02 10:21:42.345 ServerApp] Starting buffering for 971b0591-76e5-4f97-88a3-c2af77c7d401:c4ec001b-0a2e-4847-b306-9fa1a378251f
+[I 2021-04-02 10:51:37.876 ServerApp] Saving file at /machine_learning/aws/ec2_basics.ipynb
+[I 2021-04-02 10:58:39.388 ServerApp] Saving file at /machine_learning/aws/ec2_basics.ipynb
+[I 2021-04-02 10:59:21.158 ServerApp] Saving file at /machine_learning/aws/ec2_basics.ipynb
+[I 2021-04-02 10:59:22.420 ServerApp] Starting buffering for 15ba3ac0-4938-4be5-9090-585678ce5762:27fa7975-cf4d-44af-9032-32f719e51b2a
+[I 2021-04-02 11:04:07.523 ServerApp] 302 GET /?token=48ae35c6ba37bded2a46294ad40564c69b26c8600faab4d9 (::1) 1.05ms
+ 1: 0x1000b0718 node::Abort() [/usr/local/bin/node]
+ 2: 0x100086cce node::PlatformInit() [/usr/local/bin/node]
+ 3: 0x1000866ee node::InitializeOncePerProcess(int, char**) [/usr/local/bin/node]
+ 4: 0x100086f18 node::Start(int, char**) [/usr/local/bin/node]
+ 5: 0x7fff205c1621 start [/usr/lib/system/libdyld.dylib]
+ 6: 0x2 
+[W 2021-04-02 11:04:10.459 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2021-04-02 11:05:29.787 ServerApp] 409 PATCH /api/contents/linux/basics/ps_time.md?1617375929756 (::1): File already exists: linux/basics/system_info.md
+[W 2021-04-02 11:05:29.787 ServerApp] File already exists: linux/basics/system_info.md
+[W 2021-04-02 11:05:29.788 ServerApp] 409 PATCH /api/contents/linux/basics/ps_time.md?1617375929756 (::1) 1.40ms referer=http://localhost:8888/lab/tree/linux/basics/ps_running.md
+[I 2021-04-02 11:06:09.488 ServerApp] Saving file at /linux/basics/sftp_access.md
+[I 2021-04-02 11:38:53.416 ServerApp] Saving file at /linux/basics/ps_running.md
+[I 2021-04-02 11:38:54.492 ServerApp] Starting buffering for 15ba3ac0-4938-4be5-9090-585678ce5762:957d748a-6609-44dc-b8bc-b28369a3735d

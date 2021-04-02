@@ -114,6 +114,15 @@ import datetime name = &amp;#39;Othmane&amp;#39; age = 30 anniversary = datetime
     </item>
     
     <item>
+      <title>Print string at a fixed width</title>
+      <link>https://othrif.github.io/python/basics/pad_print.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/pad_print.html</guid>
+      <description>a_string = &amp;#34;abc&amp;#34; fixed_string = &amp;#34;{0:&amp;gt;5}&amp;#34;.format(a_string) print(f&amp;#39;|{fixed_string}|&amp;#39;) | abc|  </description>
+    </item>
+    
+    <item>
       <title>Python built-in keywords</title>
       <link>https://othrif.github.io/python/basics/keywords.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

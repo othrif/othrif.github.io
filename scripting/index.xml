@@ -16,7 +16,7 @@
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/scripting/bash.html</guid>
-      <description>Multi-line comments : &amp;#39; This is a very neat comment in bash &amp;#39; Output common lines between two files grep -Fxf file1 file2 # using grep sort file1 file2 | uniq -d # using sort </description>
+      <description>Multi-line comments : &amp;#39; This is a very neat comment in bash &amp;#39; Output common lines between two files grep -Fxf file1 file2 # using grep sort file1 file2 | uniq -d # using sort Replace white space with underscore in filename for f in *; do mv &amp;#34;$f&amp;#34; `echo $f | tr &amp;#39; &amp;#39; &amp;#39;_&amp;#39;`; done Processing a large number of files To avoid the error Argument list too long:</description>
     </item>
     
     <item>

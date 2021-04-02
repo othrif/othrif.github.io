@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Access and download files via sftp</title>
+      <link>https://othrif.github.io/linux/basics/sftp_access.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/sftp_access.html</guid>
+      <description>Access server sftp username@server Download from server sftp username@server:./&amp;#39;my\ file.tar.gz . </description>
+    </item>
+    
+    <item>
       <title>Choose random files from a file</title>
       <link>https://othrif.github.io/linux/basics/rand_files.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -26,6 +35,15 @@
       
       <guid>https://othrif.github.io/linux/basics/copy_rand_file.html</guid>
       <description>To be used when i want to copy one file from many subfolders in a source folder to local subfolders for i in $(ls /source/of/folders); do pat=&amp;#34;/source/of/folders/$i/&amp;#34;; cp $pat/$(ls $pat | shuf -n 1) $i/.; done If I want to copy the n first files from one subdirectory to another find &amp;lt;source&amp;gt; -maxdepth 1 -type f | head -n &amp;lt;number of files to copy&amp;gt; | xargs -I{} cp &amp;#34;{}&amp;#34; &amp;lt;destination&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Details about a process and time it was running</title>
+      <link>https://othrif.github.io/linux/basics/ps_running.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/ps_running.html</guid>
+      <description>Details about a process ps axfu ps -p &amp;lt;PID&amp;gt; How long it has been running ps -p {PID-HERE} -o etime # H:M:S ps -p {PID-HERE} -o etimes # seconds </description>
     </item>
     
     <item>
@@ -48,10 +66,10 @@
     
     <item>
       <title>Linux system info</title>
-      <link>https://othrif.github.io/linux/basics/system_info-copy1.html</link>
+      <link>https://othrif.github.io/linux/basics/system_info.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
-      <guid>https://othrif.github.io/linux/basics/system_info-copy1.html</guid>
+      <guid>https://othrif.github.io/linux/basics/system_info.html</guid>
       <description>To find hadrware information about your linux system, few commmands report useful infromation. If several options are given, they perform similar functions.
 Pretty display of main things! sudo apt install inxi inxi Linux/kernel information cat /proc/version Linux version cat /etc/issue # or lsb_release -a CPU and processing units lscpu cat /proc/cpuinfo Disk space of file systems pydf # pretty df -H Check RAM free -m List all hardware hwinfo --short sudo lshw -short List pci buses and devices connected to them lspci </description>
     </item>

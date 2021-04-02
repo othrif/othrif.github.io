@@ -20,21 +20,30 @@
     </item>
     
     <item>
-      <title>Copy from / to / between aws</title>
-      <link>https://othrif.github.io/machine_learning/aws/aws_basics.html</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      
-      <guid>https://othrif.github.io/machine_learning/aws/aws_basics.html</guid>
-      <description>Copying directory to s3 with structure intact aws s3 sync myDir s3://mybucket --profile prototype Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &amp;#34;*.jpg&amp;#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &amp;#34;another/*&amp;#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.</description>
-    </item>
-    
-    <item>
       <title>Delete objects</title>
       <link>https://othrif.github.io/machine_learning/aws/delete_objects.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/aws/delete_objects.html</guid>
       <description>List objects with a match aws s3 ls s3://mybucket/myfolder --profile prod | grep text_match aws s3 ls s3://mybucket/myfolder --profile prod | grep text_match &amp;gt; to_delete Delete single object aws s3 rm s3://mybucket/myfolder/my_object --profile prod Delete all objects given a text file containing their paths for i in `cat to_delete`; do aws s3 rm s3://mybucket/myfolder/${i} --profile prod; done </description>
+    </item>
+    
+    <item>
+      <title>EC2 basics</title>
+      <link>https://othrif.github.io/machine_learning/aws/ec2_basics.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/aws/ec2_basics.html</guid>
+      <description>Describe instances aws ec2 describe-instances --profile personal ssh to an EC2 instance ssh -i &amp;lt;/path/my-key-pair.pem&amp;gt; ec2-user@&amp;lt;Public IPv4 DNS&amp;gt; Run aws configure to put in your credentials to have access to s3.</description>
+    </item>
+    
+    <item>
+      <title>S3 Copy from / to / between aws</title>
+      <link>https://othrif.github.io/machine_learning/aws/s3_basics.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/aws/s3_basics.html</guid>
+      <description>Copying directory to s3 with structure intact aws s3 sync myDir s3://mybucket --profile prototype Recursively copying S3 objects to a local directory aws s3 cp s3://mybucket . --recursive --profile prototype Recursively copying local files to S3 aws s3 cp myDir s3://mybucket/ --recursive --exclude &amp;#34;*.jpg&amp;#34; --profile prototype Recursively copying S3 objects to another bucket aws s3 cp s3://mybucket/ s3://mybucket2/ --recursive --exclude &amp;#34;another/*&amp;#34; --profile prototype Copying an S3 object to a local file aws s3 cp s3://mybucket/test.</description>
     </item>
     
   </channel>
