@@ -19,7 +19,8 @@
 <meta property="og:title" content="Play sound in jupyter and other libraries" />
 <meta property="og:description" content="See resources here: https://realpython.com/playing-and-recording-sound-python/
 filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Play in CLI From sox:
-play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&#39;ignore&#39;) newfile=&#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element. Play sound with pydub Some useful details here" />
+play existing-file.wav With start and end delimiters
+play existing-file.wav trim &lt;start&gt; &lt;duration&gt; Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&#39;ignore&#39;) newfile=&#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -29,7 +30,8 @@ play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.A
 <meta name="twitter:title" content="Play sound in jupyter and other libraries"/>
 <meta name="twitter:description" content="See resources here: https://realpython.com/playing-and-recording-sound-python/
 filename = &#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&#39; Play in CLI From sox:
-play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&#39;ignore&#39;) newfile=&#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element. Play sound with pydub Some useful details here"/>
+play existing-file.wav With start and end delimiters
+play existing-file.wav trim &lt;start&gt; &lt;duration&gt; Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&#39;ignore&#39;) newfile=&#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element."/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -39,7 +41,7 @@ play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.A
   "@type": "BlogPosting",
   "headline": "Play sound in jupyter and other libraries",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/play_sound.html",
-  "wordCount": "255",
+  "wordCount": "265",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -154,6 +156,8 @@ MathJax.Hub.Config({
 </code></pre></div><h1 id="play-in-cli">Play in CLI</h1>
 <p>From <code>sox</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">play existing-file.wav
+</code></pre></div><p>With start and end delimiters</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">play existing-file.wav trim &lt;start&gt; &lt;duration&gt;
 </code></pre></div><h1 id="play-sound-in-jupyter">Play sound in Jupyter</h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="kn">as</span> <span class="nn">ipd</span>
 <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -263,7 +267,7 @@ Your browser does not support the audio element.
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 89 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 91 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

@@ -49,6 +49,16 @@ Markup : _Emphasized text_ or *Emphasized text*  Strikethrough text</description
     </item>
     
     <item>
+      <title>Video to gif</title>
+      <link>https://othrif.github.io/scripting/movgif.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/movgif.html</guid>
+      <description>Mov to gif Particularly useful to animate screen records.
+ffmpeg -i input.mov -pix_fmt rgb8 -r 10 output.gif &amp;amp;&amp;amp; gifsicle -O3 output.gif -o output.gif </description>
+    </item>
+    
+    <item>
       <title>Working with git</title>
       <link>https://othrif.github.io/scripting/git.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

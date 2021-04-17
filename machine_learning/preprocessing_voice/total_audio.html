@@ -18,7 +18,8 @@
 
 <meta property="og:title" content="total time of audio" />
 <meta property="og:description" content="Calculate the total time of all audio files at a location.
-EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; " />
+EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; Alternative that works with large number of files:
+EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `find . -iname &#34;*.wav&#34; -exec soxi {} \; | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/total_audio.html" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -27,7 +28,8 @@ EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="total time of audio"/>
 <meta name="twitter:description" content="Calculate the total time of all audio files at a location.
-EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; "/>
+EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; Alternative that works with large number of files:
+EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `find . -iname &#34;*.wav&#34; -exec soxi {} \; | grep Duration | awk -F&#34; &#34; &#39;{print $3}&#39; | grep :`; do sum=&#34;$(date -u -d &#34;$EPOCH$i&#34; &#43;%s)&#43; $sum&#34;; done; echo &#34;total = `echo $sum| bc` seconds&#34; "/>
 <meta name="generator" content="Hugo 0.77.0" />
 
     
@@ -37,7 +39,7 @@ EPOCH=&#39;jan 1 1970&#39;; sum=0; for i in `soxi * | grep Duration | awk -F&#34
   "@type": "BlogPosting",
   "headline": "total time of audio",
   "url": "https:\/\/othrif.github.io\/machine_learning\/preprocessing_voice\/total_audio.html",
-  "wordCount": "47",
+  "wordCount": "97",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -149,6 +151,8 @@ MathJax.Hub.Config({
 
   <p>Calculate the total time of all audio files at a location.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">EPOCH</span><span class="o">=</span><span class="s1">&#39;jan 1 1970&#39;</span><span class="p">;</span> <span class="nv">sum</span><span class="o">=</span>0<span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>soxi * <span class="p">|</span> grep Duration <span class="p">|</span> awk -F<span class="s2">&#34; &#34;</span> <span class="s1">&#39;{print $3}&#39;</span> <span class="p">|</span> grep :<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nv">sum</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>date -u -d <span class="s2">&#34;</span><span class="nv">$EPOCH</span><span class="s2"> </span><span class="nv">$i</span><span class="s2">&#34;</span> +%s<span class="k">)</span><span class="s2"> + </span><span class="nv">$sum</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;total = `echo </span><span class="nv">$sum</span><span class="s2"> | bc` seconds&#34;</span>
+</code></pre></div><p>Alternative that works with large number of files:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">EPOCH</span><span class="o">=</span><span class="s1">&#39;jan 1 1970&#39;</span><span class="p">;</span> <span class="nv">sum</span><span class="o">=</span>0<span class="p">;</span> <span class="k">for</span> i in <span class="sb">`</span>find . -iname <span class="s2">&#34;*.wav&#34;</span> -exec soxi <span class="o">{}</span> <span class="se">\;</span> <span class="p">|</span> grep Duration <span class="p">|</span> awk -F<span class="s2">&#34; &#34;</span> <span class="s1">&#39;{print $3}&#39;</span> <span class="p">|</span> grep :<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nv">sum</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>date -u -d <span class="s2">&#34;</span><span class="nv">$EPOCH</span><span class="s2"> </span><span class="nv">$i</span><span class="s2">&#34;</span> +%s<span class="k">)</span><span class="s2"> + </span><span class="nv">$sum</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;total = `echo </span><span class="nv">$sum</span><span class="s2"> | bc` seconds&#34;</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
 </code></pre></div>
 </div>
@@ -174,7 +178,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 89 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 91 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

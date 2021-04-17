@@ -60,7 +60,8 @@ ffmpeg -i output.mp4 ffprobe ouptut.mp4 </description>
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</guid>
       <description>See resources here: https://realpython.com/playing-and-recording-sound-python/
 filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; Play in CLI From sox:
-play existing-file.wav Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&amp;#39;ignore&amp;#39;) newfile=&amp;#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&amp;#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element. Play sound with pydub Some useful details here</description>
+play existing-file.wav With start and end delimiters
+play existing-file.wav trim &amp;lt;start&amp;gt; &amp;lt;duration&amp;gt; Play sound in Jupyter import IPython.display as ipd ipd.Audio(filename) Your browser does not support the audio element. Play mp3 in Jupyter and load with librosa # common imports import IPython.display as ipd import librosa import warnings warnings.filterwarnings(&amp;#39;ignore&amp;#39;) newfile=&amp;#39;/Users/othrif/spectrum/voice/learning/simple_audio/test/test.mp3&amp;#39; ipd.display(ipd.Audio(newfile)) sound,sr = librosa.load(newfile) Your browser does not support the audio element.</description>
     </item>
     
     <item>
@@ -90,7 +91,7 @@ rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import 
       
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/ffmpeg.html</guid>
       <description>Calculate the total time of all audio files at a location.
-ffmpeg -ss START_TIME_IN_MS -t DURATION_IN_MS -i INPUT OUTPUT.mp4 </description>
+ffmpeg -ss START_TIME_IN_S -t DURATION_IN_S -i INPUT OUTPUT.mp4 </description>
     </item>
     
     <item>
@@ -100,7 +101,8 @@ ffmpeg -ss START_TIME_IN_MS -t DURATION_IN_MS -i INPUT OUTPUT.mp4 </description>
       
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/total_audio.html</guid>
       <description>Calculate the total time of all audio files at a location.
-EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `soxi * | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; </description>
+EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `soxi * | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; Alternative that works with large number of files:
+EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `find . -iname &amp;#34;*.wav&amp;#34; -exec soxi {} \; | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; </description>
     </item>
     
     <item>

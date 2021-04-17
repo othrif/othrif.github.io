@@ -95,6 +95,17 @@ fd = os.open(&amp;#39;mytext.txt&amp;#39;, os.O_RDONLY | os.O_CREAT) # open file
     </item>
     
     <item>
+      <title>map, zip, eval, ord, dir, pow  function</title>
+      <link>https://othrif.github.io/python/basics/map.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/map.html</guid>
+      <description>map() The map() function allows you to execute a specified function for each item in an iterable that it takes as input(both function and iterable).
+| Syntax: map(function, iterable)
+def square(n): return n * n num_list = [1,2,3,4] result = map(square, num_list) print(&amp;#39;Mapped result is: &amp;#39;, list(result)) Mapped result is: [1, 4, 9, 16]  zip() If we pass two iterators in zip() function, both iterators containing the same number of elements, then the zip() function will return an iterator of a tuple.</description>
+    </item>
+    
+    <item>
       <title>Membership test</title>
       <link>https://othrif.github.io/python/basics/membership.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
