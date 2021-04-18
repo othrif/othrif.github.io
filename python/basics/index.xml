@@ -76,6 +76,15 @@ Count number of occurences import itertools for key, group in itertools.groupby(
     </item>
     
     <item>
+      <title>Jupyter Watermark</title>
+      <link>https://othrif.github.io/python/basics/watermark.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/watermark.html</guid>
+      <description>%load_ext watermark %watermark -a &amp;#34;Othmane Rifki&amp;#34; -u -d -p numpy,pandas,matplotlib,sklearn Author: Othmane Rifki Last updated: 2021-04-17 numpy : 1.20.1 pandas : 1.2.3 matplotlib: 3.3.4 sklearn : 0.24.1  </description>
+    </item>
+    
+    <item>
       <title>Manipulate maps</title>
       <link>https://othrif.github.io/python/basics/map_manip.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -178,6 +187,16 @@ global var global_ = 2 </description>
       <guid>https://othrif.github.io/python/basics/namedtuple.html</guid>
       <description>Tuple The standard tuple uses numerical indexes to access its members.
 bob = (&amp;#39;Bob&amp;#39;, 30, &amp;#39;male&amp;#39;) print(f&amp;#39;Representation:{bob}&amp;#39;) jane = (&amp;#39;Jane&amp;#39;, 29, &amp;#39;female&amp;#39;) print(f&amp;#39;\nField by index: {jane[0]}&amp;#39;) print(&amp;#39;\nFields by index:&amp;#39;) for p in [ bob, jane ]: print(&amp;#39;%sis a %dyear old %s&amp;#39; % p) Representation:(&#39;Bob&#39;, 30, &#39;male&#39;) Field by index: Jane Fields by index: Bob is a 30 year old male Jane is a 29 year old female  Namedtuple remembering which index should be used for each value can lead to errors.</description>
+    </item>
+    
+    <item>
+      <title>Usage of underscores</title>
+      <link>https://othrif.github.io/python/basics/underscore.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/underscore.html</guid>
+      <description>There are 5 usages of underscores (_) in python
+Single leading underscore _var  _var is intended for internal use. from M import * doesn’t import objects whose names start with an underscore.  # m.py external = &amp;#34;external&amp;#34; _internal = &amp;#34;internal&amp;#34; # main1.py - doesn&amp;#39;t work from m import * print(external) # external print(_internal) # NameError: name &amp;#39;_internal&amp;#39; is not defined # main2.py - work from m import external, _internal print(external) # external print(_internal) # internal # main3.</description>
     </item>
     
     <item>

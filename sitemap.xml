@@ -103,6 +103,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -149,6 +154,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/pandas/df_numpy.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -180,6 +190,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/numpy/angle.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/pandas/categorical.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -249,6 +264,16 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/decision_boundary.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/aws/delete_objects.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -275,6 +300,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/basics/pyenv.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/scaling.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -349,6 +379,21 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/basics/watermark.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/knn.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/linux/basics/system_info.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -360,6 +405,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/plotting/plot_iri.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/logistic_regression.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -400,6 +450,16 @@
   
   <url>
     <loc>https://othrif.github.io/python/basics/membership.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/pandas/missing.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -549,12 +609,22 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/pandas/traintestsplit.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://othrif.github.io/python/basics/namedtuple.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/underscore.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   

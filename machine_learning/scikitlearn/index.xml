@@ -1,0 +1,80 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/scikitlearn/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/scikitlearn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Decision Boundary</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/decision_boundary.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/decision_boundary.html</guid>
+      <description>from matplotlib.colors import ListedColormap import matplotlib.pyplot as plt import numpy as np def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02): # setup marker generator and color map markers = (&amp;#39;s&amp;#39;, &amp;#39;x&amp;#39;, &amp;#39;o&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;v&amp;#39;) colors = (&amp;#39;red&amp;#39;, &amp;#39;blue&amp;#39;, &amp;#39;lightgreen&amp;#39;, &amp;#39;gray&amp;#39;, &amp;#39;cyan&amp;#39;) cmap = ListedColormap(colors[:len(np.unique(y))]) # plot the decision surface x1_min, x1_max = X[:, 0].min() - 1, X[:, 0].max() + 1 x2_min, x2_max = X[:, 1].min() - 1, X[:, 1].max() + 1 xx1, xx2 = np.</description>
+    </item>
+    
+    <item>
+      <title>Decision tree and random forest</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html</guid>
+      <description>Decision tree from sklearn.tree import DecisionTreeClassifier tree_model = DecisionTreeClassifier(criterion=&amp;#39;gini&amp;#39;, max_depth=4, random_state=1) Basic pipeline Collect data from sklearn import datasets import numpy as np iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target print(&amp;#39;Class labels:&amp;#39;, np.unique(y)) Class labels: [0 1 2]  Split data from sklearn.model_selection import train_test_split X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) print(&amp;#39;Labels count in y:&amp;#39;, np.bincount(y)) print(&amp;#39;Labels count in y_train:&amp;#39;, np.bincount(y_train)) print(&amp;#39;Labels count in y_test:&amp;#39;, np.</description>
+    </item>
+    
+    <item>
+      <title>Feature scaling</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/scaling.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/scaling.html</guid>
+      <description>Standardize vs Normalize import numpy as np ex = np.array([0, 1, 2, 3, 4, 5]) # standardize print(&amp;#39;standardized:&amp;#39;, (ex - ex.mean()) / ex.std()) # normalize print(&amp;#39;normalized:&amp;#39;, (ex - ex.min()) / (ex.max() - ex.min())) standardized: [-1.46385011 -0.87831007 -0.29277002 0.29277002 0.87831007 1.46385011] normalized: [0. 0.2 0.4 0.6 0.8 1. ]  X_train = np.random.randn(200, 2) X_test = np.random.randn(200, 2) Standardize from sklearn.preprocessing import MinMaxScaler mms = MinMaxScaler() X_train_norm = mms.fit_transform(X_train) X_test_norm = mms.</description>
+    </item>
+    
+    <item>
+      <title>K-nearest neighbors (knn)</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/knn.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/knn.html</guid>
+      <description>Basic pipeline from sklearn import datasets import numpy as np from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler # Collect data iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target # Split data X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) # Standardize features sc = StandardScaler() sc.fit(X_train) X_train_std = sc.transform(X_train) X_test_std = sc.transform(X_test) knn Algorithm from sklearn.neighbors import KNeighborsClassifier knn = KNeighborsClassifier(n_neighbors=5, p=2, metric=&amp;#39;minkowski&amp;#39;) knn.</description>
+    </item>
+    
+    <item>
+      <title>Linear scikit-learn classifiers</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</guid>
+      <description>Basic linear supervised learning algorithms  Perceptron Linear regression Support vector Machine  from sklearn.linear_model import SGDClassifier ppn = SGDClassifier(loss=&amp;#39;perceptron&amp;#39;) lr = SGDClassifier(loss=&amp;#39;log&amp;#39;) svm = SGDClassifier(loss=&amp;#39;hinge&amp;#39;) Basic pipeline Collect data from sklearn import datasets import numpy as np iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target print(&amp;#39;Class labels:&amp;#39;, np.unique(y)) Class labels: [0 1 2]  Split data from sklearn.model_selection import train_test_split X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.</description>
+    </item>
+    
+    <item>
+      <title>Logistic regression with L1 norm</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/logistic_regression.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/logistic_regression.html</guid>
+      <description>Prepare data from sklearn import datasets import numpy as np # Collect data iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target # Split data from sklearn.model_selection import train_test_split X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) # Standardize data from sklearn.preprocessing import StandardScaler sc = StandardScaler() sc.fit(X_train) X_train_std = sc.transform(X_train) X_test_std = sc.transform(X_test) L1 regulariztion Increase or decrease C to make the regulariztion effect stronger or weaker, respectively.</description>
+    </item>
+    
+    <item>
+      <title>Non-linear SVM kernels</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</guid>
+      <description>Solving non-linear problems using a kernel SVM Kernel methods create nonlinear combinations of the original features to project them into a higher-dimensional space via a mapping $\phi$ where it becomes linearly seperable.
+Kernel function: $\kappa \left( x^{(i)}, x^{(j)} \right) = \phi\left(x^{(i)}\right)^{T} \phi\left(x^{(j)}\right) $
+One of the most widely used kernels is the Gaussian kernel: $\kappa \left( x^{(i)}, x^{(j)} \right) = exp\left( -\gamma || x^{(i)} - x^{(j)} ||^2 \right)$
+Kernel can be interpretted as a similarity measure: 1 if similar, 0 if very dissimilar.</description>
+    </item>
+    
+  </channel>
+</rss>
