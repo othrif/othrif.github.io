@@ -39,6 +39,15 @@
     
     <item>
       <title>K-nearest neighbors (knn)</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</guid>
+      <description>Basic pipeline from sklearn import datasets import numpy as np from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler # Collect data iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target # Split data X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) # Standardize features sc = StandardScaler() sc.fit(X_train) X_train_std = sc.transform(X_train) X_test_std = sc.transform(X_test) knn Algorithm from sklearn.neighbors import KNeighborsClassifier knn = KNeighborsClassifier(n_neighbors=5, p=2, metric=&amp;#39;minkowski&amp;#39;) knn.</description>
+    </item>
+    
+    <item>
+      <title>K-nearest neighbors (knn)</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/knn.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
@@ -74,6 +83,15 @@
 Kernel function: $\kappa \left( x^{(i)}, x^{(j)} \right) = \phi\left(x^{(i)}\right)^{T} \phi\left(x^{(j)}\right) $
 One of the most widely used kernels is the Gaussian kernel: $\kappa \left( x^{(i)}, x^{(j)} \right) = exp\left( -\gamma || x^{(i)} - x^{(j)} ||^2 \right)$
 Kernel can be interpretted as a similarity measure: 1 if similar, 0 if very dissimilar.</description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/pca.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/pca.html</guid>
+      <description>Prep data # Get data import numpy as np import pandas as pd df_wine = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases/wine/wine.data&amp;#39;, header=None) df_wine.columns = [&amp;#39;Class label&amp;#39;, &amp;#39;Alcohol&amp;#39;, &amp;#39;Malic acid&amp;#39;, &amp;#39;Ash&amp;#39;, &amp;#39;Alcalinity of ash&amp;#39;, &amp;#39;Magnesium&amp;#39;, &amp;#39;Total phenols&amp;#39;, &amp;#39;Flavanoids&amp;#39;, &amp;#39;Nonflavanoid phenols&amp;#39;, &amp;#39;Proanthocyanins&amp;#39;, &amp;#39;Color intensity&amp;#39;, &amp;#39;Hue&amp;#39;, &amp;#39;OD280/OD315 of diluted wines&amp;#39;, &amp;#39;Proline&amp;#39;] # Split data from sklearn.model_selection import train_test_split X, y = df_wine.iloc[:, 1:].values, df_wine.iloc[:, 0].values X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.3, stratify=y, random_state=0) # Standardize data from sklearn.</description>
     </item>
     
   </channel>

@@ -31,6 +31,27 @@ import copy a = np.</description>
     </item>
     
     <item>
+      <title>Covariance, Correlation, and eigenvalues</title>
+      <link>https://othrif.github.io/python/numpy/cov_eigen.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/cov_eigen.html</guid>
+      <description>Covariance $\sigma_{ij} = \frac{1}{N} \sum_{k=1}^{N} \left(x_i^{(k)} - \mu_i\right)\left(x_j^{(k)} - \mu_j\right)$
+import numpy as np x = np.array([[1, 2], [1, 1], [2, 0]]) cov_mat = np.cov(x.T) cov_mat array([[ 0.33333333, -0.5 ], [-0.5 , 1. ]])  Correlation Pearson product-moment correlation coefficients.
+$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_{ii}\sigma_{jj}}$
+np.corrcoef(x.T) array([[ 1. , -0.8660254], [-0.8660254, 1. ]])  Eigenvalues and eigenvectors Two methods available np.linalg.eigh and np.linalg.eig, use eigh which is designed for Hermitian matrices which always returns real eigenvalues.</description>
+    </item>
+    
+    <item>
+      <title>Cumulative sum `cumsum`</title>
+      <link>https://othrif.github.io/python/numpy/cumsum.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/cumsum.html</guid>
+      <description>import matplotlib.pyplot as plt import numpy as np v = sorted(np.arange(0,10), reverse=True) tot = sum(v) plt.bar(range(0, 10), v/tot, alpha=0.5, align=&amp;#39;center&amp;#39;) plt.step(range(0, 10), np.cumsum(v)/tot, where=&amp;#39;mid&amp;#39;) plt.ylabel(&amp;#39;Explained variance ratio&amp;#39;) plt.xlabel(&amp;#39;Principal components&amp;#39;) plt.show() </description>
+    </item>
+    
+    <item>
       <title>Dot product</title>
       <link>https://othrif.github.io/python/numpy/dot_product.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

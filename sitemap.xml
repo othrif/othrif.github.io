@@ -234,6 +234,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/basics/combinatorics.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -259,7 +264,17 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/numpy/cov_eigen.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/cpp/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/numpy/cumsum.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -384,6 +399,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -465,6 +485,11 @@
   
   <url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/tf_map_lambda.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/pca.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
