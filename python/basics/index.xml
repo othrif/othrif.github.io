@@ -94,6 +94,16 @@ Count number of occurences import itertools for key, group in itertools.groupby(
     </item>
     
     <item>
+      <title>Logging</title>
+      <link>https://othrif.github.io/python/basics/logging.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/logging.html</guid>
+      <description>In Jupyter notebook import logging logger = logging.getLogger() logger.setLevel(logging.INFO) logging.basicConfig(format=&amp;#39;%(asctime)s- %(message)s&amp;#39;, level=logging.INFO) logging.info(&amp;#39;Admin logged in&amp;#39;) 2021-04-20 09:53:24,168 - Admin logged in  In python script Won&amp;rsquo;t show result here!
+import logging logging.basicConfig(level=logging.DEBUG) logging.debug(&amp;#34;test&amp;#34;) </description>
+    </item>
+    
+    <item>
       <title>Manipulate maps</title>
       <link>https://othrif.github.io/python/basics/map_manip.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -130,6 +140,15 @@ def square(n): return n * n num_list = [1,2,3,4] result = map(square, num_list) 
       
       <guid>https://othrif.github.io/python/basics/membership.html</guid>
       <description>Pythonic way of checking def contains(haystack, needle): if needle not in haystack: raise ValueError(&amp;#39;Needle not found&amp;#39;) contains([23, 42, 0xbadc0ffee], &amp;#39;needle&amp;#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &amp;lt;ipython-input-4-c0a79d64f7a4&amp;gt; in &amp;lt;module&amp;gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 ----&amp;gt; 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &amp;lt;ipython-input-4-c0a79d64f7a4&amp;gt; in contains(haystack, needle) 1 def contains(haystack, needle): 2 if needle not in haystack: ----&amp;gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  With a loop def contains(haystack, needle): for item in haystack: if item == needle: return raise ValueError(&amp;#39;Needle not found&amp;#39;) contains([23, 42, 0xbadc0ffee], &amp;#39;needle&amp;#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &amp;lt;ipython-input-6-c605d648b237&amp;gt; in &amp;lt;module&amp;gt; 4 return 5 raise ValueError(&#39;Needle not found&#39;) ----&amp;gt; 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &amp;lt;ipython-input-6-c605d648b237&amp;gt; in contains(haystack, needle) 3 if item == needle: 4 return ----&amp;gt; 5 raise ValueError(&#39;Needle not found&#39;) 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  Use for loop with else branch Little bit confusing though, so avoid</description>
+    </item>
+    
+    <item>
+      <title>Most frequent element in a list</title>
+      <link>https://othrif.github.io/python/basics/mostfrequent.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/mostfrequent.html</guid>
+      <description>test = [6, 2, 2, 3, 4, 2, 2, 90, 2, 41] most_frequent = max(set(test), key = test.count) print(most_frequent) 2  </description>
     </item>
     
     <item>
@@ -177,6 +196,16 @@ global var global_ = 2 </description>
       
       <guid>https://othrif.github.io/python/basics/substring_key_match.html</guid>
       <description>Using items() + list comprehension test_dict = {&amp;#39;All&amp;#39; : 1, &amp;#39;have&amp;#39; : 2, &amp;#39;good&amp;#39; : 3, &amp;#39;food&amp;#39; : 4} search_key = &amp;#39;ood&amp;#39; res = [val for key, val in test_dict.items() if search_key in key] res [3, 4]  </description>
+    </item>
+    
+    <item>
+      <title>Time your code</title>
+      <link>https://othrif.github.io/python/basics/timeit.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/timeit.html</guid>
+      <description>Using timeit timeit.timeit function only accepts strings. This can be quite annoying if you want to measure larger functions.
+import timeit timeit.timeit(&amp;#39;&amp;#34;-&amp;#34;.join(str(n) for n in range(10_000_000))&amp;#39;, number=1) 2.7127743320000093  Using context manager from contextlib import contextmanager from time import time @contextmanager def timing(description: str) -&amp;gt; None: start = time() yield ellapsed_time = time() - start print(f&amp;#34;{description}: {ellapsed_time}&amp;#34;) with timing(&amp;#34;List Comprehension Example&amp;#34;): s = [x for x in range(10_000_000)] List Comprehension Example: 0.</description>
     </item>
     
     <item>

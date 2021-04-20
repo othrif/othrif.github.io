@@ -429,6 +429,11 @@
   </url>
   
   <url>
+    <loc>https://othrif.github.io/python/basics/logging.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/logistic_regression.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
@@ -475,6 +480,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/pandas/missing.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/mostfrequent.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
@@ -615,6 +625,11 @@
   
   <url>
     <loc>https://othrif.github.io/python/basics/substring_key_match.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://othrif.github.io/python/basics/timeit.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url>
   
