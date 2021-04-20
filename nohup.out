@@ -137,3 +137,37 @@
 [I 2021-04-20 09:54:00.306 ServerApp] Saving file at /python/basics/logging.ipynb
 [I 2021-04-20 09:54:02.905 ServerApp] Starting buffering for ce2092fe-17e4-47ab-9653-49cf1ecf9305:d044d525-e08c-4366-bfc6-c46636324370
 [I 2021-04-20 09:54:03.932 ServerApp] Starting buffering for f70c34ad-e248-4d8f-adfa-d1ed28d8bdd4:62db7834-5b52-49b9-b973-d976b956012f
+[I 2021-04-20 09:57:00.791 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-20 09:57:00.988 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-20 09:57:00.988 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-20 09:57:00.989 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-04-20 09:57:01.021 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-04-20 09:57:01.022 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-04-20 09:57:01.022 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-04-20 09:57:01.023 ServerApp] The port 8891 is already in use, trying another port.
+[W 2021-04-20 09:57:01.027 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-20 09:57:01.029 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-20 09:57:01.029 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-20 09:57:01.032 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-20 09:57:01.036 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-20 09:57:01.037 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-20 09:57:01.037 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-20 09:57:01.037 ServerApp] http://localhost:8892/lab?token=c79957c3c4dcf67d7ec3ef69d9204bc066c62e8940e5cb58
+[I 2021-04-20 09:57:01.037 ServerApp]  or http://127.0.0.1:8892/lab?token=c79957c3c4dcf67d7ec3ef69d9204bc066c62e8940e5cb58
+[I 2021-04-20 09:57:01.037 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-20 09:57:01.051 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-12384-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8892/lab?token=c79957c3c4dcf67d7ec3ef69d9204bc066c62e8940e5cb58
+     or http://127.0.0.1:8892/lab?token=c79957c3c4dcf67d7ec3ef69d9204bc066c62e8940e5cb58
+[I 2021-04-20 09:57:06.107 LabApp] Build is up to date
+-\|/-\|[I 2021-04-20 09:57:17.060 ServerApp] Kernel started: bb30ae78-ff7c-488b-b5f2-2f7b65f016c1
+[W 2021-04-20 09:57:20.677 ServerApp] Got events for closed stream None
+[I 2021-04-20 09:59:16.899 ServerApp] Saving file at /python/basics/timeit.ipynb
+[I 2021-04-20 10:01:16.939 ServerApp] Saving file at /python/basics/timeit.ipynb
+[I 2021-04-20 11:13:17.132 ServerApp] Saving file at /python/basics/timeit.ipynb
+[I 2021-04-20 11:13:58.762 ServerApp] Saving file at /python/basics/timeit.ipynb
+[I 2021-04-20 11:14:05.233 ServerApp] Saving file at /python/basics/timeit.ipynb
+[I 2021-04-20 11:14:05.781 ServerApp] Starting buffering for bb30ae78-ff7c-488b-b5f2-2f7b65f016c1:e5dfd9b8-525f-4b3a-8c6e-ef35aece0216

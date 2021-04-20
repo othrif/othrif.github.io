@@ -16,7 +16,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Time your code" />
+<meta property="og:title" content="Time and profile your code" />
 <meta property="og:description" content="Using timeit timeit.timeit function only accepts strings. This can be quite annoying if you want to measure larger functions.
 import timeit timeit.timeit(&#39;&#34;-&#34;.join(str(n) for n in range(10_000_000))&#39;, number=1) 2.7127743320000093  Using context manager from contextlib import contextmanager from time import time @contextmanager def timing(description: str) -&gt; None: start = time() yield ellapsed_time = time() - start print(f&#34;{description}: {ellapsed_time}&#34;) with timing(&#34;List Comprehension Example&#34;): s = [x for x in range(10_000_000)] List Comprehension Example: 0." />
 <meta property="og:type" content="article" />
@@ -25,7 +25,7 @@ import timeit timeit.timeit(&#39;&#34;-&#34;.join(str(n) for n in range(10_000_0
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Time your code"/>
+<meta name="twitter:title" content="Time and profile your code"/>
 <meta name="twitter:description" content="Using timeit timeit.timeit function only accepts strings. This can be quite annoying if you want to measure larger functions.
 import timeit timeit.timeit(&#39;&#34;-&#34;.join(str(n) for n in range(10_000_000))&#39;, number=1) 2.7127743320000093  Using context manager from contextlib import contextmanager from time import time @contextmanager def timing(description: str) -&gt; None: start = time() yield ellapsed_time = time() - start print(f&#34;{description}: {ellapsed_time}&#34;) with timing(&#34;List Comprehension Example&#34;): s = [x for x in range(10_000_000)] List Comprehension Example: 0."/>
 <meta name="generator" content="Hugo 0.77.0" />
@@ -35,9 +35,9 @@ import timeit timeit.timeit(&#39;&#34;-&#34;.join(str(n) for n in range(10_000_0
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Time your code",
+  "headline": "Time and profile your code",
   "url": "https:\/\/othrif.github.io\/python\/basics\/timeit.html",
-  "wordCount": "144",
+  "wordCount": "219",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -47,7 +47,7 @@ import timeit timeit.timeit(&#39;&#34;-&#34;.join(str(n) for n in range(10_000_0
 }
 </script> 
 
-    <title>Time your code</title>
+    <title>Time and profile your code</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -140,7 +140,7 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Time your code</h1>
+    <h1 class="technical_note_title">Time and profile your code</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
@@ -195,7 +195,35 @@ MathJax.Hub.Config({
     <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="n">_000_000</span><span class="p">)]</span>
 </code></pre></div><pre><code>Time took for List Comprehension Example: 0.5780296325683594
 </code></pre>
-
+<h3 id="using-snakeviz">Using SnakeViz</h3>
+<h3 id="cli">CLI</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">python -m cProfile -o program.prof my_program.py
+snakeviz program.prof
+</code></pre></div><h3 id="ipython">IPython</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">%prun -D program.prof glob.glob<span class="o">(</span><span class="s1">&#39;*.txt&#39;</span><span class="o">)</span>
+</code></pre></div><h3 id="single-line">Single line</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">glob</span>
+<span class="o">%</span><span class="n">load_ext</span> <span class="n">snakeviz</span>
+<span class="o">%</span><span class="n">snakeviz</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.*&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>The snakeviz extension is already loaded. To reload it, use:
+  %reload_ext snakeviz
+ 
+*** Profile stats marshalled to file '/var/folders/wn/k3vlc_7s4mjcszy_1l54z5qm0000gn/T/tmpxau65ynn'. 
+Embedding SnakeViz in this document...
+</code></pre>
+<!-- raw HTML omitted -->
+<h4 id="multiple-lines">Multiple lines</h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%%</span><span class="n">snakeviz</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.txt&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+</code></pre></div><pre><code>*** Profile stats marshalled to file '/var/folders/wn/k3vlc_7s4mjcszy_1l54z5qm0000gn/T/tmpc8imb63p'. 
+Embedding SnakeViz in this document...
+</code></pre>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">

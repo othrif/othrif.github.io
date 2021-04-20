@@ -199,7 +199,7 @@ global var global_ = 2 </description>
     </item>
     
     <item>
-      <title>Time your code</title>
+      <title>Time and profile your code</title>
       <link>https://othrif.github.io/python/basics/timeit.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
