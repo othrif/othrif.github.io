@@ -49,6 +49,16 @@ import pandas as pd df = pd.DataFrame([[&amp;#39;green&amp;#39;, &amp;#39;M&amp;
     </item>
     
     <item>
+      <title>Split text column into multiple new columns</title>
+      <link>https://othrif.github.io/python/pandas/split_text.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/pandas/split_text.html</guid>
+      <description>See: https://github.com/dennisbakhuis/Tutorials/blob/master/B_Pandas_tips/2-%20Split%20text%20column%20into%20multiple%20new%20columns.ipynb
+import pandas as pd df = pd.DataFrame([ {&amp;#39;path&amp;#39;: &amp;#39;train/data_shard_1.csv&amp;#39;}, {&amp;#39;path&amp;#39;: &amp;#39;train/data_shard_2.csv&amp;#39;}, {&amp;#39;path&amp;#39;: &amp;#39;train/data_shard_3.csv&amp;#39;}, {&amp;#39;path&amp;#39;: &amp;#39;test/data_shard_1.csv&amp;#39;}, {&amp;#39;path&amp;#39;: &amp;#39;test/data_shard_2.csv&amp;#39;}, ]) df = (df .join(df .loc[:, &amp;#39;path&amp;#39;] .str.split(&amp;#39;/&amp;#39;, expand=True) .rename(columns={0: &amp;#39;folder&amp;#39;, 1: &amp;#39;filename&amp;#39;}) ) ) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  </description>
+    </item>
+    
+    <item>
       <title>Train, test, split pandas DataFrame</title>
       <link>https://othrif.github.io/python/pandas/traintestsplit.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

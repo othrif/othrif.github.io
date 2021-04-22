@@ -171,3 +171,64 @@
 [I 2021-04-20 11:13:58.762 ServerApp] Saving file at /python/basics/timeit.ipynb
 [I 2021-04-20 11:14:05.233 ServerApp] Saving file at /python/basics/timeit.ipynb
 [I 2021-04-20 11:14:05.781 ServerApp] Starting buffering for bb30ae78-ff7c-488b-b5f2-2f7b65f016c1:e5dfd9b8-525f-4b3a-8c6e-ef35aece0216
+[I 2021-04-20 12:17:24.223 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-20 12:17:24.225 ServerApp] Shutting down 8 kernels
+[I 2021-04-20 12:17:24.644 ServerApp] Kernel shutdown: e246c542-c482-4621-bf9d-e242a2bf117a
+[I 2021-04-20 12:17:24.749 ServerApp] Kernel shutdown: eac08d90-ca4d-4d58-808e-d41b0526c690
+[I 2021-04-20 12:17:24.751 ServerApp] Kernel shutdown: df493b87-5355-436a-a5b2-2025b15bb082
+[I 2021-04-20 12:17:24.751 ServerApp] Kernel shutdown: 72316ac7-271e-4692-938d-15d3764e523d
+[I 2021-04-20 12:17:24.856 ServerApp] Kernel shutdown: 98be9d10-4574-46d5-b963-7c2e7aa0f7d0
+[I 2021-04-20 12:17:24.857 ServerApp] Kernel shutdown: 860aade1-37aa-4993-92f0-3cacc367d17e
+[I 2021-04-20 12:17:24.857 ServerApp] Kernel shutdown: bd485f61-fc1a-4ba8-90b9-7553fbac7ac7
+[I 2021-04-20 12:17:24.858 ServerApp] Kernel shutdown: 34f99d0f-6d2f-4f93-bcef-27f3dc63a3c8
+[I 2021-04-20 12:17:37.864 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-20 12:17:37.865 ServerApp] Shutting down 1 kernel
+[I 2021-04-20 12:17:38.072 ServerApp] Kernel shutdown: bb30ae78-ff7c-488b-b5f2-2f7b65f016c1
+[I 2021-04-20 12:17:43.708 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-20 12:17:43.709 ServerApp] Shutting down 3 kernels
+[I 2021-04-20 12:17:44.024 ServerApp] Kernel shutdown: f70c34ad-e248-4d8f-adfa-d1ed28d8bdd4
+[I 2021-04-20 12:17:44.130 ServerApp] Kernel shutdown: 54e94978-7f0a-4823-ba5c-0e9b019554c2
+[I 2021-04-20 12:17:44.134 ServerApp] Kernel shutdown: ce2092fe-17e4-47ab-9653-49cf1ecf9305
+[I 2021-04-20 12:17:56.557 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-20 12:17:56.559 ServerApp] Shutting down 4 kernels
+[I 2021-04-20 12:17:56.875 ServerApp] Kernel shutdown: 4841e842-ce0f-490e-ba3f-6622b4cc5584
+[I 2021-04-20 12:17:56.877 ServerApp] Kernel shutdown: 472d0485-6c2b-4cf1-ac74-5ad0270ba0c2
+[I 2021-04-20 12:17:56.878 ServerApp] Kernel shutdown: 813d0eb9-e0c0-41a0-8176-348d80e9d8a8
+[I 2021-04-20 12:17:56.879 ServerApp] Kernel shutdown: dcfcdfd4-30b0-407f-9829-70b0c4246e7d
+[I 2021-04-20 12:18:06.762 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-20 12:18:07.016 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-20 12:18:07.016 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-20 12:18:07.016 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-04-20 12:18:07.060 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-20 12:18:07.061 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-20 12:18:07.061 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-20 12:18:07.064 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-20 12:18:07.070 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-20 12:18:07.070 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-20 12:18:07.070 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-20 12:18:07.071 ServerApp] http://localhost:8888/lab?token=76abf89ffafa2bfd0107613c3f7d8dac9a0b4bccfd497e5a
+[I 2021-04-20 12:18:07.071 ServerApp]  or http://127.0.0.1:8888/lab?token=76abf89ffafa2bfd0107613c3f7d8dac9a0b4bccfd497e5a
+[I 2021-04-20 12:18:07.071 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-20 12:18:07.082 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-14293-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=76abf89ffafa2bfd0107613c3f7d8dac9a0b4bccfd497e5a
+     or http://127.0.0.1:8888/lab?token=76abf89ffafa2bfd0107613c3f7d8dac9a0b4bccfd497e5a
+[I 2021-04-20 12:18:12.550 LabApp] Build is up to date
+-\|/-\|/[I 2021-04-20 12:18:14.791 ServerApp] Kernel started: b7d35cf8-3267-43bb-86f4-084637729a32
+-\[W 2021-04-20 12:18:18.456 ServerApp] Got events for closed stream None
+[I 2021-04-20 12:18:18.881 ServerApp] Kernel started: 1557d283-9a1d-42fd-bbd1-4521f820718e
+[I 2021-04-20 12:18:20.665 ServerApp] Copying python/pandas/df_numpy.ipynb to /python/pandas
+[I 2021-04-20 12:18:35.371 ServerApp] Kernel started: 4062e9b1-428e-441b-a801-adb0b863be82
+[I 2021-04-20 12:18:36.241 ServerApp] Starting buffering for 1557d283-9a1d-42fd-bbd1-4521f820718e:2d03f662-92bf-4769-bc78-f0d557fc0f6c
+[I 2021-04-20 12:19:18.528 ServerApp] Saving file at /python/pandas/split_text.ipynb
+[I 2021-04-20 12:20:07.194 ServerApp] Saving file at /python/pandas/split_text.ipynb
+[I 2021-04-20 12:20:08.508 ServerApp] Starting buffering for b7d35cf8-3267-43bb-86f4-084637729a32:a89eeb61-9966-44e5-a7fe-d1a6530770eb
+[I 2021-04-20 12:20:08.510 ServerApp] Starting buffering for 4062e9b1-428e-441b-a801-adb0b863be82:a1eab408-d424-46ac-aab1-a33f711fd7fc
+[I 2021-04-21 09:27:01.285 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-21 09:27:01.289 ServerApp] Shutting down 3 kernels
+[I 2021-04-21 09:27:01.602 ServerApp] Kernel shutdown: b7d35cf8-3267-43bb-86f4-084637729a32
+[I 2021-04-21 09:27:01.605 ServerApp] Kernel shutdown: 1557d283-9a1d-42fd-bbd1-4521f820718e
+[I 2021-04-21 09:27:01.606 ServerApp] Kernel shutdown: 4062e9b1-428e-441b-a801-adb0b863be82
