@@ -31,12 +31,30 @@ import pandas as pd df = pd.DataFrame([[&amp;#39;green&amp;#39;, &amp;#39;M&amp;
     </item>
     
     <item>
+      <title>How to set column names when importing csv</title>
+      <link>https://othrif.github.io/python/pandas/column-names.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/pandas/column-names.html</guid>
+      <description>Preliminaries # Import modules import pandas as pd # Set ipython&amp;#39;s max row display pd.set_option(&amp;#39;display.max_row&amp;#39;, 1000) # Set iPython&amp;#39;s max column width to 50 pd.set_option(&amp;#39;display.max_columns&amp;#39;, 50) # To import csv  from io import StringIO Create an example dataframe # Create an example dataframe csv_data = \ &amp;#39;&amp;#39;&amp;#39;1.0,2.0,3.0,4.0 5.0,6.0,,8.0 10.0,11.0,12.0,&amp;#39;&amp;#39;&amp;#39; header_list=[&amp;#39;A&amp;#39;,&amp;#39;B&amp;#39;,&amp;#39;C&amp;#39;,&amp;#39;D&amp;#39;] df = pd.read_csv(StringIO(csv_data), names=header_list) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  </description>
+    </item>
+    
+    <item>
       <title>Increase display size</title>
       <link>https://othrif.github.io/python/pandas/display.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/python/pandas/display.html</guid>
       <description>For columns and rows import pandas as pd pd.set_option(&amp;#39;display.max_colwidth&amp;#39;, 9999) pd.set_option(&amp;#39;display.max_rows&amp;#39;, 9999) </description>
+    </item>
+    
+    <item>
+      <title>List unique values in a pandas column</title>
+      <link>https://othrif.github.io/python/pandas/list_unique.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/pandas/list_unique.html</guid>
+      <description>Preliminaries # Import modules import pandas as pd # Set ipython&amp;#39;s max row display pd.set_option(&amp;#39;display.max_row&amp;#39;, 1000) # Set iPython&amp;#39;s max column width to 50 pd.set_option(&amp;#39;display.max_columns&amp;#39;, 50) Create an example dataframe # Create an example dataframe data = {&amp;#39;name&amp;#39;: [&amp;#39;Jason&amp;#39;, &amp;#39;Molly&amp;#39;, &amp;#39;Tina&amp;#39;, &amp;#39;Jake&amp;#39;, &amp;#39;Amy&amp;#39;], &amp;#39;year&amp;#39;: [2012, 2012, 2013, 2014, 2014], &amp;#39;reports&amp;#39;: [4, 24, 31, 2, 3]} df = pd.DataFrame(data, index = [&amp;#39;Cochice&amp;#39;, &amp;#39;Pima&amp;#39;, &amp;#39;Santa Cruz&amp;#39;, &amp;#39;Maricopa&amp;#39;, &amp;#39;Yuma&amp;#39;]) df .dataframe tbody tr th { vertical-align: top; } .</description>
     </item>
     
     <item>

@@ -100,9 +100,8 @@ ffmpeg -ss START_TIME_IN_S -t DURATION_IN_S -i INPUT OUTPUT.mp4 </description>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/total_audio.html</guid>
-      <description>Calculate the total time of all audio files at a location.
-EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `soxi * | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; Alternative that works with large number of files:
-EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `find . -iname &amp;#34;*.wav&amp;#34; -exec soxi {} \; | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; </description>
+      <description>Really simple way that works in macos soxi -D * | awk &amp;#39;BEGIN { s = 0 }; { s = s + $1 }; END { print s &amp;#34; seconds&amp;#34;}&amp;#39; More complex ways Calculate the total time of all audio files at a location.
+EPOCH=&amp;#39;jan 1 1970&amp;#39;; sum=0; for i in `soxi * | grep Duration | awk -F&amp;#34; &amp;#34; &amp;#39;{print $3}&amp;#39; | grep :`; do sum=&amp;#34;$(date -u -d &amp;#34;$EPOCH$i&amp;#34; +%s)+ $sum&amp;#34;; done; echo &amp;#34;total = `echo $sum| bc` seconds&amp;#34; Alternative that works with large number of files:</description>
     </item>
     
     <item>

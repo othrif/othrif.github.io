@@ -232,3 +232,102 @@
 [I 2021-04-21 09:27:01.602 ServerApp] Kernel shutdown: b7d35cf8-3267-43bb-86f4-084637729a32
 [I 2021-04-21 09:27:01.605 ServerApp] Kernel shutdown: 1557d283-9a1d-42fd-bbd1-4521f820718e
 [I 2021-04-21 09:27:01.606 ServerApp] Kernel shutdown: 4062e9b1-428e-441b-a801-adb0b863be82
+[I 2021-04-25 12:55:36.863 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-25 12:55:37.287 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-25 12:55:37.287 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-25 12:55:37.287 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-04-25 12:55:37.341 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-25 12:55:37.343 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-25 12:55:37.343 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-25 12:55:37.347 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-25 12:55:37.352 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-25 12:55:37.352 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-25 12:55:37.352 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-25 12:55:37.352 ServerApp] http://localhost:8888/lab?token=9e85970a66176307ea6edfe482cdcc4fd6a71a235d8323f3
+[I 2021-04-25 12:55:37.352 ServerApp]  or http://127.0.0.1:8888/lab?token=9e85970a66176307ea6edfe482cdcc4fd6a71a235d8323f3
+[I 2021-04-25 12:55:37.352 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-25 12:55:37.367 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-2434-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=9e85970a66176307ea6edfe482cdcc4fd6a71a235d8323f3
+     or http://127.0.0.1:8888/lab?token=9e85970a66176307ea6edfe482cdcc4fd6a71a235d8323f3
+[I 2021-04-25 12:55:42.174 LabApp] Build is up to date
+[W 2021-04-25 12:55:43.089 ServerApp] 404 GET /api/contents/time-series-deep-AR.ipynb?content=0&1619369743073 (::1): No such file or directory: time-series-deep-AR.ipynb
+[W 2021-04-25 12:55:43.090 ServerApp] No such file or directory: time-series-deep-AR.ipynb
+[W 2021-04-25 12:55:43.092 ServerApp] 404 GET /api/contents/time-series-deep-AR.ipynb?content=0&1619369743073 (::1) 16.55ms referer=http://localhost:8888/lab
+-\|/-\|/[I 2021-04-26 09:29:25.885 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-26 09:29:26.310 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-26 09:29:26.310 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-26 09:29:26.310 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-04-26 09:29:26.356 ServerApp] The port 8888 is already in use, trying another port.
+[W 2021-04-26 09:29:26.364 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-26 09:29:26.365 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-26 09:29:26.365 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-26 09:29:26.368 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-26 09:29:26.374 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-26 09:29:26.374 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-26 09:29:26.374 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-26 09:29:26.374 ServerApp] http://localhost:8889/lab?token=078c2a837781de733a0ed550d17f229c6ed73bc9f553d728
+[I 2021-04-26 09:29:26.374 ServerApp]  or http://127.0.0.1:8889/lab?token=078c2a837781de733a0ed550d17f229c6ed73bc9f553d728
+[I 2021-04-26 09:29:26.374 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-26 09:29:26.391 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-7586-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=078c2a837781de733a0ed550d17f229c6ed73bc9f553d728
+     or http://127.0.0.1:8889/lab?token=078c2a837781de733a0ed550d17f229c6ed73bc9f553d728
+[I 2021-04-26 09:29:31.217 LabApp] Build is up to date
+[W 2021-04-26 09:29:32.195 ServerApp] 404 GET /api/contents/ch05.ipynb?content=0&1619443772187 (::1): No such file or directory: ch05.ipynb
+[W 2021-04-26 09:29:32.197 ServerApp] No such file or directory: ch05.ipynb
+[W 2021-04-26 09:29:32.197 ServerApp] 404 GET /api/contents/ch05.ipynb?content=0&1619443772187 (::1) 3.19ms referer=http://localhost:8889/lab
+-\|/-\|/-[I 2021-04-26 09:29:41.068 ServerApp] Kernel started: b429413f-c049-4ff8-bb19-2015aa6b8974
+[I 2021-04-26 09:29:43.104 ServerApp] Copying python/pandas/traintestsplit.ipynb to /python/pandas
+[W 2021-04-26 09:29:44.734 ServerApp] Got events for closed stream None
+[I 2021-04-26 09:30:02.205 ServerApp] Kernel started: 6eb0fa49-250e-44d4-8109-3f4d8a9e7eec
+[I 2021-04-26 09:32:02.125 ServerApp] Saving file at /python/pandas/list_unique.ipynb
+[I 2021-04-26 09:32:10.777 ServerApp] Saving file at /python/pandas/list_unique.ipynb
+[I 2021-04-26 09:45:28.338 ServerApp] Copying python/pandas/list_unique.ipynb to /python/pandas
+[I 2021-04-26 09:45:35.278 ServerApp] Kernel started: ce60cbfc-1c74-4539-962c-7589a46df494
+[I 2021-04-26 09:47:35.140 ServerApp] Saving file at /python/pandas/column-names.ipynb
+[I 2021-04-26 09:51:35.768 ServerApp] Saving file at /python/pandas/column-names.ipynb
+[I 2021-04-26 09:53:35.805 ServerApp] Saving file at /python/pandas/column-names.ipynb
+[I 2021-04-26 09:55:35.860 ServerApp] Saving file at /python/pandas/column-names.ipynb
+[I 2021-04-26 09:55:48.082 ServerApp] Saving file at /python/pandas/column-names.ipynb
+[I 2021-04-26 09:56:17.173 ServerApp] Starting buffering for ce60cbfc-1c74-4539-962c-7589a46df494:0675591a-d395-48b8-baf9-315edb6f9f70
+[I 2021-04-26 09:56:17.174 ServerApp] Starting buffering for 6eb0fa49-250e-44d4-8109-3f4d8a9e7eec:25d32b4b-a9d2-4fdd-86dd-8b2c9749c6d8
+[I 2021-04-26 09:56:17.175 ServerApp] Starting buffering for b429413f-c049-4ff8-bb19-2015aa6b8974:08361149-3722-434b-af88-b6bbb620c0fc
+[I 2021-04-28 15:23:57.491 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-04-28 15:23:57.930 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-04-28 15:23:57.930 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-04-28 15:23:57.930 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-04-28 15:23:57.987 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-04-28 15:23:57.988 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-04-28 15:23:57.988 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-04-28 15:23:57.992 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-04-28 15:23:57.998 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-04-28 15:23:57.999 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-04-28 15:23:57.999 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-04-28 15:23:57.999 ServerApp] http://localhost:8888/lab?token=4e2d214c64abca49a3588f0c0e1c468c70bf0c71a1118308
+[I 2021-04-28 15:23:57.999 ServerApp]  or http://127.0.0.1:8888/lab?token=4e2d214c64abca49a3588f0c0e1c468c70bf0c71a1118308
+[I 2021-04-28 15:23:57.999 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-04-28 15:23:58.017 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-47819-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=4e2d214c64abca49a3588f0c0e1c468c70bf0c71a1118308
+     or http://127.0.0.1:8888/lab?token=4e2d214c64abca49a3588f0c0e1c468c70bf0c71a1118308
+[I 2021-04-28 15:24:02.396 LabApp] Build is up to date
+[W 2021-04-28 15:24:03.317 ServerApp] 404 GET /api/contents/properties_stft.ipynb?content=0&1619637843311 (::1): No such file or directory: properties_stft.ipynb
+[W 2021-04-28 15:24:03.317 ServerApp] No such file or directory: properties_stft.ipynb
+[W 2021-04-28 15:24:03.319 ServerApp] 404 GET /api/contents/properties_stft.ipynb?content=0&1619637843311 (::1) 5.44ms referer=http://localhost:8888/lab
+[W 2021-04-28 15:24:03.321 ServerApp] 404 GET /api/contents/my_simple_audio-lstm.ipynb?content=0&1619637843312 (::1): No such file or directory: my_simple_audio-lstm.ipynb
+[W 2021-04-28 15:24:03.322 ServerApp] No such file or directory: my_simple_audio-lstm.ipynb
+[W 2021-04-28 15:24:03.322 ServerApp] 404 GET /api/contents/my_simple_audio-lstm.ipynb?content=0&1619637843312 (::1) 1.85ms referer=http://localhost:8888/lab
+-\|/-\|/-\|/-\|/-\|/-[I 2021-04-28 15:24:15.796 ServerApp] Kernel started: 2ed23f16-6fdf-4fa5-ac3b-91654a46ada8
+[W 2021-04-28 15:24:19.555 ServerApp] Got events for closed stream None
+[I 2021-04-28 15:24:54.602 ServerApp] Saving file at /machine_learning/preprocessing_voice/total_audio.ipynb
+[I 2021-04-28 15:24:56.231 ServerApp] Starting buffering for 2ed23f16-6fdf-4fa5-ac3b-91654a46ada8:bd87d80c-ba41-4d9f-a26b-584e8e879459
