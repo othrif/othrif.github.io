@@ -331,3 +331,42 @@
 [W 2021-04-28 15:24:19.555 ServerApp] Got events for closed stream None
 [I 2021-04-28 15:24:54.602 ServerApp] Saving file at /machine_learning/preprocessing_voice/total_audio.ipynb
 [I 2021-04-28 15:24:56.231 ServerApp] Starting buffering for 2ed23f16-6fdf-4fa5-ac3b-91654a46ada8:bd87d80c-ba41-4d9f-a26b-584e8e879459
+[I 2021-04-30 07:56:53.447 ServerApp] Shutting down on /api/shutdown request.
+[I 2021-04-30 07:56:53.455 ServerApp] Shutting down 1 kernel
+[I 2021-04-30 07:56:53.874 ServerApp] Kernel shutdown: 2ed23f16-6fdf-4fa5-ac3b-91654a46ada8
+[I 2021-05-03 10:52:31.888 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-05-03 10:52:32.420 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-05-03 10:52:32.420 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-05-03 10:52:32.420 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-05-03 10:52:32.472 ServerApp] The port 8888 is already in use, trying another port.
+[W 2021-05-03 10:52:32.481 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-05-03 10:52:32.482 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-05-03 10:52:32.482 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-05-03 10:52:32.486 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-05-03 10:52:32.492 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-05-03 10:52:32.493 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-05-03 10:52:32.493 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-05-03 10:52:32.493 ServerApp] http://localhost:8889/lab?token=bd529774dc3b78d1f1c74f13d6b0f8ca6f62d9d930917305
+[I 2021-05-03 10:52:32.493 ServerApp]  or http://127.0.0.1:8889/lab?token=bd529774dc3b78d1f1c74f13d6b0f8ca6f62d9d930917305
+[I 2021-05-03 10:52:32.493 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-05-03 10:52:32.509 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-7391-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=bd529774dc3b78d1f1c74f13d6b0f8ca6f62d9d930917305
+     or http://127.0.0.1:8889/lab?token=bd529774dc3b78d1f1c74f13d6b0f8ca6f62d9d930917305
+[I 2021-05-03 10:52:37.016 LabApp] Build is up to date
+[W 2021-05-03 10:52:37.909 ServerApp] 404 GET /api/contents/ch5_feature_selection/ch05.ipynb?content=0&1620053557902 (::1): No such file or directory: ch5_feature_selection/ch05.ipynb
+[W 2021-05-03 10:52:37.909 ServerApp] No such file or directory: ch5_feature_selection/ch05.ipynb
+[W 2021-05-03 10:52:37.910 ServerApp] 404 GET /api/contents/ch5_feature_selection/ch05.ipynb?content=0&1620053557902 (::1) 1.78ms referer=http://localhost:8889/lab
+[W 2021-05-03 10:52:38.547 ServerApp] 404 GET /api/contents/ch5_feature_selection?1620053558543 (::1): No such file or directory: ch5_feature_selection
+[W 2021-05-03 10:52:38.548 ServerApp] No such file or directory: ch5_feature_selection
+[W 2021-05-03 10:52:38.548 ServerApp] 404 GET /api/contents/ch5_feature_selection?1620053558543 (::1) 1.76ms referer=http://localhost:8889/lab
+-\|/-\|/-\[I 2021-05-03 10:52:47.886 ServerApp] Kernel started: 021fe1e0-4e22-4d22-a0d6-6579d23d4360
+[W 2021-05-03 10:52:51.530 ServerApp] Got events for closed stream None
+[I 2021-05-03 10:53:37.540 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
+[I 2021-05-03 10:53:38.964 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
+[I 2021-05-03 10:53:45.317 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
+[I 2021-05-03 11:15:24.722 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
+[I 2021-05-03 11:15:24.982 ServerApp] Starting buffering for 021fe1e0-4e22-4d22-a0d6-6579d23d4360:879ded84-6abd-486d-a0cd-c82b9e9f289c
