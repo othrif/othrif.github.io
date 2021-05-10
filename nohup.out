@@ -370,3 +370,35 @@
 [I 2021-05-03 10:53:45.317 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
 [I 2021-05-03 11:15:24.722 ServerApp] Saving file at /machine_learning/scikitlearn/pca.ipynb
 [I 2021-05-03 11:15:24.982 ServerApp] Starting buffering for 021fe1e0-4e22-4d22-a0d6-6579d23d4360:879ded84-6abd-486d-a0cd-c82b9e9f289c
+[C 2021-05-05 08:03:00.313 ServerApp] received signal 15, stopping
+[I 2021-05-05 08:03:00.341 ServerApp] Shutting down 1 kernel
+[I 2021-05-05 08:03:00.885 ServerApp] Kernel shutdown: 021fe1e0-4e22-4d22-a0d6-6579d23d4360
+[I 2021-05-10 11:46:17.107 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-05-10 11:46:17.371 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-05-10 11:46:17.371 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-05-10 11:46:17.371 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-05-10 11:46:17.433 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-05-10 11:46:17.434 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-05-10 11:46:17.434 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-05-10 11:46:17.437 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-05-10 11:46:17.443 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-05-10 11:46:17.443 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-05-10 11:46:17.444 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-05-10 11:46:17.444 ServerApp] http://localhost:8888/lab?token=a4309521998f3e85afb00233e959ae677eae75aaaa4473e7
+[I 2021-05-10 11:46:17.444 ServerApp]  or http://127.0.0.1:8888/lab?token=a4309521998f3e85afb00233e959ae677eae75aaaa4473e7
+[I 2021-05-10 11:46:17.444 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-05-10 11:46:17.460 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-32195-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=a4309521998f3e85afb00233e959ae677eae75aaaa4473e7
+     or http://127.0.0.1:8888/lab?token=a4309521998f3e85afb00233e959ae677eae75aaaa4473e7
+[I 2021-05-10 11:46:21.611 LabApp] Build is up to date
+[W 2021-05-10 11:46:22.487 ServerApp] 404 GET /api/contents/starter_kit.ipynb?content=0&1620661582478 (::1): No such file or directory: starter_kit.ipynb
+[W 2021-05-10 11:46:22.487 ServerApp] No such file or directory: starter_kit.ipynb
+[W 2021-05-10 11:46:22.488 ServerApp] 404 GET /api/contents/starter_kit.ipynb?content=0&1620661582478 (::1) 1.91ms referer=http://localhost:8888/lab
+[W 2021-05-10 11:46:22.489 ServerApp] 404 GET /api/contents/README.md?content=0&1620661582479 (::1): No such file or directory: README.md
+[W 2021-05-10 11:46:22.490 ServerApp] No such file or directory: README.md
+[W 2021-05-10 11:46:22.491 ServerApp] 404 GET /api/contents/README.md?content=0&1620661582479 (::1) 1.73ms referer=http://localhost:8888/lab
+-\|/-\|[I 2021-05-10 11:47:15.963 ServerApp] Saving file at /linux/basics/ip_address.md

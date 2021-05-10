@@ -108,7 +108,7 @@ Client side - MacOS  Install PulseAudio with brew: brew install pulseaudio Confi
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/linux/basics/ip_address.html</guid>
-      <description>Find my ip addresses Check public ip address (same in MacOS and Linux): curl ifconfig.me Check ip address on MacOS # Private address ipconfig getifaddr en0 Check ip address on Linux hostname -I Setup ssh port forwarding  Add the host internal ip address to your router&amp;rsquo;s port forwarding service Modify the default port in the host by accessing /etc/ssh/sshd_config Some good tips here: https://dev.to/zduey/how-to-set-up-an-ssh-server-on-a-home-computer  </description>
+      <description>Find my ip addresses Check public ip address (same in MacOS and Linux): curl ifconfig.me Check ip address on MacOS # Private address ipconfig getifaddr en0 Check ip address on Linux hostname -I Setup ssh port forwarding Change ip address in http://routerlogin.net/ for Netgear  Add the host internal ip address to your router&amp;rsquo;s port forwarding service Modify the default port in the host by accessing /etc/ssh/sshd_config Some good tips here: https://dev.</description>
     </item>
     
     <item>
