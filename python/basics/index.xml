@@ -53,6 +53,15 @@ You’re doing a fold or reduction when you reduce a list of items to a single c
     </item>
     
     <item>
+      <title>Handling exception: ignore</title>
+      <link>https://othrif.github.io/python/basics/exception.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/exception.html</guid>
+      <description>Ignore exception try: print(invalid-variable) except Exception: pass print(&amp;#34;Exception ignored&amp;#34;) Exception ignored  </description>
+    </item>
+    
+    <item>
       <title>Hashing strings</title>
       <link>https://othrif.github.io/python/basics/hashing.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

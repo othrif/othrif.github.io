@@ -75,6 +75,15 @@ Pretty display of main things! sudo apt install inxi inxi Linux/kernel informati
     </item>
     
     <item>
+      <title>Measure internet speed test</title>
+      <link>https://othrif.github.io/linux/basics/speedtest.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/speedtest.html</guid>
+      <description>Linux or mac: pip install speedtest-cli speedtest </description>
+    </item>
+    
+    <item>
       <title>Playing sound from linux server in client MacOS</title>
       <link>https://othrif.github.io/linux/basics/sound_remote.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

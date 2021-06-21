@@ -402,3 +402,70 @@
 [W 2021-05-10 11:46:22.490 ServerApp] No such file or directory: README.md
 [W 2021-05-10 11:46:22.491 ServerApp] 404 GET /api/contents/README.md?content=0&1620661582479 (::1) 1.73ms referer=http://localhost:8888/lab
 -\|/-\|[I 2021-05-10 11:47:15.963 ServerApp] Saving file at /linux/basics/ip_address.md
+[I 2021-05-12 16:44:45.740 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-05-12 16:44:46.181 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-05-12 16:44:46.181 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-05-12 16:44:46.181 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-05-12 16:44:46.226 ServerApp] The port 8888 is already in use, trying another port.
+[W 2021-05-12 16:44:46.234 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-05-12 16:44:46.235 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-05-12 16:44:46.235 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-05-12 16:44:46.238 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-05-12 16:44:46.245 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-05-12 16:44:46.245 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-05-12 16:44:46.245 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-05-12 16:44:46.245 ServerApp] http://localhost:8889/lab?token=41690eb2dc1dd95a25589edbd567bcbf30b370dfb2eadbc9
+[I 2021-05-12 16:44:46.245 ServerApp]  or http://127.0.0.1:8889/lab?token=41690eb2dc1dd95a25589edbd567bcbf30b370dfb2eadbc9
+[I 2021-05-12 16:44:46.245 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-05-12 16:44:46.261 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-34754-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=41690eb2dc1dd95a25589edbd567bcbf30b370dfb2eadbc9
+     or http://127.0.0.1:8889/lab?token=41690eb2dc1dd95a25589edbd567bcbf30b370dfb2eadbc9
+[I 2021-05-12 16:44:50.945 LabApp] Build is up to date
+[W 2021-05-12 16:44:51.906 ServerApp] 404 GET /api/contents/eda.ipynb?content=0&1620852291899 (::1): No such file or directory: eda.ipynb
+[W 2021-05-12 16:44:51.906 ServerApp] No such file or directory: eda.ipynb
+[W 2021-05-12 16:44:51.907 ServerApp] 404 GET /api/contents/eda.ipynb?content=0&1620852291899 (::1) 2.14ms referer=http://localhost:8889/lab
+[W 2021-05-12 16:44:51.909 ServerApp] 404 GET /api/contents/solutions.answers_only.051221.ipynb?content=0&1620852291900 (::1): No such file or directory: solutions.answers_only.051221.ipynb
+[W 2021-05-12 16:44:51.910 ServerApp] No such file or directory: solutions.answers_only.051221.ipynb
+[W 2021-05-12 16:44:51.910 ServerApp] 404 GET /api/contents/solutions.answers_only.051221.ipynb?content=0&1620852291900 (::1) 2.54ms referer=http://localhost:8889/lab
+[W 2021-05-12 16:44:51.912 ServerApp] 404 GET /api/contents/solutions.ipynb?content=0&1620852291902 (::1): No such file or directory: solutions.ipynb
+[W 2021-05-12 16:44:51.912 ServerApp] No such file or directory: solutions.ipynb
+[W 2021-05-12 16:44:51.912 ServerApp] 404 GET /api/contents/solutions.ipynb?content=0&1620852291902 (::1) 3.90ms referer=http://localhost:8889/lab
+-\|/-\|/[I 2021-05-12 16:45:10.455 ServerApp] Copying linux/basics/ip_address.md to /linux/basics
+[I 2021-05-12 16:46:02.456 ServerApp] Saving file at /linux/basics/speedtest.md
+[I 2021-06-21 16:18:45.811 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-06-21 16:18:46.524 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-06-21 16:18:46.524 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-06-21 16:18:46.524 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-06-21 16:18:46.637 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-06-21 16:18:46.639 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-06-21 16:18:46.639 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-06-21 16:18:46.644 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-06-21 16:18:46.651 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-06-21 16:18:46.651 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-06-21 16:18:46.651 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-06-21 16:18:46.651 ServerApp] http://localhost:8888/lab?token=73cdecfc018080aab0b7552c973bd936798625f54ea8a595
+[I 2021-06-21 16:18:46.651 ServerApp]  or http://127.0.0.1:8888/lab?token=73cdecfc018080aab0b7552c973bd936798625f54ea8a595
+[I 2021-06-21 16:18:46.651 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-06-21 16:18:46.697 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-62140-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=73cdecfc018080aab0b7552c973bd936798625f54ea8a595
+     or http://127.0.0.1:8888/lab?token=73cdecfc018080aab0b7552c973bd936798625f54ea8a595
+[I 2021-06-21 16:18:51.872 LabApp] Build is up to date
+[W 2021-06-21 16:18:52.875 ServerApp] 404 GET /api/contents/my_simple_audio-lstm_dawson.ipynb?content=0&1624306732867 (::1): No such file or directory: my_simple_audio-lstm_dawson.ipynb
+[W 2021-06-21 16:18:52.876 ServerApp] No such file or directory: my_simple_audio-lstm_dawson.ipynb
+[W 2021-06-21 16:18:52.876 ServerApp] 404 GET /api/contents/my_simple_audio-lstm_dawson.ipynb?content=0&1624306732867 (::1) 1.74ms referer=http://localhost:8888/lab
+-\|/-\|/-\|/-\|[I 2021-06-21 16:19:04.922 ServerApp] Kernel started: fd72d261-467d-40c7-93d9-1085de3382f5
+[I 2021-06-21 16:19:07.364 ServerApp] Copying python/basics/combinatorics.ipynb to /python/basics
+[W 2021-06-21 16:19:08.622 ServerApp] Got events for closed stream None
+[I 2021-06-21 16:19:17.344 ServerApp] Kernel started: 0fe48775-48b7-42ec-b1d2-177ff9d1660c
+[I 2021-06-21 16:19:54.344 ServerApp] Saving file at /python/basics/exception.ipynb
+[I 2021-06-21 16:19:56.187 ServerApp] Saving file at /python/basics/exception.ipynb
+[I 2021-06-21 16:19:56.622 ServerApp] Starting buffering for 0fe48775-48b7-42ec-b1d2-177ff9d1660c:21e7b8f9-47f6-4991-a5b3-3a3f193cb3aa
+[I 2021-06-21 16:19:56.623 ServerApp] Starting buffering for fd72d261-467d-40c7-93d9-1085de3382f5:5b0b5e91-4877-4bf7-8da0-dcdd74a49b33
