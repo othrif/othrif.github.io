@@ -469,3 +469,38 @@
 [I 2021-06-21 16:19:56.187 ServerApp] Saving file at /python/basics/exception.ipynb
 [I 2021-06-21 16:19:56.622 ServerApp] Starting buffering for 0fe48775-48b7-42ec-b1d2-177ff9d1660c:21e7b8f9-47f6-4991-a5b3-3a3f193cb3aa
 [I 2021-06-21 16:19:56.623 ServerApp] Starting buffering for fd72d261-467d-40c7-93d9-1085de3382f5:5b0b5e91-4877-4bf7-8da0-dcdd74a49b33
+[I 2021-07-15 09:29:13.710 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-15 09:29:14.161 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-15 09:29:14.161 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-15 09:29:14.161 ServerApp] nbclassic | extension was successfully linked.
+[W 2021-07-15 09:29:14.222 ServerApp] jupyter_nbextensions_configurator | extension failed loading with message: 'nbextensions_path'
+[I 2021-07-15 09:29:14.224 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.8.5/lib/python3.8/site-packages/jupyterlab
+[I 2021-07-15 09:29:14.224 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.8.5/share/jupyter/lab
+[I 2021-07-15 09:29:14.228 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-15 09:29:14.235 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-15 09:29:14.236 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-15 09:29:14.236 ServerApp] Jupyter Server 1.4.1 is running at:
+[I 2021-07-15 09:29:14.236 ServerApp] http://localhost:8888/lab?token=eea3a17c53c6b3dff6c4f9d93db535f6979372fb81718fe4
+[I 2021-07-15 09:29:14.236 ServerApp]  or http://127.0.0.1:8888/lab?token=eea3a17c53c6b3dff6c4f9d93db535f6979372fb81718fe4
+[I 2021-07-15 09:29:14.236 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-15 09:29:14.257 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-6107-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=eea3a17c53c6b3dff6c4f9d93db535f6979372fb81718fe4
+     or http://127.0.0.1:8888/lab?token=eea3a17c53c6b3dff6c4f9d93db535f6979372fb81718fe4
+[I 2021-07-15 09:29:20.354 LabApp] Build is up to date
+[W 2021-07-15 09:29:21.435 ServerApp] 404 GET /api/contents/keywods_analysis.ipynb?content=0&1626355761426 (::1): No such file or directory: keywods_analysis.ipynb
+[W 2021-07-15 09:29:21.436 ServerApp] No such file or directory: keywods_analysis.ipynb
+[W 2021-07-15 09:29:21.437 ServerApp] 404 GET /api/contents/keywods_analysis.ipynb?content=0&1626355761426 (::1) 3.33ms referer=http://localhost:8888/lab
+[W 2021-07-15 09:29:21.439 ServerApp] 404 GET /api/contents/stress_test.ipynb?content=0&1626355761427 (::1): No such file or directory: stress_test.ipynb
+[W 2021-07-15 09:29:21.439 ServerApp] No such file or directory: stress_test.ipynb
+[W 2021-07-15 09:29:21.440 ServerApp] 404 GET /api/contents/stress_test.ipynb?content=0&1626355761427 (::1) 2.02ms referer=http://localhost:8888/lab
+-\|/-\|/-\|/[I 2021-07-15 09:31:18.803 ServerApp] Kernel started: 74723d3a-b188-4a8a-8e1a-748c6942936c
+[W 2021-07-15 09:31:22.758 ServerApp] Got events for closed stream None
+[I 2021-07-15 09:31:33.112 ServerApp] Copying scripting/bash.ipynb to /scripting
+[I 2021-07-15 09:31:40.040 ServerApp] Kernel started: a78f8d73-8ca3-4e99-bcc5-e88ead7d8fd7
+[I 2021-07-15 09:32:14.664 ServerApp] Saving file at /scripting/encrypt.ipynb
+[I 2021-07-15 09:32:17.580 ServerApp] Starting buffering for a78f8d73-8ca3-4e99-bcc5-e88ead7d8fd7:d7c6d0f8-dc4e-4a0b-a97a-b71e020a08f5
+[I 2021-07-15 09:32:17.582 ServerApp] Starting buffering for 74723d3a-b188-4a8a-8e1a-748c6942936c:dc36aee7-478d-439c-addf-f592e5f2b0de

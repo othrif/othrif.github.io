@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>Encrypt file</title>
+      <link>https://othrif.github.io/scripting/encrypt.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/scripting/encrypt.html</guid>
+      <description>using zip zip -ej myinfo.zip myinfo.txt </description>
+    </item>
+    
+    <item>
       <title>Jupyter shortcuts and installation</title>
       <link>https://othrif.github.io/scripting/jupyter.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
