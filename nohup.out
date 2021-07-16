@@ -539,3 +539,98 @@
 [I 2021-07-16 09:59:25.996 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
 [I 2021-07-16 09:59:28.577 ServerApp] Starting buffering for 05a6d6e9-b1e9-43c6-b2d6-ef2d19d70b4c:05adebfe-29a5-4fc6-bea1-028ae3dd2696
 [I 2021-07-16 09:59:28.579 ServerApp] Starting buffering for ad3d4f93-3b9e-4dd2-83fb-bfb692712ed9:39eb8586-4265-48ab-a22b-0e37f4647b66
+[I 2021-07-16 13:00:40.535 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-16 13:00:40.754 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-16 13:00:40.754 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-16 13:00:40.791 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-16 13:00:40.792 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-16 13:00:40.797 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-16 13:00:40.797 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-16 13:00:40.801 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-16 13:00:40.807 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-16 13:00:40.811 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-16 13:00:40.811 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-16 13:00:40.811 ServerApp] http://localhost:8890/lab?token=e89eec88a40f4a9be2fd052b5e06322f2921acd68cc06065
+[I 2021-07-16 13:00:40.811 ServerApp]     http://127.0.0.1:8890/lab?token=e89eec88a40f4a9be2fd052b5e06322f2921acd68cc06065
+[I 2021-07-16 13:00:40.811 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-16 13:00:40.827 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-47146-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=e89eec88a40f4a9be2fd052b5e06322f2921acd68cc06065
+        http://127.0.0.1:8890/lab?token=e89eec88a40f4a9be2fd052b5e06322f2921acd68cc06065
+[I 2021-07-16 13:00:44.652 LabApp] Build is up to date
+[I 2021-07-16 13:01:04.856 ServerApp] Kernel started: b3d0b3e5-8e77-4455-9ea7-4533906fe574
+[W 2021-07-16 13:01:08.771 ServerApp] Got events for closed stream None
+[I 2021-07-16 13:01:11.086 ServerApp] Copying python/pandas/column-names.ipynb to /python/pandas
+[I 2021-07-16 13:01:23.645 ServerApp] Kernel started: 55b73a2a-a001-4616-9c7a-1f1a15661f10
+[I 2021-07-16 13:02:39.842 ServerApp] Saving file at /python/pandas/column-rename.ipynb
+[I 2021-07-16 13:02:41.080 ServerApp] Starting buffering for 55b73a2a-a001-4616-9c7a-1f1a15661f10:5cb2b538-7997-4589-abc3-1e009e39e6a5
+[I 2021-07-16 13:02:41.082 ServerApp] Starting buffering for b3d0b3e5-8e77-4455-9ea7-4533906fe574:bf765ef1-cd43-4f10-98ec-3582aeefbb38
+[I 2021-07-16 13:05:48.872 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-16 13:05:49.095 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-16 13:05:49.095 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-16 13:05:49.134 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-16 13:05:49.135 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-16 13:05:49.136 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-16 13:05:49.140 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-16 13:05:49.140 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-16 13:05:49.143 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-16 13:05:49.147 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-16 13:05:49.150 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-16 13:05:49.150 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-16 13:05:49.150 ServerApp] http://localhost:8891/lab?token=a37b663ceb6b94fc6fa7c13cedf707338b1239c720ba77dd
+[I 2021-07-16 13:05:49.150 ServerApp]     http://127.0.0.1:8891/lab?token=a37b663ceb6b94fc6fa7c13cedf707338b1239c720ba77dd
+[I 2021-07-16 13:05:49.150 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-16 13:05:49.165 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-47255-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8891/lab?token=a37b663ceb6b94fc6fa7c13cedf707338b1239c720ba77dd
+        http://127.0.0.1:8891/lab?token=a37b663ceb6b94fc6fa7c13cedf707338b1239c720ba77dd
+[I 2021-07-16 13:05:53.119 LabApp] Build is up to date
+[I 2021-07-16 13:12:39.747 ServerApp] Kernel started: ee7da5e0-d9bb-42ed-8df4-569ce774433d
+[W 2021-07-16 13:12:43.451 ServerApp] Got events for closed stream None
+[I 2021-07-16 13:13:14.170 ServerApp] Kernel started: b024a2d4-60fb-441c-ae4f-a81f5ddc63e7
+[I 2021-07-16 13:15:14.095 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 13:17:14.143 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 15:22:09.822 ServerApp] Starting buffering for b024a2d4-60fb-441c-ae4f-a81f5ddc63e7:f0a24817-4257-412c-bbdc-8eff51e3eae2
+[I 2021-07-16 15:22:09.840 ServerApp] Starting buffering for ee7da5e0-d9bb-42ed-8df4-569ce774433d:f806d650-e138-490e-b730-7f94f2040578
+[I 2021-07-16 15:22:09.846 ServerApp] Restoring connection for b024a2d4-60fb-441c-ae4f-a81f5ddc63e7:f0a24817-4257-412c-bbdc-8eff51e3eae2
+[I 2021-07-16 15:35:22.007 ServerApp] Starting buffering for ee7da5e0-d9bb-42ed-8df4-569ce774433d:fe6ce6a8-bcb2-475c-b317-2de3333b3d54
+[I 2021-07-16 15:35:22.010 ServerApp] Starting buffering for b024a2d4-60fb-441c-ae4f-a81f5ddc63e7:f0a24817-4257-412c-bbdc-8eff51e3eae2
+[I 2021-07-16 15:35:22.111 ServerApp] Restoring connection for b024a2d4-60fb-441c-ae4f-a81f5ddc63e7:f0a24817-4257-412c-bbdc-8eff51e3eae2
+[I 2021-07-16 16:17:34.387 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-16 16:17:34.762 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-16 16:17:34.762 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-16 16:17:34.818 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-16 16:17:34.819 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-16 16:17:34.820 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-16 16:17:34.820 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-16 16:17:34.824 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-16 16:17:34.824 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-16 16:17:34.828 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-16 16:17:34.835 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-16 16:17:34.840 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-16 16:17:34.841 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-16 16:17:34.841 ServerApp] http://localhost:8892/lab?token=2da5eb28fd81001724836f144ff146744628a6800a5af13a
+[I 2021-07-16 16:17:34.841 ServerApp]     http://127.0.0.1:8892/lab?token=2da5eb28fd81001724836f144ff146744628a6800a5af13a
+[I 2021-07-16 16:17:34.841 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-16 16:17:34.865 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-74729-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8892/lab?token=2da5eb28fd81001724836f144ff146744628a6800a5af13a
+        http://127.0.0.1:8892/lab?token=2da5eb28fd81001724836f144ff146744628a6800a5af13a
+[I 2021-07-16 16:17:38.874 LabApp] Build is up to date
+[I 2021-07-16 16:17:40.101 ServerApp] Kernel started: d737b3fe-6cb3-4aaa-8f8e-51dd22f2868d
+[I 2021-07-16 16:17:40.135 ServerApp] Kernel started: 312aa8be-951e-4ea4-8e9b-5b1091c7ce9f
+[W 2021-07-16 16:17:44.300 ServerApp] Got events for closed stream None
+[I 2021-07-16 16:19:10.748 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:19:32.105 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:19:39.034 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:19:41.084 ServerApp] Starting buffering for 312aa8be-951e-4ea4-8e9b-5b1091c7ce9f:4d293b0c-5089-48de-8a44-d0353f2fe3fd
+[I 2021-07-16 16:19:41.086 ServerApp] Starting buffering for d737b3fe-6cb3-4aaa-8f8e-51dd22f2868d:46354e38-a0c8-424a-a32b-c9766777245a

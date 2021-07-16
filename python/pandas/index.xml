@@ -67,6 +67,15 @@ import pandas as pd df = pd.DataFrame([[&amp;#39;green&amp;#39;, &amp;#39;M&amp;
     </item>
     
     <item>
+      <title>Rename columns</title>
+      <link>https://othrif.github.io/python/pandas/column-rename.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/pandas/column-rename.html</guid>
+      <description>Rename column import pandas as pd df = pd.DataFrame({&amp;#34;num&amp;#34;: [1, 2], &amp;#34;let&amp;#34;: [&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;]}) print(df)  num let 0 1 a 1 2 b  df.rename({&amp;#34;num&amp;#34;: &amp;#34;number&amp;#34;, &amp;#34;let&amp;#34;: &amp;#34;letter&amp;#34;}, axis=&amp;#34;columns&amp;#34;, inplace=True) print(df)  number letter 0 1 a 1 2 b  Apply function to all column names df = pd.DataFrame({&amp;#34;some place&amp;#34;: [&amp;#34;hawaii&amp;#34;, &amp;#34;costa rica&amp;#34;], &amp;#34;fun activity&amp;#34;: [&amp;#34;surfing&amp;#34;, &amp;#34;zip lining&amp;#34;]}) print(df)  some place fun activity 0 hawaii surfing 1 costa rica zip lining  df.</description>
+    </item>
+    
+    <item>
       <title>Split text column into multiple new columns</title>
       <link>https://othrif.github.io/python/pandas/split_text.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

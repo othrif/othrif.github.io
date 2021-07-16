@@ -192,9 +192,6 @@
     <loc>https://othrif.github.io/python/plotting/meshgrid.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
-    <loc>https://othrif.github.io/python/basics/pyenv.html</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/scaling.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -357,6 +354,9 @@
     <loc>https://othrif.github.io/python/basics/remove_after_string.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/python/pandas/column-rename.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/s3_basics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -424,6 +424,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/pipenv.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/python/basics/pyenv.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/scripting/movgif.html</loc>

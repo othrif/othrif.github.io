@@ -31,16 +31,6 @@ import click import click_config_file @click.command() @click.option(&amp;#39;--
     </item>
     
     <item>
-      <title>Everything python</title>
-      <link>https://othrif.github.io/python/basics/pyenv.html</link>
-      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
-      
-      <guid>https://othrif.github.io/python/basics/pyenv.html</guid>
-      <description>Update pyenv To pick up the latest python versions for example to get 3.9.2
-cd /home/`whoami`/.pyenv/plugins/python-build/../.. &amp;amp;&amp;amp; git pull &amp;amp;&amp;amp; cd - pyenv install 3.9.2 </description>
-    </item>
-    
-    <item>
       <title>Functools:reduce()</title>
       <link>https://othrif.github.io/python/basics/functools.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -258,6 +248,16 @@ pipenv run &amp;lt;command&amp;gt; To enter a shell within the environment
 pipenv shell To add a package to your new project
 pipenv install &amp;lt;package&amp;gt; or edit the Pipfile directly, here added package requests
 [[source]] url = &amp;#34;https://pypi.python.org/simple&amp;#34; verify_ssl = true name = &amp;#34;pypi&amp;#34; [packages] requests = &amp;#34;*&amp;#34; [dev-packages] Save python environment pipenv install &amp;lt;all packages i need&amp;gt; pipenv lock --requirements &amp;gt; requirements.</description>
+    </item>
+    
+    <item>
+      <title>Using pyenv and upgrading python</title>
+      <link>https://othrif.github.io/python/basics/pyenv.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/pyenv.html</guid>
+      <description>Update pyenv To pick up the latest python versions for example to get 3.9.2
+cd /home/`whoami`/.pyenv/plugins/python-build/../.. &amp;amp;&amp;amp; git pull &amp;amp;&amp;amp; cd - pyenv install 3.9.2 Update python from 3.8.5 to 3.9.6  Note all my old packages worked in 3.8.5 good review article: https://mungingdata.com/python/how-pyenv-works-shims/  brew upgrade pyenv install --list | grep &amp;#34; 3\.9&amp;#34; pyenv versions eval &amp;#34;$(pyenv init --path)&amp;#34; # add in .zshrc or .bashrc pyenv global 3.9.6 # set the global python cat ~/.</description>
     </item>
     
   </channel>

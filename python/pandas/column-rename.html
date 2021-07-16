@@ -16,17 +16,17 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="How many files in the folder?" />
-<meta property="og:description" content="How to setup working locally with remote files" />
+<meta property="og:title" content="Rename columns" />
+<meta property="og:description" content="Rename column import pandas as pd df = pd.DataFrame({&#34;num&#34;: [1, 2], &#34;let&#34;: [&#34;a&#34;, &#34;b&#34;]}) print(df)  num let 0 1 a 1 2 b  df.rename({&#34;num&#34;: &#34;number&#34;, &#34;let&#34;: &#34;letter&#34;}, axis=&#34;columns&#34;, inplace=True) print(df)  number letter 0 1 a 1 2 b  Apply function to all column names df = pd.DataFrame({&#34;some place&#34;: [&#34;hawaii&#34;, &#34;costa rica&#34;], &#34;fun activity&#34;: [&#34;surfing&#34;, &#34;zip lining&#34;]}) print(df)  some place fun activity 0 hawaii surfing 1 costa rica zip lining  df." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/linux/basics/files_in_folder.html" /><meta property="article:section" content="linux" />
+<meta property="og:url" content="https://othrif.github.io/python/pandas/column-rename.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="How many files in the folder?"/>
-<meta name="twitter:description" content="How to setup working locally with remote files"/>
+<meta name="twitter:title" content="Rename columns"/>
+<meta name="twitter:description" content="Rename column import pandas as pd df = pd.DataFrame({&#34;num&#34;: [1, 2], &#34;let&#34;: [&#34;a&#34;, &#34;b&#34;]}) print(df)  num let 0 1 a 1 2 b  df.rename({&#34;num&#34;: &#34;number&#34;, &#34;let&#34;: &#34;letter&#34;}, axis=&#34;columns&#34;, inplace=True) print(df)  number letter 0 1 a 1 2 b  Apply function to all column names df = pd.DataFrame({&#34;some place&#34;: [&#34;hawaii&#34;, &#34;costa rica&#34;], &#34;fun activity&#34;: [&#34;surfing&#34;, &#34;zip lining&#34;]}) print(df)  some place fun activity 0 hawaii surfing 1 costa rica zip lining  df."/>
 <meta name="generator" content="Hugo 0.85.0" />
 
     
@@ -34,20 +34,19 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "How many files in the folder?",
-  "url": "https:\/\/othrif.github.io\/linux\/basics\/files_in_folder.html",
-  "wordCount": "22",
+  "headline": "Rename columns",
+  "url": "https:\/\/othrif.github.io\/python\/pandas\/column-rename.html",
+  "wordCount": "87",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
     "@type": "Person",
     "name": "Othmane Rifki"
-  },
-  "description": "How to setup working locally with remote files"
+  }
 }
 </script> 
 
-    <title>How many files in the folder?</title>
+    <title>Rename columns</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -140,16 +139,41 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">How many files in the folder?</h1>
+    <h1 class="technical_note_title">Rename columns</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="number-of-files-in-each-folder">Number of files in each folder</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="sb">`</span>ls -d */<span class="sb">`</span><span class="p">;</span> <span class="k">do</span> <span class="nv">num</span><span class="o">=</span><span class="sb">`</span>ls <span class="nv">$i</span> <span class="p">|</span> wc -l<span class="sb">`</span><span class="p">;</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">: </span><span class="nv">$num</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">done</span>
-</code></pre></div>
+  <h3 id="rename-column">Rename column</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&#34;num&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&#34;let&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="s2">&#34;b&#34;</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div><pre><code>   num let
+0    1   a
+1    2   b
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&#34;num&#34;</span><span class="p">:</span> <span class="s2">&#34;number&#34;</span><span class="p">,</span> <span class="s2">&#34;let&#34;</span><span class="p">:</span> <span class="s2">&#34;letter&#34;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&#34;columns&#34;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div><pre><code>   number letter
+0       1      a
+1       2      b
+</code></pre>
+<h3 id="apply-function-to-all-column-names">Apply function to all column names</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&#34;some place&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;hawaii&#34;</span><span class="p">,</span> <span class="s2">&#34;costa rica&#34;</span><span class="p">],</span> <span class="s2">&#34;fun activity&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;surfing&#34;</span><span class="p">,</span> <span class="s2">&#34;zip lining&#34;</span><span class="p">]})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div><pre><code>   some place fun activity
+0      hawaii      surfing
+1  costa rica   zip lining
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;_&#34;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="s2">&#34;columns&#34;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div><pre><code>   some_place fun_activity
+0      hawaii      surfing
+1  costa rica   zip lining
+</code></pre>
+
 </div>
   <aside>
       <div class="bug_reporting">
