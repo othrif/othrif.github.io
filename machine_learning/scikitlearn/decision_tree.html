@@ -19,14 +19,15 @@
 <meta property="og:title" content="Decision tree and random forest" />
 <meta property="og:description" content="Decision tree from sklearn.tree import DecisionTreeClassifier tree_model = DecisionTreeClassifier(criterion=&#39;gini&#39;, max_depth=4, random_state=1) Basic pipeline Collect data from sklearn import datasets import numpy as np iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target print(&#39;Class labels:&#39;, np.unique(y)) Class labels: [0 1 2]  Split data from sklearn.model_selection import train_test_split X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) print(&#39;Labels count in y:&#39;, np.bincount(y)) print(&#39;Labels count in y_train:&#39;, np.bincount(y_train)) print(&#39;Labels count in y_test:&#39;, np." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Decision tree and random forest"/>
 <meta name="twitter:description" content="Decision tree from sklearn.tree import DecisionTreeClassifier tree_model = DecisionTreeClassifier(criterion=&#39;gini&#39;, max_depth=4, random_state=1) Basic pipeline Collect data from sklearn import datasets import numpy as np iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target print(&#39;Class labels:&#39;, np.unique(y)) Class labels: [0 1 2]  Split data from sklearn.model_selection import train_test_split X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) print(&#39;Labels count in y:&#39;, np.bincount(y)) print(&#39;Labels count in y_train:&#39;, np.bincount(y_train)) print(&#39;Labels count in y_test:&#39;, np."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -154,13 +155,13 @@ MathJax.Hub.Config({
 </code></pre></div><h3 id="basic-pipeline">Basic pipeline</h3>
 <h4 id="collect-data">Collect data</h4>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Class labels:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Class labels:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
 </code></pre></div><pre><code>Class labels: [0 1 2]
 </code></pre>
 <h4 id="split-data">Split data</h4>
@@ -169,9 +170,9 @@ MathJax.Hub.Config({
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y_train:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y_test:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y_train:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Labels count in y_test:&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
 </code></pre></div><pre><code>Labels count in y: [50 50 50]
 Labels count in y_train: [35 35 35]
 Labels count in y_test: [15 15 15]
@@ -182,11 +183,11 @@ Labels count in y_test: [15 15 15]
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tree_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">tree_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;Accuracy: {accuracy_score(y_test, y_pred):.2%}&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>Accuracy: 97.78%
 </code></pre>
 <h4 id="visualize-decision-boundaries">Visualize decision boundaries</h4>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">helper.plotter</span> <span class="kn">import</span> <span class="n">plot_decision_regions</span>
 
 <span class="n">X_combined</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">))</span>
@@ -210,14 +211,14 @@ Labels count in y_test: [15 15 15]
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
 
 <span class="n">dot_data</span> <span class="o">=</span> <span class="n">export_graphviz</span><span class="p">(</span><span class="n">tree_model</span><span class="p">,</span>
-                           <span class="n">filled</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
-                           <span class="n">rounded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                           <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                           <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                            <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Setosa&#39;</span><span class="p">,</span> 
                                         <span class="s1">&#39;Versicolor&#39;</span><span class="p">,</span>
                                         <span class="s1">&#39;Virginica&#39;</span><span class="p">],</span>
                            <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;petal length&#39;</span><span class="p">,</span> 
                                           <span class="s1">&#39;petal width&#39;</span><span class="p">],</span>
-                           <span class="n">out_file</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span> 
+                           <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> 
 <span class="n">graph</span> <span class="o">=</span> <span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="p">)</span> 
 <span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s1">&#39;tree.png&#39;</span><span class="p">)</span>
 </code></pre></div><pre><code>True
@@ -261,7 +262,7 @@ Labels count in y_test: [15 15 15]
 
 
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%2d</span><span class="s2">) </span><span class="si">%-*s</span><span class="s2"> </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%2d</span><span class="s2">) </span><span class="si">%-*s</span><span class="s2"> </span><span class="si">%f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> 
                             <span class="n">feat_labels</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">f</span><span class="p">]],</span> 
                             <span class="n">importances</span><span class="p">[</span><span class="n">indices</span><span class="p">[</span><span class="n">f</span><span class="p">]]))</span>
 
@@ -303,7 +304,7 @@ Labels count in y_test: [15 15 15]
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

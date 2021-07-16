@@ -20,15 +20,16 @@
 <meta property="og:description" content="Definition String type is immutable. Need to allocate new strings when slicing or concatenating. Try to write values from the back, instead of front. Reduce space complexity by using the string itself instead of brute force O(n) solutions.
 Basic operations t = &#39;My first string&#39; s = &#39; first &#39; print(f&#39;in: {s in t}&#39;) print(f&#39;strip(): |{s}| -&gt; |{s.strip()}|&#39;) print(f&#39;startswith(): {t.startswith(&#34;M&#34;)}&#39;) print(f&#39;endswith(): {t.endswith(&#34;ing&#34;)}&#39;) print(f&#39;STR.split(SEP): {t.split(&#34; &#34;)}&#39;) print(f&#39;SEP.join(LIST): {&#34;/&#34;.join([&#34;hey&#34;, &#34;ho&#34;, &#34;O&#34;])}&#39;) print(f&#39;STR.lower(): {t." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/coding/python/strings.html" />
+<meta property="og:url" content="https://othrif.github.io/coding/python/strings.html" /><meta property="article:section" content="coding" />
 <meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-04T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Strings"/>
 <meta name="twitter:description" content="Definition String type is immutable. Need to allocate new strings when slicing or concatenating. Try to write values from the back, instead of front. Reduce space complexity by using the string itself instead of brute force O(n) solutions.
 Basic operations t = &#39;My first string&#39; s = &#39; first &#39; print(f&#39;in: {s in t}&#39;) print(f&#39;strip(): |{s}| -&gt; |{s.strip()}|&#39;) print(f&#39;startswith(): {t.startswith(&#34;M&#34;)}&#39;) print(f&#39;endswith(): {t.endswith(&#34;ing&#34;)}&#39;) print(f&#39;STR.split(SEP): {t.split(&#34; &#34;)}&#39;) print(f&#39;SEP.join(LIST): {&#34;/&#34;.join([&#34;hey&#34;, &#34;ho&#34;, &#34;O&#34;])}&#39;) print(f&#39;STR.lower(): {t."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -152,15 +153,15 @@ MathJax.Hub.Config({
 <h3 id="basic-operations">Basic operations</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">t</span> <span class="o">=</span> <span class="s1">&#39;My first string&#39;</span>
 <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39; first &#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;in: {s in t}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;strip(): |{s}| -&gt; |{s.strip()}|&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;startswith(): {t.startswith(&#34;M&#34;)}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;endswith(): {t.endswith(&#34;ing&#34;)}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;STR.split(SEP): {t.split(&#34; &#34;)}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;SEP.join(LIST): {&#34;/&#34;.join([&#34;hey&#34;, &#34;ho&#34;, &#34;O&#34;])}&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;STR.lower(): {t.lower()}&#39;</span><span class="p">)</span>
-<span class="n">mystr</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;Testing this string: {t}&#39;</span>
-<span class="k">print</span><span class="p">(</span><span class="n">mystr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;in: </span><span class="si">{</span><span class="n">s</span> <span class="ow">in</span> <span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;strip(): |</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">| -&gt; |</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s1">|&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;startswith(): </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&#34;M&#34;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;endswith(): </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&#34;ing&#34;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;STR.split(SEP): </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;SEP.join(LIST): </span><span class="si">{</span><span class="s2">&#34;/&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&#34;hey&#34;</span><span class="p">,</span> <span class="s2">&#34;ho&#34;</span><span class="p">,</span> <span class="s2">&#34;O&#34;</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;STR.lower(): </span><span class="si">{</span><span class="n">t</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">mystr</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Testing this string: </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mystr</span><span class="p">)</span>
 </code></pre></div><pre><code>in: True
 strip(): | first | -&gt; |first|
 startswith(): True
@@ -253,10 +254,10 @@ Testing this string: My first string
 </code></pre>
 <h2 id="useful-tips">Useful tips</h2>
 <h3 id="convert-string-to-number-in-a-given-base">convert string to number in a given base</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">hexdigits</span>
 <span class="k">def</span> <span class="nf">num_to_int</span> <span class="p">(</span><span class="n">num_as_string</span><span class="p">,</span> <span class="n">base</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">base</span> <span class="o">+</span> <span class="n">hexdigits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()),</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">base</span> <span class="o">+</span> <span class="n">hexdigits</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">lower</span><span class="p">()),</span> <span class="n">num_as_string</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">num_to_int</span><span class="p">(</span><span class="s1">&#39;613&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 </code></pre></div><pre><code>304
 </code></pre>
@@ -284,7 +285,7 @@ Testing this string: My first string
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

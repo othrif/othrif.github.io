@@ -79,6 +79,16 @@ np.corrcoef(x.T) array([[ 1. , -0.8660254], [-0.8660254, 1. ]])  Eigenvalues and
     </item>
     
     <item>
+      <title>Majority vote: argmax, bincount, average</title>
+      <link>https://othrif.github.io/python/numpy/majorityvote.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/numpy/majorityvote.html</guid>
+      <description>Weighted majority vote import numpy as np np.argmax(np.bincount([0, 0, 1], weights=[0.2, 0.2, 0.6])) 1  Weighted majority vote based on class probabilities Assuming a binary classifier $i \in {0,1}$ and an ensemble of three classifiers $C_j \left(j \in {1,2,3} \right)$
+prob_output = np.array([[0.9, 0.1], [0.8, 0.2], [0.4, 0.6]]) # p(i_0|x) = 0.2x0.9 + 0.2x0.8 + 0.6x0.4 = 0.58 p = np.average(prob_output, axis=0, weights=[0.2, 0.2, 0.6]) p array([0.58, 0.42])  np.argmax(p) 0  </description>
+    </item>
+    
+    <item>
       <title>Searching</title>
       <link>https://othrif.github.io/python/numpy/searching_where.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

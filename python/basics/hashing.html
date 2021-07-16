@@ -21,16 +21,17 @@
 You will need to pass byte encoding or encode string.
 Used to encode unique filenames import hashlib import uuid for _ in range(3): filename = hashlib.sha1(&#39;myfile&#39;.encode(&#39;utf-8&#39;)).hexdigest()[:8]&#43;&#39;_&#39;&#43;str(uuid.uuid4().hex) print(filename) b3580ab4_2aa33c2df5bc4f569d83d6924d04541c b3580ab4_7c170be56bd0466cac020e18189b842d b3580ab4_8e518d7fdffb4eb0bde3cfc0d7cec3dc  Available algorithms import hashlib print(hashlib.algorithms_available) # lists all the algorithms available in the system, print(hashlib." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/hashing.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/hashing.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hashing strings"/>
 <meta name="twitter:description" content="Hashing strings A hash function is a function that takes input of a variable length sequence of bytes and converts it to a fixed length sequence.
 You will need to pass byte encoding or encode string.
 Used to encode unique filenames import hashlib import uuid for _ in range(3): filename = hashlib.sha1(&#39;myfile&#39;.encode(&#39;utf-8&#39;)).hexdigest()[:8]&#43;&#39;_&#39;&#43;str(uuid.uuid4().hex) print(filename) b3580ab4_2aa33c2df5bc4f569d83d6924d04541c b3580ab4_7c170be56bd0466cac020e18189b842d b3580ab4_8e518d7fdffb4eb0bde3cfc0d7cec3dc  Available algorithms import hashlib print(hashlib.algorithms_available) # lists all the algorithms available in the system, print(hashlib."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -157,33 +158,33 @@ MathJax.Hub.Config({
 <span class="kn">import</span> <span class="nn">uuid</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">filename</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="s1">&#39;myfile&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">8</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div><pre><code>b3580ab4_2aa33c2df5bc4f569d83d6924d04541c
 b3580ab4_7c170be56bd0466cac020e18189b842d
 b3580ab4_8e518d7fdffb4eb0bde3cfc0d7cec3dc
 </code></pre>
 <h3 id="available-algorithms">Available algorithms</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">algorithms_available</span><span class="p">)</span> <span class="c1"># lists all the algorithms available in the system,</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">algorithms_guaranteed</span><span class="p">)</span> <span class="c1"># only lists the algorithms present in the module</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">algorithms_available</span><span class="p">)</span> <span class="c1"># lists all the algorithms available in the system,</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">algorithms_guaranteed</span><span class="p">)</span> <span class="c1"># only lists the algorithms present in the module</span>
 </code></pre></div><pre><code>{'sha1', 'sha3_256', 'sha3_224', 'shake_256', 'sha512_256', 'md5-sha1', 'blake2s', 'sha256', 'md4', 'md5', 'sm3', 'sha224', 'sha3_512', 'blake2b', 'sha512_224', 'sha3_384', 'ripemd160', 'sha512', 'sha384', 'mdc2', 'shake_128', 'whirlpool'}
 {'sha1', 'sha3_384', 'sha384', 'sha512', 'shake_128', 'blake2s', 'sha3_256', 'sha256', 'shake_256', 'md5', 'sha3_224', 'sha224', 'sha3_512', 'blake2b'}
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
 <span class="n">hash_object</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
 <span class="n">hex_dig</span> <span class="o">=</span> <span class="n">hash_object</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hex_dig</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hex_dig</span><span class="p">)</span>
 </code></pre></div><pre><code>0a4d55a8d778e5022fab701977c5d840bbc486d0
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">hashlib</span>
 <span class="n">hash_object</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha1</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
 <span class="n">hex_dig</span> <span class="o">=</span> <span class="n">hash_object</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hex_dig</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hex_dig</span><span class="p">)</span>
 </code></pre></div><pre><code>0a4d55a8d778e5022fab701977c5d840bbc486d0
 </code></pre>
 <h3 id="shorten-string">Shorten string</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">hex_dig_short</span> <span class="o">=</span> <span class="n">hash_object</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()[:</span><span class="mi">8</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">hex_dig_short</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hex_dig_short</span><span class="p">)</span>
 </code></pre></div><pre><code>0a4d55a8
 </code></pre>
 
@@ -210,7 +211,7 @@ b3580ab4_8e518d7fdffb4eb0bde3cfc0d7cec3dc
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

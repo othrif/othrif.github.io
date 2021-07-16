@@ -21,16 +21,17 @@
 Nominal features: don&rsquo;t imply any order, i.e. t-shirt color
 import pandas as pd df = pd.DataFrame([[&#39;green&#39;, &#39;M&#39;, 10.1, &#39;class2&#39;], [&#39;red&#39;, &#39;L&#39;, 13.5, &#39;class1&#39;], [&#39;blue&#39;, &#39;XL&#39;, 15.3, &#39;class2&#39;]]) df.columns = [&#39;color&#39;, &#39;size&#39;, &#39;price&#39;, &#39;classlabel&#39;] df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Mapping ordinal features size_mapping = {&#39;XL&#39;: 3, &#39;L&#39;: 2, &#39;M&#39;: 1} df[&#39;size&#39;] = df[&#39;size&#39;]." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/pandas/categorical.html" />
+<meta property="og:url" content="https://othrif.github.io/python/pandas/categorical.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Categorical data"/>
 <meta name="twitter:description" content="Nominal and ordinal features Ordinal features: categorical values that can be sorted, i.e. t-shirt size
 Nominal features: don&rsquo;t imply any order, i.e. t-shirt color
 import pandas as pd df = pd.DataFrame([[&#39;green&#39;, &#39;M&#39;, 10.1, &#39;class2&#39;], [&#39;red&#39;, &#39;L&#39;, 13.5, &#39;class1&#39;], [&#39;blue&#39;, &#39;XL&#39;, 15.3, &#39;class2&#39;]]) df.columns = [&#39;color&#39;, &#39;size&#39;, &#39;price&#39;, &#39;classlabel&#39;] df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Mapping ordinal features size_mapping = {&#39;XL&#39;: 3, &#39;L&#39;: 2, &#39;M&#39;: 1} df[&#39;size&#39;] = df[&#39;size&#39;]."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -152,7 +153,7 @@ MathJax.Hub.Config({
   <h3 id="nominal-and-ordinal-features">Nominal and ordinal features</h3>
 <p><strong>Ordinal features</strong>: categorical values that can be sorted, i.e. t-shirt size<br>
 <strong>Nominal features</strong>: don&rsquo;t imply any order, i.e. t-shirt color</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="s1">&#39;class2&#39;</span><span class="p">],</span>
                    <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="mf">13.5</span><span class="p">,</span> <span class="s1">&#39;class1&#39;</span><span class="p">],</span>
@@ -200,7 +201,7 @@ Name: size, dtype: object
 <h3 id="one-hot-encoding-nominal-features">One-hot encoding nominal features</h3>
 <p>Note you cannot use the <code>LabelEncoder</code> since it will introduce an order that did not exist orginally. Use One-Hot encoding</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># option1: Pandas</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">]],</span> <span class="n">drop_first</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">]],</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div><!-- raw HTML omitted -->
 <pre><code>.dataframe tbody tr th {
     vertical-align: top;
@@ -256,7 +257,7 @@ Name: size, dtype: object
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

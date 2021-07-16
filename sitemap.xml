@@ -1,741 +1,450 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://othrif.github.io/algorithms/advanced/index.xml</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/python/index.xml</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/algorithms/index.xml</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/python/arrays.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/index.xml</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/python/primitives.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/python/queues.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/python/strings.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/algorithms/advanced/viterbi.html</loc>
     <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/references/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/cpp/basics/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/jupyter/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/onnx/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/docker/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/plotting/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/references/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/sftp_access.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/df_numpy.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/transcribe.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/bash.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/cpp/basics/dir_manip.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/pynn.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/softmax_calc.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/angle.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/categorical.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/cuda_check.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/dl_server.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/versions.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/rand_files.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/class_nn.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/config_file.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/plotting/pcolormesh.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/combinatorics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_mov_gif.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_video.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/copy_rand_file.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/copy.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/cov_eigen.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/cpp/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/cumsum.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/decision_boundary.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/decision_tree.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/delete_objects.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/ps_running.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/dot_product.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/ec2_basics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/encrypt.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/plotting/meshgrid.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/pyenv.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/scaling.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/unique.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/find_files.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/where.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/functools.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/split_word.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/tensor_to_string.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/exception.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/tensors.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/hashing.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/files_in_folder.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/column-names.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/id_object.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/display.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/onnx/install_onnx.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/itertools.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/jupyter.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/watermark.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/system_info.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/list_unique.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/plotting/plot_iri.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/logging.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/logistic_regression.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/mac_tricks.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://othrif.github.io/python/numpy/majorityvote.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/python/docker/docker_case.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/map_manip.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/dir_manip.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/map.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/markdown.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/speedtest.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/membership.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/missing.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/mostfrequent.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/tf_map_lambda.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/pca.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/play_sound.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/sound_remote.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/print.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/pad_print.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/keywords.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/coding/references/py_library.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/references/py_library.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/load_embedding.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/remove_after_string.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/s3_basics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/search_string.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/searching_where.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/numpy/array_manip.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/jupyter/close_jupyter_server.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/setup_server.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/ip_address.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/soundfile_prop.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_text/load_embedding-copy1.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/split_text.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/ffmpeg.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/ssh_keys.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/includes.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/substring_key_match.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/timeit.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/tensor_dim.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/total_audio.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/tqdm.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/pandas/traintestsplit.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/namedtuple.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/underscore.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/pipenv.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/movgif.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/git.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/acccess_remote.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/scripting/tmux.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/linux/basics/zip_and_unzip_files.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/about/othmane_rifki.html</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://othrif.github.io/about/index.xml</loc>
     <lastmod>2017-12-20T11:53:49-07:00</lastmod>
   </url>
-  
 </urlset>

@@ -21,16 +21,17 @@
 https://en.wikipedia.org/wiki/Viterbi_algorithm
 Problem Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/algorithms/advanced/viterbi.html" />
+<meta property="og:url" content="https://othrif.github.io/algorithms/advanced/viterbi.html" /><meta property="article:section" content="algorithms" />
 <meta property="article:published_time" content="2021-02-04T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-02-04T00:00:00+00:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Viterbi algorithm"/>
 <meta name="twitter:description" content="Definition The Viterbi algorithm is a dynamic programming algorithm for finding the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM).
 https://en.wikipedia.org/wiki/Viterbi_algorithm
 Problem Consider a village where all villagers are either healthy or have a fever and only the village doctor can determine whether each has a fever. The doctor diagnoses fever by asking patients how they feel."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -173,7 +174,7 @@ MathJax.Hub.Config({
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">viterbi</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">start_p</span><span class="p">,</span> <span class="n">trans_p</span><span class="p">,</span> <span class="n">emit_p</span><span class="p">):</span>
     <span class="n">V</span> <span class="o">=</span> <span class="p">[{}]</span>
     <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">states</span><span class="p">:</span>
-        <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">st</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;prob&#34;</span><span class="p">:</span> <span class="n">start_p</span><span class="p">[</span><span class="n">st</span><span class="p">]</span> <span class="o">*</span> <span class="n">emit_p</span><span class="p">[</span><span class="n">st</span><span class="p">][</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s2">&#34;prev&#34;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+        <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">st</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;prob&#34;</span><span class="p">:</span> <span class="n">start_p</span><span class="p">[</span><span class="n">st</span><span class="p">]</span> <span class="o">*</span> <span class="n">emit_p</span><span class="p">[</span><span class="n">st</span><span class="p">][</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="s2">&#34;prev&#34;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
     <span class="c1"># Run Viterbi when t &gt; 0</span>
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">obs</span><span class="p">)):</span>
         <span class="n">V</span><span class="o">.</span><span class="n">append</span><span class="p">({})</span>
@@ -190,11 +191,11 @@ MathJax.Hub.Config({
             <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="p">][</span><span class="n">st</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;prob&#34;</span><span class="p">:</span> <span class="n">max_prob</span><span class="p">,</span> <span class="s2">&#34;prev&#34;</span><span class="p">:</span> <span class="n">prev_st_selected</span><span class="p">}</span>
 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">dptable</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
     <span class="n">opt</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">max_prob</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="n">best_st</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">best_st</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="c1"># Get most probable state and its backtrack</span>
     <span class="k">for</span> <span class="n">st</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">V</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;prob&#34;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_prob</span><span class="p">:</span>
@@ -208,7 +209,7 @@ MathJax.Hub.Config({
         <span class="n">opt</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">previous</span><span class="p">][</span><span class="s2">&#34;prev&#34;</span><span class="p">])</span>
         <span class="n">previous</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">previous</span><span class="p">][</span><span class="s2">&#34;prev&#34;</span><span class="p">]</span>
 
-    <span class="k">print</span> <span class="p">(</span><span class="s2">&#34;The steps of states are &#34;</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; with highest probability of </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">max_prob</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;The steps of states are &#34;</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">opt</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; with highest probability of </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">max_prob</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">dptable</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
     <span class="c1"># Print a table of steps from dictionary</span>
@@ -251,7 +252,7 @@ The steps of states are Healthy Healthy Fever with highest probability of 0.0151
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

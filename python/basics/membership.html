@@ -19,14 +19,15 @@
 <meta property="og:title" content="Membership test" />
 <meta property="og:description" content="Pythonic way of checking def contains(haystack, needle): if needle not in haystack: raise ValueError(&#39;Needle not found&#39;) contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &lt;ipython-input-4-c0a79d64f7a4&gt; in &lt;module&gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 ----&gt; 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &lt;ipython-input-4-c0a79d64f7a4&gt; in contains(haystack, needle) 1 def contains(haystack, needle): 2 if needle not in haystack: ----&gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  With a loop def contains(haystack, needle): for item in haystack: if item == needle: return raise ValueError(&#39;Needle not found&#39;) contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &lt;ipython-input-6-c605d648b237&gt; in &lt;module&gt; 4 return 5 raise ValueError(&#39;Needle not found&#39;) ----&gt; 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &lt;ipython-input-6-c605d648b237&gt; in contains(haystack, needle) 3 if item == needle: 4 return ----&gt; 5 raise ValueError(&#39;Needle not found&#39;) 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  Use for loop with else branch Little bit confusing though, so avoid" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/membership.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/membership.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Membership test"/>
 <meta name="twitter:description" content="Pythonic way of checking def contains(haystack, needle): if needle not in haystack: raise ValueError(&#39;Needle not found&#39;) contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &lt;ipython-input-4-c0a79d64f7a4&gt; in &lt;module&gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 ----&gt; 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &lt;ipython-input-4-c0a79d64f7a4&gt; in contains(haystack, needle) 1 def contains(haystack, needle): 2 if needle not in haystack: ----&gt; 3 raise ValueError(&#39;Needle not found&#39;) 4 5 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  With a loop def contains(haystack, needle): for item in haystack: if item == needle: return raise ValueError(&#39;Needle not found&#39;) contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) --------------------------------------------------------------------------- ValueError Traceback (most recent call last) &lt;ipython-input-6-c605d648b237&gt; in &lt;module&gt; 4 return 5 raise ValueError(&#39;Needle not found&#39;) ----&gt; 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) &lt;ipython-input-6-c605d648b237&gt; in contains(haystack, needle) 3 if item == needle: 4 return ----&gt; 5 raise ValueError(&#39;Needle not found&#39;) 6 contains([23, 42, 0xbadc0ffee], &#39;needle&#39;) ValueError: Needle not found  Use for loop with else branch Little bit confusing though, so avoid"/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -259,7 +260,7 @@ ValueError: Needle not found
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

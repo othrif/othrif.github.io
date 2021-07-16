@@ -21,16 +21,17 @@
 import click @click.command() @click.option(&#39;-f&#39;, &#39;--first&#39;, default=&#39;first&#39;) @click.option(&#39;-s&#39;, &#39;--second&#39;, default=10) def test(first, second): print(&#39;First&#39;, first) print(&#39;Second&#39;, second) test() Using click with config file Using the module click_config_file we can load the parameter file similar to this:
 import click import click_config_file @click.command() @click.option(&#39;--name&#39;, default=&#39;World&#39;, help=&#39;Who to greet.&#39;) @click_config_file.configuration_option() def hello(name): click.echo(&#39;Hello {}!&#39;.format(name)) hello() the parameter file should read:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/config_file.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/config_file.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CLI arguments and config with click"/>
 <meta name="twitter:description" content="Basic usage of click Command line arguments get passed to a function that you then call later on.
 import click @click.command() @click.option(&#39;-f&#39;, &#39;--first&#39;, default=&#39;first&#39;) @click.option(&#39;-s&#39;, &#39;--second&#39;, default=10) def test(first, second): print(&#39;First&#39;, first) print(&#39;Second&#39;, second) test() Using click with config file Using the module click_config_file we can load the parameter file similar to this:
 import click import click_config_file @click.command() @click.option(&#39;--name&#39;, default=&#39;World&#39;, help=&#39;Who to greet.&#39;) @click_config_file.configuration_option() def hello(name): click.echo(&#39;Hello {}!&#39;.format(name)) hello() the parameter file should read:"/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -153,14 +154,14 @@ MathJax.Hub.Config({
 <p>Command line arguments get passed to a function that you then call later on.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">click</span>
 
-<span class="nd">@click.command</span><span class="p">()</span>
-<span class="nd">@click.option</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--first&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
-<span class="nd">@click.option</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--second&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-f&#39;</span><span class="p">,</span> <span class="s1">&#39;--first&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--second&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="n">first</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span>
 
 
 <span class="n">test</span><span class="p">()</span>
@@ -169,12 +170,12 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">click</span>
 <span class="kn">import</span> <span class="nn">click_config_file</span>
 
-<span class="nd">@click.command</span><span class="p">()</span>
-<span class="nd">@click.option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Who to greet.&#39;</span><span class="p">)</span>
-<span class="nd">@click_config_file.configuration_option</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span><span class="s1">&#39;--name&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Who to greet.&#39;</span><span class="p">)</span>
+<span class="nd">@click_config_file</span><span class="o">.</span><span class="n">configuration_option</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;Hello {}!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">click</span><span class="o">.</span><span class="n">echo</span><span class="p">(</span><span class="s1">&#39;Hello </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
 <span class="n">hello</span><span class="p">()</span>
 </code></pre></div><p>the parameter file should read:</p>
@@ -205,7 +206,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

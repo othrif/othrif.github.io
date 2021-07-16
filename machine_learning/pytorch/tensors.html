@@ -19,14 +19,15 @@
 <meta property="og:title" content="Handling tensors" />
 <meta property="og:description" content="import torch Tensor properties Create tensor from a list or an array example_tensor = torch.Tensor( [ [[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 0], [1, 2]] ] ) Initialize tensors # with ones with same shape as example tensor torch.ones_like(example_tensor) tensor([[[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]]])  # with zeros with same shape as example tensor torch.zeros_like(example_tensor) tensor([[[0., 0.], [0., 0.]], [[0., 0." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/pytorch/tensors.html" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/pytorch/tensors.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Handling tensors"/>
 <meta name="twitter:description" content="import torch Tensor properties Create tensor from a list or an array example_tensor = torch.Tensor( [ [[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 0], [1, 2]] ] ) Initialize tensors # with ones with same shape as example tensor torch.ones_like(example_tensor) tensor([[[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]], [[1., 1.], [1., 1.]]])  # with zeros with same shape as example tensor torch.zeros_like(example_tensor) tensor([[[0., 0.], [0., 0.]], [[0., 0."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -198,9 +199,9 @@ MathJax.Hub.Config({
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">example_tensor</span><span class="o">.</span><span class="n">shape</span>
 </code></pre></div><pre><code>torch.Size([3, 2, 2])
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;shape[0] =&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Rank =&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">example_tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Number of elements =&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">numel</span><span class="p">())</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;shape[0] =&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Rank =&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">example_tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Number of elements =&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">numel</span><span class="p">())</span>
 </code></pre></div><pre><code>shape[0] = 3
 Rank = 3
 Number of elements = 12
@@ -223,8 +224,8 @@ Number of elements = 12
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Move tensor to a new device</span>
 <span class="c1">#new_tensor = example_tensor.to(&#39;cuda&#39;)</span>
 </code></pre></div><h3 id="basic-functions">Basic functions</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;Mean:&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Stdev:&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Mean:&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Stdev:&#34;</span><span class="p">,</span> <span class="n">example_tensor</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
 </code></pre></div><pre><code>Mean: tensor(4.)
 Stdev: tensor(2.9848)
 </code></pre>
@@ -258,7 +259,7 @@ Stdev: tensor(2.9848)
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

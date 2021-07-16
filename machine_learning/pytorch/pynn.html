@@ -19,14 +19,15 @@
 <meta property="og:title" content="Basics of building a MLP" />
 <meta property="og:description" content="import torch import torch.nn as nn # Performs the operation 𝐴𝑥&#43;𝑏 , where 𝐴 and 𝑏 are initialized randomly linear = nn.Linear(10, 2) # nn.Linear(input dim=10, output dim=2) will take in a 𝑛×10 matrix and return an 𝑛×2 matrix  example_input = torch.randn(3, 10) example_output = linear(example_input) example_output tensor([[ 0.5458, 0.1715], [ 0.0310, -0.2061], [ 1.3804, -0.1380]], grad_fn=&lt;AddmmBackward&gt;)  # ReLU non-linearity sets all negative numbers in a tensor to zero relu = nn." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/pytorch/pynn.html" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/pytorch/pynn.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Basics of building a MLP"/>
 <meta name="twitter:description" content="import torch import torch.nn as nn # Performs the operation 𝐴𝑥&#43;𝑏 , where 𝐴 and 𝑏 are initialized randomly linear = nn.Linear(10, 2) # nn.Linear(input dim=10, output dim=2) will take in a 𝑛×10 matrix and return an 𝑛×2 matrix  example_input = torch.randn(3, 10) example_output = linear(example_input) example_output tensor([[ 0.5458, 0.1715], [ 0.0310, -0.2061], [ 1.3804, -0.1380]], grad_fn=&lt;AddmmBackward&gt;)  # ReLU non-linearity sets all negative numbers in a tensor to zero relu = nn."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -146,7 +147,7 @@ MathJax.Hub.Config({
   <div class="content">
 
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Performs the operation  𝐴𝑥+𝑏 , where  𝐴  and  𝑏  are initialized randomly</span>
 <span class="n">linear</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># nn.Linear(input dim=10, output dim=2) will take in a  𝑛×10  matrix and return an  𝑛×2  matrix </span>
 <span class="n">example_input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -181,10 +182,10 @@ MathJax.Hub.Config({
 <span class="p">)</span>
 
 <span class="n">test_example</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;input: &#34;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;output: &#34;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">mlp_layer</span><span class="p">(</span><span class="n">test_example</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;input: &#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">test_example</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;output: &#34;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mlp_layer</span><span class="p">(</span><span class="n">test_example</span><span class="p">))</span>
 </code></pre></div><pre><code>input: 
 tensor([[ 1.4355,  0.1143,  0.0974,  0.2137,  1.9092],
         [-0.7489, -1.7915,  0.3816, -0.0109,  1.3555],
@@ -199,7 +200,7 @@ tensor([[-0.8080,  1.9998],
         [ 1.4384, -0.5000]], grad_fn=&lt;NativeBatchNormBackward&gt;)
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Optimizer</span>
-<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="kn">as</span> <span class="nn">optim</span>
+<span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
 <span class="n">adam_opt</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">mlp_layer</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">train_example</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="n">adam_opt</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
@@ -209,7 +210,7 @@ tensor([[-0.8080,  1.9998],
     <span class="n">cur_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">mlp_layer</span><span class="p">(</span><span class="n">train_example</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
     <span class="n">cur_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
     <span class="n">adam_opt</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">cur_loss</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cur_loss</span><span class="p">)</span>
 </code></pre></div><pre><code>tensor(0.5653, grad_fn=&lt;MeanBackward0&gt;)
 tensor(0.4999, grad_fn=&lt;MeanBackward0&gt;)
 tensor(0.4354, grad_fn=&lt;MeanBackward0&gt;)
@@ -245,7 +246,7 @@ tensor(0.1651, grad_fn=&lt;MeanBackward0&gt;)
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

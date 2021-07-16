@@ -19,14 +19,15 @@
 <meta property="og:title" content="Missing values" />
 <meta property="og:description" content="Identify missing data import pandas as pd from io import StringIO import sys csv_data = \ &#39;&#39;&#39;A,B,C,D 1.0,2.0,3.0,4.0 5.0,6.0,,8.0 10.0,11.0,12.0,&#39;&#39;&#39; df = pd.read_csv(StringIO(csv_data)) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  df.isnull().sum() A 0 B 0 C 1 D 1 dtype: int64  Eliminating features with missing values # remove rows that contain missing values df.dropna(axis=0) .dataframe tbody tr th { vertical-align: top; } ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/pandas/missing.html" />
+<meta property="og:url" content="https://othrif.github.io/python/pandas/missing.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Missing values"/>
 <meta name="twitter:description" content="Identify missing data import pandas as pd from io import StringIO import sys csv_data = \ &#39;&#39;&#39;A,B,C,D 1.0,2.0,3.0,4.0 5.0,6.0,,8.0 10.0,11.0,12.0,&#39;&#39;&#39; df = pd.read_csv(StringIO(csv_data)) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  df.isnull().sum() A 0 B 0 C 1 D 1 dtype: int64  Eliminating features with missing values # remove rows that contain missing values df.dropna(axis=0) .dataframe tbody tr th { vertical-align: top; } ."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -146,7 +147,7 @@ MathJax.Hub.Config({
   <div class="content">
 
   <h3 id="identify-missing-data">Identify missing data</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
@@ -256,7 +257,7 @@ dtype: int64
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># impute missing values via the column mean</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">imr</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 <span class="n">imr</span> <span class="o">=</span> <span class="n">imr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
@@ -305,7 +306,7 @@ dtype: int64
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

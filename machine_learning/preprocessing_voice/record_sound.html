@@ -21,16 +21,17 @@
 Record in CLI From sox:
 rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Record my voice"/>
 <meta name="twitter:description" content="See resources here: https://realpython.com/playing-and-recording-sound-python/
 Record in CLI From sox:
 rec new-file.wav rec -b 16 -r 16000 new-file.wav Record with sounddevice import sounddevice as sd from scipy.io.wavfile import write fs = 44100 # Sample rate seconds = 3 # Duration of recording myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=1) sd.wait() # Wait until recording is finished write(&#39;output.wav&#39;, fs, myrecording) # Save as WAV file  import IPython.display as ipd import matplotlib.pyplot as plt ipd."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -156,7 +157,7 @@ MathJax.Hub.Config({
 
 rec -b <span class="m">16</span> -r <span class="m">16000</span> new-file.wav
 </code></pre></div><h1 id="record-with-sounddevice">Record with <code>sounddevice</code></h1>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sounddevice</span> <span class="kn">as</span> <span class="nn">sd</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">sounddevice</span> <span class="k">as</span> <span class="nn">sd</span>
 <span class="kn">from</span> <span class="nn">scipy.io.wavfile</span> <span class="kn">import</span> <span class="n">write</span>
 
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">44100</span>  <span class="c1"># Sample rate</span>
@@ -166,8 +167,8 @@ rec -b <span class="m">16</span> -r <span class="m">16000</span> new-file.wav
 <span class="n">sd</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>  <span class="c1"># Wait until recording is finished</span>
 <span class="n">write</span><span class="p">(</span><span class="s1">&#39;output.wav&#39;</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">myrecording</span><span class="p">)</span>  <span class="c1"># Save as WAV file </span>
 
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="kn">as</span> <span class="nn">ipd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">IPython.display</span> <span class="k">as</span> <span class="nn">ipd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">ipd</span><span class="o">.</span><span class="n">Audio</span><span class="p">(</span><span class="s1">&#39;output.wav&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myrecording</span><span class="p">)</span>
 </code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x12bdb8700&gt;]
@@ -197,7 +198,7 @@ rec -b <span class="m">16</span> -r <span class="m">16000</span> new-file.wav
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

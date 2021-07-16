@@ -20,15 +20,16 @@
 <meta property="og:description" content="There are 5 usages of underscores (_) in python
 Single leading underscore _var  _var is intended for internal use. from M import * doesn’t import objects whose names start with an underscore.  # m.py external = &#34;external&#34; _internal = &#34;internal&#34; # main1.py - doesn&#39;t work from m import * print(external) # external print(_internal) # NameError: name &#39;_internal&#39; is not defined # main2.py - work from m import external, _internal print(external) # external print(_internal) # internal # main3." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/underscore.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/underscore.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Usage of underscores"/>
 <meta name="twitter:description" content="There are 5 usages of underscores (_) in python
 Single leading underscore _var  _var is intended for internal use. from M import * doesn’t import objects whose names start with an underscore.  # m.py external = &#34;external&#34; _internal = &#34;internal&#34; # main1.py - doesn&#39;t work from m import * print(external) # external print(_internal) # NameError: name &#39;_internal&#39; is not defined # main2.py - work from m import external, _internal print(external) # external print(_internal) # internal # main3."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -158,23 +159,23 @@ MathJax.Hub.Config({
 
 <span class="c1"># main1.py - doesn&#39;t work</span>
 <span class="kn">from</span> <span class="nn">m</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="k">print</span><span class="p">(</span><span class="n">external</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">external</span><span class="p">)</span>
 <span class="c1"># external</span>
-<span class="k">print</span><span class="p">(</span><span class="n">_internal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">_internal</span><span class="p">)</span>
 <span class="c1"># NameError: name &#39;_internal&#39; is not defined</span>
 
 <span class="c1"># main2.py - work</span>
 <span class="kn">from</span> <span class="nn">m</span> <span class="kn">import</span> <span class="n">external</span><span class="p">,</span> <span class="n">_internal</span>
-<span class="k">print</span><span class="p">(</span><span class="n">external</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">external</span><span class="p">)</span>
 <span class="c1"># external</span>
-<span class="k">print</span><span class="p">(</span><span class="n">_internal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">_internal</span><span class="p">)</span>
 <span class="c1"># internal</span>
 
 <span class="c1"># main3.py - work</span>
 <span class="kn">import</span> <span class="nn">m</span>
-<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">external</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">external</span><span class="p">)</span>
 <span class="c1"># external</span>
-<span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">_internal</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">_internal</span><span class="p">)</span>
 <span class="c1"># internal</span>
 </code></pre></div><ul>
 <li>Single leading underscore is used a lot in classes. Programmers can create private variables and methods</li>
@@ -189,31 +190,31 @@ MathJax.Hub.Config({
         <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">_day</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">_is_even_number</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">_day</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">_is_even_number</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div><pre><code>2020 7 10
 True
 </code></pre>
 <h3 id="visual-seperator-of-digits">Visual seperator of digits</h3>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">amount</span> <span class="o">=</span> <span class="mi">1</span><span class="n">_000_000</span><span class="o">.</span><span class="mi">1</span>
-<span class="k">print</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">amount</span> <span class="o">=</span> <span class="mf">1_000_000.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
 </code></pre></div><pre><code>1000000.1
 </code></pre>
 <h3 id="values-we-dont-care-about">Values we don&rsquo;t care about</h3>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-  <span class="k">print</span><span class="p">(</span><span class="s2">&#34;I don&#39;t care about index&#34;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;I don&#39;t care about index&#34;</span><span class="p">)</span>
 </code></pre></div><pre><code>I don't care about index
 I don't care about index
 I don't care about index
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">year</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span><span class="p">,</span> <span class="n">second</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> 
 </code></pre></div><pre><code>[7, 10, 12, 10]
 </code></pre>
 <h3 id="single-trailing-underscore-var_">Single Trailing Underscore <code>var_</code></h3>
 <p>Only use to avoid conflicts with Python keywords.</p>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">keyword</span>
-<span class="k">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>
 </code></pre></div><pre><code>['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">global_</span><span class="o">=</span><span class="mi">2</span>
@@ -226,10 +227,10 @@ I don't care about index
         <span class="bp">self</span><span class="o">.</span><span class="n">__day</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">time</span><span class="p">))</span>
 </code></pre></div><pre><code>['_Time__day', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_month', 'year']
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">__day</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">__day</span><span class="p">)</span>
 </code></pre></div><pre><code>---------------------------------------------------------------------------
 
 AttributeError                            Traceback (most recent call last)
@@ -240,7 +241,7 @@ AttributeError                            Traceback (most recent call last)
 
 AttributeError: 'Time' object has no attribute '__day'
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">_Time__day</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">_Time__day</span><span class="p">)</span>
 </code></pre></div><pre><code>1
 </code></pre>
 <h3 id="double-leading-and-trailing-underscore-__var__">Double Leading and Trailing Underscore <strong>var</strong></h3>
@@ -252,10 +253,10 @@ AttributeError: 'Time' object has no attribute '__day'
         <span class="bp">self</span><span class="o">.</span><span class="n">__day</span> <span class="o">=</span> <span class="mi">1</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;year: {self.year}, month: {self._month}, day: {self.__day}&#34;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;year: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">, month: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_month</span><span class="si">}</span><span class="s2">, day: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__day</span><span class="si">}</span><span class="s2">&#34;</span>
       
 <span class="n">time</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
 </code></pre></div><pre><code>year: 2020, month: 7, day: 1
 </code></pre>
 
@@ -282,7 +283,7 @@ AttributeError: 'Time' object has no attribute '__day'
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

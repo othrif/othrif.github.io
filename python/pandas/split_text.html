@@ -20,15 +20,16 @@
 <meta property="og:description" content="See: https://github.com/dennisbakhuis/Tutorials/blob/master/B_Pandas_tips/2-%20Split%20text%20column%20into%20multiple%20new%20columns.ipynb
 import pandas as pd df = pd.DataFrame([ {&#39;path&#39;: &#39;train/data_shard_1.csv&#39;}, {&#39;path&#39;: &#39;train/data_shard_2.csv&#39;}, {&#39;path&#39;: &#39;train/data_shard_3.csv&#39;}, {&#39;path&#39;: &#39;test/data_shard_1.csv&#39;}, {&#39;path&#39;: &#39;test/data_shard_2.csv&#39;}, ]) df = (df .join(df .loc[:, &#39;path&#39;] .str.split(&#39;/&#39;, expand=True) .rename(columns={0: &#39;folder&#39;, 1: &#39;filename&#39;}) ) ) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/pandas/split_text.html" />
+<meta property="og:url" content="https://othrif.github.io/python/pandas/split_text.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Split text column into multiple new columns"/>
 <meta name="twitter:description" content="See: https://github.com/dennisbakhuis/Tutorials/blob/master/B_Pandas_tips/2-%20Split%20text%20column%20into%20multiple%20new%20columns.ipynb
 import pandas as pd df = pd.DataFrame([ {&#39;path&#39;: &#39;train/data_shard_1.csv&#39;}, {&#39;path&#39;: &#39;train/data_shard_2.csv&#39;}, {&#39;path&#39;: &#39;train/data_shard_3.csv&#39;}, {&#39;path&#39;: &#39;test/data_shard_1.csv&#39;}, {&#39;path&#39;: &#39;test/data_shard_2.csv&#39;}, ]) df = (df .join(df .loc[:, &#39;path&#39;] .str.split(&#39;/&#39;, expand=True) .rename(columns={0: &#39;folder&#39;, 1: &#39;filename&#39;}) ) ) df .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  "/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -148,7 +149,7 @@ MathJax.Hub.Config({
   <div class="content">
 
   <p>See: <a href="https://github.com/dennisbakhuis/Tutorials/blob/master/B_Pandas_tips/2-%20Split%20text%20column%20into%20multiple%20new%20columns.ipynb">https://github.com/dennisbakhuis/Tutorials/blob/master/B_Pandas_tips/2-%20Split%20text%20column%20into%20multiple%20new%20columns.ipynb</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
     <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;train/data_shard_1.csv&#39;</span><span class="p">},</span>
@@ -161,7 +162,7 @@ MathJax.Hub.Config({
 <span class="n">df</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span>
     <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df</span>
         <span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;path&#39;</span><span class="p">]</span>
-        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;folder&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;filename&#39;</span><span class="p">})</span>
     <span class="p">)</span>
 <span class="p">)</span>
@@ -202,7 +203,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

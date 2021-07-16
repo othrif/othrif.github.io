@@ -504,3 +504,38 @@
 [I 2021-07-15 09:32:14.664 ServerApp] Saving file at /scripting/encrypt.ipynb
 [I 2021-07-15 09:32:17.580 ServerApp] Starting buffering for a78f8d73-8ca3-4e99-bcc5-e88ead7d8fd7:d7c6d0f8-dc4e-4a0b-a97a-b71e020a08f5
 [I 2021-07-15 09:32:17.582 ServerApp] Starting buffering for 74723d3a-b188-4a8a-8e1a-748c6942936c:dc36aee7-478d-439c-addf-f592e5f2b0de
+[I 2021-07-16 09:50:17.198 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-16 09:50:18.444 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-16 09:50:18.444 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-16 09:50:18.522 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-16 09:50:18.526 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-16 09:50:18.526 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-16 09:50:18.532 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-16 09:50:18.543 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-16 09:50:18.549 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-16 09:50:18.550 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-16 09:50:18.550 ServerApp] http://localhost:8889/lab?token=3019fa10e75af2b297524fdee7cde7dd5681ae39e700d82f
+[I 2021-07-16 09:50:18.550 ServerApp]     http://127.0.0.1:8889/lab?token=3019fa10e75af2b297524fdee7cde7dd5681ae39e700d82f
+[I 2021-07-16 09:50:18.550 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-16 09:50:18.570 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-33193-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=3019fa10e75af2b297524fdee7cde7dd5681ae39e700d82f
+        http://127.0.0.1:8889/lab?token=3019fa10e75af2b297524fdee7cde7dd5681ae39e700d82f
+[I 2021-07-16 09:50:23.075 LabApp] Build is up to date
+[W 2021-07-16 09:50:23.382 ServerApp] 404 GET /api/contents/my_simple_audio.ipynb?content=0&1626443423375 (::1): No such file or directory: my_simple_audio.ipynb
+[W 2021-07-16 09:50:23.382 ServerApp] No such file or directory: my_simple_audio.ipynb
+[W 2021-07-16 09:50:23.383 ServerApp] 404 GET /api/contents/my_simple_audio.ipynb?content=0&1626443423375 (::1) 4.09ms referer=http://localhost:8889/lab
+[I 2021-07-16 09:51:52.003 ServerApp] Kernel started: ad3d4f93-3b9e-4dd2-83fb-bfb692712ed9
+[I 2021-07-16 09:51:53.719 ServerApp] Copying python/numpy/angle.ipynb to /python/numpy
+[W 2021-07-16 09:51:56.106 ServerApp] Got events for closed stream None
+[I 2021-07-16 09:52:01.612 ServerApp] Kernel started: 05a6d6e9-b1e9-43c6-b2d6-ef2d19d70b4c
+[I 2021-07-16 09:54:01.519 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
+[I 2021-07-16 09:56:01.553 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
+[I 2021-07-16 09:58:01.585 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
+[I 2021-07-16 09:59:22.897 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
+[I 2021-07-16 09:59:25.996 ServerApp] Saving file at /python/numpy/majorityvote.ipynb
+[I 2021-07-16 09:59:28.577 ServerApp] Starting buffering for 05a6d6e9-b1e9-43c6-b2d6-ef2d19d70b4c:05adebfe-29a5-4fc6-bea1-028ae3dd2696
+[I 2021-07-16 09:59:28.579 ServerApp] Starting buffering for ad3d4f93-3b9e-4dd2-83fb-bfb692712ed9:39eb8586-4265-48ab-a22b-0e37f4647b66

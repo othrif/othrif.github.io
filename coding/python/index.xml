@@ -27,7 +27,7 @@ Basic operations # Manipulate list A = list(range(10)) print(f&amp;#39;len() of 
       
       <guid>https://othrif.github.io/coding/python/primitives.html</guid>
       <description>Definition Everything in Python is an object. Primitive types are built-in types such as: numerics (integers,etc.), sequences (lists&amp;hellip;), mappings (dict), classes, instances, and exceptions.
-Key methods for numeric import math print(f&amp;#39;Absolutve value: {abs(-34.5)}&amp;#39;) print(f&amp;#39;Round up: {math.ceil(34.5)}&amp;#39;) print(f&amp;#39;Round down: {math.floor(34.5)}&amp;#39;) print(f&amp;#39;Max value: {max(34.5, 1000)}&amp;#39;) print(f&amp;#39;Power: {pow(34.5,2)} OR {34.5**2}&amp;#39;) print(f&amp;#39;Square root: {math.sqrt(34.5)}&amp;#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&amp;#39;42&amp;#39;) 42  str(87.</description>
+Key methods for numeric import math print(f&amp;#39;Absolutve value: {abs(-34.5)}&amp;#39;) print(f&amp;#39;Round up: {math.ceil(34.5)}&amp;#39;) print(f&amp;#39;Round down: {math.floor(34.5)}&amp;#39;) print(f&amp;#39;Max value: {max(34.5, 1000)}&amp;#39;) print(f&amp;#39;Power: {pow(34.5,2)}OR {34.5**2}&amp;#39;) print(f&amp;#39;Square root: {math.sqrt(34.5)}&amp;#39;) Absolutve value: 34.5 Round up: 35 Round down: 34 Max value: 1000 Power: 1190.25 OR 1190.25 Square root: 5.873670062235365  Interconvert numbers and strings str(42) &#39;42&#39;  int(&amp;#39;42&amp;#39;) 42  str(87.</description>
     </item>
     
     <item>

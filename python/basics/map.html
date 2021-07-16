@@ -21,16 +21,17 @@
 | Syntax: map(function, iterable)
 def square(n): return n * n num_list = [1,2,3,4] result = map(square, num_list) print(&#39;Mapped result is: &#39;, list(result)) Mapped result is: [1, 4, 9, 16]  zip() If we pass two iterators in zip() function, both iterators containing the same number of elements, then the zip() function will return an iterator of a tuple." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://othrif.github.io/python/basics/map.html" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/map.html" /><meta property="article:section" content="python" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
 <meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="map, zip, eval, ord, dir, pow  function"/>
 <meta name="twitter:description" content="map() The map() function allows you to execute a specified function for each item in an iterable that it takes as input(both function and iterable).
 | Syntax: map(function, iterable)
 def square(n): return n * n num_list = [1,2,3,4] result = map(square, num_list) print(&#39;Mapped result is: &#39;, list(result)) Mapped result is: [1, 4, 9, 16]  zip() If we pass two iterators in zip() function, both iterators containing the same number of elements, then the zip() function will return an iterator of a tuple."/>
-<meta name="generator" content="Hugo 0.77.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
     
 <script type="application/ld+json">
@@ -157,7 +158,7 @@ MathJax.Hub.Config({
 
 <span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">result</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">square</span><span class="p">,</span> <span class="n">num_list</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Mapped result is: &#39;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mapped result is: &#39;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 </code></pre></div><pre><code>Mapped result is:  [1, 4, 9, 16]
 </code></pre>
 <h3 id="zip">zip()</h3>
@@ -170,7 +171,7 @@ MathJax.Hub.Config({
 
 <span class="c1"># converting values to print as set</span>
 <span class="n">result</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The zipped result is: &#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The zipped result is: &#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </code></pre></div><pre><code>The zipped result is:  {(1, 'One'), (3, 'Three'), (2, 'Two')}
 </code></pre>
 <h3 id="eval">eval()</h3>
@@ -180,8 +181,8 @@ MathJax.Hub.Config({
 
 <span class="n">result2</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;3 * 8&#39;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
 </code></pre></div><pre><code>25
 24
 </code></pre>
@@ -192,9 +193,9 @@ MathJax.Hub.Config({
 <span class="n">y</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>   <span class="c1">#space character</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </code></pre></div><pre><code>97
 36
 32
@@ -207,7 +208,7 @@ MathJax.Hub.Config({
   <span class="n">age</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
   <span class="n">rollNo</span> <span class="o">=</span> <span class="mi">25</span>
   
-<span class="k">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">Student</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">Student</span><span class="p">))</span>
 </code></pre></div><pre><code>['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'age', 'name', 'rollNo']
 </code></pre>
 
@@ -234,7 +235,7 @@ MathJax.Hub.Config({
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 118 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 119 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
