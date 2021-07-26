@@ -84,6 +84,15 @@ Count number of occurences import itertools for key, group in itertools.groupby(
     </item>
     
     <item>
+      <title>Jupyter kernel versions</title>
+      <link>https://othrif.github.io/python/basics/jupyter.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/jupyter.html</guid>
+      <description>Version of python running import sys print(sys.executable) print(sys.version) print(sys.path) /Users/othrif/.pyenv/versions/3.9.6/bin/python3.9 3.9.6 (default, Jul 15 2021, 14:42:14) [Clang 12.0.5 (clang-1205.0.22.9)] [&#39;/Users/othrif/github/notes/content/python/basics&#39;, &#39;/Users/othrif/.pyenv/versions/3.9.6/lib/python39.zip&#39;, &#39;/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9&#39;, &#39;/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/lib-dynload&#39;, &#39;&#39;, &#39;/Users/othrif/.local/lib/python3.9/site-packages&#39;, &#39;/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages&#39;, &#39;/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/IPython/extensions&#39;, &#39;/Users/othrif/.ipython&#39;]  List all kernels !jupyter kernelspec list Available kernels: python3.8 /Users/othrif/Library/Jupyter/kernels/python3.8 python3.9 /Users/othrif/Library/Jupyter/kernels/python3.9 python3 /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/kernels/python3  Install Jupyter kernels python -m ipykernel install -name python3.9 You can also modify the kernel.json at /usr/local/share/jupyter/kernels/python3.9/kernel.json</description>
+    </item>
+    
+    <item>
       <title>Jupyter Watermark</title>
       <link>https://othrif.github.io/python/basics/watermark.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -257,7 +266,7 @@ pipenv install &amp;lt;package&amp;gt; or edit the Pipfile directly, here added 
       
       <guid>https://othrif.github.io/python/basics/pyenv.html</guid>
       <description>Update pyenv To pick up the latest python versions for example to get 3.9.2
-cd /home/`whoami`/.pyenv/plugins/python-build/../.. &amp;amp;&amp;amp; git pull &amp;amp;&amp;amp; cd - pyenv install 3.9.2 Update python from 3.8.5 to 3.9.6  Note all my old packages worked in 3.8.5 good review article: https://mungingdata.com/python/how-pyenv-works-shims/  brew upgrade pyenv install --list | grep &amp;#34; 3\.9&amp;#34; pyenv versions eval &amp;#34;$(pyenv init --path)&amp;#34; # add in .zshrc or .bashrc pyenv global 3.9.6 # set the global python cat ~/.</description>
+cd /home/`whoami`/.pyenv/plugins/python-build/../.. &amp;amp;&amp;amp; git pull &amp;amp;&amp;amp; cd - pyenv install 3.9.2 Update python from 3.8.5 to 3.9.6 pip list | awk &amp;#39;{print $1}&amp;#39; &amp;gt; /tmp/requirements.txt # list of all your packages in the current python version brew upgrade pyenv install 3.9.6 eval &amp;#34;$(pyenv init --path)&amp;#34; # add in .zshrc or .bashrc pyenv global 3.9.6 pip install -r /tmp/requirements.</description>
     </item>
     
   </channel>

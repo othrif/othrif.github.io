@@ -634,3 +634,347 @@
 [I 2021-07-16 16:19:39.034 ServerApp] Saving file at /python/basics/pyenv.ipynb
 [I 2021-07-16 16:19:41.084 ServerApp] Starting buffering for 312aa8be-951e-4ea4-8e9b-5b1091c7ce9f:4d293b0c-5089-48de-8a44-d0353f2fe3fd
 [I 2021-07-16 16:19:41.086 ServerApp] Starting buffering for d737b3fe-6cb3-4aaa-8f8e-51dd22f2868d:46354e38-a0c8-424a-a32b-c9766777245a
+[I 2021-07-16 16:23:28.254 ServerApp] Starting buffering for b024a2d4-60fb-441c-ae4f-a81f5ddc63e7:f0a24817-4257-412c-bbdc-8eff51e3eae2
+[I 2021-07-16 16:23:28.255 ServerApp] Starting buffering for ee7da5e0-d9bb-42ed-8df4-569ce774433d:f806d650-e138-490e-b730-7f94f2040578
+[I 2021-07-16 16:36:06.152 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-16 16:36:06.598 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-16 16:36:06.599 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-16 16:36:06.657 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-16 16:36:06.658 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-16 16:36:06.659 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-16 16:36:06.660 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-16 16:36:06.661 ServerApp] The port 8892 is already in use, trying another port.
+[I 2021-07-16 16:36:06.666 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-16 16:36:06.666 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-16 16:36:06.670 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-16 16:36:06.678 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-16 16:36:06.681 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-16 16:36:06.682 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-16 16:36:06.682 ServerApp] http://localhost:8800/lab?token=8ce783793ac2120507d6e5ecc27a3157f3b53214176decf8
+[I 2021-07-16 16:36:06.682 ServerApp]     http://127.0.0.1:8800/lab?token=8ce783793ac2120507d6e5ecc27a3157f3b53214176decf8
+[I 2021-07-16 16:36:06.682 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-16 16:36:06.702 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-77380-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8800/lab?token=8ce783793ac2120507d6e5ecc27a3157f3b53214176decf8
+        http://127.0.0.1:8800/lab?token=8ce783793ac2120507d6e5ecc27a3157f3b53214176decf8
+[I 2021-07-16 16:36:12.347 LabApp] Build is up to date
+[I 2021-07-16 16:36:14.208 ServerApp] Kernel started: baec47cf-6a24-4e84-8d3a-24439e60ca63
+[I 2021-07-16 16:36:14.303 ServerApp] Kernel started: 69735fba-d62b-4c72-8078-add14e9e185d
+[W 2021-07-16 16:36:18.504 ServerApp] Got events for closed stream None
+[I 2021-07-16 16:40:15.070 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:42:15.119 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:44:15.165 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:46:15.189 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:46:40.945 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:47:01.860 ServerApp] Saving file at /python/basics/pyenv.ipynb
+[I 2021-07-16 16:47:10.423 ServerApp] Starting buffering for 69735fba-d62b-4c72-8078-add14e9e185d:066c4b52-e803-4f20-87ab-678edfa00345
+[I 2021-07-16 16:47:10.425 ServerApp] Starting buffering for baec47cf-6a24-4e84-8d3a-24439e60ca63:987d56a2-3da6-466a-9024-6fc8da204502
+[I 2021-07-18 19:18:23.146 ServerApp] jupyterlab | extension was successfully linked.
+[W 2021-07-18 19:18:23.565 ServerApp] The module 'jupyter_nbextensions_configurator' could not be found. Are you sure the extension is installed?
+[I 2021-07-18 19:18:23.566 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-18 19:18:23.626 LabApp] JupyterLab extension loaded from /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-18 19:18:23.626 LabApp] JupyterLab application directory is /usr/local/Cellar/jupyterlab/3.0.16_1/libexec/share/jupyter/lab
+[I 2021-07-18 19:18:23.630 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-18 19:18:23.638 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-18 19:18:23.644 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-18 19:18:23.644 ServerApp] Jupyter Server 1.7.0 is running at:
+[I 2021-07-18 19:18:23.644 ServerApp] http://localhost:8888/lab?token=d430ceb988e3419d5cedd23f7a760a2f963c6730feb1240e
+[I 2021-07-18 19:18:23.644 ServerApp]     http://127.0.0.1:8888/lab?token=d430ceb988e3419d5cedd23f7a760a2f963c6730feb1240e
+[I 2021-07-18 19:18:23.645 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-18 19:18:23.668 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-5828-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=d430ceb988e3419d5cedd23f7a760a2f963c6730feb1240e
+        http://127.0.0.1:8888/lab?token=d430ceb988e3419d5cedd23f7a760a2f963c6730feb1240e
+[I 2021-07-18 19:18:27.527 LabApp] Build is up to date
+[W 2021-07-18 19:18:27.718 ServerApp] 404 GET /api/contents/kws.ipynb?content=0&1626650307713 (::1): No such file or directory: kws.ipynb
+[W 2021-07-18 19:18:27.718 ServerApp] No such file or directory: kws.ipynb
+[W 2021-07-18 19:18:27.719 ServerApp] 404 GET /api/contents/kws.ipynb?content=0&1626650307713 (::1) 2.39ms referer=http://localhost:8888/lab
+[I 2021-07-19 11:50:30.862 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-19 11:50:31.079 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-19 11:50:31.080 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-19 11:50:31.080 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-19 11:50:31.134 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-19 11:50:31.135 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-19 11:50:31.135 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-19 11:50:31.136 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-19 11:50:31.136 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-19 11:50:31.140 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-19 11:50:31.141 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-19 11:50:31.142 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-19 11:50:31.142 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-19 11:50:31.143 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-19 11:50:31.144 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-19 11:50:31.144 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-19 11:50:31.144 ServerApp] http://localhost:8892/lab?token=143841c5974f2b1a044c6a831b325ac12d4b624d6bfd3cb9
+[I 2021-07-19 11:50:31.144 ServerApp]  or http://127.0.0.1:8892/lab?token=143841c5974f2b1a044c6a831b325ac12d4b624d6bfd3cb9
+[I 2021-07-19 11:50:31.144 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-19 11:50:31.163 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-17916-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8892/lab?token=143841c5974f2b1a044c6a831b325ac12d4b624d6bfd3cb9
+     or http://127.0.0.1:8892/lab?token=143841c5974f2b1a044c6a831b325ac12d4b624d6bfd3cb9
+[I 2021-07-19 11:50:35.224 LabApp] Build is up to date
+[W 2021-07-19 11:50:35.533 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1626709835528 (::1): No such file or directory: Untitled.ipynb
+[W 2021-07-19 11:50:35.533 ServerApp] No such file or directory: Untitled.ipynb
+[W 2021-07-19 11:50:35.533 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1626709835528 (::1) 1.95ms referer=http://localhost:8892/lab
+[W 2021-07-19 11:50:35.723 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.725 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.746 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.771 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.853 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.864 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.866 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.877 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.913 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.914 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.932 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.936 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.979 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:35.985 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.001 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.006 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.120 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.121 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.151 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.157 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.525 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.530 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.539 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.541 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.773 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.789 ServerApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.830 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.842 ServerApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.862 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.889 ServerApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.920 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:36.947 ServerApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:37.004 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:37.025 ServerApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:37.270 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 2021-07-19 11:50:37.289 ServerApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[I 2021-07-19 11:51:14.589 ServerApp] Kernel started: c5ecafd6-522e-4586-842e-4cf9cfc1c875
+[I 2021-07-19 11:51:16.245 ServerApp] Copying python/basics/exception.ipynb to /python/basics
+[I 2021-07-19 11:51:22.806 ServerApp] Kernel started: 5ba54386-d946-442d-8a37-2e329e233781
+[I 2021-07-19 11:51:26.335 ServerApp] Saving file at /python/basics/exception.ipynb
+[I 2021-07-19 11:53:22.710 ServerApp] Saving file at /python/basics/jupyter.ipynb
+[I 2021-07-19 11:55:22.752 ServerApp] Saving file at /python/basics/jupyter.ipynb
+[I 2021-07-19 11:57:15.476 ServerApp] Saving file at /python/basics/jupyter.ipynb
+[I 2021-07-19 11:57:17.053 ServerApp] Starting buffering for 5ba54386-d946-442d-8a37-2e329e233781:2d24ee92-9781-46ef-b61f-cde88924f9da
+[I 2021-07-19 11:57:17.054 ServerApp] Starting buffering for c5ecafd6-522e-4586-842e-4cf9cfc1c875:ebd06af8-bd21-4ff8-b9cc-99c38d1deb71
+[I 2021-07-19 12:00:01.946 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-19 12:00:02.151 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-19 12:00:02.152 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-19 12:00:02.152 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-19 12:00:02.192 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-19 12:00:02.193 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-19 12:00:02.193 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-19 12:00:02.194 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-19 12:00:02.194 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-19 12:00:02.197 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-19 12:00:02.198 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-19 12:00:02.199 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-19 12:00:02.200 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-19 12:00:02.201 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-19 12:00:02.201 ServerApp] The port 8892 is already in use, trying another port.
+[I 2021-07-19 12:00:02.202 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-19 12:00:02.202 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-19 12:00:02.202 ServerApp] http://localhost:8966/lab?token=d4a4d3b5ac81e73a170dae1e9d76c37e62a339f87ca328c7
+[I 2021-07-19 12:00:02.203 ServerApp]  or http://127.0.0.1:8966/lab?token=d4a4d3b5ac81e73a170dae1e9d76c37e62a339f87ca328c7
+[I 2021-07-19 12:00:02.203 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-19 12:00:02.217 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-20794-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8966/lab?token=d4a4d3b5ac81e73a170dae1e9d76c37e62a339f87ca328c7
+     or http://127.0.0.1:8966/lab?token=d4a4d3b5ac81e73a170dae1e9d76c37e62a339f87ca328c7
+[I 2021-07-19 12:00:06.146 LabApp] Build is up to date
+[W 2021-07-19 12:00:06.307 ServerApp] 404 GET /api/contents/demo_setup.ipynb?content=0&1626710406300 (::1): No such file or directory: demo_setup.ipynb
+[W 2021-07-19 12:00:06.307 ServerApp] No such file or directory: demo_setup.ipynb
+[W 2021-07-19 12:00:06.308 ServerApp] 404 GET /api/contents/demo_setup.ipynb?content=0&1626710406300 (::1) 2.43ms referer=http://localhost:8966/lab
+[I 2021-07-19 12:00:18.595 ServerApp] Kernel started: 23e81bba-a1a0-4b93-bc00-0b672a69f592
+[W 2021-07-19 12:00:22.214 ServerApp] Got events for closed stream None
+[I 2021-07-19 12:00:27.087 ServerApp] Saving file at /python/basics/jupyter.ipynb
+[I 2021-07-19 12:00:34.118 ServerApp] Starting buffering for 23e81bba-a1a0-4b93-bc00-0b672a69f592:57a440b6-1d4f-4980-87dd-a4c0158d4736
+[I 2021-07-19 14:24:09.617 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-19 14:24:10.139 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-19 14:24:10.139 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-19 14:24:10.139 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-19 14:24:10.188 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-19 14:24:10.189 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-19 14:24:10.189 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-19 14:24:10.191 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-19 14:24:10.191 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-19 14:24:10.197 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-19 14:24:10.198 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-19 14:24:10.198 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-19 14:24:10.200 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-19 14:24:10.200 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-19 14:24:10.200 ServerApp] http://localhost:8890/lab?token=12adf52a9df3a37f8918f29328088b1d393689a5fc2a7eef
+[I 2021-07-19 14:24:10.200 ServerApp]  or http://127.0.0.1:8890/lab?token=12adf52a9df3a37f8918f29328088b1d393689a5fc2a7eef
+[I 2021-07-19 14:24:10.201 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-19 14:24:10.218 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-30593-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=12adf52a9df3a37f8918f29328088b1d393689a5fc2a7eef
+     or http://127.0.0.1:8890/lab?token=12adf52a9df3a37f8918f29328088b1d393689a5fc2a7eef
+[I 2021-07-19 14:24:14.927 LabApp] Build is up to date
+[W 2021-07-19 14:24:15.166 ServerApp] 404 GET /api/contents/kws.ipynb?content=0&1626719055161 (::1): No such file or directory: kws.ipynb
+[W 2021-07-19 14:24:15.167 ServerApp] No such file or directory: kws.ipynb
+[W 2021-07-19 14:24:15.168 ServerApp] 404 GET /api/contents/kws.ipynb?content=0&1626719055161 (::1) 3.43ms referer=http://localhost:8890/lab
+[I 2021-07-19 14:25:19.800 ServerApp] Kernel started: f7ad4e37-6c44-4142-9747-a5c01845b142
+[W 2021-07-19 14:25:23.603 ServerApp] Got events for closed stream None
+[I 2021-07-19 14:27:19.601 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-19 14:29:19.627 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-19 14:53:35.665 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-19 15:17:05.026 ServerApp] Starting buffering for f7ad4e37-6c44-4142-9747-a5c01845b142:9d3a9c0a-af06-46b5-8f4c-acbaad5f1d48
+[I 2021-07-21 09:50:47.646 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-21 09:50:48.115 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-21 09:50:48.116 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-21 09:50:48.116 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-21 09:50:48.183 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-21 09:50:48.184 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-21 09:50:48.184 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-21 09:50:48.186 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-21 09:50:48.186 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-21 09:50:48.191 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-21 09:50:48.192 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-21 09:50:48.193 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-21 09:50:48.193 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-21 09:50:48.193 ServerApp] http://localhost:8889/lab?token=f13092ae539c89577556231058a8691f8fdc23f45d7d98e5
+[I 2021-07-21 09:50:48.193 ServerApp]  or http://127.0.0.1:8889/lab?token=f13092ae539c89577556231058a8691f8fdc23f45d7d98e5
+[I 2021-07-21 09:50:48.193 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-21 09:50:48.212 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-90235-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=f13092ae539c89577556231058a8691f8fdc23f45d7d98e5
+     or http://127.0.0.1:8889/lab?token=f13092ae539c89577556231058a8691f8fdc23f45d7d98e5
+[I 2021-07-21 09:50:52.322 LabApp] Build is up to date
+[W 2021-07-21 09:50:52.624 ServerApp] 404 GET /api/contents/custom_training_walkthrough.ipynb?content=0&1626875452614 (::1): No such file or directory: custom_training_walkthrough.ipynb
+[W 2021-07-21 09:50:52.625 ServerApp] No such file or directory: custom_training_walkthrough.ipynb
+[W 2021-07-21 09:50:52.626 ServerApp] 404 GET /api/contents/custom_training_walkthrough.ipynb?content=0&1626875452614 (::1) 3.01ms referer=http://localhost:8889/lab
+[I 2021-07-21 09:50:56.053 ServerApp] Kernel started: f52b126d-fe76-42bc-ad25-f54ecb72ae2e
+[W 2021-07-21 09:50:59.744 ServerApp] Got events for closed stream None
+[I 2021-07-21 09:51:15.948 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-21 09:51:17.090 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-21 09:51:18.639 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-21 09:51:20.257 ServerApp] Starting buffering for f52b126d-fe76-42bc-ad25-f54ecb72ae2e:7359d9f3-7918-47ab-b04b-051d700aed83
+[I 2021-07-25 21:46:26.920 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-25 21:46:27.392 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-25 21:46:27.392 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-25 21:46:27.392 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-25 21:46:27.470 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-25 21:46:27.471 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-25 21:46:27.471 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-25 21:46:27.473 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-25 21:46:27.473 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-25 21:46:27.478 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-25 21:46:27.479 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-25 21:46:27.480 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-25 21:46:27.481 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-25 21:46:27.482 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-25 21:46:27.482 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-25 21:46:27.482 ServerApp] http://localhost:8891/lab?token=c47c02b01bf4769b2ac80c67335a638d342d6ddd6060d434
+[I 2021-07-25 21:46:27.482 ServerApp]  or http://127.0.0.1:8891/lab?token=c47c02b01bf4769b2ac80c67335a638d342d6ddd6060d434
+[I 2021-07-25 21:46:27.482 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-25 21:46:27.505 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-51787-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8891/lab?token=c47c02b01bf4769b2ac80c67335a638d342d6ddd6060d434
+     or http://127.0.0.1:8891/lab?token=c47c02b01bf4769b2ac80c67335a638d342d6ddd6060d434
+[I 2021-07-25 21:46:32.869 LabApp] Build is up to date
+[W 2021-07-25 21:54:33.908 ServerApp] 404 GET /api/contents/compile_scored_movie_aws.ipynb?content=0&1627264473901 (::1): No such file or directory: compile_scored_movie_aws.ipynb
+[W 2021-07-25 21:54:33.908 ServerApp] No such file or directory: compile_scored_movie_aws.ipynb
+[W 2021-07-25 21:54:33.909 ServerApp] 404 GET /api/contents/compile_scored_movie_aws.ipynb?content=0&1627264473901 (::1) 5.45ms referer=http://localhost:8891/lab
+[I 2021-07-25 21:54:47.700 ServerApp] Kernel started: 3648499b-13c8-442e-b272-073a83ed2888
+[W 2021-07-25 21:54:51.369 ServerApp] Got events for closed stream None
+[I 2021-07-25 21:54:56.003 ServerApp] Kernel started: 812ec183-84c3-4b6d-b6c7-54c03bb0b38d
+[I 2021-07-25 21:56:47.522 ServerApp] Saving file at /machine_learning/scikitlearn/kfold.ipynb
+[I 2021-07-25 21:56:56.928 ServerApp] Saving file at /machine_learning/scikitlearn/knn.ipynb
+[I 2021-07-25 21:58:22.608 ServerApp] Saving file at /machine_learning/scikitlearn/kfold.ipynb
+[I 2021-07-25 21:58:25.004 ServerApp] Starting buffering for 812ec183-84c3-4b6d-b6c7-54c03bb0b38d:09e75fb9-7f71-47bd-bb71-ce4f77fb0017
+[I 2021-07-25 22:20:23.621 ServerApp] Copying machine_learning/scikitlearn/kfold.ipynb to /machine_learning/scikitlearn
+[I 2021-07-25 22:20:39.895 ServerApp] Kernel started: b82b5c0b-ea06-4514-a8a6-cfe799506d9b
+[I 2021-07-25 22:22:40.685 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-25 22:54:07.925 ServerApp] Starting buffering for b82b5c0b-ea06-4514-a8a6-cfe799506d9b:bd9ba7fb-70c3-4242-a459-fbf765c86c4e
+[I 2021-07-25 22:54:07.931 ServerApp] Starting buffering for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f
+[I 2021-07-25 22:54:08.039 ServerApp] Restoring connection for b82b5c0b-ea06-4514-a8a6-cfe799506d9b:bd9ba7fb-70c3-4242-a459-fbf765c86c4e
+[I 2021-07-25 22:54:08.060 ServerApp] Restoring connection for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f
+[I 2021-07-26 09:16:04.319 ServerApp] Starting buffering for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f
+[I 2021-07-26 09:16:04.324 ServerApp] Starting buffering for b82b5c0b-ea06-4514-a8a6-cfe799506d9b:bd9ba7fb-70c3-4242-a459-fbf765c86c4e
+[I 2021-07-26 09:16:04.526 ServerApp] Restoring connection for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f
+[I 2021-07-26 09:16:04.555 ServerApp] Restoring connection for b82b5c0b-ea06-4514-a8a6-cfe799506d9b:bd9ba7fb-70c3-4242-a459-fbf765c86c4e
+[I 2021-07-26 09:44:31.057 ServerApp] Saving file at /machine_learning/scikitlearn/kfold.ipynb
+[I 2021-07-26 09:44:43.316 ServerApp] Saving file at /machine_learning/scikitlearn/kfold.ipynb
+[I 2021-07-26 09:45:55.560 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:47:55.612 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:49:55.663 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:51:31.607 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:52:40.719 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:53:35.447 ServerApp] Saving file at /machine_learning/scikitlearn/validation_curves.ipynb
+[I 2021-07-26 09:53:42.030 ServerApp] Copying machine_learning/scikitlearn/validation_curves.ipynb to /machine_learning/scikitlearn
+[I 2021-07-26 09:54:31.497 ServerApp] Kernel started: 43d559eb-bab7-4b14-bda9-dc017db35df0
+[I 2021-07-26 09:54:32.098 ServerApp] Starting buffering for b82b5c0b-ea06-4514-a8a6-cfe799506d9b:bd9ba7fb-70c3-4242-a459-fbf765c86c4e
+[I 2021-07-26 09:56:31.214 ServerApp] Saving file at /machine_learning/scikitlearn/grid_search.ipynb
+[I 2021-07-26 09:57:00.288 ServerApp] Saving file at /machine_learning/scikitlearn/grid_search.ipynb
+[I 2021-07-26 10:36:35.560 ServerApp] Saving file at /machine_learning/scikitlearn/grid_search.ipynb
+[I 2021-07-26 10:36:41.621 ServerApp] Copying machine_learning/scikitlearn/grid_search.ipynb to /machine_learning/scikitlearn
+[I 2021-07-26 10:36:52.978 ServerApp] Kernel started: 5514a46f-c32e-4c52-9dbe-506bac5581f7
+[I 2021-07-26 10:36:53.765 ServerApp] Starting buffering for 43d559eb-bab7-4b14-bda9-dc017db35df0:9539e4ef-f585-4dfb-8e3b-dabd40bf8d6d
+[I 2021-07-26 10:38:52.830 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 10:40:52.868 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 10:44:52.910 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 10:46:52.940 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 10:48:53.023 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 10:50:53.083 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-07-26 11:03:58.474 ServerApp] Copying machine_learning/scikitlearn/evaluation_metrics.ipynb to /machine_learning/scikitlearn
+[I 2021-07-26 11:04:12.829 ServerApp] Kernel started: ae94f4be-7a46-4638-a23c-49db0a68c232
+[I 2021-07-26 11:06:00.936 ServerApp] Kernel restarted: ae94f4be-7a46-4638-a23c-49db0a68c232
+[I 2021-07-26 11:06:00.944 ServerApp] Starting buffering for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:06:00.950 ServerApp] Restoring connection for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:06:12.535 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:06:55.938 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:08:55.978 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:09:47.811 ServerApp] Kernel restarted: ae94f4be-7a46-4638-a23c-49db0a68c232
+[I 2021-07-26 11:09:47.818 ServerApp] Starting buffering for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:09:47.823 ServerApp] Restoring connection for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:10:56.029 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:18:58.505 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:20:58.545 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:22:13.784 ServerApp] Kernel restarted: ae94f4be-7a46-4638-a23c-49db0a68c232
+[I 2021-07-26 11:22:13.793 ServerApp] Starting buffering for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:22:13.800 ServerApp] Restoring connection for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:22:58.586 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:24:07.827 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 11:24:29.860 ServerApp] Kernel restarted: ae94f4be-7a46-4638-a23c-49db0a68c232
+[I 2021-07-26 11:24:29.881 ServerApp] Starting buffering for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:24:29.887 ServerApp] Restoring connection for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 11:26:07.863 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 13:47:47.586 ServerApp] Saving file at /machine_learning/scikitlearn/optimize_precision_recall.ipynb
+[I 2021-07-26 13:56:33.546 ServerApp] Starting buffering for 5514a46f-c32e-4c52-9dbe-506bac5581f7:42c3b5e7-d372-4ca8-ac87-082d3ec42a4f
+[I 2021-07-26 13:56:33.986 ServerApp] Starting buffering for ae94f4be-7a46-4638-a23c-49db0a68c232:7f8e260a-f481-4e05-bfb1-9f1c38820740
+[I 2021-07-26 13:56:34.742 ServerApp] Starting buffering for 43d559eb-bab7-4b14-bda9-dc017db35df0:17900474-8aff-4c2a-9113-f43b3c5bdd85
+[I 2021-07-26 13:56:38.361 ServerApp] Copying machine_learning/scikitlearn/optimize_precision_recall.ipynb to /machine_learning/scikitlearn
+[I 2021-07-26 13:56:53.839 ServerApp] Kernel started: d3ab8fdf-0057-4605-9e0f-1f28ef5f771c
+[I 2021-07-26 13:58:53.693 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
+[I 2021-07-26 14:00:53.733 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
+[I 2021-07-26 14:02:53.787 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
+[I 2021-07-26 14:03:08.468 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
+[I 2021-07-26 14:03:15.257 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
+[I 2021-07-26 14:03:17.842 ServerApp] Starting buffering for d3ab8fdf-0057-4605-9e0f-1f28ef5f771c:a2c8240d-9f9e-4126-a80b-8585ff763cef
+[I 2021-07-26 14:03:17.843 ServerApp] Starting buffering for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f

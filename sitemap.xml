@@ -144,6 +144,9 @@
     <loc>https://othrif.github.io/python/basics/combinatorics.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/evaluation_metrics.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -240,16 +243,25 @@
     <loc>https://othrif.github.io/python/basics/itertools.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/python/basics/jupyter.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/scripting/jupyter.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/watermark.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/kfold.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/validation_curves.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</loc>
@@ -312,6 +324,9 @@
     <loc>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/optimize_precision_recall.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/tensorflow/tf_map_lambda.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -355,6 +370,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/pandas/column-rename.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/class_imbalance.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/aws/s3_basics.html</loc>
@@ -415,6 +433,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/speech_to_text.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/grid_search.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/namedtuple.html</loc>

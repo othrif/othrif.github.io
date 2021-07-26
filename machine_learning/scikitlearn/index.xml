@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Confusion matrix, ROC curve, evaluation metrics</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/evaluation_metrics.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/evaluation_metrics.html</guid>
+      <description>Basic pipeline import numpy as np import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) Pipeline from sklearn.preprocessing import StandardScaler from sklearn.pipeline import make_pipeline from sklearn.svm import SVC pipe_svc = make_pipeline(StandardScaler(), SVC(random_state=1)) Confusion matrix from sklearn.metrics import confusion_matrix pipe_svc.</description>
+    </item>
+    
+    <item>
       <title>Decision Boundary</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/decision_boundary.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -38,6 +47,15 @@
     </item>
     
     <item>
+      <title>K-fold cross-validation</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/kfold.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/kfold.html</guid>
+      <description>Basic pipeline import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) Combining transformers and estimators in a pipeline from sklearn.preprocessing import StandardScaler from sklearn.decomposition import PCA from sklearn.linear_model import LogisticRegression from sklearn.pipeline import make_pipeline pipe_lr = make_pipeline(StandardScaler(), PCA(n_components=2), LogisticRegression(random_state=1, solver=&amp;#39;lbfgs&amp;#39;)) pipe_lr.</description>
+    </item>
+    
+    <item>
       <title>K-nearest neighbors (knn)</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -53,6 +71,16 @@
       
       <guid>https://othrif.github.io/machine_learning/scikitlearn/knn.html</guid>
       <description>Basic pipeline from sklearn import datasets import numpy as np from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler # Collect data iris = datasets.load_iris() X = iris.data[:, [2, 3]] y = iris.target # Split data X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.3, random_state=1, stratify=y) # Standardize features sc = StandardScaler() sc.fit(X_train) X_train_std = sc.transform(X_train) X_test_std = sc.transform(X_test) knn Algorithm from sklearn.neighbors import KNeighborsClassifier knn = KNeighborsClassifier(n_neighbors=5, p=2, metric=&amp;#39;minkowski&amp;#39;) knn.</description>
+    </item>
+    
+    <item>
+      <title>Learning and validation curves</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/validation_curves.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/validation_curves.html</guid>
+      <description>Basic pipeline import numpy as np import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) Learning curve Vary the sample size
+import matplotlib.pyplot as plt from sklearn.model_selection import learning_curve pipe_lr = make_pipeline(StandardScaler(), LogisticRegression(penalty=&amp;#39;l2&amp;#39;, random_state=1, solver=&amp;#39;lbfgs&amp;#39;, max_iter=10000)) train_sizes, train_scores, test_scores =\ learning_curve(estimator=pipe_lr, X=X_train, y=y_train, train_sizes=np.</description>
     </item>
     
     <item>
@@ -86,12 +114,39 @@ Kernel can be interpretted as a similarity measure: 1 if similar, 0 if very diss
     </item>
     
     <item>
+      <title>Optimizing the precision and recall of a classification model</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/optimize_precision_recall.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/optimize_precision_recall.html</guid>
+      <description>Basic pipeline import numpy as np import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) from sklearn.model_selection import GridSearchCV from sklearn.pipeline import make_pipeline from sklearn.preprocessing import StandardScaler from sklearn.svm import SVC pipe_svc = make_pipeline(StandardScaler(), SVC(random_state=1)) pipe_svc.fit(X_train, y_train) y_pred = pipe_svc.</description>
+    </item>
+    
+    <item>
       <title>PCA</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/pca.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/scikitlearn/pca.html</guid>
       <description>Prep data # Get data import numpy as np import pandas as pd df_wine = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases/wine/wine.data&amp;#39;, header=None) df_wine.columns = [&amp;#39;Class label&amp;#39;, &amp;#39;Alcohol&amp;#39;, &amp;#39;Malic acid&amp;#39;, &amp;#39;Ash&amp;#39;, &amp;#39;Alcalinity of ash&amp;#39;, &amp;#39;Magnesium&amp;#39;, &amp;#39;Total phenols&amp;#39;, &amp;#39;Flavanoids&amp;#39;, &amp;#39;Nonflavanoid phenols&amp;#39;, &amp;#39;Proanthocyanins&amp;#39;, &amp;#39;Color intensity&amp;#39;, &amp;#39;Hue&amp;#39;, &amp;#39;OD280/OD315 of diluted wines&amp;#39;, &amp;#39;Proline&amp;#39;] # Split data from sklearn.model_selection import train_test_split X, y = df_wine.iloc[:, 1:].values, df_wine.iloc[:, 0].values X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.3, stratify=y, random_state=0) # Standardize data from sklearn.</description>
+    </item>
+    
+    <item>
+      <title>Resampling for class imbalance</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/class_imbalance.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/class_imbalance.html</guid>
+      <description>Basic pipeline import numpy as np import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) print(&amp;#39;Prior to imbalance&amp;#39;) print(f&amp;#39;Class 0: {X[y == 0].shape[0]}&amp;#39;) print(f&amp;#39;Class 1: {X[y == 1].shape[0]}&amp;#39;) Prior to imbalance Class 0: 357 Class 1: 212  Create imbalanced set X_imb = np.</description>
+    </item>
+    
+    <item>
+      <title>Tuning hyperparameters via grid search</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/grid_search.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/grid_search.html</guid>
+      <description>Basic pipeline import numpy as np import pandas as pd from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import train_test_split df = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases&amp;#39; &amp;#39;/breast-cancer-wisconsin/wdbc.data&amp;#39;, header=None) X = df.loc[:, 2:].values y = df.loc[:, 1].values le = LabelEncoder() y = le.fit_transform(y) X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.20, stratify=y, random_state=1) finding best parameters from sklearn.preprocessing import StandardScaler from sklearn.pipeline import make_pipeline from sklearn.model_selection import GridSearchCV from sklearn.svm import SVC pipe_svc = make_pipeline(StandardScaler(), SVC(random_state=1)) param_range = [0.</description>
     </item>
     
   </channel>
