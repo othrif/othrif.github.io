@@ -978,3 +978,87 @@
 [I 2021-07-26 14:03:15.257 ServerApp] Saving file at /machine_learning/scikitlearn/class_imbalance.ipynb
 [I 2021-07-26 14:03:17.842 ServerApp] Starting buffering for d3ab8fdf-0057-4605-9e0f-1f28ef5f771c:a2c8240d-9f9e-4126-a80b-8585ff763cef
 [I 2021-07-26 14:03:17.843 ServerApp] Starting buffering for 3648499b-13c8-442e-b272-073a83ed2888:a51558f6-1f47-4840-ac9b-6a6b68636e7f
+[I 2021-07-28 20:41:00.654 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-28 20:41:01.103 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-28 20:41:01.104 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-28 20:41:01.104 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-28 20:41:01.179 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-28 20:41:01.180 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-28 20:41:01.180 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-28 20:41:01.182 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-28 20:41:01.182 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-28 20:41:01.188 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-28 20:41:01.189 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-28 20:41:01.190 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-28 20:41:01.190 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-28 20:41:01.191 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-28 20:41:01.191 ServerApp] The port 8892 is already in use, trying another port.
+[I 2021-07-28 20:41:01.192 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-28 20:41:01.192 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-28 20:41:01.192 ServerApp] http://localhost:8913/lab?token=a777c12e65552a79fe8c4fc5a947cb0d29ed011f47dc2a8f
+[I 2021-07-28 20:41:01.192 ServerApp]  or http://127.0.0.1:8913/lab?token=a777c12e65552a79fe8c4fc5a947cb0d29ed011f47dc2a8f
+[I 2021-07-28 20:41:01.192 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-28 20:41:01.208 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-1582-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8913/lab?token=a777c12e65552a79fe8c4fc5a947cb0d29ed011f47dc2a8f
+     or http://127.0.0.1:8913/lab?token=a777c12e65552a79fe8c4fc5a947cb0d29ed011f47dc2a8f
+[I 2021-07-28 20:41:05.498 LabApp] Build is up to date
+[W 2021-07-28 20:41:05.851 ServerApp] 404 GET /api/contents/data/all_deepgram_analysis_2021_06_24-results.csv?content=0&1627519265846 (::1): No such file or directory: data/all_deepgram_analysis_2021_06_24-results.csv
+[W 2021-07-28 20:41:05.851 ServerApp] No such file or directory: data/all_deepgram_analysis_2021_06_24-results.csv
+[W 2021-07-28 20:41:05.852 ServerApp] 404 GET /api/contents/data/all_deepgram_analysis_2021_06_24-results.csv?content=0&1627519265846 (::1) 1.92ms referer=http://localhost:8913/lab
+[W 2021-07-28 20:41:05.855 ServerApp] 404 GET /api/contents/listen_fp_fn.ipynb?content=0&1627519265848 (::1): No such file or directory: listen_fp_fn.ipynb
+[W 2021-07-28 20:41:05.855 ServerApp] No such file or directory: listen_fp_fn.ipynb
+[W 2021-07-28 20:41:05.856 ServerApp] 404 GET /api/contents/listen_fp_fn.ipynb?content=0&1627519265848 (::1) 2.34ms referer=http://localhost:8913/lab
+[W 2021-07-28 20:41:05.859 ServerApp] 404 GET /api/contents/format_score_label.ipynb?content=0&1627519265850 (::1): No such file or directory: format_score_label.ipynb
+[W 2021-07-28 20:41:05.860 ServerApp] No such file or directory: format_score_label.ipynb
+[W 2021-07-28 20:41:05.860 ServerApp] 404 GET /api/contents/format_score_label.ipynb?content=0&1627519265850 (::1) 2.94ms referer=http://localhost:8913/lab
+[W 2021-07-28 20:41:05.862 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1627519265852 (::1): No such file or directory: analyze_results.ipynb
+[W 2021-07-28 20:41:05.863 ServerApp] No such file or directory: analyze_results.ipynb
+[W 2021-07-28 20:41:05.863 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1627519265852 (::1) 2.43ms referer=http://localhost:8913/lab
+[I 2021-07-28 20:41:26.595 ServerApp] Kernel started: 151fe06b-734c-49f2-9908-367821b1ec35
+[W 2021-07-28 20:41:30.425 ServerApp] Got events for closed stream None
+[I 2021-07-28 20:41:43.552 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-28 20:41:46.667 ServerApp] Saving file at /scripting/bash.ipynb
+[I 2021-07-28 20:41:48.085 ServerApp] Starting buffering for 151fe06b-734c-49f2-9908-367821b1ec35:d75b8303-4c0f-4bcc-b373-69fb1e453bdb
+[I 2021-07-29 10:25:03.420 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-07-29 10:25:03.890 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-07-29 10:25:03.890 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-07-29 10:25:03.890 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-07-29 10:25:03.958 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-07-29 10:25:03.959 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-07-29 10:25:03.959 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-07-29 10:25:03.961 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-07-29 10:25:03.961 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-07-29 10:25:03.966 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-07-29 10:25:03.968 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-07-29 10:25:03.969 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-07-29 10:25:03.969 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-07-29 10:25:03.970 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-07-29 10:25:03.971 ServerApp] The port 8892 is already in use, trying another port.
+[I 2021-07-29 10:25:03.972 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-07-29 10:25:03.972 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-07-29 10:25:03.972 ServerApp] http://localhost:8987/lab?token=c920375ddde33bc212c693946b5dc46374ed0cfcd6e9bccc
+[I 2021-07-29 10:25:03.972 ServerApp]  or http://127.0.0.1:8987/lab?token=c920375ddde33bc212c693946b5dc46374ed0cfcd6e9bccc
+[I 2021-07-29 10:25:03.972 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-07-29 10:25:04.001 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-5396-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8987/lab?token=c920375ddde33bc212c693946b5dc46374ed0cfcd6e9bccc
+     or http://127.0.0.1:8987/lab?token=c920375ddde33bc212c693946b5dc46374ed0cfcd6e9bccc
+[I 2021-07-29 10:25:08.822 LabApp] Build is up to date
+[I 2021-07-29 10:25:10.790 ServerApp] Kernel started: 87ec4ba5-75a6-4ee9-96b4-4d3e7426f206
+[W 2021-07-29 10:25:14.457 ServerApp] Got events for closed stream None
+[I 2021-07-29 10:25:23.827 ServerApp] Kernel started: f9ac450d-e881-48fa-849c-a8395c2c4a7b
+[I 2021-07-29 10:25:26.646 ServerApp] Copying machine_learning/aws/transcribe.ipynb to /machine_learning/aws
+[I 2021-07-29 10:25:34.768 ServerApp] Kernel started: 4e58d7fd-e657-4107-aeb8-21a4cadf54ea
+[I 2021-07-29 10:25:56.625 ServerApp] Saving file at /machine_learning/aws/size_s3.ipynb
+[I 2021-07-29 10:25:58.013 ServerApp] Saving file at /machine_learning/aws/size_s3.ipynb
+[I 2021-07-29 10:25:58.224 ServerApp] Saving file at /machine_learning/aws/size_s3.ipynb
+[I 2021-07-29 10:26:00.673 ServerApp] Starting buffering for 4e58d7fd-e657-4107-aeb8-21a4cadf54ea:9ee82ba0-d646-4ca5-9843-298698ec3120
+[I 2021-07-29 10:26:00.674 ServerApp] Starting buffering for f9ac450d-e881-48fa-849c-a8395c2c4a7b:6e23ef5b-0f74-41f0-a53f-1c7d7bc9ad01
+[I 2021-07-29 10:26:00.677 ServerApp] Starting buffering for 87ec4ba5-75a6-4ee9-96b4-4d3e7426f206:3437db1b-3181-475e-8285-2406196e86ce

@@ -36,7 +36,7 @@
   "@type": "BlogPosting",
   "headline": "Bash scripting",
   "url": "https:\/\/othrif.github.io\/scripting\/bash.html",
-  "wordCount": "151",
+  "wordCount": "163",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -170,6 +170,8 @@ sort file1 file2 <span class="p">|</span> uniq -d <span class="c1"># using sort<
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sed <span class="s1">&#39;s/resources\/input\//\/Users\/othrif\/projects\/aoede\/resources\/input\/versioned\/v1\//g&#39;</span> *txt
 </code></pre></div><h3 id="diff-between-two-commands">Diff between two commands</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">diff &lt;<span class="o">(</span>ls file1<span class="o">)</span> &lt;<span class="o">(</span>ls file2<span class="o">)</span>
+</code></pre></div><h3 id="find-size-of-all-files-including-hidden-files">Find size of all files including hidden files</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">du -shc .<span class="o">[</span>^.<span class="o">]</span>* *
 </code></pre></div>
 </div>
   <aside>
@@ -194,7 +196,7 @@ sort file1 file2 <span class="p">|</span> uniq -d <span class="c1"># using sort<
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 127 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 128 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 
