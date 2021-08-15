@@ -102,6 +102,9 @@
     <loc>https://othrif.github.io/machine_learning/aws/transcribe.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/bagging_ensemble.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/scripting/bash.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -109,6 +112,12 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/pynn.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/boosting_ensemble.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/basics/ensemble_proba.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/softmax_calc.html</loc>
@@ -142,6 +151,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/combinatorics.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/scikitlearn/majoirty_vote.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/evaluation_metrics.html</loc>
@@ -253,9 +265,6 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/kfold.html</loc>
-    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
-  </url><url>
-    <loc>https://othrif.github.io/machine_learning/scikitlearn/knn-copy1.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/knn.html</loc>

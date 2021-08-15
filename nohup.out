@@ -1062,3 +1062,32 @@
 [I 2021-07-29 10:26:00.673 ServerApp] Starting buffering for 4e58d7fd-e657-4107-aeb8-21a4cadf54ea:9ee82ba0-d646-4ca5-9843-298698ec3120
 [I 2021-07-29 10:26:00.674 ServerApp] Starting buffering for f9ac450d-e881-48fa-849c-a8395c2c4a7b:6e23ef5b-0f74-41f0-a53f-1c7d7bc9ad01
 [I 2021-07-29 10:26:00.677 ServerApp] Starting buffering for 87ec4ba5-75a6-4ee9-96b4-4d3e7426f206:3437db1b-3181-475e-8285-2406196e86ce
+[I 2021-08-14 07:52:11.830 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-08-14 07:52:12.404 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-08-14 07:52:12.404 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-08-14 07:52:12.405 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-08-14 07:52:12.485 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-08-14 07:52:12.486 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-08-14 07:52:12.486 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-08-14 07:52:12.488 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-08-14 07:52:12.488 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-08-14 07:52:12.493 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-08-14 07:52:12.494 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-08-14 07:52:12.494 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-08-14 07:52:12.495 ServerApp] http://localhost:8888/lab?token=66b28cbf4e7ace5fff37d261ac15559b49892ba45d33c591
+[I 2021-08-14 07:52:12.495 ServerApp]  or http://127.0.0.1:8888/lab?token=66b28cbf4e7ace5fff37d261ac15559b49892ba45d33c591
+[I 2021-08-14 07:52:12.495 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-08-14 07:52:12.521 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-13237-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=66b28cbf4e7ace5fff37d261ac15559b49892ba45d33c591
+     or http://127.0.0.1:8888/lab?token=66b28cbf4e7ace5fff37d261ac15559b49892ba45d33c591
+[I 2021-08-14 07:52:17.524 LabApp] Build is up to date
+[W 2021-08-14 07:52:17.852 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1628952737845 (::1): No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-08-14 07:52:17.853 ServerApp] No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-08-14 07:52:17.853 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1628952737845 (::1) 2.59ms referer=http://localhost:8888/lab
+[W 2021-08-14 07:52:17.862 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1628952737848 (::1): No such file or directory: process.ipynb
+[W 2021-08-14 07:52:17.862 ServerApp] No such file or directory: process.ipynb
+[W 2021-08-14 07:52:17.863 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1628952737848 (::1) 6.97ms referer=http://localhost:8888/lab

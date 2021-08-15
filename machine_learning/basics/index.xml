@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Calculate error in ensemble</title>
+      <link>https://othrif.github.io/machine_learning/basics/ensemble_proba.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/ensemble_proba.html</guid>
+      <description>Error rate of the ensemble Assume you have $n$ classifiers and each has an error $\epsilon$, the combined error of the ensemble is smaller than the error in the individual classifiers.
+from scipy.special import comb import math def ensemble_error(n_classifier, error): k_start = int(math.ceil(n_classifier / 2.)) probs = [comb(n_classifier, k) * error**k * (1-error)**(n_classifier - k) for k in range(k_start, n_classifier + 1)] return sum(probs) ensemble_error(11, 0.25) 0.03432750701904297  Ensemble vs base error rates The base error should be less than 0.</description>
+    </item>
+    
+    <item>
       <title>Calculate softmax</title>
       <link>https://othrif.github.io/machine_learning/basics/softmax_calc.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
