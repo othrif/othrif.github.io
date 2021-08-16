@@ -1167,3 +1167,44 @@
 [I 2021-08-16 07:43:40.092 ServerApp] Starting buffering for 7302a974-e96e-4066-bed8-524889e7f548:8d63cbdd-d2d0-46c6-a97f-cbbdeac45df0
 [I 2021-08-16 07:43:40.093 ServerApp] Starting buffering for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
 [I 2021-08-16 07:43:40.094 ServerApp] Starting buffering for c3182739-a04e-4065-848a-df2e2ed21b21:1827b2ec-340e-459d-a468-68ef7933c87d
+[I 2021-08-16 07:52:20.258 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-08-16 07:52:20.767 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-08-16 07:52:20.767 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-08-16 07:52:20.767 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-08-16 07:52:20.849 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-08-16 07:52:20.850 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-08-16 07:52:20.850 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-08-16 07:52:20.851 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-08-16 07:52:20.851 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-08-16 07:52:20.855 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-08-16 07:52:20.857 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-08-16 07:52:20.857 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-08-16 07:52:20.858 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-08-16 07:52:20.859 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-08-16 07:52:20.859 ServerApp] http://localhost:8890/lab?token=30976d6876b700f6fc6d50decb05e930dbc9cc6187f4faf6
+[I 2021-08-16 07:52:20.859 ServerApp]  or http://127.0.0.1:8890/lab?token=30976d6876b700f6fc6d50decb05e930dbc9cc6187f4faf6
+[I 2021-08-16 07:52:20.859 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-08-16 07:52:20.881 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-29352-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=30976d6876b700f6fc6d50decb05e930dbc9cc6187f4faf6
+     or http://127.0.0.1:8890/lab?token=30976d6876b700f6fc6d50decb05e930dbc9cc6187f4faf6
+[I 2021-08-16 07:52:25.568 LabApp] Build is up to date
+[C 2021-08-16 07:53:06.617 ServerApp] received signal 15, stopping
+[I 2021-08-16 07:53:06.621 ServerApp] Shutting down 3 kernels
+[I 2021-08-16 07:53:06.623 ServerApp] Kernel shutdown: c3182739-a04e-4065-848a-df2e2ed21b21
+[I 2021-08-16 07:53:06.625 ServerApp] Kernel shutdown: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-16 07:53:06.628 ServerApp] Kernel shutdown: 7302a974-e96e-4066-bed8-524889e7f548
+[I 2021-08-16 07:53:06.937 ServerApp] Shutting down 0 terminals
+[I 2021-08-16 07:53:42.454 ServerApp] Kernel started: 74a5dd87-0c38-402e-a33c-e6cc9581a9b8
+[I 2021-08-16 07:53:42.479 ServerApp] Kernel started: 8628a09c-f11b-46cd-8c08-f1fd4b84c884
+[W 2021-08-16 07:53:46.263 ServerApp] Got events for closed stream None
+[I 2021-08-16 07:54:26.661 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 07:56:26.706 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[W 2021-08-16 07:57:07.307 ServerApp] delete /machine_learning/nlp/aclImdb
+[I 2021-08-16 07:57:14.874 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 07:57:29.783 ServerApp] Kernel restarted: 74a5dd87-0c38-402e-a33c-e6cc9581a9b8
+[I 2021-08-16 07:57:29.790 ServerApp] Starting buffering for 74a5dd87-0c38-402e-a33c-e6cc9581a9b8:b46cb395-cbd0-46fd-99c2-504ae01c215d
+[I 2021-08-16 07:57:29.803 ServerApp] Restoring connection for 74a5dd87-0c38-402e-a33c-e6cc9581a9b8:b46cb395-cbd0-46fd-99c2-504ae01c215d
