@@ -1208,3 +1208,12 @@
 [I 2021-08-16 07:57:29.783 ServerApp] Kernel restarted: 74a5dd87-0c38-402e-a33c-e6cc9581a9b8
 [I 2021-08-16 07:57:29.790 ServerApp] Starting buffering for 74a5dd87-0c38-402e-a33c-e6cc9581a9b8:b46cb395-cbd0-46fd-99c2-504ae01c215d
 [I 2021-08-16 07:57:29.803 ServerApp] Restoring connection for 74a5dd87-0c38-402e-a33c-e6cc9581a9b8:b46cb395-cbd0-46fd-99c2-504ae01c215d
+[I 2021-08-16 07:59:14.916 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:11:44.411 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:17:46.313 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:19:47.220 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:25:51.053 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:27:51.586 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-16 08:56:45.942 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[W 2021-08-16 08:58:03.341 ServerApp] delete /machine_learning/nlp/aclImdb
+[I 2021-08-16 08:58:46.259 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
