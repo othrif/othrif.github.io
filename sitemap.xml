@@ -50,6 +50,9 @@
     <loc>https://othrif.github.io/machine_learning/jupyter/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/index.xml</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/onnx/index.xml</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -375,6 +378,9 @@
     <loc>https://othrif.github.io/machine_learning/preprocessing_voice/record_sound.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/regex.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/python/basics/remove_after_string.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -394,6 +400,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/numpy/array_manip.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/sentiment_analysis.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/jupyter/close_jupyter_server.html</loc>

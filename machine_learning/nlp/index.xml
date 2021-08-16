@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine_learning - Othmane Rifki</title>
+    <link>https://othrif.github.io/machine_learning/nlp/index.xml</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Apr 2020 14:41:32 +0200</lastBuildDate>
+    
+        <atom:link href="https://othrif.github.io/machine_learning/nlp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regular expressions</title>
+      <link>https://othrif.github.io/machine_learning/nlp/regex.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/regex.html</guid>
+      <description>re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &amp;lt; &amp;ndash; ordinary characters just match themselves exactly. Meta-characters don&amp;rsquo;t: . ^ $ * + ? { \ | ( )
+  . (a period) &amp;ndash; matches any single character except newline &amp;lsquo;\n&amp;rsquo;
+  \w &amp;ndash; (lowercase w) matches a &amp;ldquo;word&amp;rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character</description>
+    </item>
+    
+    <item>
+      <title>Sentiment analysis in text</title>
+      <link>https://othrif.github.io/machine_learning/nlp/sentiment_analysis.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/sentiment_analysis.html</guid>
+      <description>Get dataset import os import urllib.request import tarfile import pandas as pd source = &amp;#39;http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz&amp;#39; target = &amp;#39;aclImdb_v1.tar.gz&amp;#39; if not os.path.isdir(&amp;#39;aclImdb&amp;#39;) and not os.path.isfile(&amp;#39;aclImdb_v1.tar.gz&amp;#39;): urllib.request.urlretrieve(source, target) if not os.path.isdir(&amp;#39;aclImdb&amp;#39;): with tarfile.open(target, &amp;#39;r:gz&amp;#39;) as tar: tar.extractall() # Build dataframe basepath = &amp;#39;aclImdb&amp;#39; labels = {&amp;#39;pos&amp;#39;: 1, &amp;#39;neg&amp;#39;: 0} df = pd.DataFrame() for s in (&amp;#39;test&amp;#39;, &amp;#39;train&amp;#39;): for l in (&amp;#39;pos&amp;#39;, &amp;#39;neg&amp;#39;): path = os.path.join(basepath, s, l) for file in sorted(os.listdir(path)): with open(os.</description>
+    </item>
+    
+  </channel>
+</rss>

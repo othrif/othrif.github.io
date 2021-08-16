@@ -1091,3 +1091,79 @@
 [W 2021-08-14 07:52:17.862 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1628952737848 (::1): No such file or directory: process.ipynb
 [W 2021-08-14 07:52:17.862 ServerApp] No such file or directory: process.ipynb
 [W 2021-08-14 07:52:17.863 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1628952737848 (::1) 6.97ms referer=http://localhost:8888/lab
+[I 2021-08-15 09:25:39.494 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-08-15 09:25:39.831 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-08-15 09:25:39.831 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-08-15 09:25:39.831 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-08-15 09:25:39.891 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-08-15 09:25:39.892 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-08-15 09:25:39.892 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-08-15 09:25:39.893 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-08-15 09:25:39.893 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-08-15 09:25:39.899 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-08-15 09:25:39.900 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-08-15 09:25:39.901 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-08-15 09:25:39.901 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-08-15 09:25:39.901 ServerApp] http://localhost:8889/lab?token=f3e47f56ac8ca193cabfe3ccde7bfa7572079e6a31db1146
+[I 2021-08-15 09:25:39.901 ServerApp]  or http://127.0.0.1:8889/lab?token=f3e47f56ac8ca193cabfe3ccde7bfa7572079e6a31db1146
+[I 2021-08-15 09:25:39.901 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-08-15 09:25:39.922 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-21630-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=f3e47f56ac8ca193cabfe3ccde7bfa7572079e6a31db1146
+     or http://127.0.0.1:8889/lab?token=f3e47f56ac8ca193cabfe3ccde7bfa7572079e6a31db1146
+[I 2021-08-15 09:25:44.119 LabApp] Build is up to date
+[I 2021-08-15 09:25:45.358 ServerApp] Kernel started: c3182739-a04e-4065-848a-df2e2ed21b21
+[W 2021-08-15 09:25:49.124 ServerApp] Got events for closed stream None
+[I 2021-08-15 09:45:02.631 ServerApp] Creating new directory in /machine_learning
+[I 2021-08-15 09:45:16.216 ServerApp] Copying machine_learning/aws/_index.md to /machine_learning/nlp
+[I 2021-08-15 09:45:25.340 ServerApp] Copying machine_learning/jupyter/close_jupyter_server.ipynb to /machine_learning/nlp
+[I 2021-08-15 09:45:33.430 ServerApp] Kernel started: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-15 09:47:33.323 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 09:49:33.353 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 12:38:46.505 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 12:40:46.564 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 12:41:19.950 ServerApp] Kernel interrupted: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-15 12:41:22.959 ServerApp] Kernel restarted: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-15 12:41:22.966 ServerApp] Starting buffering for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
+[I 2021-08-15 12:41:22.972 ServerApp] Restoring connection for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
+[I 2021-08-15 12:41:51.583 ServerApp] Kernel interrupted: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-15 12:42:46.606 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 12:44:46.631 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 12:46:46.666 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 17:55:23.584 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 17:57:19.928 ServerApp] Kernel restarted: 64e52793-1747-405b-aee0-e1fd7c116fa6
+[I 2021-08-15 17:57:19.933 ServerApp] Starting buffering for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
+[I 2021-08-15 17:57:19.941 ServerApp] Restoring connection for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
+[I 2021-08-15 17:57:23.618 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 17:59:23.651 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 18:29:23.772 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 18:29:24.556 ServerApp] Copying machine_learning/nlp/sentiment_analysis.ipynb to /machine_learning/nlp
+[I 2021-08-15 18:29:31.612 ServerApp] Kernel started: 7302a974-e96e-4066-bed8-524889e7f548
+[I 2021-08-15 18:31:23.809 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-08-15 18:31:31.416 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 18:55:32.298 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 18:57:32.336 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 18:59:32.372 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:01:32.414 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:03:32.451 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:17:32.501 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:19:32.546 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:21:32.583 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-15 19:23:32.632 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:18:43.227 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:20:43.302 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:22:43.356 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:26:43.401 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:28:43.450 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:30:43.495 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:32:43.553 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:34:43.612 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:36:43.681 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:40:43.735 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:43:37.595 ServerApp] Saving file at /machine_learning/nlp/regex.ipynb
+[I 2021-08-16 07:43:40.092 ServerApp] Starting buffering for 7302a974-e96e-4066-bed8-524889e7f548:8d63cbdd-d2d0-46c6-a97f-cbbdeac45df0
+[I 2021-08-16 07:43:40.093 ServerApp] Starting buffering for 64e52793-1747-405b-aee0-e1fd7c116fa6:6041307c-0bae-409e-8037-f54e27c52981
+[I 2021-08-16 07:43:40.094 ServerApp] Starting buffering for c3182739-a04e-4065-848a-df2e2ed21b21:1827b2ec-340e-459d-a468-68ef7933c87d

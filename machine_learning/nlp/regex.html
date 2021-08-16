@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Regular expressions" />
+<meta property="og:description" content="re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
+  . (a period) &ndash; matches any single character except newline &lsquo;\n&rsquo;
+  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/nlp/regex.html" /><meta property="article:section" content="machine_learning" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Regular expressions"/>
+<meta name="twitter:description" content="re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
+  . (a period) &ndash; matches any single character except newline &lsquo;\n&rsquo;
+  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character"/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regular expressions",
+  "url": "https:\/\/othrif.github.io\/machine_learning\/nlp\/regex.html",
+  "wordCount": "615",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Regular expressions</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Regular expressions</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h1 id="research-pattern"><code>re.search()</code> pattern</h1>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div><h3 id="basic-patterns">Basic patterns</h3>
+<ul>
+<li>
+<p>a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * + ? { <input disabled="" type="checkbox"> \ | ( )</p>
+</li>
+<li>
+<p>. (a period) &ndash; matches any single character except newline &lsquo;\n&rsquo;</p>
+</li>
+<li>
+<p>\w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character</p>
+</li>
+<li>
+<p>\b &ndash; boundary between word and non-word</p>
+</li>
+<li>
+<p>\s &ndash; (lowercase s) matches a single whitespace character. \S (upper case S) matches any non-whitespace character</p>
+</li>
+<li>
+<p>\t, \n, \r &ndash; tab, newline, return</p>
+</li>
+<li>
+<p>\d &ndash; decimal digit [0-9]</p>
+</li>
+<li>
+<p>^ = start, $ = end &ndash; match the start or end of the string</p>
+</li>
+<li>
+<p>\ &ndash; inhibit the &ldquo;specialness&rdquo; of a character. So, for example, use . to match a period or \ to match a slash</p>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">re</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;an example word:cat!!&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;word:\w\w\w&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="c1"># If-statement after search() tests if it succeeded</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;found&#39;</span><span class="p">,</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;did not find&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>found word:cat
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;iii&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</code></pre></div><pre><code>'iii'
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;..g&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(2, 5), match='iig'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d&#39;</span><span class="p">,</span> <span class="s1">&#39;p123g&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(1, 4), match='123'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w\w\w&#39;</span><span class="p">,</span> <span class="s1">&#39;@@abcd!!&#39;</span><span class="p">)</span> 
+</code></pre></div><pre><code>&lt;re.Match object; span=(2, 5), match='abc'&gt;
+</code></pre>
+<h3 id="repetition">Repetition</h3>
+<p>First the search finds the leftmost match for the pattern, and second it tries to use up as much of the string as possible</p>
+<ul>
+<li>+ &ndash; 1 or more occurrences of the pattern to its left, e.g. &lsquo;i+&rsquo; = one or more i&rsquo;s</li>
+<li>* &ndash; 0 or more occurrences of the pattern to its left</li>
+<li>? &ndash; match 0 or 1 occurrences of the pattern to its left</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;pi+&#39;</span><span class="p">,</span> <span class="s1">&#39;piiig&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(0, 4), match='piii'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;i+&#39;</span><span class="p">,</span> <span class="s1">&#39;piigiiii&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(1, 3), match='ii'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\s*\d\s*\d&#39;</span><span class="p">,</span> <span class="s1">&#39;xx1 2   3xx&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(2, 9), match='1 2   3'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;b\w+&#39;</span><span class="p">,</span> <span class="s1">&#39;foobar&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(3, 6), match='bar'&gt;
+</code></pre>
+<h3 id="square-brackets">Square Brackets</h3>
+<p>[abc] matches &lsquo;a&rsquo; or &lsquo;b&rsquo; or &lsquo;c&rsquo;.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w.-]+@[\w.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</code></pre></div><pre><code>alice-b@google.com
+</code></pre>
+<h3 id="group-extraction">Group Extraction</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice-b@google.com monkey dishwasher&#39;</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w.-]+)@([\w.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>  <span class="c1">## &#39;alice-b@google.com&#39; (the whole match)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">## &#39;alice-b&#39; (the username, group 1)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1">## &#39;google.com&#39; (the host, group 2)</span>
+</code></pre></div><pre><code>alice-b@google.com
+alice-b
+google.com
+</code></pre>
+<h1 id="findall"><code>findall</code></h1>
+<p><code>re.search()</code> to find the first match for a pattern. <code>findall()</code> finds <strong>all</strong> the matches and returns them as a list of strings</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">  <span class="c1">## Suppose we have a text with many email addresses</span>
+  <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+
+  <span class="c1">## Here re.findall() returns a list of all the found email strings</span>
+  <span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[\w\.-]+@[\w\.-]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="c1">## [&#39;alice@google.com&#39;, &#39;bob@abc.com&#39;]</span>
+  <span class="k">for</span> <span class="n">email</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">:</span>
+    <span class="c1"># do something with each found email string</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
+</code></pre></div><pre><code>alice@google.com
+bob@abc.com
+</code></pre>
+<h4 id="findall-with-files"><code>findall</code> with files</h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Open file</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="c1"># Feed the file text into findall(); it returns a list of all the found strings</span>
+<span class="n">strings</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;some pattern&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</code></pre></div><h4 id="findall-and-groups"><code>findall</code> and groups</h4>
+<p>Using the parenthesis () group mechanism.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+<span class="n">tuples</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w\.-]+)@([\w\.-]+)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">tuples</span><span class="p">)</span>  <span class="c1">## [(&#39;alice&#39;, &#39;google.com&#39;), (&#39;bob&#39;, &#39;abc.com&#39;)]</span>
+<span class="k">for</span> <span class="nb">tuple</span> <span class="ow">in</span> <span class="n">tuples</span><span class="p">:</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1">## username</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">## host</span>
+</code></pre></div><pre><code>[('alice', 'google.com'), ('bob', 'abc.com')]
+alice
+google.com
+bob
+abc.com
+</code></pre>
+<h3 id="use-of--and--for-greedy-vs-non-greedy">Use of <code>?</code> and <code>^</code> for greedy vs non-greedy</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;&lt;b&gt;foo&lt;/b&gt; and &lt;i&gt;so on&lt;/i&gt;&#39;</span> 
+<span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div><pre><code>&lt;re.Match object; span=(0, 27), match='&lt;b&gt;foo&lt;/b&gt; and &lt;i&gt;so on&lt;/i&gt;'&gt;
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div><pre><code>['&lt;b&gt;', '&lt;/b&gt;', '&lt;i&gt;', '&lt;/i&gt;']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^&gt;]*&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div><pre><code>['&lt;b', '', 'foo&lt;/b', '', ' and &lt;i', '', 'so on&lt;/i', '', '']
+</code></pre>
+<h1 id="substiution">Substiution</h1>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</code></pre></div><p>The function searches for all the instances of pattern in the given string, and replaces them.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">  <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;purple alice@google.com, blah monkey bob@abc.com blah dishwasher&#39;</span>
+  <span class="c1">## re.sub(pat, replacement, str) -- returns new string with all replacements,</span>
+  <span class="c1">## \1 is group(1), \2 group(2) in the replacement</span>
+  <span class="nb">print</span> <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w\.-]+)@([\w\.-]+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1@yo-yo-dyne.com&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">))</span>
+</code></pre></div><pre><code>purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher
+</code></pre>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 133 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
