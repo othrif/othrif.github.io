@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Topic modeling with Latent Dirichlet Allocation" />
+<meta property="og:description" content="Get dataset import os import urllib.request import gzip import pandas as pd source = &#39;https://github.com/rasbt/python-machine-learning-book-3rd-edition/raw/master/ch08/movie_data.csv.gz&#39; target = &#39;/tmp/movie_data.csv.gz&#39; if not os.path.isfile(target): print (&#34;download start!&#34;) filename, headers = urllib.request.urlretrieve(source, filename=target) print (&#34;download complete!&#34;) if not os.path.isfile(&#39;/tmp/movie_data.csv&#39;): with gzip.open(target, &#39;rb&#39;) as in_f, \ open(&#39;/tmp/movie_data.csv&#39;, &#39;wb&#39;) as out_f: out_f.write(in_f.read()) print (target &#43; &#34; extraction complete!&#34;) df = pd.read_csv(target, encoding=&#39;utf-8&#39;) df.head(3) .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  from sklearn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/nlp/latent_dirichlet_allocation.html" /><meta property="article:section" content="machine_learning" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Topic modeling with Latent Dirichlet Allocation"/>
+<meta name="twitter:description" content="Get dataset import os import urllib.request import gzip import pandas as pd source = &#39;https://github.com/rasbt/python-machine-learning-book-3rd-edition/raw/master/ch08/movie_data.csv.gz&#39; target = &#39;/tmp/movie_data.csv.gz&#39; if not os.path.isfile(target): print (&#34;download start!&#34;) filename, headers = urllib.request.urlretrieve(source, filename=target) print (&#34;download complete!&#34;) if not os.path.isfile(&#39;/tmp/movie_data.csv&#39;): with gzip.open(target, &#39;rb&#39;) as in_f, \ open(&#39;/tmp/movie_data.csv&#39;, &#39;wb&#39;) as out_f: out_f.write(in_f.read()) print (target &#43; &#34; extraction complete!&#34;) df = pd.read_csv(target, encoding=&#39;utf-8&#39;) df.head(3) .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  from sklearn."/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Topic modeling with Latent Dirichlet Allocation",
+  "url": "https:\/\/othrif.github.io\/machine_learning\/nlp\/latent_dirichlet_allocation.html",
+  "wordCount": "466",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Topic modeling with Latent Dirichlet Allocation</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Topic modeling with Latent Dirichlet Allocation</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="get-dataset">Get dataset</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/rasbt/python-machine-learning-book-3rd-edition/raw/master/ch08/movie_data.csv.gz&#39;</span>
+<span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;/tmp/movie_data.csv.gz&#39;</span>
+
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;download start!&#34;</span><span class="p">)</span>
+    <span class="n">filename</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;download complete!&#34;</span><span class="p">)</span>
+ 
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;/tmp/movie_data.csv&#39;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">gzip</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">in_f</span><span class="p">,</span> \
+                <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/tmp/movie_data.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_f</span><span class="p">:</span>
+            <span class="n">out_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">in_f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="n">target</span> <span class="o">+</span> <span class="s2">&#34; extraction complete!&#34;</span><span class="p">)</span>
+    
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
+                        <span class="n">max_df</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span>
+                        <span class="n">max_features</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span>
+
+<span class="n">lda</span> <span class="o">=</span> <span class="n">LatentDirichletAllocation</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                                <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+                                <span class="n">learning_method</span><span class="o">=</span><span class="s1">&#39;batch&#39;</span><span class="p">)</span>
+<span class="n">X_topics</span> <span class="o">=</span> <span class="n">lda</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">lda</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div><pre><code>(10, 5000)
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">lda</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">n_top_words</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div><pre><code>array([4962, 2896,  379, 3891, 4301])
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">n_top_words</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">topic_idx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lda</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Topic </span><span class="si">%d</span><span class="s2">:&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">topic_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">argsort</span><span class="p">()</span>\
+                        <span class="p">[:</span><span class="o">-</span><span class="n">n_top_words</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]))</span>
+</code></pre></div><pre><code>Topic 1:
+worst minutes awful script stupid
+Topic 2:
+family mother father children girl
+Topic 3:
+american war dvd music tv
+Topic 4:
+human audience cinema art sense
+Topic 5:
+police guy car dead murder
+Topic 6:
+horror house sex girl woman
+Topic 7:
+role performance comedy actor performances
+Topic 8:
+series episode war episodes tv
+Topic 9:
+book version original read novel
+Topic 10:
+action fight guy guys cool
+</code></pre>
+<p>Based on reading the 5 most important words for each topic, we may guess that the LDA identified the following topics:</p>
+<ol>
+<li>Generally bad movies (not really a topic category)</li>
+<li>Movies about families</li>
+<li>War movies</li>
+<li>Art movies</li>
+<li>Crime movies</li>
+<li>Horror movies</li>
+<li>Comedies</li>
+<li>Movies somehow related to TV shows</li>
+<li>Movies based on books</li>
+<li>Action movies</li>
+</ol>
+<p>To confirm that the categories make sense based on the reviews, let&rsquo;s plot 5 movies from the horror movie category (category 6 at index position 5):</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">X_topics</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div><pre><code>(50000, 10)
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">horror</span> <span class="o">=</span> <span class="n">X_topics</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">iter_idx</span><span class="p">,</span> <span class="n">movie_idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">horror</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Horror movie #</span><span class="si">%d</span><span class="s1">:&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">iter_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;review&#39;</span><span class="p">][</span><span class="n">movie_idx</span><span class="p">][:</span><span class="mi">300</span><span class="p">],</span> <span class="s1">&#39;...&#39;</span><span class="p">)</span>
+
+</code></pre></div><pre><code>Horror movie #1:
+House of Dracula works from the same basic premise as House of Frankenstein from the year before; namely that Universal's three most famous monsters; Dracula, Frankenstein's Monster and The Wolf Man are appearing in the movie together. Naturally, the film is rather messy therefore, but the fact that ...
+
+Horror movie #2:
+Okay, what the hell kind of TRASH have I been watching now? &quot;The Witches' Mountain&quot; has got to be one of the most incoherent and insane Spanish exploitation flicks ever and yet, at the same time, it's also strangely compelling. There's absolutely nothing that makes sense here and I even doubt there  ...
+
+Horror movie #3:
+&lt;br /&gt;&lt;br /&gt;Horror movie time, Japanese style. Uzumaki/Spiral was a total freakfest from start to finish. A fun freakfest at that, but at times it was a tad too reliant on kitsch rather than the horror. The story is difficult to summarize succinctly: a carefree, normal teenage girl starts coming fac ...
+</code></pre>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 138 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

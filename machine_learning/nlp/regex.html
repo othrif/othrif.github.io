@@ -17,9 +17,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <meta property="og:title" content="Regular expressions" />
-<meta property="og:description" content="re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
+<meta property="og:description" content="Extremely useful to understand what the pattern means: https://regexr.com/
+re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
   . (a period) &ndash; matches any single character except newline &lsquo;\n&rsquo;
-  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character" />
+  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/nlp/regex.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -28,9 +29,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Regular expressions"/>
-<meta name="twitter:description" content="re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
+<meta name="twitter:description" content="Extremely useful to understand what the pattern means: https://regexr.com/
+re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &lt; &ndash; ordinary characters just match themselves exactly. Meta-characters don&rsquo;t: . ^ $ * &#43; ? { \ | ( )
   . (a period) &ndash; matches any single character except newline &lsquo;\n&rsquo;
-  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character"/>
+  \w &ndash; (lowercase w) matches a &ldquo;word&rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]."/>
 <meta name="generator" content="Hugo 0.85.0" />
 
     
@@ -40,7 +42,7 @@
   "@type": "BlogPosting",
   "headline": "Regular expressions",
   "url": "https:\/\/othrif.github.io\/machine_learning\/nlp\/regex.html",
-  "wordCount": "615",
+  "wordCount": "640",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -150,7 +152,8 @@ MathJax.Hub.Config({
   </header>
   <div class="content">
 
-  <h1 id="research-pattern"><code>re.search()</code> pattern</h1>
+  <p>Extremely useful to understand what the pattern means: <a href="https://regexr.com/">https://regexr.com/</a></p>
+<h1 id="research-pattern"><code>re.search()</code> pattern</h1>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
 </code></pre></div><h3 id="basic-patterns">Basic patterns</h3>
 <ul>
@@ -294,7 +297,15 @@ abc.com
   <span class="nb">print</span> <span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([\w\.-]+)@([\w\.-]+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\1@yo-yo-dyne.com&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">))</span>
 </code></pre></div><pre><code>purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher
 </code></pre>
-
+<h1 id="non-capturing-group">Non-capturing group</h1>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?:ha)+&#39;</span><span class="p">,</span> <span class="s1">&#39;hahaha haa hah!&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>['hahaha', 'ha', 'ha']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(ha)+&#39;</span><span class="p">,</span> <span class="s1">&#39;hahaha haa hah!&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>['ha', 'ha', 'ha']
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
 </div>
   <aside>
       <div class="bug_reporting">
@@ -318,7 +329,7 @@ abc.com
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 133 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 138 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

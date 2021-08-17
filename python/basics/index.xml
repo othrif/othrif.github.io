@@ -73,6 +73,15 @@ print(&amp;#39;id of 5 =&amp;#39;,id(5)) a = 5 print(&amp;#39;id of a =&amp;#39;
     </item>
     
     <item>
+      <title>Inspect module and get traceback</title>
+      <link>https://othrif.github.io/python/basics/inspect_module.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/inspect_module.html</guid>
+      <description>Inspect method # import required modules import inspect def fun(a,b): # product of  # two numbers return a*b # use getsource() print(inspect.getsource(fun)) def fun(a,b): # product of # two numbers return a*b  Class hierarchy # create classes class A(object): pass class B(A): pass class C(B): pass # not nested print(inspect.getmro(C)) (&amp;lt;class &#39;__main__.C&#39;&amp;gt;, &amp;lt;class &#39;__main__.B&#39;&amp;gt;, &amp;lt;class &#39;__main__.A&#39;&amp;gt;, &amp;lt;class &#39;object&#39;&amp;gt;)  </description>
+    </item>
+    
+    <item>
       <title>Itertools:groupby()</title>
       <link>https://othrif.github.io/python/basics/itertools.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

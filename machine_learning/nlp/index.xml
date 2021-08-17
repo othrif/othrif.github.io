@@ -11,14 +11,43 @@
     
     
     <item>
+      <title>Bag of words</title>
+      <link>https://othrif.github.io/machine_learning/nlp/bag_of_words.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/bag_of_words.html</guid>
+      <description>Transforming documents into feature vectors By calling the fit_transform method on CountVectorizer, we just constructed the vocabulary of the bag-of-words model and transformed the following three sentences into sparse feature vectors
+import numpy as np from sklearn.feature_extraction.text import CountVectorizer count = CountVectorizer() docs = np.array([ &amp;#39;The sun is shining&amp;#39;, &amp;#39;The weather is sweet&amp;#39;, &amp;#39;The sun is shining, the weather is sweet, and one and one is two&amp;#39;]) bag = count.fit_transform(docs) Content of the vocabulary:</description>
+    </item>
+    
+    <item>
+      <title>Online algorithms and out-of-core learning</title>
+      <link>https://othrif.github.io/machine_learning/nlp/online_algorithm.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/online_algorithm.html</guid>
+      <description>Get dataset import os import urllib.request import gzip import pandas as pd source = &amp;#39;https://github.com/rasbt/python-machine-learning-book-3rd-edition/raw/master/ch08/movie_data.csv.gz&amp;#39; target = &amp;#39;/tmp/movie_data.csv.gz&amp;#39; if not os.path.isfile(target): print (&amp;#34;download start!&amp;#34;) filename, headers = urllib.request.urlretrieve(source, filename=target) print (&amp;#34;download complete!&amp;#34;) if not os.path.isfile(&amp;#39;/tmp/movie_data.csv&amp;#39;): with gzip.open(target, &amp;#39;rb&amp;#39;) as in_f, \ open(&amp;#39;/tmp/movie_data.csv&amp;#39;, &amp;#39;wb&amp;#39;) as out_f: out_f.write(in_f.read()) print (target + &amp;#34; extraction complete!&amp;#34;) Build tokenizer and streamer import numpy as np import re from nltk.corpus import stopwords stop = stopwords.words(&amp;#39;english&amp;#39;) def tokenizer(text): &amp;#39;&amp;#39;&amp;#39; Cleans the unprocessed text data and seperate it into word tokens while removing stop words.</description>
+    </item>
+    
+    <item>
+      <title>Processing documents into tokens (tokenization and stop words)</title>
+      <link>https://othrif.github.io/machine_learning/nlp/tokenize.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/tokenize.html</guid>
+      <description>Tokenization from nltk.stem.porter import PorterStemmer porter = PorterStemmer() def tokenizer(text): return text.split() def tokenizer_porter(text): return [porter.stem(word) for word in text.split()] tokenizer(&amp;#39;runners like running and thus they run&amp;#39;) [&#39;runners&#39;, &#39;like&#39;, &#39;running&#39;, &#39;and&#39;, &#39;thus&#39;, &#39;they&#39;, &#39;run&#39;]  tokenizer_porter(&amp;#39;runners like running and thus they run&amp;#39;) [&#39;runner&#39;, &#39;like&#39;, &#39;run&#39;, &#39;and&#39;, &#39;thu&#39;, &#39;they&#39;, &#39;run&#39;]  Stop words import nltk nltk.download(&amp;#39;stopwords&amp;#39;) [nltk_data] Downloading package stopwords to [nltk_data] /Users/othrif/nltk_data... [nltk_data] Unzipping corpora/stopwords.zip. True  from nltk.corpus import stopwords stop = stopwords.</description>
+    </item>
+    
+    <item>
       <title>Regular expressions</title>
       <link>https://othrif.github.io/machine_learning/nlp/regex.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
       
       <guid>https://othrif.github.io/machine_learning/nlp/regex.html</guid>
-      <description>re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &amp;lt; &amp;ndash; ordinary characters just match themselves exactly. Meta-characters don&amp;rsquo;t: . ^ $ * + ? { \ | ( )
+      <description>Extremely useful to understand what the pattern means: https://regexr.com/
+re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &amp;lt; &amp;ndash; ordinary characters just match themselves exactly. Meta-characters don&amp;rsquo;t: . ^ $ * + ? { \ | ( )
   . (a period) &amp;ndash; matches any single character except newline &amp;lsquo;\n&amp;rsquo;
-  \w &amp;ndash; (lowercase w) matches a &amp;ldquo;word&amp;rdquo; character: a letter or digit or underbar [a-zA-Z0-9_]. \W (upper case W) matches any non-word character</description>
+  \w &amp;ndash; (lowercase w) matches a &amp;ldquo;word&amp;rdquo; character: a letter or digit or underbar [a-zA-Z0-9_].</description>
     </item>
     
     <item>
@@ -28,6 +57,15 @@
       
       <guid>https://othrif.github.io/machine_learning/nlp/sentiment_analysis.html</guid>
       <description>Get dataset import os import urllib.request import tarfile import pandas as pd source = &amp;#39;http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz&amp;#39; target = &amp;#39;/tmp/aclImdb_v1.tar.gz&amp;#39; if not os.path.isdir(&amp;#39;/tmp/aclImdb&amp;#39;) and not os.path.isfile(&amp;#39;/tmp/aclImdb_v1.tar.gz&amp;#39;): urllib.request.urlretrieve(source, target) if not os.path.isdir(&amp;#39;/tmp/aclImdb&amp;#39;): with tarfile.open(target, &amp;#39;r:gz&amp;#39;) as tar: tar.extractall(path=&amp;#39;/tmp/aclImdb&amp;#39;) # Build dataframe basepath = &amp;#39;/tmp/aclImdb&amp;#39; labels = {&amp;#39;pos&amp;#39;: 1, &amp;#39;neg&amp;#39;: 0} df = pd.DataFrame() for s in (&amp;#39;test&amp;#39;, &amp;#39;train&amp;#39;): for l in (&amp;#39;pos&amp;#39;, &amp;#39;neg&amp;#39;): path = os.path.join(basepath, s, l) for file in sorted(os.listdir(path)): with open(os.</description>
+    </item>
+    
+    <item>
+      <title>Topic modeling with Latent Dirichlet Allocation</title>
+      <link>https://othrif.github.io/machine_learning/nlp/latent_dirichlet_allocation.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/latent_dirichlet_allocation.html</guid>
+      <description>Get dataset import os import urllib.request import gzip import pandas as pd source = &amp;#39;https://github.com/rasbt/python-machine-learning-book-3rd-edition/raw/master/ch08/movie_data.csv.gz&amp;#39; target = &amp;#39;/tmp/movie_data.csv.gz&amp;#39; if not os.path.isfile(target): print (&amp;#34;download start!&amp;#34;) filename, headers = urllib.request.urlretrieve(source, filename=target) print (&amp;#34;download complete!&amp;#34;) if not os.path.isfile(&amp;#39;/tmp/movie_data.csv&amp;#39;): with gzip.open(target, &amp;#39;rb&amp;#39;) as in_f, \ open(&amp;#39;/tmp/movie_data.csv&amp;#39;, &amp;#39;wb&amp;#39;) as out_f: out_f.write(in_f.read()) print (target + &amp;#34; extraction complete!&amp;#34;) df = pd.read_csv(target, encoding=&amp;#39;utf-8&amp;#39;) df.head(3) .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  from sklearn.</description>
     </item>
     
   </channel>

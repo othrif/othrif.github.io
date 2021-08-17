@@ -105,6 +105,9 @@
     <loc>https://othrif.github.io/machine_learning/aws/transcribe.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/bag_of_words.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/bagging_ensemble.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -252,6 +255,9 @@
     <loc>https://othrif.github.io/python/pandas/display.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/python/basics/inspect_module.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/onnx/install_onnx.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -336,6 +342,9 @@
     <loc>https://othrif.github.io/machine_learning/scikitlearn/kernel_svm.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/online_algorithm.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
     <loc>https://othrif.github.io/machine_learning/scikitlearn/optimize_precision_recall.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
@@ -355,6 +364,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/pad_print.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/tokenize.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</loc>
@@ -439,6 +451,9 @@
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/python/basics/timeit.html</loc>
+    <lastmod>2020-04-12T14:41:32+02:00</lastmod>
+  </url><url>
+    <loc>https://othrif.github.io/machine_learning/nlp/latent_dirichlet_allocation.html</loc>
     <lastmod>2020-04-12T14:41:32+02:00</lastmod>
   </url><url>
     <loc>https://othrif.github.io/machine_learning/pytorch/tensor_dim.html</loc>
