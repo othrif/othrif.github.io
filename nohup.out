@@ -1762,3 +1762,77 @@
 [I 2021-08-16 18:16:23.324 ServerApp] Starting buffering for 15a82e71-b7e3-4141-806c-879c2b493bc1:ddcb6b6c-7f86-4f82-99b7-db09b8bfc029
 [I 2021-08-16 18:16:23.325 ServerApp] Starting buffering for fdab2aae-0765-48ca-9210-2f38002d4101:831e56f6-1d11-40cf-a5ba-738430f63310
 [I 2021-08-16 18:16:23.326 ServerApp] Starting buffering for 51bd46e2-6789-4fc1-b966-616a84d0b7f9:56731f9c-9c1b-452c-b82b-2ec48b67e60c
+[I 2021-08-17 12:27:53.187 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-08-17 12:27:53.433 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-08-17 12:27:53.434 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-08-17 12:27:53.434 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-08-17 12:27:53.479 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-08-17 12:27:53.480 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-08-17 12:27:53.480 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-08-17 12:27:53.481 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-08-17 12:27:53.481 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-08-17 12:27:53.484 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-08-17 12:27:53.486 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-08-17 12:27:53.486 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-08-17 12:27:53.487 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-08-17 12:27:53.488 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-08-17 12:27:53.489 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-08-17 12:27:53.489 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-08-17 12:27:53.489 ServerApp] http://localhost:8892/lab?token=2cc90d9d8870c692ade404844e65bd30a881966e6710a9e6
+[I 2021-08-17 12:27:53.489 ServerApp]  or http://127.0.0.1:8892/lab?token=2cc90d9d8870c692ade404844e65bd30a881966e6710a9e6
+[I 2021-08-17 12:27:53.489 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-08-17 12:27:53.506 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-64762-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8892/lab?token=2cc90d9d8870c692ade404844e65bd30a881966e6710a9e6
+     or http://127.0.0.1:8892/lab?token=2cc90d9d8870c692ade404844e65bd30a881966e6710a9e6
+[I 2021-08-17 12:27:57.636 LabApp] Build is up to date
+[W 2021-08-17 12:27:57.896 ServerApp] 404 GET /api/contents/truth_add.ipynb?content=0&1629228477889 (::1): No such file or directory: truth_add.ipynb
+[W 2021-08-17 12:27:57.897 ServerApp] No such file or directory: truth_add.ipynb
+[W 2021-08-17 12:27:57.897 ServerApp] 404 GET /api/contents/truth_add.ipynb?content=0&1629228477889 (::1) 2.47ms referer=http://localhost:8892/lab
+[W 2021-08-17 12:27:57.900 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1629228477893 (::1): No such file or directory: analyze_results.ipynb
+[W 2021-08-17 12:27:57.901 ServerApp] No such file or directory: analyze_results.ipynb
+[W 2021-08-17 12:27:57.902 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1629228477893 (::1) 2.62ms referer=http://localhost:8892/lab
+[I 2021-08-17 12:28:30.096 ServerApp] Kernel started: aa4fec2a-783b-4147-b7cf-5e287a1bc3c5
+[W 2021-08-17 12:28:33.767 ServerApp] Got events for closed stream None
+[I 2021-08-17 12:30:29.757 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-08-17 12:32:29.814 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-08-17 12:34:29.854 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-08-17 12:38:29.929 ServerApp] Saving file at /machine_learning/scikitlearn/evaluation_metrics.ipynb
+[I 2021-08-17 13:45:18.450 ServerApp] Starting buffering for aa4fec2a-783b-4147-b7cf-5e287a1bc3c5:917d95f6-7c55-4c47-8814-34b07d3857b6
+[I 2021-09-06 11:38:35.527 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-06 11:38:35.966 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-06 11:38:35.967 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-06 11:38:35.967 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-06 11:38:36.042 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-06 11:38:36.043 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-06 11:38:36.043 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-06 11:38:36.044 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-06 11:38:36.044 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-06 11:38:36.049 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-06 11:38:36.050 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-06 11:38:36.050 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-06 11:38:36.051 ServerApp] http://localhost:8888/lab?token=f65696f2f669d34dd1dba67be76afe2c69e1cdf6948020c5
+[I 2021-09-06 11:38:36.051 ServerApp]  or http://127.0.0.1:8888/lab?token=f65696f2f669d34dd1dba67be76afe2c69e1cdf6948020c5
+[I 2021-09-06 11:38:36.051 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-06 11:38:36.073 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-767-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=f65696f2f669d34dd1dba67be76afe2c69e1cdf6948020c5
+     or http://127.0.0.1:8888/lab?token=f65696f2f669d34dd1dba67be76afe2c69e1cdf6948020c5
+[I 2021-09-06 11:38:41.335 LabApp] Build is up to date
+[W 2021-09-06 11:38:41.708 ServerApp] 404 GET /api/contents/process-date.ipynb?content=0&1630953521697 (::1): No such file or directory: process-date.ipynb
+[W 2021-09-06 11:38:41.708 ServerApp] No such file or directory: process-date.ipynb
+[W 2021-09-06 11:38:41.709 ServerApp] 404 GET /api/contents/process-date.ipynb?content=0&1630953521697 (::1) 3.19ms referer=http://localhost:8888/lab
+[W 2021-09-06 11:38:41.712 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1630953521704 (::1): No such file or directory: process.ipynb
+[W 2021-09-06 11:38:41.713 ServerApp] No such file or directory: process.ipynb
+[W 2021-09-06 11:38:41.714 ServerApp] 404 GET /api/contents/process.ipynb?content=0&1630953521704 (::1) 3.37ms referer=http://localhost:8888/lab
+[W 2021-09-06 11:38:41.717 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1630953521706 (::1): No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-09-06 11:38:41.717 ServerApp] No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-09-06 11:38:41.718 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1630953521706 (::1) 3.06ms referer=http://localhost:8888/lab
+[I 2021-09-06 11:39:13.422 ServerApp] Kernel started: f1225f8e-8a18-41d2-93b2-f3ade42e251b
+[W 2021-09-06 11:39:17.065 ServerApp] Got events for closed stream None
