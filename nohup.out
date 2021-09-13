@@ -1836,3 +1836,51 @@
 [W 2021-09-06 11:38:41.718 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1630953521706 (::1) 3.06ms referer=http://localhost:8888/lab
 [I 2021-09-06 11:39:13.422 ServerApp] Kernel started: f1225f8e-8a18-41d2-93b2-f3ade42e251b
 [W 2021-09-06 11:39:17.065 ServerApp] Got events for closed stream None
+[I 2021-09-06 11:41:13.093 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 11:43:13.177 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 11:51:48.041 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:faf96123-c33c-4130-a20e-982e04983e3c
+[I 2021-09-06 12:02:57.826 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:af85722b-ca3a-4725-8fc7-6603e3b8df91
+[I 2021-09-06 12:10:22.890 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 12:24:30.222 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:faf96123-c33c-4130-a20e-982e04983e3c
+[I 2021-09-06 12:50:53.221 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 12:52:53.268 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 12:53:41.091 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:af85722b-ca3a-4725-8fc7-6603e3b8df91
+[I 2021-09-06 12:59:39.324 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 13:01:40.006 ServerApp] Saving file at /machine_learning/nlp/sentiment_analysis.ipynb
+[I 2021-09-06 13:07:57.719 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:faf96123-c33c-4130-a20e-982e04983e3c
+[I 2021-09-06 13:12:20.021 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:af85722b-ca3a-4725-8fc7-6603e3b8df91
+[I 2021-09-06 13:20:26.124 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:faf96123-c33c-4130-a20e-982e04983e3c
+[I 2021-09-06 14:01:00.214 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:af85722b-ca3a-4725-8fc7-6603e3b8df91
+[I 2021-09-06 21:36:15.480 ServerApp] Starting buffering for f1225f8e-8a18-41d2-93b2-f3ade42e251b:faf96123-c33c-4130-a20e-982e04983e3c
+[C 2021-09-08 10:44:39.301 ServerApp] received signal 15, stopping
+[I 2021-09-08 10:44:39.321 ServerApp] Shutting down 1 kernel
+[I 2021-09-08 10:44:39.341 ServerApp] Kernel shutdown: f1225f8e-8a18-41d2-93b2-f3ade42e251b
+[I 2021-09-08 10:44:40.277 ServerApp] Shutting down 0 terminals
+[I 2021-09-13 15:40:35.343 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-13 15:40:35.841 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-13 15:40:35.841 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-13 15:40:35.842 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-13 15:40:35.907 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-13 15:40:35.908 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-13 15:40:35.908 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-13 15:40:35.909 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-13 15:40:35.909 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-13 15:40:35.913 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-13 15:40:35.914 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-13 15:40:35.915 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-13 15:40:35.915 ServerApp] http://localhost:8888/lab?token=1928b7f4945370dbd9fa9d781a8718bad5e78667af4d4d46
+[I 2021-09-13 15:40:35.915 ServerApp]  or http://127.0.0.1:8888/lab?token=1928b7f4945370dbd9fa9d781a8718bad5e78667af4d4d46
+[I 2021-09-13 15:40:35.915 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-13 15:40:35.935 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-40147-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=1928b7f4945370dbd9fa9d781a8718bad5e78667af4d4d46
+     or http://127.0.0.1:8888/lab?token=1928b7f4945370dbd9fa9d781a8718bad5e78667af4d4d46
+[I 2021-09-13 15:40:39.904 LabApp] Build is up to date
+[W 2021-09-13 15:40:40.130 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1631572840127 (::1): No such file or directory: analyze_results.ipynb
+[W 2021-09-13 15:40:40.130 ServerApp] No such file or directory: analyze_results.ipynb
+[W 2021-09-13 15:40:40.131 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1631572840127 (::1) 1.22ms referer=http://localhost:8888/lab
+[I 2021-09-13 15:46:30.618 ServerApp] Saving file at /linux/basics/ip_address.md
+[I 2021-09-13 15:48:12.997 ServerApp] Saving file at /linux/basics/ip_address.md

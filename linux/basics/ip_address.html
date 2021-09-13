@@ -36,7 +36,7 @@
   "@type": "BlogPosting",
   "headline": "Setup port forwarding and ip addresses",
   "url": "https:\/\/othrif.github.io\/linux\/basics\/ip_address.html",
-  "wordCount": "71",
+  "wordCount": "89",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -156,10 +156,16 @@ ipconfig getifaddr en0
 </code></pre></div><h3 id="check-ip-address-on-linux">Check ip address on Linux</h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hostname -I
 </code></pre></div><h1 id="setup-ssh-port-forwarding">Setup ssh port forwarding</h1>
-<h3 id="change-ip-address-in-httprouterloginnet-for-netgear">Change ip address in <a href="http://routerlogin.net/">http://routerlogin.net/</a> for Netgear</h3>
+<h3 id="router">Router</h3>
+<ul>
+<li>Netgear: change ip address in <a href="http://routerlogin.net/">http://routerlogin.net/</a></li>
+<li>AT&amp;T: Add your device to allow portforwarding <a href="https://www.att.com/support/article/u-verse-high-speed-internet/KM1215101">https://www.att.com/support/article/u-verse-high-speed-internet/KM1215101</a></li>
+</ul>
+<h3 id="configuration">Configuration</h3>
 <ul>
 <li>Add the host internal ip address to your router&rsquo;s port forwarding service</li>
 <li>Modify the default port in the host by accessing <code>/etc/ssh/sshd_config</code></li>
+<li>Restart the ssh service with <code>sudo systemctl restart ssh</code></li>
 <li>Some good tips here: <a href="https://dev.to/zduey/how-to-set-up-an-ssh-server-on-a-home-computer">https://dev.to/zduey/how-to-set-up-an-ssh-server-on-a-home-computer</a></li>
 </ul>
 
