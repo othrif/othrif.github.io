@@ -84,6 +84,16 @@ Pretty display of main things! sudo apt install inxi inxi Linux/kernel informati
     </item>
     
     <item>
+      <title>Mount external hard drive</title>
+      <link>https://othrif.github.io/linux/basics/mount_disk.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/linux/basics/mount_disk.html</guid>
+      <description>Find drives in the system sudo fdisk -l Main drive is sda and external drives are usually sdb. Find the partition with the largest size in my case sdb4
+Mount drive mkdir /mnt/usbdrive sudo mount /dev/sdb4 /mnt/usbdrive </description>
+    </item>
+    
+    <item>
       <title>Playing sound from linux server in client MacOS</title>
       <link>https://othrif.github.io/linux/basics/sound_remote.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

@@ -1884,3 +1884,41 @@
 [W 2021-09-13 15:40:40.131 ServerApp] 404 GET /api/contents/analyze_results.ipynb?content=0&1631572840127 (::1) 1.22ms referer=http://localhost:8888/lab
 [I 2021-09-13 15:46:30.618 ServerApp] Saving file at /linux/basics/ip_address.md
 [I 2021-09-13 15:48:12.997 ServerApp] Saving file at /linux/basics/ip_address.md
+[C 2021-09-14 11:38:43.516 ServerApp] received signal 15, stopping
+[I 2021-09-14 11:38:43.553 ServerApp] Shutting down 0 kernels
+[I 2021-09-14 11:38:43.557 ServerApp] Shutting down 0 terminals
+[I 2021-09-16 14:21:46.156 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-16 14:21:46.643 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-16 14:21:46.643 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-16 14:21:46.644 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-16 14:21:46.706 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-16 14:21:46.707 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-16 14:21:46.707 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-16 14:21:46.709 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-16 14:21:46.709 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-16 14:21:46.714 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-16 14:21:46.716 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-16 14:21:46.716 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-16 14:21:46.716 ServerApp] http://localhost:8888/lab?token=22ac2d7ad0d794171d7c12728c956b79764386a0261e6885
+[I 2021-09-16 14:21:46.716 ServerApp]  or http://127.0.0.1:8888/lab?token=22ac2d7ad0d794171d7c12728c956b79764386a0261e6885
+[I 2021-09-16 14:21:46.716 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-16 14:21:46.739 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-2194-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=22ac2d7ad0d794171d7c12728c956b79764386a0261e6885
+     or http://127.0.0.1:8888/lab?token=22ac2d7ad0d794171d7c12728c956b79764386a0261e6885
+[I 2021-09-16 14:21:50.749 LabApp] Build is up to date
+[W 2021-09-16 14:21:51.049 ServerApp] 404 GET /api/contents/keywords_noisy_data.ipynb?content=0&1631827311035 (::1): No such file or directory: keywords_noisy_data.ipynb
+[W 2021-09-16 14:21:51.050 ServerApp] No such file or directory: keywords_noisy_data.ipynb
+[W 2021-09-16 14:21:51.050 ServerApp] 404 GET /api/contents/keywords_noisy_data.ipynb?content=0&1631827311035 (::1) 2.34ms referer=http://localhost:8888/lab
+[W 2021-09-16 14:21:51.058 ServerApp] 404 GET /api/contents/helpers/utils.py?content=0&1631827311040 (::1): No such file or directory: helpers/utils.py
+[W 2021-09-16 14:21:51.059 ServerApp] No such file or directory: helpers/utils.py
+[W 2021-09-16 14:21:51.059 ServerApp] 404 GET /api/contents/helpers/utils.py?content=0&1631827311040 (::1) 3.60ms referer=http://localhost:8888/lab
+[W 2021-09-16 14:21:52.033 ServerApp] 404 GET /api/contents/helpers?1631827312029 (::1): No such file or directory: helpers
+[W 2021-09-16 14:21:52.033 ServerApp] No such file or directory: helpers
+[W 2021-09-16 14:21:52.034 ServerApp] 404 GET /api/contents/helpers?1631827312029 (::1) 1.52ms referer=http://localhost:8888/lab
+[I 2021-09-16 14:27:25.511 ServerApp] Copying linux/basics/zip_and_unzip_files.md to /linux/basics
+[I 2021-09-16 14:29:30.042 ServerApp] Saving file at /linux/basics/mount_disk.md
+[I 2021-09-16 14:29:42.834 ServerApp] Saving file at /linux/basics/mount_disk.md
