@@ -21,6 +21,15 @@ import numpy as np from sklearn.feature_extraction.text import CountVectorizer c
     </item>
     
     <item>
+      <title>Embeding a ML model into a Web Application</title>
+      <link>https://othrif.github.io/machine_learning/nlp/embedml.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/embedml.html</guid>
+      <description>Unpickle the classifier import pickle import re import os from movieclassifier.vectorizer import vect /Users/othrif/github/notes/content/machine_learning/nlp/movieclassifier/vectorizer.py  clf = pickle.load(open(os.path.join(&amp;#39;movieclassifier/pkl_objects&amp;#39;, &amp;#39;classifier.pkl&amp;#39;), &amp;#39;rb&amp;#39;)) import numpy as np label = {0:&amp;#39;negative&amp;#39;, 1:&amp;#39;positive&amp;#39;} example = [&amp;#34;I love this movie. It&amp;#39;s amazing.&amp;#34;] X = vect.transform(example) print(&amp;#39;Prediction: %s\nProbability: %.2f%%&amp;#39; %\ (label[clf.predict(X)[0]], np.max(clf.predict_proba(X))*100)) Prediction: positive Probability: 95.01%  X = vect.transform([&amp;#34;The work that they did with the move is really not up to the standards I expect&amp;#34;]) print(&amp;#39;Prediction: %s\nProbability: %.</description>
+    </item>
+    
+    <item>
       <title>Online algorithms and out-of-core learning</title>
       <link>https://othrif.github.io/machine_learning/nlp/online_algorithm.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

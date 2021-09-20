@@ -1922,3 +1922,186 @@
 [I 2021-09-16 14:27:25.511 ServerApp] Copying linux/basics/zip_and_unzip_files.md to /linux/basics
 [I 2021-09-16 14:29:30.042 ServerApp] Saving file at /linux/basics/mount_disk.md
 [I 2021-09-16 14:29:42.834 ServerApp] Saving file at /linux/basics/mount_disk.md
+[I 2021-09-19 20:57:00.891 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-19 20:57:01.387 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-19 20:57:01.387 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-19 20:57:01.387 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-19 20:57:01.460 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-19 20:57:01.461 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-19 20:57:01.461 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-19 20:57:01.462 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-19 20:57:01.462 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-19 20:57:01.467 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-19 20:57:01.468 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-09-19 20:57:01.470 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-19 20:57:01.470 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-19 20:57:01.470 ServerApp] http://localhost:8889/lab?token=5eb1c024493a986cc8d97d19be54cb7b70df944dd01ccfc8
+[I 2021-09-19 20:57:01.470 ServerApp]  or http://127.0.0.1:8889/lab?token=5eb1c024493a986cc8d97d19be54cb7b70df944dd01ccfc8
+[I 2021-09-19 20:57:01.470 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-19 20:57:01.490 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-46205-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=5eb1c024493a986cc8d97d19be54cb7b70df944dd01ccfc8
+     or http://127.0.0.1:8889/lab?token=5eb1c024493a986cc8d97d19be54cb7b70df944dd01ccfc8
+[I 2021-09-19 20:57:46.071 LabApp] Build is up to date
+[W 2021-09-19 20:57:46.373 ServerApp] 404 GET /api/contents/analyze.ipynb?content=0&1632110266365 (127.0.0.1): No such file or directory: analyze.ipynb
+[W 2021-09-19 20:57:46.373 ServerApp] No such file or directory: analyze.ipynb
+[W 2021-09-19 20:57:46.374 ServerApp] 404 GET /api/contents/analyze.ipynb?content=0&1632110266365 (127.0.0.1) 2.49ms referer=http://127.0.0.1:8889/lab
+[W 2021-09-19 20:57:46.376 ServerApp] 404 GET /api/contents/preprocess.ipynb?content=0&1632110266370 (127.0.0.1): No such file or directory: preprocess.ipynb
+[W 2021-09-19 20:57:46.377 ServerApp] No such file or directory: preprocess.ipynb
+[W 2021-09-19 20:57:46.377 ServerApp] 404 GET /api/contents/preprocess.ipynb?content=0&1632110266370 (127.0.0.1) 1.52ms referer=http://127.0.0.1:8889/lab
+[I 2021-09-19 20:58:07.665 ServerApp] Kernel started: 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d
+[I 2021-09-19 21:00:07.448 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:02:07.558 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:04:07.617 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:06:07.654 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:08:07.701 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:10:08.452 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:30:45.720 ServerApp] Starting buffering for 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d:aef256d4-f723-4f2c-a68a-c959c13d07db
+[I 2021-09-19 21:31:00.902 LabApp] Build is up to date
+[I 2021-09-19 21:33:01.589 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:35:01.661 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:37:01.732 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:37:29.055 ServerApp] Kernel restarted: 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d
+[I 2021-09-19 21:37:29.061 ServerApp] Starting buffering for 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d:13b60c62-1c48-4be8-9135-1029bcc0b925
+[I 2021-09-19 21:37:29.065 ServerApp] Restoring connection for 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d:13b60c62-1c48-4be8-9135-1029bcc0b925
+[W 2021-09-19 21:37:35.317 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:37.042 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:38.776 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:40.490 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:42.261 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:44.318 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:46.575 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:48.353 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:50.118 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:52.010 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:54.322 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:37:56.245 ServerApp] iopub messages resumed
+[W 2021-09-19 21:37:58.672 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:38:00.434 ServerApp] iopub messages resumed
+[W 2021-09-19 21:38:02.210 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:38:03.875 ServerApp] iopub messages resumed
+[W 2021-09-19 21:38:05.582 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:38:07.292 ServerApp] iopub messages resumed
+[W 2021-09-19 21:38:09.064 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:38:11.022 ServerApp] iopub messages resumed
+[W 2021-09-19 21:38:12.851 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[W 2021-09-19 21:38:16.451 ServerApp] iopub messages resumed
+[I 2021-09-19 21:39:02.380 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:41:04.144 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:53:06.932 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:55:08.440 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 21:57:09.863 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 22:01:14.214 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 22:02:39.830 ServerApp] Saving file at /machine_learning/nlp/online_algorithm.ipynb
+[I 2021-09-19 22:07:54.186 ServerApp] Copying machine_learning/nlp/online_algorithm.ipynb to /machine_learning/nlp
+[I 2021-09-19 22:08:23.107 ServerApp] Kernel started: e6005bdc-5c1c-4afe-aa3d-d11cb1768242
+[I 2021-09-19 22:10:22.147 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
+[I 2021-09-19 22:14:22.661 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
+[I 2021-09-19 22:15:45.496 ServerApp] Kernel restarted: e6005bdc-5c1c-4afe-aa3d-d11cb1768242
+[I 2021-09-19 22:16:22.704 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
+[I 2021-09-19 22:17:41.633 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
+[I 2021-09-19 22:17:58.941 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
+[I 2021-09-19 22:19:12.620 ServerApp] Starting buffering for e6005bdc-5c1c-4afe-aa3d-d11cb1768242:552f8529-9d48-4907-8788-4699fcb92bf3
+[I 2021-09-19 22:19:12.621 ServerApp] Starting buffering for 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d:13b60c62-1c48-4be8-9135-1029bcc0b925
