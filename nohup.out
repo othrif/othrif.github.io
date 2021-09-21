@@ -2105,3 +2105,54 @@
 [I 2021-09-19 22:17:58.941 ServerApp] Saving file at /machine_learning/nlp/embedML.ipynb
 [I 2021-09-19 22:19:12.620 ServerApp] Starting buffering for e6005bdc-5c1c-4afe-aa3d-d11cb1768242:552f8529-9d48-4907-8788-4699fcb92bf3
 [I 2021-09-19 22:19:12.621 ServerApp] Starting buffering for 01f3b1cf-576d-4d0b-9c0e-47d736d1a26d:13b60c62-1c48-4be8-9135-1029bcc0b925
+[I 2021-09-20 22:08:53.510 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-20 22:08:54.172 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-20 22:08:54.173 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-20 22:08:54.173 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-20 22:08:54.255 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-20 22:08:54.256 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-20 22:08:54.256 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-20 22:08:54.257 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-20 22:08:54.257 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-20 22:08:54.263 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-20 22:08:54.265 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-09-20 22:08:54.266 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-09-20 22:08:54.267 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-20 22:08:54.267 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-20 22:08:54.267 ServerApp] http://localhost:8890/lab?token=71e62d00aba1bfc01d9e9aeb72d534ce39847dd6ec3a19af
+[I 2021-09-20 22:08:54.267 ServerApp]  or http://127.0.0.1:8890/lab?token=71e62d00aba1bfc01d9e9aeb72d534ce39847dd6ec3a19af
+[I 2021-09-20 22:08:54.267 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-20 22:08:54.289 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-74141-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=71e62d00aba1bfc01d9e9aeb72d534ce39847dd6ec3a19af
+     or http://127.0.0.1:8890/lab?token=71e62d00aba1bfc01d9e9aeb72d534ce39847dd6ec3a19af
+[I 2021-09-20 22:09:01.183 LabApp] Build is up to date
+[W 2021-09-20 22:09:01.476 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1632200941471 (::1): No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-09-20 22:09:01.477 ServerApp] No such file or directory: leaderboard_tocsin.ipynb
+[W 2021-09-20 22:09:01.477 ServerApp] 404 GET /api/contents/leaderboard_tocsin.ipynb?content=0&1632200941471 (::1) 1.65ms referer=http://localhost:8890/lab
+[W 2021-09-20 22:09:01.479 ServerApp] 404 GET /api/contents/process-date.ipynb?content=0&1632200941473 (::1): No such file or directory: process-date.ipynb
+[W 2021-09-20 22:09:01.480 ServerApp] No such file or directory: process-date.ipynb
+[W 2021-09-20 22:09:01.481 ServerApp] 404 GET /api/contents/process-date.ipynb?content=0&1632200941473 (::1) 2.68ms referer=http://localhost:8890/lab
+[W 2021-09-20 22:09:01.484 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1632200941475 (::1): No such file or directory: Untitled.ipynb
+[W 2021-09-20 22:09:01.484 ServerApp] No such file or directory: Untitled.ipynb
+[W 2021-09-20 22:09:01.485 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1632200941475 (::1) 2.18ms referer=http://localhost:8890/lab
+[I 2021-09-20 22:11:40.134 ServerApp] Kernel started: fb979102-dbbf-4f4c-a1ba-e0d6eeada094
+[I 2021-09-20 22:11:42.634 ServerApp] Copying machine_learning/nlp/regex.ipynb to /machine_learning/nlp
+[W 2021-09-20 22:11:43.798 ServerApp] Got events for closed stream None
+[I 2021-09-20 22:12:16.477 ServerApp] Kernel started: 16b3a204-4dde-4438-bca1-31d04e7e29b9
+[I 2021-09-20 22:13:57.353 ServerApp] Saving file at /machine_learning/nlp/sqlite.ipynb
+[I 2021-09-20 22:14:04.505 ServerApp] Starting buffering for 16b3a204-4dde-4438-bca1-31d04e7e29b9:d76c4baf-66ab-4fe7-9432-0dcf90e675f9
+[I 2021-09-20 22:15:07.279 ServerApp] Saving file at /machine_learning/nlp/movieclassifier/sqlite.ipynb
+[I 2021-09-20 22:15:09.697 ServerApp] Kernel restarted: 16b3a204-4dde-4438-bca1-31d04e7e29b9
+[I 2021-09-20 22:15:09.702 ServerApp] Starting buffering for 16b3a204-4dde-4438-bca1-31d04e7e29b9:b621f53b-a65d-4657-bc46-9b0de9989075
+[I 2021-09-20 22:15:09.709 ServerApp] Restoring connection for 16b3a204-4dde-4438-bca1-31d04e7e29b9:b621f53b-a65d-4657-bc46-9b0de9989075
+[I 2021-09-20 22:15:39.970 ServerApp] Saving file at /machine_learning/nlp/movieclassifier/sqlite.ipynb
+[I 2021-09-20 22:15:42.709 ServerApp] Starting buffering for 16b3a204-4dde-4438-bca1-31d04e7e29b9:b621f53b-a65d-4657-bc46-9b0de9989075
+[I 2021-09-20 22:15:53.954 ServerApp] Starting buffering for 16b3a204-4dde-4438-bca1-31d04e7e29b9:15a55308-3483-4834-b89b-0d19a27bc6ad
+[I 2021-09-20 22:15:57.004 ServerApp] Kernel shutdown: fb979102-dbbf-4f4c-a1ba-e0d6eeada094
+[I 2021-09-20 22:15:57.007 ServerApp] Kernel shutdown: 16b3a204-4dde-4438-bca1-31d04e7e29b9
+[I 2021-09-20 22:16:00.294 ServerApp] Kernel started: 42dd8c58-5714-4acf-a3ba-42d0577e0d82
+[I 2021-09-20 22:16:23.370 ServerApp] Saving file at /machine_learning/nlp/movieclassifier/sqlite.ipynb

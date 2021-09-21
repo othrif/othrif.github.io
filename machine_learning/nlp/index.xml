@@ -69,6 +69,15 @@ re.search() pattern match = re.search(pat, str) Basic patterns   a, X, 9, &amp;l
     </item>
     
     <item>
+      <title>Setting up a SQLite database for data storage</title>
+      <link>https://othrif.github.io/machine_learning/nlp/movieclassifier/sqlite.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/movieclassifier/sqlite.html</guid>
+      <description>import sqlite3 import os conn = sqlite3.connect(&amp;#39;reviews.sqlite&amp;#39;) c = conn.cursor() c.execute(&amp;#39;DROP TABLE IF EXISTS review_db&amp;#39;) c.execute(&amp;#39;CREATE TABLE review_db (review TEXT, sentiment INTEGER, date TEXT)&amp;#39;) example1 = &amp;#39;I love this movie&amp;#39; c.execute(&amp;#34;INSERT INTO review_db (review, sentiment, date) VALUES (?, ?, DATETIME(&amp;#39;now&amp;#39;))&amp;#34;, (example1, 1)) example2 = &amp;#39;I disliked this movie&amp;#39; c.execute(&amp;#34;INSERT INTO review_db (review, sentiment, date) VALUES (?, ?, DATETIME(&amp;#39;now&amp;#39;))&amp;#34;, (example2, 0)) conn.commit() conn.close() conn = sqlite3.connect(&amp;#39;reviews.sqlite&amp;#39;) c = conn.cursor() c.execute(&amp;#34;SELECT * FROM review_db WHERE date BETWEEN &amp;#39;2017-01-01 10:10:10&amp;#39; AND DATETIME(&amp;#39;now&amp;#39;)&amp;#34;) results = c.</description>
+    </item>
+    
+    <item>
       <title>Topic modeling with Latent Dirichlet Allocation</title>
       <link>https://othrif.github.io/machine_learning/nlp/latent_dirichlet_allocation.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
