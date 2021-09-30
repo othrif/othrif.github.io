@@ -31,6 +31,18 @@ import click import click_config_file @click.command() @click.option(&amp;#39;--
     </item>
     
     <item>
+      <title>Creating a python package</title>
+      <link>https://othrif.github.io/python/basics/packaging.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/basics/packaging.html</guid>
+      <description>Documentation: https://packaging.python.org/tutorials/packaging-projects/
+Creating a package Important packages to create python libraries: pip, setuptools, wheel
+The following are the contents of the two files needed to create a package:
+File 1: pyproject.toml [build-system] requires = [ &amp;#34;setuptools&amp;gt;=42&amp;#34;, &amp;#34;wheel&amp;#34; ] build-backend = &amp;#34;setuptools.build_meta&amp;#34; File 2: setup.py import setuptools # If you have a README.md: # with open(&amp;#34;README.md&amp;#34;, &amp;#34;r&amp;#34;, encoding=&amp;#34;utf-8&amp;#34;) as fh: # long_description = fh.read() setuptools.setup( name=&amp;#34;example-pkg-YOUR-USERNAME-HERE&amp;#34;, version=&amp;#34;0.0.1&amp;#34;, author=&amp;#34;Example Author&amp;#34;, author_email=&amp;#34;author@example.com&amp;#34;, description=&amp;#34;A small example package&amp;#34;, long_description=&amp;#34;long_description&amp;#34;, long_description_content_type=&amp;#34;text/markdown&amp;#34;, url=&amp;#34;https://github.</description>
+    </item>
+    
+    <item>
       <title>Functools:reduce()</title>
       <link>https://othrif.github.io/python/basics/functools.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

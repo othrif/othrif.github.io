@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="ROC curve for multiclass problem" />
+<meta property="og:description" content="from sklearn.metrics import roc_curve, auc from sklearn import datasets from sklearn.multiclass import OneVsRestClassifier from sklearn.svm import LinearSVC from sklearn.preprocessing import label_binarize from sklearn.model_selection import train_test_split import matplotlib.pyplot as plt iris = datasets.load_iris() X, y = iris.data, iris.target y = label_binarize(y, classes=[0,1,2]) n_classes = 3 # shuffle and split training and test sets X_train, X_test, y_train, y_test =\ train_test_split(X, y, test_size=0.33, random_state=0) # classifier clf = OneVsRestClassifier(LinearSVC(random_state=0)) y_score = clf.fit(X_train, y_train).decision_function(X_test) # Compute ROC curve and ROC area for each class fpr = dict() tpr = dict() roc_auc = dict() for i in range(n_classes): fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i]) roc_auc[i] = auc(fpr[i], tpr[i]) # Plot of a ROC curve for a specific class for i in range(n_classes): plt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/scikitlearn/roc_multiclass.html" /><meta property="article:section" content="machine_learning" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ROC curve for multiclass problem"/>
+<meta name="twitter:description" content="from sklearn.metrics import roc_curve, auc from sklearn import datasets from sklearn.multiclass import OneVsRestClassifier from sklearn.svm import LinearSVC from sklearn.preprocessing import label_binarize from sklearn.model_selection import train_test_split import matplotlib.pyplot as plt iris = datasets.load_iris() X, y = iris.data, iris.target y = label_binarize(y, classes=[0,1,2]) n_classes = 3 # shuffle and split training and test sets X_train, X_test, y_train, y_test =\ train_test_split(X, y, test_size=0.33, random_state=0) # classifier clf = OneVsRestClassifier(LinearSVC(random_state=0)) y_score = clf.fit(X_train, y_train).decision_function(X_test) # Compute ROC curve and ROC area for each class fpr = dict() tpr = dict() roc_auc = dict() for i in range(n_classes): fpr[i], tpr[i], _ = roc_curve(y_test[:, i], y_score[:, i]) roc_auc[i] = auc(fpr[i], tpr[i]) # Plot of a ROC curve for a specific class for i in range(n_classes): plt."/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ROC curve for multiclass problem",
+  "url": "https:\/\/othrif.github.io\/machine_learning\/scikitlearn\/roc_multiclass.html",
+  "wordCount": "516",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>ROC curve for multiclass problem</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">ROC curve for multiclass problem</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn.multiclass</span> <span class="kn">import</span> <span class="n">OneVsRestClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">label_binarize</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">label_binarize</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">n_classes</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># shuffle and split training and test sets</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span>\
+    <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># classifier</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">OneVsRestClassifier</span><span class="p">(</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">y_score</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">decision_function</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Compute ROC curve and ROC area for each class</span>
+<span class="n">fpr</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">tpr</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">roc_auc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
+    <span class="n">fpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">y_score</span><span class="p">[:,</span> <span class="n">i</span><span class="p">])</span>
+    <span class="n">roc_auc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">fpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="c1"># Plot of a ROC curve for a specific class</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tpr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROC curve (area = </span><span class="si">%0.2f</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="n">roc_auc</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k--&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.05</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Receiver operating characteristic example&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&#34;lower right&#34;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+</code></pre></div><pre><code>/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/sklearn/svm/_base.py:985: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(&quot;Liblinear failed to converge, increase &quot;
+/Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/sklearn/svm/_base.py:985: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(&quot;Liblinear failed to converge, increase &quot;
+</code></pre>
+<p><img src="roc_multiclass_1_1.png" alt="png"></p>
+<p><img src="roc_multiclass_1_2.png" alt="png"></p>
+<p><img src="roc_multiclass_1_3.png" alt="png"></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_score</span>
+</code></pre></div><pre><code>array([[-2.76908971, -0.84815784,  1.94942999],
+       [-1.46037484,  0.67190143, -1.53847278],
+       [ 1.7293394 , -1.42179149, -7.80488854],
+       [-3.15022547,  0.34381685,  1.3860928 ],
+       [ 1.21840934, -0.70863042, -6.50287512],
+       [-3.25269012, -0.93856079,  2.65442134],
+       [ 1.38286123, -0.99785056, -6.77231643],
+       [-1.74241753, -0.28304858, -1.14081791],
+       [-1.88147293,  0.13337523, -1.00394763],
+       [-1.32552243, -0.1636333 , -1.68170673],
+       [-2.78001864,  0.65858721,  1.24659415],
+       [-1.60130977, -0.47459117, -1.20956413],
+       [-1.8666388 ,  0.27755401, -0.65657016],
+       [-1.82219943, -0.08137924, -0.86631552],
+       [-1.91078187, -0.02539647, -0.46074042],
+       [ 1.40160781, -0.82210375, -6.83557513],
+       [-1.80795065, -0.23278878, -0.5462846 ],
+       [-1.8270918 ,  0.28399968, -0.33922585],
+       [ 1.05679318, -0.53017297, -6.02199439],
+       [ 1.58735147, -1.43388264, -7.37383558],
+       [-2.47807515, -0.51562728,  1.30512716],
+       [-1.85522427, -0.33302202, -0.17224099],
+       [ 0.84164658, -0.52601171, -5.61729543],
+       [ 0.97182837, -0.3506676 , -5.63740218],
+       [-2.18011585, -0.32359442,  0.2018587 ],
+       [ 1.62748382, -1.13184866, -7.02914472],
+       [ 0.98236553, -1.07444568, -5.97315707],
+       [-1.51380553, -0.10297547, -1.36880131],
+       [-1.05521281,  0.21711517, -1.65410621],
+       [ 1.05112319, -0.87857678, -6.06913555],
+       [-2.6001415 , -0.24029245,  0.9209614 ],
+       [-1.89878199, -0.34038418,  0.05093531],
+       [ 1.30180887, -0.78677716, -6.79836039],
+       [-2.20551234, -0.4507981 ,  0.33442974],
+       [-2.97093797, -0.37115367,  1.83976662],
+       [-1.52006516, -0.26747015, -0.6366359 ],
+       [ 1.32163364, -1.03862883, -7.10795702],
+       [-2.42943427,  0.11447955,  0.7260078 ],
+       [-1.53998392, -0.46446443, -1.00380798],
+       [-1.42855019,  0.10506205, -1.33639368],
+       [-2.67884521, -0.46622158,  0.94912586],
+       [ 1.23999165, -0.64364629, -6.35469441],
+       [-2.36800438, -0.95547186,  0.37096406],
+       [ 1.00698012, -1.18152727, -5.87330581],
+       [ 1.42505021, -0.95043281, -7.16615465],
+       [-1.34134077,  0.56863232, -1.10597758],
+       [-2.61820446, -0.15110246,  0.88168223],
+       [-2.91567091, -1.06632211,  1.71126621],
+       [-2.50334964,  0.60324966,  0.78788249],
+       [-3.02375958,  0.42628989,  1.51685337]])
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">y_test</span>
+</code></pre></div><pre><code>array([[0, 0, 1],
+       [0, 1, 0],
+       [1, 0, 0],
+       [0, 0, 1],
+       [1, 0, 0],
+       [0, 0, 1],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 0, 1],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [1, 0, 0],
+       [1, 0, 0],
+       [0, 0, 1],
+       [0, 1, 0],
+       [1, 0, 0],
+       [1, 0, 0],
+       [0, 0, 1],
+       [1, 0, 0],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [1, 0, 0],
+       [0, 0, 1],
+       [0, 1, 0],
+       [1, 0, 0],
+       [0, 0, 1],
+       [0, 0, 1],
+       [0, 1, 0],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 1, 0],
+       [0, 0, 1],
+       [1, 0, 0],
+       [0, 0, 1],
+       [1, 0, 0],
+       [1, 0, 0],
+       [0, 1, 0],
+       [0, 0, 1],
+       [0, 0, 1],
+       [0, 0, 1],
+       [0, 0, 1]])
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 145 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Creating a python package" />
+<meta property="og:description" content="Documentation: https://packaging.python.org/tutorials/packaging-projects/
+Creating a package Important packages to create python libraries: pip, setuptools, wheel
+The following are the contents of the two files needed to create a package:
+File 1: pyproject.toml [build-system] requires = [ &#34;setuptools&gt;=42&#34;, &#34;wheel&#34; ] build-backend = &#34;setuptools.build_meta&#34; File 2: setup.py import setuptools # If you have a README.md: # with open(&#34;README.md&#34;, &#34;r&#34;, encoding=&#34;utf-8&#34;) as fh: # long_description = fh.read() setuptools.setup( name=&#34;example-pkg-YOUR-USERNAME-HERE&#34;, version=&#34;0.0.1&#34;, author=&#34;Example Author&#34;, author_email=&#34;author@example.com&#34;, description=&#34;A small example package&#34;, long_description=&#34;long_description&#34;, long_description_content_type=&#34;text/markdown&#34;, url=&#34;https://github." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/python/basics/packaging.html" /><meta property="article:section" content="python" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating a python package"/>
+<meta name="twitter:description" content="Documentation: https://packaging.python.org/tutorials/packaging-projects/
+Creating a package Important packages to create python libraries: pip, setuptools, wheel
+The following are the contents of the two files needed to create a package:
+File 1: pyproject.toml [build-system] requires = [ &#34;setuptools&gt;=42&#34;, &#34;wheel&#34; ] build-backend = &#34;setuptools.build_meta&#34; File 2: setup.py import setuptools # If you have a README.md: # with open(&#34;README.md&#34;, &#34;r&#34;, encoding=&#34;utf-8&#34;) as fh: # long_description = fh.read() setuptools.setup( name=&#34;example-pkg-YOUR-USERNAME-HERE&#34;, version=&#34;0.0.1&#34;, author=&#34;Example Author&#34;, author_email=&#34;author@example.com&#34;, description=&#34;A small example package&#34;, long_description=&#34;long_description&#34;, long_description_content_type=&#34;text/markdown&#34;, url=&#34;https://github."/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Creating a python package",
+  "url": "https:\/\/othrif.github.io\/python\/basics\/packaging.html",
+  "wordCount": "382",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Creating a python package</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Creating a python package</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <p>Documentation: <a href="https://packaging.python.org/tutorials/packaging-projects/">https://packaging.python.org/tutorials/packaging-projects/</a></p>
+<h3 id="creating-a-package">Creating a package</h3>
+<p>Important packages to create python libraries: <code>pip, setuptools, wheel</code></p>
+<p>The following are the contents of the two files needed to create a package:</p>
+<h4 id="file-1-pyprojecttoml">File 1: pyproject.toml</h4>
+<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml">[build-system]
+requires = [
+    &#34;setuptools&gt;=42&#34;,
+    &#34;wheel&#34;
+]
+build-backend = &#34;setuptools.build_meta&#34;
+
+</code></pre></div><h4 id="file-2-setuppy">File 2: setup.py</h4>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">setuptools</span>
+
+<span class="c1"># If you have a README.md:</span>
+<span class="c1"># with open(&#34;README.md&#34;, &#34;r&#34;, encoding=&#34;utf-8&#34;) as fh:</span>
+<span class="c1">#    long_description = fh.read()</span>
+
+<span class="n">setuptools</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">&#34;example-pkg-YOUR-USERNAME-HERE&#34;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s2">&#34;0.0.1&#34;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s2">&#34;Example Author&#34;</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s2">&#34;author@example.com&#34;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&#34;A small example package&#34;</span><span class="p">,</span>
+    <span class="n">long_description</span><span class="o">=</span><span class="s2">&#34;long_description&#34;</span><span class="p">,</span>
+    <span class="n">long_description_content_type</span><span class="o">=</span><span class="s2">&#34;text/markdown&#34;</span><span class="p">,</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://github.com/pypa/sampleproject&#34;</span><span class="p">,</span>
+    <span class="n">project_urls</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&#34;Bug Tracker&#34;</span><span class="p">:</span> <span class="s2">&#34;https://github.com/pypa/sampleproject/issues&#34;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">classifiers</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&#34;Programming Language :: Python :: 3&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;License :: OSI Approved :: MIT License&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;Operating System :: OS Independent&#34;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;click&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;grpcio&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;path&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;requests&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;tensorflow&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;keras&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;tqdm&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;click-config-file&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;typing_extensions&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;grpcio-tools&#39;</span>
+    <span class="p">],</span>
+    <span class="n">package_dir</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;&#34;</span><span class="p">:</span> <span class="s2">&#34;src&#34;</span><span class="p">},</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">setuptools</span><span class="o">.</span><span class="n">find_packages</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="s2">&#34;src&#34;</span><span class="p">),</span>
+    <span class="n">python_requires</span><span class="o">=</span><span class="s2">&#34;&gt;=3.8&#34;</span><span class="p">,</span>
+<span class="p">)</span>
+
+</code></pre></div><h3 id="building-the-package">Building the package</h3>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">python -m pip install --upgrade build
+python -m build
+</code></pre></div><p>You get a <code>whl</code> wheel distribution file that you can upload to your favorite package host (Cloudsmith, Pypi, etc.)</p>
+<h3 id="test-within-the-package-locally-using-pipenv">Test within the package locally using <code>pipenv</code></h3>
+<p>In a pipenv environment using the option:
+<code>-e, --editable &lt;path/url&gt;   Install a project in editable mode (i.e. setuptools &quot;develop mode&quot;) from a local project path or a VCS url.</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pipenv install -e .
+pipenv shell
+python 
+</code></pre></div><p>then in python</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">package_inside_src</span> <span class="kn">import</span> <span class="n">file_inside_package</span>
+<span class="n">my_instance</span> <span class="o">=</span> <span class="n">file_inside_package</span><span class="o">.</span><span class="n">class_inside_file</span><span class="p">(</span><span class="s2">&#34;arg1&#34;</span><span class="p">,</span> <span class="s2">&#34;arg2&#34;</span><span class="p">)</span>
+<span class="n">my_instance</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</code></pre></div><h3 id="test-within-the-package-locally-using-pip">Test within the package locally using <code>pip</code></h3>
+<p>If you just need to test whether pip install works from the built package, you can create it and then use pip to install it from local filesystem.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">python setup.py sdist
+pip install dist/mypackage-1.0.tar.gz
+</code></pre></div><p>If you have been running <code>python setup.py install</code> already, ensure you run:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pip uninstall mypackage
+</code></pre></div><h3 id="test-outside-the-package-from-remote-distribution-repo">Test outside the package from remote distribution repo</h3>
+<p>Create a new repo and pip install your package:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mkdir test_example-pkg-YOUR-USERNAME-HERE
+</code></pre></div><p>Create a Pipfile with the contents</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[[</span><span class="n">source</span><span class="p">]]</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://pypi.org/simple&#34;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="n">true</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&#34;pypi&#34;</span>
+
+<span class="p">[</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">example</span><span class="o">-</span><span class="n">pkg</span><span class="o">-</span><span class="n">YOUR</span><span class="o">-</span><span class="n">USERNAME</span><span class="o">-</span><span class="n">HERE</span> <span class="o">=</span> <span class="s2">&#34;==0.0.6&#34;</span>
+
+<span class="p">[</span><span class="n">dev</span><span class="o">-</span><span class="n">packages</span><span class="p">]</span>
+<span class="n">black</span> <span class="o">=</span> <span class="s2">&#34;==20.8b1&#34;</span>
+
+<span class="p">[</span><span class="n">requires</span><span class="p">]</span>
+<span class="n">python_version</span> <span class="o">=</span> <span class="s2">&#34;3.9&#34;</span>
+
+<span class="p">[</span><span class="n">scripts</span><span class="p">]</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="s2">&#34;black --config Pipfile .&#34;</span>
+<span class="n">lint</span> <span class="o">=</span> <span class="s2">&#34;black --check --config Pipfile .&#34;</span>
+
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">black</span><span class="p">]</span>
+<span class="nb">max</span><span class="o">-</span><span class="n">line</span><span class="o">-</span><span class="n">length</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">exclude</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">(
+</span><span class="s1">/(
+</span><span class="s1">\.eggs         # exclude a few common directories in the
+</span><span class="s1">| \.git        # root of the project
+</span><span class="s1">| deactivate
+</span><span class="s1">| \.venv
+</span><span class="s1">)/
+</span><span class="s1"># the root of the project
+</span><span class="s1">)
+</span><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></div><p>Then test it in pipenv:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">pipenv install
+pipenv shell
+python
+</code></pre></div><p>In python:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">package_inside_src</span> <span class="kn">import</span> <span class="n">file_inside_package</span>
+<span class="n">my_instance</span> <span class="o">=</span> <span class="n">file_inside_package</span><span class="o">.</span><span class="n">class_inside_file</span><span class="p">(</span><span class="s2">&#34;arg1&#34;</span><span class="p">,</span> <span class="s2">&#34;arg2&#34;</span><span class="p">)</span>
+<span class="n">my_instance</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 145 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
