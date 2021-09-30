@@ -2477,3 +2477,40 @@
 [I 2021-09-30 13:37:58.905 ServerApp] Saving file at /scripting/semvec.ipynb
 [I 2021-09-30 13:38:09.934 ServerApp] Saving file at /scripting/semvec.ipynb
 [I 2021-09-30 13:38:13.436 ServerApp] Saving file at /scripting/semvec.ipynb
+[I 2021-09-30 13:40:01.068 ServerApp] Starting buffering for 298c1737-52e6-4b51-a83b-812f6f71f942:72410a98-eb3c-4dc1-bd9e-8b8adaff1bd6
+[I 2021-09-30 13:40:01.070 ServerApp] Starting buffering for eff7938d-f15e-400e-b5b4-94c83b7d8531:3d31b4f8-5291-4ff8-9c7f-702201b07b60
+[I 2021-09-30 13:42:09.502 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-09-30 13:42:09.720 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-09-30 13:42:09.720 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-09-30 13:42:09.720 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-09-30 13:42:09.763 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-09-30 13:42:09.764 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-09-30 13:42:09.764 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-09-30 13:42:09.765 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-09-30 13:42:09.765 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-09-30 13:42:09.768 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-09-30 13:42:09.769 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-09-30 13:42:09.770 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-09-30 13:42:09.771 ServerApp] The port 8890 is already in use, trying another port.
+[I 2021-09-30 13:42:09.771 ServerApp] The port 8891 is already in use, trying another port.
+[I 2021-09-30 13:42:09.772 ServerApp] The port 8892 is already in use, trying another port.
+[I 2021-09-30 13:42:09.773 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-09-30 13:42:09.773 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-09-30 13:42:09.773 ServerApp] http://localhost:8964/lab?token=a497bc1df552f214ae20b9b94b8da0f3905aa968772824df
+[I 2021-09-30 13:42:09.773 ServerApp]  or http://127.0.0.1:8964/lab?token=a497bc1df552f214ae20b9b94b8da0f3905aa968772824df
+[I 2021-09-30 13:42:09.773 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-09-30 13:42:09.789 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-38506-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8964/lab?token=a497bc1df552f214ae20b9b94b8da0f3905aa968772824df
+     or http://127.0.0.1:8964/lab?token=a497bc1df552f214ae20b9b94b8da0f3905aa968772824df
+[I 2021-09-30 13:42:13.837 LabApp] Build is up to date
+[I 2021-09-30 13:42:14.732 ServerApp] Kernel started: 5ea29cf4-27fa-4e26-b0d3-e91306846b76
+[I 2021-09-30 13:42:14.753 ServerApp] Kernel started: 46424fc3-61c3-40ee-9b8e-e401fb18ead4
+[I 2021-09-30 13:44:14.554 ServerApp] Saving file at /scripting/semvec.ipynb
+[I 2021-09-30 13:48:14.573 ServerApp] Saving file at /scripting/semvec.ipynb
+[I 2021-09-30 13:52:00.889 ServerApp] Saving file at /scripting/semvec.ipynb
+[I 2021-09-30 13:52:02.932 ServerApp] Starting buffering for 5ea29cf4-27fa-4e26-b0d3-e91306846b76:4816d729-8bdf-44cf-9581-4a2a5820d6b8
+[I 2021-09-30 13:52:02.934 ServerApp] Starting buffering for 46424fc3-61c3-40ee-9b8e-e401fb18ead4:db116418-2cea-41e1-83db-1c74ff4bce26
