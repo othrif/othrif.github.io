@@ -38,7 +38,7 @@ import numpy as np from sklearn.feature_extraction.text import CountVectorizer c
   "@type": "BlogPosting",
   "headline": "Bag of words",
   "url": "https:\/\/othrif.github.io\/machine_learning\/nlp\/bag_of_words.html",
-  "wordCount": "424",
+  "wordCount": "597",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -210,6 +210,31 @@ where $n_d$ is the total number of documents, and <strong>df(d, t)</strong> is t
        [0.43, 0.  , 0.43, 0.  , 0.  , 0.  , 0.56, 0.  , 0.  , 0.56],
        [0.15, 0.5 , 0.45, 0.5 , 0.19, 0.19, 0.19, 0.25, 0.25, 0.19]])
 </code></pre>
+<h3 id="calculation-by-hand">Calculation by hand</h3>
+<p>Calculation of the tf-idf computed by scikitlear is:<br>
+$\text{idf}(t,d) = \text{log}\frac{1 + n_d}{1+\text{df}(d, t)}$  <br>
+$\text{tf-idf}(t,d)=\text{tf (t,d)}\times \left( 1 + \text{idf}(t,d) \right)$</p>
+<p><strong>tf(t,d)</strong>: How many times the term t appears in document d.<br>
+<strong>df(d,t)</strong>: How many documents have the term t.</p>
+<p>In the example of the 3rd document, the term &lsquo;and&rsquo; appears 2 times:<br>
+$\text{tf}(&lsquo;and&rsquo;, d3) = 2$<br>
+$\text{df}(d, &lsquo;and&rsquo;)  = 1$<br>
+$\text{idf}(&lsquo;and&rsquo;, d3) = \text{log}\frac{1 + 3}{1 + 1} = 0.69$<br>
+$\text{tf-idf}(&lsquo;and&rsquo;, d3) = 2 * (1 + log(2)) = 3.39$</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tf_and</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">df_and</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">n_docs</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">idf_and</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">n_docs</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">df_and</span><span class="p">))</span>
+<span class="n">tfidf_and</span> <span class="o">=</span> <span class="n">tf_and</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">idf_and</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tf-idf of term &#34;and&#34; = </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">tfidf_and</span><span class="p">)</span>
+</code></pre></div><pre><code>tf-idf of term &quot;and&quot; = 3.39
+</code></pre>
+<p>Repeating the caclucation bove, we obtain:</p>
+<p>$\text{tf-idf}(d3) = [3.39, 3.  , 3.39, 1.29, 1.29, 1.29, 2.  , 1.69, 1.29]$</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">raw_tfidf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.39</span><span class="p">,</span> <span class="mf">3.</span>  <span class="p">,</span> <span class="mf">3.39</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">,</span> <span class="mf">2.</span>  <span class="p">,</span> <span class="mf">1.69</span><span class="p">,</span> <span class="mf">1.29</span><span class="p">])</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tf-idf normalized is: </span><span class="si">{</span><span class="n">raw_tfidf</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">raw_tfidf</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div><pre><code>tf-idf normalized is: [0.5  0.44 0.5  0.19 0.19 0.19 0.3  0.25 0.19]
+</code></pre>
 
 </div>
   <aside>
@@ -234,7 +259,7 @@ where $n_d$ is the total number of documents, and <strong>df(d, t)</strong> is t
 
     <footer class="footer text-center">
         <div class="container">
-            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 145 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 147 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
         </div>
     </footer>
 

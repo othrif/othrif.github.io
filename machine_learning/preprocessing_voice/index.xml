@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>Audio file duration comparisons in Python</title>
+      <link>https://othrif.github.io/machine_learning/preprocessing_voice/audio_duration.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/preprocessing_voice/audio_duration.html</guid>
+      <description>filename = &amp;#39;/Users/othrif/spectrum/voice/datasets/free-spoken-digit-dataset/recordings/4_yweweler_5.wav&amp;#39; import timeit import sox import subprocess import soundfile as sf def get_length_with_ffprobe(input_audio): result = subprocess.run([&amp;#39;ffprobe&amp;#39;, &amp;#39;-i&amp;#39;, input_audio, &amp;#39;-show_entries&amp;#39;, &amp;#39;format=duration&amp;#39;, &amp;#39;-v&amp;#39;, &amp;#39;quiet&amp;#39;, &amp;#39;-of&amp;#39;, &amp;#39;default=noprint_wrappers=1:nokey=1&amp;#39;], stdout=subprocess.PIPE, stderr=subprocess.STDOUT) return float(result.stdout) %time sf.info(filename).duration CPU times: user 1.61 ms, sys: 3.46 ms, total: 5.07 ms Wall time: 7.5 ms 0.333875  %time get_length_with_ffprobe(filename) CPU times: user 2.78 ms, sys: 8.43 ms, total: 11.2 ms Wall time: 92.1 ms 0.333875  %time sox.file_info.info(filename)[&amp;#39;duration&amp;#39;] CPU times: user 9.</description>
+    </item>
+    
+    <item>
       <title>Audio i/o devices</title>
       <link>https://othrif.github.io/machine_learning/preprocessing_voice/devices_connected.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -26,8 +35,7 @@
       
       <guid>https://othrif.github.io/machine_learning/preprocessing_voice/convert_sound_format.html</guid>
       <description>Convert in CLI sox new.wav new.mp3 Convert to a different bit depth and sampling rate ffmpeg -i input.wav -ac 1 -ar 16000 -sample_fmt s16 output.wav Available bit depth optons:
-ffmpeg -sample_fmts Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.
-Create a numpy array of 16-bit sine wave import numpy as np frequency = 440 # Our played note will be 440 Hz fs = 44100 # 44100 samples per second seconds = 3 # Note duration of 3 seconds t = np.</description>
+ffmpeg -sample_fmts Convert in Python import subprocess in_file = &amp;#34;test.webm&amp;#34; out_file = &amp;#34;test.wav&amp;#34; subprocess.run( [ &amp;#34;ffmpeg&amp;#34;, &amp;#34;-i&amp;#34;, in_file, &amp;#34;-ar&amp;#34;, &amp;#34;16000&amp;#34;, &amp;#34;-ac&amp;#34;, &amp;#34;1&amp;#34;, &amp;#34;-sample_fmt&amp;#34;, &amp;#34;s16&amp;#34;, out_file, ], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, ) Convert Numpy to WAV with wavio wavio.write writes a numpy array to a WAV file, optionally using a specified sample width.</description>
     </item>
     
     <item>

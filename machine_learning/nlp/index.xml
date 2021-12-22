@@ -21,6 +21,15 @@ import numpy as np from sklearn.feature_extraction.text import CountVectorizer c
     </item>
     
     <item>
+      <title>Clean text with Regex</title>
+      <link>https://othrif.github.io/machine_learning/nlp/clean_text.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/nlp/clean_text.html</guid>
+      <description>import re def preprocessor(text): text = re.sub(&amp;#39;&amp;lt;[^&amp;gt;]*&amp;gt;&amp;#39;, &amp;#39;&amp;#39;, text) emoticons = re.findall(&amp;#39;(?::|;|=)(?:-)?(?:\)|\(|D|P)&amp;#39;, text) text = (re.sub(&amp;#39;[\W]+&amp;#39;, &amp;#39; &amp;#39;, text.lower()) + &amp;#39; &amp;#39;.join(emoticons).replace(&amp;#39;-&amp;#39;, &amp;#39;&amp;#39;)) return text preprocessor(&amp;#34;&amp;lt;/a&amp;gt;This :) is :( a test :-)!&amp;#34;) &#39;this is a test :) :( :)&#39;  </description>
+    </item>
+    
+    <item>
       <title>Embeding a ML model into a Web Application</title>
       <link>https://othrif.github.io/machine_learning/nlp/embedml.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
