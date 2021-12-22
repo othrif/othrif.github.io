@@ -103,6 +103,15 @@ import matplotlib.pyplot as plt from sklearn.model_selection import learning_cur
     </item>
     
     <item>
+      <title>Linear regression and its scores: MSE and R^2</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/linear_regression.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/linear_regression.html</guid>
+      <description>Prepare data import pandas as pd from sklearn.preprocessing import StandardScaler df = pd.read_csv(&amp;#39;https://raw.githubusercontent.com/rasbt/&amp;#39; &amp;#39;python-machine-learning-book-3rd-edition/&amp;#39; &amp;#39;master/ch10/housing.data.txt&amp;#39;, header=None, sep=&amp;#39;\s+&amp;#39;) df.columns = [&amp;#39;CRIM&amp;#39;, &amp;#39;ZN&amp;#39;, &amp;#39;INDUS&amp;#39;, &amp;#39;CHAS&amp;#39;, &amp;#39;NOX&amp;#39;, &amp;#39;RM&amp;#39;, &amp;#39;AGE&amp;#39;, &amp;#39;DIS&amp;#39;, &amp;#39;RAD&amp;#39;, &amp;#39;TAX&amp;#39;, &amp;#39;PTRATIO&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;LSTAT&amp;#39;, &amp;#39;MEDV&amp;#39;] X = df[[&amp;#39;RM&amp;#39;]].values y = df[&amp;#39;MEDV&amp;#39;].values import matplotlib.pyplot as plt def lin_regplot(X, y, model): plt.scatter(X, y, c=&amp;#39;steelblue&amp;#39;, edgecolor=&amp;#39;white&amp;#39;, s=70) plt.plot(X, model.predict(X), color=&amp;#39;black&amp;#39;, lw=2) return Using scikit-learn from sklearn.linear_model import LinearRegression slr = LinearRegression() slr.fit(X, y) y_pred = slr.</description>
+    </item>
+    
+    <item>
       <title>Linear scikit-learn classifiers</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/linear_classifiers.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
@@ -148,6 +157,15 @@ Kernel can be interpretted as a similarity measure: 1 if similar, 0 if very diss
       
       <guid>https://othrif.github.io/machine_learning/scikitlearn/pca.html</guid>
       <description>Prep data # Get data import numpy as np import pandas as pd df_wine = pd.read_csv(&amp;#39;https://archive.ics.uci.edu/ml/&amp;#39; &amp;#39;machine-learning-databases/wine/wine.data&amp;#39;, header=None) df_wine.columns = [&amp;#39;Class label&amp;#39;, &amp;#39;Alcohol&amp;#39;, &amp;#39;Malic acid&amp;#39;, &amp;#39;Ash&amp;#39;, &amp;#39;Alcalinity of ash&amp;#39;, &amp;#39;Magnesium&amp;#39;, &amp;#39;Total phenols&amp;#39;, &amp;#39;Flavanoids&amp;#39;, &amp;#39;Nonflavanoid phenols&amp;#39;, &amp;#39;Proanthocyanins&amp;#39;, &amp;#39;Color intensity&amp;#39;, &amp;#39;Hue&amp;#39;, &amp;#39;OD280/OD315 of diluted wines&amp;#39;, &amp;#39;Proline&amp;#39;] # Split data from sklearn.model_selection import train_test_split X, y = df_wine.iloc[:, 1:].values, df_wine.iloc[:, 0].values X_train, X_test, y_train, y_test = \ train_test_split(X, y, test_size=0.3, stratify=y, random_state=0) # Standardize data from sklearn.</description>
+    </item>
+    
+    <item>
+      <title>Polynomial regression</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/polynomial_regression.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/polynomial_regression.html</guid>
+      <description>Turning a linear regression model into a curve - polynomial regression import numpy as np X = np.array([258.0, 270.0, 294.0, 320.0, 342.0, 368.0, 396.0, 446.0, 480.0, 586.0])\ [:, np.newaxis] y = np.array([236.4, 234.4, 252.8, 298.6, 314.2, 342.2, 360.8, 368.0, 391.2, 390.8]) Fit linear features from sklearn.linearuyuhjjuy7765_model import LinearRegression lr = LinearRegression() # fit linear features lr.fit(X, y) X_fit = np.arange(250, 600, 10)[:, np.newaxis] y_lin_fit = lr.predict(X_fit) LinearRegression()  Fit quadratic features from sklearn.</description>
     </item>
     
     <item>

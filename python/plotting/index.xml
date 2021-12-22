@@ -40,5 +40,15 @@ $$ p(x \mid \mu, \sigma) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp{ \left( -\frac{(x 
       <description>Plot different classes import numpy as np import pandas as pd import matplotlib.pyplot as plt # Read data s = &amp;#39;https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data&amp;#39; df = pd.read_csv(s,header=None,encoding=&amp;#39;utf-8&amp;#39;) # Select X, y X = df.iloc[:100, [0,2]].values y = np.where(df.iloc[:100, 4].values == &amp;#39;Iris-setosa&amp;#39;, -1, 1) # plot data plt.scatter(X[:50, 0], X[:50, 1], color=&amp;#39;red&amp;#39;, marker=&amp;#39;o&amp;#39;, label=&amp;#39;setosa&amp;#39;) plt.scatter(X[50:100, 0], X[50:100, 1], color=&amp;#39;blue&amp;#39;, marker=&amp;#39;x&amp;#39;, label=&amp;#39;versicolor&amp;#39;) plt.xlabel(&amp;#39;sepal length [cm]&amp;#39;) plt.ylabel(&amp;#39;petal length [cm]&amp;#39;) plt.legend(loc=&amp;#39;upper left&amp;#39;) plt.savefig(&amp;#39;02_06.png&amp;#39;, dpi=300) plt.show() </description>
     </item>
     
+    <item>
+      <title>Visualizing datasets: correlation scatter plot and heatmaps</title>
+      <link>https://othrif.github.io/python/plotting/eda_visuals.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/python/plotting/eda_visuals.html</guid>
+      <description>Get dataset import pandas as pd df = pd.read_csv(&amp;#39;https://raw.githubusercontent.com/rasbt/&amp;#39; &amp;#39;python-machine-learning-book-3rd-edition/&amp;#39; &amp;#39;master/ch10/housing.data.txt&amp;#39;, header=None, sep=&amp;#39;\s+&amp;#39;) df.columns = [&amp;#39;CRIM&amp;#39;, &amp;#39;ZN&amp;#39;, &amp;#39;INDUS&amp;#39;, &amp;#39;CHAS&amp;#39;, &amp;#39;NOX&amp;#39;, &amp;#39;RM&amp;#39;, &amp;#39;AGE&amp;#39;, &amp;#39;DIS&amp;#39;, &amp;#39;RAD&amp;#39;, &amp;#39;TAX&amp;#39;, &amp;#39;PTRATIO&amp;#39;, &amp;#39;B&amp;#39;, &amp;#39;LSTAT&amp;#39;, &amp;#39;MEDV&amp;#39;] df.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Scatterplot matrix Visuzalizing 2 variables at the time across all variables of the dataset.
+import matplotlib.pyplot as plt import seaborn as sns cols = [&amp;#39;LSTAT&amp;#39;, &amp;#39;INDUS&amp;#39;, &amp;#39;NOX&amp;#39;, &amp;#39;RM&amp;#39;, &amp;#39;MEDV&amp;#39;] sns.</description>
+    </item>
+    
   </channel>
 </rss>

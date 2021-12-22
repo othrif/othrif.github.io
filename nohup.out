@@ -3157,3 +3157,97 @@
         http://localhost:8888/lab?token=fb5f919a8c8b3ce390049e442d12773b9b91cd7fc9072a6d
      or http://127.0.0.1:8888/lab?token=fb5f919a8c8b3ce390049e442d12773b9b91cd7fc9072a6d
 [I 2021-12-22 12:53:19.796 LabApp] Build is up to date
+[I 2021-12-22 12:54:37.289 ServerApp] Kernel started: cf62d706-adc6-4de7-ac67-0a133cfdb571
+[W 2021-12-22 12:54:40.939 ServerApp] Got events for closed stream None
+[I 2021-12-22 12:54:52.725 ServerApp] Kernel started: 116fdac8-02b4-4d17-8b9b-aeea17c40277
+[I 2021-12-22 12:55:14.935 ServerApp] Kernel started: 3ad8c449-e17c-4799-b301-84de7faaa760
+[I 2021-12-22 12:55:19.897 ServerApp] Starting buffering for 116fdac8-02b4-4d17-8b9b-aeea17c40277:e511f92b-5484-43e7-b3fc-a563dfee881a
+[I 2021-12-22 12:55:28.233 ServerApp] Starting buffering for 3ad8c449-e17c-4799-b301-84de7faaa760:f6781416-d8b8-43a2-86d6-e1d712ffe47d
+[I 2021-12-22 12:57:03.652 ServerApp] Copying machine_learning/scikitlearn/scaling.ipynb to /machine_learning/scikitlearn
+[I 2021-12-22 12:57:07.024 ServerApp] Starting buffering for 3ad8c449-e17c-4799-b301-84de7faaa760:dc9d6800-b7da-4f23-8d63-693b3a086432
+[I 2021-12-22 12:57:19.359 ServerApp] Kernel started: 9a4f73e8-92bc-44b3-8113-03c4411979a2
+[I 2021-12-22 12:59:20.396 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:01:20.441 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:03:20.475 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:05:20.520 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:07:20.565 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:08:00.901 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:10:00.943 ServerApp] Saving file at /machine_learning/scikitlearn/polynomial_regression.ipynb
+[I 2021-12-22 13:10:32.173 ServerApp] Starting buffering for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 13:10:32.202 ServerApp] Starting buffering for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:10:32.388 ServerApp] Restoring connection for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 13:10:32.402 ServerApp] Restoring connection for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:13:28.067 ServerApp] Starting buffering for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:13:28.076 ServerApp] Starting buffering for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 13:13:28.149 ServerApp] Restoring connection for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:13:28.213 ServerApp] Restoring connection for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 13:49:56.383 ServerApp] Starting buffering for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:49:56.386 ServerApp] Starting buffering for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 13:49:56.530 ServerApp] Restoring connection for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 13:49:56.551 ServerApp] Restoring connection for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 14:25:02.203 ServerApp] Starting buffering for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 14:25:02.261 ServerApp] Starting buffering for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 14:25:02.333 ServerApp] Restoring connection for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 14:25:02.349 ServerApp] Restoring connection for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 14:32:02.351 ServerApp] Starting buffering for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 14:32:02.416 ServerApp] Starting buffering for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 14:32:04.968 ServerApp] Restoring connection for cf62d706-adc6-4de7-ac67-0a133cfdb571:9c236a6b-a906-496d-96bd-2b2a974f0891
+[I 2021-12-22 14:32:05.092 ServerApp] Restoring connection for 9a4f73e8-92bc-44b3-8113-03c4411979a2:1df82c23-2f4c-4d15-83e8-57826e6d3334
+[I 2021-12-22 14:54:58.362 ServerApp] Kernel started: f8176d6c-2457-4829-8fb9-2a57ce6d98b1
+[I 2021-12-22 14:54:59.951 ServerApp] Copying python/plotting/pcolormesh.ipynb to /python/plotting
+[I 2021-12-22 14:55:36.852 ServerApp] Kernel started: 32ea252d-ad88-4ec4-8cde-a4918654dfea
+[I 2021-12-22 14:56:58.438 ServerApp] Saving file at /python/plotting/pcolormesh.ipynb
+[I 2021-12-22 14:57:36.763 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 14:59:37.779 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 15:17:05.343 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-12-22 15:17:05.831 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-22 15:17:05.831 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-12-22 15:17:05.831 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-22 15:17:05.884 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-22 15:17:05.885 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-12-22 15:17:05.885 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-12-22 15:17:05.887 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-12-22 15:17:05.887 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-12-22 15:17:05.891 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-22 15:17:05.893 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-12-22 15:17:05.893 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-12-22 15:17:05.893 ServerApp] http://localhost:8888/lab?token=fb231db4d8a60ee97ce1416b78e6c219e8801cff7c151efb
+[I 2021-12-22 15:17:05.893 ServerApp]  or http://127.0.0.1:8888/lab?token=fb231db4d8a60ee97ce1416b78e6c219e8801cff7c151efb
+[I 2021-12-22 15:17:05.893 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-22 15:17:05.910 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-1484-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=fb231db4d8a60ee97ce1416b78e6c219e8801cff7c151efb
+     or http://127.0.0.1:8888/lab?token=fb231db4d8a60ee97ce1416b78e6c219e8801cff7c151efb
+[I 2021-12-22 15:17:10.176 LabApp] Build is up to date
+[I 2021-12-22 15:17:11.236 ServerApp] Kernel started: 87e22d33-80c8-4a45-9f5e-f2148449d5dc
+[I 2021-12-22 15:17:11.288 ServerApp] Kernel started: 75aa2eaf-1e00-401a-87d6-9f497a217ff4
+[I 2021-12-22 15:17:11.291 ServerApp] Kernel started: d6e299cc-08ca-4da9-af38-b431e0e8fbfd
+[I 2021-12-22 15:19:11.071 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 15:21:11.141 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 15:21:54.298 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 15:21:57.769 ServerApp] Saving file at /python/plotting/eda_visuals.ipynb
+[I 2021-12-22 15:22:49.112 ServerApp] Kernel started: bf394839-37ed-4900-85e8-a4be7c0b2165
+[I 2021-12-22 15:23:12.347 ServerApp] Copying machine_learning/scikitlearn/logistic_regression.ipynb to /machine_learning/scikitlearn
+[I 2021-12-22 15:23:23.461 ServerApp] Kernel started: a5b8d37c-3b68-403f-92ac-1494c3668163
+[I 2021-12-22 15:23:24.605 ServerApp] Starting buffering for 87e22d33-80c8-4a45-9f5e-f2148449d5dc:57d01c9f-f1b2-47cd-bfbd-ead706e3579d
+[I 2021-12-22 15:23:25.902 ServerApp] Starting buffering for 75aa2eaf-1e00-401a-87d6-9f497a217ff4:2dd68703-f636-4095-84a7-364b8079ee27
+[I 2021-12-22 15:23:29.930 ServerApp] Starting buffering for bf394839-37ed-4900-85e8-a4be7c0b2165:f86a4fbd-f308-40ce-8cdf-d728713c6347
+[I 2021-12-22 15:25:23.323 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:27:24.303 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:29:24.354 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:31:25.304 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:31:49.086 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:33:49.131 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:35:08.809 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:37:08.856 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:39:08.907 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:41:08.952 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:41:34.022 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:43:04.761 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:43:27.967 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:43:45.740 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
+[I 2021-12-22 15:43:46.718 ServerApp] Starting buffering for d6e299cc-08ca-4da9-af38-b431e0e8fbfd:7c2995d1-629c-4284-89bd-e40cb9fd38ce
+[I 2021-12-22 15:43:46.719 ServerApp] Starting buffering for a5b8d37c-3b68-403f-92ac-1494c3668163:4fdd39cf-cafc-4d49-83a9-162fd6adee2d

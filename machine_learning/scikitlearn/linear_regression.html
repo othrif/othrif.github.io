@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Linear regression and its scores: MSE and R^2" />
+<meta property="og:description" content="Prepare data import pandas as pd from sklearn.preprocessing import StandardScaler df = pd.read_csv(&#39;https://raw.githubusercontent.com/rasbt/&#39; &#39;python-machine-learning-book-3rd-edition/&#39; &#39;master/ch10/housing.data.txt&#39;, header=None, sep=&#39;\s&#43;&#39;) df.columns = [&#39;CRIM&#39;, &#39;ZN&#39;, &#39;INDUS&#39;, &#39;CHAS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;AGE&#39;, &#39;DIS&#39;, &#39;RAD&#39;, &#39;TAX&#39;, &#39;PTRATIO&#39;, &#39;B&#39;, &#39;LSTAT&#39;, &#39;MEDV&#39;] X = df[[&#39;RM&#39;]].values y = df[&#39;MEDV&#39;].values import matplotlib.pyplot as plt def lin_regplot(X, y, model): plt.scatter(X, y, c=&#39;steelblue&#39;, edgecolor=&#39;white&#39;, s=70) plt.plot(X, model.predict(X), color=&#39;black&#39;, lw=2) return Using scikit-learn from sklearn.linear_model import LinearRegression slr = LinearRegression() slr.fit(X, y) y_pred = slr." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/machine_learning/scikitlearn/linear_regression.html" /><meta property="article:section" content="machine_learning" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linear regression and its scores: MSE and R^2"/>
+<meta name="twitter:description" content="Prepare data import pandas as pd from sklearn.preprocessing import StandardScaler df = pd.read_csv(&#39;https://raw.githubusercontent.com/rasbt/&#39; &#39;python-machine-learning-book-3rd-edition/&#39; &#39;master/ch10/housing.data.txt&#39;, header=None, sep=&#39;\s&#43;&#39;) df.columns = [&#39;CRIM&#39;, &#39;ZN&#39;, &#39;INDUS&#39;, &#39;CHAS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;AGE&#39;, &#39;DIS&#39;, &#39;RAD&#39;, &#39;TAX&#39;, &#39;PTRATIO&#39;, &#39;B&#39;, &#39;LSTAT&#39;, &#39;MEDV&#39;] X = df[[&#39;RM&#39;]].values y = df[&#39;MEDV&#39;].values import matplotlib.pyplot as plt def lin_regplot(X, y, model): plt.scatter(X, y, c=&#39;steelblue&#39;, edgecolor=&#39;white&#39;, s=70) plt.plot(X, model.predict(X), color=&#39;black&#39;, lw=2) return Using scikit-learn from sklearn.linear_model import LinearRegression slr = LinearRegression() slr.fit(X, y) y_pred = slr."/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linear regression and its scores: MSE and R^2",
+  "url": "https:\/\/othrif.github.io\/machine_learning\/scikitlearn\/linear_regression.html",
+  "wordCount": "539",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Linear regression and its scores: MSE and R^2</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Linear regression and its scores: MSE and R^2</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="prepare-data">Prepare data</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rasbt/&#39;</span>
+                 <span class="s1">&#39;python-machine-learning-book-3rd-edition/&#39;</span>
+                 <span class="s1">&#39;master/ch10/housing.data.txt&#39;</span><span class="p">,</span>
+                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CRIM&#39;</span><span class="p">,</span> <span class="s1">&#39;ZN&#39;</span><span class="p">,</span> <span class="s1">&#39;INDUS&#39;</span><span class="p">,</span> <span class="s1">&#39;CHAS&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;NOX&#39;</span><span class="p">,</span> <span class="s1">&#39;RM&#39;</span><span class="p">,</span> <span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="s1">&#39;DIS&#39;</span><span class="p">,</span> <span class="s1">&#39;RAD&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;TAX&#39;</span><span class="p">,</span> <span class="s1">&#39;PTRATIO&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span> <span class="s1">&#39;MEDV&#39;</span><span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;RM&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="k">def</span> <span class="nf">lin_regplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>    
+    <span class="k">return</span> 
+</code></pre></div><h3 id="using-scikit-learn">Using scikit-learn</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="n">slr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">slr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">slr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">slr</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intercept: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">slr</span><span class="o">.</span><span class="n">intercept_</span><span class="p">)</span>
+</code></pre></div><pre><code>Slope: 9.102
+Intercept: -34.671
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">lin_regplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">slr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Average number of rooms [RM]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price in $1000s [MEDV]&#39;</span><span class="p">)</span>
+
+<span class="c1">#plt.savefig(&#39;images/10_07.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="linear_regression_6_0.png" alt="png"></p>
+<h3 id="using-normal-equation">Using normal equation</h3>
+<p>Closed form linear regression solution of $\hat{y} = w^T \cdot \textbf{x}$</p>
+<p>$w = (\textbf{X}^T \cdot \textbf{X})^{-1} \cdot \textbf{X}^T \cdot \textbf{y}$</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># adding a column vector of &#34;ones&#34;</span>
+<span class="n">Xb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span> <span class="n">X</span><span class="p">))</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xb</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">Xb</span><span class="p">))</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Xb</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Slope: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intercept: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div><pre><code>Slope: 9.102
+Intercept: -34.671
+</code></pre>
+<h3 id="using-ransac">using RANSAC</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">RANSACRegressor</span>
+
+<span class="n">ransac</span> <span class="o">=</span> <span class="n">RANSACRegressor</span><span class="p">(</span><span class="n">LinearRegression</span><span class="p">(),</span> 
+                         <span class="n">max_trials</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+                         <span class="n">min_samples</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> 
+                         <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;absolute_loss&#39;</span><span class="p">,</span> 
+                         <span class="n">residual_threshold</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> 
+                         <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="n">ransac</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">inlier_mask</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">inlier_mask_</span>
+<span class="n">outlier_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">inlier_mask</span><span class="p">)</span>
+
+<span class="n">line_X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">line_y_ransac</span> <span class="o">=</span> <span class="n">ransac</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">line_X</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">inlier_mask</span><span class="p">],</span>
+            <span class="n">c</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> 
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">outlier_mask</span><span class="p">],</span>
+            <span class="n">c</span><span class="o">=</span><span class="s1">&#39;limegreen&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> 
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Outliers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_X</span><span class="p">,</span> <span class="n">line_y_ransac</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>   
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Average number of rooms [RM]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price in $1000s [MEDV]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+
+<span class="c1">#plt.savefig(&#39;images/10_08.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="linear_regression_10_0.png" alt="png"></p>
+<h3 id="evaluating-the-performance-of-linear-regression-models">Evaluating the performance of linear regression models</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">slr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="n">slr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">slr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">slr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">,</span>  <span class="n">y_train_pred</span> <span class="o">-</span> <span class="n">y_train</span><span class="p">,</span>
+            <span class="n">c</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">,</span>  <span class="n">y_test_pred</span> <span class="o">-</span> <span class="n">y_test</span><span class="p">,</span>
+            <span class="n">c</span><span class="o">=</span><span class="s1">&#39;limegreen&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Test data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Residuals&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># plt.savefig(&#39;images/10_09.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="linear_regression_13_0.png" alt="png"></p>
+<h3 id="scores-mse-and-r2">Scores MSE and $R^2$</h3>
+<ul>
+<li>Mean Squared Error: $MSE = \frac{1}{n} \sum_{i=1}^{n} \left( y^{(i)} - \hat y ^{(i)} \right) ^ 2$</li>
+<li>Coefficient of dtermination: $R^2$ can be understood as a standardization version of the MSE. It is the fraction of the response variance that is captured by the model.</li>
+</ul>
+<p>$R^2 = 1 - \frac{MSE}{Var(y)}  = 1 - \frac{\frac{1}{n} \sum_{i=1}^{n} \left( y^{(i)} - \hat y ^{(i)} \right) ^ 2}{\frac{1}{n} \sum_{i=1}^{n} \left( y^{(i)} - \mu_y \right) ^ 2}$</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MSE train: </span><span class="si">%.3f</span><span class="s1">, test: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+        <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">),</span>
+        <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R^2 train: </span><span class="si">%.3f</span><span class="s1">, test: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+        <span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">),</span>
+        <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">)))</span>
+</code></pre></div><pre><code>MSE train: 19.958, test: 27.196
+R^2 train: 0.765, test: 0.673
+</code></pre>
+<h3 id="modeling-non-linear-relationship">Modeling non-linear relationship</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">regr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+
+<span class="c1"># create quadratic features</span>
+<span class="n">quadratic</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">cubic</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">X_quad</span> <span class="o">=</span> <span class="n">quadratic</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">X_cubic</span> <span class="o">=</span> <span class="n">cubic</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># fit features</span>
+<span class="n">X_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+<span class="n">regr</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_lin_fit</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_fit</span><span class="p">)</span>
+<span class="n">linear_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+
+<span class="n">regr</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_quad</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_quad_fit</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">quadratic</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_fit</span><span class="p">))</span>
+<span class="n">quadratic_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_quad</span><span class="p">))</span>
+
+<span class="n">regr</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_cubic</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y_cubic_fit</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">cubic</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_fit</span><span class="p">))</span>
+<span class="n">cubic_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_cubic</span><span class="p">))</span>
+
+
+<span class="c1"># plot results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training points&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_fit</span><span class="p">,</span> <span class="n">y_lin_fit</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Linear (d=1), $R^2=</span><span class="si">%.2f</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">linear_r2</span><span class="p">,</span> 
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> 
+         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_fit</span><span class="p">,</span> <span class="n">y_quad_fit</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Quadratic (d=2), $R^2=</span><span class="si">%.2f</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">quadratic_r2</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> 
+         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_fit</span><span class="p">,</span> <span class="n">y_cubic_fit</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cubic (d=3), $R^2=</span><span class="si">%.2f</span><span class="s1">$&#39;</span> <span class="o">%</span> <span class="n">cubic_r2</span><span class="p">,</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> 
+         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% lo</span><span class="s1">wer status of the population [LSTAT]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Price in $1000s [MEDV]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+
+<span class="c1">#plt.savefig(&#39;images/10_12.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="linear_regression_17_0.png" alt="png"></p>
+
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 150 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

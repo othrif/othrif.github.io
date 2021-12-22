@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-162942761-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-162942761-1');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Visualizing datasets: correlation scatter plot and heatmaps" />
+<meta property="og:description" content="Get dataset import pandas as pd df = pd.read_csv(&#39;https://raw.githubusercontent.com/rasbt/&#39; &#39;python-machine-learning-book-3rd-edition/&#39; &#39;master/ch10/housing.data.txt&#39;, header=None, sep=&#39;\s&#43;&#39;) df.columns = [&#39;CRIM&#39;, &#39;ZN&#39;, &#39;INDUS&#39;, &#39;CHAS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;AGE&#39;, &#39;DIS&#39;, &#39;RAD&#39;, &#39;TAX&#39;, &#39;PTRATIO&#39;, &#39;B&#39;, &#39;LSTAT&#39;, &#39;MEDV&#39;] df.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Scatterplot matrix Visuzalizing 2 variables at the time across all variables of the dataset.
+import matplotlib.pyplot as plt import seaborn as sns cols = [&#39;LSTAT&#39;, &#39;INDUS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;MEDV&#39;] sns." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://othrif.github.io/python/plotting/eda_visuals.html" /><meta property="article:section" content="python" />
+<meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
+<meta property="article:modified_time" content="2020-04-12T14:41:32+02:00" />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Visualizing datasets: correlation scatter plot and heatmaps"/>
+<meta name="twitter:description" content="Get dataset import pandas as pd df = pd.read_csv(&#39;https://raw.githubusercontent.com/rasbt/&#39; &#39;python-machine-learning-book-3rd-edition/&#39; &#39;master/ch10/housing.data.txt&#39;, header=None, sep=&#39;\s&#43;&#39;) df.columns = [&#39;CRIM&#39;, &#39;ZN&#39;, &#39;INDUS&#39;, &#39;CHAS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;AGE&#39;, &#39;DIS&#39;, &#39;RAD&#39;, &#39;TAX&#39;, &#39;PTRATIO&#39;, &#39;B&#39;, &#39;LSTAT&#39;, &#39;MEDV&#39;] df.head() .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }  Scatterplot matrix Visuzalizing 2 variables at the time across all variables of the dataset.
+import matplotlib.pyplot as plt import seaborn as sns cols = [&#39;LSTAT&#39;, &#39;INDUS&#39;, &#39;NOX&#39;, &#39;RM&#39;, &#39;MEDV&#39;] sns."/>
+<meta name="generator" content="Hugo 0.85.0" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Visualizing datasets: correlation scatter plot and heatmaps",
+  "url": "https:\/\/othrif.github.io\/python\/plotting\/eda_visuals.html",
+  "wordCount": "103",
+  "datePublished": "2020-04-12T14:41:32\u002b02:00",
+  "dateModified": "2020-04-12T14:41:32\u002b02:00",
+  "author": {
+    "@type": "Person",
+    "name": "Othmane Rifki"
+  }
+}
+</script> 
+
+    <title>Visualizing datasets: correlation scatter plot and heatmaps</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://othrif.github.io/css/custom.css" rel="stylesheet">
+    <link href="https://othrif.github.io/css/syntax.css" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Othmane Rifki All Notes And Articles" />
+    
+    <link href="https://othrif.github.io/articles/index.xml" rel="alternate" type="application/rss+xml" title="Othmane Rifki Articles" />
+
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://othrif.github.io">Othmane Rifki</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            Technical Notes
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io#python">Python</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#machine_learning">Machine Learning</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#linux">Linux</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#scripting">Scripting</a>
+                            <a class="dropdown-item" href="https://othrif.github.io#coding">Coding Practice</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://othrif.github.io/about/othmane_rifki.html">About Othmane</a>
+                            <a class="dropdown-item" href="https://github.com/othrif" target="_blank">GitHub</a>
+                            <a class="dropdown-item" href="https://www.linkedin.com/in/othrif/" target="_blank">LinkedIn</a>
+                            <a class="dropdown-item" href="https://twitter.com/othmanerifki" target="_blank">Twitter</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+    <h1 class="technical_note_title">Visualizing datasets: correlation scatter plot and heatmaps</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
+    </div>
+  </header>
+  <div class="content">
+
+  <h3 id="get-dataset">Get dataset</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/rasbt/&#39;</span>
+                 <span class="s1">&#39;python-machine-learning-book-3rd-edition/&#39;</span>
+                 <span class="s1">&#39;master/ch10/housing.data.txt&#39;</span><span class="p">,</span>
+                 <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;\s+&#39;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CRIM&#39;</span><span class="p">,</span> <span class="s1">&#39;ZN&#39;</span><span class="p">,</span> <span class="s1">&#39;INDUS&#39;</span><span class="p">,</span> <span class="s1">&#39;CHAS&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;NOX&#39;</span><span class="p">,</span> <span class="s1">&#39;RM&#39;</span><span class="p">,</span> <span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="s1">&#39;DIS&#39;</span><span class="p">,</span> <span class="s1">&#39;RAD&#39;</span><span class="p">,</span> 
+              <span class="s1">&#39;TAX&#39;</span><span class="p">,</span> <span class="s1">&#39;PTRATIO&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span> <span class="s1">&#39;MEDV&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<h3 id="scatterplot-matrix">Scatterplot matrix</h3>
+<p>Visuzalizing 2 variables at the time across all variables of the dataset.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span> <span class="s1">&#39;INDUS&#39;</span><span class="p">,</span> <span class="s1">&#39;NOX&#39;</span><span class="p">,</span> <span class="s1">&#39;RM&#39;</span><span class="p">,</span> <span class="s1">&#39;MEDV&#39;</span><span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="c1">#plt.savefig(&#39;images/10_03.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="eda_visuals_4_0.png" alt="png"></p>
+<h3 id="correlation-matrix">Correlation matrix</h3>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">hm</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2f&#39;</span><span class="p">,</span> <span class="n">annot_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">},</span>  <span class="n">yticklabels</span><span class="o">=</span><span class="n">cols</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
+<span class="c1"># plt.savefig(&#39;images/10_04.png&#39;, dpi=300)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="eda_visuals_6_0.png" alt="png"></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python">
+</code></pre></div>
+</div>
+  <aside>
+      <div class="bug_reporting">
+          <h4>Find an error?</h4>
+          <p>All material is saved on GitHub. Please <a href='https://github.com/othrif/notes_othmanerifki/issues/new'>submit a suggested change</a> and include the note's URL in the issue.</p>
+      </div>
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">Copyright &copy; Othmane Rifki, <time datetime="2020">2020</time>. All 150 notes and articles are available on <a href="https://github.com/othrif/">GitHub</a>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
