@@ -3251,3 +3251,80 @@
 [I 2021-12-22 15:43:45.740 ServerApp] Saving file at /machine_learning/scikitlearn/linear_regression.ipynb
 [I 2021-12-22 15:43:46.718 ServerApp] Starting buffering for d6e299cc-08ca-4da9-af38-b431e0e8fbfd:7c2995d1-629c-4284-89bd-e40cb9fd38ce
 [I 2021-12-22 15:43:46.719 ServerApp] Starting buffering for a5b8d37c-3b68-403f-92ac-1494c3668163:4fdd39cf-cafc-4d49-83a9-162fd6adee2d
+[C 2021-12-23 12:25:35.255 ServerApp] received signal 15, stopping
+[I 2021-12-23 12:25:35.290 ServerApp] Shutting down 5 kernels
+[I 2021-12-23 12:25:35.317 ServerApp] Kernel shutdown: 87e22d33-80c8-4a45-9f5e-f2148449d5dc
+[I 2021-12-23 12:25:35.328 ServerApp] Kernel shutdown: 75aa2eaf-1e00-401a-87d6-9f497a217ff4
+[I 2021-12-23 12:25:35.330 ServerApp] Kernel shutdown: d6e299cc-08ca-4da9-af38-b431e0e8fbfd
+[I 2021-12-23 12:25:35.332 ServerApp] Kernel shutdown: bf394839-37ed-4900-85e8-a4be7c0b2165
+[I 2021-12-23 12:25:35.333 ServerApp] Kernel shutdown: a5b8d37c-3b68-403f-92ac-1494c3668163
+[I 2021-12-23 12:25:35.950 ServerApp] Shutting down 0 terminals
+[I 2021-12-25 19:42:09.357 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-12-25 19:42:09.860 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-25 19:42:09.869 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-12-25 19:42:09.869 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-25 19:42:09.944 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-25 19:42:09.946 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-12-25 19:42:09.946 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-12-25 19:42:09.951 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-12-25 19:42:09.951 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-12-25 19:42:09.957 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-25 19:42:09.958 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-12-25 19:42:09.959 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-12-25 19:42:09.959 ServerApp] http://localhost:8888/lab?token=00954e860e9c3ab529512962e3c66832fb8ab898c6cfe233
+[I 2021-12-25 19:42:09.959 ServerApp]  or http://127.0.0.1:8888/lab?token=00954e860e9c3ab529512962e3c66832fb8ab898c6cfe233
+[I 2021-12-25 19:42:09.959 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-25 19:42:09.981 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-12588-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=00954e860e9c3ab529512962e3c66832fb8ab898c6cfe233
+     or http://127.0.0.1:8888/lab?token=00954e860e9c3ab529512962e3c66832fb8ab898c6cfe233
+[I 2021-12-25 19:42:14.234 LabApp] Build is up to date
+[I 2021-12-25 19:42:15.791 ServerApp] Kernel started: 7d5b6031-e3e7-4598-bfbb-8fae61478675
+[I 2021-12-25 19:42:19.191 ServerApp] Starting buffering for 7d5b6031-e3e7-4598-bfbb-8fae61478675:e1603d18-7e83-4791-80a8-b9d48f545075
+[I 2021-12-25 19:43:14.213 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-12-25 19:43:14.407 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-25 19:43:14.407 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-12-25 19:43:14.407 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-25 19:43:14.442 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-25 19:43:14.443 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-12-25 19:43:14.443 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-12-25 19:43:14.445 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-12-25 19:43:14.445 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-12-25 19:43:14.449 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-25 19:43:14.450 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-12-25 19:43:14.451 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-12-25 19:43:14.451 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-12-25 19:43:14.451 ServerApp] http://localhost:8889/lab?token=fa2df9f465a70b5305b622f04bfbc69e816aa297ef170746
+[I 2021-12-25 19:43:14.451 ServerApp]  or http://127.0.0.1:8889/lab?token=fa2df9f465a70b5305b622f04bfbc69e816aa297ef170746
+[I 2021-12-25 19:43:14.451 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-25 19:43:14.465 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-12922-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=fa2df9f465a70b5305b622f04bfbc69e816aa297ef170746
+     or http://127.0.0.1:8889/lab?token=fa2df9f465a70b5305b622f04bfbc69e816aa297ef170746
+[I 2021-12-25 19:43:18.607 LabApp] Build is up to date
+[I 2021-12-25 19:43:19.947 ServerApp] Kernel started: a2aba130-c9ec-40b3-ab75-f5f10637935c
+[W 2021-12-25 19:43:23.611 ServerApp] Got events for closed stream None
+[I 2021-12-25 19:43:56.069 ServerApp] Copying machine_learning/scikitlearn/linear_regression.ipynb to /machine_learning/scikitlearn
+[I 2021-12-25 19:44:03.653 ServerApp] Kernel started: 1a8c1e61-edbf-42d0-bc93-b250df5c8b85
+[I 2021-12-25 19:46:03.341 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:48:03.400 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:50:03.463 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:52:03.510 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:54:03.554 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:56:03.591 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 19:58:03.639 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:00:03.711 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:02:03.767 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:04:03.824 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:06:04.675 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:08:05.674 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:09:05.221 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:09:52.988 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
+[I 2021-12-25 20:09:54.324 ServerApp] Starting buffering for 1a8c1e61-edbf-42d0-bc93-b250df5c8b85:b335fc29-b3e3-439f-980d-ab66076c0f24
+[I 2021-12-25 20:09:54.325 ServerApp] Starting buffering for a2aba130-c9ec-40b3-ab75-f5f10637935c:62f10f7e-d993-446c-86e6-6fce8ef87a92

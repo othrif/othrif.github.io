@@ -29,6 +29,17 @@
     </item>
     
     <item>
+      <title>Clustering: K-means, agglomerative with dendrograms, and DBSCAN</title>
+      <link>https://othrif.github.io/machine_learning/scikitlearn/clustering.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/scikitlearn/clustering.html</guid>
+      <description>There are three types of clustering algorithms: * Prototype based clustering: k-means which clusters into spherical shapes based on a specified number of cluster centroids. Downside is that it assumes this spherical structure and you need to input the number of centroids.
+* Hierarchical clustering: Agglomerative clustering does not require specifying the number of clusters up front and the result can be visuzlized with a dendrogram.
+* Density based clustering: DBSCAN groups points based on local densities and is capable of handling outliers and identifying non-globular shapes.</description>
+    </item>
+    
+    <item>
       <title>Combining classifiers via majority vote</title>
       <link>https://othrif.github.io/machine_learning/scikitlearn/majoirty_vote.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
