@@ -50,6 +50,15 @@ jupyter notebook list jupyter notebook stop 8888 </description>
     </item>
     
     <item>
+      <title>Multi-layer perceptron (MLP) from scratch</title>
+      <link>https://othrif.github.io/machine_learning/basics/mlp.html</link>
+      <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/mlp.html</guid>
+      <description>MLP API import numpy as np import sys class NeuralNetMLP(object): &amp;#34;&amp;#34;&amp;#34; Feedforward neural network / Multi-layer perceptron classifier. Parameters ------------ n_hidden : int (default: 30) Number of hidden units. l2 : float (default: 0.) Lambda value for L2-regularization. No regularization if l2=0. (default) epochs : int (default: 100) Number of passes over the training set. eta : float (default: 0.001) Learning rate. shuffle : bool (default: True) Shuffles training data every epoch if True to prevent circles.</description>
+    </item>
+    
+    <item>
       <title>Profiling GPU with Nvidia tools</title>
       <link>https://othrif.github.io/machine_learning/basics/cuda_profiling.html</link>
       <pubDate>Sun, 12 Apr 2020 14:41:32 +0200</pubDate>

@@ -3328,3 +3328,197 @@
 [I 2021-12-25 20:09:52.988 ServerApp] Saving file at /machine_learning/scikitlearn/clustering.ipynb
 [I 2021-12-25 20:09:54.324 ServerApp] Starting buffering for 1a8c1e61-edbf-42d0-bc93-b250df5c8b85:b335fc29-b3e3-439f-980d-ab66076c0f24
 [I 2021-12-25 20:09:54.325 ServerApp] Starting buffering for a2aba130-c9ec-40b3-ab75-f5f10637935c:62f10f7e-d993-446c-86e6-6fce8ef87a92
+[I 2021-12-27 18:52:48.491 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-12-27 18:52:49.174 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-27 18:52:49.175 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-12-27 18:52:49.175 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-27 18:52:49.262 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-27 18:52:49.263 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-12-27 18:52:49.263 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-12-27 18:52:49.265 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-12-27 18:52:49.265 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-12-27 18:52:49.270 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-27 18:52:49.271 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-12-27 18:52:49.272 ServerApp] The port 8889 is already in use, trying another port.
+[I 2021-12-27 18:52:49.273 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-12-27 18:52:49.273 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-12-27 18:52:49.273 ServerApp] http://localhost:8890/lab?token=37dff192dbea87f1d5ea5f93dfe49a0be026ca5725716a93
+[I 2021-12-27 18:52:49.273 ServerApp]  or http://127.0.0.1:8890/lab?token=37dff192dbea87f1d5ea5f93dfe49a0be026ca5725716a93
+[I 2021-12-27 18:52:49.273 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-27 18:52:49.309 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-19817-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=37dff192dbea87f1d5ea5f93dfe49a0be026ca5725716a93
+     or http://127.0.0.1:8890/lab?token=37dff192dbea87f1d5ea5f93dfe49a0be026ca5725716a93
+[I 2021-12-27 18:52:53.728 LabApp] Build is up to date
+[I 2021-12-27 18:52:55.330 ServerApp] Kernel started: 899ca3f7-b9fa-45ed-a16e-6edb82434371
+[W 2021-12-27 18:52:58.995 ServerApp] Got events for closed stream None
+[I 2021-12-27 18:53:13.915 ServerApp] Kernel started: 309fdf7f-e76a-4fb1-bf95-fca9047629eb
+[I 2021-12-27 18:55:13.916 ServerApp] Saving file at /machine_learning/basics/cuda_profiling.ipynb
+[I 2021-12-27 18:56:09.626 ServerApp] Copying machine_learning/basics/cuda_profiling.ipynb to /machine_learning/basics
+[I 2021-12-27 18:56:15.660 ServerApp] Kernel started: 0ce478ec-2246-4a47-979b-b94086b6d8ba
+[I 2021-12-27 18:56:16.605 ServerApp] Starting buffering for 309fdf7f-e76a-4fb1-bf95-fca9047629eb:4b31e589-533c-439f-9ffe-d6f27a59fc93
+[I 2021-12-27 18:58:16.240 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:00:16.287 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:02:16.336 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:04:17.127 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:06:17.186 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:08:17.224 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:10:18.145 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:12:18.875 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:14:19.956 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:16:20.018 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-27 19:17:31.211 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-27 19:17:31.212 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-27 19:17:31.418 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-27 19:17:31.435 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-27 19:56:45.545 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-27 19:56:45.545 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-27 19:56:45.849 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-27 19:56:45.863 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 19:20:06.129 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 19:20:06.285 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 19:20:06.302 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 19:20:06.332 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 19:47:25.942 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 19:47:25.944 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 19:47:25.980 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 19:47:25.997 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 20:29:11.437 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:31:11.554 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:33:11.605 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:35:11.660 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:41:25.529 ServerApp] Kernel restarted: 0ce478ec-2246-4a47-979b-b94086b6d8ba
+[I 2021-12-28 20:41:25.534 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 20:41:25.540 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 20:43:12.065 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:45:12.121 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:47:12.173 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:49:12.226 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 20:59:12.288 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:01:12.344 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:03:12.392 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:05:12.442 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:09:12.492 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:11:12.569 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:13:12.980 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:31:54.724 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:33:54.762 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:35:54.808 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:37:54.871 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:39:54.926 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:43:54.910 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:47:54.956 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 21:57:55.023 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:07:55.063 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:09:55.118 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:15:39.288 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 22:15:39.298 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 22:15:39.313 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 22:15:39.333 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 22:19:55.986 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:21:56.046 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:23:56.100 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:39:56.167 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:41:56.244 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:43:56.311 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:45:56.360 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-28 22:47:01.487 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 22:47:01.488 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-28 22:47:01.516 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-28 22:47:01.552 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 00:03:53.590 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 01:17:42.650 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:17:42.659 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 01:17:42.686 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:17:42.834 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 01:24:47.211 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 01:24:47.233 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:24:47.504 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 01:24:47.520 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:43:03.905 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:43:03.915 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 01:43:03.928 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 01:43:03.947 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 09:42:29.057 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 09:42:29.066 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 09:42:29.072 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 09:42:29.098 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 10:26:19.248 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 10:26:19.261 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 10:26:19.322 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 10:26:19.479 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 10:55:54.705 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 10:55:54.708 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 10:55:54.722 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 10:55:54.753 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:06:39.949 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:06:39.959 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:06:40.023 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:06:40.137 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:09:22.342 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:11:22.500 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:13:22.559 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:15:22.620 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:17:22.684 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:19:22.752 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:21:22.804 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:23:22.867 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:25:22.928 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:27:23.221 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:27:49.538 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:29:49.592 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 12:31:22.552 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:31:22.670 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:31:22.784 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:31:22.802 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:37:03.551 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:37:03.606 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 12:37:12.329 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 12:37:12.452 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 13:11:04.063 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 13:11:04.066 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 13:11:04.101 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 13:11:04.156 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 13:41:35.869 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 13:43:35.926 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 13:52:31.367 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 13:52:31.421 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 13:52:31.510 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 13:52:31.525 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 14:16:29.752 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 14:16:29.828 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 14:16:29.881 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 14:16:29.902 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 14:51:26.178 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 14:51:26.179 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 14:51:26.311 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 14:51:26.329 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:01:42.473 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:01:42.628 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 15:01:42.663 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:01:42.682 ServerApp] Restoring connection for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[I 2021-12-29 15:17:00.421 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:19:00.478 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:21:00.534 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:23:00.600 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:25:00.656 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:27:00.715 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:29:00.789 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:31:00.852 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:33:00.920 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:35:00.990 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:37:01.055 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:39:01.135 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:41:01.206 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:41:51.040 ServerApp] Kernel restarted: 0ce478ec-2246-4a47-979b-b94086b6d8ba
+[I 2021-12-29 15:41:51.047 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:41:51.054 ServerApp] Restoring connection for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:43:01.268 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:43:41.238 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:45:41.286 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:46:11.504 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
+[I 2021-12-29 15:46:12.919 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
+[I 2021-12-29 15:46:12.920 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
