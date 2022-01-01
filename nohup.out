@@ -3522,3 +3522,78 @@
 [I 2021-12-29 15:46:11.504 ServerApp] Saving file at /machine_learning/basics/mlp.ipynb
 [I 2021-12-29 15:46:12.919 ServerApp] Starting buffering for 0ce478ec-2246-4a47-979b-b94086b6d8ba:c143c926-5276-4fa0-a779-fa71faa8a08a
 [I 2021-12-29 15:46:12.920 ServerApp] Starting buffering for 899ca3f7-b9fa-45ed-a16e-6edb82434371:732ffff2-da82-47d2-8853-23336b86a187
+[C 2021-12-31 10:55:09.060 ServerApp] received signal 15, stopping
+[I 2021-12-31 10:55:09.077 ServerApp] Shutting down 3 kernels
+[C 2021-12-31 10:55:09.068 ServerApp] received signal 15, stopping
+[I 2021-12-31 10:55:09.094 ServerApp] Shutting down 2 kernels
+[C 2021-12-31 10:55:09.066 ServerApp] received signal 15, stopping
+[I 2021-12-31 10:55:09.099 ServerApp] Kernel shutdown: 899ca3f7-b9fa-45ed-a16e-6edb82434371
+[I 2021-12-31 10:55:09.106 ServerApp] Shutting down 1 kernel
+[I 2021-12-31 10:55:09.108 ServerApp] Kernel shutdown: 309fdf7f-e76a-4fb1-bf95-fca9047629eb
+[I 2021-12-31 10:55:09.112 ServerApp] Kernel shutdown: 0ce478ec-2246-4a47-979b-b94086b6d8ba
+[I 2021-12-31 10:55:09.120 ServerApp] Kernel shutdown: 7d5b6031-e3e7-4598-bfbb-8fae61478675
+[I 2021-12-31 10:55:09.120 ServerApp] Kernel shutdown: a2aba130-c9ec-40b3-ab75-f5f10637935c
+[I 2021-12-31 10:55:09.130 ServerApp] Kernel shutdown: 1a8c1e61-edbf-42d0-bc93-b250df5c8b85
+[I 2021-12-31 10:55:09.431 ServerApp] Shutting down 0 terminals
+[I 2021-12-31 10:55:09.616 ServerApp] Shutting down 0 terminals
+[I 2021-12-31 10:55:09.942 ServerApp] Shutting down 0 terminals
+[I 2021-12-31 12:02:53.530 ServerApp] jupyterlab | extension was successfully linked.
+[I 2021-12-31 12:02:53.744 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2021-12-31 12:02:53.745 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2021-12-31 12:02:53.745 ServerApp] nbclassic | extension was successfully linked.
+[I 2021-12-31 12:02:53.782 ServerApp] nbclassic | extension was successfully loaded.
+[I 2021-12-31 12:02:53.782 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2021-12-31 12:02:53.782 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2021-12-31 12:02:53.785 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2021-12-31 12:02:53.785 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2021-12-31 12:02:53.788 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2021-12-31 12:02:53.789 ServerApp] The port 8888 is already in use, trying another port.
+[I 2021-12-31 12:02:53.790 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2021-12-31 12:02:53.790 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2021-12-31 12:02:53.790 ServerApp] http://localhost:8889/lab?token=cba94fbb4c89b9cb4a585c3717c060203206bfa66b02d576
+[I 2021-12-31 12:02:53.790 ServerApp]  or http://127.0.0.1:8889/lab?token=cba94fbb4c89b9cb4a585c3717c060203206bfa66b02d576
+[I 2021-12-31 12:02:53.790 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2021-12-31 12:02:53.806 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-2511-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/lab?token=cba94fbb4c89b9cb4a585c3717c060203206bfa66b02d576
+     or http://127.0.0.1:8889/lab?token=cba94fbb4c89b9cb4a585c3717c060203206bfa66b02d576
+[I 2021-12-31 12:02:57.729 LabApp] Build is up to date
+[W 2021-12-31 12:02:58.003 ServerApp] 404 GET /api/contents/ch13_part1.ipynb?content=0&1640980977989 (::1): No such file or directory: ch13_part1.ipynb
+[W 2021-12-31 12:02:58.004 ServerApp] No such file or directory: ch13_part1.ipynb
+[W 2021-12-31 12:02:58.004 ServerApp] 404 GET /api/contents/ch13_part1.ipynb?content=0&1640980977989 (::1) 1.86ms referer=http://localhost:8889/lab
+[W 2021-12-31 12:02:58.009 ServerApp] 404 GET /api/contents/ch13_part2.ipynb?content=0&1640980977998 (::1): No such file or directory: ch13_part2.ipynb
+[W 2021-12-31 12:02:58.009 ServerApp] No such file or directory: ch13_part2.ipynb
+[W 2021-12-31 12:02:58.010 ServerApp] 404 GET /api/contents/ch13_part2.ipynb?content=0&1640980977998 (::1) 5.12ms referer=http://localhost:8889/lab
+[I 2021-12-31 12:09:39.296 ServerApp] Kernel started: 3070c209-d234-4af8-9bf9-3917a5bfc487
+[W 2021-12-31 12:09:42.955 ServerApp] Got events for closed stream None
+[I 2021-12-31 12:11:39.171 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:13:39.255 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:15:39.297 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:17:39.343 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:19:39.386 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:21:39.393 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:23:39.455 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:25:39.503 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:27:39.549 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:29:06.973 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:29:16.463 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:29:17.029 ServerApp] Saving file at /machine_learning/basics/softmax_calc.ipynb
+[I 2021-12-31 12:39:53.186 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 13:21:06.579 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 13:23:16.046 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 13:55:13.081 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 13:58:47.039 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 14:13:31.915 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 14:45:06.717 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 16:36:18.241 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 16:37:15.590 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 16:41:18.329 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 16:41:51.679 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 16:44:50.373 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 16:47:09.015 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 16:48:40.936 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2021-12-31 18:02:18.920 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
+[I 2021-12-31 18:32:32.847 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3

@@ -16,9 +16,11 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Calculate softmax" />
-<meta property="og:description" content="Calculate softmax $\sigma(\vec{z})i = \frac{e^{z_i}}{\sum{j=1}^{K}e^{z_j}}$
-from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np.exp(z)),2) array([0.96, 0.02, 0.02])  " />
+<meta property="og:title" content="Activation functions: sigmoid, softmax, tanh, ReLU" />
+<meta property="og:description" content="Sigmoid Sigmoid or logistic function models the probability that sample x belongs to the positive class in a binary classification task.
+Given $z = w_0x_0 &#43; w_1x_1 &#43; \cdots &#43; w_mx_m = \sum_{i=0}^m w_ix_i = w^Tx $
+$\phi_\text{logistic} (z) = \frac{1}{1 &#43; e^{-z}}$
+import numpy as np X = np.array([1, 1.4, 2.5]) ## first value must be 1 w = np.array([0.4, 0.3, 0.5]) def net_input(X, w): return np.dot(X, w) def logistic(z): return 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://othrif.github.io/machine_learning/basics/softmax_calc.html" /><meta property="article:section" content="machine_learning" />
 <meta property="article:published_time" content="2020-04-12T14:41:32+02:00" />
@@ -26,9 +28,11 @@ from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Calculate softmax"/>
-<meta name="twitter:description" content="Calculate softmax $\sigma(\vec{z})i = \frac{e^{z_i}}{\sum{j=1}^{K}e^{z_j}}$
-from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np.exp(z)),2) array([0.96, 0.02, 0.02])  "/>
+<meta name="twitter:title" content="Activation functions: sigmoid, softmax, tanh, ReLU"/>
+<meta name="twitter:description" content="Sigmoid Sigmoid or logistic function models the probability that sample x belongs to the positive class in a binary classification task.
+Given $z = w_0x_0 &#43; w_1x_1 &#43; \cdots &#43; w_mx_m = \sum_{i=0}^m w_ix_i = w^Tx $
+$\phi_\text{logistic} (z) = \frac{1}{1 &#43; e^{-z}}$
+import numpy as np X = np.array([1, 1.4, 2.5]) ## first value must be 1 w = np.array([0.4, 0.3, 0.5]) def net_input(X, w): return np.dot(X, w) def logistic(z): return 1."/>
 <meta name="generator" content="Hugo 0.85.0" />
 
     
@@ -36,9 +40,9 @@ from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Calculate softmax",
+  "headline": "Activation functions: sigmoid, softmax, tanh, ReLU",
   "url": "https:\/\/othrif.github.io\/machine_learning\/basics\/softmax_calc.html",
-  "wordCount": "22",
+  "wordCount": "496",
   "datePublished": "2020-04-12T14:41:32\u002b02:00",
   "dateModified": "2020-04-12T14:41:32\u002b02:00",
   "author": {
@@ -48,7 +52,7 @@ from math import exp import numpy as np z = [13, 9, 9] np.round(np.exp(z)/sum(np
 }
 </script> 
 
-    <title>Calculate softmax</title>
+    <title>Activation functions: sigmoid, softmax, tanh, ReLU</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -141,22 +145,117 @@ MathJax.Hub.Config({
 <article>
   <div class="technical_note">
   <header>
-    <h1 class="technical_note_title">Calculate softmax</h1>
+    <h1 class="technical_note_title">Activation functions: sigmoid, softmax, tanh, ReLU</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-04-12T14:41:32&#43;02:00 "> 12 Apr 2020</time>
     </div>
   </header>
   <div class="content">
 
-  <h3 id="calculate-softmax">Calculate softmax</h3>
-<p>$\sigma(\vec{z})<em>i = \frac{e^{z_i}}{\sum</em>{j=1}^{K}e^{z_j}}$</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">exp</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+  <h3 id="sigmoid">Sigmoid</h3>
+<p>Sigmoid or logistic function models the probability that sample x belongs to the positive class in a binary classification task.</p>
+<p>Given $z = w_0x_0 + w_1x_1 + \cdots + w_mx_m = \sum_{i=0}^m w_ix_i = w^Tx $</p>
+<p>$\phi_\text{logistic} (z) = \frac{1}{1 + e^{-z}}$</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)),</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><pre><code>array([0.96, 0.02, 0.02])
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">])</span> <span class="c1">## first value must be 1</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">logistic_activation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">net_input</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P(y=1|x) = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">logistic_activation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span> 
+</code></pre></div><pre><code>P(y=1|x) = 0.888
 </code></pre>
+<p>88.8% probability that this particular sample x belongs to the positive class.</p>
+<h3 id="multiclass-sigmoid-does-not-work">Multiclass sigmoid does not work</h3>
+<p>Multiple logistic activation untis does not produce meaningful, interpretable probability values:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># W : array with shape = (n_output_units, n_hidden_units+1)</span>
+<span class="c1"># note that the first column are the bias units</span>
+
+<span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">]])</span>
+
+<span class="c1"># A : data array with shape = (n_hidden_units + 1, n_samples)</span>
+<span class="c1"># note that the first column of this array must be 1</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">y_probas</span> <span class="o">=</span> <span class="n">logistic</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Net Input: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Output Units:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">y_probas</span><span class="p">)</span> 
+</code></pre></div><pre><code>Net Input: 
+ [1.78 0.76 1.65]
+Output Units:
+ [0.85569687 0.68135373 0.83889105]
+</code></pre>
+<p>the outputs do not add up to 1.</p>
+<h3 id="softmax-to-the-rescue">Softmax to the rescue</h3>
+<p>Probability of a particular sample with net input $z$ belonging to the ith class is:</p>
+<p>$P(y=i|z) = \phi(\vec{z})<em>i = \frac{e^{z_i}}{\sum</em>{j=1}^{K}e^{z_j}}$</p>
+<p><em>softmax</em> offers a normalized output to obtain meaningful class-membership predictions in multiclass settings.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">softmax</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+
+<span class="n">y_probas</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Probabilities:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">y_probas</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y_probas</span><span class="p">)</span>
+</code></pre></div><pre><code>Probabilities:
+ [0.44668973 0.16107406 0.39223621]
+
+
+
+
+
+1.0
+</code></pre>
+<h3 id="broadening-the-output-spectrum-using-a-hyperbolic-tangent">Broadening the output spectrum using a hyperbolic tangent</h3>
+<p>Hyperbolic tangent (<strong>tanh</strong>) is a rescaled version of the logistic function:</p>
+<p>$\phi_\text{tanh} (z) = 2 \times \phi_\text{logistic} (2z) - 1 = \frac{e^{z} - e^{-z}}{e^{z} + e^{-z}}$</p>
+<p>with the advantage of <strong>broader output spectrum</strong> in the interval (-1, 1), which can improve the convergence of the backpropagation algorithm.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="k">def</span> <span class="nf">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="n">e_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">e_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">-</span> <span class="n">e_m</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">e_p</span> <span class="o">+</span> <span class="n">e_m</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">)</span>
+<span class="n">log_act</span> <span class="o">=</span> <span class="n">logistic</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">tanh_act</span> <span class="o">=</span> <span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Net input $z$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Activation $\phi(z)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">tanh_act</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Tanh&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">log_act</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Logistic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div><p><img src="softmax_calc_10_0.png" alt="png"></p>
+<h3 id="rectified-linear-unit-activation-relu">Rectified linear unit activation (ReLU)</h3>
+<p>ReLU comes to the rescue to address the vanishing gradient problem of tanh and logistic activations. The derivative of activations with respect to the net input diminishes as z becomes large. This results in a very slow learning of the weights during the training phase since the gradient terms may be very close to zero.</p>
+<p>$\phi_\text{ReLU} = max \left(0, z \right)$</p>
+<p>ReLU is still a non-linear function that is good for learning complex functions. It has the added benefit that its derivative is always 1 for positive input values =&gt; solves the problem of vanishing gradidents.</p>
 
 </div>
   <aside>
