@@ -79,5 +79,16 @@ jupyter notebook list jupyter notebook stop 8888 </description>
       <description>Basic includes for TensorFlow import os import pathlib import matplotlib.pyplot as plt import numpy as np import seaborn as sns import tensorflow as tf from tensorflow.keras.layers.experimental import preprocessing from tensorflow.keras import layers from tensorflow.keras import models from IPython import display # Set seed for experiment reproducibility seed = 42 tf.random.set_seed(seed) np.random.seed(seed) </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://othrif.github.io/machine_learning/basics/conv.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://othrif.github.io/machine_learning/basics/conv.html</guid>
+      <description>Discrete convolution in 1D $y = x * w \to y[i] = \sum\limits_{k=-\infty}^{+\infty} x[i-k] w[k]$
+In practice, we cannot sum through $-\infty \to +\infty$. Instead, we pad with a finite number of zeros, called zero-padding. For an input x and filter w with n and m elements respectively, where $ m \leq n $. The padded vector $x^p$ has size $n + 2p$. To compute the convolution:
+$y = x * w \to y[i] = \sum\limits_{k=0}^{k=m-1} x^p[i+m-k] w[k]$</description>
+    </item>
+    
   </channel>
 </rss>

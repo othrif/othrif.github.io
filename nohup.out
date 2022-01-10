@@ -3597,3 +3597,131 @@
 [I 2021-12-31 16:48:40.936 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
 [I 2021-12-31 18:02:18.920 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:90ca615f-82a5-409d-9f0a-cfd4eca57dea
 [I 2021-12-31 18:32:32.847 ServerApp] Starting buffering for 3070c209-d234-4af8-9bf9-3917a5bfc487:d3e99e02-32b9-43cf-bb54-cb67d05a86b3
+[I 2022-01-08 11:46:21.064 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-01-08 11:46:21.703 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2022-01-08 11:46:21.703 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2022-01-08 11:46:21.704 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-01-08 11:46:21.774 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-01-08 11:46:21.775 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2022-01-08 11:46:21.775 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2022-01-08 11:46:21.779 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2022-01-08 11:46:21.780 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2022-01-08 11:46:21.787 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-01-08 11:46:21.789 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2022-01-08 11:46:21.789 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2022-01-08 11:46:21.789 ServerApp] http://localhost:8888/lab?token=3c92f31d50392cbb21d8ddf18b10eb96f0979f664eb0d894
+[I 2022-01-08 11:46:21.789 ServerApp]  or http://127.0.0.1:8888/lab?token=3c92f31d50392cbb21d8ddf18b10eb96f0979f664eb0d894
+[I 2022-01-08 11:46:21.789 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2022-01-08 11:46:21.818 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-11515-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/lab?token=3c92f31d50392cbb21d8ddf18b10eb96f0979f664eb0d894
+     or http://127.0.0.1:8888/lab?token=3c92f31d50392cbb21d8ddf18b10eb96f0979f664eb0d894
+[I 2022-01-08 11:46:28.277 LabApp] Build is up to date
+[I 2022-01-08 11:46:29.693 ServerApp] Kernel started: 99f075ef-4b48-4b00-b87f-85a66a852616
+[W 2022-01-08 11:46:33.455 ServerApp] Got events for closed stream None
+[I 2022-01-08 11:48:13.819 ServerApp] Kernel started: 076799aa-0384-406c-9be7-53b34481f716
+[I 2022-01-08 11:48:19.156 ServerApp] Copying machine_learning/basics/versions.ipynb to /machine_learning/basics
+[I 2022-01-08 11:50:14.701 ServerApp] Saving file at /machine_learning/basics/versions.ipynb
+[I 2022-01-08 11:52:14.747 ServerApp] Saving file at /machine_learning/basics/versions.ipynb
+[I 2022-01-08 11:54:14.806 ServerApp] Saving file at /machine_learning/basics/versions.ipynb
+[I 2022-01-08 11:54:53.276 ServerApp] Starting buffering for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 11:54:53.295 ServerApp] Starting buffering for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 11:54:53.451 ServerApp] Restoring connection for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 11:54:53.572 ServerApp] Restoring connection for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 11:57:16.919 ServerApp] Saving file at /machine_learning/basics/versions.ipynb
+[I 2022-01-08 11:59:17.483 ServerApp] Saving file at /machine_learning/basics/versions.ipynb
+[I 2022-01-08 12:00:35.857 ServerApp] Kernel started: e3e99f16-2b74-4cda-927f-c010c0b14705
+[I 2022-01-08 12:01:03.428 ServerApp] Starting buffering for e3e99f16-2b74-4cda-927f-c010c0b14705:e6a0a2fc-c107-4615-8a57-1482a4e521a4
+[I 2022-01-08 12:03:19.357 ServerApp] Starting buffering for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:03:19.375 ServerApp] Starting buffering for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 12:03:19.493 ServerApp] Restoring connection for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:03:19.512 ServerApp] Restoring connection for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 12:22:17.347 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 12:23:44.366 ServerApp] Starting buffering for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 12:23:44.374 ServerApp] Starting buffering for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:23:44.458 ServerApp] Restoring connection for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 12:23:44.481 ServerApp] Restoring connection for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:54:39.628 ServerApp] Starting buffering for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:54:39.659 ServerApp] Starting buffering for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 12:54:39.675 ServerApp] Restoring connection for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 12:54:39.693 ServerApp] Restoring connection for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 13:17:52.814 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:19:52.835 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:21:52.857 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:23:52.913 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:25:52.958 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:27:52.989 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:29:53.024 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:31:53.073 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 13:36:18.892 ServerApp] Starting buffering for 076799aa-0384-406c-9be7-53b34481f716:af64b1f1-1422-41b7-94d5-bf6060beddd7
+[I 2022-01-08 13:36:18.893 ServerApp] Starting buffering for 99f075ef-4b48-4b00-b87f-85a66a852616:e95af6ab-1be8-4e0b-8127-6dde18630208
+[I 2022-01-08 18:58:55.773 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-01-08 18:58:56.127 ServerApp] jupyter_nbextensions_configurator | extension was found and enabled by nbclassic. Consider moving the extension to Jupyter Server's extension paths.
+[I 2022-01-08 18:58:56.127 ServerApp] jupyter_nbextensions_configurator | extension was successfully linked.
+[I 2022-01-08 18:58:56.127 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-01-08 18:58:56.177 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-01-08 18:58:56.178 ServerApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[I 2022-01-08 18:58:56.178 ServerApp] jupyter_nbextensions_configurator | extension was successfully loaded.
+[I 2022-01-08 18:58:56.181 LabApp] JupyterLab extension loaded from /Users/othrif/.pyenv/versions/3.9.6/lib/python3.9/site-packages/jupyterlab
+[I 2022-01-08 18:58:56.181 LabApp] JupyterLab application directory is /Users/othrif/.pyenv/versions/3.9.6/share/jupyter/lab
+[I 2022-01-08 18:58:56.184 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-01-08 18:58:56.185 ServerApp] The port 8888 is already in use, trying another port.
+[I 2022-01-08 18:58:56.186 ServerApp] The port 8889 is already in use, trying another port.
+[I 2022-01-08 18:58:56.187 ServerApp] Serving notebooks from local directory: /Users/othrif/github/notes/content
+[I 2022-01-08 18:58:56.187 ServerApp] Jupyter Server 1.9.0 is running at:
+[I 2022-01-08 18:58:56.187 ServerApp] http://localhost:8890/lab?token=5354208ef53e149c70593a9b2dd1f9547d677f52cb2ee481
+[I 2022-01-08 18:58:56.187 ServerApp]  or http://127.0.0.1:8890/lab?token=5354208ef53e149c70593a9b2dd1f9547d677f52cb2ee481
+[I 2022-01-08 18:58:56.187 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2022-01-08 18:58:56.204 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///Users/othrif/Library/Jupyter/runtime/jpserver-12244-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8890/lab?token=5354208ef53e149c70593a9b2dd1f9547d677f52cb2ee481
+     or http://127.0.0.1:8890/lab?token=5354208ef53e149c70593a9b2dd1f9547d677f52cb2ee481
+[I 2022-01-08 18:59:05.373 LabApp] Build is up to date
+[I 2022-01-08 18:59:06.510 ServerApp] Kernel started: daeddd6f-b462-431b-b690-7474ea48135f
+[I 2022-01-08 19:01:06.305 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:03:07.642 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:05:07.686 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:07:07.729 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:09:08.628 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:15:10.466 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:22:39.577 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:6de4d33e-78f2-44e1-803d-1641dcf97623
+[I 2022-01-08 19:29:17.539 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:31:17.580 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:33:17.629 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:35:17.666 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:37:17.712 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:37:30.450 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:39:30.497 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:41:31.446 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:43:31.491 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:45:31.524 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:47:31.626 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:49:31.666 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:51:31.715 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:53:31.751 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 19:55:32.395 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:01:34.474 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:03:35.424 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:05:35.488 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:07:35.537 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:09:35.603 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:11:35.653 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:13:35.701 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:13:53.965 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:13:56.762 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-08 20:16:12.333 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:0f1891c0-22e7-48d3-acc8-2fa49aee170d
+[I 2022-01-08 20:48:09.268 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:6de4d33e-78f2-44e1-803d-1641dcf97623
+[I 2022-01-08 21:08:21.293 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:6de4d33e-78f2-44e1-803d-1641dcf97623
+[I 2022-01-09 16:14:26.108 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:0f1891c0-22e7-48d3-acc8-2fa49aee170d
+[I 2022-01-09 16:51:16.597 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:6de4d33e-78f2-44e1-803d-1641dcf97623
+[I 2022-01-09 17:43:16.803 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:0f1891c0-22e7-48d3-acc8-2fa49aee170d
+[I 2022-01-09 18:35:09.744 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:6de4d33e-78f2-44e1-803d-1641dcf97623
+[I 2022-01-09 20:20:21.972 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-09 20:20:27.432 ServerApp] Saving file at /machine_learning/basics/conv.ipynb
+[I 2022-01-09 20:20:28.349 ServerApp] Starting buffering for daeddd6f-b462-431b-b690-7474ea48135f:0f1891c0-22e7-48d3-acc8-2fa49aee170d
